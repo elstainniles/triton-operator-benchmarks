@@ -1,0 +1,232 @@
+{
+  "operator_id": "LK15",
+  "kernel": "_geglu_forward_kernel_flat",
+  "source_kind": "ascend",
+  "type": "vv",
+  "origin": "repository_entry_validation",
+  "status": "measured",
+  "case": {
+    "id": "second-batch",
+    "suite": "baseline",
+    "shape": [
+      2,
+      2048,
+      4096
+    ],
+    "dtype": "float32",
+    "nodeid": "test_case.py::test_correctness[dtype0-1.0-2e-06-2-2048-2048-4096]",
+    "original_nodeid": "test/transformers/test_geglu.py::test_correctness[dtype0-1.0-2e-06-2-2048-2048-4096]",
+    "input_origin": "upstream_correctness_case",
+    "tensors": {
+      "a_ptr": {
+        "shape": [
+          2,
+          2048,
+          4096
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          8388608,
+          4096,
+          1
+        ]
+      },
+      "b_ptr": {
+        "shape": [
+          2,
+          2048,
+          4096
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          8388608,
+          4096,
+          1
+        ]
+      },
+      "c_ptr": {
+        "shape": [
+          2,
+          2048,
+          4096
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          8388608,
+          4096,
+          1
+        ]
+      }
+    },
+    "historical_bound_arguments": {
+      "a_ptr": {
+        "shape": [
+          2,
+          2048,
+          4096
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          8388608,
+          4096,
+          1
+        ]
+      },
+      "b_ptr": {
+        "shape": [
+          2,
+          2048,
+          4096
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          8388608,
+          4096,
+          1
+        ]
+      },
+      "c_ptr": {
+        "shape": [
+          2,
+          2048,
+          4096
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          8388608,
+          4096,
+          1
+        ]
+      },
+      "total_elements": "16777216",
+      "BLOCK_SIZE": "8192"
+    },
+    "dimensions": {
+      "bsz": 2,
+      "seq_len": 2048,
+      "hidden_size": 2048,
+      "intermediate_size": 4096
+    },
+    "parameters": {
+      "dtype": "torch.float32",
+      "atol": "1.0",
+      "rtol": "2e-06",
+      "bsz": "2",
+      "seq_len": "2048",
+      "hidden_size": "2048",
+      "intermediate_size": "4096"
+    }
+  },
+  "source_hashes": {
+    "kernels.py": "b4bb035bbeb75d88526736b15fad877b481ccd823b51dde2ce020687378c8d32",
+    "test_case.py": "aa4dda2200b41b7958922996d2eeabcd0d1fd78bc529297fb75ab8b0d7653689"
+  },
+  "harness_sha256": {
+    "__init__.py": "68e1a70eb4825bb9bbfa6c366420338bbdd6416279de89d7993256aaa60f0ebf",
+    "liger_profile.py": "71f8885f2a1fb74fbb3bbd43f464a6cbdbbd31f0703d890e272ad7040535a6ac",
+    "graph_case.py": "91c4a39c53faf2eba2dc22d69eb59e63b5ab33d87c46415969e3592e443c24fb",
+    "liger_runner.py": "a8154dc4fac624cec436ca49a12b1986a66a622215ce0d7491556be24b778e6b",
+    "cli.py": "cf012d361d0e7f9b2f80670090a73b3cd543424b1e1e683217541a695af781d7",
+    "environment.py": "d6c8981024bd1faba5d5e374186a88491832ff07164b7e79241189713a32c32e",
+    "device.py": "925be5239498f8dc75ec2ecd3650b4502f1dd66fa56bba26c4d5a9a621f158f8",
+    "graph_tests.py": "2b5dc81e69792a2f545a1660c8a21d79a03167fb9a65a5218360368ed8343062",
+    "graph_runner.py": "e6625eafb80229057b9e93b206cb7962bba4a3bb466403d992fa7242acb7e206",
+    "batch.py": "acbce294a176735f9931fceafc145e1735ae54742449af620df6e40637146cdc",
+    "profile.py": "da59af10fd73e056506a602e177c66638a59fed6d8baba7ce152edc6df48cb33",
+    "liger.py": "509d960b7b616f6c126cf849b5a0dcc487384d76433629bb79fe83c997848175",
+    "runner.py": "a71e1bdab749604c8cd6d1aa9b82ecc6f73260c2093cbef8ad1638610e339d33",
+    "catalog.py": "f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e",
+    "tensors.py": "c93bb693c5cc0167aaf3d1d28ead183ac53679efd6655d293e61245a13547568"
+  },
+  "cases_sha256": "c4b94f8f771f6f388fc702aeb6c1a3545774b16b7522dd9f0659513d739f21da",
+  "target_launch_attempts": 1,
+  "correctness": {
+    "passed": true,
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "median_us": 124.826,
+  "device_name": "Ascend950PR_9579",
+  "source_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "libtriton_sha256": "4c68de3dd8d3a97d669b396555fc8207d4657fa6f03b5be8928c01d346544e6d",
+  "compiler_sha256": "00005852671e68e08d9898654581590e106bb39c5fc9f1f5c114bc7339d7aeea",
+  "all_observed_occupancy_checks_passed": true,
+  "source_result_sha256": "f4318e0ecd1efd4323bc91057e0ed69dd72d0dfcf82d9517d0a086910fe60974",
+  "args": [
+    {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "16777216"
+  ],
+  "kwargs": {
+    "BLOCK_SIZE": "8192"
+  },
+  "grid": [
+    56
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 8192
+  },
+  "samples_us": [
+    124.981,
+    124.834,
+    124.427,
+    124.276,
+    125.61,
+    124.826,
+    124.98,
+    125.121,
+    124.705,
+    124.447,
+    124.919,
+    124.13,
+    124.377,
+    124.754,
+    125.098
+  ],
+  "trace_sha256": "e621c7a804b1e9f45fef75d3ec108bfa8807dea5af0647157aec88c1a007a3fd",
+  "kernel_csv_sha256": "08d1491a21cfa1be4f424eaaddcc6978a72a8b882c329f58a6207d97eba79ed5",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "aggregation": "median of 15 device samples"
+}

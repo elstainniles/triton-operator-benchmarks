@@ -1,0 +1,171 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK11",
+  "kernel": "_fused_neighborhood_attention_grad_v_kernel",
+  "source_kind": "generic",
+  "source_sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab",
+  "original_nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+  "type": "cv",
+  "tensors": {
+    "Attn_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "grad_output_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "grad_V_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "Attn_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "grad_output_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "grad_V_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "attn_batch_stride": "4096",
+    "attn_head_stride": "1024",
+    "attn_seq_stride": "32",
+    "attn_seq2_stride": "1",
+    "grad_out_batch_stride": "4096",
+    "grad_out_head_stride": "1024",
+    "grad_out_seq_stride": "32",
+    "grad_out_dim_stride": "1",
+    "grad_v_batch_stride": "4096",
+    "grad_v_head_stride": "1024",
+    "grad_v_seq_stride": "32",
+    "grad_v_dim_stride": "1",
+    "batch_size": "2",
+    "num_heads": "4",
+    "seq_len": "32",
+    "head_dim": "32",
+    "BLOCK_SIZE_M": "32",
+    "BLOCK_SIZE_N": "32",
+    "BLOCK_SIZE_K": "32",
+    "num_stages": "2",
+    "num_warps": "4"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 4.169,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "fused_neighborhood_attention-generic-00.json",
+  "source_result_sha256": "90ffd3f0852dc43cce8143a361c5bdd91b0cb8e3ade166eb01631a81e2dcc167",
+  "samples_us": [
+    4.348,
+    4.309,
+    4.103,
+    4.072,
+    4.096,
+    4.096,
+    4.073,
+    4.217,
+    4.32,
+    4.386,
+    4.345,
+    4.344,
+    4.169,
+    4.121,
+    4.132
+  ],
+  "grid": [
+    8,
+    1,
+    1
+  ],
+  "constexpr": {},
+  "trace_sha256": "6acb877838d27a7d7f3da58e3d29f5c603b8b5eae5e506b66cb99785f558c819",
+  "kernel_csv_sha256": "1059fb67e866d2a778ac0e78794c2cdca32e32dceb7c14981001ce12ead1ef20",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "c628900058d9421ad3049b89fd9d3157582160cfb101845d57e48fd94a05583e",
+      "ir_sha256": "1d0730943adfb1215438ba366cb308126c62ee9fec09fbf2cdc3e6ff0d3b5785",
+      "binary_sha256": "6cf5ad74298b08515123fd2a77d3cbfcdda83515c939bbf5e4e87ddad44a8b80",
+      "compiler_hash": "f1bf9bf93ea1e616df8705dbafec74155189a733b1f4330cf168c8312a236cd9"
+    }
+  ]
+}

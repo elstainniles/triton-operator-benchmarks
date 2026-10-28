@@ -1,0 +1,123 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_correctness[dtype0-1.0-2e-06-2-2048-2048-4096]",
+      "original_nodeid": "test/transformers/test_geglu.py::test_correctness[dtype0-1.0-2e-06-2-2048-2048-4096]",
+      "input_origin": "upstream_correctness_case",
+      "tensors": {
+        "a_ptr": {
+          "shape": [
+            2,
+            2048,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            8388608,
+            4096,
+            1
+          ]
+        },
+        "b_ptr": {
+          "shape": [
+            2,
+            2048,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            8388608,
+            4096,
+            1
+          ]
+        },
+        "c_ptr": {
+          "shape": [
+            2,
+            2048,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            8388608,
+            4096,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "a_ptr": {
+          "shape": [
+            2,
+            2048,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            8388608,
+            4096,
+            1
+          ]
+        },
+        "b_ptr": {
+          "shape": [
+            2,
+            2048,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            8388608,
+            4096,
+            1
+          ]
+        },
+        "c_ptr": {
+          "shape": [
+            2,
+            2048,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            8388608,
+            4096,
+            1
+          ]
+        },
+        "total_elements": "16777216",
+        "BLOCK_SIZE": "8192"
+      },
+      "dimensions": {
+        "bsz": 2,
+        "seq_len": 2048,
+        "hidden_size": 2048,
+        "intermediate_size": 4096
+      },
+      "parameters": {
+        "dtype": "torch.float32",
+        "atol": "1.0",
+        "rtol": "2e-06",
+        "bsz": "2",
+        "seq_len": "2048",
+        "hidden_size": "2048",
+        "intermediate_size": "4096"
+      }
+    }
+  ]
+}

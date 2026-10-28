@@ -1,0 +1,198 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK07",
+  "kernel": "_fused_neighborhood_attention_qk_kernel",
+  "source_kind": "generic",
+  "source_sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab",
+  "original_nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+  "type": "cv",
+  "tensors": {
+    "Q_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "K_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "QK_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "mask_ptr": {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        32,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "Q_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "K_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "QK_ptr": {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "mask_ptr": {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "q_batch_stride": "4096",
+    "q_head_stride": "1024",
+    "q_seq_stride": "32",
+    "q_dim_stride": "1",
+    "k_batch_stride": "4096",
+    "k_head_stride": "1024",
+    "k_seq_stride": "32",
+    "k_dim_stride": "1",
+    "qk_batch_stride": "4096",
+    "qk_head_stride": "1024",
+    "qk_seq_stride": "32",
+    "qk_seq2_stride": "1",
+    "batch_size": "2",
+    "num_heads": "4",
+    "seq_len": "32",
+    "head_dim": "32",
+    "scale": "0.17677669529663687",
+    "kernel_size": "7",
+    "dilation": "1",
+    "BLOCK_SIZE_M": "32",
+    "BLOCK_SIZE_N": "32",
+    "BLOCK_SIZE_K": "32",
+    "num_stages": "2",
+    "num_warps": "4"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 4.165,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "fused_neighborhood_attention-generic-00.json",
+  "source_result_sha256": "90ffd3f0852dc43cce8143a361c5bdd91b0cb8e3ade166eb01631a81e2dcc167",
+  "samples_us": [
+    4.034,
+    4.179,
+    4.175,
+    4.126,
+    4.101,
+    4.389,
+    4.062,
+    4.343,
+    4.153,
+    4.165,
+    4.248,
+    4.268,
+    4.107,
+    4.205,
+    4.103
+  ],
+  "grid": [
+    8,
+    1,
+    1
+  ],
+  "constexpr": {},
+  "trace_sha256": "3bed5457a261c13599346426c84d4bb208870a0e660388060974c9b851fa7342",
+  "kernel_csv_sha256": "a4412e929dce940d10bdc4d4a8f3a86c703ec60ec2568d6170e7a6409723bbb4",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "d917d52b0c463cf044ad7725314f09c01943469757fd36d524bad31105365781",
+      "ir_sha256": "98d9a26ca6105cfd9393b4f0aedf3ba1055bbdc6412471ba56cd3eb48ab36700",
+      "binary_sha256": "897462881d753e958fd75d84f731595ae45f784bd832570fcffc569e5f6ec81b",
+      "compiler_hash": "7d8ff41c586554784a3bef4700c6d8e94b48d0881bf5ea9935b04f3fe7065ced"
+    }
+  ]
+}

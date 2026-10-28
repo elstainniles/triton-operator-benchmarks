@@ -1,0 +1,339 @@
+{
+  "operator_id": "LK17",
+  "kernel": "_group_norm_forward_kernel",
+  "source_kind": "generic",
+  "type": "vv",
+  "origin": "repository_entry_validation",
+  "status": "measured",
+  "case": {
+    "id": "second-batch",
+    "suite": "baseline",
+    "shape": [
+      1,
+      32,
+      4
+    ],
+    "dtype": "float32",
+    "nodeid": "test_case.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-32-32-4]",
+    "original_nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-32-32-4]",
+    "input_origin": "upstream_correctness_case",
+    "tensors": {
+      "Y_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "X_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "Mean_ptr": {
+        "shape": [
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          32,
+          1
+        ]
+      },
+      "RSTD_ptr": {
+        "shape": [
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          32,
+          1
+        ]
+      },
+      "W_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "B_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      }
+    },
+    "historical_bound_arguments": {
+      "Y_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "Y_row_stride": "128",
+      "Y_col_stride": "4",
+      "X_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "X_row_stride": "128",
+      "X_col_stride": "4",
+      "Mean_ptr": {
+        "shape": [
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          32,
+          1
+        ]
+      },
+      "Mean_row_stride": "32",
+      "Mean_col_stride": "1",
+      "RSTD_ptr": {
+        "shape": [
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          32,
+          1
+        ]
+      },
+      "RSTD_row_stride": "32",
+      "RSTD_col_stride": "1",
+      "W_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "B_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "hidden_size": "4",
+      "channels_per_group": "1",
+      "eps": "1e-06",
+      "BLOCK_SIZE": "4"
+    },
+    "dimensions": {
+      "batch_size": 1,
+      "num_channels": 32,
+      "hidden_size": 4
+    },
+    "parameters": {
+      "dtype": "torch.float32",
+      "atol": "0.0001",
+      "rtol": "0.0001",
+      "batch_size": "1",
+      "num_channels": "32",
+      "num_groups": "32",
+      "hidden_size": "4"
+    }
+  },
+  "source_hashes": {
+    "kernels.py": "6e48e1c1364d401613fd1ec73ae91adfdc8714bffaf81e58af714cb50d943c94",
+    "test_case.py": "665b2424d1a7dc3d2ca33b98e54a10aec3dab505a37cba901ccb87bcb7d9aa8e"
+  },
+  "harness_sha256": {
+    "__init__.py": "68e1a70eb4825bb9bbfa6c366420338bbdd6416279de89d7993256aaa60f0ebf",
+    "liger_profile.py": "71f8885f2a1fb74fbb3bbd43f464a6cbdbbd31f0703d890e272ad7040535a6ac",
+    "graph_case.py": "91c4a39c53faf2eba2dc22d69eb59e63b5ab33d87c46415969e3592e443c24fb",
+    "liger_runner.py": "a8154dc4fac624cec436ca49a12b1986a66a622215ce0d7491556be24b778e6b",
+    "cli.py": "cf012d361d0e7f9b2f80670090a73b3cd543424b1e1e683217541a695af781d7",
+    "environment.py": "d6c8981024bd1faba5d5e374186a88491832ff07164b7e79241189713a32c32e",
+    "device.py": "925be5239498f8dc75ec2ecd3650b4502f1dd66fa56bba26c4d5a9a621f158f8",
+    "graph_tests.py": "2b5dc81e69792a2f545a1660c8a21d79a03167fb9a65a5218360368ed8343062",
+    "graph_runner.py": "e6625eafb80229057b9e93b206cb7962bba4a3bb466403d992fa7242acb7e206",
+    "batch.py": "acbce294a176735f9931fceafc145e1735ae54742449af620df6e40637146cdc",
+    "profile.py": "da59af10fd73e056506a602e177c66638a59fed6d8baba7ce152edc6df48cb33",
+    "liger.py": "509d960b7b616f6c126cf849b5a0dcc487384d76433629bb79fe83c997848175",
+    "runner.py": "a71e1bdab749604c8cd6d1aa9b82ecc6f73260c2093cbef8ad1638610e339d33",
+    "catalog.py": "f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e",
+    "tensors.py": "c93bb693c5cc0167aaf3d1d28ead183ac53679efd6655d293e61245a13547568"
+  },
+  "cases_sha256": "a9cc5b3340047b745ab7845a284877857bc52b88918462261c528aa114035e47",
+  "target_launch_attempts": 1,
+  "correctness": {
+    "passed": true,
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "median_us": 5.45,
+  "device_name": "Ascend950PR_9579",
+  "source_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "libtriton_sha256": "4c68de3dd8d3a97d669b396555fc8207d4657fa6f03b5be8928c01d346544e6d",
+  "compiler_sha256": "00005852671e68e08d9898654581590e106bb39c5fc9f1f5c114bc7339d7aeea",
+  "all_observed_occupancy_checks_passed": true,
+  "source_result_sha256": "8e37377f092b4e9ee6eed2d9d8480f3736e8e136e28eea0162cae2079c0910ae",
+  "args": [
+    {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    "128",
+    "4",
+    {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    "128",
+    "4",
+    {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "32",
+    "1",
+    {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "32",
+    "1",
+    {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1
+      ]
+    },
+    "4",
+    "1",
+    "1e-06"
+  ],
+  "kwargs": {
+    "BLOCK_SIZE": "4"
+  },
+  "grid": [
+    1,
+    32
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 4
+  },
+  "samples_us": [
+    5.531,
+    5.395,
+    5.4,
+    5.407,
+    5.536,
+    5.45,
+    5.342,
+    5.549,
+    5.564,
+    5.571,
+    5.359,
+    5.489,
+    5.353,
+    5.482,
+    5.292
+  ],
+  "trace_sha256": "769d7542c28753eb501ae9de00e161536336d2cedda8210f5ebb938a5f269c82",
+  "kernel_csv_sha256": "0f008638f77e0e28f7452903e913dcd31d60555f5693f19bb8f400a4cfb22211",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "aggregation": "median of 15 device samples"
+}

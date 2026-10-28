@@ -1,0 +1,95 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        2048,
+        1024
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_ascend_embedding_backward",
+      "original_nodeid": "direct_cases.py::test_ascend_embedding_backward",
+      "input_origin": "direct_correctness_case",
+      "tensors": {
+        "grad_output_ptr": {
+          "shape": [
+            2048,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "grad_weight_ptr": {
+          "shape": [
+            8192,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "indices_ptr": {
+          "shape": [
+            2048
+          ],
+          "dtype": "torch.int64",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "grad_output_ptr": {
+          "shape": [
+            2048,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "grad_weight_ptr": {
+          "shape": [
+            8192,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "indices_ptr": {
+          "shape": [
+            2048
+          ],
+          "dtype": "torch.int64",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "n_elements": "2048",
+        "embedding_dim": "1024",
+        "BLOCK_SIZE_M": "64",
+        "BLOCK_SIZE_N": "128"
+      },
+      "dimensions": {},
+      "parameters": {}
+    }
+  ]
+}

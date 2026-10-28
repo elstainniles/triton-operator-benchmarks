@@ -1,0 +1,291 @@
+{
+  "operator_id": "LK09",
+  "kernel": "_fused_neighborhood_attention_grad_qk_kernel",
+  "source_kind": "generic",
+  "type": "cv",
+  "origin": "repository_entry_validation",
+  "status": "measured",
+  "case": {
+    "id": "second-batch",
+    "suite": "baseline",
+    "shape": [
+      2,
+      4,
+      32,
+      32
+    ],
+    "dtype": "float32",
+    "nodeid": "test_case.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+    "original_nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+    "input_origin": "upstream_correctness_case",
+    "tensors": {
+      "grad_attn_ptr": {
+        "shape": [
+          2,
+          4,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          4096,
+          1024,
+          32,
+          1
+        ]
+      },
+      "K_ptr": {
+        "shape": [
+          2,
+          4,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          4096,
+          1024,
+          32,
+          1
+        ]
+      },
+      "grad_Q_ptr": {
+        "shape": [
+          2,
+          4,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          4096,
+          1024,
+          32,
+          1
+        ]
+      }
+    },
+    "historical_bound_arguments": {
+      "grad_attn_ptr": {
+        "shape": [
+          2,
+          4,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          4096,
+          1024,
+          32,
+          1
+        ]
+      },
+      "K_ptr": {
+        "shape": [
+          2,
+          4,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          4096,
+          1024,
+          32,
+          1
+        ]
+      },
+      "grad_Q_ptr": {
+        "shape": [
+          2,
+          4,
+          32,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          4096,
+          1024,
+          32,
+          1
+        ]
+      },
+      "grad_attn_batch_stride": "4096",
+      "grad_attn_head_stride": "1024",
+      "grad_attn_seq_stride": "32",
+      "grad_attn_seq2_stride": "1",
+      "k_batch_stride": "4096",
+      "k_head_stride": "1024",
+      "k_seq_stride": "32",
+      "k_dim_stride": "1",
+      "grad_q_batch_stride": "4096",
+      "grad_q_head_stride": "1024",
+      "grad_q_seq_stride": "32",
+      "grad_q_dim_stride": "1",
+      "batch_size": "2",
+      "num_heads": "4",
+      "seq_len": "32",
+      "head_dim": "32",
+      "scale": "0.17677669529663687",
+      "BLOCK_SIZE_M": "32",
+      "BLOCK_SIZE_N": "32",
+      "BLOCK_SIZE_K": "32",
+      "num_stages": "2",
+      "num_warps": "4"
+    },
+    "dimensions": {
+      "batch_size": 2,
+      "seq_len": 32,
+      "hidden_size": 128
+    },
+    "parameters": {
+      "dtype": "torch.float32",
+      "atol": "0.005",
+      "rtol": "0.005",
+      "bias": "False",
+      "batch_size": "2",
+      "seq_len": "32",
+      "hidden_size": "128",
+      "num_heads": "4",
+      "kernel_size": "7"
+    }
+  },
+  "source_hashes": {
+    "kernels.py": "7e712e357b9c3774020be4fd1c185ed522217b0c853bfa2cf453cd6a15255f3c",
+    "test_case.py": "6f3632bf699af8efe3d786dba14146f1b75fdef5771b526e03a26cd08423822c"
+  },
+  "harness_sha256": {
+    "__init__.py": "68e1a70eb4825bb9bbfa6c366420338bbdd6416279de89d7993256aaa60f0ebf",
+    "liger_profile.py": "71f8885f2a1fb74fbb3bbd43f464a6cbdbbd31f0703d890e272ad7040535a6ac",
+    "graph_case.py": "91c4a39c53faf2eba2dc22d69eb59e63b5ab33d87c46415969e3592e443c24fb",
+    "liger_runner.py": "a8154dc4fac624cec436ca49a12b1986a66a622215ce0d7491556be24b778e6b",
+    "cli.py": "cf012d361d0e7f9b2f80670090a73b3cd543424b1e1e683217541a695af781d7",
+    "environment.py": "d6c8981024bd1faba5d5e374186a88491832ff07164b7e79241189713a32c32e",
+    "device.py": "925be5239498f8dc75ec2ecd3650b4502f1dd66fa56bba26c4d5a9a621f158f8",
+    "graph_tests.py": "2b5dc81e69792a2f545a1660c8a21d79a03167fb9a65a5218360368ed8343062",
+    "graph_runner.py": "e6625eafb80229057b9e93b206cb7962bba4a3bb466403d992fa7242acb7e206",
+    "batch.py": "acbce294a176735f9931fceafc145e1735ae54742449af620df6e40637146cdc",
+    "profile.py": "da59af10fd73e056506a602e177c66638a59fed6d8baba7ce152edc6df48cb33",
+    "liger.py": "509d960b7b616f6c126cf849b5a0dcc487384d76433629bb79fe83c997848175",
+    "runner.py": "a71e1bdab749604c8cd6d1aa9b82ecc6f73260c2093cbef8ad1638610e339d33",
+    "catalog.py": "f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e",
+    "tensors.py": "c93bb693c5cc0167aaf3d1d28ead183ac53679efd6655d293e61245a13547568"
+  },
+  "cases_sha256": "2bc77b4c0b7e336a5de36c05ed0a5b7eb3f4bbfdec1b7967ce5fae93f409032b",
+  "target_launch_attempts": 1,
+  "correctness": {
+    "passed": true,
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "median_us": 4.214,
+  "device_name": "Ascend950PR_9579",
+  "source_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "libtriton_sha256": "4c68de3dd8d3a97d669b396555fc8207d4657fa6f03b5be8928c01d346544e6d",
+  "compiler_sha256": "00005852671e68e08d9898654581590e106bb39c5fc9f1f5c114bc7339d7aeea",
+  "all_observed_occupancy_checks_passed": true,
+  "source_result_sha256": "269059252e63f49ad2abdd9bab7066c004957b383b6aa47e34658106ae9eb20a",
+  "args": [
+    {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    {
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        4096,
+        1024,
+        32,
+        1
+      ]
+    },
+    "4096",
+    "1024",
+    "32",
+    "1",
+    "4096",
+    "1024",
+    "32",
+    "1",
+    "4096",
+    "1024",
+    "32",
+    "1",
+    "2",
+    "4",
+    "32",
+    "32",
+    "0.17677669529663687",
+    "32",
+    "32",
+    "32",
+    "2",
+    "4"
+  ],
+  "kwargs": {},
+  "grid": [
+    8,
+    1,
+    1
+  ],
+  "constexpr": {},
+  "samples_us": [
+    4.267,
+    4.189,
+    4.151,
+    4.255,
+    4.155,
+    4.208,
+    4.304,
+    4.216,
+    4.332,
+    4.21,
+    4.236,
+    4.265,
+    4.214,
+    4.133,
+    4.053
+  ],
+  "trace_sha256": "3faeb6ae83b984fcf52ce491069bb7fb0bb0dc3f1503afcb683243c2d165409e",
+  "kernel_csv_sha256": "bf20ffefa78340790e1e8715a067429cb54e1a2dbfaea8eab7c754f92ef42127",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "aggregation": "median of 15 device samples"
+}

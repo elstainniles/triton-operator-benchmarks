@@ -1,0 +1,119 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK25",
+  "kernel": "_mask_bwd_kernel",
+  "source_kind": "generic",
+  "source_sha256": "3b3fd15c3a7e3924bf47f1ee1a66844c774027b4e875affbd0e7c4ed35cc5256",
+  "original_nodeid": "test/transformers/test_multi_token_attention.py::test_multi_token_attention_correctness[dtype0-0.0001-0.0001-False-3-6-6-6-3-1]",
+  "type": "vv",
+  "tensors": {
+    "grad_in_ptr": {
+      "shape": [
+        18,
+        6,
+        6
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        36,
+        6,
+        1
+      ]
+    },
+    "out_ptr": {
+      "shape": [
+        18,
+        6,
+        6
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        36,
+        6,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "grad_in_ptr": {
+      "shape": [
+        18,
+        6,
+        6
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        36,
+        6,
+        1
+      ]
+    },
+    "out_ptr": {
+      "shape": [
+        18,
+        6,
+        6
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        36,
+        6,
+        1
+      ]
+    },
+    "stride_b": "36",
+    "stride_m": "6",
+    "stride_n": "1",
+    "L": "6",
+    "BLOCK": "8",
+    "num_warps": "4"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 1.131,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "multi_token_attention-generic-00.json",
+  "source_result_sha256": "a3efa2fbb6b4e266ddccd2538af9131d006897fd552a453133c1a0ec8a21afd1",
+  "samples_us": [
+    1.097,
+    1.173,
+    1.163,
+    1.16,
+    1.124,
+    1.112,
+    1.089,
+    1.11,
+    1.145,
+    1.125,
+    1.165,
+    1.131,
+    1.138,
+    1.13,
+    1.159
+  ],
+  "grid": [
+    1,
+    1,
+    18
+  ],
+  "constexpr": {
+    "BLOCK": 8,
+    "num_warps": 4
+  },
+  "trace_sha256": "4cbb411df19f5bb60f24b89329c1df9237fef201215601de06b62257532659fc",
+  "kernel_csv_sha256": "d5a8c0e856ab0713bf2f0b21d8a9fda7842abda43bb6a94bf4f642abd997ee96",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "3e912dabc47fdf44446d4cd5dc52563c91bed6641b3249b5a0c9e24d65b65c27",
+      "ir_sha256": "908a6b6c0cdbc98095b55c61b7a189818b8b89eb3c6064db1bf9b0a7dd0f7af9",
+      "binary_sha256": "a029746b114b656059dab2b6f521e0f8827fb3f11f679623b21432818bb7a6a8",
+      "compiler_hash": "b2b22adea796e6c343cdb9e3281be9d016832e5352aabb6675cdde3ce384dc3b"
+    }
+  ]
+}

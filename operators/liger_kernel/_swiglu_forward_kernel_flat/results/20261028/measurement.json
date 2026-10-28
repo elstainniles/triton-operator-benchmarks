@@ -1,0 +1,140 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK39",
+  "kernel": "_swiglu_forward_kernel_flat",
+  "source_kind": "ascend",
+  "source_sha256": "b92c94ef31b19700fce2ca9b4962c85c2815cf3a881606d6e8ff5dfd6cdb0f44",
+  "original_nodeid": "test/transformers/test_swiglu.py::test_correctness_functional[dtype0-1.0-1e-05-9-7-41]",
+  "type": "vv",
+  "tensors": {
+    "a_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "b_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "c_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "a_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "b_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "c_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "total_elements": "2583",
+    "BLOCK_SIZE": "4096"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 1.092,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "swiglu-ascend-00.json",
+  "source_result_sha256": "2add441b50e37c0cdaf1c1e0b65193af45818d07ec9d7c993b1e663bf86b7325",
+  "samples_us": [
+    1.213,
+    1.222,
+    1.206,
+    1.214,
+    1.215,
+    1.206,
+    1.082,
+    1.083,
+    1.092,
+    1.08,
+    1.085,
+    1.085,
+    1.081,
+    1.083,
+    1.197
+  ],
+  "grid": [
+    1
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 4096
+  },
+  "trace_sha256": "ed4fbb30e5cb42cfc887207cef7c7a5f517dd5994c449c41f8e08abad1908c16",
+  "kernel_csv_sha256": "945b4815023e027140c44538ba51b56f9df16662bf68a9bef4a376ba83171334",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "f7dd091c3d5092652e7f6b6ac30c659055768fb7f7d200b2fb79f59f85b5584b",
+      "ir_sha256": "20304f4b2b2fb98b42d8afc8dd829e521e2ee4429758e8262618344b3b24f14d",
+      "binary_sha256": "defd1a6f489d64e874c3efd006b3691c8d39854b9747b2ac9dcada0519825882",
+      "compiler_hash": "b75fb0e3910a11e24a37fdee3286c66fab5be4d93d3781060d74b32942f5c5cc"
+    }
+  ]
+}

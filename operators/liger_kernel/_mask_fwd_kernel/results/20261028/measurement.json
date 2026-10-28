@@ -1,0 +1,127 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK26",
+  "kernel": "_mask_fwd_kernel",
+  "source_kind": "generic",
+  "source_sha256": "3b3fd15c3a7e3924bf47f1ee1a66844c774027b4e875affbd0e7c4ed35cc5256",
+  "original_nodeid": "test/transformers/test_multi_token_attention.py::test_multi_token_attention_correctness[dtype0-0.0001-0.0001-False-3-6-6-6-3-1]",
+  "type": "vv",
+  "tensors": {
+    "scores_ptr": {
+      "shape": [
+        18,
+        6,
+        6
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        36,
+        6,
+        1
+      ]
+    },
+    "out_ptr": {
+      "shape": [
+        18,
+        6,
+        6
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        36,
+        6,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "scores_ptr": {
+      "shape": [
+        18,
+        6,
+        6
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        36,
+        6,
+        1
+      ]
+    },
+    "out_ptr": {
+      "shape": [
+        18,
+        6,
+        6
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        36,
+        6,
+        1
+      ]
+    },
+    "stride_b": "36",
+    "stride_m": "6",
+    "stride_n": "1",
+    "L": "6",
+    "mask_val": "0.0",
+    "BLOCK": "8",
+    "num_warps": "4"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 1.799,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "multi_token_attention-generic-00.json",
+  "source_result_sha256": "a3efa2fbb6b4e266ddccd2538af9131d006897fd552a453133c1a0ec8a21afd1",
+  "samples_us": [
+    1.852,
+    1.865,
+    1.886,
+    1.865,
+    1.799,
+    1.809,
+    1.867,
+    1.764,
+    1.791,
+    1.819,
+    1.798,
+    1.783,
+    1.794,
+    1.781,
+    1.793
+  ],
+  "grid": [
+    1,
+    1,
+    18
+  ],
+  "constexpr": {
+    "mask_val": 0.0,
+    "BLOCK": 8,
+    "num_warps": 4
+  },
+  "trace_sha256": "05d30f5fc22a39a5b31af154bde0a3c4467ff81da1aae50bca4ad0d7875a4491",
+  "kernel_csv_sha256": "39110fd92bdc8c2dcb8bfecdf88c80992aced2a14078fc0b078a7dea6ccc39a6",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "2c34739a8d904058e75039e908a73579a01c4405162abada5fb00402e011d288",
+      "ir_sha256": "7e5b3c2ece7e96b58e775212220c98a0636196920215cc0fe499d4a7da47fc8a",
+      "binary_sha256": "1df338a49ddd55f3ce65f191969a66fcc4357965c641758845621058bbd49588",
+      "compiler_hash": "62bf9da89210b33d04af9bd1250570729d45684fc370f7d7fe91b05d811fc485"
+    },
+    {
+      "metadata_sha256": "72bceb5f87563dad1b57b352e9bad21aa4c0f538e3b2bc4d96db96f298530aa0",
+      "ir_sha256": "344ab0c86c8053d43c9174bc53dfd3ceda902c517c06e3509f683df120ecdf81",
+      "binary_sha256": "7aa8c45198cf23167276b927c3fe818c8edd80fa3585a2dcd40c4aa763454937",
+      "compiler_hash": "a182c4f1d531edcc07a3056ccf9bc06fa8a49aa57e5758294be50f111cbcf7cc"
+    }
+  ]
+}

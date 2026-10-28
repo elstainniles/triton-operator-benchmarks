@@ -1,0 +1,908 @@
+{
+  "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "archive_sha256": "29ab242a600e724389e9360121bb475a67a1d2766ad408aa4d4e5b0605599cc8",
+  "selection": "generic > ascend > experimental, exact function name",
+  "counts": {
+    "generic": 38,
+    "ascend": 7,
+    "experimental": 1
+  },
+  "targets": [
+    {
+      "name": "_block_rms_norm_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/rms_norm.py",
+        "line": 338,
+        "kind": "generic",
+        "sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/rms_norm.py",
+          "line": 338,
+          "kind": "generic",
+          "sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9"
+        }
+      ]
+    },
+    {
+      "name": "_block_rms_norm_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/rms_norm.py",
+        "line": 249,
+        "kind": "generic",
+        "sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/rms_norm.py",
+          "line": 249,
+          "kind": "generic",
+          "sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9"
+        }
+      ]
+    },
+    {
+      "name": "_dyt_bwd_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/dyt.py",
+        "line": 70,
+        "kind": "generic",
+        "sha256": "a09245c0f6e5a8ab17d76b7b5ff8d3b0d55d008beec9ce8154df1f16b3e0d2ad"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/dyt.py",
+          "line": 70,
+          "kind": "generic",
+          "sha256": "a09245c0f6e5a8ab17d76b7b5ff8d3b0d55d008beec9ce8154df1f16b3e0d2ad"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/dyt.py",
+          "line": 69,
+          "kind": "ascend",
+          "sha256": "edf3c62964f795f32477254ccdb194a6da202706e8a7d659c9e1dc201d9b6d53"
+        }
+      ]
+    },
+    {
+      "name": "_dyt_fwd_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/dyt.py",
+        "line": 34,
+        "kind": "generic",
+        "sha256": "a09245c0f6e5a8ab17d76b7b5ff8d3b0d55d008beec9ce8154df1f16b3e0d2ad"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/dyt.py",
+          "line": 34,
+          "kind": "generic",
+          "sha256": "a09245c0f6e5a8ab17d76b7b5ff8d3b0d55d008beec9ce8154df1f16b3e0d2ad"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/dyt.py",
+          "line": 17,
+          "kind": "ascend",
+          "sha256": "edf3c62964f795f32477254ccdb194a6da202706e8a7d659c9e1dc201d9b6d53"
+        }
+      ]
+    },
+    {
+      "name": "_fused_add_rms_norm_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_add_rms_norm.py",
+        "line": 124,
+        "kind": "generic",
+        "sha256": "7faa12a91145a9c951ab5d23e04b827c59c49e09e795b0923e141e21733e0d56"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_add_rms_norm.py",
+          "line": 124,
+          "kind": "generic",
+          "sha256": "7faa12a91145a9c951ab5d23e04b827c59c49e09e795b0923e141e21733e0d56"
+        }
+      ]
+    },
+    {
+      "name": "_fused_add_rms_norm_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_add_rms_norm.py",
+        "line": 33,
+        "kind": "generic",
+        "sha256": "7faa12a91145a9c951ab5d23e04b827c59c49e09e795b0923e141e21733e0d56"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_add_rms_norm.py",
+          "line": 33,
+          "kind": "generic",
+          "sha256": "7faa12a91145a9c951ab5d23e04b827c59c49e09e795b0923e141e21733e0d56"
+        }
+      ]
+    },
+    {
+      "name": "_fused_neighborhood_attention_qk_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+        "line": 71,
+        "kind": "generic",
+        "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+          "line": 71,
+          "kind": "generic",
+          "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+        }
+      ]
+    },
+    {
+      "name": "_fused_neighborhood_attention_av_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+        "line": 197,
+        "kind": "generic",
+        "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+          "line": 197,
+          "kind": "generic",
+          "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/fused_neighborhood_attention.py",
+          "line": 126,
+          "kind": "ascend",
+          "sha256": "3567dde6b80c27fe27f2978a4cebee715f1741328400f929c8d937efc6628899"
+        }
+      ]
+    },
+    {
+      "name": "_fused_neighborhood_attention_grad_qk_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+        "line": 303,
+        "kind": "generic",
+        "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+          "line": 303,
+          "kind": "generic",
+          "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+        }
+      ]
+    },
+    {
+      "name": "_fused_neighborhood_attention_grad_k_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+        "line": 413,
+        "kind": "generic",
+        "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+          "line": 413,
+          "kind": "generic",
+          "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+        }
+      ]
+    },
+    {
+      "name": "_fused_neighborhood_attention_grad_v_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+        "line": 523,
+        "kind": "generic",
+        "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+          "line": 523,
+          "kind": "generic",
+          "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/fused_neighborhood_attention.py",
+          "line": 225,
+          "kind": "ascend",
+          "sha256": "3567dde6b80c27fe27f2978a4cebee715f1741328400f929c8d937efc6628899"
+        }
+      ]
+    },
+    {
+      "name": "_fused_neighborhood_attention_grad_attn_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+        "line": 629,
+        "kind": "generic",
+        "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+          "line": 629,
+          "kind": "generic",
+          "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+        }
+      ]
+    },
+    {
+      "name": "_neighborhood_mask_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+        "line": 14,
+        "kind": "generic",
+        "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/fused_neighborhood_attention.py",
+          "line": 14,
+          "kind": "generic",
+          "sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab"
+        }
+      ]
+    },
+    {
+      "name": "_geglu_backward_kernel_flat",
+      "selected": {
+        "path": "src/liger_kernel/ops/backends/_ascend/ops/geglu.py",
+        "line": 48,
+        "kind": "ascend",
+        "sha256": "bdbe3a0fec4269670c9342779ec0c851f3445f7d36067eee140a19dd8083d158"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/geglu.py",
+          "line": 48,
+          "kind": "ascend",
+          "sha256": "bdbe3a0fec4269670c9342779ec0c851f3445f7d36067eee140a19dd8083d158"
+        }
+      ]
+    },
+    {
+      "name": "_geglu_forward_kernel_flat",
+      "selected": {
+        "path": "src/liger_kernel/ops/backends/_ascend/ops/geglu.py",
+        "line": 13,
+        "kind": "ascend",
+        "sha256": "bdbe3a0fec4269670c9342779ec0c851f3445f7d36067eee140a19dd8083d158"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/geglu.py",
+          "line": 13,
+          "kind": "ascend",
+          "sha256": "bdbe3a0fec4269670c9342779ec0c851f3445f7d36067eee140a19dd8083d158"
+        }
+      ]
+    },
+    {
+      "name": "_group_norm_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/group_norm.py",
+        "line": 102,
+        "kind": "generic",
+        "sha256": "3a0b878b7083a894b8df8635442f5a3e7ba247b3480393c044c1512acc2cd948"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/group_norm.py",
+          "line": 102,
+          "kind": "generic",
+          "sha256": "3a0b878b7083a894b8df8635442f5a3e7ba247b3480393c044c1512acc2cd948"
+        }
+      ]
+    },
+    {
+      "name": "_group_norm_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/group_norm.py",
+        "line": 29,
+        "kind": "generic",
+        "sha256": "3a0b878b7083a894b8df8635442f5a3e7ba247b3480393c044c1512acc2cd948"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/group_norm.py",
+          "line": 29,
+          "kind": "generic",
+          "sha256": "3a0b878b7083a894b8df8635442f5a3e7ba247b3480393c044c1512acc2cd948"
+        }
+      ]
+    },
+    {
+      "name": "_grpo_loss_bwd_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/grpo_loss.py",
+        "line": 411,
+        "kind": "generic",
+        "sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/grpo_loss.py",
+          "line": 411,
+          "kind": "generic",
+          "sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/grpo_loss.py",
+          "line": 519,
+          "kind": "ascend",
+          "sha256": "4ef51d19f3030f8d4b7cf1eee0083432da0e89ca0ac04ba09fa6fd6a13e94d9a"
+        }
+      ]
+    },
+    {
+      "name": "_grpo_loss_fwd_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/grpo_loss.py",
+        "line": 109,
+        "kind": "generic",
+        "sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/grpo_loss.py",
+          "line": 109,
+          "kind": "generic",
+          "sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/grpo_loss.py",
+          "line": 176,
+          "kind": "ascend",
+          "sha256": "4ef51d19f3030f8d4b7cf1eee0083432da0e89ca0ac04ba09fa6fd6a13e94d9a"
+        }
+      ]
+    },
+    {
+      "name": "_jsd_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/jsd.py",
+        "line": 17,
+        "kind": "generic",
+        "sha256": "6e74fa29e7c616ad267b3a8913c1ea582aaeda06d06e6cfa27e44be54fb70f6f"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/jsd.py",
+          "line": 17,
+          "kind": "generic",
+          "sha256": "6e74fa29e7c616ad267b3a8913c1ea582aaeda06d06e6cfa27e44be54fb70f6f"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/jsd.py",
+          "line": 13,
+          "kind": "ascend",
+          "sha256": "fad2534ae63e69e9f82c49ec2fc9dbccbfdd8d4df844b917ab1eca3f2d8834bb"
+        }
+      ]
+    },
+    {
+      "name": "_kldiv_kernel_backward",
+      "selected": {
+        "path": "src/liger_kernel/ops/kl_div.py",
+        "line": 99,
+        "kind": "generic",
+        "sha256": "bf12f99d65b48f47dc242fbb482421db92d982b8298dc9dca09e6d5f586c48e5"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/kl_div.py",
+          "line": 99,
+          "kind": "generic",
+          "sha256": "bf12f99d65b48f47dc242fbb482421db92d982b8298dc9dca09e6d5f586c48e5"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/kl_div.py",
+          "line": 84,
+          "kind": "ascend",
+          "sha256": "082d537e38ea7de7a0e71c59f213034c2ae86223d674a8f922e5d750cdb8b4fc"
+        }
+      ]
+    },
+    {
+      "name": "_kldiv_kernel_forward",
+      "selected": {
+        "path": "src/liger_kernel/ops/kl_div.py",
+        "line": 47,
+        "kind": "generic",
+        "sha256": "bf12f99d65b48f47dc242fbb482421db92d982b8298dc9dca09e6d5f586c48e5"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/kl_div.py",
+          "line": 47,
+          "kind": "generic",
+          "sha256": "bf12f99d65b48f47dc242fbb482421db92d982b8298dc9dca09e6d5f586c48e5"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/kl_div.py",
+          "line": 31,
+          "kind": "ascend",
+          "sha256": "082d537e38ea7de7a0e71c59f213034c2ae86223d674a8f922e5d750cdb8b4fc"
+        }
+      ]
+    },
+    {
+      "name": "_layer_norm_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/layer_norm.py",
+        "line": 90,
+        "kind": "generic",
+        "sha256": "301dc0f0cda6afc987a19cf0af1fd1d129b0d5074ab646b1000a681b987afa2c"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/layer_norm.py",
+          "line": 90,
+          "kind": "generic",
+          "sha256": "301dc0f0cda6afc987a19cf0af1fd1d129b0d5074ab646b1000a681b987afa2c"
+        }
+      ]
+    },
+    {
+      "name": "_llama4_rope_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/llama4_rope.py",
+        "line": 20,
+        "kind": "generic",
+        "sha256": "263576853c98d5f164faba2bb22a45f69721ee2102a9338f677a548fab1ced5b"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/llama4_rope.py",
+          "line": 20,
+          "kind": "generic",
+          "sha256": "263576853c98d5f164faba2bb22a45f69721ee2102a9338f677a548fab1ced5b"
+        }
+      ]
+    },
+    {
+      "name": "_mask_bwd_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/multi_token_attention.py",
+        "line": 44,
+        "kind": "generic",
+        "sha256": "3b3fd15c3a7e3924bf47f1ee1a66844c774027b4e875affbd0e7c4ed35cc5256"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/multi_token_attention.py",
+          "line": 44,
+          "kind": "generic",
+          "sha256": "3b3fd15c3a7e3924bf47f1ee1a66844c774027b4e875affbd0e7c4ed35cc5256"
+        }
+      ]
+    },
+    {
+      "name": "_mask_fwd_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/multi_token_attention.py",
+        "line": 16,
+        "kind": "generic",
+        "sha256": "3b3fd15c3a7e3924bf47f1ee1a66844c774027b4e875affbd0e7c4ed35cc5256"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/multi_token_attention.py",
+          "line": 16,
+          "kind": "generic",
+          "sha256": "3b3fd15c3a7e3924bf47f1ee1a66844c774027b4e875affbd0e7c4ed35cc5256"
+        }
+      ]
+    },
+    {
+      "name": "_poly_norm_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/poly_norm.py",
+        "line": 102,
+        "kind": "generic",
+        "sha256": "69fea6dfb29b06ed95a04bd1da6b6571c45215a22c8e91e426bbb7c3c510f71a"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/poly_norm.py",
+          "line": 102,
+          "kind": "generic",
+          "sha256": "69fea6dfb29b06ed95a04bd1da6b6571c45215a22c8e91e426bbb7c3c510f71a"
+        }
+      ]
+    },
+    {
+      "name": "_poly_norm_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/poly_norm.py",
+        "line": 24,
+        "kind": "generic",
+        "sha256": "69fea6dfb29b06ed95a04bd1da6b6571c45215a22c8e91e426bbb7c3c510f71a"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/poly_norm.py",
+          "line": 24,
+          "kind": "generic",
+          "sha256": "69fea6dfb29b06ed95a04bd1da6b6571c45215a22c8e91e426bbb7c3c510f71a"
+        }
+      ]
+    },
+    {
+      "name": "_rms_norm_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/rms_norm.py",
+        "line": 154,
+        "kind": "generic",
+        "sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/rms_norm.py",
+          "line": 154,
+          "kind": "generic",
+          "sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9"
+        }
+      ]
+    },
+    {
+      "name": "_rms_norm_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/rms_norm.py",
+        "line": 68,
+        "kind": "generic",
+        "sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/rms_norm.py",
+          "line": 68,
+          "kind": "generic",
+          "sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9"
+        }
+      ]
+    },
+    {
+      "name": "_selective_log_softmax_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/grpo_loss.py",
+        "line": 25,
+        "kind": "generic",
+        "sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/grpo_loss.py",
+          "line": 25,
+          "kind": "generic",
+          "sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/grpo_loss.py",
+          "line": 118,
+          "kind": "ascend",
+          "sha256": "4ef51d19f3030f8d4b7cf1eee0083432da0e89ca0ac04ba09fa6fd6a13e94d9a"
+        }
+      ]
+    },
+    {
+      "name": "_softmax_multi_block_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/softmax.py",
+        "line": 86,
+        "kind": "generic",
+        "sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/softmax.py",
+          "line": 86,
+          "kind": "generic",
+          "sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/softmax.py",
+          "line": 178,
+          "kind": "ascend",
+          "sha256": "d855d7b063168be3e02b9ea7893bdbcf3663afd3af95b047197b6d333b457072"
+        }
+      ]
+    },
+    {
+      "name": "_softmax_multi_block_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/softmax.py",
+        "line": 33,
+        "kind": "generic",
+        "sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/softmax.py",
+          "line": 33,
+          "kind": "generic",
+          "sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/softmax.py",
+          "line": 66,
+          "kind": "ascend",
+          "sha256": "d855d7b063168be3e02b9ea7893bdbcf3663afd3af95b047197b6d333b457072"
+        }
+      ]
+    },
+    {
+      "name": "_softmax_single_block_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/softmax.py",
+        "line": 64,
+        "kind": "generic",
+        "sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/softmax.py",
+          "line": 64,
+          "kind": "generic",
+          "sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/softmax.py",
+          "line": 117,
+          "kind": "ascend",
+          "sha256": "d855d7b063168be3e02b9ea7893bdbcf3663afd3af95b047197b6d333b457072"
+        }
+      ]
+    },
+    {
+      "name": "_softmax_single_block_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/softmax.py",
+        "line": 12,
+        "kind": "generic",
+        "sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/softmax.py",
+          "line": 12,
+          "kind": "generic",
+          "sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/softmax.py",
+          "line": 10,
+          "kind": "ascend",
+          "sha256": "d855d7b063168be3e02b9ea7893bdbcf3663afd3af95b047197b6d333b457072"
+        }
+      ]
+    },
+    {
+      "name": "_sparsemax_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/sparsemax.py",
+        "line": 78,
+        "kind": "generic",
+        "sha256": "7c552b0b6bd702a69248302dfa53c96c7c570a1806c877ce25d54f29a4aaef15"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/sparsemax.py",
+          "line": 78,
+          "kind": "generic",
+          "sha256": "7c552b0b6bd702a69248302dfa53c96c7c570a1806c877ce25d54f29a4aaef15"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/sparsemax.py",
+          "line": 155,
+          "kind": "ascend",
+          "sha256": "cea6fe2bef745092f395df177c94af8a80757c812f884b77bec5093b3bf7b918"
+        }
+      ]
+    },
+    {
+      "name": "_sparsemax_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/sparsemax.py",
+        "line": 12,
+        "kind": "generic",
+        "sha256": "7c552b0b6bd702a69248302dfa53c96c7c570a1806c877ce25d54f29a4aaef15"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/sparsemax.py",
+          "line": 12,
+          "kind": "generic",
+          "sha256": "7c552b0b6bd702a69248302dfa53c96c7c570a1806c877ce25d54f29a4aaef15"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/sparsemax.py",
+          "line": 11,
+          "kind": "ascend",
+          "sha256": "cea6fe2bef745092f395df177c94af8a80757c812f884b77bec5093b3bf7b918"
+        }
+      ]
+    },
+    {
+      "name": "_swiglu_backward_kernel_flat",
+      "selected": {
+        "path": "src/liger_kernel/ops/backends/_ascend/ops/swiglu.py",
+        "line": 44,
+        "kind": "ascend",
+        "sha256": "b92c94ef31b19700fce2ca9b4962c85c2815cf3a881606d6e8ff5dfd6cdb0f44"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/swiglu.py",
+          "line": 44,
+          "kind": "ascend",
+          "sha256": "b92c94ef31b19700fce2ca9b4962c85c2815cf3a881606d6e8ff5dfd6cdb0f44"
+        }
+      ]
+    },
+    {
+      "name": "_swiglu_forward_kernel_flat",
+      "selected": {
+        "path": "src/liger_kernel/ops/backends/_ascend/ops/swiglu.py",
+        "line": 22,
+        "kind": "ascend",
+        "sha256": "b92c94ef31b19700fce2ca9b4962c85c2815cf3a881606d6e8ff5dfd6cdb0f44"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/swiglu.py",
+          "line": 22,
+          "kind": "ascend",
+          "sha256": "b92c94ef31b19700fce2ca9b4962c85c2815cf3a881606d6e8ff5dfd6cdb0f44"
+        }
+      ]
+    },
+    {
+      "name": "_triton_qwen2vl_mrope_npu",
+      "selected": {
+        "path": "src/liger_kernel/ops/backends/_ascend/ops/qwen2vl_mrope.py",
+        "line": 10,
+        "kind": "ascend",
+        "sha256": "04ba58cf7fe443cd10fe9eec54dbadbed3949b49d874f895bf0e4de8ca73f7f8"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/qwen2vl_mrope.py",
+          "line": 10,
+          "kind": "ascend",
+          "sha256": "04ba58cf7fe443cd10fe9eec54dbadbed3949b49d874f895bf0e4de8ca73f7f8"
+        }
+      ]
+    },
+    {
+      "name": "_tv_distance_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/tvd.py",
+        "line": 40,
+        "kind": "generic",
+        "sha256": "7ce8cbdaf888cb60526af906a5b3d16fe943bf7a2202e40e7728d91841be02eb"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/tvd.py",
+          "line": 40,
+          "kind": "generic",
+          "sha256": "7ce8cbdaf888cb60526af906a5b3d16fe943bf7a2202e40e7728d91841be02eb"
+        },
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/tvd.py",
+          "line": 18,
+          "kind": "ascend",
+          "sha256": "f682468c0c0f14a3daa900776415d9ae699e98dff15da0d0822bc28a23f21117"
+        }
+      ]
+    },
+    {
+      "name": "element_mul_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/utils.py",
+        "line": 109,
+        "kind": "generic",
+        "sha256": "b32e7097ca832549b7ae1fd6ea0139e1291dd6c1b0f0a124c90b3878349ae89d"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/utils.py",
+          "line": 109,
+          "kind": "generic",
+          "sha256": "b32e7097ca832549b7ae1fd6ea0139e1291dd6c1b0f0a124c90b3878349ae89d"
+        }
+      ]
+    },
+    {
+      "name": "embedding_backward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/backends/_ascend/ops/embedding.py",
+        "line": 122,
+        "kind": "ascend",
+        "sha256": "469312e868681382cdfddb72cc3544093c871d06f2ba173534387495018b6033"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/embedding.py",
+          "line": 122,
+          "kind": "ascend",
+          "sha256": "469312e868681382cdfddb72cc3544093c871d06f2ba173534387495018b6033"
+        },
+        {
+          "path": "src/liger_kernel/ops/experimental/embedding.py",
+          "line": 41,
+          "kind": "experimental",
+          "sha256": "b68963ded22d933a526f7d335aa0cddbfc97e1e72d7e5690f073322b214841cf"
+        }
+      ]
+    },
+    {
+      "name": "embedding_forward_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/backends/_ascend/ops/embedding.py",
+        "line": 34,
+        "kind": "ascend",
+        "sha256": "469312e868681382cdfddb72cc3544093c871d06f2ba173534387495018b6033"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/backends/_ascend/ops/embedding.py",
+          "line": 34,
+          "kind": "ascend",
+          "sha256": "469312e868681382cdfddb72cc3544093c871d06f2ba173534387495018b6033"
+        },
+        {
+          "path": "src/liger_kernel/ops/experimental/embedding.py",
+          "line": 9,
+          "kind": "experimental",
+          "sha256": "b68963ded22d933a526f7d335aa0cddbfc97e1e72d7e5690f073322b214841cf"
+        }
+      ]
+    },
+    {
+      "name": "liger_cross_entropy_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/cross_entropy.py",
+        "line": 31,
+        "kind": "generic",
+        "sha256": "961f41ca7c06dab49be8182de1fed53165eb28ed87efaeed24afad1ecb0b78e8"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/cross_entropy.py",
+          "line": 31,
+          "kind": "generic",
+          "sha256": "961f41ca7c06dab49be8182de1fed53165eb28ed87efaeed24afad1ecb0b78e8"
+        }
+      ]
+    },
+    {
+      "name": "matmul_kernel",
+      "selected": {
+        "path": "src/liger_kernel/ops/experimental/mm_int8int2.py",
+        "line": 215,
+        "kind": "experimental",
+        "sha256": "4eb4bd969c1e92b8a4ff0e6a13b0213090f56dcabe3a2763b5bb16f34a19e883"
+      },
+      "definitions": [
+        {
+          "path": "src/liger_kernel/ops/experimental/mm_int8int2.py",
+          "line": 215,
+          "kind": "experimental",
+          "sha256": "4eb4bd969c1e92b8a4ff0e6a13b0213090f56dcabe3a2763b5bb16f34a19e883"
+        }
+      ]
+    }
+  ]
+}

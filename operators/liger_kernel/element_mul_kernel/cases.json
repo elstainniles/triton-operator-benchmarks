@@ -1,0 +1,63 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        8192,
+        4096
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_generic_element_mul",
+      "original_nodeid": "direct_cases.py::test_generic_element_mul",
+      "input_origin": "direct_correctness_case",
+      "tensors": {
+        "X_ptr": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "grad_output_ptr": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": []
+        }
+      },
+      "historical_bound_arguments": {
+        "X_ptr": {
+          "shape": [
+            8192,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "X_stride": "4096",
+        "grad_output_ptr": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": []
+        },
+        "n_cols": "4096",
+        "BLOCK_SIZE": "4096",
+        "num_warps": "4"
+      },
+      "dimensions": {},
+      "parameters": {}
+    }
+  ]
+}

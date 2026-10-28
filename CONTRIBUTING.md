@@ -18,6 +18,8 @@
 
 每个可执行条目必须能自生成输入并运行性能测试，不能默认依赖未公开的 `.pt` 或外部参考输出。TritonGraphOptimizationTests 采用 `standalone_generated_benchmark`：各算子提供 `benchmark.py`/`cases.json`，原始快照保留；公共 loader 只加载审计过的 JIT 函数，省略 autotune，函数体与签名不变。使用 `enable_graph_optimize=False`，旧图优化关闭脚本仅作归档/可选回放。输入适配、固定 tile、校验容差及实测范围必须记录；没有手改候选或数据时如实说明。源码缺少许可证时如实登记，不将根许可证自动套到第三方来源。
 
+Liger 批次采用 `runner: liger`：每个精确 kernel 保留独立 `kernels.py`/`test_case.py`/`cases.json` 和上游快照，公共 loader 核验固定 wheel 辅助代码后替换该 JIT 符号。保留原始 launcher/autotune，不能把其它 kernel 或 wrapper 时间记入目标耗时。上游数值用例的范围和阈值如实记录；没有 sentinel 检查时不能声称具备边界哨兵验证。新增来源不能被误分到现有 `flaggems`/`graph` 批次。
+
 先检查完整输出与哨兵，正确才计时。不得放宽容差、改原算子来迁就优化候选。只比较同一环境、输入、卡和计时口径下的结果。受干扰计时保留但拒绝采用；不重置设备、不终止其它任务。
 
 历史导入与新跑结果必须标明来源。不要提交账号凭据、内部网络地址、机器登录配置、运行环境目录或未授权的第三方私有代码。第三方代码必须记录可公开来源与许可。

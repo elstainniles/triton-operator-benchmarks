@@ -1,0 +1,45 @@
+{
+  "id": "LK14",
+  "name": "_geglu_backward_kernel_flat",
+  "family": "liger/geglu",
+  "direction": "bwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_geglu_backward_kernel_flat",
+  "implementation": "ascend",
+  "runner": "liger",
+  "validation": "SECOND_BATCH_CASE_VALIDATED",
+  "kernel_symbol": "_geglu_backward_kernel_flat",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/backends/_ascend/ops/geglu.py",
+    "sha256": "bdbe3a0fec4269670c9342779ec0c851f3445f7d36067eee140a19dd8083d158",
+    "symbol": "_geglu_backward_kernel_flat",
+    "snapshot": "upstream/geglu.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "a6639d66bbfe967986064a69819fc03e0a3d99170b62a7f7c4b512c60b3074a6",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "aa4dda2200b41b7958922996d2eeabcd0d1fd78bc529297fb75ab8b0d7653689",
+    "original_path": "test/transformers/test_geglu.py",
+    "original_nodeid": "test/transformers/test_geglu.py::test_correctness[dtype0-1.0-2e-06-2-2048-2048-4096]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "SECOND_BATCH_CASE_VALIDATED",
+    "cases": [
+      "second-batch"
+    ],
+    "full_matrix_validated": false,
+    "evidence": "results/20261028-export/measurement.json"
+  }
+}

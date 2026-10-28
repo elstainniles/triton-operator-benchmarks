@@ -1,0 +1,19 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK37",
+  "kernel": "_sparsemax_forward_kernel",
+  "source_kind": "generic",
+  "source_sha256": "7c552b0b6bd702a69248302dfa53c96c7c570a1806c877ce25d54f29a4aaef15",
+  "original_nodeid": "test/transformers/test_sparsemax.py::test_liger_sparsemax_correctness[dtype0-1e-05-1e-05--1-2-128-512]",
+  "type": "vv",
+  "tensors": {},
+  "bound_arguments": {},
+  "correctness_passed": false,
+  "status": "compile_failed",
+  "median_us": null,
+  "failure_reason": "BiSheng compilation failed: MaxThreads out of range.",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "sparsemax-generic-00.json",
+  "source_result_sha256": "7034b8323bb339e3d34d37e5ab27309577c5c55a00c76d82cf7d72ecc3531cde"
+}

@@ -1,0 +1,21 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        16,
+        16384
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_generic_softmax_multi_block_forward",
+      "original_nodeid": "direct_cases.py::test_generic_softmax_multi_block_forward",
+      "input_origin": "direct_correctness_case",
+      "tensors": {},
+      "historical_bound_arguments": {},
+      "dimensions": {},
+      "parameters": {}
+    }
+  ]
+}

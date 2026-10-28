@@ -1,6 +1,6 @@
 # 测试说明
 
-两批共用 `tools/run.py`，都能自行生成输入。第二批详见 [TritonGraphOptimizationTests 专项说明](GRAPH_OPTIMIZATION_TESTS.md)，**测之前必须关闭图优化，入口显式传入 `enable_graph_optimize=False`**。下文的具体形状与候选矩阵属于第一批 FlagGems。
+各批共用 `tools/run.py`，都能自行生成输入。图优化批次详见 [TritonGraphOptimizationTests 专项说明](GRAPH_OPTIMIZATION_TESTS.md)，**测之前必须关闭图优化，入口显式传入 `enable_graph_optimize=False`**。Liger 的固定依赖、原始 grid/tile 和独立计时约定见 [Liger 批跑说明](../operators/liger_kernel/README.md)。下文的具体形状与候选矩阵属于第一批 FlagGems。
 
 本仓库第一批仅测试 FlagGems 的 8 个 Triton 方向/实现条目，全部为 vv（无 matmul）。数据准备、CPU 参考计算和输出检查使用 PyTorch，但**不会计入性能数据**。这里不测 PyTorch 算子、上游完整 Python wrapper 或 autograd 的端到端耗时。
 

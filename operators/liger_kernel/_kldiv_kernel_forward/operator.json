@@ -1,0 +1,45 @@
+{
+  "id": "LK22",
+  "name": "_kldiv_kernel_forward",
+  "family": "liger/kl_div",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_kldiv_kernel_forward",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "SECOND_BATCH_CASE_VALIDATED",
+  "kernel_symbol": "_kldiv_kernel_forward",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/kl_div.py",
+    "sha256": "bf12f99d65b48f47dc242fbb482421db92d982b8298dc9dca09e6d5f586c48e5",
+    "symbol": "_kldiv_kernel_forward",
+    "snapshot": "upstream/kl_div.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "ac926ea7ce2b2ed9fdeba0d1be0ecc3da995f4be9fbe6b08cfb9f429a100f776",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "d88bf6fb0c3c0e78c931bc33514ebe446fc4e407368506b085c329c04a88b085",
+    "original_path": "test/transformers/test_kl_div.py",
+    "original_nodeid": "test/transformers/test_kl_div.py::test_correctness[dtype0-1e-08-0.05-batchmean-False-1-4096-32000]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "SECOND_BATCH_CASE_VALIDATED",
+    "cases": [
+      "second-batch"
+    ],
+    "full_matrix_validated": false,
+    "evidence": "results/20261028-export/measurement.json"
+  }
+}

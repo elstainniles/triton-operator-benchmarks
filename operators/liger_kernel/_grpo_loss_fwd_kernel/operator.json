@@ -1,0 +1,45 @@
+{
+  "id": "LK19",
+  "name": "_grpo_loss_fwd_kernel",
+  "family": "liger/grpo_loss",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_grpo_loss_fwd_kernel",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "SECOND_BATCH_CASE_VALIDATED",
+  "kernel_symbol": "_grpo_loss_fwd_kernel",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/grpo_loss.py",
+    "sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945",
+    "symbol": "_grpo_loss_fwd_kernel",
+    "snapshot": "upstream/grpo_loss.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "80086d3f342fc203de1fc74a58001930aeab9f1f9bd8a5bd6169555044bc82c3",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "3f7385a3fedb3adba57e67d59de17ece4cdb7faf1949fe901471ce9cb3a6725a",
+    "original_path": "test/transformers/test_grpo_loss.py",
+    "original_nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.04-0.2-0.4]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "SECOND_BATCH_CASE_VALIDATED",
+    "cases": [
+      "second-batch"
+    ],
+    "full_matrix_validated": false,
+    "evidence": "results/20261028-export/measurement.json"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK45",
+  "kernel": "liger_cross_entropy_kernel",
+  "source_kind": "generic",
+  "source_sha256": "961f41ca7c06dab49be8182de1fed53165eb28ed87efaeed24afad1ecb0b78e8",
+  "original_nodeid": "direct_cases.py::test_generic_cross_entropy",
+  "type": "vv",
+  "tensors": {
+    "X_ptr": {
+      "shape": [
+        8192,
+        32000
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        32000,
+        1
+      ]
+    },
+    "Y_ptr": {
+      "shape": [
+        8192
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "loss_ptr": {
+      "shape": [
+        8192
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "X_ptr": {
+      "shape": [
+        8192,
+        32000
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        32000,
+        1
+      ]
+    },
+    "X_stride": "32000",
+    "Y_ptr": {
+      "shape": [
+        8192
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "Y_stride": "1",
+    "weight_ptr": "None",
+    "loss_ptr": {
+      "shape": [
+        8192
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "z_loss_ptr": "None",
+    "loss_stride": "1",
+    "token_accuracy_ptr": "None",
+    "token_accuracy_stride": "0",
+    "predicted_tokens_ptr": "None",
+    "predicted_tokens_stride": "0",
+    "n_cols": "32000",
+    "n_non_ignore": "8192",
+    "sum_non_ignore_weight": "8192",
+    "ignore_index": "-100",
+    "weight_sum": "0.0",
+    "lse_square_scale": "0.0",
+    "label_smoothing": "0.0",
+    "reduction": "'mean'",
+    "softcap": "None",
+    "RETURN_Z_LOSS": "False",
+    "RETURN_TOKEN_ACCURACY": "False",
+    "RETURN_PREDICTED_TOKENS": "False",
+    "BLOCK_SIZE": "2048",
+    "HAS_WEIGHT": "False",
+    "HAS_SOFTCAPPING": "False",
+    "HAS_GRADIENTS": "True",
+    "num_warps": "32"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 3697.92,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "direct-generic-cross-entropy-generic-00.json",
+  "source_result_sha256": "12cd693af3407619d137c6f35f348cf07edbcec9e03cecd96a8dbaf040a09635",
+  "samples_us": [
+    3698.135,
+    3697.515,
+    3700.397,
+    3697.734,
+    3697.607,
+    3699.086,
+    3698.996,
+    3695.271,
+    3693.567,
+    3701.156,
+    3696.784,
+    3695.745,
+    3697.97,
+    3698.011,
+    3697.92
+  ],
+  "grid": [
+    8192
+  ],
+  "constexpr": {
+    "X_stride": 32000,
+    "Y_stride": 1,
+    "loss_stride": 1,
+    "token_accuracy_stride": 0,
+    "predicted_tokens_stride": 0,
+    "n_cols": 32000,
+    "n_non_ignore": 8192,
+    "sum_non_ignore_weight": 8192,
+    "ignore_index": -100,
+    "weight_sum": 0.0,
+    "lse_square_scale": 0.0,
+    "label_smoothing": 0.0,
+    "reduction": "mean",
+    "RETURN_Z_LOSS": false,
+    "RETURN_TOKEN_ACCURACY": false,
+    "RETURN_PREDICTED_TOKENS": false,
+    "BLOCK_SIZE": 2048,
+    "HAS_WEIGHT": false,
+    "HAS_SOFTCAPPING": false,
+    "HAS_GRADIENTS": true,
+    "num_warps": 32
+  },
+  "trace_sha256": "155c20424e92879fb99b3941afa98801d0ea179490307f7b93112330b9c19ba9",
+  "kernel_csv_sha256": "0b1b06bfe7c021bc85e2bb053b739621e69c60a309b26cb1a570087836204ef7",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "cad34d776fd1e51ba25f39230259a6e6d85855fcecab8696c7531a40153af67d",
+      "ir_sha256": "5ad24abe0435a58c5392fa879b510bf9335a344382e7f72c99afe69d174fb9d8",
+      "binary_sha256": "1bc1087d06fd310a32323c855f24783a0b4f5c06b41b4a6a6e09d1a0c491237b",
+      "compiler_hash": "fda768b747a516a757659745ae6d90daae2ab92051b4264f08f935f169423a60"
+    }
+  ]
+}

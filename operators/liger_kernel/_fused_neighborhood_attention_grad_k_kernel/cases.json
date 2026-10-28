@@ -1,0 +1,157 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+      "original_nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+      "input_origin": "upstream_correctness_case",
+      "tensors": {
+        "grad_attn_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        },
+        "Q_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        },
+        "grad_K_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "grad_attn_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        },
+        "Q_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        },
+        "grad_K_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        },
+        "grad_attn_batch_stride": "4096",
+        "grad_attn_head_stride": "1024",
+        "grad_attn_seq_stride": "32",
+        "grad_attn_seq2_stride": "1",
+        "q_batch_stride": "4096",
+        "q_head_stride": "1024",
+        "q_seq_stride": "32",
+        "q_dim_stride": "1",
+        "grad_k_batch_stride": "4096",
+        "grad_k_head_stride": "1024",
+        "grad_k_seq_stride": "32",
+        "grad_k_dim_stride": "1",
+        "batch_size": "2",
+        "num_heads": "4",
+        "seq_len": "32",
+        "head_dim": "32",
+        "scale": "0.17677669529663687",
+        "BLOCK_SIZE_M": "32",
+        "BLOCK_SIZE_N": "32",
+        "BLOCK_SIZE_K": "32",
+        "num_stages": "2",
+        "num_warps": "4"
+      },
+      "dimensions": {
+        "batch_size": 2,
+        "seq_len": 32,
+        "hidden_size": 128
+      },
+      "parameters": {
+        "dtype": "torch.float32",
+        "atol": "0.005",
+        "rtol": "0.005",
+        "bias": "False",
+        "batch_size": "2",
+        "seq_len": "32",
+        "hidden_size": "128",
+        "num_heads": "4",
+        "kernel_size": "7"
+      }
+    }
+  ]
+}

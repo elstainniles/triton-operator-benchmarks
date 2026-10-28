@@ -1,0 +1,401 @@
+{
+  "operator_id": "LK16",
+  "kernel": "_group_norm_backward_kernel",
+  "source_kind": "generic",
+  "type": "vv",
+  "origin": "repository_entry_validation",
+  "status": "measured",
+  "case": {
+    "id": "second-batch",
+    "suite": "baseline",
+    "shape": [
+      1,
+      32,
+      4
+    ],
+    "dtype": "float32",
+    "nodeid": "test_case.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-32-32-4]",
+    "original_nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-32-32-4]",
+    "input_origin": "upstream_correctness_case",
+    "tensors": {
+      "X_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "W_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "Mean_ptr": {
+        "shape": [
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          32,
+          1
+        ]
+      },
+      "RSTD_ptr": {
+        "shape": [
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          32,
+          1
+        ]
+      },
+      "DX_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "DW_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "DB_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "UPSTREAM_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      }
+    },
+    "historical_bound_arguments": {
+      "X_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "X_row_stride": "128",
+      "X_col_stride": "4",
+      "W_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "Mean_ptr": {
+        "shape": [
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          32,
+          1
+        ]
+      },
+      "Mean_ptr_row_stride": "32",
+      "Mean_ptr_col_stride": "1",
+      "RSTD_ptr": {
+        "shape": [
+          1,
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          32,
+          1
+        ]
+      },
+      "DX_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "DW_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "DB_ptr": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "UPSTREAM_ptr": {
+        "shape": [
+          1,
+          32,
+          4
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          128,
+          4,
+          1
+        ]
+      },
+      "hidden_size": "4",
+      "channels_per_group": "1",
+      "BLOCK_SIZE": "4",
+      "dtype": "triton.language.float32"
+    },
+    "dimensions": {
+      "batch_size": 1,
+      "num_channels": 32,
+      "hidden_size": 4
+    },
+    "parameters": {
+      "dtype": "torch.float32",
+      "atol": "0.0001",
+      "rtol": "0.0001",
+      "batch_size": "1",
+      "num_channels": "32",
+      "num_groups": "32",
+      "hidden_size": "4"
+    }
+  },
+  "source_hashes": {
+    "kernels.py": "968c610f9ddd9b4163fb0f31ca0332d18d4dfd83123693ba8606b2f600661df0",
+    "test_case.py": "665b2424d1a7dc3d2ca33b98e54a10aec3dab505a37cba901ccb87bcb7d9aa8e"
+  },
+  "harness_sha256": {
+    "__init__.py": "68e1a70eb4825bb9bbfa6c366420338bbdd6416279de89d7993256aaa60f0ebf",
+    "liger_profile.py": "71f8885f2a1fb74fbb3bbd43f464a6cbdbbd31f0703d890e272ad7040535a6ac",
+    "graph_case.py": "91c4a39c53faf2eba2dc22d69eb59e63b5ab33d87c46415969e3592e443c24fb",
+    "liger_runner.py": "a8154dc4fac624cec436ca49a12b1986a66a622215ce0d7491556be24b778e6b",
+    "cli.py": "cf012d361d0e7f9b2f80670090a73b3cd543424b1e1e683217541a695af781d7",
+    "environment.py": "d6c8981024bd1faba5d5e374186a88491832ff07164b7e79241189713a32c32e",
+    "device.py": "925be5239498f8dc75ec2ecd3650b4502f1dd66fa56bba26c4d5a9a621f158f8",
+    "graph_tests.py": "2b5dc81e69792a2f545a1660c8a21d79a03167fb9a65a5218360368ed8343062",
+    "graph_runner.py": "e6625eafb80229057b9e93b206cb7962bba4a3bb466403d992fa7242acb7e206",
+    "batch.py": "acbce294a176735f9931fceafc145e1735ae54742449af620df6e40637146cdc",
+    "profile.py": "da59af10fd73e056506a602e177c66638a59fed6d8baba7ce152edc6df48cb33",
+    "liger.py": "509d960b7b616f6c126cf849b5a0dcc487384d76433629bb79fe83c997848175",
+    "runner.py": "a71e1bdab749604c8cd6d1aa9b82ecc6f73260c2093cbef8ad1638610e339d33",
+    "catalog.py": "f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e",
+    "tensors.py": "c93bb693c5cc0167aaf3d1d28ead183ac53679efd6655d293e61245a13547568"
+  },
+  "cases_sha256": "6ff2b6cd0055cd4a22b204ae094119124643d66720c7bf756839c4896e652054",
+  "target_launch_attempts": 1,
+  "correctness": {
+    "passed": true,
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "median_us": 2.434,
+  "device_name": "Ascend950PR_9579",
+  "source_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "libtriton_sha256": "4c68de3dd8d3a97d669b396555fc8207d4657fa6f03b5be8928c01d346544e6d",
+  "compiler_sha256": "00005852671e68e08d9898654581590e106bb39c5fc9f1f5c114bc7339d7aeea",
+  "all_observed_occupancy_checks_passed": true,
+  "source_result_sha256": "90fbdcdabf64bc869cacf1d4e4dbd0e48a8ee6ecf972411420ff41affb0c0ed5",
+  "args": [
+    {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    "128",
+    "4",
+    {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "32",
+    "1",
+    {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    "4",
+    "1"
+  ],
+  "kwargs": {
+    "BLOCK_SIZE": "4",
+    "dtype": "triton.language.float32"
+  },
+  "grid": [
+    1,
+    32
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 4
+  },
+  "samples_us": [
+    2.381,
+    2.78,
+    2.612,
+    2.328,
+    2.34,
+    2.238,
+    2.879,
+    2.634,
+    2.554,
+    2.808,
+    2.181,
+    2.434,
+    2.124,
+    2.158,
+    3.058
+  ],
+  "trace_sha256": "58427cccbeadcba0fe8a5afad4874ba8aedc2f44cc757338d03c45b6d5976539",
+  "kernel_csv_sha256": "4b018fcba428fabe012a1056737d3946a5cad134cea6f7211eba429064c13695",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "aggregation": "median of 15 device samples"
+}

@@ -1,0 +1,140 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK15",
+  "kernel": "_geglu_forward_kernel_flat",
+  "source_kind": "ascend",
+  "source_sha256": "bdbe3a0fec4269670c9342779ec0c851f3445f7d36067eee140a19dd8083d158",
+  "original_nodeid": "test/transformers/test_geglu.py::test_correctness[dtype0-1.0-2e-06-2-2048-2048-4096]",
+  "type": "vv",
+  "tensors": {
+    "a_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "b_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "c_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "a_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "b_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "c_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "total_elements": "16777216",
+    "BLOCK_SIZE": "8192"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 123.106,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "geglu-ascend-00.json",
+  "source_result_sha256": "bdec64ab0bac36c44be161a87087e7f187cf0eae1f03eac150208112041d230a",
+  "samples_us": [
+    122.983,
+    122.315,
+    122.734,
+    125.444,
+    123.106,
+    123.763,
+    122.991,
+    123.376,
+    123.352,
+    122.544,
+    123.569,
+    123.09,
+    123.49,
+    124.617,
+    122.22
+  ],
+  "grid": [
+    56
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 8192
+  },
+  "trace_sha256": "5aa3351313e91a987051b08cd8eb83ee19ce8645b81bed1b214c105c09eaea15",
+  "kernel_csv_sha256": "be628385659a685898265e2f8483e30644c9e6435f7edea8e6a9d574db102dcb",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "15aef5ee93c4b78c1b357f8a00d1624a60759109fc03c062d699c5a63b0b74ec",
+      "ir_sha256": "3ca246e5874f7aa95b626385107c6f38b8560b21a4e4c91c43c229083391a006",
+      "binary_sha256": "7521b55b253eb7849c5d92b31a3380b2d0341e55a90c8b61aaefd57f342bf938",
+      "compiler_hash": "7aaf2e89fdeaae080659ab14c178a2b401ff16416a5e07facdcbc6d1b0a700de"
+    }
+  ]
+}

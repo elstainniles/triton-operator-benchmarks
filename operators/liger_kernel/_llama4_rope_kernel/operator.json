@@ -1,0 +1,45 @@
+{
+  "id": "LK24",
+  "name": "_llama4_rope_kernel",
+  "family": "liger/llama4_rope",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_llama4_rope_kernel",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "SECOND_BATCH_CASE_VALIDATED",
+  "kernel_symbol": "_llama4_rope_kernel",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/llama4_rope.py",
+    "sha256": "263576853c98d5f164faba2bb22a45f69721ee2102a9338f677a548fab1ced5b",
+    "symbol": "_llama4_rope_kernel",
+    "snapshot": "upstream/llama4_rope.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "b37a7634a4d55417e00a9c19a613d31bfe5cb7b5463fb86e00767a00fc042b3f",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "625b4da5c9d205b9345a55362c60fe12a5b819cb86bab7efab5f1914429751e6",
+    "original_path": "test/transformers/test_llama4_rope.py",
+    "original_nodeid": "test/transformers/test_llama4_rope.py::test_correctness[dtype1-0.1-1e-05-3-423-73-213-92]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "SECOND_BATCH_CASE_VALIDATED",
+    "cases": [
+      "second-batch"
+    ],
+    "full_matrix_validated": false,
+    "evidence": "results/20261028-export/measurement.json"
+  }
+}

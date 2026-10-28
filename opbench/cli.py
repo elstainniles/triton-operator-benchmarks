@@ -26,11 +26,13 @@ def main():
     elif args.command == 'plan':
         print(json.dumps(plans(args.operator, args.suite, args.variants), ensure_ascii=False, indent=2))
     else:
-        if args.operator in ('all', 'graph', 'flaggems') or ',' in args.operator:
+        if args.operator in ('all', 'graph', 'flaggems', 'liger') or ',' in args.operator:
             from .batch import run
             return run(args)
         entry, _ = resolve(args.operator)
-        if entry.get('runner') == 'graph_tests':
+        if entry.get('runner') == 'liger':
+            from .liger_runner import run
+        elif entry.get('runner') == 'graph_tests':
             from .graph_runner import run
         else:
             if args.case_id:

@@ -1,0 +1,20 @@
+{
+  "origin": "historical_second_batch",
+  "date": "2026-10-28",
+  "hardware": "Ascend950PR",
+  "cann": "9.1.0",
+  "python": "3.11",
+  "torch": "2.10.0+cpu",
+  "torch_npu": "2.10.0.post7",
+  "triton": "3.6.0",
+  "triton_ascend": "3.6.0+main.b6dda4fa",
+  "triton_ascend_revision": "b6dda4fa17bb00780199aa52f0549262cf2e1d1b",
+  "libtriton_sha256": "4c68de3dd8d3a97d669b396555fc8207d4657fa6f03b5be8928c01d346544e6d",
+  "compiler_sha256": "00005852671e68e08d9898654581590e106bb39c5fc9f1f5c114bc7339d7aeea",
+  "liger_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "liger_wheel_sha256": "3ca94099e2f44399cf7c3e69cfc00fa5ead2e2d04c3baf0755cd3614d125e171",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "aggregation": "median of 15 device samples",
+  "pip_check": "FAILED: upstream NPU wheel pins Torch/Torch-NPU 2.9 and TA 3.2.2; fixed measured runtime differs",
+  "scope": "42 measured targets; 3 compile failures; 1 blocked by forward compilation. Not whole-environment validation."
+}

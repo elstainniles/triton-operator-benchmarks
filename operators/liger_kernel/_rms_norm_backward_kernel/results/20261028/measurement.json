@@ -1,0 +1,167 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK29",
+  "kernel": "_rms_norm_backward_kernel",
+  "source_kind": "generic",
+  "source_sha256": "d14c5b2269f2596ebd7ca0b16e6a41ac6390f207135314164b36df130b7accd9",
+  "original_nodeid": "test/transformers/test_rms_norm.py::test_correctness[False-False-GemmaRMSNorm-1.0-gemma-dtype0-0.0001-1e-06-2-128-512]",
+  "type": "vv",
+  "tensors": {
+    "dY_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dX_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "X_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "RSTD_ptr": {
+      "shape": [
+        256
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "dY_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dY_row_stride": "512",
+    "dX_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dX_row_stride": "512",
+    "X_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "X_row_stride": "512",
+    "X_dtype": "triton.language.float32",
+    "W_ptr": "None",
+    "W_row_stride": "0",
+    "RSTD_ptr": {
+      "shape": [
+        256
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "RSTD_row_stride": "1",
+    "dW_ptr": "None",
+    "dW_row_stride": "0",
+    "n_rows": "256",
+    "n_cols": "512",
+    "offset": "1.0",
+    "rows_per_program": "5",
+    "casting_mode": "1",
+    "elementwise_affine": "False",
+    "BLOCK_SIZE": "512",
+    "COMPUTE_DW": "False",
+    "num_warps": "4"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 3.479,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "rms_norm-generic-00.json",
+  "source_result_sha256": "6ded5ff455ad7a730d684d35e66d3e73bd47702cc50166b68d126f6104b0e297",
+  "samples_us": [
+    3.5,
+    3.871,
+    3.805,
+    3.422,
+    3.21,
+    3.106,
+    4.337,
+    4.095,
+    3.461,
+    3.461,
+    4.085,
+    3.479,
+    2.432,
+    2.957,
+    3.769
+  ],
+  "grid": [
+    56
+  ],
+  "constexpr": {
+    "elementwise_affine": false,
+    "BLOCK_SIZE": 512,
+    "COMPUTE_DW": false,
+    "num_warps": 4
+  },
+  "trace_sha256": "558cfe51fa73f41a3dca87ef86a38a827f59973f22f4c3568cd76ad482c2c690",
+  "kernel_csv_sha256": "341918cd9a452a0190e2d3a89c7f81e58e0fc6cd2057b96a10a925ce3235cebd",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "60897937a0619279365c1cb183f8e24a3e690565fc653c48a4ce338738ab291b",
+      "ir_sha256": "3f9e32d46bdec80bedc28a83f3646ce41676664b424516baea5d36e05bd98b10",
+      "binary_sha256": "87d8a751b3886621738ca30b3f49a3cd63070d4a4cd0085b18fe4a628ae1006e",
+      "compiler_hash": "2b16000db60d5345f54d88a17db6bd25b11d6deea124c2939e9ecd8641ea497a"
+    }
+  ]
+}

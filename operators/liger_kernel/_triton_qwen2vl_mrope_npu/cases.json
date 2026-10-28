@@ -1,0 +1,182 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        2,
+        131,
+        64,
+        128
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_correctness[dtype0-1e-05-1e-05-128-mrope_section0-64-8-131-2]",
+      "original_nodeid": "test/transformers/test_qwen2vl_mrope.py::test_correctness[dtype0-1e-05-1e-05-128-mrope_section0-64-8-131-2]",
+      "input_origin": "upstream_correctness_case",
+      "tensors": {
+        "q_ptr": {
+          "shape": [
+            2,
+            131,
+            64,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1073152,
+            8192,
+            128,
+            1
+          ]
+        },
+        "k_ptr": {
+          "shape": [
+            2,
+            131,
+            8,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            134144,
+            1024,
+            128,
+            1
+          ]
+        },
+        "cos": {
+          "shape": [
+            3,
+            2,
+            131,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            33536,
+            16768,
+            128,
+            1
+          ]
+        },
+        "sin": {
+          "shape": [
+            3,
+            2,
+            131,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            33536,
+            16768,
+            128,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "q_ptr": {
+          "shape": [
+            2,
+            131,
+            64,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1073152,
+            8192,
+            128,
+            1
+          ]
+        },
+        "q_row_stride": "8192",
+        "k_ptr": {
+          "shape": [
+            2,
+            131,
+            8,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            134144,
+            1024,
+            128,
+            1
+          ]
+        },
+        "k_row_stride": "1024",
+        "cos": {
+          "shape": [
+            3,
+            2,
+            131,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            33536,
+            16768,
+            128,
+            1
+          ]
+        },
+        "sin": {
+          "shape": [
+            3,
+            2,
+            131,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            33536,
+            16768,
+            128,
+            1
+          ]
+        },
+        "sl": "131",
+        "bs": "2",
+        "total_rows": "262",
+        "n_qh": "64",
+        "n_kh": "8",
+        "hd": "128",
+        "mrope_section_t": "16",
+        "mrope_section_h": "24",
+        "BLOCK_Q": "64",
+        "BLOCK_K": "8",
+        "BACKWARD_PASS": "True"
+      },
+      "dimensions": {
+        "head_dim": 128,
+        "num_q_heads": 64,
+        "num_kv_heads": 8,
+        "seq_len": 131,
+        "bsz": 2
+      },
+      "parameters": {
+        "dtype": "torch.float32",
+        "atol": "1e-05",
+        "rtol": "1e-05",
+        "head_dim": "128",
+        "mrope_section": "[16, 24, 24]",
+        "num_q_heads": "64",
+        "num_kv_heads": "8",
+        "seq_len": "131",
+        "bsz": "2"
+      }
+    }
+  ]
+}

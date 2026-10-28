@@ -1,0 +1,41 @@
+{
+  "id": "LK36",
+  "name": "_sparsemax_backward_kernel",
+  "family": "liger/sparsemax",
+  "direction": "bwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_sparsemax_backward_kernel",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "HISTORICAL_ONLY",
+  "kernel_symbol": "_sparsemax_backward_kernel",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/sparsemax.py",
+    "sha256": "7c552b0b6bd702a69248302dfa53c96c7c570a1806c877ce25d54f29a4aaef15",
+    "symbol": "_sparsemax_backward_kernel",
+    "snapshot": "upstream/sparsemax.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "a7e36c180b6b3501174fd82887784a190282580618dc73d5eb895494d322ba0d",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "341d14313b18138db4233670a70fdbceb53c4ad02bf7fa7378b04a30fd4833d4",
+    "original_path": "test/transformers/test_sparsemax.py",
+    "original_nodeid": "test/transformers/test_sparsemax.py::test_liger_sparsemax_correctness[dtype0-1e-05-1e-05--1-2-128-512]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "NOT_DEVICE_VALIDATED",
+    "full_matrix_validated": false
+  }
+}

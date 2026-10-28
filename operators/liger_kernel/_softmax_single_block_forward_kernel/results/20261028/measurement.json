@@ -1,0 +1,108 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK35",
+  "kernel": "_softmax_single_block_forward_kernel",
+  "source_kind": "generic",
+  "source_sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9",
+  "original_nodeid": "test/transformers/test_softmax.py::test_liger_softmax[dtype0-1e-05-1e-05-shape5]",
+  "type": "vv",
+  "tensors": {
+    "Y_ptr": {
+      "shape": [
+        2,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "X_ptr": {
+      "shape": [
+        2,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "Y_ptr": {
+      "shape": [
+        2,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "Y_row_stride": "4096",
+    "X_ptr": {
+      "shape": [
+        2,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "X_row_stride": "4096",
+    "n_cols": "4096",
+    "BLOCK_SIZE": "4096",
+    "num_warps": "8"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 1.592,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "softmax-generic-00.json",
+  "source_result_sha256": "113bbe8b4d2cb577ceac8a98d145d5f7f2dedb538f9e08efd067939da4bfb5d2",
+  "samples_us": [
+    1.601,
+    1.6,
+    1.596,
+    1.579,
+    1.592,
+    1.624,
+    1.603,
+    1.63,
+    1.552,
+    1.595,
+    1.542,
+    1.551,
+    1.582,
+    1.561,
+    1.584
+  ],
+  "grid": [
+    2
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 4096,
+    "num_warps": 8
+  },
+  "trace_sha256": "31af7f56b5d827d9f99bca272fee33d342ba0e96f918324365a350ccb569d362",
+  "kernel_csv_sha256": "0f902a59ecfacad94159011723f980757c4248bf82fea971a2a52c839d49ca76",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "483496f3d0c57e509495ee150c0579e26ef6b4966e2e601b23e7353fae170f0d",
+      "ir_sha256": "55a188d32c0647818fe2cdb04b35a1fa9ed3bd8577e2c0beba8fd9e448ee8f32",
+      "binary_sha256": "10abcb0de10d75c45f39bbb3cf7672aa4a8ef4baf74df49b7c9c49e9b075a937",
+      "compiler_hash": "a4e009de6f44030381ca4a8190a7b1932db6d4d4c5ccdf318f10b165053d7d70"
+    }
+  ]
+}

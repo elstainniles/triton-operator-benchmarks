@@ -1,0 +1,95 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK42",
+  "kernel": "element_mul_kernel",
+  "source_kind": "generic",
+  "source_sha256": "b32e7097ca832549b7ae1fd6ea0139e1291dd6c1b0f0a124c90b3878349ae89d",
+  "original_nodeid": "direct_cases.py::test_generic_element_mul",
+  "type": "vv",
+  "tensors": {
+    "X_ptr": {
+      "shape": [
+        8192,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "grad_output_ptr": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": []
+    }
+  },
+  "bound_arguments": {
+    "X_ptr": {
+      "shape": [
+        8192,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "X_stride": "4096",
+    "grad_output_ptr": {
+      "shape": [],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": []
+    },
+    "n_cols": "4096",
+    "BLOCK_SIZE": "4096",
+    "num_warps": "4"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 136.458,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "direct-generic-element-mul-generic-00.json",
+  "source_result_sha256": "70ca8f04fcf050f5bf732936c5e03caf9a4e32b8ef5c728a71817d5f4bf055e5",
+  "samples_us": [
+    136.821,
+    136.464,
+    137.444,
+    138.386,
+    135.58,
+    135.991,
+    139.41,
+    137.93,
+    136.113,
+    136.458,
+    134.899,
+    135.286,
+    135.712,
+    135.19,
+    137.293
+  ],
+  "grid": [
+    8192
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 4096,
+    "num_warps": 4
+  },
+  "trace_sha256": "948a851d26456a3f275099bec749371b28cdb15246e3bc8ef16ba3d2d83d8b6a",
+  "kernel_csv_sha256": "153c91651027c7435d45f53318e492aed600cda9556b7f3af6ae2d8de567dd70",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "3e8db2c4db2cc59ae561f9d8e2546a14032f9bcdd6a480dce375e183bcbf11d8",
+      "ir_sha256": "a855127590878623ef2fcb093af457a67256ec3d1a9541a0a039bc9b8bc26f92",
+      "binary_sha256": "43081551f6af38c3f29dbcf3fdae773df3f0921fe9d6a465b0e693c2dd21bb86",
+      "compiler_hash": "f32916876fe0fa2eb12744e02193653f860c2bcc04cf803dfc54e1f60f5fe11c"
+    }
+  ]
+}

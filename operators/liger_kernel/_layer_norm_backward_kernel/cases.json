@@ -1,0 +1,217 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "bfloat16",
+      "nodeid": "test_case.py::test_generic_layer_norm_backward",
+      "original_nodeid": "direct_cases.py::test_generic_layer_norm_backward",
+      "input_origin": "direct_correctness_case",
+      "tensors": {
+        "X_ptr": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "W_ptr": {
+          "shape": [
+            4096
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "Mean_ptr": {
+          "shape": [
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "RSTD_ptr": {
+          "shape": [
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "DX_ptr": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "DW_ptr": {
+          "shape": [
+            56,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "DB_ptr": {
+          "shape": [
+            56,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "DY_ptr": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "X_ptr": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "stride_x": "4096",
+        "W_ptr": {
+          "shape": [
+            4096
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "Mean_ptr": {
+          "shape": [
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "stride_mean": "1",
+        "RSTD_ptr": {
+          "shape": [
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "stride_rstd": "1",
+        "DX_ptr": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "stride_dx": "4096",
+        "DW_ptr": {
+          "shape": [
+            56,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "stride_dw": "4096",
+        "DB_ptr": {
+          "shape": [
+            56,
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "stride_db": "4096",
+        "DY_ptr": {
+          "shape": [
+            4096,
+            4096
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1
+          ]
+        },
+        "stride_dy": "4096",
+        "n_rows": "4096",
+        "n_cols": "4096",
+        "rows_per_program": "74",
+        "BLOCK_SIZE": "4096",
+        "COMPUTE_DW": "True",
+        "COMPUTE_DB": "True",
+        "num_warps": "8"
+      },
+      "dimensions": {},
+      "parameters": {}
+    }
+  ]
+}

@@ -24,3 +24,14 @@ operators/triton_graph_optimization/SOURCE_NOTICE.md.
 The repository's own test harness, documentation and data organization are provided
 under the same Apache-2.0 license. Historical benchmark results describe only
 their recorded configurations and hardware, and do not imply upstream endorsement.
+
+This repository also includes selected Liger-Kernel functions and correctness tests:
+https://github.com/linkedin/Liger-Kernel
+Revision: 781a8aef64bf6105bdefb5f4c991e0d14c08e793
+Copyright 2024 LinkedIn Corporation. All Rights Reserved.
+Licensed under the BSD 2-Clause License, retained in operators/liger_kernel/LICENSE.
+The upstream NOTICE and third-party license texts are retained alongside it.
+Extracted JIT functions preserve their signatures, bodies and decorators. The
+benchmark harness selects a specific implementation, generates inputs with the
+archived tests, and profiles only the selected kernel. Historical measurements
+are imported separately from validation of this repository's entry point.

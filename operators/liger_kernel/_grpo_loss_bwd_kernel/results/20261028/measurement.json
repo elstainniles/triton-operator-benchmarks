@@ -1,0 +1,250 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK18",
+  "kernel": "_grpo_loss_bwd_kernel",
+  "source_kind": "generic",
+  "source_sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945",
+  "original_nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.0-0.2-0.4]",
+  "type": "vv",
+  "tensors": {
+    "DLOSS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "DLOGITS": {
+      "shape": [
+        1,
+        1025,
+        151936
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        155734400,
+        151936,
+        1
+      ]
+    },
+    "LOGITS": {
+      "shape": [
+        1,
+        1025,
+        151936
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        155734400,
+        151936,
+        1
+      ]
+    },
+    "INPUT_IDS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "ADVANTAGES": {
+      "shape": [
+        1
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "COMPLETION_MASK": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "LSE": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "DLOSS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "DLOGITS": {
+      "shape": [
+        1,
+        1025,
+        151936
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        155734400,
+        151936,
+        1
+      ]
+    },
+    "LOGITS": {
+      "shape": [
+        1,
+        1025,
+        151936
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        155734400,
+        151936,
+        1
+      ]
+    },
+    "OLD_LOGP": "None",
+    "REF_LOGP": "None",
+    "INPUT_IDS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "ADVANTAGES": {
+      "shape": [
+        1
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "COMPLETION_MASK": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "LSE": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "VLLM_IS_RATIO": "None",
+    "VLLM_IS_RATIO_STRIDE": "1024",
+    "PHI_SEQ": "None",
+    "TEMPERATURE": "0.7",
+    "BETA": "0.0",
+    "EPS_LOW": "0.2",
+    "EPS_HIGH": "0.4",
+    "LOSS_TYPE": "0",
+    "SAPO_TEMP_POS": "1.0",
+    "SAPO_TEMP_NEG": "1.05",
+    "DELTA": "0.0",
+    "USE_BIAS_CORRECTION_KL": "False",
+    "loss_stride0": "1024",
+    "loss_stride1": "1",
+    "L": "1024",
+    "N": "151936",
+    "BLOCK_N": "4096",
+    "num_stages": "1",
+    "num_warps": "16"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 591.395,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "grpo_loss-generic-00.json",
+  "source_result_sha256": "57b9dcc021168ee811ed0b7b5f3dd4b39ed8b7cf23cb6003b8f67a6ef6bcb800",
+  "samples_us": [
+    591.141,
+    590.618,
+    594.823,
+    591.82,
+    595.282,
+    589.365,
+    589.6,
+    597.278,
+    590.16,
+    591.405,
+    589.885,
+    590.74,
+    593.826,
+    591.395,
+    592.968
+  ],
+  "grid": [
+    1,
+    1024
+  ],
+  "constexpr": {
+    "BLOCK_N": 4096,
+    "num_stages": 1,
+    "num_warps": 16
+  },
+  "trace_sha256": "0471ed4c48b9b84965d43e3697ee598d223b9909b3b403241d2b97ec0dc1fbca",
+  "kernel_csv_sha256": "9466109673a253ed622ba7192b6375f22241fa5ea5e1ec557c443d384d8eb4e7",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "a1495d57dae867a40fa3ef84d95024f65d65221b9540634ec9da09a3865899b7",
+      "ir_sha256": "848f03f1a09e9e12b4297aae1730fa9ea41c43e9719df9bf53fe013623c9166f",
+      "binary_sha256": "5034b93231e0d3184d75e75fa135ad62634e7acc5f43b68cf5b11a0afe5b1e31",
+      "compiler_hash": "b02f281b4531e857649d16b7b892f7a589cc3de103aa8109637691c1b10051fb"
+    }
+  ]
+}

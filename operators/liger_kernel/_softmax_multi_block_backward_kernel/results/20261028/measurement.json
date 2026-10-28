@@ -1,0 +1,19 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK32",
+  "kernel": "_softmax_multi_block_backward_kernel",
+  "source_kind": "generic",
+  "source_sha256": "244839b2f900329f3a67b5771faae9b4ef7514d1c6fb83766ba0da0d26ba7bf9",
+  "original_nodeid": "direct_cases.py::test_generic_softmax_multi_block_backward",
+  "type": "vv",
+  "tensors": {},
+  "bound_arguments": {},
+  "correctness_passed": false,
+  "status": "compile_failed",
+  "median_us": null,
+  "failure_reason": "Compilation failed: tl.float32(...) raises 'dtype' object is not callable.",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "direct-generic-softmax-bwd-generic-00.json",
+  "source_result_sha256": "f4705e4c9ce8582b8868552a237add25a74063183f7b54a91c00e9ed169083e8"
+}

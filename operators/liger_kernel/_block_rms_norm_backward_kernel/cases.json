@@ -1,0 +1,175 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        32768,
+        128
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_block_rms_norm",
+      "original_nodeid": "direct_cases.py::test_block_rms_norm",
+      "input_origin": "direct_correctness_case",
+      "tensors": {
+        "dY_ptr": {
+          "shape": [
+            32768,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            1
+          ]
+        },
+        "dX_ptr": {
+          "shape": [
+            32768,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            1
+          ]
+        },
+        "X_ptr": {
+          "shape": [
+            32768,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            1
+          ]
+        },
+        "W_ptr": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "RSTD_ptr": {
+          "shape": [
+            32768
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "dW_ptr": {
+          "shape": [
+            56,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "dY_ptr": {
+          "shape": [
+            32768,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            1
+          ]
+        },
+        "dY_row_stride": "128",
+        "dX_ptr": {
+          "shape": [
+            32768,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            1
+          ]
+        },
+        "dX_row_stride": "128",
+        "X_ptr": {
+          "shape": [
+            32768,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            1
+          ]
+        },
+        "X_row_stride": "128",
+        "X_dtype": "triton.language.float32",
+        "W_ptr": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "W_row_stride": "1",
+        "RSTD_ptr": {
+          "shape": [
+            32768
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "RSTD_row_stride": "1",
+        "dW_ptr": {
+          "shape": [
+            56,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            1
+          ]
+        },
+        "dW_row_stride": "128",
+        "n_rows": "32768",
+        "n_cols": "128",
+        "offset": "1.0",
+        "casting_mode": "1",
+        "elementwise_affine": "True",
+        "BLOCK_SIZE": "128",
+        "COMPUTE_DW": "True",
+        "num_warps": "4",
+        "BLOCK_ROW": "16"
+      },
+      "dimensions": {},
+      "parameters": {}
+    }
+  ]
+}

@@ -1,0 +1,1745 @@
+{
+  "scope_sha256": "83f405828cdfd69fe798135243193b46122623c86b634b067634e1d81662fd3d",
+  "groups": [
+    {
+      "family": "dyt",
+      "kind": "generic",
+      "targets": [
+        "_dyt_bwd_kernel",
+        "_dyt_fwd_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_dyt.py::test_liger_dyt_correctness[dtype0-1e-05-1e-05-1e-05-0.001-4-16-2048-0.5-False]",
+          "score": 131072,
+          "dimensions": {
+            "B": 4,
+            "T": 16,
+            "hidden_size": 2048
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "alpha_atol": "1e-05",
+            "alpha_rtol": "0.001",
+            "B": "4",
+            "T": "16",
+            "hidden_size": "2048",
+            "init_alpha": "0.5",
+            "beta": "False"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_dyt.py::test_liger_dyt_correctness[dtype0-1e-05-1e-05-1e-05-0.001-4-16-2048-0.5-True]",
+          "score": 131072,
+          "dimensions": {
+            "B": 4,
+            "T": 16,
+            "hidden_size": 2048
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "alpha_atol": "1e-05",
+            "alpha_rtol": "0.001",
+            "B": "4",
+            "T": "16",
+            "hidden_size": "2048",
+            "init_alpha": "0.5",
+            "beta": "True"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_dyt.py::test_liger_dyt_correctness[dtype0-1e-05-1e-05-1e-05-0.001-2-8-4096-0.5-False]",
+          "score": 65536,
+          "dimensions": {
+            "B": 2,
+            "T": 8,
+            "hidden_size": 4096
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "alpha_atol": "1e-05",
+            "alpha_rtol": "0.001",
+            "B": "2",
+            "T": "8",
+            "hidden_size": "4096",
+            "init_alpha": "0.5",
+            "beta": "False"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_dyt.py::test_liger_dyt_correctness[dtype0-1e-05-1e-05-1e-05-0.001-2-8-4096-0.5-True]",
+          "score": 65536,
+          "dimensions": {
+            "B": 2,
+            "T": 8,
+            "hidden_size": 4096
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "alpha_atol": "1e-05",
+            "alpha_rtol": "0.001",
+            "B": "2",
+            "T": "8",
+            "hidden_size": "4096",
+            "init_alpha": "0.5",
+            "beta": "True"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_dyt.py::test_liger_dyt_correctness[dtype0-1e-05-1e-05-1e-05-0.001-3-7-256-0.5-False]",
+          "score": 5376,
+          "dimensions": {
+            "B": 3,
+            "T": 7,
+            "hidden_size": 256
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "alpha_atol": "1e-05",
+            "alpha_rtol": "0.001",
+            "B": "3",
+            "T": "7",
+            "hidden_size": "256",
+            "init_alpha": "0.5",
+            "beta": "False"
+          }
+        }
+      ]
+    },
+    {
+      "family": "llama4_rope",
+      "kind": "generic",
+      "targets": [
+        "_llama4_rope_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_llama4_rope.py::test_correctness[dtype0-1e-05-1e-05-3-423-73-213-92]",
+          "score": 1815314652,
+          "dimensions": {
+            "bsz": 3,
+            "seq_len": 423,
+            "num_q_heads": 73,
+            "num_kv_heads": 213,
+            "head_dim": 92
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "bsz": "3",
+            "seq_len": "423",
+            "num_q_heads": "73",
+            "num_kv_heads": "213",
+            "head_dim": "92"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_llama4_rope.py::test_correctness[dtype1-0.1-1e-05-3-423-73-213-92]",
+          "score": 1815314652,
+          "dimensions": {
+            "bsz": 3,
+            "seq_len": 423,
+            "num_q_heads": 73,
+            "num_kv_heads": 213,
+            "head_dim": 92
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.1",
+            "rtol": "1e-05",
+            "bsz": "3",
+            "seq_len": "423",
+            "num_q_heads": "73",
+            "num_kv_heads": "213",
+            "head_dim": "92"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_llama4_rope.py::test_correctness[dtype0-1e-05-1e-05-3-423-73-155-92]",
+          "score": 1321003620,
+          "dimensions": {
+            "bsz": 3,
+            "seq_len": 423,
+            "num_q_heads": 73,
+            "num_kv_heads": 155,
+            "head_dim": 92
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "bsz": "3",
+            "seq_len": "423",
+            "num_q_heads": "73",
+            "num_kv_heads": "155",
+            "head_dim": "92"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_llama4_rope.py::test_correctness[dtype1-0.1-1e-05-3-423-73-155-92]",
+          "score": 1321003620,
+          "dimensions": {
+            "bsz": 3,
+            "seq_len": 423,
+            "num_q_heads": 73,
+            "num_kv_heads": 155,
+            "head_dim": 92
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.1",
+            "rtol": "1e-05",
+            "bsz": "3",
+            "seq_len": "423",
+            "num_q_heads": "73",
+            "num_kv_heads": "155",
+            "head_dim": "92"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_llama4_rope.py::test_correctness[dtype0-1e-05-1e-05-2-128-32-32-64]",
+          "score": 16777216,
+          "dimensions": {
+            "bsz": 2,
+            "seq_len": 128,
+            "num_q_heads": 32,
+            "num_kv_heads": 32,
+            "head_dim": 64
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "bsz": "2",
+            "seq_len": "128",
+            "num_q_heads": "32",
+            "num_kv_heads": "32",
+            "head_dim": "64"
+          }
+        }
+      ]
+    },
+    {
+      "family": "tvd",
+      "kind": "generic",
+      "targets": [
+        "_tv_distance_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_tvd.py::test_correctness[dtype0-1e-08-1e-06-batchmean-1-4096-128256]",
+          "score": 525336576,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 128256
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "1e-06",
+            "reduction": "'batchmean'",
+            "B": "1",
+            "T": "4096",
+            "V": "128256"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_tvd.py::test_correctness[dtype0-1e-08-1e-06-mean-1-4096-128256]",
+          "score": 525336576,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 128256
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "1e-06",
+            "reduction": "'mean'",
+            "B": "1",
+            "T": "4096",
+            "V": "128256"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_tvd.py::test_correctness[dtype0-1e-08-1e-06-none-1-4096-128256]",
+          "score": 525336576,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 128256
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "1e-06",
+            "reduction": "'none'",
+            "B": "1",
+            "T": "4096",
+            "V": "128256"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_tvd.py::test_correctness[dtype0-1e-08-1e-06-sum-1-4096-128256]",
+          "score": 525336576,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 128256
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "1e-06",
+            "reduction": "'sum'",
+            "B": "1",
+            "T": "4096",
+            "V": "128256"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_tvd.py::test_correctness[dtype1-1e-08-1e-06-batchmean-1-4096-128256]",
+          "score": 525336576,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 128256
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-08",
+            "rtol": "1e-06",
+            "reduction": "'batchmean'",
+            "B": "1",
+            "T": "4096",
+            "V": "128256"
+          }
+        }
+      ]
+    },
+    {
+      "family": "grpo_loss",
+      "kind": "generic",
+      "targets": [
+        "_grpo_loss_bwd_kernel",
+        "_grpo_loss_fwd_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.0-0.2-0.4]",
+          "score": 155582464,
+          "dimensions": {
+            "B": 1,
+            "T": 1024,
+            "V": 151936
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.05",
+            "rtol": "0.5",
+            "B": "1",
+            "T": "1024",
+            "V": "151936",
+            "temperature": "0.7",
+            "num_iteration": "1",
+            "beta": "0.0",
+            "eps_low": "0.2",
+            "eps_high": "0.4"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.04-0.2-0.4]",
+          "score": 155582464,
+          "dimensions": {
+            "B": 1,
+            "T": 1024,
+            "V": 151936
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.05",
+            "rtol": "0.5",
+            "B": "1",
+            "T": "1024",
+            "V": "151936",
+            "temperature": "0.7",
+            "num_iteration": "1",
+            "beta": "0.04",
+            "eps_low": "0.2",
+            "eps_high": "0.4"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-5-0.0-0.2-0.4]",
+          "score": 155582464,
+          "dimensions": {
+            "B": 1,
+            "T": 1024,
+            "V": 151936
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.05",
+            "rtol": "0.5",
+            "B": "1",
+            "T": "1024",
+            "V": "151936",
+            "temperature": "0.7",
+            "num_iteration": "5",
+            "beta": "0.0",
+            "eps_low": "0.2",
+            "eps_high": "0.4"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-5-0.04-0.2-0.4]",
+          "score": 155582464,
+          "dimensions": {
+            "B": 1,
+            "T": 1024,
+            "V": 151936
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.05",
+            "rtol": "0.5",
+            "B": "1",
+            "T": "1024",
+            "V": "151936",
+            "temperature": "0.7",
+            "num_iteration": "5",
+            "beta": "0.04",
+            "eps_low": "0.2",
+            "eps_high": "0.4"
+          }
+        }
+      ]
+    },
+    {
+      "family": "kl_div",
+      "kind": "generic",
+      "targets": [
+        "_kldiv_kernel_backward",
+        "_kldiv_kernel_forward"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_kl_div.py::test_correctness[dtype0-1e-08-0.05-batchmean-False-1-4096-32000]",
+          "score": 131072000,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 32000
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "0.05",
+            "reduction": "'batchmean'",
+            "log_target": "False",
+            "B": "1",
+            "T": "4096",
+            "V": "32000"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_kl_div.py::test_correctness[dtype0-1e-08-0.05-batchmean-True-1-4096-32000]",
+          "score": 131072000,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 32000
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "0.05",
+            "reduction": "'batchmean'",
+            "log_target": "True",
+            "B": "1",
+            "T": "4096",
+            "V": "32000"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_kl_div.py::test_correctness[dtype0-1e-08-0.05-mean-False-1-4096-32000]",
+          "score": 131072000,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 32000
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "0.05",
+            "reduction": "'mean'",
+            "log_target": "False",
+            "B": "1",
+            "T": "4096",
+            "V": "32000"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_kl_div.py::test_correctness[dtype0-1e-08-0.05-mean-True-1-4096-32000]",
+          "score": 131072000,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 32000
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "0.05",
+            "reduction": "'mean'",
+            "log_target": "True",
+            "B": "1",
+            "T": "4096",
+            "V": "32000"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_kl_div.py::test_correctness[dtype0-1e-08-0.05-none-False-1-4096-32000]",
+          "score": 131072000,
+          "dimensions": {
+            "B": 1,
+            "T": 4096,
+            "V": 32000
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-08",
+            "rtol": "0.05",
+            "reduction": "'none'",
+            "log_target": "False",
+            "B": "1",
+            "T": "4096",
+            "V": "32000"
+          }
+        }
+      ]
+    },
+    {
+      "family": "jsd",
+      "kind": "generic",
+      "targets": [
+        "_jsd_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_jsd.py::test_correctness[dtype0-1e-07-0.05-41-401-1271]",
+          "score": 20896511,
+          "dimensions": {
+            "B": 41,
+            "T": 401,
+            "V": 1271
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-07",
+            "rtol": "0.05",
+            "B": "41",
+            "T": "401",
+            "V": "1271"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_jsd.py::test_correctness[dtype1-1e-07-1e-06-41-401-1271]",
+          "score": 20896511,
+          "dimensions": {
+            "B": 41,
+            "T": 401,
+            "V": 1271
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-07",
+            "rtol": "1e-06",
+            "B": "41",
+            "T": "401",
+            "V": "1271"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_jsd.py::test_correctness[dtype2-0.001-0.001-41-401-1271]",
+          "score": 20896511,
+          "dimensions": {
+            "B": 41,
+            "T": 401,
+            "V": 1271
+          },
+          "params": {
+            "dtype": "torch.float16",
+            "atol": "0.001",
+            "rtol": "0.001",
+            "B": "41",
+            "T": "401",
+            "V": "1271"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_jsd.py::test_correctness[dtype0-1e-07-0.05-2-1024-3200]",
+          "score": 6553600,
+          "dimensions": {
+            "B": 2,
+            "T": 1024,
+            "V": 3200
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "1e-07",
+            "rtol": "0.05",
+            "B": "2",
+            "T": "1024",
+            "V": "3200"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_jsd.py::test_correctness[dtype1-1e-07-1e-06-2-1024-3200]",
+          "score": 6553600,
+          "dimensions": {
+            "B": 2,
+            "T": 1024,
+            "V": 3200
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-07",
+            "rtol": "1e-06",
+            "B": "2",
+            "T": "1024",
+            "V": "3200"
+          }
+        }
+      ]
+    },
+    {
+      "family": "group_norm",
+      "kind": "generic",
+      "targets": [
+        "_group_norm_backward_kernel",
+        "_group_norm_forward_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-16-48-12-8192]",
+          "score": 6291456,
+          "dimensions": {
+            "batch_size": 16,
+            "num_channels": 48,
+            "hidden_size": 8192
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "0.0001",
+            "batch_size": "16",
+            "num_channels": "48",
+            "num_groups": "12",
+            "hidden_size": "8192"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-16-32-1-4096]",
+          "score": 2097152,
+          "dimensions": {
+            "batch_size": 16,
+            "num_channels": 32,
+            "hidden_size": 4096
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "0.0001",
+            "batch_size": "16",
+            "num_channels": "32",
+            "num_groups": "1",
+            "hidden_size": "4096"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-2-63-21-2163]",
+          "score": 272538,
+          "dimensions": {
+            "batch_size": 2,
+            "num_channels": 63,
+            "hidden_size": 2163
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "0.0001",
+            "batch_size": "2",
+            "num_channels": "63",
+            "num_groups": "21",
+            "hidden_size": "2163"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-32-32-4]",
+          "score": 128,
+          "dimensions": {
+            "batch_size": 1,
+            "num_channels": 32,
+            "hidden_size": 4
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "0.0001",
+            "batch_size": "1",
+            "num_channels": "32",
+            "num_groups": "32",
+            "hidden_size": "4"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-1-1-3]",
+          "score": 3,
+          "dimensions": {
+            "batch_size": 1,
+            "num_channels": 1,
+            "hidden_size": 3
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "0.0001",
+            "batch_size": "1",
+            "num_channels": "1",
+            "num_groups": "1",
+            "hidden_size": "3"
+          }
+        }
+      ]
+    },
+    {
+      "family": "poly_norm",
+      "kind": "generic",
+      "targets": [
+        "_poly_norm_backward_kernel",
+        "_poly_norm_forward_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_poly_norm.py::test_correctness[dtype0-0.0003-1e-06-8-64-1024]",
+          "score": 524288,
+          "dimensions": {
+            "bs": 8,
+            "sl": 64,
+            "hd": 1024
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0003",
+            "rtol": "1e-06",
+            "bs": "8",
+            "sl": "64",
+            "hd": "1024"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_poly_norm.py::test_correctness[dtype1-0.6-0.05-8-64-1024]",
+          "score": 524288,
+          "dimensions": {
+            "bs": 8,
+            "sl": 64,
+            "hd": 1024
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.6",
+            "rtol": "0.05",
+            "bs": "8",
+            "sl": "64",
+            "hd": "1024"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_poly_norm.py::test_correctness[dtype0-0.0003-1e-06-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0003",
+            "rtol": "1e-06",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_poly_norm.py::test_correctness[dtype1-0.6-0.05-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.6",
+            "rtol": "0.05",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_poly_norm.py::test_correctness[dtype0-0.0003-1e-06-5-123-123]",
+          "score": 75645,
+          "dimensions": {
+            "bs": 5,
+            "sl": 123,
+            "hd": 123
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0003",
+            "rtol": "1e-06",
+            "bs": "5",
+            "sl": "123",
+            "hd": "123"
+          }
+        }
+      ]
+    },
+    {
+      "family": "fused_add_rms_norm",
+      "kind": "generic",
+      "targets": [
+        "_fused_add_rms_norm_backward_kernel",
+        "_fused_add_rms_norm_forward_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_fused_add_rms_norm.py::test_correctness[False-BaseAddRMSNorm-0.0-none-dtype0-0.0001-1e-06-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_fused_add_rms_norm.BaseAddRMSNorm'>",
+            "offset": "0.0",
+            "casting_mode": "'none'",
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "1e-06",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_fused_add_rms_norm.py::test_correctness[False-BaseAddRMSNorm-0.0-none-dtype1-0.2-0.02-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_fused_add_rms_norm.BaseAddRMSNorm'>",
+            "offset": "0.0",
+            "casting_mode": "'none'",
+            "dtype": "torch.bfloat16",
+            "atol": "0.2",
+            "rtol": "0.02",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_fused_add_rms_norm.py::test_correctness[False-GemmaAddRMSNorm-1.0-gemma-dtype0-0.0001-1e-06-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_fused_add_rms_norm.GemmaAddRMSNorm'>",
+            "offset": "1.0",
+            "casting_mode": "'gemma'",
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "1e-06",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_fused_add_rms_norm.py::test_correctness[False-GemmaAddRMSNorm-1.0-gemma-dtype1-0.2-0.02-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_fused_add_rms_norm.GemmaAddRMSNorm'>",
+            "offset": "1.0",
+            "casting_mode": "'gemma'",
+            "dtype": "torch.bfloat16",
+            "atol": "0.2",
+            "rtol": "0.02",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_fused_add_rms_norm.py::test_correctness[False-LlamaAddRMSNorm-0.0-llama-dtype0-0.0001-1e-06-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_fused_add_rms_norm.LlamaAddRMSNorm'>",
+            "offset": "0.0",
+            "casting_mode": "'llama'",
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "1e-06",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        }
+      ]
+    },
+    {
+      "family": "rms_norm",
+      "kind": "generic",
+      "targets": [
+        "_rms_norm_backward_kernel",
+        "_rms_norm_forward_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_rms_norm.py::test_correctness[False-False-GemmaRMSNorm-1.0-gemma-dtype0-0.0001-1e-06-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "elementwise_affine": "False",
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_rms_norm.GemmaRMSNorm'>",
+            "offset": "1.0",
+            "casting_mode": "'gemma'",
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "1e-06",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_rms_norm.py::test_correctness[False-False-GemmaRMSNorm-1.0-gemma-dtype1-0.2-0.02-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "elementwise_affine": "False",
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_rms_norm.GemmaRMSNorm'>",
+            "offset": "1.0",
+            "casting_mode": "'gemma'",
+            "dtype": "torch.bfloat16",
+            "atol": "0.2",
+            "rtol": "0.02",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_rms_norm.py::test_correctness[False-False-LlamaRMSNorm-0.0-llama-dtype0-0.0001-1e-06-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "elementwise_affine": "False",
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_rms_norm.LlamaRMSNorm'>",
+            "offset": "0.0",
+            "casting_mode": "'llama'",
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "1e-06",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_rms_norm.py::test_correctness[False-False-LlamaRMSNorm-0.0-llama-dtype1-0.2-0.02-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "elementwise_affine": "False",
+            "in_place": "False",
+            "reference": "<class 'test.transformers.test_rms_norm.LlamaRMSNorm'>",
+            "offset": "0.0",
+            "casting_mode": "'llama'",
+            "dtype": "torch.bfloat16",
+            "atol": "0.2",
+            "rtol": "0.02",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_rms_norm.py::test_correctness[False-True-GemmaRMSNorm-1.0-gemma-dtype0-0.0001-1e-06-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "bs": 2,
+            "sl": 128,
+            "hd": 512
+          },
+          "params": {
+            "elementwise_affine": "False",
+            "in_place": "True",
+            "reference": "<class 'test.transformers.test_rms_norm.GemmaRMSNorm'>",
+            "offset": "1.0",
+            "casting_mode": "'gemma'",
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "1e-06",
+            "bs": "2",
+            "sl": "128",
+            "hd": "512"
+          }
+        }
+      ]
+    },
+    {
+      "family": "sparsemax",
+      "kind": "generic",
+      "targets": [
+        "_sparsemax_backward_kernel",
+        "_sparsemax_forward_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_sparsemax.py::test_liger_sparsemax_correctness[dtype0-1e-05-1e-05--1-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "batch_size": 2,
+            "seq_len": 128,
+            "features": 512
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "dim": "-1",
+            "batch_size": "2",
+            "seq_len": "128",
+            "features": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_sparsemax.py::test_liger_sparsemax_correctness[dtype0-1e-05-1e-05-1-2-128-512]",
+          "score": 131072,
+          "dimensions": {
+            "batch_size": 2,
+            "seq_len": 128,
+            "features": 512
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "dim": "1",
+            "batch_size": "2",
+            "seq_len": "128",
+            "features": "512"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_sparsemax.py::test_liger_sparsemax_correctness[dtype0-1e-05-1e-05--1-5-123-123]",
+          "score": 75645,
+          "dimensions": {
+            "batch_size": 5,
+            "seq_len": 123,
+            "features": 123
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "dim": "-1",
+            "batch_size": "5",
+            "seq_len": "123",
+            "features": "123"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_sparsemax.py::test_liger_sparsemax_correctness[dtype0-1e-05-1e-05-1-5-123-123]",
+          "score": 75645,
+          "dimensions": {
+            "batch_size": 5,
+            "seq_len": 123,
+            "features": 123
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "dim": "1",
+            "batch_size": "5",
+            "seq_len": "123",
+            "features": "123"
+          }
+        }
+      ]
+    },
+    {
+      "family": "fused_neighborhood_attention",
+      "kind": "generic",
+      "targets": [
+        "_fused_neighborhood_attention_qk_kernel",
+        "_fused_neighborhood_attention_av_kernel",
+        "_fused_neighborhood_attention_grad_qk_kernel",
+        "_fused_neighborhood_attention_grad_k_kernel",
+        "_fused_neighborhood_attention_grad_v_kernel",
+        "_fused_neighborhood_attention_grad_attn_kernel",
+        "_neighborhood_mask_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+          "score": 8192,
+          "dimensions": {
+            "batch_size": 2,
+            "seq_len": 32,
+            "hidden_size": 128
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.005",
+            "rtol": "0.005",
+            "bias": "False",
+            "batch_size": "2",
+            "seq_len": "32",
+            "hidden_size": "128",
+            "num_heads": "4",
+            "kernel_size": "7"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-True-2-32-128-4-7]",
+          "score": 8192,
+          "dimensions": {
+            "batch_size": 2,
+            "seq_len": 32,
+            "hidden_size": 128
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.005",
+            "rtol": "0.005",
+            "bias": "True",
+            "batch_size": "2",
+            "seq_len": "32",
+            "hidden_size": "128",
+            "num_heads": "4",
+            "kernel_size": "7"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype1-0.05-0.05-False-2-32-128-4-7]",
+          "score": 8192,
+          "dimensions": {
+            "batch_size": 2,
+            "seq_len": 32,
+            "hidden_size": 128
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.05",
+            "rtol": "0.05",
+            "bias": "False",
+            "batch_size": "2",
+            "seq_len": "32",
+            "hidden_size": "128",
+            "num_heads": "4",
+            "kernel_size": "7"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype1-0.05-0.05-True-2-32-128-4-7]",
+          "score": 8192,
+          "dimensions": {
+            "batch_size": 2,
+            "seq_len": 32,
+            "hidden_size": 128
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.05",
+            "rtol": "0.05",
+            "bias": "True",
+            "batch_size": "2",
+            "seq_len": "32",
+            "hidden_size": "128",
+            "num_heads": "4",
+            "kernel_size": "7"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-24-96-3-9]",
+          "score": 4608,
+          "dimensions": {
+            "batch_size": 2,
+            "seq_len": 24,
+            "hidden_size": 96
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.005",
+            "rtol": "0.005",
+            "bias": "False",
+            "batch_size": "2",
+            "seq_len": "24",
+            "hidden_size": "96",
+            "num_heads": "3",
+            "kernel_size": "9"
+          }
+        }
+      ]
+    },
+    {
+      "family": "softmax",
+      "kind": "generic",
+      "targets": [
+        "_softmax_single_block_backward_kernel",
+        "_softmax_single_block_forward_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_softmax.py::test_liger_softmax[dtype0-1e-05-1e-05-shape5]",
+          "score": 8192,
+          "dimensions": {
+            "shape": 8192
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "shape": "(1, 2, 4096)"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_softmax.py::test_liger_softmax[dtype1-0.05-0.05-shape5]",
+          "score": 8192,
+          "dimensions": {
+            "shape": 8192
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.05",
+            "rtol": "0.05",
+            "shape": "(1, 2, 4096)"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_softmax.py::test_liger_softmax[dtype0-1e-05-1e-05-shape3]",
+          "score": 5376,
+          "dimensions": {
+            "shape": 5376
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "shape": "(3, 7, 256)"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_softmax.py::test_liger_softmax[dtype1-0.05-0.05-shape3]",
+          "score": 5376,
+          "dimensions": {
+            "shape": 5376
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.05",
+            "rtol": "0.05",
+            "shape": "(3, 7, 256)"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_softmax.py::test_liger_softmax[dtype0-1e-05-1e-05-shape4]",
+          "score": 4096,
+          "dimensions": {
+            "shape": 4096
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "shape": "(1, 4096)"
+          }
+        }
+      ]
+    },
+    {
+      "family": "multi_token_attention",
+      "kind": "generic",
+      "targets": [
+        "_mask_bwd_kernel",
+        "_mask_fwd_kernel"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_multi_token_attention.py::test_multi_token_attention_correctness[dtype0-0.0001-0.0001-False-3-6-6-6-3-1]",
+          "score": 648,
+          "dimensions": {
+            "B": 3,
+            "C_in": 6,
+            "C_out": 6,
+            "L": 6
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "0.0001",
+            "bias": "False",
+            "B": "3",
+            "C_in": "6",
+            "C_out": "6",
+            "L": "6",
+            "K": "3",
+            "groups": "1"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_multi_token_attention.py::test_multi_token_attention_correctness[dtype0-0.0001-0.0001-True-3-6-6-6-3-1]",
+          "score": 648,
+          "dimensions": {
+            "B": 3,
+            "C_in": 6,
+            "C_out": 6,
+            "L": 6
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "0.0001",
+            "bias": "True",
+            "B": "3",
+            "C_in": "6",
+            "C_out": "6",
+            "L": "6",
+            "K": "3",
+            "groups": "1"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_multi_token_attention.py::test_multi_token_attention_correctness[dtype1-0.02-0.02-False-3-6-6-6-3-1]",
+          "score": 648,
+          "dimensions": {
+            "B": 3,
+            "C_in": 6,
+            "C_out": 6,
+            "L": 6
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.02",
+            "rtol": "0.02",
+            "bias": "False",
+            "B": "3",
+            "C_in": "6",
+            "C_out": "6",
+            "L": "6",
+            "K": "3",
+            "groups": "1"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_multi_token_attention.py::test_multi_token_attention_correctness[dtype1-0.02-0.02-True-3-6-6-6-3-1]",
+          "score": 648,
+          "dimensions": {
+            "B": 3,
+            "C_in": 6,
+            "C_out": 6,
+            "L": 6
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.02",
+            "rtol": "0.02",
+            "bias": "True",
+            "B": "3",
+            "C_in": "6",
+            "C_out": "6",
+            "L": "6",
+            "K": "3",
+            "groups": "1"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_multi_token_attention.py::test_multi_token_attention_correctness[dtype0-0.0001-0.0001-False-2-4-4-8-3-1]",
+          "score": 256,
+          "dimensions": {
+            "B": 2,
+            "C_in": 4,
+            "C_out": 4,
+            "L": 8
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "0.0001",
+            "rtol": "0.0001",
+            "bias": "False",
+            "B": "2",
+            "C_in": "4",
+            "C_out": "4",
+            "L": "8",
+            "K": "3",
+            "groups": "1"
+          }
+        }
+      ]
+    },
+    {
+      "family": "geglu",
+      "kind": "ascend",
+      "targets": [
+        "_geglu_backward_kernel_flat",
+        "_geglu_forward_kernel_flat"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_geglu.py::test_correctness[dtype0-1.0-2e-06-2-2048-2048-4096]",
+          "score": 34359738368,
+          "dimensions": {
+            "bsz": 2,
+            "seq_len": 2048,
+            "hidden_size": 2048,
+            "intermediate_size": 4096
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1.0",
+            "rtol": "2e-06",
+            "bsz": "2",
+            "seq_len": "2048",
+            "hidden_size": "2048",
+            "intermediate_size": "4096"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_geglu.py::test_correctness[dtype1-0.01-0.01-2-2048-2048-4096]",
+          "score": 34359738368,
+          "dimensions": {
+            "bsz": 2,
+            "seq_len": 2048,
+            "hidden_size": 2048,
+            "intermediate_size": 4096
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.01",
+            "rtol": "0.01",
+            "bsz": "2",
+            "seq_len": "2048",
+            "hidden_size": "2048",
+            "intermediate_size": "4096"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_geglu.py::test_correctness[dtype0-1.0-2e-06-9-41-341-4231]",
+          "score": 532382499,
+          "dimensions": {
+            "bsz": 9,
+            "seq_len": 41,
+            "hidden_size": 341,
+            "intermediate_size": 4231
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1.0",
+            "rtol": "2e-06",
+            "bsz": "9",
+            "seq_len": "41",
+            "hidden_size": "341",
+            "intermediate_size": "4231"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_geglu.py::test_correctness[dtype1-0.01-0.01-9-41-341-4231]",
+          "score": 532382499,
+          "dimensions": {
+            "bsz": 9,
+            "seq_len": 41,
+            "hidden_size": 341,
+            "intermediate_size": 4231
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.01",
+            "rtol": "0.01",
+            "bsz": "9",
+            "seq_len": "41",
+            "hidden_size": "341",
+            "intermediate_size": "4231"
+          }
+        }
+      ]
+    },
+    {
+      "family": "qwen2vl_mrope",
+      "kind": "ascend",
+      "targets": [
+        "_triton_qwen2vl_mrope_npu"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_qwen2vl_mrope.py::test_correctness[dtype0-1e-05-1e-05-128-mrope_section0-64-8-131-2]",
+          "score": 17170432,
+          "dimensions": {
+            "head_dim": 128,
+            "num_q_heads": 64,
+            "num_kv_heads": 8,
+            "seq_len": 131,
+            "bsz": 2
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "head_dim": "128",
+            "mrope_section": "[16, 24, 24]",
+            "num_q_heads": "64",
+            "num_kv_heads": "8",
+            "seq_len": "131",
+            "bsz": "2"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_qwen2vl_mrope.py::test_correctness[dtype1-0.1-1e-05-128-mrope_section0-64-8-131-2]",
+          "score": 17170432,
+          "dimensions": {
+            "head_dim": 128,
+            "num_q_heads": 64,
+            "num_kv_heads": 8,
+            "seq_len": 131,
+            "bsz": 2
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.1",
+            "rtol": "1e-05",
+            "head_dim": "128",
+            "mrope_section": "[16, 24, 24]",
+            "num_q_heads": "64",
+            "num_kv_heads": "8",
+            "seq_len": "131",
+            "bsz": "2"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_qwen2vl_mrope.py::test_correctness[dtype0-1e-05-1e-05-128-mrope_section0-64-8-128-2]",
+          "score": 16777216,
+          "dimensions": {
+            "head_dim": 128,
+            "num_q_heads": 64,
+            "num_kv_heads": 8,
+            "seq_len": 128,
+            "bsz": 2
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "head_dim": "128",
+            "mrope_section": "[16, 24, 24]",
+            "num_q_heads": "64",
+            "num_kv_heads": "8",
+            "seq_len": "128",
+            "bsz": "2"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_qwen2vl_mrope.py::test_correctness[dtype1-0.1-1e-05-128-mrope_section0-64-8-128-2]",
+          "score": 16777216,
+          "dimensions": {
+            "head_dim": 128,
+            "num_q_heads": 64,
+            "num_kv_heads": 8,
+            "seq_len": 128,
+            "bsz": 2
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "0.1",
+            "rtol": "1e-05",
+            "head_dim": "128",
+            "mrope_section": "[16, 24, 24]",
+            "num_q_heads": "64",
+            "num_kv_heads": "8",
+            "seq_len": "128",
+            "bsz": "2"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_qwen2vl_mrope.py::test_correctness[dtype0-1e-05-1e-05-96-mrope_section1-64-8-131-2]",
+          "score": 12877824,
+          "dimensions": {
+            "head_dim": 96,
+            "num_q_heads": 64,
+            "num_kv_heads": 8,
+            "seq_len": 131,
+            "bsz": 2
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1e-05",
+            "rtol": "1e-05",
+            "head_dim": "96",
+            "mrope_section": "[16, 16, 16]",
+            "num_q_heads": "64",
+            "num_kv_heads": "8",
+            "seq_len": "131",
+            "bsz": "2"
+          }
+        }
+      ]
+    },
+    {
+      "family": "swiglu",
+      "kind": "ascend",
+      "targets": [
+        "_swiglu_backward_kernel_flat",
+        "_swiglu_forward_kernel_flat"
+      ],
+      "candidates": [
+        {
+          "nodeid": "test/transformers/test_swiglu.py::test_correctness_functional[dtype0-1.0-1e-05-9-7-41]",
+          "score": 63,
+          "dimensions": {
+            "bsz": 9,
+            "seq_len": 7
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1.0",
+            "rtol": "1e-05",
+            "bsz": "9",
+            "seq_len": "7",
+            "size": "41"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_swiglu.py::test_correctness_functional[dtype1-10000.0-0.01-9-7-41]",
+          "score": 63,
+          "dimensions": {
+            "bsz": 9,
+            "seq_len": 7
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "10000.0",
+            "rtol": "0.01",
+            "bsz": "9",
+            "seq_len": "7",
+            "size": "41"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_swiglu.py::test_correctness_functional[dtype0-1.0-1e-05-2-8-8]",
+          "score": 16,
+          "dimensions": {
+            "bsz": 2,
+            "seq_len": 8
+          },
+          "params": {
+            "dtype": "torch.float32",
+            "atol": "1.0",
+            "rtol": "1e-05",
+            "bsz": "2",
+            "seq_len": "8",
+            "size": "8"
+          }
+        },
+        {
+          "nodeid": "test/transformers/test_swiglu.py::test_correctness_functional[dtype1-10000.0-0.01-2-8-8]",
+          "score": 16,
+          "dimensions": {
+            "bsz": 2,
+            "seq_len": 8
+          },
+          "params": {
+            "dtype": "torch.bfloat16",
+            "atol": "10000.0",
+            "rtol": "0.01",
+            "bsz": "2",
+            "seq_len": "8",
+            "size": "8"
+          }
+        }
+      ]
+    }
+  ],
+  "manual": [
+    "_block_rms_norm_backward_kernel",
+    "_block_rms_norm_forward_kernel",
+    "_layer_norm_backward_kernel",
+    "_selective_log_softmax_kernel",
+    "_softmax_multi_block_backward_kernel",
+    "_softmax_multi_block_forward_kernel",
+    "element_mul_kernel",
+    "embedding_backward_kernel",
+    "embedding_forward_kernel",
+    "liger_cross_entropy_kernel",
+    "matmul_kernel"
+  ],
+  "target_count": 35
+}

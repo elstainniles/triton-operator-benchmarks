@@ -1,0 +1,128 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK43",
+  "kernel": "embedding_backward_kernel",
+  "source_kind": "ascend",
+  "source_sha256": "469312e868681382cdfddb72cc3544093c871d06f2ba173534387495018b6033",
+  "original_nodeid": "direct_cases.py::test_ascend_embedding_backward",
+  "type": "vv",
+  "tensors": {
+    "grad_output_ptr": {
+      "shape": [
+        2048,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "grad_weight_ptr": {
+      "shape": [
+        8192,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "indices_ptr": {
+      "shape": [
+        2048
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "grad_output_ptr": {
+      "shape": [
+        2048,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "grad_weight_ptr": {
+      "shape": [
+        8192,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "indices_ptr": {
+      "shape": [
+        2048
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "n_elements": "2048",
+    "embedding_dim": "1024",
+    "BLOCK_SIZE_M": "64",
+    "BLOCK_SIZE_N": "128"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 65.462,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "direct-ascend-embedding-bwd-ascend-00.json",
+  "source_result_sha256": "ec4ff43a3224d142616ecfdf22c6a7ea3f71d76868df8a25e213e3d8f94bb82c",
+  "samples_us": [
+    65.586,
+    65.437,
+    65.412,
+    65.689,
+    65.486,
+    65.659,
+    65.419,
+    65.591,
+    65.291,
+    65.701,
+    65.509,
+    65.462,
+    65.402,
+    65.457,
+    65.411
+  ],
+  "grid": [
+    32
+  ],
+  "constexpr": {
+    "embedding_dim": 1024,
+    "BLOCK_SIZE_M": 64,
+    "BLOCK_SIZE_N": 128
+  },
+  "trace_sha256": "5f0e15ca8d3272742c94cf60eeac9735492bea539a0b5b7f3f991b7b70f87291",
+  "kernel_csv_sha256": "f41b3379a9a60359a1abf3e30532909d242d14511db36ed7d37e661f28264115",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "080a3e99261a8900f5a510ff5fcc5a1119eed46edaf5430ca11ca3a1bfb1268d",
+      "ir_sha256": "e660b306479ca9efe430d5b9ef9390d6281523e9034f8d3f341fb7f4ba39950e",
+      "binary_sha256": "1f2b3bd6dfc4b0b405fdc235534cf58ac6c1b4274e8a0237245fb95a7c756889",
+      "compiler_hash": "ef1860bfaa5395c43e59a094dc5bbbbf79b0f29e22105b75dfbe0519ae06cc73"
+    }
+  ]
+}

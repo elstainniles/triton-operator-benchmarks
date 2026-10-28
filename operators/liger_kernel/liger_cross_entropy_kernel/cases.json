@@ -1,0 +1,113 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        8192,
+        32000
+      ],
+      "dtype": "bfloat16",
+      "nodeid": "test_case.py::test_generic_cross_entropy",
+      "original_nodeid": "direct_cases.py::test_generic_cross_entropy",
+      "input_origin": "direct_correctness_case",
+      "tensors": {
+        "X_ptr": {
+          "shape": [
+            8192,
+            32000
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            32000,
+            1
+          ]
+        },
+        "Y_ptr": {
+          "shape": [
+            8192
+          ],
+          "dtype": "torch.int64",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "loss_ptr": {
+          "shape": [
+            8192
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "X_ptr": {
+          "shape": [
+            8192,
+            32000
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            32000,
+            1
+          ]
+        },
+        "X_stride": "32000",
+        "Y_ptr": {
+          "shape": [
+            8192
+          ],
+          "dtype": "torch.int64",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "Y_stride": "1",
+        "weight_ptr": "None",
+        "loss_ptr": {
+          "shape": [
+            8192
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "z_loss_ptr": "None",
+        "loss_stride": "1",
+        "token_accuracy_ptr": "None",
+        "token_accuracy_stride": "0",
+        "predicted_tokens_ptr": "None",
+        "predicted_tokens_stride": "0",
+        "n_cols": "32000",
+        "n_non_ignore": "8192",
+        "sum_non_ignore_weight": "8192",
+        "ignore_index": "-100",
+        "weight_sum": "0.0",
+        "lse_square_scale": "0.0",
+        "label_smoothing": "0.0",
+        "reduction": "'mean'",
+        "softcap": "None",
+        "RETURN_Z_LOSS": "False",
+        "RETURN_TOKEN_ACCURACY": "False",
+        "RETURN_PREDICTED_TOKENS": "False",
+        "BLOCK_SIZE": "2048",
+        "HAS_WEIGHT": "False",
+        "HAS_SOFTCAPPING": "False",
+        "HAS_GRADIENTS": "True",
+        "num_warps": "32"
+      },
+      "dimensions": {},
+      "parameters": {}
+    }
+  ]
+}

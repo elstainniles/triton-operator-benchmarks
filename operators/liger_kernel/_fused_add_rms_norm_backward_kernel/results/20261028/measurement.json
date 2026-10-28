@@ -1,0 +1,236 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK05",
+  "kernel": "_fused_add_rms_norm_backward_kernel",
+  "source_kind": "generic",
+  "source_sha256": "7faa12a91145a9c951ab5d23e04b827c59c49e09e795b0923e141e21733e0d56",
+  "original_nodeid": "test/transformers/test_fused_add_rms_norm.py::test_correctness[False-BaseAddRMSNorm-0.0-none-dtype0-0.0001-1e-06-2-128-512]",
+  "type": "vv",
+  "tensors": {
+    "dY_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dS_out_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dX_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "X_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "W_ptr": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "RSTD_ptr": {
+      "shape": [
+        256
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "dW_ptr": {
+      "shape": [
+        56,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "dY_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dY_row_stride": "512",
+    "dS_out_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dS_out_row_stride": "512",
+    "dX_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dX_row_stride": "512",
+    "X_ptr": {
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "X_row_stride": "512",
+    "X_dtype": "triton.language.float32",
+    "W_ptr": {
+      "shape": [
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "W_row_stride": "1",
+    "RSTD_ptr": {
+      "shape": [
+        256
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "RSTD_row_stride": "1",
+    "dW_ptr": {
+      "shape": [
+        56,
+        512
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        512,
+        1
+      ]
+    },
+    "dW_row_stride": "512",
+    "n_rows": "256",
+    "n_cols": "512",
+    "offset": "0.0",
+    "rows_per_program": "5",
+    "casting_mode": "-1",
+    "BLOCK_SIZE": "512",
+    "num_warps": "4",
+    "num_stages": "2",
+    "has_dS_out": "True",
+    "COMPUTE_DW": "True"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 4.341,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "fused_add_rms_norm-generic-00.json",
+  "source_result_sha256": "0b438abaa94fc0177039abfa5629991287cd70ac70a85c64ff7ec1da27fb0ce2",
+  "samples_us": [
+    3.756,
+    4.079,
+    4.453,
+    4.063,
+    4.184,
+    4.836,
+    4.162,
+    3.959,
+    4.578,
+    4.479,
+    4.341,
+    4.041,
+    4.736,
+    4.868,
+    4.55
+  ],
+  "grid": [
+    56
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 512,
+    "num_warps": 4,
+    "num_stages": 2,
+    "has_dS_out": true,
+    "COMPUTE_DW": true
+  },
+  "trace_sha256": "2bb3daad4a95a6eb7036cb53a5866d4a808f763dc424f3ffb41b9bff9afad937",
+  "kernel_csv_sha256": "61a1262efb68057a6fd3d2568d758710be1f330bd03d6f1222e68ef0bfee0853",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "287fccdd9b50a901e0321edbf58de156438d688306fc591d367a6fb793946f0a",
+      "ir_sha256": "866d59d268eece931b6fb6e0e3ad3b3e251d9166d88a5d97d9a3a95b300ef853",
+      "binary_sha256": "a8c2328a4de52e549fead5529a70e75a73e2769579fbd98bb72c6f3a26f3fd94",
+      "compiler_hash": "e3b263c3a99628cba40abdc50790be298b01be02fc118f5a22397475679f0e96"
+    }
+  ]
+}

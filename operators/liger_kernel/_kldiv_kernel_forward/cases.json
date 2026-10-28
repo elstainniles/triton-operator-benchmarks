@@ -1,0 +1,113 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        4096,
+        32000
+      ],
+      "dtype": "bfloat16",
+      "nodeid": "test_case.py::test_correctness[dtype0-1e-08-0.05-batchmean-False-1-4096-32000]",
+      "original_nodeid": "test/transformers/test_kl_div.py::test_correctness[dtype0-1e-08-0.05-batchmean-False-1-4096-32000]",
+      "input_origin": "upstream_correctness_case",
+      "tensors": {
+        "y_ptr": {
+          "shape": [
+            4096,
+            32000
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            32000,
+            1
+          ]
+        },
+        "gt_ptr": {
+          "shape": [
+            4096,
+            32000
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            32000,
+            1
+          ]
+        },
+        "loss_ptr": {
+          "shape": [
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "y_ptr": {
+          "shape": [
+            4096,
+            32000
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            32000,
+            1
+          ]
+        },
+        "y_stride": "32000",
+        "gt_ptr": {
+          "shape": [
+            4096,
+            32000
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            32000,
+            1
+          ]
+        },
+        "gt_stride": "32000",
+        "loss_ptr": {
+          "shape": [
+            4096
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "loss_stride": "1",
+        "n_cols": "32000",
+        "eps": "1e-10",
+        "BLOCK_SIZE": "8192",
+        "num_warps": "16",
+        "log_target": "False",
+        "reduction": "3"
+      },
+      "dimensions": {
+        "B": 1,
+        "T": 4096,
+        "V": 32000
+      },
+      "parameters": {
+        "dtype": "torch.bfloat16",
+        "atol": "1e-08",
+        "rtol": "0.05",
+        "reduction": "'batchmean'",
+        "log_target": "False",
+        "B": "1",
+        "T": "4096",
+        "V": "32000"
+      }
+    }
+  ]
+}

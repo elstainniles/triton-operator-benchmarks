@@ -1,0 +1,41 @@
+{
+  "id": "LK42",
+  "name": "element_mul_kernel",
+  "family": "liger/utils",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/element_mul_kernel",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "HISTORICAL_ONLY",
+  "kernel_symbol": "element_mul_kernel",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/utils.py",
+    "sha256": "b32e7097ca832549b7ae1fd6ea0139e1291dd6c1b0f0a124c90b3878349ae89d",
+    "symbol": "element_mul_kernel",
+    "snapshot": "upstream/utils.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "711534c754839d8be0aaa8e7770d360b5743468f512831bd13bc91c0a9107e45",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "d80424502963408406c93d04ce306dab2bcf1054e5ed8e999a9ea43a18d760ef",
+    "original_path": "direct_cases.py",
+    "original_nodeid": "direct_cases.py::test_generic_element_mul",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "NOT_DEVICE_VALIDATED",
+    "full_matrix_validated": false
+  }
+}

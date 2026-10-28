@@ -1,0 +1,45 @@
+{
+  "id": "LK05",
+  "name": "_fused_add_rms_norm_backward_kernel",
+  "family": "liger/fused_add_rms_norm",
+  "direction": "bwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_fused_add_rms_norm_backward_kernel",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "SECOND_BATCH_CASE_VALIDATED",
+  "kernel_symbol": "_fused_add_rms_norm_backward_kernel",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/fused_add_rms_norm.py",
+    "sha256": "7faa12a91145a9c951ab5d23e04b827c59c49e09e795b0923e141e21733e0d56",
+    "symbol": "_fused_add_rms_norm_backward_kernel",
+    "snapshot": "upstream/fused_add_rms_norm.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "24fae6de363001a05f976391d144a85e814ca8ae095282b14b91e6136dbda3dd",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "f56ca555be37adc9031947ba3c80ab658fbcb407b7d8bc0de8d8287e3434ecac",
+    "original_path": "test/transformers/test_fused_add_rms_norm.py",
+    "original_nodeid": "test/transformers/test_fused_add_rms_norm.py::test_correctness[False-BaseAddRMSNorm-0.0-none-dtype0-0.0001-1e-06-2-128-512]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "SECOND_BATCH_CASE_VALIDATED",
+    "cases": [
+      "second-batch"
+    ],
+    "full_matrix_validated": false,
+    "evidence": "results/20261028-export/measurement.json"
+  }
+}

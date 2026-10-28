@@ -21,19 +21,22 @@ Where/GELU 没有接入 FlagGems 的 `pointwise_dynamic` 生成器，不能用�
 
 **第二批测试前必须关闭图优化：`enable_graph_optimize=False`。** 默认入口已自带输入和 CPU 参考，全部 7 组均无需外部 `.pt`。按 [第二批测试说明](docs/GRAPH_OPTIMIZATION_TESTS.md) 可直接测 kernel 性能。
 
-2026-10-28 已在 Ascend950PR / TA main 完成整仓 **15/15 个条目、18/18 个 smoke 配置的正确性及纯 kernel 计时**。TG04–TG06 显式使用 SIMT；这是固定基线验证，较大尺寸和新入口 manual 候选未在本轮全面验证。实测表、失败记录和验证范围见 [VALIDATION.md](docs/VALIDATION.md)。
+2026-10-28 已在 Ascend950PR / TA main 完成上述两批 **15/15 个条目、18/18 个 smoke 配置的正确性及纯 kernel 计时**。TG04–TG06 显式使用 SIMT；这是固定基线验证，较大尺寸和新入口 manual 候选未在本轮全面验证。实测表、失败记录和验证范围见 [VALIDATION.md](docs/VALIDATION.md)。
+
+新增 [Liger-Kernel 通用优先批次](operators/liger_kernel/)：46 个精确 kernel，38 generic、7 Ascend-only、1 experimental，ID 为 LK01–LK46。每个 kernel 独立目录，提供原函数、正确性测试、自生成输入、原始 grid/tile/autotune 和历史性能；历史有效 42/46，其余编译失败/依赖阻断保留。见[完整清单](operators/liger_kernel/catalog-table.md)与[新入口验证](docs/LIGER_VALIDATION.md)。当前仓库共 61 个条目，Liger 额外需要固定源码 wheel 和测试依赖。
 
 ## 资料入口
 
 - [测试说明](docs/TESTING.md)：环境、输入、数值校验、计时、命令和限制。
 - [图优化测试批次](docs/GRAPH_OPTIMIZATION_TESTS.md)：必须关闭图优化、7 组入口及输入依赖。
+- [Liger 批跑说明](operators/liger_kernel/README.md)：通用优先的 46 个 kernel、依赖与目标 kernel 计时。
 - [手改 tile/grid 说明](docs/MANUAL_TILING.md)：基线、候选、grid 联动及退化例子。
 - [历史基线汇总](docs/BASELINE.md)：FP32/BF16、每个算子的历史收益。
 - [新增算子约定](CONTRIBUTING.md)：目录、接口、数据和验证要求。
 - [整理校验记录](docs/VALIDATION.md)：源码、结果和离线测试的校验范围。
 - [来源及许可](NOTICE)：FlagGems Apache-2.0 归属与改动范围。
 
-FlagGems 各目录都有 `kernels.py`、`baseline.py`、`manual_tile.py`、`case.py`、`cases.json`、`operator.json` 和 `results/20261026/`。图优化测试批次通过各自 `benchmark.py` 和 `cases.json` 提供固定基线、自生成输入和 CPU 参考，原 JIT 函数保持不变；旧脚本另作来源归档。两批共用 `tools/run.py` 入口，各算子独立目录。
+FlagGems 各目录都有 `kernels.py`、`baseline.py`、`manual_tile.py`、`case.py`、`cases.json`、`operator.json` 和 `results/20261026/`。图优化测试批次通过各自 `benchmark.py` 和 `cases.json` 提供固定基线、自生成输入和 CPU 参考，原 JIT 函数保持不变；旧脚本另作来源归档。Liger 使用 `kernels.py`、`test_case.py` 与 `cases.json`。各批共用 `tools/run.py` 入口，各算子独立目录。
 
 ## 快速查看与离线验证
 
@@ -46,14 +49,14 @@ python tools/verify_repository.py
 python -m unittest discover -s tests -v
 ```
 
-已配置隔离 Ascend runtime 和环境清单后，一条命令串行测试全部 15 个条目（18 个 smoke 配置）：
+已配置隔离 Ascend runtime、Liger 依赖和环境清单后，一条命令串行测试 Liger 46 个条目：
 
 ```bash
-python -I tools/run.py run --operator all --suite smoke --variants baseline \
-  --physical-card 6 --environment environment.local.json --output runs/all-smoke-001
+python -I tools/run.py run --operator liger --variants baseline \
+  --physical-card 6 --environment environment.local.json --output runs/liger-second-001
 ```
 
-`--operator graph` 选第二批 7 组，`flaggems` 选第一批 8 个，也支持单个 ID 或逗号分隔列表。`--suite all` 测所选算子的全部登记配置。整批输出 `performance.csv` 和逐算子证据；统计只包含数值通过、设备占用检查通过的 Triton kernel 设备耗时。
+`--operator graph` 选图优化批次 7 组，`flaggems` 选 8 个，`liger` 选 46 个，`all` 选全部 61 个，也支持单个 ID 或逗号分隔列表。`--suite all` 测所选算子的全部登记配置。Liger 的 `smoke` 仍是第二批原尺寸，可能占较多显存。整批输出 `performance.csv` 和逐算子证据；统计只包含数值通过、设备占用检查通过的 Triton kernel 设备耗时。
 
 NPU 运行方式见 [TESTING.md](docs/TESTING.md)。不要把上游源码直接安装进测试 runtime，也不要覆盖已有环境或已有测量结果。
 

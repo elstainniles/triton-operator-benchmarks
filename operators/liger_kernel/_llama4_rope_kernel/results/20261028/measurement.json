@@ -1,0 +1,162 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK24",
+  "kernel": "_llama4_rope_kernel",
+  "source_kind": "generic",
+  "source_sha256": "263576853c98d5f164faba2bb22a45f69721ee2102a9338f677a548fab1ced5b",
+  "original_nodeid": "test/transformers/test_llama4_rope.py::test_correctness[dtype1-0.1-1e-05-3-423-73-213-92]",
+  "type": "vv",
+  "tensors": {
+    "q_ptr": {
+      "shape": [
+        3,
+        423,
+        73,
+        92
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        2840868,
+        6716,
+        92,
+        1
+      ]
+    },
+    "k_ptr": {
+      "shape": [
+        3,
+        423,
+        213,
+        92
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        8289108,
+        19596,
+        92,
+        1
+      ]
+    },
+    "freqs_complex_ptr": {
+      "shape": [
+        423,
+        46,
+        2
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        92,
+        2,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "q_ptr": {
+      "shape": [
+        3,
+        423,
+        73,
+        92
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        2840868,
+        6716,
+        92,
+        1
+      ]
+    },
+    "k_ptr": {
+      "shape": [
+        3,
+        423,
+        213,
+        92
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        8289108,
+        19596,
+        92,
+        1
+      ]
+    },
+    "freqs_complex_ptr": {
+      "shape": [
+        423,
+        46,
+        2
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        92,
+        2,
+        1
+      ]
+    },
+    "q_row_stride": "6716",
+    "k_row_stride": "19596",
+    "q_head_stride": "92",
+    "k_head_stride": "92",
+    "freqs_row_stride": "92",
+    "seq_len": "423",
+    "batch_size": "3",
+    "imag_sign": "-1.0",
+    "head_dim_half": "46",
+    "n_q_heads": "73",
+    "n_k_heads": "213",
+    "BLOCK_SIZE": "32",
+    "num_warps": "2",
+    "num_stages": "2"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 6613.474,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "llama4_rope-generic-01.json",
+  "source_result_sha256": "8beff0e7a10763a5148263beaee910571f9dbb496f301aa79ddb5aa217b5196b",
+  "samples_us": [
+    6611.581,
+    6613.759,
+    6610.695,
+    6614.362,
+    6585.897,
+    6613.921,
+    6616.605,
+    6616.713,
+    6617.647,
+    6613.474,
+    6614.193,
+    6610.272,
+    6611.881,
+    6612.769,
+    6609.994
+  ],
+  "grid": [
+    1269,
+    213
+  ],
+  "constexpr": {
+    "num_warps": 2,
+    "num_stages": 2
+  },
+  "trace_sha256": "a7584f3bd17dd7587dd8e9920bb853c27dcc6357d7c78a42c64a52f2b1ddd142",
+  "kernel_csv_sha256": "eafe5b3804492725d91403586a653f9cf4b50c4619106790c206286bda3205ac",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "ee0c4c821fec17f5a0a5d9ab7bf8c1b0e0a1a3827bb310f4bbcea89fa88fec5c",
+      "ir_sha256": "15fbdf3129b650f099e9224186f52c8654c8324275ceaf7122356a591ee59ab4",
+      "binary_sha256": "0fc04c216d488063526ce70a55bbd8a18cb470c7a11424baa138a3839929d7b8",
+      "compiler_hash": "30076188fc1d5b73cfb352be14186dbcc6eebf2688fe103a46f2b7b691555466"
+    }
+  ]
+}

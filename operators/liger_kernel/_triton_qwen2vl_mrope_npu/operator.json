@@ -1,0 +1,41 @@
+{
+  "id": "LK40",
+  "name": "_triton_qwen2vl_mrope_npu",
+  "family": "liger/qwen2vl_mrope",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_triton_qwen2vl_mrope_npu",
+  "implementation": "ascend",
+  "runner": "liger",
+  "validation": "HISTORICAL_ONLY",
+  "kernel_symbol": "_triton_qwen2vl_mrope_npu",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/backends/_ascend/ops/qwen2vl_mrope.py",
+    "sha256": "04ba58cf7fe443cd10fe9eec54dbadbed3949b49d874f895bf0e4de8ca73f7f8",
+    "symbol": "_triton_qwen2vl_mrope_npu",
+    "snapshot": "upstream/qwen2vl_mrope.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "54da6dc5a41588b4599ab38e702992bdaa6ba68c879d36e8074e5cd9bba341a2",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "ffc7c7fa04a45906bae4bfb50457452e308a2f27a3bf451408194bd06fa32709",
+    "original_path": "test/transformers/test_qwen2vl_mrope.py",
+    "original_nodeid": "test/transformers/test_qwen2vl_mrope.py::test_correctness[dtype0-1e-05-1e-05-128-mrope_section0-64-8-131-2]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "NOT_DEVICE_VALIDATED",
+    "full_matrix_validated": false
+  }
+}

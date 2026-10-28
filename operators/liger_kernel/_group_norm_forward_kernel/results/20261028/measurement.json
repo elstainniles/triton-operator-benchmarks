@@ -1,0 +1,211 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK17",
+  "kernel": "_group_norm_forward_kernel",
+  "source_kind": "generic",
+  "source_sha256": "3a0b878b7083a894b8df8635442f5a3e7ba247b3480393c044c1512acc2cd948",
+  "original_nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-32-32-4]",
+  "type": "vv",
+  "tensors": {
+    "Y_ptr": {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    "X_ptr": {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    "Mean_ptr": {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "RSTD_ptr": {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "W_ptr": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "B_ptr": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "Y_ptr": {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    "Y_row_stride": "128",
+    "Y_col_stride": "4",
+    "X_ptr": {
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        128,
+        4,
+        1
+      ]
+    },
+    "X_row_stride": "128",
+    "X_col_stride": "4",
+    "Mean_ptr": {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "Mean_row_stride": "32",
+    "Mean_col_stride": "1",
+    "RSTD_ptr": {
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "RSTD_row_stride": "32",
+    "RSTD_col_stride": "1",
+    "W_ptr": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "B_ptr": {
+      "shape": [
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "hidden_size": "4",
+    "channels_per_group": "1",
+    "eps": "1e-06",
+    "BLOCK_SIZE": "4"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 5.329,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "group_norm-generic-03.json",
+  "source_result_sha256": "41a70d051b756a89ea5a005e080448424ec84151e4b40db598cd24a38c70ff74",
+  "samples_us": [
+    5.182,
+    5.594,
+    5.38,
+    5.311,
+    5.329,
+    5.393,
+    5.25,
+    5.205,
+    5.24,
+    5.746,
+    5.352,
+    5.314,
+    5.336,
+    5.419,
+    5.271
+  ],
+  "grid": [
+    1,
+    32
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 4
+  },
+  "trace_sha256": "5a2d61c04428396cb6a5d895476b57ea668843bc6884a511b5bb9e2968e47d22",
+  "kernel_csv_sha256": "2ee1cdfe1fc5db45317fba99885217b30330f590b6e86e24f80ed5609631a3b6",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "6c41419b2d4cde8de19bffe3d0671fd7636c3fcd5693318c40a5ed1fe7868977",
+      "ir_sha256": "cce55f6d89d0a2386ab86c94311242db21eda0ea5962baa5f257b1d57a4408d7",
+      "binary_sha256": "1cfaebc00cb5c9dc4a21c6205e38a07ffc2694baf7662d64d1b3ecbc967dff5b",
+      "compiler_hash": "01ad896b57fe0690b4759b1695369d13547ab17449d339785f634eb9cb5a1fc5"
+    }
+  ]
+}

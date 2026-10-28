@@ -1,0 +1,41 @@
+{
+  "id": "LK41",
+  "name": "_tv_distance_kernel",
+  "family": "liger/tvd",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_tv_distance_kernel",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "HISTORICAL_ONLY",
+  "kernel_symbol": "_tv_distance_kernel",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/tvd.py",
+    "sha256": "7ce8cbdaf888cb60526af906a5b3d16fe943bf7a2202e40e7728d91841be02eb",
+    "symbol": "_tv_distance_kernel",
+    "snapshot": "upstream/tvd.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "286ed6db20f8a595398f9d5f340bf3c289ca359468ca5b0e90f86902d9346a68",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "cdf118ad93b9c723177e3823006e9608e2af2b1ee59a3e200f7ab9f6804236c0",
+    "original_path": "test/transformers/test_tvd.py",
+    "original_nodeid": "test/transformers/test_tvd.py::test_correctness[dtype0-1e-08-1e-06-none-1-4096-128256]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "NOT_DEVICE_VALIDATED",
+    "full_matrix_validated": false
+  }
+}

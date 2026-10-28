@@ -1,0 +1,291 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK19",
+  "kernel": "_grpo_loss_fwd_kernel",
+  "source_kind": "generic",
+  "source_sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945",
+  "original_nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.04-0.2-0.4]",
+  "type": "vv",
+  "tensors": {
+    "LOGITS": {
+      "shape": [
+        1,
+        1025,
+        151936
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        155734400,
+        151936,
+        1
+      ]
+    },
+    "REF_LOGP": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "INPUT_IDS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "COMPLETION_MASK": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "ADVANTAGES": {
+      "shape": [
+        1
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "LOSS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "LSE": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "KL": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "IS_CLIPPED": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "LOGITS": {
+      "shape": [
+        1,
+        1025,
+        151936
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        155734400,
+        151936,
+        1
+      ]
+    },
+    "OLD_LOGP": "None",
+    "REF_LOGP": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "INPUT_IDS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "COMPLETION_MASK": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "ADVANTAGES": {
+      "shape": [
+        1
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "VLLM_IS_RATIO": "None",
+    "VLLM_IS_RATIO_STRIDE": "1024",
+    "PHI_SEQ": "None",
+    "LOSS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "LSE": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "KL": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "IS_CLIPPED": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "TEMPERATURE": "0.7",
+    "BETA": "0.04",
+    "EPS_LOW": "0.2",
+    "EPS_HIGH": "0.4",
+    "LOSS_TYPE": "0",
+    "SAPO_TEMP_POS": "1.0",
+    "SAPO_TEMP_NEG": "1.05",
+    "DELTA": "0.0",
+    "USE_BIAS_CORRECTION_KL": "False",
+    "L": "1024",
+    "N": "151936",
+    "BLOCK_N": "2048",
+    "num_stages": "2",
+    "num_warps": "1"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 1143.945,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "grpo_loss-generic-01.json",
+  "source_result_sha256": "017d6228460a5497a36e867216d5d3a3ef40713b6872fa3f972cce4bcb686302",
+  "samples_us": [
+    1142.165,
+    1142.58,
+    1143.225,
+    1147.371,
+    1142.786,
+    1143.928,
+    1146.588,
+    1143.945,
+    1145.335,
+    1147.654,
+    1143.049,
+    1145.288,
+    1143.474,
+    1144.297,
+    1144.186
+  ],
+  "grid": [
+    1,
+    1024
+  ],
+  "constexpr": {
+    "BLOCK_N": 2048,
+    "num_stages": 2,
+    "num_warps": 1
+  },
+  "trace_sha256": "706f886f008997d9a5b046deb702188ca5e61dd08d77f03a10918c74f2a83d67",
+  "kernel_csv_sha256": "b368f985305ea8680db259efa5e7cc29b957abf3c4f78b782a1f4986f23ac376",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "4e1a0374a408f8b268997106093ad4d34eef118d69669060f3e5e0a3d20a4cb0",
+      "ir_sha256": "df566ddebe12b81cc2383278ff2ac888a195e4034adb7c73bd9e0a8477dcf82e",
+      "binary_sha256": "74f97b5359db7bd624193a31019b507a0d1a7674411271086dc714b60bcbe2c8",
+      "compiler_hash": "367e2f07ee872e21ce61bb956d3e6789793b694cadd3d092d36674fa0d68d8bd"
+    }
+  ]
+}

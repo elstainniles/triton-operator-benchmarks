@@ -1,0 +1,34 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        2,
+        128,
+        512
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_liger_sparsemax_correctness[dtype0-1e-05-1e-05--1-2-128-512]",
+      "original_nodeid": "test/transformers/test_sparsemax.py::test_liger_sparsemax_correctness[dtype0-1e-05-1e-05--1-2-128-512]",
+      "input_origin": "upstream_correctness_case",
+      "tensors": {},
+      "historical_bound_arguments": {},
+      "dimensions": {
+        "batch_size": 2,
+        "seq_len": 128,
+        "features": 512
+      },
+      "parameters": {
+        "dtype": "torch.float32",
+        "atol": "1e-05",
+        "rtol": "1e-05",
+        "dim": "-1",
+        "batch_size": "2",
+        "seq_len": "128",
+        "features": "512"
+      }
+    }
+  ]
+}

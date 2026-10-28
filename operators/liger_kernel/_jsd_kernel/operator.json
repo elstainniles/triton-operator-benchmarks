@@ -1,0 +1,45 @@
+{
+  "id": "LK20",
+  "name": "_jsd_kernel",
+  "family": "liger/jsd",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_jsd_kernel",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "SECOND_BATCH_CASE_VALIDATED",
+  "kernel_symbol": "_jsd_kernel",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/jsd.py",
+    "sha256": "6e74fa29e7c616ad267b3a8913c1ea582aaeda06d06e6cfa27e44be54fb70f6f",
+    "symbol": "_jsd_kernel",
+    "snapshot": "upstream/jsd.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "a682b7611d6f5afdd1578ad436032dd890b5a3f5a0e8cf1616e41215d3406c91",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "93d2b9e95cb9b28626f3c78a6f0784c3e5bd0d9400bd0a7f7a0953aa7faa483d",
+    "original_path": "test/transformers/test_jsd.py",
+    "original_nodeid": "test/transformers/test_jsd.py::test_correctness[dtype0-1e-07-0.05-41-401-1271]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "SECOND_BATCH_CASE_VALIDATED",
+    "cases": [
+      "second-batch"
+    ],
+    "full_matrix_validated": false,
+    "evidence": "results/20261028-export/measurement.json"
+  }
+}

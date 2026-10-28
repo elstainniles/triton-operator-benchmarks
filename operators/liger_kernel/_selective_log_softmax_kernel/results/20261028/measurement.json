@@ -1,0 +1,145 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK31",
+  "kernel": "_selective_log_softmax_kernel",
+  "source_kind": "generic",
+  "source_sha256": "ddcdd76dd758c3179791465161bfe9080b649f2d82e61f01fee53de07300b945",
+  "original_nodeid": "direct_cases.py::test_generic_selective_log_softmax",
+  "type": "vv",
+  "tensors": {
+    "LOGITS": {
+      "shape": [
+        1,
+        1025,
+        64000
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        65600000,
+        64000,
+        1
+      ]
+    },
+    "INPUT_IDS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1124,
+        1
+      ]
+    },
+    "LOG_P": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "LOGITS": {
+      "shape": [
+        1,
+        1025,
+        64000
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        65600000,
+        64000,
+        1
+      ]
+    },
+    "INPUT_IDS": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int64",
+      "device": "npu:0",
+      "stride": [
+        1124,
+        1
+      ]
+    },
+    "LOG_P": {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "LSE": "None",
+    "MASK": "None",
+    "TEMPERATURE": "0.9",
+    "stride_input_ids_b": "1124",
+    "stride_input_ids_l": "1",
+    "stride_mask_b": "0",
+    "stride_mask_l": "0",
+    "L": "1024",
+    "N": "64000",
+    "BLOCK_N": "2048",
+    "num_stages": "4",
+    "num_warps": "1"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 498.963,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "direct-generic-selective-logsoftmax-generic-00.json",
+  "source_result_sha256": "80eb824e3f77b81b23dd22e4618b2626c7e8b82da7f0ebc4a05d78f6a77c0fad",
+  "samples_us": [
+    499.652,
+    499.472,
+    498.963,
+    498.892,
+    497.661,
+    500.724,
+    498.297,
+    498.809,
+    499.283,
+    498.259,
+    498.994,
+    499.787,
+    499.789,
+    498.916,
+    498.444
+  ],
+  "grid": [
+    1,
+    1024
+  ],
+  "constexpr": {
+    "BLOCK_N": 2048,
+    "num_stages": 4,
+    "num_warps": 1
+  },
+  "trace_sha256": "7bee4c00e32c4b8208267666ec87f673f50961f9f95f1a76c8fcd06de869cb73",
+  "kernel_csv_sha256": "838410666cd4459f824df915d3048ded22ac75dcaffa99822d60d15085437d71",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "c841ef3d9ca4dbe1e60e9dd0d07f34be9d7ea8842e3ceeac4ee4590ecb7e04ed",
+      "ir_sha256": "48845d214a7e4ac38f48cc04f4e19bd0652b3972e2eb4caa9f11da0b6bb45be4",
+      "binary_sha256": "2642e6b2e18efd0a8e4a909f25db21de4b96e11e9536e61c0623a486adc71ba1",
+      "compiler_hash": "fd6f2fcce4bd8578a8a81d52664e5847e11abb2e7c98aa84979e6d73e5576f6f"
+    }
+  ]
+}

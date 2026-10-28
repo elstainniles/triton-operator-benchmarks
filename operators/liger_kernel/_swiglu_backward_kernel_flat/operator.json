@@ -1,0 +1,41 @@
+{
+  "id": "LK38",
+  "name": "_swiglu_backward_kernel_flat",
+  "family": "liger/swiglu",
+  "direction": "bwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_swiglu_backward_kernel_flat",
+  "implementation": "ascend",
+  "runner": "liger",
+  "validation": "HISTORICAL_ONLY",
+  "kernel_symbol": "_swiglu_backward_kernel_flat",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/backends/_ascend/ops/swiglu.py",
+    "sha256": "b92c94ef31b19700fce2ca9b4962c85c2815cf3a881606d6e8ff5dfd6cdb0f44",
+    "symbol": "_swiglu_backward_kernel_flat",
+    "snapshot": "upstream/swiglu.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "8d21ce034fc06890b99dd1bc634c57c73e6ac2fb885184513dc10d818c08b1f0",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "cd8a1579f6dbb67ede23dc644baa03aeb13732c0ed4af0598219ee9521a13c54",
+    "original_path": "test/transformers/test_swiglu.py",
+    "original_nodeid": "test/transformers/test_swiglu.py::test_correctness_functional[dtype0-1.0-1e-05-9-7-41]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "NOT_DEVICE_VALIDATED",
+    "full_matrix_validated": false
+  }
+}

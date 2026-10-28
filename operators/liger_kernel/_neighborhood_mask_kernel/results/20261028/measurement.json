@@ -1,0 +1,82 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK13",
+  "kernel": "_neighborhood_mask_kernel",
+  "source_kind": "generic",
+  "source_sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab",
+  "original_nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+  "type": "vv",
+  "tensors": {
+    "mask_ptr": {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        32,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "mask_ptr": {
+      "shape": [
+        32,
+        32
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        32,
+        1
+      ]
+    },
+    "seq_len": "32",
+    "kernel_size": "7",
+    "dilation": "1",
+    "BLOCK_SIZE": "32",
+    "num_stages": "2",
+    "num_warps": "4"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 1.149,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "fused_neighborhood_attention-generic-00.json",
+  "source_result_sha256": "90ffd3f0852dc43cce8143a361c5bdd91b0cb8e3ade166eb01631a81e2dcc167",
+  "samples_us": [
+    1.801,
+    1.156,
+    1.137,
+    1.1,
+    1.162,
+    1.603,
+    1.117,
+    1.147,
+    1.641,
+    1.293,
+    1.13,
+    1.149,
+    1.132,
+    1.756,
+    1.115
+  ],
+  "grid": [
+    32
+  ],
+  "constexpr": {},
+  "trace_sha256": "a727bedc4c81b68e8d1d990c7ffcf0026bf03b7c34d6ec49ef22f46dee7435e1",
+  "kernel_csv_sha256": "7d2a7aa05a19ff2422dea146d9dd3da7dabca009b3bf1d6d2e2d87c49e72fbe9",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "ccdac4b25ed0f2bbc7246bb3497c94503d1f6f1de4828f29f40ce465de7064af",
+      "ir_sha256": "44e007a1f47bf42c11b2bb654ea4761c2115266927e1881835f8c9403f6db182",
+      "binary_sha256": "c559914b407b7c2651db8922c55a4381ea8562b3de2d70e106d323dd6be31200",
+      "compiler_hash": "d7b6761b872b41fd431ef48e74ed97a357a1c13bc494143693854cbf5d70b6b9"
+    }
+  ]
+}

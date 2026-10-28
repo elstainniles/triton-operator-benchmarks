@@ -1,0 +1,119 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        256,
+        512
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_correctness[False-False-GemmaRMSNorm-1.0-gemma-dtype0-0.0001-1e-06-2-128-512]",
+      "original_nodeid": "test/transformers/test_rms_norm.py::test_correctness[False-False-GemmaRMSNorm-1.0-gemma-dtype0-0.0001-1e-06-2-128-512]",
+      "input_origin": "upstream_correctness_case",
+      "tensors": {
+        "Y_ptr": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            512,
+            1
+          ]
+        },
+        "X_ptr": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            512,
+            1
+          ]
+        },
+        "RSTD_ptr": {
+          "shape": [
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "Y_ptr": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            512,
+            1
+          ]
+        },
+        "Y_row_stride": "512",
+        "X_ptr": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            512,
+            1
+          ]
+        },
+        "X_row_stride": "512",
+        "W_ptr": "None",
+        "W_row_stride": "0",
+        "RSTD_ptr": {
+          "shape": [
+            256
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "RSTD_row_stride": "1",
+        "n_cols": "512",
+        "eps": "1e-06",
+        "offset": "1.0",
+        "casting_mode": "1",
+        "elementwise_affine": "False",
+        "BLOCK_SIZE": "512",
+        "num_warps": "4"
+      },
+      "dimensions": {
+        "bs": 2,
+        "sl": 128,
+        "hd": 512
+      },
+      "parameters": {
+        "elementwise_affine": "False",
+        "in_place": "False",
+        "reference": "<class 'test.transformers.test_rms_norm.GemmaRMSNorm'>",
+        "offset": "1.0",
+        "casting_mode": "'gemma'",
+        "dtype": "torch.float32",
+        "atol": "0.0001",
+        "rtol": "1e-06",
+        "bs": "2",
+        "sl": "128",
+        "hd": "512"
+      }
+    }
+  ]
+}

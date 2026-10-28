@@ -1,8 +1,10 @@
 # 验证记录
 
+本页保留 FlagGems 与 TritonGraphOptimizationTests 共 15 个条目的原验证记录。新增 46 个 Liger kernel 的验证单列于 [LIGER_VALIDATION.md](LIGER_VALIDATION.md)；当前 `--operator all` 包括全部 61 个条目。
+
 ## 自带输入入口：设备 smoke 验证（2026-10-28）
 
-当前 **15/15 个算子条目、18/18 个代表性 smoke 配置数值通过并取得有效计时**：FlagGems 8 个，TritonGraphOptimizationTests 7 个（其中 MoE 四种模式）。这是新入口的固定基线验证，不是新一轮手改 tile/grid 调优；未比较优化收益。
+该次 **15/15 个算子条目、18/18 个代表性 smoke 配置数值通过并取得有效计时**：FlagGems 8 个，TritonGraphOptimizationTests 7 个（其中 MoE 四种模式）。这是新入口的固定基线验证，不是新一轮手改 tile/grid 调优；未比较优化收益。
 
 每个条目可用 `tools/run.py run --operator <ID>` 独立运行，整仓用 `--operator all --suite smoke --variants baseline`。所有默认输入均自行生成，无需外部 `.pt`。第二批 119 个配置已完成 CPU 输入、路由完整性和参数签名绑定检查，设备仅验证其中 10 个 smoke；较大 shape/dtype、FlagGems 新入口的 manual 候选尚未在本轮全面重测。
 

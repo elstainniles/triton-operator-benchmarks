@@ -1,0 +1,236 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        1,
+        32,
+        4
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-32-32-4]",
+      "original_nodeid": "test/transformers/test_group_norm.py::test_liger_group_norm[dtype0-0.0001-0.0001-1-32-32-4]",
+      "input_origin": "upstream_correctness_case",
+      "tensors": {
+        "X_ptr": {
+          "shape": [
+            1,
+            32,
+            4
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            4,
+            1
+          ]
+        },
+        "W_ptr": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "Mean_ptr": {
+          "shape": [
+            1,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            32,
+            1
+          ]
+        },
+        "RSTD_ptr": {
+          "shape": [
+            1,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            32,
+            1
+          ]
+        },
+        "DX_ptr": {
+          "shape": [
+            1,
+            32,
+            4
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            4,
+            1
+          ]
+        },
+        "DW_ptr": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "DB_ptr": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "UPSTREAM_ptr": {
+          "shape": [
+            1,
+            32,
+            4
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            4,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "X_ptr": {
+          "shape": [
+            1,
+            32,
+            4
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            4,
+            1
+          ]
+        },
+        "X_row_stride": "128",
+        "X_col_stride": "4",
+        "W_ptr": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "Mean_ptr": {
+          "shape": [
+            1,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            32,
+            1
+          ]
+        },
+        "Mean_ptr_row_stride": "32",
+        "Mean_ptr_col_stride": "1",
+        "RSTD_ptr": {
+          "shape": [
+            1,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            32,
+            1
+          ]
+        },
+        "DX_ptr": {
+          "shape": [
+            1,
+            32,
+            4
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            4,
+            1
+          ]
+        },
+        "DW_ptr": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "DB_ptr": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "UPSTREAM_ptr": {
+          "shape": [
+            1,
+            32,
+            4
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            128,
+            4,
+            1
+          ]
+        },
+        "hidden_size": "4",
+        "channels_per_group": "1",
+        "BLOCK_SIZE": "4",
+        "dtype": "triton.language.float32"
+      },
+      "dimensions": {
+        "batch_size": 1,
+        "num_channels": 32,
+        "hidden_size": 4
+      },
+      "parameters": {
+        "dtype": "torch.float32",
+        "atol": "0.0001",
+        "rtol": "0.0001",
+        "batch_size": "1",
+        "num_channels": "32",
+        "num_groups": "32",
+        "hidden_size": "4"
+      }
+    }
+  ]
+}

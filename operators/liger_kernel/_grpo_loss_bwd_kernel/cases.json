@@ -1,0 +1,232 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "float32",
+      "nodeid": "test_case.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.0-0.2-0.4]",
+      "original_nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.0-0.2-0.4]",
+      "input_origin": "upstream_correctness_case",
+      "tensors": {
+        "DLOSS": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "DLOGITS": {
+          "shape": [
+            1,
+            1025,
+            151936
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            155734400,
+            151936,
+            1
+          ]
+        },
+        "LOGITS": {
+          "shape": [
+            1,
+            1025,
+            151936
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            155734400,
+            151936,
+            1
+          ]
+        },
+        "INPUT_IDS": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.int64",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "ADVANTAGES": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "COMPLETION_MASK": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.int32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "LSE": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "DLOSS": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "DLOGITS": {
+          "shape": [
+            1,
+            1025,
+            151936
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            155734400,
+            151936,
+            1
+          ]
+        },
+        "LOGITS": {
+          "shape": [
+            1,
+            1025,
+            151936
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            155734400,
+            151936,
+            1
+          ]
+        },
+        "OLD_LOGP": "None",
+        "REF_LOGP": "None",
+        "INPUT_IDS": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.int64",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "ADVANTAGES": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1
+          ]
+        },
+        "COMPLETION_MASK": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.int32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "LSE": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "VLLM_IS_RATIO": "None",
+        "VLLM_IS_RATIO_STRIDE": "1024",
+        "PHI_SEQ": "None",
+        "TEMPERATURE": "0.7",
+        "BETA": "0.0",
+        "EPS_LOW": "0.2",
+        "EPS_HIGH": "0.4",
+        "LOSS_TYPE": "0",
+        "SAPO_TEMP_POS": "1.0",
+        "SAPO_TEMP_NEG": "1.05",
+        "DELTA": "0.0",
+        "USE_BIAS_CORRECTION_KL": "False",
+        "loss_stride0": "1024",
+        "loss_stride1": "1",
+        "L": "1024",
+        "N": "151936",
+        "BLOCK_N": "4096",
+        "num_stages": "1",
+        "num_warps": "16"
+      },
+      "dimensions": {
+        "B": 1,
+        "T": 1024,
+        "V": 151936
+      },
+      "parameters": {
+        "dtype": "torch.bfloat16",
+        "atol": "0.05",
+        "rtol": "0.5",
+        "B": "1",
+        "T": "1024",
+        "V": "151936",
+        "temperature": "0.7",
+        "num_iteration": "1",
+        "beta": "0.0",
+        "eps_low": "0.2",
+        "eps_high": "0.4"
+      }
+    }
+  ]
+}

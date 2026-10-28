@@ -1,0 +1,196 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK38",
+  "kernel": "_swiglu_backward_kernel_flat",
+  "source_kind": "ascend",
+  "source_sha256": "b92c94ef31b19700fce2ca9b4962c85c2815cf3a881606d6e8ff5dfd6cdb0f44",
+  "original_nodeid": "test/transformers/test_swiglu.py::test_correctness_functional[dtype0-1.0-1e-05-9-7-41]",
+  "type": "vv",
+  "tensors": {
+    "dc_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "a_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "b_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "da_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "db_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "dc_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "a_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "b_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "da_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "db_ptr": {
+      "shape": [
+        9,
+        7,
+        41
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        287,
+        41,
+        1
+      ]
+    },
+    "total_elements": "2583",
+    "BLOCK_SIZE": "4096"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 1.578,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "swiglu-ascend-00.json",
+  "source_result_sha256": "2add441b50e37c0cdaf1c1e0b65193af45818d07ec9d7c993b1e663bf86b7325",
+  "samples_us": [
+    1.583,
+    1.498,
+    1.478,
+    1.474,
+    1.493,
+    1.475,
+    1.495,
+    1.609,
+    1.612,
+    1.619,
+    1.602,
+    1.604,
+    1.616,
+    1.578,
+    1.516
+  ],
+  "grid": [
+    1
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 4096
+  },
+  "trace_sha256": "fbb5aa862f638bf4ca5ef005e4234f21879a9f821c19190f0d2672ffe31f9d45",
+  "kernel_csv_sha256": "c3e39843bae65dc181fbe8b26f0f19b57796587b44e23cd241f0e9d2191fe8c8",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "eef989ea255e5ced3c505fb98143da772d55672d7e2181efddaaba53321fef99",
+      "ir_sha256": "501746bb08db80f3b001b5476de3a9e5e9333e72d6f27b9d53a7321577ac3cc8",
+      "binary_sha256": "0f4342f4fd45576e155f6f1330cc7a9af72e7830aa3b301638fe858ec8cafa04",
+      "compiler_hash": "a5eb07869a859ca237d46548fbc517f4785127bc3076d94261e5228a826b560e"
+    }
+  ]
+}

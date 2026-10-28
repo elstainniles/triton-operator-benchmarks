@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/linkedin/Liger-Kernel",
+  "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "archive_sha256": "29ab242a600e724389e9360121bb475a67a1d2766ad408aa4d4e5b0605599cc8",
+  "selection": "generic > ascend > experimental, exact function name",
+  "counts": {
+    "generic": 38,
+    "ascend": 7,
+    "experimental": 1
+  },
+  "support": [
+    {
+      "path": "support/test/__init__.py",
+      "upstream_path": "test/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "support/test/utils.py",
+      "upstream_path": "test/utils.py",
+      "sha256": "367df4d2a52b56a0b6204906227cea3adfcc1eaa4e5723da7bdf188093d88e69"
+    },
+    {
+      "path": "support/test/conftest.py",
+      "upstream_path": "test/conftest.py",
+      "sha256": "3f39ff918d1d31798bc727fd8949fd0589481707ced67614286b7d0d578de480"
+    }
+  ],
+  "operators": 46,
+  "historical_counts": {
+    "measured": 42,
+    "compile_failed": 3,
+    "blocked_by_forward_compile": 1
+  },
+  "historical_scope_sha256": "83f405828cdfd69fe798135243193b46122623c86b634b067634e1d81662fd3d",
+  "historical_summary_sha256": "47a3f490fcec75aa1e60c0bd6a0e01250cc7acba8b17815dbdeb140ca88fe12e"
+}

@@ -30,10 +30,19 @@ def module(entry, suffix):
 
 
 def plans(name, suite='all', variants='all'):
-    if name in ('all', 'graph', 'flaggems') or ',' in name:
+    if name in ('all', 'graph', 'flaggems', 'liger') or ',' in name:
         return [plan for entry in select(name)
                 for plan in plans(entry['id'], suite, variants)]
     entry, path = resolve(name)
+    if entry.get('runner') == 'liger':
+        if variants == 'manual':
+            raise ValueError('Liger batch contains original baselines; no manual variants')
+        cases = read_json(path / 'cases.json')['cases']
+        dtype = {'fp32':'float32', 'bf16':'bfloat16'}.get(suite)
+        return [dict(operator_id=entry['id'], operator=entry['name'], case=case,
+                     variant_id='baseline', required_input_file=None,
+                     source_kind=entry['implementation'], runner='tools/run.py run')
+                for case in cases if suite in ('all','smoke') or case['dtype'] == dtype]
     if entry.get('runner') == 'graph_tests':
         if variants == 'manual':
             raise ValueError('TG benchmarks have explicit baselines; no manual candidate has been measured')
@@ -64,9 +73,10 @@ def plans(name, suite='all', variants='all'):
 
 
 def select(name):
-    if name in ('all', 'graph', 'flaggems'):
+    if name in ('all', 'graph', 'flaggems', 'liger'):
+        runners = {'graph':'graph_tests', 'liger':'liger', 'flaggems':None}
         return [entry for entry in operators() if name == 'all' or
-                (entry.get('runner') == 'graph_tests') == (name == 'graph')]
+                entry.get('runner') == runners[name]]
     result = [resolve(part.strip())[0] for part in name.split(',')]
     if len({entry['id'] for entry in result}) != len(result):
         raise ValueError('Duplicate operator in selection')

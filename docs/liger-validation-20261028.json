@@ -1,0 +1,162 @@
+{
+  "audited_utc": "2026-10-28T13:10:37.762714+00:00",
+  "scope": "new extracted repository entry; partial validation stopped at user request",
+  "counts": {
+    "measured": 25
+  },
+  "total": 25,
+  "source_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "full_shape_dtype_matrix_validated": false,
+  "evidence": [
+    {
+      "operator_id": "LK01",
+      "status": "measured",
+      "median_us": 15.825,
+      "path": "operators/liger_kernel/_block_rms_norm_backward_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK02",
+      "status": "measured",
+      "median_us": 32.038,
+      "path": "operators/liger_kernel/_block_rms_norm_forward_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK03",
+      "status": "measured",
+      "median_us": 3.295,
+      "path": "operators/liger_kernel/_dyt_bwd_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK04",
+      "status": "measured",
+      "median_us": 1.644,
+      "path": "operators/liger_kernel/_dyt_fwd_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK05",
+      "status": "measured",
+      "median_us": 4.126,
+      "path": "operators/liger_kernel/_fused_add_rms_norm_backward_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK06",
+      "status": "measured",
+      "median_us": 7.778,
+      "path": "operators/liger_kernel/_fused_add_rms_norm_forward_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK07",
+      "status": "measured",
+      "median_us": 4.176,
+      "path": "operators/liger_kernel/_fused_neighborhood_attention_qk_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK08",
+      "status": "measured",
+      "median_us": 3.709,
+      "path": "operators/liger_kernel/_fused_neighborhood_attention_av_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK09",
+      "status": "measured",
+      "median_us": 4.214,
+      "path": "operators/liger_kernel/_fused_neighborhood_attention_grad_qk_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK10",
+      "status": "measured",
+      "median_us": 4.107,
+      "path": "operators/liger_kernel/_fused_neighborhood_attention_grad_k_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK11",
+      "status": "measured",
+      "median_us": 3.828,
+      "path": "operators/liger_kernel/_fused_neighborhood_attention_grad_v_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK12",
+      "status": "measured",
+      "median_us": 3.725,
+      "path": "operators/liger_kernel/_fused_neighborhood_attention_grad_attn_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK13",
+      "status": "measured",
+      "median_us": 1.15,
+      "path": "operators/liger_kernel/_neighborhood_mask_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK14",
+      "status": "measured",
+      "median_us": 232.789,
+      "path": "operators/liger_kernel/_geglu_backward_kernel_flat/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK15",
+      "status": "measured",
+      "median_us": 124.826,
+      "path": "operators/liger_kernel/_geglu_forward_kernel_flat/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK16",
+      "status": "measured",
+      "median_us": 2.434,
+      "path": "operators/liger_kernel/_group_norm_backward_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK17",
+      "status": "measured",
+      "median_us": 5.45,
+      "path": "operators/liger_kernel/_group_norm_forward_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK18",
+      "status": "measured",
+      "median_us": 594.196,
+      "path": "operators/liger_kernel/_grpo_loss_bwd_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK19",
+      "status": "measured",
+      "median_us": 1144.373,
+      "path": "operators/liger_kernel/_grpo_loss_fwd_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK20",
+      "status": "measured",
+      "median_us": 346.909,
+      "path": "operators/liger_kernel/_jsd_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK21",
+      "status": "measured",
+      "median_us": 725.019,
+      "path": "operators/liger_kernel/_kldiv_kernel_backward/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK22",
+      "status": "measured",
+      "median_us": 644.204,
+      "path": "operators/liger_kernel/_kldiv_kernel_forward/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK23",
+      "status": "measured",
+      "median_us": 94.606,
+      "path": "operators/liger_kernel/_layer_norm_backward_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK24",
+      "status": "measured",
+      "median_us": 6648.14,
+      "path": "operators/liger_kernel/_llama4_rope_kernel/results/20261028-export/measurement.json"
+    },
+    {
+      "operator_id": "LK25",
+      "status": "measured",
+      "median_us": 1.141,
+      "path": "operators/liger_kernel/_mask_bwd_kernel/results/20261028-export/measurement.json"
+    }
+  ]
+}

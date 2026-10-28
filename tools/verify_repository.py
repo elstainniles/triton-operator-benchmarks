@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from opbench.catalog import module, operators, plans, read_json, resolve
 from opbench.graph_tests import verify_graph_suite
+from opbench.liger import verify_suite as verify_liger_suite
 
 
 def same(a, b):
@@ -23,7 +24,25 @@ def verify():
     all_entries = operators()
     assert len({o['id'] for o in all_entries}) == len(all_entries)
     assert len({o['path'] for o in all_entries}) == len(all_entries)
-    entries = [e for e in all_entries if e.get('runner') != 'graph_tests']
+    entries = [e for e in all_entries if not e.get('runner')]
+    liger = verify_liger_suite()
+    validation = read_json(ROOT/'docs/liger-validation-20261028.json')
+    assert validation['total'] == len(validation['evidence']) == 25
+    assert validation['counts'] == {'measured':25}
+    assert len({row['operator_id'] for row in validation['evidence']}) == 25
+    for row in validation['evidence']:
+        evidence = read_json(ROOT/row['path'])
+        _, path = resolve(row['operator_id'])
+        assert evidence['status'] == row['status'] == 'measured'
+        assert evidence['correctness']['passed'] and evidence['all_observed_occupancy_checks_passed']
+        assert len(evidence['samples_us']) == 15
+        assert same(statistics.median(evidence['samples_us']), row['median_us'])
+        for filename, digest in evidence['source_hashes'].items():
+            assert hashlib.sha256((path/filename).read_bytes()).hexdigest() == digest
+        for filename, digest in evidence['harness_sha256'].items():
+            assert hashlib.sha256((ROOT/'opbench'/filename).read_bytes()).hexdigest() == digest
+        assert hashlib.sha256((path/'cases.json').read_bytes()).hexdigest() == evidence['cases_sha256']
+        assert read_json(path/'operator.json')['current_runner_validation']['status'] == 'SECOND_BATCH_CASE_VALIDATED'
     graph_entries = [e for e in all_entries if e.get('runner') == 'graph_tests']
     graph_files = graph_launches = 0
     for entry in graph_entries:
@@ -141,7 +160,9 @@ def verify():
         assert same(statistics.mean(r['speedup'] for r in rows), expected['mean_speedup'])
         assert same(statistics.mean(r['time_reduction_pct'] for r in rows), expected['mean_time_reduction_pct'])
     smoke = read_json(ROOT / 'docs/standalone-smoke-20261028.json')
-    expected_smoke = {(p['operator_id'],p['case']['id']):p for p in plans('all','smoke','baseline')}
+    expected_smoke = {(p['operator_id'],p['case']['id']):p
+                      for e in all_entries if e.get('runner') != 'liger'
+                      for p in plans(e['id'],'smoke','baseline')}
     measured = {(r['operator_id'],r['case']['id']):r for r in smoke['measurements']}
     assert len(measured) == len(smoke['measurements']) == 18 and measured.keys() == expected_smoke.keys()
     assert smoke['counts'] == dict(operator_entries=15, smoke_configurations=18, correct=18, measured=18)
@@ -181,7 +202,8 @@ def verify():
     assert 'torch' not in sys.modules and 'triton' not in sys.modules
     return dict(status='PASS', entries=len(all_entries), flaggems_entries=len(entries),
                 imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
-                graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), **counters)
+                graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), liger=liger,
+                verified_liger_entry_cases=validation['total'], **counters)
 
 
 if __name__ == '__main__':

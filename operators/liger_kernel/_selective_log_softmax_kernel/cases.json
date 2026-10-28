@@ -1,0 +1,112 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        1,
+        1025,
+        64000
+      ],
+      "dtype": "bfloat16",
+      "nodeid": "test_case.py::test_generic_selective_log_softmax",
+      "original_nodeid": "direct_cases.py::test_generic_selective_log_softmax",
+      "input_origin": "direct_correctness_case",
+      "tensors": {
+        "LOGITS": {
+          "shape": [
+            1,
+            1025,
+            64000
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            65600000,
+            64000,
+            1
+          ]
+        },
+        "INPUT_IDS": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.int64",
+          "device": "npu:0",
+          "stride": [
+            1124,
+            1
+          ]
+        },
+        "LOG_P": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "LOGITS": {
+          "shape": [
+            1,
+            1025,
+            64000
+          ],
+          "dtype": "torch.bfloat16",
+          "device": "npu:0",
+          "stride": [
+            65600000,
+            64000,
+            1
+          ]
+        },
+        "INPUT_IDS": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.int64",
+          "device": "npu:0",
+          "stride": [
+            1124,
+            1
+          ]
+        },
+        "LOG_P": {
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            1024,
+            1
+          ]
+        },
+        "LSE": "None",
+        "MASK": "None",
+        "TEMPERATURE": "0.9",
+        "stride_input_ids_b": "1124",
+        "stride_input_ids_l": "1",
+        "stride_mask_b": "0",
+        "stride_mask_l": "0",
+        "L": "1024",
+        "N": "64000",
+        "BLOCK_N": "2048",
+        "num_stages": "4",
+        "num_warps": "1"
+      },
+      "dimensions": {},
+      "parameters": {}
+    }
+  ]
+}

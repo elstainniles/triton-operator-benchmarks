@@ -1,0 +1,252 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK23",
+  "kernel": "_layer_norm_backward_kernel",
+  "source_kind": "generic",
+  "source_sha256": "301dc0f0cda6afc987a19cf0af1fd1d129b0d5074ab646b1000a681b987afa2c",
+  "original_nodeid": "direct_cases.py::test_generic_layer_norm_backward",
+  "type": "vv",
+  "tensors": {
+    "X_ptr": {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "W_ptr": {
+      "shape": [
+        4096
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "Mean_ptr": {
+      "shape": [
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "RSTD_ptr": {
+      "shape": [
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "DX_ptr": {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "DW_ptr": {
+      "shape": [
+        56,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "DB_ptr": {
+      "shape": [
+        56,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "DY_ptr": {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "X_ptr": {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "stride_x": "4096",
+    "W_ptr": {
+      "shape": [
+        4096
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "Mean_ptr": {
+      "shape": [
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "stride_mean": "1",
+    "RSTD_ptr": {
+      "shape": [
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        1
+      ]
+    },
+    "stride_rstd": "1",
+    "DX_ptr": {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "stride_dx": "4096",
+    "DW_ptr": {
+      "shape": [
+        56,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "stride_dw": "4096",
+    "DB_ptr": {
+      "shape": [
+        56,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "stride_db": "4096",
+    "DY_ptr": {
+      "shape": [
+        4096,
+        4096
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "npu:0",
+      "stride": [
+        4096,
+        1
+      ]
+    },
+    "stride_dy": "4096",
+    "n_rows": "4096",
+    "n_cols": "4096",
+    "rows_per_program": "74",
+    "BLOCK_SIZE": "4096",
+    "COMPUTE_DW": "True",
+    "COMPUTE_DB": "True",
+    "num_warps": "8"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 96.133,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "direct-generic-layer-norm-bwd-generic-00.json",
+  "source_result_sha256": "d4ce1d7d12801b9d4d7e6a33887f98a15189aa944fa4d9a08aeab47a525a0952",
+  "samples_us": [
+    96.697,
+    96.04,
+    96.133,
+    96.142,
+    95.555,
+    96.239,
+    95.839,
+    96.669,
+    96.65,
+    95.841,
+    96.863,
+    95.878,
+    95.942,
+    96.471,
+    95.962
+  ],
+  "grid": [
+    56
+  ],
+  "constexpr": {
+    "rows_per_program": 74,
+    "BLOCK_SIZE": 4096,
+    "COMPUTE_DW": true,
+    "COMPUTE_DB": true,
+    "num_warps": 8
+  },
+  "trace_sha256": "3668fdf0bed4817555016f9c5ac0d1d6a2f4c30978f19c5bd5b657ccc2595319",
+  "kernel_csv_sha256": "77b5aa734bfc75b4fadf577f3b6ce9e30dce513252210f42ec4cf032238a6571",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "0716d0d71aacc7a837cb98d80c69f6d496214283f9a3a4bc7d511fe4e565c08b",
+      "ir_sha256": "7f3356a4818468011184053511d582920108799b9c48d54c8d41865e0d158db5",
+      "binary_sha256": "4aa0ffaac6d57899b2a4152b0f47f440f96270379c86001416a7c8b6fb11eb9f",
+      "compiler_hash": "4bd92753ae984c0a2b77aa7131147489fbcfdcfc192e3a81e3a18d8c742d7bdd"
+    }
+  ]
+}

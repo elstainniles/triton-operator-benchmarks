@@ -1,0 +1,45 @@
+{
+  "id": "LK25",
+  "name": "_mask_bwd_kernel",
+  "family": "liger/multi_token_attention",
+  "direction": "bwd",
+  "type": "vv",
+  "path": "operators/liger_kernel/_mask_bwd_kernel",
+  "implementation": "generic",
+  "runner": "liger",
+  "validation": "SECOND_BATCH_CASE_VALIDATED",
+  "kernel_symbol": "_mask_bwd_kernel",
+  "baseline_id": "baseline",
+  "source": {
+    "repository": "https://github.com/linkedin/Liger-Kernel",
+    "revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "path": "src/liger_kernel/ops/multi_token_attention.py",
+    "sha256": "3b3fd15c3a7e3924bf47f1ee1a66844c774027b4e875affbd0e7c4ed35cc5256",
+    "symbol": "_mask_bwd_kernel",
+    "snapshot": "upstream/multi_token_attention.py",
+    "license": "BSD-2-Clause"
+  },
+  "execution": {
+    "mode": "extracted_jit_with_pinned_wheel_helpers",
+    "kernel_sha256": "ef9ff97d65e79e99ab74f1b3216e4017cb70b72e3a785935e0c3ec74412a18b7",
+    "preserve_decorators": true,
+    "preserves_upstream_grid_and_tiles": true
+  },
+  "correctness": {
+    "file": "test_case.py",
+    "sha256": "a3dd36294b85ab30e7967b67f45d161cbd9baf91f0944e1fd045e16e5bc4a445",
+    "original_path": "test/transformers/test_multi_token_attention.py",
+    "original_nodeid": "test/transformers/test_multi_token_attention.py::test_multi_token_attention_correctness[dtype0-0.0001-0.0001-False-3-6-6-6-3-1]",
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "case_count": 1,
+  "required_input_file": null,
+  "current_runner_validation": {
+    "status": "SECOND_BATCH_CASE_VALIDATED",
+    "cases": [
+      "second-batch"
+    ],
+    "full_matrix_validated": false,
+    "evidence": "results/20261028-export/measurement.json"
+  }
+}

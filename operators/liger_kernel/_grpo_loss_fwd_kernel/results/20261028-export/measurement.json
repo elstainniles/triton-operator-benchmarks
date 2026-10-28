@@ -1,0 +1,462 @@
+{
+  "operator_id": "LK19",
+  "kernel": "_grpo_loss_fwd_kernel",
+  "source_kind": "generic",
+  "type": "vv",
+  "origin": "repository_entry_validation",
+  "status": "measured",
+  "case": {
+    "id": "second-batch",
+    "suite": "baseline",
+    "shape": [
+      1,
+      1025,
+      151936
+    ],
+    "dtype": "bfloat16",
+    "nodeid": "test_case.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.04-0.2-0.4]",
+    "original_nodeid": "test/transformers/test_grpo_loss.py::test_grpo_loss[dtype0-0.05-0.5-1-1024-151936-0.7-1-0.04-0.2-0.4]",
+    "input_origin": "upstream_correctness_case",
+    "tensors": {
+      "LOGITS": {
+        "shape": [
+          1,
+          1025,
+          151936
+        ],
+        "dtype": "torch.bfloat16",
+        "device": "npu:0",
+        "stride": [
+          155734400,
+          151936,
+          1
+        ]
+      },
+      "REF_LOGP": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "INPUT_IDS": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.int64",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "COMPLETION_MASK": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.int32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "ADVANTAGES": {
+        "shape": [
+          1
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "LOSS": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "LSE": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "KL": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "IS_CLIPPED": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      }
+    },
+    "historical_bound_arguments": {
+      "LOGITS": {
+        "shape": [
+          1,
+          1025,
+          151936
+        ],
+        "dtype": "torch.bfloat16",
+        "device": "npu:0",
+        "stride": [
+          155734400,
+          151936,
+          1
+        ]
+      },
+      "OLD_LOGP": "None",
+      "REF_LOGP": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "INPUT_IDS": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.int64",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "COMPLETION_MASK": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.int32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "ADVANTAGES": {
+        "shape": [
+          1
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1
+        ]
+      },
+      "VLLM_IS_RATIO": "None",
+      "VLLM_IS_RATIO_STRIDE": "1024",
+      "PHI_SEQ": "None",
+      "LOSS": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "LSE": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "KL": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "IS_CLIPPED": {
+        "shape": [
+          1,
+          1024
+        ],
+        "dtype": "torch.float32",
+        "device": "npu:0",
+        "stride": [
+          1024,
+          1
+        ]
+      },
+      "TEMPERATURE": "0.7",
+      "BETA": "0.04",
+      "EPS_LOW": "0.2",
+      "EPS_HIGH": "0.4",
+      "LOSS_TYPE": "0",
+      "SAPO_TEMP_POS": "1.0",
+      "SAPO_TEMP_NEG": "1.05",
+      "DELTA": "0.0",
+      "USE_BIAS_CORRECTION_KL": "False",
+      "L": "1024",
+      "N": "151936",
+      "BLOCK_N": "2048",
+      "num_stages": "2",
+      "num_warps": "1"
+    },
+    "dimensions": {
+      "B": 1,
+      "T": 1024,
+      "V": 151936
+    },
+    "parameters": {
+      "dtype": "torch.bfloat16",
+      "atol": "0.05",
+      "rtol": "0.5",
+      "B": "1",
+      "T": "1024",
+      "V": "151936",
+      "temperature": "0.7",
+      "num_iteration": "1",
+      "beta": "0.04",
+      "eps_low": "0.2",
+      "eps_high": "0.4"
+    }
+  },
+  "source_hashes": {
+    "kernels.py": "80086d3f342fc203de1fc74a58001930aeab9f1f9bd8a5bd6169555044bc82c3",
+    "test_case.py": "3f7385a3fedb3adba57e67d59de17ece4cdb7faf1949fe901471ce9cb3a6725a"
+  },
+  "harness_sha256": {
+    "__init__.py": "68e1a70eb4825bb9bbfa6c366420338bbdd6416279de89d7993256aaa60f0ebf",
+    "liger_profile.py": "71f8885f2a1fb74fbb3bbd43f464a6cbdbbd31f0703d890e272ad7040535a6ac",
+    "graph_case.py": "91c4a39c53faf2eba2dc22d69eb59e63b5ab33d87c46415969e3592e443c24fb",
+    "liger_runner.py": "a8154dc4fac624cec436ca49a12b1986a66a622215ce0d7491556be24b778e6b",
+    "cli.py": "cf012d361d0e7f9b2f80670090a73b3cd543424b1e1e683217541a695af781d7",
+    "environment.py": "d6c8981024bd1faba5d5e374186a88491832ff07164b7e79241189713a32c32e",
+    "device.py": "925be5239498f8dc75ec2ecd3650b4502f1dd66fa56bba26c4d5a9a621f158f8",
+    "graph_tests.py": "2b5dc81e69792a2f545a1660c8a21d79a03167fb9a65a5218360368ed8343062",
+    "graph_runner.py": "e6625eafb80229057b9e93b206cb7962bba4a3bb466403d992fa7242acb7e206",
+    "batch.py": "acbce294a176735f9931fceafc145e1735ae54742449af620df6e40637146cdc",
+    "profile.py": "da59af10fd73e056506a602e177c66638a59fed6d8baba7ce152edc6df48cb33",
+    "liger.py": "509d960b7b616f6c126cf849b5a0dcc487384d76433629bb79fe83c997848175",
+    "runner.py": "a71e1bdab749604c8cd6d1aa9b82ecc6f73260c2093cbef8ad1638610e339d33",
+    "catalog.py": "f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e",
+    "tensors.py": "c93bb693c5cc0167aaf3d1d28ead183ac53679efd6655d293e61245a13547568"
+  },
+  "cases_sha256": "81d989be154319ddb08b53fa98af10985f6bea4f7b341166a2e92a7fc7807a6c",
+  "target_launch_attempts": 1,
+  "correctness": {
+    "passed": true,
+    "reference": "upstream PyTorch reference; excluded from timing"
+  },
+  "median_us": 1144.373,
+  "device_name": "Ascend950PR_9579",
+  "source_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "libtriton_sha256": "4c68de3dd8d3a97d669b396555fc8207d4657fa6f03b5be8928c01d346544e6d",
+  "compiler_sha256": "00005852671e68e08d9898654581590e106bb39c5fc9f1f5c114bc7339d7aeea",
+  "all_observed_occupancy_checks_passed": true,
+  "source_result_sha256": "5a6394bdf91770c2056e94c25c7290a5739de5c6e4155ca107a9c8bb78535c6d",
+  "args": [
+    {
+      "shape": [
+        1,
+        1025,
+        151936
+      ],
+      "dtype": "torch.bfloat16",
+      "stride": [
+        155734400,
+        151936,
+        1
+      ]
+    },
+    "None",
+    {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int64",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.int32",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1
+      ]
+    },
+    "None",
+    "1024",
+    "None",
+    {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    {
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "stride": [
+        1024,
+        1
+      ]
+    },
+    "0.7",
+    "0.04",
+    "0.2",
+    "0.4",
+    "0",
+    "1.0",
+    "1.05",
+    "0.0",
+    "False",
+    "1024",
+    "151936"
+  ],
+  "kwargs": {
+    "BLOCK_N": "2048",
+    "num_stages": "2",
+    "num_warps": "1"
+  },
+  "grid": [
+    1,
+    1024
+  ],
+  "constexpr": {
+    "BLOCK_N": 2048,
+    "num_stages": 2,
+    "num_warps": 1
+  },
+  "samples_us": [
+    1147.03,
+    1142.208,
+    1144.373,
+    1145.328,
+    1142.517,
+    1142.737,
+    1145.052,
+    1144.462,
+    1143.277,
+    1146.455,
+    1142.784,
+    1144.229,
+    1145.188,
+    1144.729,
+    1143.324
+  ],
+  "trace_sha256": "91b0996aaa671b5dea088db041c915fc022dba1ab7d21271e66e3f48e2c07d00",
+  "kernel_csv_sha256": "97f92a2d521f2f9baa25d38b81562d4211a0d4746ee62c298ba71e1084ea26a7",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "aggregation": "median of 15 device samples"
+}

@@ -1,0 +1,196 @@
+{
+  "origin": "historical_import",
+  "date": "2026-10-28",
+  "operator_id": "LK14",
+  "kernel": "_geglu_backward_kernel_flat",
+  "source_kind": "ascend",
+  "source_sha256": "bdbe3a0fec4269670c9342779ec0c851f3445f7d36067eee140a19dd8083d158",
+  "original_nodeid": "test/transformers/test_geglu.py::test_correctness[dtype0-1.0-2e-06-2-2048-2048-4096]",
+  "type": "vv",
+  "tensors": {
+    "dc_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "a_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "b_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "da_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "db_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    }
+  },
+  "bound_arguments": {
+    "dc_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "a_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "b_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "da_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "db_ptr": {
+      "shape": [
+        2,
+        2048,
+        4096
+      ],
+      "dtype": "torch.float32",
+      "device": "npu:0",
+      "stride": [
+        8388608,
+        4096,
+        1
+      ]
+    },
+    "total_elements": "16777216",
+    "BLOCK_SIZE": "4096"
+  },
+  "correctness_passed": true,
+  "status": "measured",
+  "median_us": 233.167,
+  "failure_reason": null,
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "source_result": "geglu-ascend-00.json",
+  "source_result_sha256": "bdec64ab0bac36c44be161a87087e7f187cf0eae1f03eac150208112041d230a",
+  "samples_us": [
+    233.112,
+    233.064,
+    233.521,
+    235.92,
+    233.35,
+    232.682,
+    236.222,
+    232.577,
+    231.407,
+    232.929,
+    232.403,
+    234.245,
+    234.686,
+    233.167,
+    236.082
+  ],
+  "grid": [
+    56
+  ],
+  "constexpr": {
+    "BLOCK_SIZE": 4096
+  },
+  "trace_sha256": "3408943f9042a4299327788ceaab9086fddd80bfeb244aa9e1a297635d213f3f",
+  "kernel_csv_sha256": "959501dec802615370d7f38f619b79271e2761218ae1edc381bccac32970cccc",
+  "compiled_artifacts": [
+    {
+      "metadata_sha256": "1a815e35547b42f1d2b5d9a3cd7c528a6662ccb66abefc4d99b39c97af4a3a51",
+      "ir_sha256": "e80b34b4b029ea37426ab31e88eb21b5b62c4c171dc94645caaa50ad53ddd78a",
+      "binary_sha256": "31b90dec90de8fa9a43eb86c9db803151871357a8d1edd7ccc89d111dcdd9bc8",
+      "compiler_hash": "0e46985f40aa126d8e1497b4d7ec404cfcc2fac9035ab30ab1a6e560c38301bc"
+    }
+  ]
+}

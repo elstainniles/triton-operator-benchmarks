@@ -1,0 +1,111 @@
+{
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "second-batch",
+      "suite": "baseline",
+      "shape": [
+        256,
+        2048
+      ],
+      "dtype": "int8",
+      "nodeid": "test_case.py::test_experimental_int8int2_matmul",
+      "original_nodeid": "direct_cases.py::test_experimental_int8int2_matmul",
+      "input_origin": "direct_correctness_case",
+      "tensors": {
+        "a_ptr": {
+          "shape": [
+            256,
+            2048
+          ],
+          "dtype": "torch.int8",
+          "device": "npu:0",
+          "stride": [
+            2048,
+            1
+          ]
+        },
+        "b_ptr": {
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "torch.uint8",
+          "device": "npu:0",
+          "stride": [
+            512,
+            1
+          ]
+        },
+        "c_ptr": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "torch.int32",
+          "device": "npu:0",
+          "stride": [
+            512,
+            1
+          ]
+        }
+      },
+      "historical_bound_arguments": {
+        "a_ptr": {
+          "shape": [
+            256,
+            2048
+          ],
+          "dtype": "torch.int8",
+          "device": "npu:0",
+          "stride": [
+            2048,
+            1
+          ]
+        },
+        "b_ptr": {
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "torch.uint8",
+          "device": "npu:0",
+          "stride": [
+            512,
+            1
+          ]
+        },
+        "c_ptr": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "torch.int32",
+          "device": "npu:0",
+          "stride": [
+            512,
+            1
+          ]
+        },
+        "M": "256",
+        "N": "512",
+        "K": "2048",
+        "stride_am": "2048",
+        "stride_ak": "1",
+        "stride_bk": "512",
+        "stride_bn": "1",
+        "stride_cm": "512",
+        "stride_cn": "1",
+        "BLOCK_SIZE_M": "64",
+        "BLOCK_SIZE_N": "128",
+        "BLOCK_SIZE_K": "64",
+        "GROUP_SIZE_M": "8",
+        "num_warps": "4",
+        "num_ctas": "1",
+        "num_stages": "4"
+      },
+      "dimensions": {},
+      "parameters": {}
+    }
+  ]
+}
