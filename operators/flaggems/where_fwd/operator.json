@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "P07",
+  "name": "where_fwd",
+  "family": "where",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/flaggems/where_fwd",
+  "implementation": "continuous_adapter",
+  "source": {
+    "repository": "https://github.com/flagos-ai/FlagGems",
+    "revision": "61f3372e817e8bf4e9279df9ef21c0c453f718b8",
+    "path": "src/flag_gems/ops/where.py",
+    "license": "Apache-2.0",
+    "snapshot": "upstream/where.py",
+    "sha256": "964d5553efc991769f2ba1bee95efcf0eae1259794609afb69c133afe6414b62",
+    "normalization": "LF text snapshot",
+    "symbol": "where_inner"
+  },
+  "kernel_symbol": "pointwise_probe",
+  "baseline_id": "B1024",
+  "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+  "configurations": {
+    "B256": {
+      "B": 256
+    },
+    "B1024": {
+      "B": 1024
+    },
+    "B4096": {
+      "B": 4096
+    },
+    "B16384": {
+      "B": 16384
+    }
+  },
+  "launch_options": {
+    "num_warps": 32,
+    "num_stages": 2
+  },
+  "inputs": "X[N], Y[N], C[N] bool；O[N]；C[i]=(i%3==0)",
+  "execution_validation": "host_only_not_npu_revalidated"
+}

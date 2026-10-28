@@ -1,0 +1,663 @@
+{
+  "schema_version": 1,
+  "comparisons": [
+    {
+      "operator_id": "P06",
+      "name": "Mul 2D broadcast",
+      "case_id": "P06-17x513-float32-normal",
+      "shape": [
+        17,
+        513
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103015Z-OznZVM",
+      "physical_device": 2,
+      "smoke": true,
+      "baseline_id": "B1024",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 3.128,
+      "best_id": "B256",
+      "best_us": 2.9215,
+      "time_reduction_pct": 6.601662404092079,
+      "speedup": 1.070682868389526,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.9215,
+          "time_reduction_pct": 6.601662404092079,
+          "round_range_us": [
+            2.914,
+            2.929
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 3.128,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            3.125,
+            3.131
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 6.13,
+          "time_reduction_pct": -95.97186700767261,
+          "round_range_us": [
+            6.122,
+            6.138
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P06",
+      "name": "Mul 2D broadcast",
+      "case_id": "P06-1x2048-float32-normal",
+      "shape": [
+        1,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.915,
+      "best_id": "B256",
+      "best_us": 2.339,
+      "time_reduction_pct": 19.759862778730707,
+      "speedup": 1.2462590850790936,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.339,
+          "time_reduction_pct": 19.759862778730707,
+          "round_range_us": [
+            2.315,
+            2.404
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.915,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.904,
+            2.932
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 5.462,
+          "time_reduction_pct": -87.37564322469981,
+          "round_range_us": [
+            5.419,
+            5.463
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P06",
+      "name": "Mul 2D broadcast",
+      "case_id": "P06-17x513-float32-normal",
+      "shape": [
+        17,
+        513
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 3.138,
+      "best_id": "B256",
+      "best_us": 2.964,
+      "time_reduction_pct": 5.544933078393877,
+      "speedup": 1.0587044534412955,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.964,
+          "time_reduction_pct": 5.544933078393877,
+          "round_range_us": [
+            2.852,
+            3.107
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 3.138,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            3.08,
+            3.141
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 6.014,
+          "time_reduction_pct": -91.65073295092417,
+          "round_range_us": [
+            5.931,
+            6.153
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P06",
+      "name": "Mul 2D broadcast",
+      "case_id": "P06-128x1024-float32-normal",
+      "shape": [
+        128,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 8.451,
+      "best_id": "B4096",
+      "best_us": 7.079,
+      "time_reduction_pct": 16.23476511655426,
+      "speedup": 1.1938126854075435,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 13.25,
+          "time_reduction_pct": -56.786179150396386,
+          "round_range_us": [
+            13.103,
+            13.693
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 8.451,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            8.414,
+            8.863
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 7.079,
+          "time_reduction_pct": 16.23476511655426,
+          "round_range_us": [
+            6.983,
+            7.282
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P06",
+      "name": "Mul 2D broadcast",
+      "case_id": "P06-2048x128-float32-normal",
+      "shape": [
+        2048,
+        128
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 11.348,
+      "best_id": "B1024",
+      "best_us": 11.348,
+      "time_reduction_pct": 0.0,
+      "speedup": 1.0,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 24.313,
+          "time_reduction_pct": -114.24920690870634,
+          "round_range_us": [
+            24.308,
+            24.923
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 11.348,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            11.338,
+            11.953
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 11.93,
+          "time_reduction_pct": -5.128657032076123,
+          "round_range_us": [
+            11.922,
+            12.6
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P06",
+      "name": "Mul 2D broadcast",
+      "case_id": "P06-1024x8192-float32-normal",
+      "shape": [
+        1024,
+        8192
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 270.055,
+      "best_id": "B4096",
+      "best_us": 215.38,
+      "time_reduction_pct": 20.245875840106653,
+      "speedup": 1.2538536540068717,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 672.936,
+          "time_reduction_pct": -149.1847956897669,
+          "round_range_us": [
+            672.096,
+            674.499
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 270.055,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            268.628,
+            270.473
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 215.38,
+          "time_reduction_pct": 20.245875840106653,
+          "round_range_us": [
+            214.435,
+            215.468
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P06",
+      "name": "Mul 2D broadcast",
+      "case_id": "P06-17x513-bfloat16-normal",
+      "shape": [
+        17,
+        513
+      ],
+      "dtype": "torch.bfloat16",
+      "tag": "normal",
+      "run": "fix-python-20261026T104351Z-pomFDa",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 3.025,
+      "best_id": "B256",
+      "best_us": 2.959,
+      "time_reduction_pct": 2.1818181818181737,
+      "speedup": 1.0223048327137545,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.959,
+          "time_reduction_pct": 2.1818181818181737,
+          "round_range_us": [
+            2.894,
+            2.976
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 3.025,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            3.011,
+            3.031
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 5.959,
+          "time_reduction_pct": -96.99173553719007,
+          "round_range_us": [
+            5.84,
+            5.997
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    }
+  ]
+}

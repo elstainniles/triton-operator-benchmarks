@@ -1,0 +1,2589 @@
+{
+  "schema_version": 1,
+  "measurements": [
+    {
+      "operator_id": "P05",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P05-8193-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P05-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 2,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        33
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.00207,
+        0.001689,
+        0.002281,
+        0.002337,
+        0.00181,
+        0.002333
+      ],
+      "median_ms": 0.0022015000000000003,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 2.07,
+          "span_median_us": 2.07
+        },
+        {
+          "round": 1,
+          "sum_median_us": 2.333,
+          "span_median_us": 2.333
+        }
+      ],
+      "cold_call_seconds": 2.189375679998193,
+      "smoke": true,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P05-8193-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P05-8193-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 2,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        9
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.00234,
+        0.001486,
+        0.001405,
+        0.001428,
+        0.0015400000000000001,
+        0.0014650000000000002
+      ],
+      "median_ms": 0.0014755,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.486,
+          "span_median_us": 1.486
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.465,
+          "span_median_us": 1.465
+        }
+      ],
+      "cold_call_seconds": 2.1168376069981605,
+      "smoke": true,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P05-8193-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P05-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 2,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        3
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001544,
+        0.001444,
+        0.001492,
+        0.001366,
+        0.001522,
+        0.001418
+      ],
+      "median_ms": 0.0014550000000000001,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.492,
+          "span_median_us": 1.492
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.418,
+          "span_median_us": 1.418
+        }
+      ],
+      "cold_call_seconds": 2.115174811999168,
+      "smoke": true,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P05-8193-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P05-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 2,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001737,
+        0.001777,
+        0.001761,
+        0.001885,
+        0.0017549999999999998,
+        0.001787
+      ],
+      "median_ms": 0.001774,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.761,
+          "span_median_us": 1.761
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.787,
+          "span_median_us": 1.787
+        }
+      ],
+      "cold_call_seconds": 2.116457697000442,
+      "smoke": true,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-127-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-127-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3385826647281647
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0011200000000000001,
+        0.00098,
+        0.000997,
+        0.001137,
+        0.001125,
+        0.001199,
+        0.001092,
+        0.001074,
+        0.001052,
+        0.001074,
+        0.0012729999999999998,
+        0.001279,
+        0.001168,
+        0.001155,
+        0.0010429999999999999
+      ],
+      "median_ms": 0.0011200000000000001,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.12,
+          "span_median_us": 1.12
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.074,
+          "span_median_us": 1.074
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.168,
+          "span_median_us": 1.168
+        }
+      ],
+      "cold_call_seconds": 2.076265161002084,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-127-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-127-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3385826647281647
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001572,
+        0.0011899999999999999,
+        0.0011639999999999999,
+        0.001163,
+        0.0011870000000000001,
+        0.001325,
+        0.00109,
+        0.0011970000000000001,
+        0.001054,
+        0.0011870000000000001,
+        0.001219,
+        0.001193,
+        0.001186,
+        0.001222,
+        0.001186
+      ],
+      "median_ms": 0.0011870000000000001,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.187,
+          "span_median_us": 1.187
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.187,
+          "span_median_us": 1.187
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.193,
+          "span_median_us": 1.193
+        }
+      ],
+      "cold_call_seconds": 2.0564781009998114,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-127-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-127-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3385826647281647
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0013360000000000002,
+        0.001247,
+        0.001268,
+        0.0011790000000000001,
+        0.001305,
+        0.0013360000000000002,
+        0.001289,
+        0.001259,
+        0.001299,
+        0.001176,
+        0.001188,
+        0.001093,
+        0.001117,
+        0.0010940000000000001,
+        0.001113
+      ],
+      "median_ms": 0.001268,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.268,
+          "span_median_us": 1.268
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.289,
+          "span_median_us": 1.289
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.113,
+          "span_median_us": 1.113
+        }
+      ],
+      "cold_call_seconds": 2.1005297060000885,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-127-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-127-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3385826647281647
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001416,
+        0.0013109999999999999,
+        0.001333,
+        0.0013540000000000002,
+        0.001332,
+        0.0014730000000000001,
+        0.0014579999999999999,
+        0.001484,
+        0.001451,
+        0.001606,
+        0.001439,
+        0.001472,
+        0.001428,
+        0.001343,
+        0.0013189999999999999
+      ],
+      "median_ms": 0.001428,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.333,
+          "span_median_us": 1.333
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.473,
+          "span_median_us": 1.473
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.428,
+          "span_median_us": 1.428
+        }
+      ],
+      "cold_call_seconds": 2.114508222999575,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-8193-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        33
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001865,
+        0.0022299999999999998,
+        0.0017549999999999998,
+        0.002047,
+        0.0017729999999999998,
+        0.001761,
+        0.0022429999999999998,
+        0.001675,
+        0.002218,
+        0.001727,
+        0.0016279999999999999,
+        0.002179,
+        0.001732,
+        0.002057,
+        0.0015760000000000001
+      ],
+      "median_ms": 0.001761,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.865,
+          "span_median_us": 1.865
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.761,
+          "span_median_us": 1.761
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.732,
+          "span_median_us": 1.732
+        }
+      ],
+      "cold_call_seconds": 0.0002808619974530302,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-8193-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-8193-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        9
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0020299999999999997,
+        0.0014219999999999999,
+        0.001463,
+        0.0014039999999999999,
+        0.001428,
+        0.001511,
+        0.0013859999999999999,
+        0.001664,
+        0.001442,
+        0.001556,
+        0.001516,
+        0.001398,
+        0.001417,
+        0.001431,
+        0.00141
+      ],
+      "median_ms": 0.001428,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.428,
+          "span_median_us": 1.428
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.511,
+          "span_median_us": 1.511
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.417,
+          "span_median_us": 1.417
+        }
+      ],
+      "cold_call_seconds": 8.549800259061158e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-8193-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        3
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0014579999999999999,
+        0.001438,
+        0.001415,
+        0.001492,
+        0.001431,
+        0.001519,
+        0.0014010000000000001,
+        0.001435,
+        0.00141,
+        0.0014930000000000002,
+        0.001495,
+        0.001389,
+        0.001487,
+        0.001444,
+        0.001446
+      ],
+      "median_ms": 0.001438,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.438,
+          "span_median_us": 1.438
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.435,
+          "span_median_us": 1.435
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.446,
+          "span_median_us": 1.446
+        }
+      ],
+      "cold_call_seconds": 5.8237998018739745e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-8193-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0017800000000000001,
+        0.0017330000000000002,
+        0.001631,
+        0.0016120000000000002,
+        0.001631,
+        0.001851,
+        0.001831,
+        0.001729,
+        0.001778,
+        0.00173,
+        0.001771,
+        0.0017259999999999999,
+        0.0017800000000000001,
+        0.00172,
+        0.001631
+      ],
+      "median_ms": 0.0017259999999999999,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.631,
+          "span_median_us": 1.631
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.778,
+          "span_median_us": 1.778
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.726,
+          "span_median_us": 1.726
+        }
+      ],
+      "cold_call_seconds": 5.585300095845014e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-1048576-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-1048576-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.33333396911621094
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        4096
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.018947,
+        0.017277,
+        0.017890999999999997,
+        0.016896,
+        0.01745,
+        0.01899,
+        0.017362,
+        0.017715,
+        0.016805,
+        0.01823,
+        0.019053999999999998,
+        0.017443999999999998,
+        0.018422,
+        0.01757,
+        0.017777
+      ],
+      "median_ms": 0.017715,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 1048576,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 17.45,
+          "span_median_us": 17.45
+        },
+        {
+          "round": 1,
+          "sum_median_us": 17.715,
+          "span_median_us": 17.715
+        },
+        {
+          "round": 2,
+          "sum_median_us": 17.777,
+          "span_median_us": 17.777
+        }
+      ],
+      "cold_call_seconds": 0.000252990001172293,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-1048576-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-1048576-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.33333396911621094
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1024
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.007013,
+        0.0057610000000000005,
+        0.005681,
+        0.006599,
+        0.005443,
+        0.006764999999999999,
+        0.006174000000000001,
+        0.005859,
+        0.005729,
+        0.005589,
+        0.006035,
+        0.006986,
+        0.005346,
+        0.006738,
+        0.005916
+      ],
+      "median_ms": 0.005859,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 1048576,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 5.761,
+          "span_median_us": 5.761
+        },
+        {
+          "round": 1,
+          "sum_median_us": 5.859,
+          "span_median_us": 5.859
+        },
+        {
+          "round": 2,
+          "sum_median_us": 6.035,
+          "span_median_us": 6.035
+        }
+      ],
+      "cold_call_seconds": 8.65399997564964e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-1048576-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-1048576-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.33333396911621094
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        256
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.004403,
+        0.0034860000000000004,
+        0.003956,
+        0.003303,
+        0.004115000000000001,
+        0.0034980000000000002,
+        0.00362,
+        0.0033740000000000003,
+        0.0043289999999999995,
+        0.003139,
+        0.004567,
+        0.00332,
+        0.003666,
+        0.003176,
+        0.003835
+      ],
+      "median_ms": 0.003666,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 1048576,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 3.956,
+          "span_median_us": 3.956
+        },
+        {
+          "round": 1,
+          "sum_median_us": 3.498,
+          "span_median_us": 3.498
+        },
+        {
+          "round": 2,
+          "sum_median_us": 3.666,
+          "span_median_us": 3.666
+        }
+      ],
+      "cold_call_seconds": 5.8327001170255244e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-1048576-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-1048576-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.33333396911621094
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        64
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0040490000000000005,
+        0.005268,
+        0.003435,
+        0.004371000000000001,
+        0.003539,
+        0.00484,
+        0.003735,
+        0.00449,
+        0.00437,
+        0.004799,
+        0.003919,
+        0.004974999999999999,
+        0.004258,
+        0.0050940000000000004,
+        0.0033959999999999997
+      ],
+      "median_ms": 0.004258,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 1048576,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 4.049,
+          "span_median_us": 4.049
+        },
+        {
+          "round": 1,
+          "sum_median_us": 4.49,
+          "span_median_us": 4.49
+        },
+        {
+          "round": 2,
+          "sum_median_us": 4.258,
+          "span_median_us": 4.258
+        }
+      ],
+      "cold_call_seconds": 5.4580999858444557e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-16777216-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-16777216-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333730697632
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        65536
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.28570999999999996,
+        0.267565,
+        0.261324,
+        0.264264,
+        0.267814,
+        0.284551,
+        0.267332,
+        0.268002,
+        0.26588,
+        0.26746499999999995,
+        0.282832,
+        0.267887,
+        0.265657,
+        0.26194,
+        0.264474
+      ],
+      "median_ms": 0.26746499999999995,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 16777216,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 267.565,
+          "span_median_us": 267.565
+        },
+        {
+          "round": 1,
+          "sum_median_us": 267.465,
+          "span_median_us": 267.465
+        },
+        {
+          "round": 2,
+          "sum_median_us": 265.657,
+          "span_median_us": 265.657
+        }
+      ],
+      "cold_call_seconds": 0.0005259690005914308,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-16777216-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-16777216-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333730697632
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        16384
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.09007299999999999,
+        0.08461,
+        0.082469,
+        0.082349,
+        0.081346,
+        0.088592,
+        0.08793899999999999,
+        0.083263,
+        0.082329,
+        0.082092,
+        0.088491,
+        0.086233,
+        0.08248699999999999,
+        0.082807,
+        0.082098
+      ],
+      "median_ms": 0.082807,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 16777216,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 82.469,
+          "span_median_us": 82.469
+        },
+        {
+          "round": 1,
+          "sum_median_us": 83.263,
+          "span_median_us": 83.263
+        },
+        {
+          "round": 2,
+          "sum_median_us": 82.807,
+          "span_median_us": 82.807
+        }
+      ],
+      "cold_call_seconds": 0.0001461889987695031,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-16777216-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-16777216-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333730697632
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        4096
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.053839,
+        0.048438,
+        0.046984000000000005,
+        0.046086,
+        0.046027,
+        0.055329,
+        0.04864,
+        0.046466,
+        0.04847,
+        0.046441,
+        0.055713,
+        0.048231,
+        0.046825000000000006,
+        0.046238999999999995,
+        0.046561
+      ],
+      "median_ms": 0.046984000000000005,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 16777216,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 46.984,
+          "span_median_us": 46.984
+        },
+        {
+          "round": 1,
+          "sum_median_us": 48.47,
+          "span_median_us": 48.47
+        },
+        {
+          "round": 2,
+          "sum_median_us": 46.825,
+          "span_median_us": 46.825
+        }
+      ],
+      "cold_call_seconds": 0.0001082620001398027,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-16777216-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P05-16777216-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333730697632
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1024
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.052445,
+        0.047549999999999995,
+        0.045229,
+        0.046116,
+        0.044542,
+        0.052516,
+        0.047109000000000005,
+        0.045595,
+        0.044573999999999996,
+        0.045029000000000007,
+        0.04541,
+        0.045323,
+        0.045378999999999996,
+        0.044025,
+        0.044052
+      ],
+      "median_ms": 0.045595,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 16777216,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 46.116,
+          "span_median_us": 46.116
+        },
+        {
+          "round": 1,
+          "sum_median_us": 45.595,
+          "span_median_us": 45.595
+        },
+        {
+          "round": 2,
+          "sum_median_us": 45.323,
+          "span_median_us": 45.323
+        }
+      ],
+      "cold_call_seconds": 0.0001086429983843118,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P05-8193-bfloat16-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P05-8193-bfloat16-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        33
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0018700000000000001,
+        0.002154,
+        0.0017310000000000001,
+        0.002085,
+        0.001624,
+        0.0017490000000000001,
+        0.002009,
+        0.001591,
+        0.002247,
+        0.0017529999999999998,
+        0.001675,
+        0.002219,
+        0.001724,
+        0.002129,
+        0.001665
+      ],
+      "median_ms": 0.0017529999999999998,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.02,
+            "atol": 0.02,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.87,
+          "span_median_us": 1.87
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.753,
+          "span_median_us": 1.753
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.724,
+          "span_median_us": 1.724
+        }
+      ],
+      "cold_call_seconds": 2.4067964979985845,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P05-8193-bfloat16-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P05-8193-bfloat16-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        9
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.002385,
+        0.001414,
+        0.0014759999999999999,
+        0.00141,
+        0.001423,
+        0.001512,
+        0.0015680000000000002,
+        0.001667,
+        0.001462,
+        0.001532,
+        0.001638,
+        0.00141,
+        0.001398,
+        0.0013640000000000002,
+        0.0014
+      ],
+      "median_ms": 0.001423,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.02,
+            "atol": 0.02,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.423,
+          "span_median_us": 1.423
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.532,
+          "span_median_us": 1.532
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.4,
+          "span_median_us": 1.4
+        }
+      ],
+      "cold_call_seconds": 2.230989418003446,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P05-8193-bfloat16-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P05-8193-bfloat16-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        3
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001544,
+        0.001487,
+        0.001585,
+        0.0014759999999999999,
+        0.0014570000000000002,
+        0.0014550000000000001,
+        0.001452,
+        0.0014750000000000002,
+        0.00145,
+        0.001479,
+        0.0013839999999999998,
+        0.001466,
+        0.001445,
+        0.001547,
+        0.001522
+      ],
+      "median_ms": 0.001466,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.02,
+            "atol": 0.02,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.487,
+          "span_median_us": 1.487
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.455,
+          "span_median_us": 1.455
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.466,
+          "span_median_us": 1.466
+        }
+      ],
+      "cold_call_seconds": 2.0805695569979434,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P05",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P05-8193-bfloat16-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P05-8193-bfloat16-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001653,
+        0.0016140000000000002,
+        0.001563,
+        0.0015409999999999998,
+        0.001564,
+        0.0017620000000000001,
+        0.0016510000000000001,
+        0.001593,
+        0.001637,
+        0.001593,
+        0.001681,
+        0.001641,
+        0.0016690000000000001,
+        0.0016419999999999998,
+        0.001502
+      ],
+      "median_ms": 0.001637,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.02,
+            "atol": 0.02,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.564,
+          "span_median_us": 1.564
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.637,
+          "span_median_us": 1.637
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.642,
+          "span_median_us": 1.642
+        }
+      ],
+      "cold_call_seconds": 2.1060352940003213,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    }
+  ]
+}

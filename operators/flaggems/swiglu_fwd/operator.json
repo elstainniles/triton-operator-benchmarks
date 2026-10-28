@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "P10",
+  "name": "swiglu_fwd",
+  "family": "swiglu",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/flaggems/swiglu_fwd",
+  "implementation": "original_kernel",
+  "source": {
+    "repository": "https://github.com/flagos-ai/FlagGems",
+    "revision": "61f3372e817e8bf4e9279df9ef21c0c453f718b8",
+    "path": "src/flag_gems/fused/swiglu.py",
+    "license": "Apache-2.0",
+    "snapshot": "upstream/swiglu.py",
+    "sha256": "ed648c3a568b80b2650d92255bd1f0f58be873c7e7d8c7b3c91feeb6c4347cc4",
+    "normalization": "LF text snapshot",
+    "symbol": "swiglu_kernel"
+  },
+  "kernel_symbol": "swiglu_kernel",
+  "baseline_id": "M64H64",
+  "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+  "configurations": {
+    "M64H64": {
+      "BM": 64,
+      "BH": 64
+    },
+    "M1H512": {
+      "BM": 1,
+      "BH": 512
+    },
+    "M4H512": {
+      "BM": 4,
+      "BH": 512
+    },
+    "M16H256": {
+      "BM": 16,
+      "BH": 256
+    },
+    "M4H2048": {
+      "BM": 4,
+      "BH": 2048
+    }
+  },
+  "launch_options": {
+    "num_warps": 32,
+    "num_stages": 2
+  },
+  "inputs": "AB[M,2H]；O[M,H]；shape 参数表示 (M,H)",
+  "execution_validation": "host_only_not_npu_revalidated"
+}

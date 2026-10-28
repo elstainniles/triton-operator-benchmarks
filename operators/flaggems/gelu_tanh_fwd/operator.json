@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "P08",
+  "name": "gelu_tanh_fwd",
+  "family": "gelu",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/flaggems/gelu_tanh_fwd",
+  "implementation": "continuous_adapter",
+  "source": {
+    "repository": "https://github.com/flagos-ai/FlagGems",
+    "revision": "61f3372e817e8bf4e9279df9ef21c0c453f718b8",
+    "path": "src/flag_gems/ops/gelu.py",
+    "license": "Apache-2.0",
+    "snapshot": "upstream/gelu.py",
+    "sha256": "76305b5e036c763bdb2049157042bd4960ad02780debe074527258eb73f03745",
+    "normalization": "LF text snapshot",
+    "symbol": "gelu_tanh"
+  },
+  "kernel_symbol": "pointwise_probe",
+  "baseline_id": "B1024",
+  "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+  "configurations": {
+    "B256": {
+      "B": 256
+    },
+    "B1024": {
+      "B": 1024
+    },
+    "B4096": {
+      "B": 4096
+    },
+    "B16384": {
+      "B": 16384
+    }
+  },
+  "launch_options": {
+    "num_warps": 32,
+    "num_stages": 2
+  },
+  "inputs": "X[N]；O[N]；tanh approximation",
+  "execution_validation": "host_only_not_npu_revalidated"
+}

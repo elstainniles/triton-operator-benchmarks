@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "shape_semantics": "A[M,1], B[1,N]；O[M,N]；逻辑广播 strides=(1,0)/(0,1)",
+  "cases": [
+    {
+      "id": "P06-1x2048-float32-normal",
+      "suite": "fp32",
+      "shape": [
+        1,
+        2048
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "normal"
+    },
+    {
+      "id": "P06-17x513-float32-normal",
+      "suite": "fp32",
+      "shape": [
+        17,
+        513
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "normal"
+    },
+    {
+      "id": "P06-128x1024-float32-normal",
+      "suite": "fp32",
+      "shape": [
+        128,
+        1024
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "normal"
+    },
+    {
+      "id": "P06-2048x128-float32-normal",
+      "suite": "fp32",
+      "shape": [
+        2048,
+        128
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "normal"
+    },
+    {
+      "id": "P06-1024x8192-float32-normal",
+      "suite": "fp32",
+      "shape": [
+        1024,
+        8192
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "normal"
+    },
+    {
+      "id": "P06-17x513-bfloat16-normal",
+      "suite": "bf16",
+      "shape": [
+        17,
+        513
+      ],
+      "dtype": "bfloat16",
+      "seed": 20261026,
+      "tag": "normal"
+    }
+  ]
+}

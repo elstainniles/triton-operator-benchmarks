@@ -1,0 +1,18 @@
+Triton Operator Benchmarks
+
+This repository includes code from FlagGems:
+https://github.com/flagos-ai/FlagGems
+Revision: 61f3372e817e8bf4e9279df9ef21c0c453f718b8
+Copyright 2026 FlagOS Contributors
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+The upstream files retain their copyright and license headers. Locally archived
+snapshots normalize text line endings to LF. Extracted kernels retain function
+bodies and triton.jit decorators; FlagGems dispatch/autotune decorators are
+omitted. GELU's math helpers are bound to the Ascend shims used by the historical
+experiment. Where/GELU use an explicitly identified continuous pointwise adapter.
+Baseline and manual variants change launch tile/grid parameters, not formulas.
+
+The repository's test harness, documentation and data organization are provided
+under the same Apache-2.0 license. Historical benchmark results describe only
+their recorded configurations and hardware, and do not imply upstream endorsement.

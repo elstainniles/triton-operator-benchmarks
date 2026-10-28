@@ -1,0 +1,26 @@
+{
+  "fp32": {
+    "configurations": 35,
+    "improved_over_5pct": 23,
+    "geomean_speedup": 1.2243964896620774,
+    "mean_speedup": 1.2591279159836848,
+    "mean_time_reduction_pct": 16.4241218378012
+  },
+  "original_kernel_fp32": {
+    "configurations": 23,
+    "improved_over_5pct": 15,
+    "geomean_speedup": 1.250453116127935,
+    "mean_speedup": 1.2936140247645445,
+    "mean_time_reduction_pct": 17.770067195544332
+  },
+  "counts": {
+    "operators": 8,
+    "comparisons": 51,
+    "fp32": 35,
+    "bf16": 8,
+    "smoke": 8,
+    "candidates": 218,
+    "passed": 189,
+    "failed": 29
+  }
+}

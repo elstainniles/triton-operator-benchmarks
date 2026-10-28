@@ -1,0 +1,52 @@
+# Triton Operator Benchmarks
+
+用于保存 Triton 算子的原始实现、手工 tile/grid 对照、正确性测试和可追溯性能数据。每个算子方向/实现独立存放，后续按来源加入更多算子。
+
+首批来自 [FlagGems](https://github.com/flagos-ai/FlagGems)，固定提交 `61f3372e817e8bf4e9279df9ef21c0c453f718b8`。包含 Mul 三种布局、Where、GELU fwd/bwd、SwiGLU fwd/bwd，共 **8 个方向/实现条目**，按算法名称去重为 4 类。
+
+| ID | 目录 | 内容 | 历史测试方式 |
+| --- | --- | --- | --- |
+| P04 | [mul_contiguous_fwd](operators/flaggems/mul_contiguous_fwd/) | 连续张量乘法 | 归档 Triton kernel，手改 BLOCK_SIZE/grid |
+| P05 | [mul_scalar_fwd](operators/flaggems/mul_scalar_fwd/) | 张量乘标量 | 归档 Triton kernel，手改 BLOCK_SIZE/grid |
+| P06 | [mul_broadcast_fwd](operators/flaggems/mul_broadcast_fwd/) | 二维广播乘法 | 归档 Triton kernel，手改 BLOCK_SIZE/grid |
+| P07 | [where_fwd](operators/flaggems/where_fwd/) | Where | 原计算函数的连续适配探针 |
+| P08 | [gelu_tanh_fwd](operators/flaggems/gelu_tanh_fwd/) | GELU tanh fwd | 原计算函数的连续适配探针 |
+| P09 | [gelu_tanh_bwd](operators/flaggems/gelu_tanh_bwd/) | GELU tanh bwd | 原计算函数的连续适配探针 |
+| P10 | [swiglu_fwd](operators/flaggems/swiglu_fwd/) | SwiGLU fwd | 归档二维 Triton kernel，手改 BM/BH/grid |
+| P11 | [swiglu_bwd](operators/flaggems/swiglu_bwd/) | SwiGLU bwd | 归档二维 Triton kernel，手改 BM/BH/grid |
+
+Where/GELU 没有接入 FlagGems 的 `pointwise_dynamic` 生成器，不能用探针结果宣称原生成器获得同等加速。上游完整文件放在各算子的 `upstream/`，执行版保留所选 kernel/计算函数的函数体，移除外部调优装饰器并使用受控 NPU launch。
+
+## 资料入口
+
+- [测试说明](docs/TESTING.md)：环境、输入、数值校验、计时、命令和限制。
+- [手改 tile/grid 说明](docs/MANUAL_TILING.md)：基线、候选、grid 联动及退化例子。
+- [历史基线汇总](docs/BASELINE.md)：FP32/BF16、每个算子的历史收益。
+- [新增算子约定](CONTRIBUTING.md)：目录、接口、数据和验证要求。
+- [整理校验记录](docs/VALIDATION.md)：源码、结果和离线测试的校验范围。
+- [来源及许可](NOTICE)：FlagGems Apache-2.0 归属与改动范围。
+
+每个算子目录都有 `kernels.py`、`baseline.py`、`manual_tile.py`、`case.py`、`cases.json`、`operator.json` 和 `results/20261026/`。`baseline.py` 固定基线；`manual_tile.py` 显式列出手改候选；两者通过同目录的 `launch.py` 使用相同计算函数。
+
+## 快速查看与离线验证
+
+以下命令只需 Python 3.11+，不导入 Torch/Triton，也不使用加速卡：
+
+```bash
+python tools/run.py list
+python tools/run.py plan --operator swiglu_fwd --suite fp32
+python tools/verify_repository.py
+python -m unittest discover -s tests -v
+```
+
+NPU 运行方式见 [TESTING.md](docs/TESTING.md)。不要把上游源码直接安装进测试 runtime，也不要覆盖已有环境或已有测量结果。
+
+## 历史结果与当前代码验证的区别
+
+已导入 **51 个运行内比较组、218 个候选检查**：35 个 FP32 主扫描组、8 个 BF16 补充组、8 个 smoke 组；189 个候选通过、29 个编译失败。全部候选的配置、grid、正确性、样本、失败和退化都保留。
+
+固定环境为 Ascend950PR、TA `c4d742a1e51fe259e9039dde1abc708b6df32a76`、CANN 9.1.0、BishengIR `8995ba08834c`。历史硬件监控存在已记录的缺口，小差值不作为确定收益；这不是最新编译器或其它卡型的结论。
+
+历史 FP32 35 个配置逐配置选已测最优后，几何平均加速为 **1.224×**；23/35 个配置测得耗时减少超过 5%。这是已测候选中的最佳值，包含保留基线，不是统一策略或自动调优的收益保证。
+
+本仓库整理后的运行入口经过离线数据/源码/参数校验，**尚未用该新入口重新进行 NPU 测试**。历史结果来自原测试框架，不能作为新入口已通过设备验证的声明。两者使用相同参数、计算函数与数值门禁；新运行会生成独立结果。

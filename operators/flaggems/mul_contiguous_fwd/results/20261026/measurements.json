@@ -1,0 +1,2373 @@
+{
+  "schema_version": 1,
+  "measurements": [
+    {
+      "operator_id": "P04",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P04-8193-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P04-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 2,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        33
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001776,
+        0.001699,
+        0.0014830000000000002,
+        0.001633,
+        0.0016339999999999998,
+        0.001583
+      ],
+      "median_ms": 0.001666,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.699,
+          "span_median_us": 1.699
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.633,
+          "span_median_us": 1.633
+        }
+      ],
+      "cold_call_seconds": 2.135300288999133,
+      "smoke": true,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P04-8193-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P04-8193-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 2,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        9
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.00213,
+        0.0014019999999999998,
+        0.00149,
+        0.001355,
+        0.0013620000000000001,
+        0.001369
+      ],
+      "median_ms": 0.0014260000000000002,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.49,
+          "span_median_us": 1.49
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.362,
+          "span_median_us": 1.362
+        }
+      ],
+      "cold_call_seconds": 2.1091493550011364,
+      "smoke": true,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P04-8193-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P04-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 2,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        3
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001603,
+        0.0015589999999999998,
+        0.0015580000000000001,
+        0.001694,
+        0.001641,
+        0.001608
+      ],
+      "median_ms": 0.0016,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.559,
+          "span_median_us": 1.559
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.641,
+          "span_median_us": 1.641
+        }
+      ],
+      "cold_call_seconds": 2.0148775929992553,
+      "smoke": true,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P04-8193-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T102705Z-P164ax/P04-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 2,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "correctness_or_compilation_only",
+      "warmup": 3,
+      "samples_ms": [],
+      "median_ms": null,
+      "status": "failed",
+      "correctness": null,
+      "failure": "Traceback (most recent call last):\n  File \"<private-path>/compiler.py\", line 350, in compile\n    next_module = compile_ir(module, metadata)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 283, in stage\n    artifact = npubin_stage(src, metadata)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 1600, in <lambda>\n    lambda src, metadata: linalg_to_bin_enable_npu_compile_910_95(src, metadata, options))\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 868, in linalg_to_bin_enable_npu_compile_910_95\n    ret = subprocess.run(cmd_list, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['<private-path>/bishengir-compile', '<private-path>/kernel.mlir', '--target=Ascend950PR_9579', '--enable-auto-multi-buffer=True', '--enable-auto-bind-sub-block=True', '--enable-optimized-metaop=False', '--disable-ffts', '--limit-auto-multi-buffer-of-local-buffer=no-limit', '--enable-auto-blockify-loop', '--enable-hfusion-compile=true', '--enable-triton-kernel-compile=true', '--append-bisheng-options=-cce-link-aicore-ll-module <private-path>/libdevice.10.bc', '--enable-vf-merge-level=1', '-o', '<private-path>/kernel']' returned non-zero exit status 1.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<private-path>/benchmark.py\", line 342, in run_case\n    reset(); compiled=fn();sync()\n                      ^^^^\n  File \"<private-path>/benchmark.py\", line 205, in fn\n    if op == 'P04': return modules[op].mul_kernel[grid](x, y, o, n, str(dtype), b, False, **OPT)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 728, in run\n    return self._run_jit_tail(args, kwargs, grid, warmup, device, stream)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 755, in _run_jit_tail\n    kernel = owner._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 894, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 371, in compile\n    raise MLIRCompilationError(stage_name, error_detail) from e\ntriton.compiler.errors.MLIRCompilationError: \n///------------------[ERROR][Triton][BEG]------------------\n[ConvertLinalgIRToBinary] encounters error:\n[INFO] Using merged native A5 regbase pipeline\n[WARNING] --limit-auto-multi-buffer-only-for-local-buffer, --limit-auto-multi-buffer-of-local-buffer and --limit-auto-multi-buffer-buffer are deprecated and will be removed in BiShengIR 1.4.0. Equivalent setting: --multibuffer-mode=\"[(gm, 2), (l1, 2), (l0c, 2), (ub, 2)]\". A3 default gm=4, A5 default gm=2; set a level to 1 to disable it.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nloc(\"<private-path>/kernel.mlir\":1:1): error: Failed to run buildFinalHIVMPipelines pipeline\n\nloc(\"<private-path>/kernel.mlir\":2:3): error: ub overflow, requires 2097152 bits while 2031616 bits available!\n[ERROR] Failed to run BiShengIR regbase pipeline\n\n\n[INFO]: The compiled kernel cache is in <private-path>/TDPDANQSAQ67ZPVUSHX3A2IICWV2F4DUG2E5I57W67BSQECE32YQ\n\n///------------------[ERROR][Triton][END]------------------\n\n",
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [],
+      "cold_call_seconds": 0.20265094400019734,
+      "smoke": true,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "failure_original_sha256": "455fe959df30e27ff64188090d476c6ec660dd584b42d678ef5d5332f202b1e1",
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-127-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-127-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3385826647281647
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001098,
+        0.0010400000000000001,
+        0.001089,
+        0.0010680000000000002,
+        0.001091,
+        0.001397,
+        0.001201,
+        0.0012259999999999999,
+        0.0011979999999999998,
+        0.0010680000000000002,
+        0.0011459999999999999,
+        0.001193,
+        0.001332,
+        0.001158,
+        0.0011690000000000001
+      ],
+      "median_ms": 0.0011690000000000001,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.089,
+          "span_median_us": 1.089
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.201,
+          "span_median_us": 1.201
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.169,
+          "span_median_us": 1.169
+        }
+      ],
+      "cold_call_seconds": 2.090525740000885,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-127-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-127-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3385826647281647
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001774,
+        0.0011619999999999998,
+        0.001189,
+        0.001165,
+        0.001247,
+        0.0012720000000000001,
+        0.001193,
+        0.001168,
+        0.001192,
+        0.00117,
+        0.001131,
+        0.0010429999999999999,
+        0.001064,
+        0.0010429999999999999,
+        0.0011359999999999999
+      ],
+      "median_ms": 0.001189,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.189,
+          "span_median_us": 1.189
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.192,
+          "span_median_us": 1.192
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.064,
+          "span_median_us": 1.064
+        }
+      ],
+      "cold_call_seconds": 2.0806244689993036,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-127-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-127-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3385826647281647
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001403,
+        0.001369,
+        0.0013260000000000001,
+        0.001171,
+        0.0011510000000000001,
+        0.0012430000000000002,
+        0.0011899999999999999,
+        0.001204,
+        0.001218,
+        0.001195,
+        0.0013440000000000001,
+        0.0013830000000000001,
+        0.001351,
+        0.001395,
+        0.001345
+      ],
+      "median_ms": 0.0013260000000000001,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.326,
+          "span_median_us": 1.326
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.204,
+          "span_median_us": 1.204
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.351,
+          "span_median_us": 1.351
+        }
+      ],
+      "cold_call_seconds": 2.180571693999809,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-127-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-127-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3385826647281647
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "correctness_or_compilation_only",
+      "warmup": 3,
+      "samples_ms": [],
+      "median_ms": null,
+      "status": "failed",
+      "correctness": null,
+      "failure": "Traceback (most recent call last):\n  File \"<private-path>/compiler.py\", line 350, in compile\n    next_module = compile_ir(module, metadata)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 283, in stage\n    artifact = npubin_stage(src, metadata)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 1600, in <lambda>\n    lambda src, metadata: linalg_to_bin_enable_npu_compile_910_95(src, metadata, options))\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 868, in linalg_to_bin_enable_npu_compile_910_95\n    ret = subprocess.run(cmd_list, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['<private-path>/bishengir-compile', '<private-path>/kernel.mlir', '--target=Ascend950PR_9579', '--enable-auto-multi-buffer=True', '--enable-auto-bind-sub-block=True', '--enable-optimized-metaop=False', '--disable-ffts', '--limit-auto-multi-buffer-of-local-buffer=no-limit', '--enable-auto-blockify-loop', '--enable-hfusion-compile=true', '--enable-triton-kernel-compile=true', '--append-bisheng-options=-cce-link-aicore-ll-module <private-path>/libdevice.10.bc', '--enable-vf-merge-level=1', '-o', '<private-path>/kernel']' returned non-zero exit status 1.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<private-path>/benchmark.py\", line 342, in run_case\n    reset(); compiled=fn();sync()\n                      ^^^^\n  File \"<private-path>/benchmark.py\", line 205, in fn\n    if op == 'P04': return modules[op].mul_kernel[grid](x, y, o, n, str(dtype), b, False, **OPT)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 728, in run\n    return self._run_jit_tail(args, kwargs, grid, warmup, device, stream)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 755, in _run_jit_tail\n    kernel = owner._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 894, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 371, in compile\n    raise MLIRCompilationError(stage_name, error_detail) from e\ntriton.compiler.errors.MLIRCompilationError: \n///------------------[ERROR][Triton][BEG]------------------\n[ConvertLinalgIRToBinary] encounters error:\n[INFO] Using merged native A5 regbase pipeline\n[WARNING] --limit-auto-multi-buffer-only-for-local-buffer, --limit-auto-multi-buffer-of-local-buffer and --limit-auto-multi-buffer-buffer are deprecated and will be removed in BiShengIR 1.4.0. Equivalent setting: --multibuffer-mode=\"[(gm, 2), (l1, 2), (l0c, 2), (ub, 2)]\". A3 default gm=4, A5 default gm=2; set a level to 1 to disable it.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nloc(\"<private-path>/kernel.mlir\":1:1): error: Failed to run buildFinalHIVMPipelines pipeline\n\nloc(\"<private-path>/kernel.mlir\":2:3): error: ub overflow, requires 2097152 bits while 2031616 bits available!\n[ERROR] Failed to run BiShengIR regbase pipeline\n\n\n[INFO]: The compiled kernel cache is in <private-path>/TDPDANQSAQ67ZPVUSHX3A2IICWV2F4DUG2E5I57W67BSQECE32YQ\n\n///------------------[ERROR][Triton][END]------------------\n\n",
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [],
+      "cold_call_seconds": 0.23356287999922642,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "failure_original_sha256": "163e082484cffd6f3f6ca5f698830f355bbea0798cb9416ca53f8e4be6af4c6f",
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-8193-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        33
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0022480000000000004,
+        0.001688,
+        0.002401,
+        0.001792,
+        0.002124,
+        0.00239,
+        0.0018640000000000002,
+        0.0023250000000000002,
+        0.001812,
+        0.002181,
+        0.002574,
+        0.001983,
+        0.002398,
+        0.001835,
+        0.002163
+      ],
+      "median_ms": 0.002163,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 2.124,
+          "span_median_us": 2.124
+        },
+        {
+          "round": 1,
+          "sum_median_us": 2.181,
+          "span_median_us": 2.181
+        },
+        {
+          "round": 2,
+          "sum_median_us": 2.163,
+          "span_median_us": 2.163
+        }
+      ],
+      "cold_call_seconds": 0.0003024539983016439,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-8193-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-8193-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        9
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.002109,
+        0.001439,
+        0.001459,
+        0.001373,
+        0.0014990000000000001,
+        0.0015069999999999999,
+        0.001468,
+        0.001435,
+        0.001489,
+        0.001365,
+        0.001478,
+        0.001426,
+        0.001517,
+        0.0014470000000000002,
+        0.001535
+      ],
+      "median_ms": 0.001468,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.459,
+          "span_median_us": 1.459
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.468,
+          "span_median_us": 1.468
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.478,
+          "span_median_us": 1.478
+        }
+      ],
+      "cold_call_seconds": 9.42919978115242e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-8193-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        3
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001784,
+        0.0017250000000000002,
+        0.001675,
+        0.001689,
+        0.001643,
+        0.001678,
+        0.001688,
+        0.0016279999999999999,
+        0.001701,
+        0.001658,
+        0.001689,
+        0.001722,
+        0.001716,
+        0.0017230000000000001,
+        0.001655
+      ],
+      "median_ms": 0.001689,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.689,
+          "span_median_us": 1.689
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.678,
+          "span_median_us": 1.678
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.716,
+          "span_median_us": 1.716
+        }
+      ],
+      "cold_call_seconds": 7.737600026302971e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-8193-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-8193-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "correctness_or_compilation_only",
+      "warmup": 3,
+      "samples_ms": [],
+      "median_ms": null,
+      "status": "failed",
+      "correctness": null,
+      "failure": "Traceback (most recent call last):\n  File \"<private-path>/compiler.py\", line 350, in compile\n    next_module = compile_ir(module, metadata)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 283, in stage\n    artifact = npubin_stage(src, metadata)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 1600, in <lambda>\n    lambda src, metadata: linalg_to_bin_enable_npu_compile_910_95(src, metadata, options))\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 868, in linalg_to_bin_enable_npu_compile_910_95\n    ret = subprocess.run(cmd_list, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['<private-path>/bishengir-compile', '<private-path>/kernel.mlir', '--target=Ascend950PR_9579', '--enable-auto-multi-buffer=True', '--enable-auto-bind-sub-block=True', '--enable-optimized-metaop=False', '--disable-ffts', '--limit-auto-multi-buffer-of-local-buffer=no-limit', '--enable-auto-blockify-loop', '--enable-hfusion-compile=true', '--enable-triton-kernel-compile=true', '--append-bisheng-options=-cce-link-aicore-ll-module <private-path>/libdevice.10.bc', '--enable-vf-merge-level=1', '-o', '<private-path>/kernel']' returned non-zero exit status 1.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<private-path>/benchmark.py\", line 342, in run_case\n    reset(); compiled=fn();sync()\n                      ^^^^\n  File \"<private-path>/benchmark.py\", line 205, in fn\n    if op == 'P04': return modules[op].mul_kernel[grid](x, y, o, n, str(dtype), b, False, **OPT)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 728, in run\n    return self._run_jit_tail(args, kwargs, grid, warmup, device, stream)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 755, in _run_jit_tail\n    kernel = owner._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 894, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 371, in compile\n    raise MLIRCompilationError(stage_name, error_detail) from e\ntriton.compiler.errors.MLIRCompilationError: \n///------------------[ERROR][Triton][BEG]------------------\n[ConvertLinalgIRToBinary] encounters error:\n[INFO] Using merged native A5 regbase pipeline\n[WARNING] --limit-auto-multi-buffer-only-for-local-buffer, --limit-auto-multi-buffer-of-local-buffer and --limit-auto-multi-buffer-buffer are deprecated and will be removed in BiShengIR 1.4.0. Equivalent setting: --multibuffer-mode=\"[(gm, 2), (l1, 2), (l0c, 2), (ub, 2)]\". A3 default gm=4, A5 default gm=2; set a level to 1 to disable it.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nloc(\"<private-path>/kernel.mlir\":1:1): error: Failed to run buildFinalHIVMPipelines pipeline\n\nloc(\"<private-path>/kernel.mlir\":2:3): error: ub overflow, requires 2097152 bits while 2031616 bits available!\n[ERROR] Failed to run BiShengIR regbase pipeline\n\n\n[INFO]: The compiled kernel cache is in <private-path>/TDPDANQSAQ67ZPVUSHX3A2IICWV2F4DUG2E5I57W67BSQECE32YQ\n\n///------------------[ERROR][Triton][END]------------------\n\n",
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [],
+      "cold_call_seconds": 0.18940968300012173,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "failure_original_sha256": "f9131195dcae318de5a74b20421a88f183f3a412200dee7d0f7a36898da35f47",
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-1048576-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-1048576-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.33333396911621094
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        4096
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.019146999999999997,
+        0.017309,
+        0.01811,
+        0.016954999999999998,
+        0.018443,
+        0.019188,
+        0.016772,
+        0.017789000000000003,
+        0.017182,
+        0.017731,
+        0.018591,
+        0.016878,
+        0.018704000000000002,
+        0.017277999999999998,
+        0.018494
+      ],
+      "median_ms": 0.01811,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 1048576,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 18.11,
+          "span_median_us": 18.11
+        },
+        {
+          "round": 1,
+          "sum_median_us": 17.731,
+          "span_median_us": 17.731
+        },
+        {
+          "round": 2,
+          "sum_median_us": 18.494,
+          "span_median_us": 18.494
+        }
+      ],
+      "cold_call_seconds": 0.00029138700119801797,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-1048576-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-1048576-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.33333396911621094
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1024
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.006741,
+        0.005921,
+        0.006759,
+        0.005837,
+        0.006781,
+        0.006454,
+        0.0073019999999999995,
+        0.005522,
+        0.006556,
+        0.005859,
+        0.006594,
+        0.006163,
+        0.006758,
+        0.005378,
+        0.007045
+      ],
+      "median_ms": 0.006594,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 1048576,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 6.741,
+          "span_median_us": 6.741
+        },
+        {
+          "round": 1,
+          "sum_median_us": 6.454,
+          "span_median_us": 6.454
+        },
+        {
+          "round": 2,
+          "sum_median_us": 6.594,
+          "span_median_us": 6.594
+        }
+      ],
+      "cold_call_seconds": 7.876800009398721e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-1048576-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-1048576-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.33333396911621094
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        256
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.004366,
+        0.005009,
+        0.0041470000000000005,
+        0.005271,
+        0.00408,
+        0.004492,
+        0.004906,
+        0.004277,
+        0.004875,
+        0.003996,
+        0.004308,
+        0.004412,
+        0.004327,
+        0.0050490000000000005,
+        0.004046999999999999
+      ],
+      "median_ms": 0.004366,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 1048576,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 4.366,
+          "span_median_us": 4.366
+        },
+        {
+          "round": 1,
+          "sum_median_us": 4.492,
+          "span_median_us": 4.492
+        },
+        {
+          "round": 2,
+          "sum_median_us": 4.327,
+          "span_median_us": 4.327
+        }
+      ],
+      "cold_call_seconds": 6.021100125508383e-05,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-1048576-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-1048576-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.33333396911621094
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        64
+      ],
+      "timing_scope": "correctness_or_compilation_only",
+      "warmup": 3,
+      "samples_ms": [],
+      "median_ms": null,
+      "status": "failed",
+      "correctness": null,
+      "failure": "Traceback (most recent call last):\n  File \"<private-path>/compiler.py\", line 350, in compile\n    next_module = compile_ir(module, metadata)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 283, in stage\n    artifact = npubin_stage(src, metadata)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 1600, in <lambda>\n    lambda src, metadata: linalg_to_bin_enable_npu_compile_910_95(src, metadata, options))\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 868, in linalg_to_bin_enable_npu_compile_910_95\n    ret = subprocess.run(cmd_list, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['<private-path>/bishengir-compile', '<private-path>/kernel.mlir', '--target=Ascend950PR_9579', '--enable-auto-multi-buffer=True', '--enable-auto-bind-sub-block=True', '--enable-optimized-metaop=False', '--disable-ffts', '--limit-auto-multi-buffer-of-local-buffer=no-limit', '--enable-auto-blockify-loop', '--enable-hfusion-compile=true', '--enable-triton-kernel-compile=true', '--append-bisheng-options=-cce-link-aicore-ll-module <private-path>/libdevice.10.bc', '--enable-vf-merge-level=1', '-o', '<private-path>/kernel']' returned non-zero exit status 1.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<private-path>/benchmark.py\", line 342, in run_case\n    reset(); compiled=fn();sync()\n                      ^^^^\n  File \"<private-path>/benchmark.py\", line 205, in fn\n    if op == 'P04': return modules[op].mul_kernel[grid](x, y, o, n, str(dtype), b, False, **OPT)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 728, in run\n    return self._run_jit_tail(args, kwargs, grid, warmup, device, stream)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 755, in _run_jit_tail\n    kernel = owner._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 894, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 371, in compile\n    raise MLIRCompilationError(stage_name, error_detail) from e\ntriton.compiler.errors.MLIRCompilationError: \n///------------------[ERROR][Triton][BEG]------------------\n[ConvertLinalgIRToBinary] encounters error:\n[INFO] Using merged native A5 regbase pipeline\n[WARNING] --limit-auto-multi-buffer-only-for-local-buffer, --limit-auto-multi-buffer-of-local-buffer and --limit-auto-multi-buffer-buffer are deprecated and will be removed in BiShengIR 1.4.0. Equivalent setting: --multibuffer-mode=\"[(gm, 2), (l1, 2), (l0c, 2), (ub, 2)]\". A3 default gm=4, A5 default gm=2; set a level to 1 to disable it.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nloc(\"<private-path>/kernel.mlir\":1:1): error: Failed to run buildFinalHIVMPipelines pipeline\n\nloc(\"<private-path>/kernel.mlir\":2:3): error: ub overflow, requires 2097152 bits while 2031616 bits available!\n[ERROR] Failed to run BiShengIR regbase pipeline\n\n\n[INFO]: The compiled kernel cache is in <private-path>/TDPDANQSAQ67ZPVUSHX3A2IICWV2F4DUG2E5I57W67BSQECE32YQ\n\n///------------------[ERROR][Triton][END]------------------\n\n",
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [],
+      "cold_call_seconds": 0.20194314299806138,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "failure_original_sha256": "2360561aa4f531e1072f0819ee47b48cbdded71f600c8c7351a3ce5be38f5962",
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-16777216-float32-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-16777216-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333730697632
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        65536
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.322965,
+        0.318313,
+        0.316755,
+        0.316658,
+        0.31757,
+        0.32337,
+        0.31953,
+        0.31751999999999997,
+        0.316818,
+        0.31691699999999995,
+        0.321533,
+        0.318348,
+        0.31797699999999995,
+        0.31719400000000003,
+        0.317102
+      ],
+      "median_ms": 0.31757,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 16777216,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 317.57,
+          "span_median_us": 317.57
+        },
+        {
+          "round": 1,
+          "sum_median_us": 317.52,
+          "span_median_us": 317.52
+        },
+        {
+          "round": 2,
+          "sum_median_us": 317.977,
+          "span_median_us": 317.977
+        }
+      ],
+      "cold_call_seconds": 0.0005671800026902929,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-16777216-float32-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-16777216-float32-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333730697632
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        16384
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.14602199999999999,
+        0.141797,
+        0.140461,
+        0.140088,
+        0.139854,
+        0.14535499999999998,
+        0.141316,
+        0.140656,
+        0.141934,
+        0.140504,
+        0.146174,
+        0.141398,
+        0.14099899999999999,
+        0.140043,
+        0.140743
+      ],
+      "median_ms": 0.14099899999999999,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 16777216,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 140.461,
+          "span_median_us": 140.461
+        },
+        {
+          "round": 1,
+          "sum_median_us": 141.316,
+          "span_median_us": 141.316
+        },
+        {
+          "round": 2,
+          "sum_median_us": 140.999,
+          "span_median_us": 140.999
+        }
+      ],
+      "cold_call_seconds": 0.0002082619976135902,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-16777216-float32-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-16777216-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333730697632
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        4096
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.12179300000000001,
+        0.117688,
+        0.116646,
+        0.11684900000000001,
+        0.11559699999999999,
+        0.120548,
+        0.11816,
+        0.116672,
+        0.11675400000000001,
+        0.116585,
+        0.120107,
+        0.11844400000000001,
+        0.11732899999999999,
+        0.11672400000000001,
+        0.115785
+      ],
+      "median_ms": 0.11684900000000001,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 16777216,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 116.849,
+          "span_median_us": 116.849
+        },
+        {
+          "round": 1,
+          "sum_median_us": 116.754,
+          "span_median_us": 116.754
+        },
+        {
+          "round": 2,
+          "sum_median_us": 117.329,
+          "span_median_us": 117.329
+        }
+      ],
+      "cold_call_seconds": 0.00018232400179840624,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-16777216-float32-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103157Z-ypXuqU/P04-16777216-float32-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333730697632
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1024
+      ],
+      "timing_scope": "correctness_or_compilation_only",
+      "warmup": 3,
+      "samples_ms": [],
+      "median_ms": null,
+      "status": "failed",
+      "correctness": null,
+      "failure": "Traceback (most recent call last):\n  File \"<private-path>/compiler.py\", line 350, in compile\n    next_module = compile_ir(module, metadata)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 283, in stage\n    artifact = npubin_stage(src, metadata)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 1600, in <lambda>\n    lambda src, metadata: linalg_to_bin_enable_npu_compile_910_95(src, metadata, options))\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 868, in linalg_to_bin_enable_npu_compile_910_95\n    ret = subprocess.run(cmd_list, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['<private-path>/bishengir-compile', '<private-path>/kernel.mlir', '--target=Ascend950PR_9579', '--enable-auto-multi-buffer=True', '--enable-auto-bind-sub-block=True', '--enable-optimized-metaop=False', '--disable-ffts', '--limit-auto-multi-buffer-of-local-buffer=no-limit', '--enable-auto-blockify-loop', '--enable-hfusion-compile=true', '--enable-triton-kernel-compile=true', '--append-bisheng-options=-cce-link-aicore-ll-module <private-path>/libdevice.10.bc', '--enable-vf-merge-level=1', '-o', '<private-path>/kernel']' returned non-zero exit status 1.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<private-path>/benchmark.py\", line 342, in run_case\n    reset(); compiled=fn();sync()\n                      ^^^^\n  File \"<private-path>/benchmark.py\", line 205, in fn\n    if op == 'P04': return modules[op].mul_kernel[grid](x, y, o, n, str(dtype), b, False, **OPT)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 370, in <lambda>\n    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 728, in run\n    return self._run_jit_tail(args, kwargs, grid, warmup, device, stream)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 755, in _run_jit_tail\n    kernel = owner._do_compile(key, signature, device, constexprs, options, attrs, warmup)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/jit.py\", line 894, in _do_compile\n    kernel = self.compile(src, target=target, options=options.__dict__)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<private-path>/compiler.py\", line 371, in compile\n    raise MLIRCompilationError(stage_name, error_detail) from e\ntriton.compiler.errors.MLIRCompilationError: \n///------------------[ERROR][Triton][BEG]------------------\n[ConvertLinalgIRToBinary] encounters error:\n[INFO] Using merged native A5 regbase pipeline\n[WARNING] --limit-auto-multi-buffer-only-for-local-buffer, --limit-auto-multi-buffer-of-local-buffer and --limit-auto-multi-buffer-buffer are deprecated and will be removed in BiShengIR 1.4.0. Equivalent setting: --multibuffer-mode=\"[(gm, 2), (l1, 2), (l0c, 2), (ub, 2)]\". A3 default gm=4, A5 default gm=2; set a level to 1 to disable it.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nwarning: warning: --enable-preload=true overrides --enablecv-pipeline-mode; forcing 'Skew'.\nloc(\"<private-path>/kernel.mlir\":1:1): error: Failed to run buildFinalHIVMPipelines pipeline\n\nloc(\"<private-path>/kernel.mlir\":2:3): error: ub overflow, requires 2097152 bits while 2031616 bits available!\n[ERROR] Failed to run BiShengIR regbase pipeline\n\n\n[INFO]: The compiled kernel cache is in <private-path>/TDPDANQSAQ67ZPVUSHX3A2IICWV2F4DUG2E5I57W67BSQECE32YQ\n\n///------------------[ERROR][Triton][END]------------------\n\n",
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [],
+      "cold_call_seconds": 0.2248472169994784,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "failure_original_sha256": "f1e2a7a8090f42f9e8aa02a6106321268b3d5f2475b6e478a18a78840bc3ce56",
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B256",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P04-8193-bfloat16-contiguous/B256",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P04-8193-bfloat16-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 256,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        33
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001764,
+        0.001601,
+        0.001605,
+        0.001682,
+        0.001593,
+        0.0016020000000000001,
+        0.001537,
+        0.0015400000000000001,
+        0.0015940000000000001,
+        0.001571,
+        0.001573,
+        0.001656,
+        0.0016,
+        0.001599,
+        0.001537
+      ],
+      "median_ms": 0.001599,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.02,
+            "atol": 0.02,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.605,
+          "span_median_us": 1.605
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.571,
+          "span_median_us": 1.571
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.599,
+          "span_median_us": 1.599
+        }
+      ],
+      "cold_call_seconds": 2.049241016000451,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B1024",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P04-8193-bfloat16-contiguous/B1024",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P04-8193-bfloat16-contiguous",
+      "version": "baseline_v0",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 1024,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        9
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0023239999999999997,
+        0.0014570000000000002,
+        0.001453,
+        0.001366,
+        0.001413,
+        0.001423,
+        0.001428,
+        0.001597,
+        0.001454,
+        0.001456,
+        0.001574,
+        0.001446,
+        0.0014219999999999999,
+        0.001416,
+        0.001416
+      ],
+      "median_ms": 0.001453,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.02,
+            "atol": 0.02,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.453,
+          "span_median_us": 1.453
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.454,
+          "span_median_us": 1.454
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.422,
+          "span_median_us": 1.422
+        }
+      ],
+      "cold_call_seconds": 2.0951242279988946,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B4096",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P04-8193-bfloat16-contiguous/B4096",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P04-8193-bfloat16-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        3
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.001509,
+        0.0015,
+        0.00149,
+        0.001485,
+        0.001487,
+        0.00149,
+        0.001484,
+        0.001485,
+        0.001487,
+        0.001498,
+        0.001506,
+        0.0014470000000000002,
+        0.001478,
+        0.0015049999999999998,
+        0.0016510000000000001
+      ],
+      "median_ms": 0.00149,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.02,
+            "atol": 0.02,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.49,
+          "span_median_us": 1.49
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.487,
+          "span_median_us": 1.487
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.505,
+          "span_median_us": 1.505
+        }
+      ],
+      "cold_call_seconds": 2.0471134950021224,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    },
+    {
+      "operator_id": "P04",
+      "variant_id": "B16384",
+      "measurement_id": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P04-8193-bfloat16-contiguous/B16384",
+      "comparison_group": "generalization-20261026/fix-python-20261026T103931Z-ktG93d/P04-8193-bfloat16-contiguous",
+      "version": "manual_reference_v1",
+      "source_sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+      "compiler_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+      "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+      "physical_device": 3,
+      "device": {
+        "logical_device": 0,
+        "device_name": "Ascend950PR_9579",
+        "properties": {
+          "max_shared_mem": 1,
+          "num_aicore": 28,
+          "num_vectorcore": 56
+        },
+        "target": "GPUTarget(backend='npu', arch='Ascend950PR_9579', warp_size=0)"
+      },
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "strides": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "scalars": {
+        "mul_scalar": 0.75,
+        "masked_add_alpha": 0.5,
+        "mask_true_fraction": 0.3333333432674408
+      },
+      "seed": 20261026,
+      "input_distribution": "CPU normal(0,1), dtype rounded before transfer",
+      "config": {
+        "B": 16384,
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "grid": [
+        1
+      ],
+      "timing_scope": "NPU kernel duration",
+      "warmup": 3,
+      "samples_ms": [
+        0.0018340000000000001,
+        0.001696,
+        0.0017,
+        0.0016979999999999999,
+        0.001702,
+        0.001958,
+        0.001821,
+        0.0018160000000000001,
+        0.001824,
+        0.001818,
+        0.001841,
+        0.001838,
+        0.001832,
+        0.0017250000000000002,
+        0.00171
+      ],
+      "median_ms": 0.001821,
+      "status": "passed",
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 8193,
+            "rtol": 0.02,
+            "atol": 0.02,
+            "max_abs": 0.0,
+            "relative_rmse": 0.0,
+            "actual_nonfinite": 0,
+            "reference_nonfinite": 0
+          }
+        ],
+        "guards": true
+      },
+      "failure": null,
+      "transformation": "tile_and_grid",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "profile_rounds": [
+        {
+          "round": 0,
+          "sum_median_us": 1.7,
+          "span_median_us": 1.7
+        },
+        {
+          "round": 1,
+          "sum_median_us": 1.821,
+          "span_median_us": 1.821
+        },
+        {
+          "round": 2,
+          "sum_median_us": 1.832,
+          "span_median_us": 1.832
+        }
+      ],
+      "cold_call_seconds": 2.049210220000532,
+      "smoke": false,
+      "timing_exclusion": null,
+      "excluded_raw_median_ms": null,
+      "environment": "../../../../../docs/historical-environment.json"
+    }
+  ]
+}

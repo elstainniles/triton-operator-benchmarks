@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "scope": "FlagGems P04-P11 only",
+  "source_artifacts": [
+    {
+      "name": "comparison.json",
+      "sha256": "491935dce177acc2830d22a0ff0d77275d39c403b523cfdd29e821a9b5f6a93e"
+    },
+    {
+      "name": "measurements.json",
+      "sha256": "7347223ccbca048429df7ad2d66def3d46648da2e59a76f4bc5c519dc99a4176"
+    },
+    {
+      "name": "evidence-verification.json",
+      "sha256": "25229f2c2d2ab82c358df823a37846548bdf918ce96cd0f0eefcece6394a915e"
+    }
+  ],
+  "redactions": [
+    "Private absolute paths, machine usernames, internal compiler URL",
+    "Source artifact includes other projects; only authorized FlagGems rows exported"
+  ],
+  "exported_rows": {
+    "comparisons": 51,
+    "measurements": 218
+  },
+  "ignored_interference_run": "Outside FlagGems subset; no excluded timing row silently accepted",
+  "source_harness": {
+    "benchmark_sha256": "9f4a2c42c7385a19a92bd795dee66827c58d44c50575000fb05dc068a67d0825",
+    "adapters_sha256": "a7abe05f6dbb69363486dbc191c4689601831410df70aac9a2c0422d92403192",
+    "analyzer_sha256": "c8d917ddacca1ae9cfc4fc124b1788c7c8f71c2598feabb13d3b58532fe7eed1"
+  }
+}

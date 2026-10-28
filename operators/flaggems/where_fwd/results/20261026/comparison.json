@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "comparisons": [
+    {
+      "operator_id": "P07",
+      "name": "Where generated",
+      "case_id": "P07-8193-float32-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T102705Z-P164ax",
+      "physical_device": 2,
+      "smoke": true,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 1.581,
+      "best_id": "B1024",
+      "best_us": 1.581,
+      "time_reduction_pct": 0.0,
+      "speedup": 1.0,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.9005,
+          "time_reduction_pct": -20.20872865275143,
+          "round_range_us": [
+            1.712,
+            2.089
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.581,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            1.572,
+            1.59
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.7265000000000001,
+          "time_reduction_pct": -9.20303605313093,
+          "round_range_us": [
+            1.72,
+            1.733
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P07",
+      "name": "Where generated",
+      "case_id": "P07-127-float32-contiguous",
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 1.115,
+      "best_id": "B1024",
+      "best_us": 1.115,
+      "time_reduction_pct": 0.0,
+      "speedup": 1.0,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.221,
+          "time_reduction_pct": -9.506726457399118,
+          "round_range_us": [
+            1.148,
+            1.258
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.115,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            1.077,
+            1.184
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.382,
+          "time_reduction_pct": -23.946188340807172,
+          "round_range_us": [
+            1.338,
+            1.393
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P07",
+      "name": "Where generated",
+      "case_id": "P07-8193-float32-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 1.607,
+      "best_id": "B1024",
+      "best_us": 1.607,
+      "time_reduction_pct": 0.0,
+      "speedup": 1.0,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.16,
+          "time_reduction_pct": -34.41194772868701,
+          "round_range_us": [
+            2.08,
+            2.279
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.607,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            1.53,
+            1.617
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.823,
+          "time_reduction_pct": -13.441194772868691,
+          "round_range_us": [
+            1.753,
+            1.827
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P07",
+      "name": "Where generated",
+      "case_id": "P07-1048576-float32-contiguous",
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 6.552,
+      "best_id": "B4096",
+      "best_us": 4.984,
+      "time_reduction_pct": 23.931623931623925,
+      "speedup": 1.3146067415730336,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 17.995,
+          "time_reduction_pct": -174.6489621489622,
+          "round_range_us": [
+            17.768,
+            18.199
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 6.552,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            6.543,
+            6.765
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 4.984,
+          "time_reduction_pct": 23.931623931623925,
+          "round_range_us": [
+            4.314,
+            5.068
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P07",
+      "name": "Where generated",
+      "case_id": "P07-16777216-float32-contiguous",
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 156.099,
+      "best_id": "B4096",
+      "best_us": 134.599,
+      "time_reduction_pct": 13.773310527293582,
+      "speedup": 1.159733727590844,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 325.519,
+          "time_reduction_pct": -108.53368695507339,
+          "round_range_us": [
+            324.766,
+            325.559
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 156.099,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            156.046,
+            157.887
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 134.599,
+          "time_reduction_pct": 13.773310527293582,
+          "round_range_us": [
+            133.523,
+            134.759
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P07",
+      "name": "Where generated",
+      "case_id": "P07-8193-bfloat16-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103931Z-ktG93d",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 1.578,
+      "best_id": "B1024",
+      "best_us": 1.578,
+      "time_reduction_pct": 0.0,
+      "speedup": 1.0,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.105,
+          "time_reduction_pct": -33.39670468948035,
+          "round_range_us": [
+            2.082,
+            2.288
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.578,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            1.503,
+            1.599
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.632,
+          "time_reduction_pct": -3.4220532319391594,
+          "round_range_us": [
+            1.618,
+            1.646
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "passed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.89,
+          "time_reduction_pct": -19.771863117870716,
+          "round_range_us": [
+            1.859,
+            2.001
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    }
+  ]
+}

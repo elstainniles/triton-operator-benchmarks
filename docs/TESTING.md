@@ -1,0 +1,77 @@
+# 测试说明
+
+本仓库第一批仅测试 FlagGems 的 8 个 Triton 方向/实现条目，全部为 vv（无 matmul）。数据准备、CPU 参考计算和输出检查使用 PyTorch，但**不会计入性能数据**。这里不测 PyTorch 算子、上游完整 Python wrapper 或 autograd 的端到端耗时。
+
+`results/20261026/` 是已完成的历史实测。新整理的 `tools/run.py` 入口尚未在 NPU 上重新验证；本次发布只完成 host 检查。不要把历史数据与新入口的验证状态混淆。
+
+## 先查看计划
+
+从仓库根目录执行，Python 3.11+ 即可，无需 Torch/Triton：
+
+```bash
+python tools/run.py list
+python tools/run.py plan --operator P10 --suite fp32
+python tools/verify_repository.py
+python -m unittest discover -s tests -v
+```
+
+ID 或目录名都可选择算子。`--suite fp32|bf16|all`；`--variants baseline|manual|all`。历史 smoke 用例与主扫描形状重复，只归档、不加入默认重测计划。因此默认计划是 43 个 shape/dtype 配置、184 个候选，而非历史的 51 组/218 条。
+
+## Ascend 环境
+
+使用已有且已审计的独立 runtime。不同编译器版本分别建环境；build/runtime 分开。runtime 仅安装从外部 build 环境得到的固定 wheel 和依赖，不进行 TA/TD 源码构建、editable install、`pip --user` 或源码 PYTHONPATH 覆盖。不要用 Conda base、全局 Python 或 `venv --system-site-packages`。这里不提供自动安装脚本，避免覆盖共享 Triton namespace。
+
+历史环境指纹见 [historical-environment.json](historical-environment.json)；它是结果身份，不是自动创建环境的锁文件。硬件和驱动/CANN 不会因 Python 环境独立而自动隔离。
+
+复制 [environment.example.json](environment.example.json) 为仓库根目录的 `environment.local.json`（已被 Git 忽略），填入经过独立核实的：
+
+- runtime 绝对路径；`torch`、`torch_npu`、`triton` 的模块版本和 `triton-ascend` 包版本。
+- 已验证 wheel 安装后的 `libtriton.so` SHA256、实际解析的 `bishengir-compile` 路径和 SHA256。
+- 显式 CANN 根目录，以及审计后的完整 `PATH`、`LD_LIBRARY_PATH`。PATH 必须能解析 `npu-smi` 和该 CANN 的 `tools/bisheng_compiler/bin/ld.lld`。
+
+在清洁 shell 中按平台安装方式选择该 CANN 与 runtime，使 `ASCEND_HOME_PATH` 等于 manifest 的 CANN 根目录。不要继承其它任务的 `PYTHONPATH`、`PYTHONHOME`、`LD_PRELOAD`、`TRITON_*`、`TORCHINDUCTOR_*` 或分布式 rank/HCCL 变量。入口会检查这些条件、Python/module 来源、版本、二进制 hash 和编译器实际解析路径；不匹配即停止。manifest 的占位符必须替换，不能把“能 import”当作设备测试通过。
+
+每个运行创建全新的 cache/tmp/dump/override 目录。NPU 可见设备由 `--physical-card` 控制，在 Torch 导入前设置。运行前、用例边界、运行期间约每 5 秒和结束时读取设备健康/进程；查询失败、未知格式、其它占用都会阻止计时采纳。约 5 秒采样不是连续独占的数学证明，复现实验仍需要协调独占卡。
+
+监控通过驱动 `drvDeviceGetBareTgid()` 获取当前进程的宿主机 PID，不把容器 PID 数字相同当作归属证明。缺少该接口会停止，不绕过核实。同一 Linux 用户的运行通过每卡文件锁串行；跨用户/容器依靠独占协调和占用检测，不能仅依赖这个用户级锁。工具不杀进程、不重置设备。
+
+## 运行命令
+
+选择已预约且健康空闲的物理卡，例如 6。运行必须使用 Linux 隔离 runtime 的 Python，带 `-I`：
+
+```bash
+/path/to/isolated-runtime/bin/python -I tools/run.py run \
+  --operator swiglu_fwd --suite fp32 --variants all \
+  --physical-card 6 --environment environment.local.json \
+  --output runs/swiglu-fwd-fp32-run-001
+```
+
+首次确认入口可用可以加 `--correctness-only`，之后以新的输出目录测性能。工具不会覆盖现有输出目录，不自动重试失败，也不自动恢复到旧目录。要测全部条目，用 `list` 中的名称逐项串行运行，输出目录分别命名；不要同时启动两份测量争抢一张卡。
+
+输出包括 `result.json`、原始 profiler trace/CSV、`device.jsonl` 和当前运行的专属 cache。`result.json` 保存当前源码 hash、实际环境、每候选配置/grid、数值状态、原始计时及错误。`completed` 表示调度完所有所选候选，不等价于所有候选通过。失败记录没有性能值。
+
+状态含义：`correct`（仅数值通过）、`measured`、`compile_failed`、`accuracy_failed`、`runtime_failed`、`timing_rejected_interference`。编译/精度失败保留后继续其它候选；设备运行错误或哨兵损坏停止本次运行。计时归因失败也停止并保留 trace，不能改用 wrapper 总时间填充。
+
+## 输入与正确性
+
+固定形状来自原手工泛化扫描，不声称覆盖 FlagGems 的全部 shape/dtype。每个算子的 `cases.json` 是本次重测计划。
+
+| 类别 | FP32 shape | BF16 shape | shape 的含义 |
+| --- | --- | --- | --- |
+| 连续/标量 Mul、Where、GELU | 127；8193；1048576；16777216 | 8193 | 一维 N |
+| 广播 Mul | (1,2048)；(17,513)；(128,1024)；(2048,128)；(1024,8192) | (17,513) | 输出 (M,N)，输入分别 (M,1)/(1,N) |
+| SwiGLU | 同上二维列表 | (17,513) | (M,H)，实际 AB 输入 (M,2H)，bwd 另有 dY(M,H) |
+
+输入是 CPU normal(0,1)，先舍入到被测 dtype 再传 NPU。标量 Mul 的 scalar=0.75；Where 的条件是 `i % 3 == 0`。参考值在 CPU FP64 中按原公式计算，再按原输出 dtype 舍入。FP32 `rtol=2e-4, atol=2e-5`；BF16 两者均 `2e-2`。全量输出比较，输出前后各 16 个 sentinel 检查越界；每个候选测试前用 NaN 填充输出，防止前一候选的值掩盖漏写。
+
+seed=20261026。历史框架每进程只播种一次，新入口每 case 重置 seed；输入分布和参数相同，随机张量**不是历史运行的逐字节重放**。同次 case 所有候选共享相同输入。历史只记录前后 guard 检查，新入口额外加入输出预填充以增强漏写检查。
+
+## 性能口径
+
+正确后 warmup 3 次，每个候选 3 轮×5 次；每轮随机化候选顺序。每个直接 Triton launch 单独打 CPU 标签，通过 `async_npu` flow 与 `kernel_details.csv` 的精确十进制时间戳关联，要求每个标签对应一个且仅一个预期 Triton kernel。缺标签、重复 flow、未知 kernel、多 kernel 或无法匹配都会拒绝计时。
+
+计时值是 CSV 的设备 `Duration(us)`。先取每轮 5 次的中位数，再取 3 轮中位数的中位数。输入分配/拷贝、PyTorch 参考值、JIT 首次编译、host launch、显式 synchronize、正确性检查都在统计外；profiler 和同步仍可能影响执行条件，所以只能与同口径同环境数据比较。这不是设备 event 包住 wrapper 的总时长。
+
+bwd 条目直接测指定反向 Triton kernel，没有先测 fwd 再减时间；此批不存在 fwd+bwd 合并计时。性能比较只在同 case、同设备、同环境、同次运行内进行。最佳值包含基线，不能把逐 case 最优当作固定策略的实际收益。
+
+新结果如需提交，先审核并移除运行路径、主机身份、账号、内部地址等；保留可追溯 hash、公开环境版本和原始数值。`runs/` 默认不进入 Git。

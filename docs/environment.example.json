@@ -1,0 +1,17 @@
+{
+  "python_prefix": "/replace/with/isolated/runtime",
+  "versions": {
+    "torch": "REPLACE",
+    "torch_npu": "REPLACE",
+    "triton": "REPLACE",
+    "triton-ascend": "REPLACE"
+  },
+  "libtriton_sha256": "REPLACE_WITH_64_HEX_DIGITS",
+  "compiler": "/replace/with/pinned/bishengir-compile",
+  "compiler_sha256": "REPLACE_WITH_64_HEX_DIGITS",
+  "cann_root": "/usr/local/Ascend/cann-9.1.0",
+  "environment": {
+    "PATH": "REPLACE_WITH_AUDITED_PATH",
+    "LD_LIBRARY_PATH": "REPLACE_WITH_AUDITED_LD_LIBRARY_PATH"
+  }
+}

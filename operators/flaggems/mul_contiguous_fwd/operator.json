@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "P04",
+  "name": "mul_contiguous_fwd",
+  "family": "mul",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/flaggems/mul_contiguous_fwd",
+  "implementation": "original_kernel",
+  "source": {
+    "repository": "https://github.com/flagos-ai/FlagGems",
+    "revision": "61f3372e817e8bf4e9279df9ef21c0c453f718b8",
+    "path": "src/flag_gems/ops/mul.py",
+    "license": "Apache-2.0",
+    "snapshot": "upstream/mul.py",
+    "sha256": "32f5ceb04ea2ac7bc7303c0a3f5301221644327463b95fe3eb3f74c42c68b5a2",
+    "normalization": "LF text snapshot",
+    "symbol": "mul_kernel"
+  },
+  "kernel_symbol": "mul_kernel",
+  "baseline_id": "B1024",
+  "baseline_contract": "source default tile; controlled NPU launch options",
+  "configurations": {
+    "B256": {
+      "B": 256
+    },
+    "B1024": {
+      "B": 1024
+    },
+    "B4096": {
+      "B": 4096
+    },
+    "B16384": {
+      "B": 16384
+    }
+  },
+  "launch_options": {
+    "num_warps": 32,
+    "num_stages": 2
+  },
+  "inputs": "连续 X[N], Y[N]；O[N]",
+  "execution_validation": "host_only_not_npu_revalidated"
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-26",
+  "device": "Ascend950PR_9579",
+  "cann": "9.1.0",
+  "triton_ascend_revision": "c4d742a1e51fe259e9039dde1abc708b6df32a76",
+  "versions": {
+    "torch": "2.7.1+cpu",
+    "torch_npu": "2.7.1.post8",
+    "triton": "3.6.0",
+    "triton-ascend": "3.6.0.dev0+gitc4d742a1"
+  },
+  "ta_wheel_sha256": "c655fcb5efed7faf4bc073351aad99be90ef74e85f3ae2e17d3067fc4e8f9e70",
+  "revision_context": "Historical patched TA environment; not a claim about current upstream main",
+  "libtriton_sha256": "240bfc26d3ef37d2ff5898bfe4c5da63ab78bfbaad946adba44e77469a34140f",
+  "bishengir_revision": "8995ba08834c",
+  "bishengir_version": "2.0.0",
+  "bishengir_compile_sha256": "00005852671e68e08d9898654581590e106bb39c5fc9f1f5c114bc7339d7aeea",
+  "launch_options": {
+    "num_warps": 32,
+    "num_stages": 2
+  },
+  "isolation": "Candidate-specific runtime, external TA wheel and pinned compiler",
+  "limitation": "Historical monitoring has gaps; no claim of continuous exclusive occupancy."
+}

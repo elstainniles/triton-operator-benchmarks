@@ -1,0 +1,581 @@
+{
+  "schema_version": 1,
+  "comparisons": [
+    {
+      "operator_id": "P05",
+      "name": "Mul scalar",
+      "case_id": "P05-8193-float32-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T102705Z-P164ax",
+      "physical_device": 2,
+      "smoke": true,
+      "baseline_id": "B1024",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 1.4755,
+      "best_id": "B4096",
+      "best_us": 1.455,
+      "time_reduction_pct": 1.3893595391392677,
+      "speedup": 1.0140893470790378,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.2015000000000002,
+          "time_reduction_pct": -49.20365977634702,
+          "round_range_us": [
+            2.07,
+            2.333
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.4755,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            1.465,
+            1.486
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.455,
+          "time_reduction_pct": 1.3893595391392677,
+          "round_range_us": [
+            1.418,
+            1.492
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "passed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.774,
+          "time_reduction_pct": -20.230430362588958,
+          "round_range_us": [
+            1.761,
+            1.787
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P05",
+      "name": "Mul scalar",
+      "case_id": "P05-127-float32-contiguous",
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 1.187,
+      "best_id": "B256",
+      "best_us": 1.12,
+      "time_reduction_pct": 5.644481887110353,
+      "speedup": 1.0598214285714285,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.12,
+          "time_reduction_pct": 5.644481887110353,
+          "round_range_us": [
+            1.074,
+            1.168
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.187,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            1.187,
+            1.193
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.268,
+          "time_reduction_pct": -6.823925863521474,
+          "round_range_us": [
+            1.113,
+            1.289
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "passed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.428,
+          "time_reduction_pct": -20.303285593934284,
+          "round_range_us": [
+            1.333,
+            1.473
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P05",
+      "name": "Mul scalar",
+      "case_id": "P05-8193-float32-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 1.428,
+      "best_id": "B1024",
+      "best_us": 1.428,
+      "time_reduction_pct": 0.0,
+      "speedup": 1.0,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.761,
+          "time_reduction_pct": -23.319327731092443,
+          "round_range_us": [
+            1.732,
+            1.865
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.428,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            1.417,
+            1.511
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.438,
+          "time_reduction_pct": -0.7002801120448154,
+          "round_range_us": [
+            1.435,
+            1.446
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "passed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.726,
+          "time_reduction_pct": -20.86834733893559,
+          "round_range_us": [
+            1.631,
+            1.778
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P05",
+      "name": "Mul scalar",
+      "case_id": "P05-1048576-float32-contiguous",
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 5.859,
+      "best_id": "B4096",
+      "best_us": 3.666,
+      "time_reduction_pct": 37.429595494111624,
+      "speedup": 1.5981996726677579,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 17.715,
+          "time_reduction_pct": -202.3553507424475,
+          "round_range_us": [
+            17.45,
+            17.777
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 5.859,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            5.761,
+            6.035
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 3.666,
+          "time_reduction_pct": 37.429595494111624,
+          "round_range_us": [
+            3.498,
+            3.956
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "passed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 4.258,
+          "time_reduction_pct": 27.32548216419184,
+          "round_range_us": [
+            4.049,
+            4.49
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P05",
+      "name": "Mul scalar",
+      "case_id": "P05-16777216-float32-contiguous",
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 82.807,
+      "best_id": "B16384",
+      "best_us": 45.595,
+      "time_reduction_pct": 44.93822985979447,
+      "speedup": 1.8161421208465842,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 267.465,
+          "time_reduction_pct": -222.998055719927,
+          "round_range_us": [
+            265.657,
+            267.565
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 82.807,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            82.469,
+            83.263
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 46.984,
+          "time_reduction_pct": 43.260835436617675,
+          "round_range_us": [
+            46.825,
+            48.47
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "passed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 45.595,
+          "time_reduction_pct": 44.93822985979447,
+          "round_range_us": [
+            45.323,
+            46.116
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P05",
+      "name": "Mul scalar",
+      "case_id": "P05-8193-bfloat16-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103931Z-ktG93d",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "source default tile; controlled NPU launch options",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 1.423,
+      "best_id": "B1024",
+      "best_us": 1.423,
+      "time_reduction_pct": 0.0,
+      "speedup": 1.0,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.753,
+          "time_reduction_pct": -23.190442726633865,
+          "round_range_us": [
+            1.724,
+            1.87
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.423,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            1.4,
+            1.532
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.466,
+          "time_reduction_pct": -3.021784961349261,
+          "round_range_us": [
+            1.455,
+            1.487
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "passed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.637,
+          "time_reduction_pct": -15.038650737877713,
+          "round_range_us": [
+            1.564,
+            1.642
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    }
+  ]
+}

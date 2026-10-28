@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "shape_semantics": "X[N]；O[N]；tanh approximation",
+  "cases": [
+    {
+      "id": "P08-127-float32-contiguous",
+      "suite": "fp32",
+      "shape": [
+        127
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "contiguous"
+    },
+    {
+      "id": "P08-8193-float32-contiguous",
+      "suite": "fp32",
+      "shape": [
+        8193
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "contiguous"
+    },
+    {
+      "id": "P08-1048576-float32-contiguous",
+      "suite": "fp32",
+      "shape": [
+        1048576
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "contiguous"
+    },
+    {
+      "id": "P08-16777216-float32-contiguous",
+      "suite": "fp32",
+      "shape": [
+        16777216
+      ],
+      "dtype": "float32",
+      "seed": 20261026,
+      "tag": "contiguous"
+    },
+    {
+      "id": "P08-8193-bfloat16-contiguous",
+      "suite": "bf16",
+      "shape": [
+        8193
+      ],
+      "dtype": "bfloat16",
+      "seed": 20261026,
+      "tag": "contiguous"
+    }
+  ]
+}

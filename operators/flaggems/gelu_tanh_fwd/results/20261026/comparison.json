@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "comparisons": [
+    {
+      "operator_id": "P08",
+      "name": "GELU tanh generated",
+      "case_id": "P08-8193-float32-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T102705Z-P164ax",
+      "physical_device": 2,
+      "smoke": true,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.429,
+      "best_id": "B256",
+      "best_us": 2.2359999999999998,
+      "time_reduction_pct": 7.945656648826683,
+      "speedup": 1.086314847942755,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.2359999999999998,
+          "time_reduction_pct": 7.945656648826683,
+          "round_range_us": [
+            2.157,
+            2.315
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.429,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.389,
+            2.469
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 4.9,
+          "time_reduction_pct": -101.7291066282421,
+          "round_range_us": [
+            4.884,
+            4.916
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P08",
+      "name": "GELU tanh generated",
+      "case_id": "P08-127-float32-contiguous",
+      "shape": [
+        127
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.114,
+      "best_id": "B256",
+      "best_us": 1.449,
+      "time_reduction_pct": 31.4569536423841,
+      "speedup": 1.4589371980676327,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.449,
+          "time_reduction_pct": 31.4569536423841,
+          "round_range_us": [
+            1.358,
+            1.471
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.114,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.02,
+            2.134
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 4.577,
+          "time_reduction_pct": -116.5089877010407,
+          "round_range_us": [
+            4.511,
+            4.617
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P08",
+      "name": "GELU tanh generated",
+      "case_id": "P08-8193-float32-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.385,
+      "best_id": "B256",
+      "best_us": 2.141,
+      "time_reduction_pct": 10.230607966457017,
+      "speedup": 1.1139654367118168,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.141,
+          "time_reduction_pct": 10.230607966457017,
+          "round_range_us": [
+            2.047,
+            2.492
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.385,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.376,
+            2.389
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 4.858,
+          "time_reduction_pct": -103.68972746331235,
+          "round_range_us": [
+            4.858,
+            4.898
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P08",
+      "name": "GELU tanh generated",
+      "case_id": "P08-1048576-float32-contiguous",
+      "shape": [
+        1048576
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 20.425,
+      "best_id": "B4096",
+      "best_us": 20.091,
+      "time_reduction_pct": 1.6352509179926589,
+      "speedup": 1.0166243591657955,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 26.292,
+          "time_reduction_pct": -28.724602203182382,
+          "round_range_us": [
+            26.148,
+            26.549
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 20.425,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            20.212,
+            20.526
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 20.091,
+          "time_reduction_pct": 1.6352509179926589,
+          "round_range_us": [
+            19.971,
+            20.117
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P08",
+      "name": "GELU tanh generated",
+      "case_id": "P08-16777216-float32-contiguous",
+      "shape": [
+        16777216
+      ],
+      "dtype": "torch.float32",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103157Z-ypXuqU",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 287.055,
+      "best_id": "B4096",
+      "best_us": 260.053,
+      "time_reduction_pct": 9.406559718520846,
+      "speedup": 1.1038326802613314,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 416.017,
+          "time_reduction_pct": -44.92588528330808,
+          "round_range_us": [
+            415.343,
+            416.556
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 287.055,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            286.628,
+            287.186
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 260.053,
+          "time_reduction_pct": 9.406559718520846,
+          "round_range_us": [
+            257.186,
+            260.369
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P08",
+      "name": "GELU tanh generated",
+      "case_id": "P08-8193-bfloat16-contiguous",
+      "shape": [
+        8193
+      ],
+      "dtype": "torch.bfloat16",
+      "tag": "contiguous",
+      "run": "fix-python-20261026T103931Z-ktG93d",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "B1024",
+      "baseline_contract": "explicit B=1024 adapter control, not original wrapper/autotune baseline",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.432,
+      "best_id": "B256",
+      "best_us": 2.091,
+      "time_reduction_pct": 14.021381578947356,
+      "speedup": 1.1630798660927784,
+      "variants": [
+        {
+          "id": "B256",
+          "status": "passed",
+          "config": {
+            "B": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.091,
+          "time_reduction_pct": 14.021381578947356,
+          "round_range_us": [
+            2.079,
+            2.346
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B1024",
+          "status": "passed",
+          "config": {
+            "B": 1024,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.432,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.394,
+            2.464
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B4096",
+          "status": "passed",
+          "config": {
+            "B": 4096,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 4.959,
+          "time_reduction_pct": -103.90625,
+          "round_range_us": [
+            4.911,
+            4.991
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "B16384",
+          "status": "failed",
+          "config": {
+            "B": 16384,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": null,
+          "time_reduction_pct": null,
+          "round_range_us": null,
+          "reason": "ub_overflow",
+          "excluded_raw_median_us": null
+        }
+      ]
+    }
+  ]
+}

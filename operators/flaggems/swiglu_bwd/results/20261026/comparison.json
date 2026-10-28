@@ -1,0 +1,845 @@
+{
+  "schema_version": 1,
+  "comparisons": [
+    {
+      "operator_id": "P11",
+      "name": "SwiGLU FlagGems",
+      "case_id": "P11-17x513-float32-normal",
+      "shape": [
+        17,
+        513
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103015Z-OznZVM",
+      "physical_device": 2,
+      "smoke": true,
+      "baseline_id": "M64H64",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.523,
+      "best_id": "M4H512",
+      "best_us": 2.278,
+      "time_reduction_pct": 9.7106619104241,
+      "speedup": 1.1075504828797191,
+      "variants": [
+        {
+          "id": "M64H64",
+          "status": "passed",
+          "config": {
+            "BM": 64,
+            "BH": 64,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.523,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.49,
+            2.556
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M1H512",
+          "status": "passed",
+          "config": {
+            "BM": 1,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.6205,
+          "time_reduction_pct": -3.864447086801426,
+          "round_range_us": [
+            2.487,
+            2.754
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H512",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.278,
+          "time_reduction_pct": 9.7106619104241,
+          "round_range_us": [
+            2.245,
+            2.311
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M16H256",
+          "status": "passed",
+          "config": {
+            "BM": 16,
+            "BH": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.5465,
+          "time_reduction_pct": -0.9314308363059798,
+          "round_range_us": [
+            2.531,
+            2.562
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H2048",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 2048,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.919,
+          "time_reduction_pct": -15.69560047562426,
+          "round_range_us": [
+            2.898,
+            2.94
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P11",
+      "name": "SwiGLU FlagGems",
+      "case_id": "P11-1x2048-float32-normal",
+      "shape": [
+        1,
+        2048
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "M64H64",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.881,
+      "best_id": "M1H512",
+      "best_us": 1.824,
+      "time_reduction_pct": 36.68864977438388,
+      "speedup": 1.5794956140350875,
+      "variants": [
+        {
+          "id": "M64H64",
+          "status": "passed",
+          "config": {
+            "BM": 64,
+            "BH": 64,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.881,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.871,
+            3.093
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M1H512",
+          "status": "passed",
+          "config": {
+            "BM": 1,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 1.824,
+          "time_reduction_pct": 36.68864977438388,
+          "round_range_us": [
+            1.776,
+            1.86
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H512",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.091,
+          "time_reduction_pct": 27.421034363068365,
+          "round_range_us": [
+            2.084,
+            2.092
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M16H256",
+          "status": "passed",
+          "config": {
+            "BM": 16,
+            "BH": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.443,
+          "time_reduction_pct": 15.203054494967017,
+          "round_range_us": [
+            2.43,
+            2.459
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H2048",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 2048,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.49,
+          "time_reduction_pct": 13.571676501214846,
+          "round_range_us": [
+            2.431,
+            2.515
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P11",
+      "name": "SwiGLU FlagGems",
+      "case_id": "P11-17x513-float32-normal",
+      "shape": [
+        17,
+        513
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "M64H64",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.549,
+      "best_id": "M4H512",
+      "best_us": 2.341,
+      "time_reduction_pct": 8.160062769713605,
+      "speedup": 1.0888509184109354,
+      "variants": [
+        {
+          "id": "M64H64",
+          "status": "passed",
+          "config": {
+            "BM": 64,
+            "BH": 64,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.549,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.533,
+            2.6
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M1H512",
+          "status": "passed",
+          "config": {
+            "BM": 1,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.577,
+          "time_reduction_pct": -1.098469988230688,
+          "round_range_us": [
+            2.5,
+            2.787
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H512",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.341,
+          "time_reduction_pct": 8.160062769713605,
+          "round_range_us": [
+            2.31,
+            2.404
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M16H256",
+          "status": "passed",
+          "config": {
+            "BM": 16,
+            "BH": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.625,
+          "time_reduction_pct": -2.981561396626131,
+          "round_range_us": [
+            2.541,
+            2.646
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H2048",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 2048,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.788,
+          "time_reduction_pct": -9.37622597096901,
+          "round_range_us": [
+            2.779,
+            2.9
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P11",
+      "name": "SwiGLU FlagGems",
+      "case_id": "P11-128x1024-float32-normal",
+      "shape": [
+        128,
+        1024
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "M64H64",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 3.724,
+      "best_id": "M16H256",
+      "best_us": 3.576,
+      "time_reduction_pct": 3.9742212674543587,
+      "speedup": 1.041387024608501,
+      "variants": [
+        {
+          "id": "M64H64",
+          "status": "passed",
+          "config": {
+            "BM": 64,
+            "BH": 64,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 3.724,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            3.617,
+            3.768
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M1H512",
+          "status": "passed",
+          "config": {
+            "BM": 1,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 4.807,
+          "time_reduction_pct": -29.081632653061227,
+          "round_range_us": [
+            4.747,
+            5.069
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H512",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 4.242,
+          "time_reduction_pct": -13.909774436090228,
+          "round_range_us": [
+            4.178,
+            4.253
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M16H256",
+          "status": "passed",
+          "config": {
+            "BM": 16,
+            "BH": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 3.576,
+          "time_reduction_pct": 3.9742212674543587,
+          "round_range_us": [
+            3.494,
+            3.585
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H2048",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 2048,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 3.962,
+          "time_reduction_pct": -6.390977443609014,
+          "round_range_us": [
+            3.893,
+            3.978
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P11",
+      "name": "SwiGLU FlagGems",
+      "case_id": "P11-2048x128-float32-normal",
+      "shape": [
+        2048,
+        128
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "M64H64",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 5.83,
+      "best_id": "M16H256",
+      "best_us": 5.292,
+      "time_reduction_pct": 9.228130360205833,
+      "speedup": 1.1016628873771732,
+      "variants": [
+        {
+          "id": "M64H64",
+          "status": "passed",
+          "config": {
+            "BM": 64,
+            "BH": 64,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 5.83,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            5.7,
+            6.179
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M1H512",
+          "status": "passed",
+          "config": {
+            "BM": 1,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 14.632,
+          "time_reduction_pct": -150.97770154373927,
+          "round_range_us": [
+            14.371,
+            14.911
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H512",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 7.794,
+          "time_reduction_pct": -33.68782161234991,
+          "round_range_us": [
+            7.702,
+            8.276
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M16H256",
+          "status": "passed",
+          "config": {
+            "BM": 16,
+            "BH": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 5.292,
+          "time_reduction_pct": 9.228130360205833,
+          "round_range_us": [
+            5.133,
+            5.826
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H2048",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 2048,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 18.813,
+          "time_reduction_pct": -222.69296740994852,
+          "round_range_us": [
+            18.301,
+            19.075
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P11",
+      "name": "SwiGLU FlagGems",
+      "case_id": "P11-1024x8192-float32-normal",
+      "shape": [
+        1024,
+        8192
+      ],
+      "dtype": "torch.float32",
+      "tag": "normal",
+      "run": "fix-python-20261026T103443Z-So1gyG",
+      "physical_device": 2,
+      "smoke": false,
+      "baseline_id": "M64H64",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 153.994,
+      "best_id": "M4H2048",
+      "best_us": 93.534,
+      "time_reduction_pct": 39.26126991960726,
+      "speedup": 1.6463959629653386,
+      "variants": [
+        {
+          "id": "M64H64",
+          "status": "passed",
+          "config": {
+            "BM": 64,
+            "BH": 64,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 153.994,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            153.75,
+            154.368
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M1H512",
+          "status": "passed",
+          "config": {
+            "BM": 1,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 161.196,
+          "time_reduction_pct": -4.67680558982817,
+          "round_range_us": [
+            159.9,
+            162.994
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H512",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 105.031,
+          "time_reduction_pct": 31.79539462576464,
+          "round_range_us": [
+            103.362,
+            105.649
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M16H256",
+          "status": "passed",
+          "config": {
+            "BM": 16,
+            "BH": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 97.579,
+          "time_reduction_pct": 36.6345442030209,
+          "round_range_us": [
+            96.74,
+            97.585
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H2048",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 2048,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 93.534,
+          "time_reduction_pct": 39.26126991960726,
+          "round_range_us": [
+            93.09,
+            93.553
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    },
+    {
+      "operator_id": "P11",
+      "name": "SwiGLU FlagGems",
+      "case_id": "P11-17x513-bfloat16-normal",
+      "shape": [
+        17,
+        513
+      ],
+      "dtype": "torch.bfloat16",
+      "tag": "normal",
+      "run": "fix-python-20261026T104351Z-pomFDa",
+      "physical_device": 3,
+      "smoke": false,
+      "baseline_id": "M64H64",
+      "baseline_contract": "source tile/row mode with controlled NPU launch options; broadcast B1024 is fixed control",
+      "timing_eligible": true,
+      "timing_exclusion": null,
+      "baseline_us": 2.626,
+      "best_id": "M4H512",
+      "best_us": 2.334,
+      "time_reduction_pct": 11.119573495811109,
+      "speedup": 1.1251071122536418,
+      "variants": [
+        {
+          "id": "M64H64",
+          "status": "passed",
+          "config": {
+            "BM": 64,
+            "BH": 64,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.626,
+          "time_reduction_pct": 0.0,
+          "round_range_us": [
+            2.584,
+            2.695
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M1H512",
+          "status": "passed",
+          "config": {
+            "BM": 1,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.642,
+          "time_reduction_pct": -0.6092916984006047,
+          "round_range_us": [
+            2.399,
+            2.71
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H512",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 512,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.334,
+          "time_reduction_pct": 11.119573495811109,
+          "round_range_us": [
+            2.314,
+            2.348
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M16H256",
+          "status": "passed",
+          "config": {
+            "BM": 16,
+            "BH": 256,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 2.513,
+          "time_reduction_pct": 4.303122619954303,
+          "round_range_us": [
+            2.422,
+            2.542
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        },
+        {
+          "id": "M4H2048",
+          "status": "passed",
+          "config": {
+            "BM": 4,
+            "BH": 2048,
+            "num_warps": 32,
+            "num_stages": 2
+          },
+          "transformation": "tile_and_grid",
+          "median_us": 5.879,
+          "time_reduction_pct": -123.87661843107387,
+          "round_range_us": [
+            5.832,
+            6.035
+          ],
+          "reason": null,
+          "excluded_raw_median_us": null
+        }
+      ]
+    }
+  ]
+}
