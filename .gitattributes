@@ -1,1 +1,6 @@
 * text=auto eol=lf
+
+# Keep third-party source snapshots and their minimally adapted copies byte-exact.
+# Preserve upstream line endings and whitespace for the recorded source hashes.
+operators/triton_graph_optimization/**/*.py -text -whitespace
+operators/triton_graph_optimization/external_references/upstream_run.md -text -whitespace

@@ -17,16 +17,21 @@
 
 Where/GELU 没有接入 FlagGems 的 `pointwise_dynamic` 生成器，不能用探针结果宣称原生成器获得同等加速。上游完整文件放在各算子的 `upstream/`，执行版保留所选 kernel/计算函数的函数体，移除外部调优装饰器并使用受控 NPU launch。
 
+第二批来自 [TritonGraphOptimizationTests](https://gitcode.com/weizhan4/TritonGraphOptimizationTests)，独立放在 [operators/triton_graph_optimization](operators/triton_graph_optimization/)，与 `flaggems` 并列。包含 7 组实际测试代码：两种 gather/scale、FP8 matmul、dacs_segsum、segsum_dadt bwd、dadt_cumsum_fused bwd 和 fused_moe。另保留 3 项仅有外部运行说明的引用，未计入已导入实现。
+
+**第二批测试前必须关闭图优化：`enable_graph_optimize=False`。** 所有执行版 kernel launch 已显式设置；测试命令和缺失输入等限制见 [第二批测试说明](docs/GRAPH_OPTIMIZATION_TESTS.md)。这批尚未运行 NPU 测试，没有新增性能数据。
+
 ## 资料入口
 
 - [测试说明](docs/TESTING.md)：环境、输入、数值校验、计时、命令和限制。
+- [图优化测试批次](docs/GRAPH_OPTIMIZATION_TESTS.md)：必须关闭图优化、7 组入口及输入依赖。
 - [手改 tile/grid 说明](docs/MANUAL_TILING.md)：基线、候选、grid 联动及退化例子。
 - [历史基线汇总](docs/BASELINE.md)：FP32/BF16、每个算子的历史收益。
 - [新增算子约定](CONTRIBUTING.md)：目录、接口、数据和验证要求。
 - [整理校验记录](docs/VALIDATION.md)：源码、结果和离线测试的校验范围。
 - [来源及许可](NOTICE)：FlagGems Apache-2.0 归属与改动范围。
 
-每个算子目录都有 `kernels.py`、`baseline.py`、`manual_tile.py`、`case.py`、`cases.json`、`operator.json` 和 `results/20261026/`。`baseline.py` 固定基线；`manual_tile.py` 显式列出手改候选；两者通过同目录的 `launch.py` 使用相同计算函数。
+FlagGems 各目录都有 `kernels.py`、`baseline.py`、`manual_tile.py`、`case.py`、`cases.json`、`operator.json` 和 `results/20261026/`。`baseline.py` 固定基线；`manual_tile.py` 显式列出手改候选；两者通过同目录的 `launch.py` 使用相同计算函数。图优化测试批次保留上游独立脚本和 autotune，并登记为 `upstream_test_suite`，没有虚构手改版本或性能数据。
 
 ## 快速查看与离线验证
 

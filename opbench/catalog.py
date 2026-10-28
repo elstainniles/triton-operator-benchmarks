@@ -31,6 +31,15 @@ def module(entry, suffix):
 
 def plans(name, suite='all', variants='all'):
     entry, path = resolve(name)
+    if entry.get('runner') == 'graph_tests':
+        if suite != 'all' or variants == 'manual':
+            raise ValueError('TG suites keep upstream inputs/autotune; use --suite all and --variants all/baseline')
+        metadata = read_json(path / 'operator.json')
+        return [dict(operator_id=entry['id'], operator=entry['name'], runner='tools/run_graph_tests.py',
+                     entrypoint=metadata['entrypoint'], compile_options=metadata['compile_options'],
+                     input_description=metadata['input_description'],
+                     required_input_file=metadata['required_input_file'], case_count=metadata['case_count'],
+                     performance_status=metadata['performance_status'], validation='NOT_RUN')]
     baseline = module(entry, 'baseline')
     manual = module(entry, 'manual_tile')
     launch = module(entry, 'launch')

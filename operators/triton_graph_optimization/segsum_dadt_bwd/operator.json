@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "TG05",
+  "name": "segsum_dadt_bwd",
+  "family": "bwd_segsum_dadt_kernel",
+  "direction": "bwd",
+  "type": "vv",
+  "path": "operators/triton_graph_optimization/segsum_dadt_bwd",
+  "implementation": "upstream_test_suite",
+  "runner": "graph_tests",
+  "validation": "NOT_RUN",
+  "source": {
+    "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
+    "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
+    "directory": "bwd_segsum_dadt_kernel",
+    "license": "NOASSERTION"
+  },
+  "entrypoint": "test_bwd_segsum_dadt_kernel_autotune.py",
+  "kernel_symbol": "bwd_segsum_dadt_kernel",
+  "kernel_symbols": [
+    "bwd_segsum_dadt_kernel"
+  ],
+  "files": [
+    {
+      "upstream_path": "bwd_segsum_dadt_kernel/test_bwd_segsum_dadt_kernel_autotune.py",
+      "snapshot": "upstream/test_bwd_segsum_dadt_kernel_autotune.py",
+      "executable": "test_bwd_segsum_dadt_kernel_autotune.py",
+      "upstream_sha256": "7d70811e50071153d1d267742f0a0a53009fabde64d87e0d2ff2ef3803444406",
+      "executable_sha256": "073b13ca49246c372958f4ed9a94caca024888b286d02a4e39e11230c6386ddd",
+      "graph_disabled_launches": 1,
+      "git_blob": "447df5489e635117d18ac6f88ed46ca7d3907f8f"
+    }
+  ],
+  "compile_options": {
+    "enable_graph_optimize": false
+  },
+  "input_mode": "generated_assertions",
+  "required_input_file": null,
+  "input_description": "FP32 dSSdA/SSdA[16,32,128,16,16]；S=2048，chunk_size=16，输出[16,32,2048]。原 profiler 循环含 PyTorch 参考与缩放，不能整体当成 Triton 时间。",
+  "required_packages": [
+    "torch",
+    "torch_npu",
+    "triton",
+    "triton-ascend",
+    "pytest",
+    "numpy"
+  ],
+  "case_count": 1,
+  "numerical_status": "NOT_RUN",
+  "performance_status": "NO_MEASUREMENTS",
+  "manual_tile_status": "NOT_ADDED",
+  "graph_disabled_launches": 1
+}

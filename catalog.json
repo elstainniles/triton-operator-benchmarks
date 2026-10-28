@@ -72,6 +72,83 @@
       "type": "vv",
       "path": "operators/flaggems/swiglu_bwd",
       "implementation": "original_kernel"
+    },
+    {
+      "id": "TG01",
+      "name": "fbgemm_gather_scale_dense_tokens_fwd",
+      "family": "_fbgemm_gather_scale_dense_tokens",
+      "direction": "fwd",
+      "type": "vv",
+      "path": "operators/triton_graph_optimization/fbgemm_gather_scale_dense_tokens_fwd",
+      "implementation": "upstream_test_suite",
+      "runner": "graph_tests",
+      "validation": "NOT_RUN"
+    },
+    {
+      "id": "TG02",
+      "name": "fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
+      "family": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens",
+      "direction": "fwd",
+      "type": "vv",
+      "path": "operators/triton_graph_optimization/fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
+      "implementation": "upstream_test_suite",
+      "runner": "graph_tests",
+      "validation": "NOT_RUN"
+    },
+    {
+      "id": "TG03",
+      "name": "matmul_fp8_row_fwd",
+      "family": "_kernel_matmul_fp8_row",
+      "direction": "fwd",
+      "type": "cv",
+      "path": "operators/triton_graph_optimization/matmul_fp8_row_fwd",
+      "implementation": "upstream_test_suite",
+      "runner": "graph_tests",
+      "validation": "NOT_RUN"
+    },
+    {
+      "id": "TG04",
+      "name": "dacs_segsum_fwd",
+      "family": "dacs_segsum_kernel",
+      "direction": "fwd",
+      "type": "vv",
+      "path": "operators/triton_graph_optimization/dacs_segsum_fwd",
+      "implementation": "upstream_test_suite",
+      "runner": "graph_tests",
+      "validation": "NOT_RUN"
+    },
+    {
+      "id": "TG05",
+      "name": "segsum_dadt_bwd",
+      "family": "bwd_segsum_dadt_kernel",
+      "direction": "bwd",
+      "type": "vv",
+      "path": "operators/triton_graph_optimization/segsum_dadt_bwd",
+      "implementation": "upstream_test_suite",
+      "runner": "graph_tests",
+      "validation": "NOT_RUN"
+    },
+    {
+      "id": "TG06",
+      "name": "dadt_cumsum_fused_bwd",
+      "family": "bwd_dadt_cumsum_fused_kernel",
+      "direction": "bwd",
+      "type": "vv",
+      "path": "operators/triton_graph_optimization/dadt_cumsum_fused_bwd",
+      "implementation": "upstream_test_suite",
+      "runner": "graph_tests",
+      "validation": "NOT_RUN"
+    },
+    {
+      "id": "TG07",
+      "name": "fused_moe_fwd",
+      "family": "fused_moe",
+      "direction": "fwd",
+      "type": "cv",
+      "path": "operators/triton_graph_optimization/fused_moe_fwd",
+      "implementation": "upstream_test_suite",
+      "runner": "graph_tests",
+      "validation": "NOT_RUN"
     }
   ]
 }

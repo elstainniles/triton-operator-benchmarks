@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "TG07",
+  "name": "fused_moe_fwd",
+  "family": "fused_moe",
+  "direction": "fwd",
+  "type": "cv",
+  "path": "operators/triton_graph_optimization/fused_moe_fwd",
+  "implementation": "upstream_test_suite",
+  "runner": "graph_tests",
+  "validation": "NOT_RUN",
+  "source": {
+    "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
+    "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
+    "directory": "fused_moe",
+    "license": "NOASSERTION"
+  },
+  "entrypoint": "test_fused_moe_kernel.py",
+  "kernel_symbol": "fused_moe_kernel",
+  "kernel_symbols": [
+    "fused_moe_kernel",
+    "write_zeros_to_output"
+  ],
+  "files": [
+    {
+      "upstream_path": "fused_moe/fused_moe_kernel.py",
+      "snapshot": "upstream/fused_moe_kernel.py",
+      "executable": "fused_moe_kernel.py",
+      "upstream_sha256": "c7917834e914ad87e9177cf5b9e36d863ef75c7e41bfe7149dcb5c4b85b430a3",
+      "executable_sha256": "84cf18f0b6af51e620a7d2521199f11861abc59ee0382268aa1e9127d47eecd8",
+      "graph_disabled_launches": 1,
+      "git_blob": "ccdae9fcad36f7e83d0021bd183ed82115a6fa73"
+    },
+    {
+      "upstream_path": "fused_moe/test_fused_moe_kernel.py",
+      "snapshot": "upstream/test_fused_moe_kernel.py",
+      "executable": "test_fused_moe_kernel.py",
+      "upstream_sha256": "2e07359f3adae00465ff193f0a857987baa9ea753f43d38b8d1f90af5aec3ca2",
+      "executable_sha256": "2e07359f3adae00465ff193f0a857987baa9ea753f43d38b8d1f90af5aec3ca2",
+      "graph_disabled_launches": 0,
+      "git_blob": "ff7ed2b8e2fb1e39d5ddd1846cdf3b671cd7671f"
+    }
+  ],
+  "compile_options": {
+    "enable_graph_optimize": false
+  },
+  "input_mode": "generated_outputs_only",
+  "required_input_file": null,
+  "input_description": "25 组 (M,N,K,E,top_k) ×4 量化模式=100 个上游配置。FP16/BF16/INT8/FP8 混合；PASS 只表示运行与保存输出成功，缺少 compare_results.py，不能记作数值通过。",
+  "required_packages": [
+    "torch",
+    "torch_npu",
+    "triton",
+    "triton-ascend",
+    "pytest",
+    "numpy"
+  ],
+  "case_count": 100,
+  "numerical_status": "NOT_RUN",
+  "performance_status": "NO_MEASUREMENTS",
+  "manual_tile_status": "NOT_ADDED",
+  "graph_disabled_launches": 1
+}

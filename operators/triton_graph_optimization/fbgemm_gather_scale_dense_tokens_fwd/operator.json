@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "TG01",
+  "name": "fbgemm_gather_scale_dense_tokens_fwd",
+  "family": "_fbgemm_gather_scale_dense_tokens",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/triton_graph_optimization/fbgemm_gather_scale_dense_tokens_fwd",
+  "implementation": "upstream_test_suite",
+  "runner": "graph_tests",
+  "validation": "NOT_RUN",
+  "source": {
+    "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
+    "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
+    "directory": "_fbgemm_gather_scale_dense_tokens",
+    "license": "NOASSERTION"
+  },
+  "entrypoint": "test__fbgemm_gather_scale_dense_tokens_npu.py",
+  "kernel_symbol": "_fbgemm_gather_scale_dense_tokens",
+  "kernel_symbols": [
+    "_fbgemm_gather_scale_dense_tokens"
+  ],
+  "files": [
+    {
+      "upstream_path": "_fbgemm_gather_scale_dense_tokens/test__fbgemm_gather_scale_dense_tokens_npu.py",
+      "snapshot": "upstream/test__fbgemm_gather_scale_dense_tokens_npu.py",
+      "executable": "test__fbgemm_gather_scale_dense_tokens_npu.py",
+      "upstream_sha256": "81602b96e4687e8d7578c3ca0f61ae1076dad03e03e56b4a5fc2ee522248db93",
+      "executable_sha256": "3629c3a3b1344f5b87f75d1d22a84644747468be0c024acb493fe69b3cc2410c",
+      "graph_disabled_launches": 2,
+      "git_blob": "ad643baa918416984f514ee46fd1d6d93a01cacf"
+    },
+    {
+      "upstream_path": "_fbgemm_gather_scale_dense_tokens/test_common.py",
+      "snapshot": "upstream/test_common.py",
+      "executable": "test_common.py",
+      "upstream_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "executable_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "graph_disabled_launches": 0,
+      "git_blob": "4d8602416bcfe669098a8441039c8220397c0304"
+    }
+  ],
+  "compile_options": {
+    "enable_graph_optimize": false
+  },
+  "input_mode": "pt_replay",
+  "required_input_file": "test__fbgemm_gather_scale_dense_tokens_v2.pt",
+  "input_description": "输入 shape/dtype/grid 来自外部 .pt；上游未提交输入文件。保留 force_simt_only=True 和原 autotune。",
+  "required_packages": [
+    "torch",
+    "torch_npu",
+    "triton",
+    "triton-ascend",
+    "pytest",
+    "numpy"
+  ],
+  "case_count": null,
+  "numerical_status": "NOT_RUN",
+  "performance_status": "NO_MEASUREMENTS",
+  "manual_tile_status": "NOT_ADDED",
+  "graph_disabled_launches": 2
+}

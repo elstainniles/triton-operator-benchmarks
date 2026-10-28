@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
+  "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
+  "imported_date": "2026-10-28",
+  "license": "NOASSERTION",
+  "license_note": "No repository LICENSE found at pinned commit; original notices preserved. Not relicensed under root Apache-2.0.",
+  "files": [
+    {
+      "operator_id": "TG01",
+      "path": "operators/triton_graph_optimization/fbgemm_gather_scale_dense_tokens_fwd",
+      "upstream_path": "_fbgemm_gather_scale_dense_tokens/test__fbgemm_gather_scale_dense_tokens_npu.py",
+      "snapshot": "upstream/test__fbgemm_gather_scale_dense_tokens_npu.py",
+      "executable": "test__fbgemm_gather_scale_dense_tokens_npu.py",
+      "upstream_sha256": "81602b96e4687e8d7578c3ca0f61ae1076dad03e03e56b4a5fc2ee522248db93",
+      "executable_sha256": "3629c3a3b1344f5b87f75d1d22a84644747468be0c024acb493fe69b3cc2410c",
+      "graph_disabled_launches": 2,
+      "git_blob": "ad643baa918416984f514ee46fd1d6d93a01cacf"
+    },
+    {
+      "operator_id": "TG01",
+      "path": "operators/triton_graph_optimization/fbgemm_gather_scale_dense_tokens_fwd",
+      "upstream_path": "_fbgemm_gather_scale_dense_tokens/test_common.py",
+      "snapshot": "upstream/test_common.py",
+      "executable": "test_common.py",
+      "upstream_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "executable_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "graph_disabled_launches": 0,
+      "git_blob": "4d8602416bcfe669098a8441039c8220397c0304"
+    },
+    {
+      "operator_id": "TG02",
+      "path": "operators/triton_graph_optimization/fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
+      "upstream_path": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens/test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+      "snapshot": "upstream/test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+      "executable": "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+      "upstream_sha256": "fae981936c9976b48b1535c69ac1a074905167f9006f759a599b890a0fd47046",
+      "executable_sha256": "7a2a4ff0aab0b8d519f63f1d9b16fb1cde53238f2f57500b271f45521c1be150",
+      "graph_disabled_launches": 1,
+      "git_blob": "03cbfc74fb41d18e39471459375fe4998bce52a3"
+    },
+    {
+      "operator_id": "TG02",
+      "path": "operators/triton_graph_optimization/fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
+      "upstream_path": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens/test_common.py",
+      "snapshot": "upstream/test_common.py",
+      "executable": "test_common.py",
+      "upstream_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "executable_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "graph_disabled_launches": 0,
+      "git_blob": "4d8602416bcfe669098a8441039c8220397c0304"
+    },
+    {
+      "operator_id": "TG03",
+      "path": "operators/triton_graph_optimization/matmul_fp8_row_fwd",
+      "upstream_path": "_kernel_matmul_fp8_row/test__kernel_matmul_fp8_row_npu.py",
+      "snapshot": "upstream/test__kernel_matmul_fp8_row_npu.py",
+      "executable": "test__kernel_matmul_fp8_row_npu.py",
+      "upstream_sha256": "96c4cf13ede504fc4ca5cc629d2725965c533d95ba96b5698a6517fd3571f0f4",
+      "executable_sha256": "dbf718d7fea6ed36f88044ecbb15d3970137cbd7404ff58ae6415a77be8eebe3",
+      "graph_disabled_launches": 2,
+      "git_blob": "b7d0e15673866da88523fec140c0b5ef0d00ccdc"
+    },
+    {
+      "operator_id": "TG03",
+      "path": "operators/triton_graph_optimization/matmul_fp8_row_fwd",
+      "upstream_path": "_kernel_matmul_fp8_row/test_common.py",
+      "snapshot": "upstream/test_common.py",
+      "executable": "test_common.py",
+      "upstream_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "executable_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "graph_disabled_launches": 0,
+      "git_blob": "4d8602416bcfe669098a8441039c8220397c0304"
+    },
+    {
+      "operator_id": "TG04",
+      "path": "operators/triton_graph_optimization/dacs_segsum_fwd",
+      "upstream_path": "dacs_segsum_kernel/test_dacs_segsum_kernel.py",
+      "snapshot": "upstream/test_dacs_segsum_kernel.py",
+      "executable": "test_dacs_segsum_kernel.py",
+      "upstream_sha256": "b73480c42e9a97c6d4e5c5e2114b51aaa831f53d40b33147c9588c4c1337b375",
+      "executable_sha256": "99d6ae3186452c213619bc7fed71cb646bcd6f0e00df7f1f6eedd79cba3b48f2",
+      "graph_disabled_launches": 1,
+      "git_blob": "2be17ebebfdfbaca662648757ddd971594fbb1b4"
+    },
+    {
+      "operator_id": "TG05",
+      "path": "operators/triton_graph_optimization/segsum_dadt_bwd",
+      "upstream_path": "bwd_segsum_dadt_kernel/test_bwd_segsum_dadt_kernel_autotune.py",
+      "snapshot": "upstream/test_bwd_segsum_dadt_kernel_autotune.py",
+      "executable": "test_bwd_segsum_dadt_kernel_autotune.py",
+      "upstream_sha256": "7d70811e50071153d1d267742f0a0a53009fabde64d87e0d2ff2ef3803444406",
+      "executable_sha256": "073b13ca49246c372958f4ed9a94caca024888b286d02a4e39e11230c6386ddd",
+      "graph_disabled_launches": 1,
+      "git_blob": "447df5489e635117d18ac6f88ed46ca7d3907f8f"
+    },
+    {
+      "operator_id": "TG06",
+      "path": "operators/triton_graph_optimization/dadt_cumsum_fused_bwd",
+      "upstream_path": "bwd_dadt_cumsum_fused_kernel/test_bwd_dadt_cumsum_fused_kernel.py",
+      "snapshot": "upstream/test_bwd_dadt_cumsum_fused_kernel.py",
+      "executable": "test_bwd_dadt_cumsum_fused_kernel.py",
+      "upstream_sha256": "7da5eccd0586381b1b8953877656b3bcd442654929d0f9366c16727a5669c90d",
+      "executable_sha256": "e4e3afe1bcb6e2679ff04571af11a0c7e73290180b4a04a72e5a4c388eecb382",
+      "graph_disabled_launches": 1,
+      "git_blob": "cda6303cd6df62af0aeafe288c14417ab11f775f"
+    },
+    {
+      "operator_id": "TG07",
+      "path": "operators/triton_graph_optimization/fused_moe_fwd",
+      "upstream_path": "fused_moe/fused_moe_kernel.py",
+      "snapshot": "upstream/fused_moe_kernel.py",
+      "executable": "fused_moe_kernel.py",
+      "upstream_sha256": "c7917834e914ad87e9177cf5b9e36d863ef75c7e41bfe7149dcb5c4b85b430a3",
+      "executable_sha256": "84cf18f0b6af51e620a7d2521199f11861abc59ee0382268aa1e9127d47eecd8",
+      "graph_disabled_launches": 1,
+      "git_blob": "ccdae9fcad36f7e83d0021bd183ed82115a6fa73"
+    },
+    {
+      "operator_id": "TG07",
+      "path": "operators/triton_graph_optimization/fused_moe_fwd",
+      "upstream_path": "fused_moe/test_fused_moe_kernel.py",
+      "snapshot": "upstream/test_fused_moe_kernel.py",
+      "executable": "test_fused_moe_kernel.py",
+      "upstream_sha256": "2e07359f3adae00465ff193f0a857987baa9ea753f43d38b8d1f90af5aec3ca2",
+      "executable_sha256": "2e07359f3adae00465ff193f0a857987baa9ea753f43d38b8d1f90af5aec3ca2",
+      "graph_disabled_launches": 0,
+      "git_blob": "ff7ed2b8e2fb1e39d5ddd1846cdf3b671cd7671f"
+    }
+  ],
+  "local_test_suites": 7,
+  "external_reference_entries": 3,
+  "npu_validation": "NOT_RUN",
+  "accepted_performance_records": 0,
+  "reference_document": {
+    "upstream_path": "q2op_ligerkernl/run.md",
+    "snapshot": "external_references/upstream_run.md",
+    "sha256": "3a8ac13f56923a6a1f48216d9d6bef38cb7690d41447fabed5f2ae8fc1bc9553"
+  }
+}

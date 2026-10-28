@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "TG03",
+  "name": "matmul_fp8_row_fwd",
+  "family": "_kernel_matmul_fp8_row",
+  "direction": "fwd",
+  "type": "cv",
+  "path": "operators/triton_graph_optimization/matmul_fp8_row_fwd",
+  "implementation": "upstream_test_suite",
+  "runner": "graph_tests",
+  "validation": "NOT_RUN",
+  "source": {
+    "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
+    "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
+    "directory": "_kernel_matmul_fp8_row",
+    "license": "NOASSERTION"
+  },
+  "entrypoint": "test__kernel_matmul_fp8_row_npu.py",
+  "kernel_symbol": "_kernel_matmul_fp8_row",
+  "kernel_symbols": [
+    "_kernel_matmul_fp8_row"
+  ],
+  "files": [
+    {
+      "upstream_path": "_kernel_matmul_fp8_row/test__kernel_matmul_fp8_row_npu.py",
+      "snapshot": "upstream/test__kernel_matmul_fp8_row_npu.py",
+      "executable": "test__kernel_matmul_fp8_row_npu.py",
+      "upstream_sha256": "96c4cf13ede504fc4ca5cc629d2725965c533d95ba96b5698a6517fd3571f0f4",
+      "executable_sha256": "dbf718d7fea6ed36f88044ecbb15d3970137cbd7404ff58ae6415a77be8eebe3",
+      "graph_disabled_launches": 2,
+      "git_blob": "b7d0e15673866da88523fec140c0b5ef0d00ccdc"
+    },
+    {
+      "upstream_path": "_kernel_matmul_fp8_row/test_common.py",
+      "snapshot": "upstream/test_common.py",
+      "executable": "test_common.py",
+      "upstream_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "executable_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "graph_disabled_launches": 0,
+      "git_blob": "4d8602416bcfe669098a8441039c8220397c0304"
+    }
+  ],
+  "compile_options": {
+    "enable_graph_optimize": false
+  },
+  "input_mode": "pt_replay",
+  "required_input_file": "test__kernel_matmul_fp8_row_v2_ieee.pt",
+  "input_description": "FP8 matmul 的尺寸/dtype/grid 来自外部 .pt；保留上游 force_simt_only=True。原 autotune key=BLOCK_D 与 kernel 签名不一致，未修正、未宣称可运行。",
+  "required_packages": [
+    "torch",
+    "torch_npu",
+    "triton",
+    "triton-ascend",
+    "pytest",
+    "numpy"
+  ],
+  "case_count": null,
+  "numerical_status": "NOT_RUN",
+  "performance_status": "NO_MEASUREMENTS",
+  "manual_tile_status": "NOT_ADDED",
+  "graph_disabled_launches": 2
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "TG02",
+  "name": "fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
+  "family": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/triton_graph_optimization/fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
+  "implementation": "upstream_test_suite",
+  "runner": "graph_tests",
+  "validation": "NOT_RUN",
+  "source": {
+    "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
+    "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
+    "directory": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens",
+    "license": "NOASSERTION"
+  },
+  "entrypoint": "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+  "kernel_symbol": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens",
+  "kernel_symbols": [
+    "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens"
+  ],
+  "files": [
+    {
+      "upstream_path": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens/test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+      "snapshot": "upstream/test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+      "executable": "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+      "upstream_sha256": "fae981936c9976b48b1535c69ac1a074905167f9006f759a599b890a0fd47046",
+      "executable_sha256": "7a2a4ff0aab0b8d519f63f1d9b16fb1cde53238f2f57500b271f45521c1be150",
+      "graph_disabled_launches": 1,
+      "git_blob": "03cbfc74fb41d18e39471459375fe4998bce52a3"
+    },
+    {
+      "upstream_path": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens/test_common.py",
+      "snapshot": "upstream/test_common.py",
+      "executable": "test_common.py",
+      "upstream_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "executable_sha256": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+      "graph_disabled_launches": 0,
+      "git_blob": "4d8602416bcfe669098a8441039c8220397c0304"
+    }
+  ],
+  "compile_options": {
+    "enable_graph_optimize": false
+  },
+  "input_mode": "pt_replay",
+  "required_input_file": "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_v2.pt",
+  "input_description": "输入 shape/dtype/grid 与 FP8 类型来自外部 .pt；本地 test_common.py 一起保留。",
+  "required_packages": [
+    "torch",
+    "torch_npu",
+    "triton",
+    "triton-ascend",
+    "pytest",
+    "numpy"
+  ],
+  "case_count": null,
+  "numerical_status": "NOT_RUN",
+  "performance_status": "NO_MEASUREMENTS",
+  "manual_tile_status": "NOT_ADDED",
+  "graph_disabled_launches": 1
+}

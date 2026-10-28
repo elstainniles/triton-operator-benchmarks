@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "TG06",
+  "name": "dadt_cumsum_fused_bwd",
+  "family": "bwd_dadt_cumsum_fused_kernel",
+  "direction": "bwd",
+  "type": "vv",
+  "path": "operators/triton_graph_optimization/dadt_cumsum_fused_bwd",
+  "implementation": "upstream_test_suite",
+  "runner": "graph_tests",
+  "validation": "NOT_RUN",
+  "source": {
+    "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
+    "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
+    "directory": "bwd_dadt_cumsum_fused_kernel",
+    "license": "NOASSERTION"
+  },
+  "entrypoint": "test_bwd_dadt_cumsum_fused_kernel.py",
+  "kernel_symbol": "bwd_dadt_cumsum_fused_kernel",
+  "kernel_symbols": [
+    "bwd_dadt_cumsum_fused_kernel"
+  ],
+  "files": [
+    {
+      "upstream_path": "bwd_dadt_cumsum_fused_kernel/test_bwd_dadt_cumsum_fused_kernel.py",
+      "snapshot": "upstream/test_bwd_dadt_cumsum_fused_kernel.py",
+      "executable": "test_bwd_dadt_cumsum_fused_kernel.py",
+      "upstream_sha256": "7da5eccd0586381b1b8953877656b3bcd442654929d0f9366c16727a5669c90d",
+      "executable_sha256": "e4e3afe1bcb6e2679ff04571af11a0c7e73290180b4a04a72e5a4c388eecb382",
+      "graph_disabled_launches": 1,
+      "git_blob": "cda6303cd6df62af0aeafe288c14417ab11f775f"
+    }
+  ],
+  "compile_options": {
+    "enable_graph_optimize": false
+  },
+  "input_mode": "generated_assertions",
+  "required_input_file": null,
+  "input_description": "4 个 FP32 输入[16,32,2048]，chunk_size=16，输出同形。校验额外乘 -log2(e)，原 profiler 只调用未缩放 wrapper。",
+  "required_packages": [
+    "torch",
+    "torch_npu",
+    "triton",
+    "triton-ascend",
+    "pytest",
+    "numpy"
+  ],
+  "case_count": 1,
+  "numerical_status": "NOT_RUN",
+  "performance_status": "NO_MEASUREMENTS",
+  "manual_tile_status": "NOT_ADDED",
+  "graph_disabled_launches": 1
+}

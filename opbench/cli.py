@@ -2,7 +2,7 @@ import argparse
 import json
 from pathlib import Path
 
-from .catalog import operators, plans
+from .catalog import operators, plans, resolve
 
 
 def main():
@@ -25,5 +25,8 @@ def main():
     elif args.command == 'plan':
         print(json.dumps(plans(args.operator, args.suite, args.variants), ensure_ascii=False, indent=2))
     else:
+        entry, _ = resolve(args.operator)
+        if entry.get('runner') == 'graph_tests':
+            parser.error('TG suites use tools/run_graph_tests.py; see docs/GRAPH_OPTIMIZATION_TESTS.md')
         from .runner import run
         run(args)

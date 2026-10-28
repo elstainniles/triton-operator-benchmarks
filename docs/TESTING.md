@@ -1,5 +1,7 @@
 # 测试说明
 
+第二批 [TritonGraphOptimizationTests 专项说明](GRAPH_OPTIMIZATION_TESTS.md) 使用单独入口和上游输入；**测之前必须关闭图优化，执行版显式传入 `enable_graph_optimize=False`**。下文的形状、统计与候选矩阵属于第一批 FlagGems，不能直接套用到第二批。
+
 本仓库第一批仅测试 FlagGems 的 8 个 Triton 方向/实现条目，全部为 vv（无 matmul）。数据准备、CPU 参考计算和输出检查使用 PyTorch，但**不会计入性能数据**。这里不测 PyTorch 算子、上游完整 Python wrapper 或 autograd 的端到端耗时。
 
 `results/20261026/` 是已完成的历史实测。新整理的 `tools/run.py` 入口尚未在 NPU 上重新验证；本次发布只完成 host 检查。不要把历史数据与新入口的验证状态混淆。
@@ -15,7 +17,7 @@ python tools/verify_repository.py
 python -m unittest discover -s tests -v
 ```
 
-ID 或目录名都可选择算子。`--suite fp32|bf16|all`；`--variants baseline|manual|all`。历史 smoke 用例与主扫描形状重复，只归档、不加入默认重测计划。因此默认计划是 43 个 shape/dtype 配置、184 个候选，而非历史的 51 组/218 条。
+ID 或目录名都可选择算子。FlagGems 支持 `--suite fp32|bf16|all`；`--variants baseline|manual|all`。历史 smoke 用例与主扫描形状重复，只归档、不加入默认重测计划。因此第一批默认计划是 43 个 shape/dtype 配置、184 个候选，而非历史的 51 组/218 条。TG01–TG07 的 `plan` 返回独立脚本的输入要求和图优化关闭设置，使用默认 `all` 查看。
 
 ## Ascend 环境
 

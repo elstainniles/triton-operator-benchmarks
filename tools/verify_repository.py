@@ -12,6 +12,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from opbench.catalog import module, operators, plans, read_json, resolve
+from opbench.graph_tests import verify_graph_suite
 
 
 def same(a, b):
@@ -19,9 +20,29 @@ def same(a, b):
 
 
 def verify():
-    entries = operators()
-    assert len({o['id'] for o in entries}) == len(entries)
-    assert len({o['path'] for o in entries}) == len(entries)
+    all_entries = operators()
+    assert len({o['id'] for o in all_entries}) == len(all_entries)
+    assert len({o['path'] for o in all_entries}) == len(all_entries)
+    entries = [e for e in all_entries if e.get('runner') != 'graph_tests']
+    graph_entries = [e for e in all_entries if e.get('runner') == 'graph_tests']
+    graph_files = graph_launches = 0
+    for entry in graph_entries:
+        _, path = resolve(entry['id'])
+        counts = verify_graph_suite(path)
+        graph_files += counts['files']
+        graph_launches += counts['graph_disabled_launches']
+        assert plans(entry['id'])[0]['compile_options'] == {'enable_graph_optimize': False}
+    group = ROOT / 'operators/triton_graph_optimization'
+    manifest = read_json(group / 'source-manifest.json')
+    assert manifest['local_test_suites'] == len(graph_entries)
+    assert len(manifest['files']) == graph_files
+    for record in manifest['files']:
+        path = ROOT / record['path']
+        assert record in [dict(operator_id=read_json(path/'operator.json')['id'],
+                              path=record['path'], **f)
+                          for f in read_json(path/'operator.json')['files']]
+    reference = manifest['reference_document']
+    assert hashlib.sha256((group/reference['snapshot']).read_bytes()).hexdigest() == reference['sha256']
     counters = Counter()
     fp32 = []
     environment = read_json(ROOT / 'docs/historical-environment.json')
@@ -119,12 +140,15 @@ def verify():
             ast.parse(file.read_text(encoding='utf-8'), filename=str(file))
         if file.suffix == '.md':
             text = file.read_text(encoding='utf-8')
+            text = re.sub(r'^```[^\n]*\n.*?^```[^\n]*$', '', text, flags=re.M | re.S)
             for link in re.findall(r'\[[^\]]*\]\(([^)]+)\)', text):
                 if '://' in link or link.startswith('#'):
                     continue
                 assert (file.parent / link.split('#')[0]).exists(), (file, link)
     assert 'torch' not in sys.modules and 'triton' not in sys.modules
-    return dict(status='PASS', entries=len(entries), **counters)
+    return dict(status='PASS', entries=len(all_entries), flaggems_entries=len(entries),
+                imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
+                graph_disabled_launches=graph_launches, **counters)
 
 
 if __name__ == '__main__':

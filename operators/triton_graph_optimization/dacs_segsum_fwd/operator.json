@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "id": "TG04",
+  "name": "dacs_segsum_fwd",
+  "family": "dacs_segsum_kernel",
+  "direction": "fwd",
+  "type": "vv",
+  "path": "operators/triton_graph_optimization/dacs_segsum_fwd",
+  "implementation": "upstream_test_suite",
+  "runner": "graph_tests",
+  "validation": "NOT_RUN",
+  "source": {
+    "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
+    "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
+    "directory": "dacs_segsum_kernel",
+    "license": "NOASSERTION"
+  },
+  "entrypoint": "test_dacs_segsum_kernel.py",
+  "kernel_symbol": "dacs_segsum_kernel",
+  "kernel_symbols": [
+    "dacs_segsum_kernel"
+  ],
+  "files": [
+    {
+      "upstream_path": "dacs_segsum_kernel/test_dacs_segsum_kernel.py",
+      "snapshot": "upstream/test_dacs_segsum_kernel.py",
+      "executable": "test_dacs_segsum_kernel.py",
+      "upstream_sha256": "b73480c42e9a97c6d4e5c5e2114b51aaa831f53d40b33147c9588c4c1337b375",
+      "executable_sha256": "99d6ae3186452c213619bc7fed71cb646bcd6f0e00df7f1f6eedd79cba3b48f2",
+      "graph_disabled_launches": 1,
+      "git_blob": "2be17ebebfdfbaca662648757ddd971594fbb1b4"
+    }
+  ],
+  "compile_options": {
+    "enable_graph_optimize": false
+  },
+  "input_mode": "generated_assertions",
+  "required_input_file": null,
+  "input_description": "FP32 da[16,32,2048]，chunk_size=16；输出 da_cs/da_cs_rev 同形，segsum[16,32,128,16,16]。原 max_abs<1e-4 门禁。",
+  "required_packages": [
+    "torch",
+    "torch_npu",
+    "triton",
+    "triton-ascend",
+    "pytest",
+    "numpy",
+    "einops"
+  ],
+  "case_count": 1,
+  "numerical_status": "NOT_RUN",
+  "performance_status": "NO_MEASUREMENTS",
+  "manual_tile_status": "NOT_ADDED",
+  "graph_disabled_launches": 1
+}

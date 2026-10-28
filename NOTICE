@@ -13,6 +13,14 @@ omitted. GELU's math helpers are bound to the Ascend shims used by the historica
 experiment. Where/GELU use an explicitly identified continuous pointwise adapter.
 Baseline and manual variants change launch tile/grid parameters, not formulas.
 
-The repository's test harness, documentation and data organization are provided
+This repository also includes source snapshots and graph-disabled launch variants
+from https://gitcode.com/weizhan4/TritonGraphOptimizationTests
+Revision: 2e67d5b6723b1d472dcef91adb8a83c5b6761765
+No repository-level license was present at that revision. Original notices are
+retained. These imported files (including the archived upstream run.md) are NOT
+relicensed under this repository's Apache-2.0 license. See
+operators/triton_graph_optimization/SOURCE_NOTICE.md.
+
+The repository's own test harness, documentation and data organization are provided
 under the same Apache-2.0 license. Historical benchmark results describe only
 their recorded configurations and hardware, and do not imply upstream endorsement.
