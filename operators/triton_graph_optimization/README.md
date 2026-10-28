@@ -1,33 +1,29 @@
-# TritonGraphOptimizationTests 导入批次
+# TritonGraphOptimizationTests 性能算子
 
-来源：[weizhan4/TritonGraphOptimizationTests](https://gitcode.com/weizhan4/TritonGraphOptimizationTests/tree/main)，固定提交 `2e67d5b6723b1d472dcef91adb8a83c5b6761765`。本目录与 `operators/flaggems/` 并列，各算子独立存放。
+来源：[weizhan4/TritonGraphOptimizationTests](https://gitcode.com/weizhan4/TritonGraphOptimizationTests/tree/main)，固定提交 `2e67d5b6723b1d472dcef91adb8a83c5b6761765`。与 `operators/flaggems/` 分目录存放。
 
-**本批测试前必须关闭图优化：`enable_graph_optimize=False`。** 执行版的每个 kernel launch 已显式设置。详见 [测试说明](../../docs/GRAPH_OPTIMIZATION_TESTS.md)。`upstream/` 是未修改原始快照，不作为默认运行入口。
+7 组均自带输入生成、CPU 参考和直接 Triton kernel 计时入口，默认无需 `.pt`。**测试必须关闭图优化：`enable_graph_optimize=False`**，运行器显式设置并验证编译后的选项。
 
-| ID | 目录 | 类型 | 输入与当前条件 |
+| ID | 算子 | 类型 | 默认输入来源 |
 | --- | --- | --- | --- |
-| TG01 | [fbgemm_gather_scale_dense_tokens_fwd](fbgemm_gather_scale_dense_tokens_fwd/) | vv | 需要上游未提交的 `.pt` 输入 |
-| TG02 | [fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd](fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd/) | vv | 需要上游未提交的 FP8 `.pt` 输入 |
-| TG03 | [matmul_fp8_row_fwd](matmul_fp8_row_fwd/) | cv | 需要 `.pt` 输入；上游 autotune key 问题保留并记录 |
-| TG04 | [dacs_segsum_fwd](dacs_segsum_fwd/) | vv | FP32 (16,32,2048)，chunk_size=16 |
-| TG05 | [segsum_dadt_bwd](segsum_dadt_bwd/) | vv | FP32 (16,32,128,16,16)，chunk_size=16 |
-| TG06 | [dadt_cumsum_fused_bwd](dadt_cumsum_fused_bwd/) | vv | 4 个 FP32 (16,32,2048)，chunk_size=16 |
-| TG07 | [fused_moe_fwd](fused_moe_fwd/) | cv | 100 个生成配置；保存输出，不含完整数值对比程序 |
+| TG01 | [gather + scale fwd](fbgemm_gather_scale_dense_tokens_fwd/) | vv | 新增确定性合成输入 |
+| TG02 | [gather + scale + FP8 quant fwd](fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd/) | vv | 新增确定性合成输入 |
+| TG03 | [FP8 row matmul fwd](matmul_fp8_row_fwd/) | cv | 新增确定性合成输入 |
+| TG04 | [dacs_segsum fwd](dacs_segsum_fwd/) | vv | 小配置及上游尺寸，固定 seed |
+| TG05 | [segsum_dadt bwd](segsum_dadt_bwd/) | vv | 小配置及上游尺寸，固定 seed |
+| TG06 | [dadt_cumsum_fused bwd](dadt_cumsum_fused_bwd/) | vv | 小配置及上游尺寸，固定 seed |
+| TG07 | [fused_moe fwd](fused_moe_fwd/) | cv | 修正路由准备，四种量化模式，CPU 参考 |
 
-cv/vv 按源计算中是否有 matmul（`tl.dot`）分类；TG03 即使保留 `force_simt_only=True`，仍是 cv 计算类型。
-
-共导入 7 组测试、11 个 Python 源文件。每个目录有原始 `upstream/`、同名图优化关闭版和 `operator.json`。执行版仅增加 `enable_graph_optimize=False`，原数学函数、tile/grid、autotune、输入和容差均保留。文件 SHA256、Git blob 与改动位置数量见 [source-manifest.json](source-manifest.json)。
-
-另外保留 [3 个外部测试引用](external_references/README.md)，它们在上游只有运行说明，不包含算子实现，不计入已导入的 7 组代码。
-
-本批状态为 **NOT_RUN / NO_MEASUREMENTS**：仅完成代码归档与离线检查，没有新的 NPU 通过率或性能数据，也未新增手改 tile 版本。上游 wrapper profiler 输出需要筛选与数值核验，不能并入 FlagGems 已核验历史表。
-
-完整性分开计算：代码收录 7/7 组；输入可自行生成 4/7 组（TG04–TG07）；3/7 组缺少 `.pt`（TG01–TG03）；本次 NPU 实测 0/7 组。输入自给不等于编译/执行通过。
+cv/vv 按计算中是否包含 matmul（`tl.dot`）分类。共 119 个生成配置，smoke 包含 10 个配置；实际设备验证范围见 [验证记录](../../docs/VALIDATION.md)。
 
 ```bash
-python tools/run.py list
-python tools/run.py plan --operator TG04
-python tools/verify_repository.py
+python tools/run.py plan --operator graph --suite smoke --variants baseline
+python -I tools/run.py run --operator graph --suite smoke --variants baseline \
+  --physical-card 6 --environment environment.local.json --output runs/graph-001
 ```
 
-[测试命令、环境和限制](../../docs/GRAPH_OPTIMIZATION_TESTS.md) · [来源许可记录](SOURCE_NOTICE.md)
+从仓库根目录、已配置的隔离 Ascend runtime 运行。各目录的 `benchmark.py` 和 `cases.json` 完整定义输入、参考及 tile/grid，公共运行器只加载原始 JIT 函数体，采用固定基线配置。数值失败不记录性能，PyTorch 准备/参考计算不计入 kernel 耗时。
+
+原 11 个 Python 文件与图优化关闭版继续保留，来源哈希见 [source-manifest.json](source-manifest.json)。原 `.pt` 未公开的事实仅影响可选旧用例回放，不阻塞默认测试。另有 [3 个外部测试链接](external_references/README.md)，未包含实现，不计入 7 组。
+
+[运行说明与限制](../../docs/GRAPH_OPTIMIZATION_TESTS.md) · [来源许可](SOURCE_NOTICE.md)

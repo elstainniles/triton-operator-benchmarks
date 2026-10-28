@@ -12,21 +12,28 @@ def main():
     for name in ('plan', 'run'):
         command = commands.add_parser(name)
         command.add_argument('--operator', required=True)
-        command.add_argument('--suite', choices=['fp32', 'bf16', 'all'], default='all')
+        command.add_argument('--suite', choices=['smoke', 'fp32', 'bf16', 'all'], default='all')
         command.add_argument('--variants', choices=['baseline', 'manual', 'all'], default='all')
         if name == 'run':
             command.add_argument('--output', required=True, type=Path)
             command.add_argument('--physical-card', required=True, type=int, choices=range(8))
             command.add_argument('--environment', required=True, type=Path)
             command.add_argument('--correctness-only', action='store_true')
+            command.add_argument('--case-id', action='append', default=[], help='Generated graph case ID; repeatable')
     args = parser.parse_args()
     if args.command == 'list':
         print(json.dumps(operators(), ensure_ascii=False, indent=2))
     elif args.command == 'plan':
         print(json.dumps(plans(args.operator, args.suite, args.variants), ensure_ascii=False, indent=2))
     else:
+        if args.operator in ('all', 'graph', 'flaggems') or ',' in args.operator:
+            from .batch import run
+            return run(args)
         entry, _ = resolve(args.operator)
         if entry.get('runner') == 'graph_tests':
-            parser.error('TG suites use tools/run_graph_tests.py; see docs/GRAPH_OPTIMIZATION_TESTS.md')
-        from .runner import run
-        run(args)
+            from .graph_runner import run
+        else:
+            if args.case_id:
+                parser.error('--case-id is available for generated graph cases only')
+            from .runner import run
+        return run(args)

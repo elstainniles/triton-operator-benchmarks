@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "input_origin": "generated_benchmark",
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "smoke",
+      "shape": [
+        1,
+        2,
+        32
+      ],
+      "dtype": "float32",
+      "tile": {
+        "CHUNK_SIZE": 16
+      },
+      "suite": "smoke",
+      "seed": 20261028,
+      "input_origin": "generated_benchmark",
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "force_simt_only": true
+      }
+    },
+    {
+      "id": "upstream-shape",
+      "shape": [
+        16,
+        32,
+        2048
+      ],
+      "dtype": "float32",
+      "tile": {
+        "CHUNK_SIZE": 16
+      },
+      "suite": "default",
+      "seed": 20261028,
+      "input_origin": "generated_benchmark",
+      "input_origin_note": "Upstream dimensions/distribution, new deterministic CPU seed",
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "force_simt_only": true
+      }
+    }
+  ]
+}

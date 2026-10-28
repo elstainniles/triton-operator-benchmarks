@@ -6,16 +6,16 @@
   "direction": "fwd",
   "type": "vv",
   "path": "operators/triton_graph_optimization/fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
-  "implementation": "upstream_test_suite",
+  "implementation": "standalone_generated_benchmark",
   "runner": "graph_tests",
-  "validation": "NOT_RUN",
+  "validation": "SMOKE_VALIDATED",
   "source": {
     "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
     "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
     "directory": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens",
     "license": "NOASSERTION"
   },
-  "entrypoint": "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+  "entrypoint": "benchmark.py",
   "kernel_symbol": "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens",
   "kernel_symbols": [
     "_fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens"
@@ -43,20 +43,39 @@
   "compile_options": {
     "enable_graph_optimize": false
   },
-  "input_mode": "pt_replay",
-  "required_input_file": "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_v2.pt",
-  "input_description": "输入 shape/dtype/grid 与 FP8 类型来自外部 .pt；本地 test_common.py 一起保留。",
+  "input_mode": "generated_benchmark",
+  "required_input_file": null,
+  "input_description": "Deterministic CPU inputs and independent reference; see cases.json and benchmark.py.",
   "required_packages": [
     "torch",
     "torch_npu",
     "triton",
-    "triton-ascend",
-    "pytest",
-    "numpy"
+    "triton-ascend"
   ],
-  "case_count": null,
-  "numerical_status": "NOT_RUN",
-  "performance_status": "NO_MEASUREMENTS",
+  "case_count": 3,
+  "numerical_status": "SMOKE_PASSED",
+  "performance_status": "SMOKE_MEASURED",
   "manual_tile_status": "NOT_ADDED",
-  "graph_disabled_launches": 1
+  "graph_disabled_launches": 1,
+  "upstream_replay": {
+    "entrypoint": "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py",
+    "input_mode": "pt_replay",
+    "required_input_file": "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_v2.pt",
+    "input_description": "输入 shape/dtype/grid 与 FP8 类型来自外部 .pt；本地 test_common.py 一起保留。",
+    "case_count": null
+  },
+  "benchmark_command": "tools/run.py run",
+  "autotune": "disabled_for_fixed_reproducible_baseline",
+  "kernel_body_changes": false,
+  "performance_scope": "direct Triton device duration",
+  "current_runner_validation": {
+    "status": "SMOKE_VALIDATED",
+    "date": "2026-10-28",
+    "variant": "baseline",
+    "cases": [
+      "smoke"
+    ],
+    "evidence": "docs/standalone-smoke-20261028.json",
+    "full_matrix_validated": false
+  }
 }

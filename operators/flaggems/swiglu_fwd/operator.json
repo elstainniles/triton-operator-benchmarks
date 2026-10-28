@@ -47,5 +47,15 @@
     "num_stages": 2
   },
   "inputs": "AB[M,2H]；O[M,H]；shape 参数表示 (M,H)",
-  "execution_validation": "host_only_not_npu_revalidated"
+  "execution_validation": "host_only_not_npu_revalidated",
+  "current_runner_validation": {
+    "status": "SMOKE_VALIDATED",
+    "date": "2026-10-28",
+    "variant": "baseline",
+    "cases": [
+      "P10-1x2048-float32-normal"
+    ],
+    "evidence": "docs/standalone-smoke-20261028.json",
+    "full_matrix_validated": false
+  }
 }

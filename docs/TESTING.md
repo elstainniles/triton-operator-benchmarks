@@ -1,10 +1,10 @@
 # 测试说明
 
-第二批 [TritonGraphOptimizationTests 专项说明](GRAPH_OPTIMIZATION_TESTS.md) 使用单独入口和上游输入；**测之前必须关闭图优化，执行版显式传入 `enable_graph_optimize=False`**。下文的形状、统计与候选矩阵属于第一批 FlagGems，不能直接套用到第二批。
+两批共用 `tools/run.py`，都能自行生成输入。第二批详见 [TritonGraphOptimizationTests 专项说明](GRAPH_OPTIMIZATION_TESTS.md)，**测之前必须关闭图优化，入口显式传入 `enable_graph_optimize=False`**。下文的具体形状与候选矩阵属于第一批 FlagGems。
 
 本仓库第一批仅测试 FlagGems 的 8 个 Triton 方向/实现条目，全部为 vv（无 matmul）。数据准备、CPU 参考计算和输出检查使用 PyTorch，但**不会计入性能数据**。这里不测 PyTorch 算子、上游完整 Python wrapper 或 autograd 的端到端耗时。
 
-`results/20261026/` 是已完成的历史实测。新整理的 `tools/run.py` 入口尚未在 NPU 上重新验证；本次发布只完成 host 检查。不要把历史数据与新入口的验证状态混淆。
+`results/20261026/` 是已完成的历史实测。新入口已验证的配置范围另见 [VALIDATION.md](VALIDATION.md)，不能从历史结果推定未测配置已通过。
 
 ## 先查看计划
 
@@ -17,7 +17,7 @@ python tools/verify_repository.py
 python -m unittest discover -s tests -v
 ```
 
-ID 或目录名都可选择算子。FlagGems 支持 `--suite fp32|bf16|all`；`--variants baseline|manual|all`。历史 smoke 用例与主扫描形状重复，只归档、不加入默认重测计划。因此第一批默认计划是 43 个 shape/dtype 配置、184 个候选，而非历史的 51 组/218 条。TG01–TG07 的 `plan` 返回独立脚本的输入要求和图优化关闭设置，使用默认 `all` 查看。
+ID 或目录名都可选择算子，也支持 `all`、`flaggems`、`graph` 或逗号分隔 ID 列表。`--suite smoke|fp32|bf16|all`；`--variants baseline|manual|all`，第二批尚无 manual 候选。第一批 smoke 选择每算子的第一个登记配置，全部计划是 43 个 shape/dtype、184 个候选；第二批是 119 个生成配置，其中 10 个 smoke。TG 的 `plan` 会列出输入规格、固定 tile 和图优化关闭设置。
 
 ## Ascend 环境
 
@@ -25,7 +25,18 @@ ID 或目录名都可选择算子。FlagGems 支持 `--suite fp32|bf16|all`；`-
 
 历史环境指纹见 [historical-environment.json](historical-environment.json)；它是结果身份，不是自动创建环境的锁文件。硬件和驱动/CANN 不会因 Python 环境独立而自动隔离。
 
-复制 [environment.example.json](environment.example.json) 为仓库根目录的 `environment.local.json`（已被 Git 忽略），填入经过独立核实的：
+可以复制 [environment.example.json](environment.example.json) 并手动填写，或在已选择 CANN 的干净 shell 中自动采集当前隔离 runtime：
+
+```bash
+# 先按平台选择具体 CANN；清除 set_env.sh 加入的 Python 源码搜索路径。
+source /absolute/path/to/cann/set_env.sh
+unset PYTHONPATH
+# PATH/LD_LIBRARY_PATH 需含该 runtime 及其配套 BishengIR/LLVM/CANN。
+/absolute/path/to/isolated-runtime/bin/python -I tools/capture_environment.py \
+  --output environment.local.json
+```
+
+采集工具只读取已安装的包，不安装、不修改环境，不初始化 NPU；会检查隔离路径、CANN linker 和实际 compiler。采集记录当前环境身份，不能代替对 wheel 来源/版本配套的独立核实。清单（被 Git 忽略）包含：
 
 - runtime 绝对路径；`torch`、`torch_npu`、`triton` 的模块版本和 `triton-ascend` 包版本。
 - 已验证 wheel 安装后的 `libtriton.so` SHA256、实际解析的 `bishengir-compile` 路径和 SHA256。
@@ -48,9 +59,9 @@ ID 或目录名都可选择算子。FlagGems 支持 `--suite fp32|bf16|all`；`-
   --output runs/swiglu-fwd-fp32-run-001
 ```
 
-首次确认入口可用可以加 `--correctness-only`，之后以新的输出目录测性能。工具不会覆盖现有输出目录，不自动重试失败，也不自动恢复到旧目录。要测全部条目，用 `list` 中的名称逐项串行运行，输出目录分别命名；不要同时启动两份测量争抢一张卡。
+首次确认可加 `--correctness-only`。输出目录不能覆盖，不自动重试失败。全部 smoke 用 `--operator all --suite smoke --variants baseline`，程序自动串行调度；批次保留逐算子结果和汇总 `performance.csv`。失败后可用逗号分隔 ID 继续尚未完成算子，不必重跑已完成结果。
 
-输出包括 `result.json`、原始 profiler trace/CSV、`device.jsonl` 和当前运行的专属 cache。`result.json` 保存当前源码 hash、实际环境、每候选配置/grid、数值状态、原始计时及错误。`completed` 表示调度完所有所选候选，不等价于所有候选通过。失败记录没有性能值。
+输出包括 `result.json`、原始 profiler trace/CSV、`device.jsonl` 和当前运行的专属 cache。`result.json` 保存当前源码 hash、实际环境、每候选配置/grid、数值状态、原始计时及错误。`completed` 表示调度完所有所选候选，不等价于所有候选通过；`all_passed` 和逐项状态才表示实际通过范围。批次 `counts` 区分各状态。失败记录没有性能值。
 
 状态含义：`correct`（仅数值通过）、`measured`、`compile_failed`、`accuracy_failed`、`runtime_failed`、`timing_rejected_interference`。编译/精度失败保留后继续其它候选；设备运行错误或哨兵损坏停止本次运行。计时归因失败也停止并保留 trace，不能改用 wrapper 总时间填充。
 

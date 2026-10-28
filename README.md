@@ -19,7 +19,9 @@ Where/GELU 没有接入 FlagGems 的 `pointwise_dynamic` 生成器，不能用�
 
 第二批来自 [TritonGraphOptimizationTests](https://gitcode.com/weizhan4/TritonGraphOptimizationTests)，独立放在 [operators/triton_graph_optimization](operators/triton_graph_optimization/)，与 `flaggems` 并列。包含 7 组实际测试代码：两种 gather/scale、FP8 matmul、dacs_segsum、segsum_dadt bwd、dadt_cumsum_fused bwd 和 fused_moe。另保留 3 项仅有外部运行说明的引用，未计入已导入实现。
 
-**第二批测试前必须关闭图优化：`enable_graph_optimize=False`。** 所有执行版 kernel launch 已显式设置；测试命令和缺失输入等限制见 [第二批测试说明](docs/GRAPH_OPTIMIZATION_TESTS.md)。这批尚未运行 NPU 测试，没有新增性能数据。
+**第二批测试前必须关闭图优化：`enable_graph_optimize=False`。** 默认入口已自带输入和 CPU 参考，全部 7 组均无需外部 `.pt`。按 [第二批测试说明](docs/GRAPH_OPTIMIZATION_TESTS.md) 可直接测 kernel 性能。
+
+2026-10-28 已在 Ascend950PR / TA main 完成整仓 **15/15 个条目、18/18 个 smoke 配置的正确性及纯 kernel 计时**。TG04–TG06 显式使用 SIMT；这是固定基线验证，较大尺寸和新入口 manual 候选未在本轮全面验证。实测表、失败记录和验证范围见 [VALIDATION.md](docs/VALIDATION.md)。
 
 ## 资料入口
 
@@ -31,7 +33,7 @@ Where/GELU 没有接入 FlagGems 的 `pointwise_dynamic` 生成器，不能用�
 - [整理校验记录](docs/VALIDATION.md)：源码、结果和离线测试的校验范围。
 - [来源及许可](NOTICE)：FlagGems Apache-2.0 归属与改动范围。
 
-FlagGems 各目录都有 `kernels.py`、`baseline.py`、`manual_tile.py`、`case.py`、`cases.json`、`operator.json` 和 `results/20261026/`。`baseline.py` 固定基线；`manual_tile.py` 显式列出手改候选；两者通过同目录的 `launch.py` 使用相同计算函数。图优化测试批次保留上游独立脚本和 autotune，并登记为 `upstream_test_suite`，没有虚构手改版本或性能数据。
+FlagGems 各目录都有 `kernels.py`、`baseline.py`、`manual_tile.py`、`case.py`、`cases.json`、`operator.json` 和 `results/20261026/`。图优化测试批次通过各自 `benchmark.py` 和 `cases.json` 提供固定基线、自生成输入和 CPU 参考，原 JIT 函数保持不变；旧脚本另作来源归档。两批共用 `tools/run.py` 入口，各算子独立目录。
 
 ## 快速查看与离线验证
 
@@ -44,6 +46,15 @@ python tools/verify_repository.py
 python -m unittest discover -s tests -v
 ```
 
+已配置隔离 Ascend runtime 和环境清单后，一条命令串行测试全部 15 个条目（18 个 smoke 配置）：
+
+```bash
+python -I tools/run.py run --operator all --suite smoke --variants baseline \
+  --physical-card 6 --environment environment.local.json --output runs/all-smoke-001
+```
+
+`--operator graph` 选第二批 7 组，`flaggems` 选第一批 8 个，也支持单个 ID 或逗号分隔列表。`--suite all` 测所选算子的全部登记配置。整批输出 `performance.csv` 和逐算子证据；统计只包含数值通过、设备占用检查通过的 Triton kernel 设备耗时。
+
 NPU 运行方式见 [TESTING.md](docs/TESTING.md)。不要把上游源码直接安装进测试 runtime，也不要覆盖已有环境或已有测量结果。
 
 ## 历史结果与当前代码验证的区别
@@ -54,4 +65,4 @@ NPU 运行方式见 [TESTING.md](docs/TESTING.md)。不要把上游源码直接�
 
 历史 FP32 35 个配置逐配置选已测最优后，几何平均加速为 **1.224×**；23/35 个配置测得耗时减少超过 5%。这是已测候选中的最佳值，包含保留基线，不是统一策略或自动调优的收益保证。
 
-本仓库整理后的运行入口经过离线数据/源码/参数校验，**尚未用该新入口重新进行 NPU 测试**。历史结果来自原测试框架，不能作为新入口已通过设备验证的声明。两者使用相同参数、计算函数与数值门禁；新运行会生成独立结果。
+历史结果来自原测试框架，新入口的设备验证单独记录于 [VALIDATION.md](docs/VALIDATION.md)。历史结果不能自动证明新入口或未测配置通过；新运行始终生成独立结果。

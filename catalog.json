@@ -8,7 +8,8 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/flaggems/mul_contiguous_fwd",
-      "implementation": "original_kernel"
+      "implementation": "original_kernel",
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "P05",
@@ -17,7 +18,8 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/flaggems/mul_scalar_fwd",
-      "implementation": "original_kernel"
+      "implementation": "original_kernel",
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "P06",
@@ -26,7 +28,8 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/flaggems/mul_broadcast_fwd",
-      "implementation": "original_kernel"
+      "implementation": "original_kernel",
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "P07",
@@ -35,7 +38,8 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/flaggems/where_fwd",
-      "implementation": "continuous_adapter"
+      "implementation": "continuous_adapter",
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "P08",
@@ -44,7 +48,8 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/flaggems/gelu_tanh_fwd",
-      "implementation": "continuous_adapter"
+      "implementation": "continuous_adapter",
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "P09",
@@ -53,7 +58,8 @@
       "direction": "bwd",
       "type": "vv",
       "path": "operators/flaggems/gelu_tanh_bwd",
-      "implementation": "continuous_adapter"
+      "implementation": "continuous_adapter",
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "P10",
@@ -62,7 +68,8 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/flaggems/swiglu_fwd",
-      "implementation": "original_kernel"
+      "implementation": "original_kernel",
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "P11",
@@ -71,7 +78,8 @@
       "direction": "bwd",
       "type": "vv",
       "path": "operators/flaggems/swiglu_bwd",
-      "implementation": "original_kernel"
+      "implementation": "original_kernel",
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "TG01",
@@ -80,9 +88,9 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/triton_graph_optimization/fbgemm_gather_scale_dense_tokens_fwd",
-      "implementation": "upstream_test_suite",
+      "implementation": "standalone_generated_benchmark",
       "runner": "graph_tests",
-      "validation": "NOT_RUN"
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "TG02",
@@ -91,9 +99,9 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/triton_graph_optimization/fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
-      "implementation": "upstream_test_suite",
+      "implementation": "standalone_generated_benchmark",
       "runner": "graph_tests",
-      "validation": "NOT_RUN"
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "TG03",
@@ -102,9 +110,9 @@
       "direction": "fwd",
       "type": "cv",
       "path": "operators/triton_graph_optimization/matmul_fp8_row_fwd",
-      "implementation": "upstream_test_suite",
+      "implementation": "standalone_generated_benchmark",
       "runner": "graph_tests",
-      "validation": "NOT_RUN"
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "TG04",
@@ -113,9 +121,9 @@
       "direction": "fwd",
       "type": "vv",
       "path": "operators/triton_graph_optimization/dacs_segsum_fwd",
-      "implementation": "upstream_test_suite",
+      "implementation": "standalone_generated_benchmark",
       "runner": "graph_tests",
-      "validation": "NOT_RUN"
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "TG05",
@@ -124,9 +132,9 @@
       "direction": "bwd",
       "type": "vv",
       "path": "operators/triton_graph_optimization/segsum_dadt_bwd",
-      "implementation": "upstream_test_suite",
+      "implementation": "standalone_generated_benchmark",
       "runner": "graph_tests",
-      "validation": "NOT_RUN"
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "TG06",
@@ -135,9 +143,9 @@
       "direction": "bwd",
       "type": "vv",
       "path": "operators/triton_graph_optimization/dadt_cumsum_fused_bwd",
-      "implementation": "upstream_test_suite",
+      "implementation": "standalone_generated_benchmark",
       "runner": "graph_tests",
-      "validation": "NOT_RUN"
+      "validation": "SMOKE_VALIDATED"
     },
     {
       "id": "TG07",
@@ -146,9 +154,9 @@
       "direction": "fwd",
       "type": "cv",
       "path": "operators/triton_graph_optimization/fused_moe_fwd",
-      "implementation": "upstream_test_suite",
+      "implementation": "standalone_generated_benchmark",
       "runner": "graph_tests",
-      "validation": "NOT_RUN"
+      "validation": "SMOKE_VALIDATED"
     }
   ]
 }

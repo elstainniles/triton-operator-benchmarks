@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "input_origin": "generated_benchmark",
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "smoke",
+      "shape": [
+        32,
+        64,
+        64
+      ],
+      "dtype": "float8_e4m3fn",
+      "tile": {
+        "BLOCK_M": 16,
+        "BLOCK_N": 32,
+        "BLOCK_K": 32
+      },
+      "suite": "smoke",
+      "seed": 20261028,
+      "input_origin": "generated_benchmark"
+    },
+    {
+      "id": "tail-bias",
+      "shape": [
+        33,
+        65,
+        96
+      ],
+      "dtype": "float8_e4m3fn",
+      "tile": {
+        "BLOCK_M": 16,
+        "BLOCK_N": 32,
+        "BLOCK_K": 32
+      },
+      "suite": "default",
+      "seed": 20261028,
+      "input_origin": "generated_benchmark",
+      "use_bias": true
+    },
+    {
+      "id": "large",
+      "shape": [
+        256,
+        512,
+        512
+      ],
+      "dtype": "float8_e4m3fn",
+      "tile": {
+        "BLOCK_M": 16,
+        "BLOCK_N": 32,
+        "BLOCK_K": 32
+      },
+      "suite": "default",
+      "seed": 20261028,
+      "input_origin": "generated_benchmark"
+    }
+  ]
+}

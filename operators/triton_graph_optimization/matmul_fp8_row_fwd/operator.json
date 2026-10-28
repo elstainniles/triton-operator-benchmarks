@@ -6,16 +6,16 @@
   "direction": "fwd",
   "type": "cv",
   "path": "operators/triton_graph_optimization/matmul_fp8_row_fwd",
-  "implementation": "upstream_test_suite",
+  "implementation": "standalone_generated_benchmark",
   "runner": "graph_tests",
-  "validation": "NOT_RUN",
+  "validation": "SMOKE_VALIDATED",
   "source": {
     "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
     "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
     "directory": "_kernel_matmul_fp8_row",
     "license": "NOASSERTION"
   },
-  "entrypoint": "test__kernel_matmul_fp8_row_npu.py",
+  "entrypoint": "benchmark.py",
   "kernel_symbol": "_kernel_matmul_fp8_row",
   "kernel_symbols": [
     "_kernel_matmul_fp8_row"
@@ -43,20 +43,39 @@
   "compile_options": {
     "enable_graph_optimize": false
   },
-  "input_mode": "pt_replay",
-  "required_input_file": "test__kernel_matmul_fp8_row_v2_ieee.pt",
-  "input_description": "FP8 matmul 的尺寸/dtype/grid 来自外部 .pt；保留上游 force_simt_only=True。原 autotune key=BLOCK_D 与 kernel 签名不一致，未修正、未宣称可运行。",
+  "input_mode": "generated_benchmark",
+  "required_input_file": null,
+  "input_description": "Deterministic CPU inputs and independent reference; see cases.json and benchmark.py.",
   "required_packages": [
     "torch",
     "torch_npu",
     "triton",
-    "triton-ascend",
-    "pytest",
-    "numpy"
+    "triton-ascend"
   ],
-  "case_count": null,
-  "numerical_status": "NOT_RUN",
-  "performance_status": "NO_MEASUREMENTS",
+  "case_count": 3,
+  "numerical_status": "SMOKE_PASSED",
+  "performance_status": "SMOKE_MEASURED",
   "manual_tile_status": "NOT_ADDED",
-  "graph_disabled_launches": 2
+  "graph_disabled_launches": 2,
+  "upstream_replay": {
+    "entrypoint": "test__kernel_matmul_fp8_row_npu.py",
+    "input_mode": "pt_replay",
+    "required_input_file": "test__kernel_matmul_fp8_row_v2_ieee.pt",
+    "input_description": "FP8 matmul 的尺寸/dtype/grid 来自外部 .pt；保留上游 force_simt_only=True。原 autotune key=BLOCK_D 与 kernel 签名不一致，未修正、未宣称可运行。",
+    "case_count": null
+  },
+  "benchmark_command": "tools/run.py run",
+  "autotune": "disabled_for_fixed_reproducible_baseline",
+  "kernel_body_changes": false,
+  "performance_scope": "direct Triton device duration",
+  "current_runner_validation": {
+    "status": "SMOKE_VALIDATED",
+    "date": "2026-10-28",
+    "variant": "baseline",
+    "cases": [
+      "smoke"
+    ],
+    "evidence": "docs/standalone-smoke-20261028.json",
+    "full_matrix_validated": false
+  }
 }

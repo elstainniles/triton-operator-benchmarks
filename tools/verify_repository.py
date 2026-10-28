@@ -32,6 +32,13 @@ def verify():
         graph_files += counts['files']
         graph_launches += counts['graph_disabled_launches']
         assert plans(entry['id'])[0]['compile_options'] == {'enable_graph_optimize': False}
+        cases = read_json(path/'cases.json')
+        metadata = read_json(path/'operator.json')
+        assert cases['external_input_required'] is False and metadata['required_input_file'] is None
+        assert metadata['input_mode'] == 'generated_benchmark' and (path/'benchmark.py').is_file()
+        assert len(cases['cases']) == metadata['case_count']
+        assert len({c['id'] for c in cases['cases']}) == len(cases['cases'])
+        assert plans(entry['id'], 'smoke', 'baseline')
     group = ROOT / 'operators/triton_graph_optimization'
     manifest = read_json(group / 'source-manifest.json')
     assert manifest['local_test_suites'] == len(graph_entries)
@@ -133,6 +140,32 @@ def verify():
         assert same(math.exp(statistics.mean(math.log(r['speedup']) for r in rows)), expected['geomean_speedup'])
         assert same(statistics.mean(r['speedup'] for r in rows), expected['mean_speedup'])
         assert same(statistics.mean(r['time_reduction_pct'] for r in rows), expected['mean_time_reduction_pct'])
+    smoke = read_json(ROOT / 'docs/standalone-smoke-20261028.json')
+    expected_smoke = {(p['operator_id'],p['case']['id']):p for p in plans('all','smoke','baseline')}
+    measured = {(r['operator_id'],r['case']['id']):r for r in smoke['measurements']}
+    assert len(measured) == len(smoke['measurements']) == 18 and measured.keys() == expected_smoke.keys()
+    assert smoke['counts'] == dict(operator_entries=15, smoke_configurations=18, correct=18, measured=18)
+    for key, row in measured.items():
+        planned = expected_smoke[key]
+        _, path = resolve(key[0])
+        assert row['status'] == 'measured' and row['correctness']['passed'] and row['correctness']['guards']
+        assert row['case'] == planned['case']
+        assert row['config'] == planned.get('config', planned['case'].get('tile'))
+        for filename, digest in row['source_hashes'].items():
+            assert hashlib.sha256((path/filename).read_bytes()).hexdigest() == digest, (key,filename)
+        samples = row['timing']['samples']
+        assert {(s['round'],s['repeat']) for s in samples} == {(i,j) for i in range(3) for j in range(5)}
+        assert len(samples) == 15 and all(s['duration_us'] > 0 for s in samples)
+        medians = [statistics.median(s['duration_us'] for s in samples if s['round'] == i) for i in range(3)]
+        assert same(row['median_us'], statistics.median(medians))
+        assert same(row['timing']['median_us'], row['median_us'])
+        if key[0].startswith('TG'):
+            assert row['graph_optimization'] is False and row['launch_options']['enable_graph_optimize'] is False
+        if key[0] in ('TG04','TG05','TG06'):
+            assert row['launch_options']['force_simt_only'] is True
+        metadata = read_json(path/'operator.json')['current_runner_validation']
+        assert metadata['status'] == 'SMOKE_VALIDATED' and row['case']['id'] in metadata['cases']
+        assert metadata['full_matrix_validated'] is False
     for file in ROOT.rglob('*'):
         if not file.is_file() or any(part in {'.git','__pycache__','runs','.venv'} for part in file.relative_to(ROOT).parts):
             continue
@@ -148,7 +181,7 @@ def verify():
     assert 'torch' not in sys.modules and 'triton' not in sys.modules
     return dict(status='PASS', entries=len(all_entries), flaggems_entries=len(entries),
                 imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
-                graph_disabled_launches=graph_launches, **counters)
+                graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), **counters)
 
 
 if __name__ == '__main__':

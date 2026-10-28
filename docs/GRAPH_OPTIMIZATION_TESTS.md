@@ -1,88 +1,67 @@
-# TritonGraphOptimizationTests 测试说明
+# TritonGraphOptimizationTests：自带输入的性能测试
 
-本批位于 [operators/triton_graph_optimization](../operators/triton_graph_optimization/)，与 FlagGems 分开。固定来源提交 `2e67d5b6723b1d472dcef91adb8a83c5b6761765`，7 组实际测试代码；另外 3 项只有外部链接，单独登记。当前尚未运行这些 NPU 测试，不填入通过率或性能数字。
+本批 7 组算子全部提供输入生成、CPU 数值参考和直接 Triton kernel 计时入口，**默认不需要 `.pt`、GPU 输出文件或上游 pytest fixture**。代码在 [operators/triton_graph_optimization](../operators/triton_graph_optimization/)，与 FlagGems 分开。
 
-## 必须先关闭图优化
+固定来源提交 `2e67d5b6723b1d472dcef91adb8a83c5b6761765`。新用例有固定 shape/dtype、seed、tile/grid，不宣称恢复上游缺失 `.pt` 的数据分布。NPU 实测范围见 [验证记录](VALIDATION.md)，未测配置不能视为已验证。
 
-**这批测试必须在图优化关闭的条件下编译和运行，才能用于此次验证。** 对照与将来的手改 tile/grid 候选都要使用同一设置，避免图优化重写计算图后改变比较对象。
+## 运行
 
-在每个 Triton kernel launch 显式传入 TA 编译选项：
-
-```python
-kernel[grid](
-    # 原有输入、shape、tile 与 launch 参数
-    ...,
-    enable_graph_optimize=False,
-)
-```
-
-本仓库执行版的全部 9 处 launch 已加该选项，覆盖预调用、正确性测试和 profiler 中的调用。原始 `upstream/` 快照没有该修改，不要直接运行它。源码校验会拒绝开启、缺失或改变此选项的执行版。
-
-此开关对应 Ascend backend 的 `enable_graph_optimize` 和 TTIR `add_graph_optimize` pass。不是 PyTorch `torch.compile`、`use_cuda_graph=False` 或设备 Graph replay 的开关；也不等于 `force_simt_only=True`、`TRITON_ALL_BLOCKS_PARALLEL` 或关闭 autotune。后几个选项按原测试保留，不能代替关闭图优化。不要猜测不存在的环境变量。
-
-专用入口在导入测试前要求 backend 实际解析 `enable_graph_optimize=False`。若所用 TA 版本不支持/忽略该选项，停止并记录环境版本，不删掉参数勉强运行。测试使用全新专属缓存；归档 compiler metadata/编译日志时再次核对该字段为 false。不复用曾开启图优化的编译结果。
-
-## 环境与运行方式
-
-沿用 [通用环境要求](TESTING.md)：Linux、Python 3.11+、隔离 runtime、固定外部 TA wheel、显式 CANN、`-I`、禁用 user site、审计包路径/版本/libtriton/compiler hash，先检查设备健康与占用。必要依赖是 torch、torch_npu、triton-ascend、pytest、numpy；TG04 原文件还导入 einops。不要为准备这批测试修改另一任务的 runtime。
-
-这批保留原测试框架与 autotune，使用独立入口，不套用 FlagGems 的 FP32/BF16 tile 候选矩阵。`list`/`plan` 仍可查看全部条目：
+前提为 Linux、隔离 Ascend runtime 中已经安装配套 Torch/Torch-NPU/TA wheel，并显式选择 CANN。环境配置见 [通用测试说明](TESTING.md)。默认入口不需要 pytest、einops、FLA、FlagGems 包或 compare_results.py。
 
 ```bash
-python tools/run.py plan --operator TG04
+python tools/run.py plan --operator graph --suite smoke --variants baseline
 
-/path/to/isolated-runtime/bin/python -I tools/run_graph_tests.py \
-  --operator TG04 --physical-card 6 \
-  --environment environment.local.json --output runs/tg04-graph-off-001
+# 7 组共 10 个小配置；MoE 四种模式各一个。
+python -I tools/run.py run --operator graph --suite smoke --variants baseline \
+  --physical-card 6 --environment environment.local.json --output runs/graph-smoke-001
+
+# 单个算子的全部登记配置。
+python -I tools/run.py run --operator TG01 --suite all --variants baseline \
+  --physical-card 6 --environment environment.local.json --output runs/tg01-001
+
+# 支持逗号分隔选择；--operator all 为全部 15 个条目，flaggems 为首批 8 个。
+python -I tools/run.py run --operator TG03,TG07 --suite smoke --variants baseline \
+  --physical-card 6 --environment environment.local.json --output runs/matmul-moe-001
 ```
 
-命令从仓库根目录运行。仅当物理卡 6 已预约且健康空闲时使用这个示例；本次整理不会启动它。入口与 FlagGems 共用每卡锁及只读占用监控，不清理外来进程。输出目录必须全新，不能覆盖已有证据。
+使用已预约且健康空闲的物理卡；工具只监控占用、不清理进程。输出目录必须全新。`tools/run_graph_tests.py` 是同一入口的别名，省略 `run` 即可。单算子可用 `--case-id <cases.json中的ID>` 精确选择，可重复指定；`--correctness-only` 只检查数值。
 
-入口将该算子全部执行文件复制到输出目录的 `work/` 后再运行，原脚本的相对 profiler 路径和启动时清理旧 profiler 的代码只作用在新工作目录内。测试源目录与其它算子的结果不作为工作目录。`work/` 只加入测试模块搜索路径，不用 TA/TD 源码覆盖已安装编译器。
+整批串行运行，各算子独立子进程、输出目录和编译缓存。输出 `summary.json`、`performance.csv`、每算子日志及 `result.json`、原始 profiler 和设备监控。编译失败/精度失败单独记录、不填耗时；设备错误、越界、归因错误或占用冲突会停止批次，先检查证据，再选择未完成的算子续跑。
 
-输出包含 `result.json`、`test.log`、`device.jsonl`、环境指纹、专属 cache，以及上游生成的 profiler/结果。stdout 已写入 `test.log`，过程查看该文件。编译、精度或运行异常保留原 traceback；不放宽容差、不替换算子公式。
+## 输入和覆盖
 
-## 输入与完整性限制
+| ID | 内容 | 配置数 | 输入要点 |
+| --- | --- | --- | --- |
+| TG01 | gather + scale fwd | 3 | FP32/FP16/BF16；合法 token/expert 索引；有效行数边界 |
+| TG02 | gather + scale + FP8 row quant fwd | 3 | FP32/FP16/BF16 输入，E4M3 输出与 FP32 scale；含 clamp |
+| TG03 | FP8 row matmul fwd | 3 | E4M3 A/B、行 scale、FP32 输出；含尾块及 bias |
+| TG04 | dacs_segsum fwd | 2 | FP32，小配置及上游 (16,32,2048)、chunk=16 |
+| TG05 | segsum_dadt bwd | 2 | FP32，dSSdA/SSdA 为 (B,H,S/16,16,16) |
+| TG06 | dadt_cumsum_fused bwd | 2 | 4 个 FP32 (B,H,S) 输入 |
+| TG07 | fused_moe fwd | 104 | 4 个 smoke + 上游 25 组尺寸×4 模式的重新生成用例 |
 
-| ID | 数据与入口 | 当前已知限制 |
-| --- | --- | --- |
-| TG01 | gather+scale；`.pt` replay | 缺 `test__fbgemm_gather_scale_dense_tokens_v2.pt` |
-| TG02 | gather+scale+FP8 row quant；`.pt` replay | 缺 `test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_v2.pt` |
-| TG03 | FP8 row matmul；`.pt` replay | 缺 `test__kernel_matmul_fp8_row_v2_ieee.pt`；上游 autotune key=`BLOCK_D`，但 kernel 没有同名参数，待实测定位，未擅自修复 |
-| TG04 | 自生成 FP32 da[16,32,2048]，chunk=16 | 原完整输出 max_abs<1e-4 检查后 profiling |
-| TG05 | 自生成 FP32 dSSdA/SSdA[16,32,128,16,16] | 原比较及 profiler 混有 PyTorch 参考；检查失败后退出 |
-| TG06 | 自生成 4 个 FP32 [16,32,2048] 输入 | 正确性阶段额外缩放 -log2(e)，原 profiler 测未缩放 wrapper，需标明范围 |
-| TG07 | 100 个生成配置；支持 case ID 0–99 | 原 PASS 表示执行并保存输出，缺 `compare_results.py`；不是数值通过 |
+合计 119 个生成配置，smoke 为 10 个。shape 简写：TG01/02 为 `[输入token数,D,输出行数,专家数]`；TG03 为 `[M,N,K]`；TG04–06 为 `[B,H,S]`；TG07 为 `[M,N,K,E,top_k]`。实际所有输入的 shape、dtype、stride、SHA256 写入结果；简写 dtype 不代表所有输入张量的 dtype。
 
-TG01–TG03 的 shape/dtype/grid 由 `.pt` 数据决定，不能从文件名编造。需要可信来源的原始 `.pt`（上游用 `torch.load(weights_only=False)`，不要加载不可信文件）：
+MoE 包含 INT8 w8a16、block INT8 w8a8、tensor FP8 w8a8 和不量化。新输入准备修正上游脚本的契约问题：A 仅含原始 M 个 token 行，kernel 把路由位置除以 top_k；`num_tokens_post_padded` 为实际 padding 后长度，expert IDs 与 BLOCK_SIZE_M=32 对齐，每个有效路由恰好出现一次。CPU 参考按 expert 独立计算 matmul、量化 scale 和路由权重，并处理 sorted 输出。
 
-```bash
-/path/to/isolated-runtime/bin/python -I tools/run_graph_tests.py \
-  --operator TG01 --physical-card 6 --environment environment.local.json \
-  --input-pt /path/to/trusted/test__fbgemm_gather_scale_dense_tokens_v2.pt \
-  --output runs/tg01-graph-off-001
-```
+上游 3 项仅有链接的 [外部测试](../operators/triton_graph_optimization/external_references/) 不属于已收录的 15 个可执行条目。
 
-专用入口先调用该文件的 `test_get_last_loc_kernel`，成功后才调用 `test_perf`，并保存输入 SHA256。缺输入会在 NPU 初始化前报错。上游未提供 pytest 的 `ptfile_path` fixture，因此不建议直接全目录 pytest 采集。
+## 编译选项和计算范围
 
-即使只测试性能，这 3 个 `.pt` 仍是运行依赖：`test_perf` 会读取其中的 `input_data` 和 `grid`，不仅仅使用它们做精度对比。`gpu_output` 才是原数值比较需要的参考结果。因此当前是“7/7 代码已收录、4/7 输入自给、0/7 本次设备实测”，不能声称 7 组都能开箱完整复现。
+**必须关闭图优化：`enable_graph_optimize=False`。** 每次直接调用均传入，先核对 backend 能解析，再核对编译后 metadata 为 false。缓存按运行隔离。该开关不是 torch.compile、设备 graph replay、`force_simt_only` 或 `TRITON_ALL_BLOCKS_PARALLEL`。
 
-若目标是新增性能摸测，可以以后为 TG01–TG03 明确定义 shape、dtype、strides、索引合法范围、量化 scale、grid/constexpr，并生成合成输入，不一定需要取得原 `.pt`。这些必须标记为新的合成用例，独立保存 seed、规格与结果；不能伪造原输入或宣称恢复了原测试覆盖。这次导入尚未补充合成输入。
+原始快照及原图优化关闭脚本不变。新入口只加载哈希审计过的 JIT 函数和 helper，保留函数体/签名，不执行上游顶层文件清理、环境设置或 wrapper。默认固定 tile，省略 autotune 装饰器，TG01/TG03 的无效 `BLOCK_D` key 因此不再阻碍启动。num_warps=4、num_stages=2；TG04–TG06 显式使用 `force_simt_only=True`（当前 TA 将其规范化为 `compile_mode=simt_only`）。原默认 SIMD 路径中，TG04/TG06 报 `MaxThreads out of range`，TG05 的小用例首次编译超过 10 分钟。原失败/超时和显式 SIMT 的结果分别保留。这是新的固定基线，不是上游 autotune 最优结果，不能混称为默认 SIMD 性能。全部参数在配置和结果中记录。
 
-MoE 可以逐 case 保存输出与原 profiler：
+TG05 会累加旧输出，每次正确性/预热/计时调用前在计时标签外清零。TG05/TG06 的参考对应 kernel 本身，不包含 wrapper 的 `-log2(e)` 缩放。TG04 的 segsum load 没有尾部 mask，只接受 S 能被 chunk 整除的输入。
 
-```bash
-/path/to/isolated-runtime/bin/python -I tools/run_graph_tests.py \
-  --operator TG07 --case-id 0 --physical-card 6 \
-  --environment environment.local.json --output runs/tg07-case0-graph-off-001
-```
+## 正确性与性能口径
 
-省略 `--case-id` 会使用上游全部 100 配置；多个 `--case-id` 可选择多个。MoE 的 `numerical_status` 固定标记为 `OUTPUT_SAVED_REFERENCE_MISSING`，即使原日志写 PASS，也不能算已验证精度。
+全量输出和首尾 guard 通过后才计时。CPU 参考使用实际传入的已舍入/量化输入。FP8 quant 输出允许一个 FP8 量化步长的舍入差异，scale 独立校验；容差在 `benchmark.py` 及结果中固定记录。
 
-## 如何处理性能数据
+预热 3 次，测 3 轮×5 次。CPU 标签只包住一次直接 Triton launch，按 async_npu flow 与精确十进制时间戳匹配 `kernel_details.csv` 的设备 `Duration(us)`；要求一对一关联和精确名称匹配。运行时名取自 backend 的 `pack_metadata`，兼容长名称截断，不做模糊后缀匹配。先取每轮中位数，再取三轮中位数。
 
-本批沿用原 profiler，仅归档原始资料，不自动生成已采纳的 kernel 性能表。专用入口不会把 wrapper 计时或 PyTorch 参考计时写成 `median_us`。
+分配/拷贝、CPU/PyTorch 参考、输出清零、额外缩放、host launch、JIT 编译及同步均不计入 `median_us`。标签外准备 kernel 单独记录并排除；标签内额外 kernel 或无法归因的行均拒绝。受干扰计时保留但不采纳。
 
-采纳新性能前，必须先通过数值验证、确认关闭图优化、检查 autotune 实际选定配置，再从 profiler 按对应 Triton kernel 名精确筛选设备 `Duration(us)`。排除 PyTorch 参考、输出清零/分配、缩放、拷贝、编译及 host 调度。TG05 尤其不能对 profiler 所有行求和；TG06 的缩放范围也必须注明。MoE 缺参考时只能作为待复核原始 profiler，不能宣称有效性能收益。
+## 旧脚本回放
 
-`performance_status=RAW_PROFILE_REQUIRES_REVIEW` 表示脚本完成后的原始资料还需要人工核验；出现占用或监控异常时拒绝采用计时。`UPSTREAM_CHECKS_PASSED` 仅表示原脚本断言通过，不代表已通过 FlagGems 的独立参考/哨兵门禁。新入口目前只做离线验证，尚未 NPU 重验。
+仅在复现原 `.pt` 用例时使用 `tools/replay_graph_tests.py --input-pt <可信原始文件>`；TG01–03 的原文件仍未由上游提供。旧入口保存原 profiler，不自动生成有效性能表。默认生成入口不读取 pickle；旧文件缺失不再阻塞性能测试，也不宣称复现原始 `.pt` 用例。

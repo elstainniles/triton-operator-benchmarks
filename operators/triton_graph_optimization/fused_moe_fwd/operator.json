@@ -6,16 +6,16 @@
   "direction": "fwd",
   "type": "cv",
   "path": "operators/triton_graph_optimization/fused_moe_fwd",
-  "implementation": "upstream_test_suite",
+  "implementation": "standalone_generated_benchmark",
   "runner": "graph_tests",
-  "validation": "NOT_RUN",
+  "validation": "SMOKE_VALIDATED",
   "source": {
     "repository": "https://gitcode.com/weizhan4/TritonGraphOptimizationTests",
     "revision": "2e67d5b6723b1d472dcef91adb8a83c5b6761765",
     "directory": "fused_moe",
     "license": "NOASSERTION"
   },
-  "entrypoint": "test_fused_moe_kernel.py",
+  "entrypoint": "benchmark.py",
   "kernel_symbol": "fused_moe_kernel",
   "kernel_symbols": [
     "fused_moe_kernel",
@@ -44,20 +44,42 @@
   "compile_options": {
     "enable_graph_optimize": false
   },
-  "input_mode": "generated_outputs_only",
+  "input_mode": "generated_benchmark",
   "required_input_file": null,
-  "input_description": "25 组 (M,N,K,E,top_k) ×4 量化模式=100 个上游配置。FP16/BF16/INT8/FP8 混合；PASS 只表示运行与保存输出成功，缺少 compare_results.py，不能记作数值通过。",
+  "input_description": "Deterministic CPU inputs and independent reference; see cases.json and benchmark.py.",
   "required_packages": [
     "torch",
     "torch_npu",
     "triton",
-    "triton-ascend",
-    "pytest",
-    "numpy"
+    "triton-ascend"
   ],
-  "case_count": 100,
-  "numerical_status": "NOT_RUN",
-  "performance_status": "NO_MEASUREMENTS",
+  "case_count": 104,
+  "numerical_status": "SMOKE_PASSED",
+  "performance_status": "SMOKE_MEASURED",
   "manual_tile_status": "NOT_ADDED",
-  "graph_disabled_launches": 1
+  "graph_disabled_launches": 1,
+  "upstream_replay": {
+    "entrypoint": "test_fused_moe_kernel.py",
+    "input_mode": "generated_outputs_only",
+    "required_input_file": null,
+    "input_description": "25 组 (M,N,K,E,top_k) ×4 量化模式=100 个上游配置。FP16/BF16/INT8/FP8 混合；PASS 只表示运行与保存输出成功，缺少 compare_results.py，不能记作数值通过。",
+    "case_count": 100
+  },
+  "benchmark_command": "tools/run.py run",
+  "autotune": "disabled_for_fixed_reproducible_baseline",
+  "kernel_body_changes": false,
+  "performance_scope": "direct Triton device duration",
+  "current_runner_validation": {
+    "status": "SMOKE_VALIDATED",
+    "date": "2026-10-28",
+    "variant": "baseline",
+    "cases": [
+      "smoke-block_int8_w8a8",
+      "smoke-fp8_w8a8_tensor",
+      "smoke-int8_w8a16",
+      "smoke-no_quant"
+    ],
+    "evidence": "docs/standalone-smoke-20261028.json",
+    "full_matrix_validated": false
+  }
 }

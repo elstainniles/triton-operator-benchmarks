@@ -1,4 +1,4 @@
-"""Ascend single-operator runner. New entry point: not yet NPU revalidated."""
+"""Ascend single-operator runner; verified scopes are recorded in docs/VALIDATION.md."""
 from collections import defaultdict
 from datetime import datetime, timezone
 import gc
@@ -33,7 +33,7 @@ def run(args):
     schedule = plans(args.operator, args.suite, args.variants)
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    result = dict(schema_version=1, origin='new_runner', operator=entry, completed=False,
+    result = dict(schema_version=1, origin='new_runner', operator=entry, completed=False, all_passed=False,
                   started_utc=datetime.now(timezone.utc).isoformat(), physical_card=args.physical_card,
                   source_hashes={str(p.relative_to(op_path)):digest(p) for p in op_path.glob('*.py')},
                   cases=[], run_error=None)
@@ -152,6 +152,8 @@ def run(args):
                     gc.collect()
                 monitor.require_clear()
             result['completed'] = True
+            result['all_passed'] = bool(result['cases']) and all(v['status'] in ('correct','measured')
+                                       for c in result['cases'] for v in c['variants'])
     except BaseException:
         result['run_error'] = traceback.format_exc()
         raise

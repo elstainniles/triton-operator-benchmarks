@@ -59,6 +59,18 @@ class ProfileTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             correlate(events, rows, labels, 'mul_kernel')
 
+    def test_reset_outside_direct_launch_is_excluded_but_inside_is_rejected(self):
+        events, rows, labels = fixture()
+        events.extend([dict(ph='s', cat='async_npu', id=99, pid=1, tid=2, ts=Decimal(0)),
+                       dict(ph='f', cat='async_npu', id=99, pid=9, tid=9, ts=Decimal(999))])
+        rows.append({'Start Time(us)':'999','Duration(us)':'100000','Name':'pytorch_fill'})
+        result = correlate(events, rows, labels, 'mul_kernel', allow_unlabelled_kernels=True)
+        self.assertEqual(result['variants']['B1024']['median_us'], 51)
+        self.assertEqual(result['excluded_unlabelled_kernels'][0]['name'], 'pytorch_fill')
+        events[-2]['ts'] = events[0]['ts'] + 2
+        with self.assertRaisesRegex(ValueError, 'Unexpected kernel'):
+            correlate(events, rows, labels, 'mul_kernel', allow_unlabelled_kernels=True)
+
 
 if __name__ == '__main__':
     unittest.main()

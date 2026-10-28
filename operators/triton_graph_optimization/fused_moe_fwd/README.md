@@ -1,13 +1,16 @@
-# fused_moe_fwd
+# TG07 · fused_moe_fwd
 
-TG07 · fwd · cv（按是否包含 matmul 分类）
+默认性能入口自带输入和 CPU 参考，无需外部 `.pt`。输入规格和固定 seed 见 [cases.json](cases.json)，准备与绑定见 [benchmark.py](benchmark.py)。共 104 个配置，其中 4 个 smoke 配置。
 
-来源：[fused_moe](https://gitcode.com/weizhan4/TritonGraphOptimizationTests/tree/2e67d5b6723b1d472dcef91adb8a83c5b6761765/fused_moe)，固定提交 `2e67d5b6723b1d472dcef91adb8a83c5b6761765`。
+```bash
+python -I tools/run.py run --operator TG07 --suite smoke --variants baseline \
+  --physical-card 6 --environment environment.local.json --output runs/tg07-001
+```
 
-**测试前必须关闭图优化：所有执行版 Triton kernel launch 显式传入 `enable_graph_optimize=False`。** 原始源码位于 `upstream/`，不可直接当作关闭图优化的执行版；本目录同名 `.py` 是只增加该选项的版本。
+从仓库根目录、已配置的隔离 Ascend runtime 执行；`--suite all` 运行全部登记配置。本批 **必须关闭图优化**，新入口显式传入 `enable_graph_optimize=False` 并核对编译后 metadata。
 
-25 组 (M,N,K,E,top_k) ×4 量化模式=100 个上游配置。FP16/BF16/INT8/FP8 混合；PASS 只表示运行与保存输出成功，缺少 compare_results.py，不能记作数值通过。
+新基线只加载 `upstream/` 中的 JIT 函数，函数体及签名不变；省略 autotune 装饰器，使用 `cases.json` 中固定 tile/launch 参数。默认不执行上游脚本的分配、profiler 或文件清理逻辑。旧脚本和图优化关闭版保留供来源核查；原数据回放另用 `tools/replay_graph_tests.py`。
 
-入口：[test_fused_moe_kernel.py](test_fused_moe_kernel.py)；文件 hash、kernel 名和依赖见 [operator.json](operator.json)。未运行 NPU 测试、未记录性能基线、尚未新增手改 tile 候选。
+输入是新增合成用例，不是缺失 `.pt` 的复现。数值通过且设备独占检查通过后才记录直接 Triton kernel 耗时；失败保留状态、耗时为空。尚未添加手改 tile 候选。
 
-[测试说明与关闭图优化方法](../../../docs/GRAPH_OPTIMIZATION_TESTS.md) · [本批总览](../README.md) · [来源许可记录](../SOURCE_NOTICE.md)
+[统一测试说明](../../../docs/GRAPH_OPTIMIZATION_TESTS.md) · [来源与许可](../SOURCE_NOTICE.md) · [验证范围](../../../docs/VALIDATION.md)

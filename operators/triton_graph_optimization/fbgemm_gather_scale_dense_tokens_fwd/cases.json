@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "input_origin": "generated_benchmark",
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "smoke",
+      "shape": [
+        16,
+        128,
+        24,
+        4
+      ],
+      "dtype": "float32",
+      "tile": {
+        "BLOCK_D_OUTER": 128,
+        "BLOCK_D_INNER": 128
+      },
+      "suite": "smoke",
+      "seed": 20261028,
+      "input_origin": "generated_benchmark"
+    },
+    {
+      "id": "wide-fp16",
+      "shape": [
+        256,
+        4096,
+        512,
+        8
+      ],
+      "dtype": "float16",
+      "tile": {
+        "BLOCK_D_OUTER": 128,
+        "BLOCK_D_INNER": 128
+      },
+      "suite": "default",
+      "seed": 20261028,
+      "input_origin": "generated_benchmark"
+    },
+    {
+      "id": "wide-bf16",
+      "shape": [
+        256,
+        4096,
+        512,
+        8
+      ],
+      "dtype": "bfloat16",
+      "tile": {
+        "BLOCK_D_OUTER": 128,
+        "BLOCK_D_INNER": 128
+      },
+      "suite": "default",
+      "seed": 20261028,
+      "input_origin": "generated_benchmark",
+      "inactive_rows": 3
+    }
+  ]
+}

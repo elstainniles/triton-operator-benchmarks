@@ -1,0 +1,3504 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "scope": "15 operator entries, 18 representative smoke configurations; not all shapes",
+  "environment": {
+    "versions": {
+      "torch": "2.10.0+cpu",
+      "torch_npu": "2.10.0.post7",
+      "triton": "3.6.0"
+    },
+    "triton_ascend": "3.6.0+main.b6dda4fa",
+    "libtriton_sha256": "4c68de3dd8d3a97d669b396555fc8207d4657fa6f03b5be8928c01d346544e6d",
+    "compiler_sha256": "00005852671e68e08d9898654581590e106bb39c5fc9f1f5c114bc7339d7aeea",
+    "ta_revision": "b6dda4fa17bb00780199aa52f0549262cf2e1d1b",
+    "device": "Ascend950PR_9579",
+    "cann": "9.1.0"
+  },
+  "counts": {
+    "operator_entries": 15,
+    "smoke_configurations": 18,
+    "correct": 18,
+    "measured": 18
+  },
+  "preparation_checks": {
+    "generated_configurations": 119,
+    "input_and_signature_checks_passed": 119
+  },
+  "exceptions": [
+    {
+      "operator": "TG02",
+      "status": "profiling_name_recovered_offline",
+      "note": "Compiler pack_metadata truncates runtime names to 49 chars; original trace reanalyzed exactly. No performance rerun."
+    },
+    {
+      "operator": "TG04,TG06",
+      "status": "default_simd_compile_failed",
+      "error": "MaxThreads out of range",
+      "final_launch": {
+        "force_simt_only": true
+      },
+      "note": "Original JIT bodies preserved; SIMD failures retained. Explicit SIMT smoke measured."
+    },
+    {
+      "operator": "TG05",
+      "status": "default_simd_compile_timeout",
+      "elapsed_seconds": 665.18,
+      "final_launch": {
+        "force_simt_only": true
+      },
+      "note": "Original JIT body preserved. Only this task compiler/worker stopped; original failure/cache/logs retained. SIMT smoke measured."
+    }
+  ],
+  "measurements": [
+    {
+      "operator_id": "P04",
+      "operator": "mul_contiguous_fwd",
+      "type": "vv",
+      "case": {
+        "id": "P04-127-float32-contiguous",
+        "suite": "fp32",
+        "shape": [
+          127
+        ],
+        "dtype": "float32",
+        "seed": 20261026,
+        "tag": "contiguous"
+      },
+      "grid": [
+        1
+      ],
+      "launch_options": {
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "variant_id": "B1024",
+      "config": {
+        "B": 1024
+      },
+      "median_us": 1.197,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "mul_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 2.274
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 1.221
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 1.245
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 1.22
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 1.234
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 1.201
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 1.101
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 1.083
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 1.094
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 1.077
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 1.094
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 1.078
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 1.219
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 1.197
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 1.226
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 1.234
+          },
+          {
+            "round": 1,
+            "median_us": 1.094
+          },
+          {
+            "round": 2,
+            "median_us": 1.197
+          }
+        ],
+        "median_us": 1.197
+      },
+      "input_tensors": null,
+      "source_hashes": {
+        "__init__.py": "935c98e707c4e66d3f20935a94a2401e80f8723073d61eb0d2a63493166310ba",
+        "baseline.py": "5597612317a8a6c9b2fbced46e8b009cbe845e4c98dca41992a38f0c230b382e",
+        "manual_tile.py": "f0ee4d445e818d9ef004dc50d2c8d58bbd062793e35ac496e7c4bcaa03c40dd2",
+        "kernels.py": "868a948d4b3dfd536cadd63a6b6404174896fb2c26d24db202adb414480e6770",
+        "case.py": "1a7d7c1f4b37d667a6aa2df5de22847c887f7a9a8527c54d2f8da5eaad1c7842",
+        "launch.py": "dc641614e4919528c022581f2d87cfb519f0fda84a5e2e30b8952922d06244b6"
+      },
+      "result_sha256": "d27240adb896cbc71324350bf07d2b82795d569376bfdcef9de97a3dbb32372d",
+      "device_monitor_sha256": "82ac61ecea11d69f343db8ee5c460822c5a0df1876ded042f0162f50e953be6a",
+      "graph_optimization": "backend_default",
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "P05",
+      "operator": "mul_scalar_fwd",
+      "type": "vv",
+      "case": {
+        "id": "P05-127-float32-contiguous",
+        "suite": "fp32",
+        "shape": [
+          127
+        ],
+        "dtype": "float32",
+        "seed": 20261026,
+        "tag": "contiguous"
+      },
+      "grid": [
+        1
+      ],
+      "launch_options": {
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "variant_id": "B1024",
+      "config": {
+        "B": 1024
+      },
+      "median_us": 1.074,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "mul_scalar_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 2.297
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 1.155
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 1.179
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 1.158
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 1.206
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 1.171
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 1.088
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 1.064
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 1.052
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 1.036
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 1.051
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 1.034
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 1.074
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 1.172
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 1.189
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 1.179
+          },
+          {
+            "round": 1,
+            "median_us": 1.064
+          },
+          {
+            "round": 2,
+            "median_us": 1.074
+          }
+        ],
+        "median_us": 1.074
+      },
+      "input_tensors": null,
+      "source_hashes": {
+        "__init__.py": "b1e55d292de4078f922f3fa4ecab0e755a0436459eed6d0a2e63500ee0f87ab8",
+        "baseline.py": "5597612317a8a6c9b2fbced46e8b009cbe845e4c98dca41992a38f0c230b382e",
+        "manual_tile.py": "f0ee4d445e818d9ef004dc50d2c8d58bbd062793e35ac496e7c4bcaa03c40dd2",
+        "kernels.py": "d8e2b2298b7211193c9e6e7545050b9cd3e65458e45b782ffa18dff5d30660b3",
+        "case.py": "2d1162743664ed25569ad2746dfc594a3a6f0b52f74a4537bde5fc9993cfe6b1",
+        "launch.py": "ef7793b5eb8be7c31ddfdcb4f937cddfa0d25bf0e25ac60fb367f0dec4b7651a"
+      },
+      "result_sha256": "4caa884e9483fe63c828b328bae4e1829983c18adbaa1281351e27db91596d81",
+      "device_monitor_sha256": "f8ba763f735166483c88b4db3c46b3e72f5b488fe0e0a29bf6ff5b284300e2d5",
+      "graph_optimization": "backend_default",
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "P06",
+      "operator": "mul_broadcast_fwd",
+      "type": "vv",
+      "case": {
+        "id": "P06-1x2048-float32-normal",
+        "suite": "fp32",
+        "shape": [
+          1,
+          2048
+        ],
+        "dtype": "float32",
+        "seed": 20261026,
+        "tag": "normal"
+      },
+      "grid": [
+        2
+      ],
+      "launch_options": {
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "variant_id": "B1024",
+      "config": {
+        "B": 1024
+      },
+      "median_us": 2.89,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 2048,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "mul_broadcast_2d_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 3.316
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 2.846
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 2.812
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 2.83
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 2.862
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.959
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 2.93
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 2.974
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.855
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.861
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.896
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 2.725
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.895
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 2.888
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.89
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 2.846
+          },
+          {
+            "round": 1,
+            "median_us": 2.93
+          },
+          {
+            "round": 2,
+            "median_us": 2.89
+          }
+        ],
+        "median_us": 2.89
+      },
+      "input_tensors": null,
+      "source_hashes": {
+        "__init__.py": "d9bad5afa6b44a62c56175d3057a6657a07153ae1aba7be2dc362a6c3a6cdebb",
+        "baseline.py": "5597612317a8a6c9b2fbced46e8b009cbe845e4c98dca41992a38f0c230b382e",
+        "manual_tile.py": "f0ee4d445e818d9ef004dc50d2c8d58bbd062793e35ac496e7c4bcaa03c40dd2",
+        "kernels.py": "522ada874a1fe4eee0fc36b1642ff01e6f23daadfe672621dd0d37f4c6b7b290",
+        "case.py": "4ebebc08c34f8977a02f42e62623b2fec13c60d48fe85f1d9909b5ba87db3536",
+        "launch.py": "b864ea2dccf37e8d8a12fd9bcd6ae3195f5242a41a1ca75a1512ef60b01d9075"
+      },
+      "result_sha256": "88af36b715f635636c3b2002fb015532e489b17fd73ea69171774dde82d555b1",
+      "device_monitor_sha256": "ac8cee8f4b6bd6b97eb29a0542deb259838da0bfb91e18b0f0610d4d33252b13",
+      "graph_optimization": "backend_default",
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "P07",
+      "operator": "where_fwd",
+      "type": "vv",
+      "case": {
+        "id": "P07-127-float32-contiguous",
+        "suite": "fp32",
+        "shape": [
+          127
+        ],
+        "dtype": "float32",
+        "seed": 20261026,
+        "tag": "contiguous"
+      },
+      "grid": [
+        1
+      ],
+      "launch_options": {
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "variant_id": "B1024",
+      "config": {
+        "B": 1024
+      },
+      "median_us": 1.255,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 0.0
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "pointwise_probe",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 2.14
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 1.317
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 1.293
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 1.308
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 1.226
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 1.128
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 1.107
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 1.128
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 1.168
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 1.169
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 1.185
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 1.323
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 1.255
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 1.226
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 1.255
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 1.308
+          },
+          {
+            "round": 1,
+            "median_us": 1.128
+          },
+          {
+            "round": 2,
+            "median_us": 1.255
+          }
+        ],
+        "median_us": 1.255
+      },
+      "input_tensors": null,
+      "source_hashes": {
+        "__init__.py": "512f30ddd8a6c11afbcfb0b6d0d116c6f393cabe73d2df557669dcdd82fd9c24",
+        "baseline.py": "5597612317a8a6c9b2fbced46e8b009cbe845e4c98dca41992a38f0c230b382e",
+        "manual_tile.py": "f0ee4d445e818d9ef004dc50d2c8d58bbd062793e35ac496e7c4bcaa03c40dd2",
+        "kernels.py": "a03e2066dc3d2a30e26b64e77059be9d5f3c92b8d7349dfd7840a2aaa07f6be5",
+        "case.py": "aa3ef1d65e0057045f53aed07a47faf3fe87d096b8f1f1e0e0de1990716629f4",
+        "launch.py": "ab763a54ba8d4bdb6c15d2d65ba151552a1a5e8e712a44a912abf56e9cf852e0"
+      },
+      "result_sha256": "5e03121f1483e8128bd2ef0d393051679b430cc8becc4db4cb305406befc5b84",
+      "device_monitor_sha256": "55d5aefa3e2505a7960749c87e4a504d2963c9bb937113332904243071469274",
+      "graph_optimization": "backend_default",
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "P08",
+      "operator": "gelu_tanh_fwd",
+      "type": "vv",
+      "case": {
+        "id": "P08-127-float32-contiguous",
+        "suite": "fp32",
+        "shape": [
+          127
+        ],
+        "dtype": "float32",
+        "seed": 20261026,
+        "tag": "contiguous"
+      },
+      "grid": [
+        1
+      ],
+      "launch_options": {
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "variant_id": "B1024",
+      "config": {
+        "B": 1024
+      },
+      "median_us": 2.129,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 1.1920928955078125e-07
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "pointwise_probe",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 3.083
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 2.175
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 2.151
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 2.174
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 2.099
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.008
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 1.995
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 2.009
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.054
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.135
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.07
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 2.168
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.129
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 2.092
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.135
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 2.174
+          },
+          {
+            "round": 1,
+            "median_us": 2.009
+          },
+          {
+            "round": 2,
+            "median_us": 2.129
+          }
+        ],
+        "median_us": 2.129
+      },
+      "input_tensors": null,
+      "source_hashes": {
+        "__init__.py": "51ee17410d2de19a223ceb4cec43c82842e675eb87192f43c01b2bede2a9977c",
+        "baseline.py": "5597612317a8a6c9b2fbced46e8b009cbe845e4c98dca41992a38f0c230b382e",
+        "manual_tile.py": "f0ee4d445e818d9ef004dc50d2c8d58bbd062793e35ac496e7c4bcaa03c40dd2",
+        "kernels.py": "2c33daf8de3304c7237f5997e16fc85689fea0f0773fbc1ed2815637dff1f720",
+        "case.py": "d6a2e061cf49be9d029d7f163fecd629ec64d64a2756d4be2828f355578503f0",
+        "launch.py": "a769939656024b5b0402b43a718664c1dbdfe50827f753c5ce4aa4cb2e8bf7f0"
+      },
+      "result_sha256": "f524883e8f4b2eacb664bd096d21df384b26413ddadc3680ec9f24aa0cd35c9c",
+      "device_monitor_sha256": "f3adb0501d34f4ed1cf59b0462c1e320cbdbfff6bace99746375c2f71d1122d6",
+      "graph_optimization": "backend_default",
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "P09",
+      "operator": "gelu_tanh_bwd",
+      "type": "vv",
+      "case": {
+        "id": "P09-127-float32-contiguous",
+        "suite": "fp32",
+        "shape": [
+          127
+        ],
+        "dtype": "float32",
+        "seed": 20261026,
+        "tag": "contiguous"
+      },
+      "grid": [
+        1
+      ],
+      "launch_options": {
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "variant_id": "B1024",
+      "config": {
+        "B": 1024
+      },
+      "median_us": 2.991,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 127,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 1.4156103134155273e-07
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "pointwise_probe",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 4.115
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 3.039
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 3.013
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 3.032
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 2.956
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.858
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 2.842
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 2.853
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.899
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.9
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.924
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 3.024
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.995
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 2.957
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.991
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 3.032
+          },
+          {
+            "round": 1,
+            "median_us": 2.858
+          },
+          {
+            "round": 2,
+            "median_us": 2.991
+          }
+        ],
+        "median_us": 2.991
+      },
+      "input_tensors": null,
+      "source_hashes": {
+        "__init__.py": "d22511ae83d0b20add5b9d1347b36b12d3adb824cefc95fe1f47041bdf57dd8a",
+        "baseline.py": "5597612317a8a6c9b2fbced46e8b009cbe845e4c98dca41992a38f0c230b382e",
+        "manual_tile.py": "f0ee4d445e818d9ef004dc50d2c8d58bbd062793e35ac496e7c4bcaa03c40dd2",
+        "kernels.py": "c86c99d188efa6b6551a77d312ba5f3a6b823d4bff99bb608aa96a401322714a",
+        "case.py": "6ba695a6381f97478f5d84c89e544d5b7ee870f7fe22d1fb7c0e0e050ac10a66",
+        "launch.py": "acd4583ab663ab7584d55ba88cc5bfdb9527afdb8d46b55a1e02236718cd80a6"
+      },
+      "result_sha256": "186168a5ac6aafcc8cdef21132511668795a44aacc470ad6b6b7080ee8c2afc6",
+      "device_monitor_sha256": "21b110b95f7ca7a394bc4305ecb5c23d28a1746c031489a92784839645fa2cf3",
+      "graph_optimization": "backend_default",
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "P10",
+      "operator": "swiglu_fwd",
+      "type": "vv",
+      "case": {
+        "id": "P10-1x2048-float32-normal",
+        "suite": "fp32",
+        "shape": [
+          1,
+          2048
+        ],
+        "dtype": "float32",
+        "seed": 20261026,
+        "tag": "normal"
+      },
+      "grid": [
+        1,
+        32
+      ],
+      "launch_options": {
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "variant_id": "M64H64",
+      "config": {
+        "BM": 64,
+        "BH": 64
+      },
+      "median_us": 2.509,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 2048,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 4.76837158203125e-07
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "swiglu_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 3.117
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 2.401
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 2.56
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 2.582
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 2.282
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 1.991
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 2.541
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 2.357
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.583
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.509
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.342
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 2.598
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.31
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 2.422
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.597
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 2.56
+          },
+          {
+            "round": 1,
+            "median_us": 2.509
+          },
+          {
+            "round": 2,
+            "median_us": 2.422
+          }
+        ],
+        "median_us": 2.509
+      },
+      "input_tensors": null,
+      "source_hashes": {
+        "__init__.py": "b10be45d976de6bb92a0f1400bd017303b47ab8547fbb4ca244aa4c98cafbb24",
+        "baseline.py": "8d8d6075c6cbfe5e571158b72889a42ca873e0186ce540978d2f2052b6777930",
+        "manual_tile.py": "a947ad52c16ae4ccd1816c7cdd82c3cfd0a18e9be9546f25e0a89cc4d499c7c1",
+        "kernels.py": "21aed537d05dc5365c8e8945e4d473964d5d8d9fb1be9df0c7d7cdc83c7f3a6b",
+        "case.py": "9305335c2fede4910e79b6b7b3befc9a91d49fad4cf8d2515f875cb6ac3050c9",
+        "launch.py": "e62ac87884b935efeef2da4c04691d5be427a6ba2fb74c4def02aa00e154231a"
+      },
+      "result_sha256": "e1e087b162ea27ebce9c88e0d6815f1d7091823b30d655eaf98fc966c64ea919",
+      "device_monitor_sha256": "2a34cf7157ea404d02ff9d0d54d8517fcf87484c7041a06ef6c79e84c6476329",
+      "graph_optimization": "backend_default",
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "P11",
+      "operator": "swiglu_bwd",
+      "type": "vv",
+      "case": {
+        "id": "P11-1x2048-float32-normal",
+        "suite": "fp32",
+        "shape": [
+          1,
+          2048
+        ],
+        "dtype": "float32",
+        "seed": 20261026,
+        "tag": "normal"
+      },
+      "grid": [
+        1,
+        32
+      ],
+      "launch_options": {
+        "num_warps": 32,
+        "num_stages": 2
+      },
+      "variant_id": "M64H64",
+      "config": {
+        "BM": 64,
+        "BH": 64
+      },
+      "median_us": 2.828,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "passed": true,
+            "elements": 4096,
+            "rtol": 0.0002,
+            "atol": 2e-05,
+            "max_abs": 4.76837158203125e-07
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "dswiglu_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 3.547
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 2.884
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 2.866
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 2.481
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 3.2
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.828
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 2.504
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 3.14
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.781
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.928
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.764
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 2.636
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.941
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 2.73
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.549
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 2.884
+          },
+          {
+            "round": 1,
+            "median_us": 2.828
+          },
+          {
+            "round": 2,
+            "median_us": 2.73
+          }
+        ],
+        "median_us": 2.828
+      },
+      "input_tensors": null,
+      "source_hashes": {
+        "__init__.py": "613409f608e22afd91d705bf29a22ca2e2abf4c1140b48c9a5c51028e31a31f6",
+        "baseline.py": "8d8d6075c6cbfe5e571158b72889a42ca873e0186ce540978d2f2052b6777930",
+        "manual_tile.py": "a947ad52c16ae4ccd1816c7cdd82c3cfd0a18e9be9546f25e0a89cc4d499c7c1",
+        "kernels.py": "8b82de1ccb13952281d2782ac0cdf1ac548c2d6f68a5dd906b82b87cb76f36c1",
+        "case.py": "f26505c6cbd89b6adfe485f7072d01a0d652338d90574d7e7e6ad37c47e24d04",
+        "launch.py": "f3383f3ab584532cfdaba963f46ae33d5d0fbc6f230b95a5cd5eeae097d58320"
+      },
+      "result_sha256": "d3980b5035e6c73317aa101d07802bed985618889cd35ac8810c7c6b545a8c24",
+      "device_monitor_sha256": "de05771531264d13da9e2846d06530dd61d32cec634e6c2e604b99c3a4349c13",
+      "graph_optimization": "backend_default",
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG01",
+      "operator": "fbgemm_gather_scale_dense_tokens_fwd",
+      "type": "vv",
+      "case": {
+        "id": "smoke",
+        "shape": [
+          16,
+          128,
+          24,
+          4
+        ],
+        "dtype": "float32",
+        "tile": {
+          "BLOCK_D_OUTER": 128,
+          "BLOCK_D_INNER": 128
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark"
+      },
+      "grid": [
+        24,
+        1
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "BLOCK_D_OUTER": 128,
+        "BLOCK_D_INNER": 128
+      },
+      "median_us": 2.058,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "out",
+            "passed": true,
+            "elements": 3072,
+            "max_abs": 0.0,
+            "rtol": 0.0002,
+            "atol": 1e-05
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "_fbgemm_gather_scale_dense_tokens",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 3.152
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 1.861
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 2.107
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 2.157
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 2.144
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.078
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 1.78
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 1.929
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.092
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.058
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 1.967
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 1.992
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.096
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 1.852
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.083
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 2.144
+          },
+          {
+            "round": 1,
+            "median_us": 2.058
+          },
+          {
+            "round": 2,
+            "median_us": 1.992
+          }
+        ],
+        "median_us": 2.058
+      },
+      "input_tensors": {
+        "x": {
+          "shape": [
+            16,
+            128
+          ],
+          "dtype": "float32",
+          "stride": [
+            128,
+            1
+          ],
+          "sha256": "4bfd822d581946f981ca2726c887b54a3701f408987e6c2bd4e207cc1ec89f43"
+        },
+        "token_indices": {
+          "shape": [
+            24
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "b133592851993e88675f2045de3a1f50d37cf63ee718e4c3abe3eac51bdc51c0"
+        },
+        "expert_indices": {
+          "shape": [
+            24
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "ddf54150432ca4b0d3ba0c904551ff26c0337e3360d7fe98617b26732661ca50"
+        },
+        "scores": {
+          "shape": [
+            16,
+            4
+          ],
+          "dtype": "float32",
+          "stride": [
+            4,
+            1
+          ],
+          "sha256": "8085ea81f38c288ff3fa25dd2cae2296d102236b6221b0b1fa59a88f98a959a0"
+        },
+        "valid_token_count": {
+          "shape": [
+            1
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "17fa9c7f5e9039a2d46e73e17d8e094a796ee4c313199bad42db4ee1dc30d865"
+        }
+      },
+      "source_hashes": {
+        "benchmark.py": "1d06e0e7b08d61171211cc3e1fb28d4fc77bd2b6a734e08d1a2f5a92af8d3071",
+        "test__fbgemm_gather_scale_dense_tokens_npu.py": "3629c3a3b1344f5b87f75d1d22a84644747468be0c024acb493fe69b3cc2410c",
+        "test_common.py": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b"
+      },
+      "result_sha256": "47fc6265aefe322730256b6353277905bdceaa95f180cc52b425fd7453f9bd46",
+      "device_monitor_sha256": "da2720af38172be3f73ebaa8a14e897ea57d507989c5f6dcfed2a593f25e92ce",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG02",
+      "operator": "fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_fwd",
+      "type": "vv",
+      "case": {
+        "id": "smoke",
+        "shape": [
+          16,
+          128,
+          24,
+          4
+        ],
+        "dtype": "float32",
+        "tile": {
+          "BLOCK_D": 128
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark"
+      },
+      "grid": [
+        24
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "enable_graph_optimize": false
+      },
+      "median_us": 2.975,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "output_ptr",
+            "passed": true,
+            "elements": 3072,
+            "max_abs": 0.0,
+            "rtol": 0.125,
+            "atol": 0.001953125
+          },
+          {
+            "name": "output_scale_ptr",
+            "passed": true,
+            "elements": 24,
+            "max_abs": 4.656612873077393e-10,
+            "rtol": 2e-05,
+            "atol": 1e-07
+          }
+        ],
+        "guards": true
+      },
+      "variant_id": "baseline",
+      "config": {
+        "BLOCK_D": 128
+      },
+      "source_hashes": {
+        "benchmark.py": "70588f0a6309f9810d0e7bed80b001e0f6d18d561e7a1b93be3b78ec84dead2a",
+        "test_common.py": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b",
+        "test__fbgemm_gather_scale_fp8_rowwise_quant_dense_tokens_npu.py": "7a2a4ff0aab0b8d519f63f1d9b16fb1cde53238f2f57500b271f45521c1be150"
+      },
+      "timing": {
+        "kernel_name": "bgemm_gather_scale_fp8_rowwise_quant_dense_tokens",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 3.75
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 3.09
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 3.137
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 3.181
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 3.115
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.962
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 3.124
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 2.932
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.98
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.929
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.913
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 3.0
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.975
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 3.071
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.902
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 3.137
+          },
+          {
+            "round": 1,
+            "median_us": 2.962
+          },
+          {
+            "round": 2,
+            "median_us": 2.975
+          }
+        ],
+        "median_us": 2.975
+      },
+      "input_tensors": {
+        "input_ptr": {
+          "shape": [
+            16,
+            128
+          ],
+          "dtype": "float32",
+          "stride": [
+            128,
+            1
+          ],
+          "sha256": "4bfd822d581946f981ca2726c887b54a3701f408987e6c2bd4e207cc1ec89f43"
+        },
+        "token_indices_ptr": {
+          "shape": [
+            24
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "b133592851993e88675f2045de3a1f50d37cf63ee718e4c3abe3eac51bdc51c0"
+        },
+        "expert_indices_ptr": {
+          "shape": [
+            24
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "ddf54150432ca4b0d3ba0c904551ff26c0337e3360d7fe98617b26732661ca50"
+        },
+        "scores_ptr": {
+          "shape": [
+            16,
+            4
+          ],
+          "dtype": "float32",
+          "stride": [
+            4,
+            1
+          ],
+          "sha256": "8085ea81f38c288ff3fa25dd2cae2296d102236b6221b0b1fa59a88f98a959a0"
+        },
+        "scale_ub_ptr": {
+          "shape": [
+            1
+          ],
+          "dtype": "float32",
+          "stride": [
+            1
+          ],
+          "sha256": "d88c86f15bbea365d658ad95a81d45367c465f7af6f7264fb077f01747ddc77d"
+        }
+      },
+      "result_sha256": "b42115285df94a74054c75d9445c76129ee943a8e2ecbee1b5bc88086531b444",
+      "compiled_metadata_sha256": "583d18760cf45c7dc7d70feb734b4adb79fb8e6799fb1f361d54aaf0fce9539a",
+      "device_monitor_sha256": "9657cd401708e017332018e06306754137d0be2f80a78b1c09d264a36895a2ff",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured",
+      "note": "Offline recovery using backend.pack_metadata name and original trace; no new device run"
+    },
+    {
+      "operator_id": "TG03",
+      "operator": "matmul_fp8_row_fwd",
+      "type": "cv",
+      "case": {
+        "id": "smoke",
+        "shape": [
+          32,
+          64,
+          64
+        ],
+        "dtype": "float8_e4m3fn",
+        "tile": {
+          "BLOCK_M": 16,
+          "BLOCK_N": 32,
+          "BLOCK_K": 32
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark"
+      },
+      "grid": [
+        4
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "BLOCK_M": 16,
+        "BLOCK_N": 32,
+        "BLOCK_K": 32
+      },
+      "median_us": 6.831,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "C_ptr",
+            "passed": true,
+            "elements": 2048,
+            "max_abs": 4.172325134277344e-06,
+            "rtol": 0.002,
+            "atol": 0.002
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "_kernel_matmul_fp8_row",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 7.681
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 6.994
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 6.8
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 6.692
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 6.944
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 6.831
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 6.764
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 6.794
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 7.022
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 6.982
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 6.749
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 6.884
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 6.819
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 6.723
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 6.76
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 6.944
+          },
+          {
+            "round": 1,
+            "median_us": 6.831
+          },
+          {
+            "round": 2,
+            "median_us": 6.76
+          }
+        ],
+        "median_us": 6.831
+      },
+      "input_tensors": {
+        "A_ptr": {
+          "shape": [
+            32,
+            64
+          ],
+          "dtype": "float8_e4m3fn",
+          "stride": [
+            64,
+            1
+          ],
+          "sha256": "35e83ae95e4b5bcd063b53cf5e9a75f9cb71b3eee34163243cdd930f6fb1ae35"
+        },
+        "B_ptr": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float8_e4m3fn",
+          "stride": [
+            64,
+            1
+          ],
+          "sha256": "292c6428ff1f662031fb9ea2585b1146d57986521cc94842be1145a6b57e91d1"
+        },
+        "A_scale": {
+          "shape": [
+            32
+          ],
+          "dtype": "float32",
+          "stride": [
+            1
+          ],
+          "sha256": "de5fc7d6219523a4d869c1bb6c7fc2b06aff26c8897cd7baecb4852c3f54bad4"
+        },
+        "B_scale": {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "stride": [
+            1
+          ],
+          "sha256": "59a7905f1c291a038e374cb17361dc06d2e7e49fda8940404be761dd85a4bac0"
+        },
+        "Bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "float32",
+          "stride": [
+            1
+          ],
+          "sha256": "96191217e00f75b0adac814a4777748d62fba9ceeebd0a5d723b45c90ebc978c"
+        }
+      },
+      "source_hashes": {
+        "test__kernel_matmul_fp8_row_npu.py": "dbf718d7fea6ed36f88044ecbb15d3970137cbd7404ff58ae6415a77be8eebe3",
+        "benchmark.py": "cea2a9a4050d4ad184ac075bf731028c41d92376b2543190d8a36eb630c5a169",
+        "test_common.py": "c97727a38cb40db856b893cddf2be94401ecb437e497be19e307f2a98717955b"
+      },
+      "result_sha256": "8c5b6e3e45940a8e761c0ff740ba744e6a1a124ce2e1c7d434dc3e1228a40aa8",
+      "device_monitor_sha256": "e00cb81629216ca38a6744a481bf754a126fc1134765b31dc66835c4e1052bb7",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG04",
+      "operator": "dacs_segsum_fwd",
+      "type": "vv",
+      "case": {
+        "id": "smoke",
+        "shape": [
+          1,
+          2,
+          32
+        ],
+        "dtype": "float32",
+        "tile": {
+          "CHUNK_SIZE": 16
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark",
+        "launch_options": {
+          "num_warps": 4,
+          "num_stages": 2,
+          "force_simt_only": true
+        }
+      },
+      "grid": [
+        1,
+        2,
+        2
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "force_simt_only": true,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "CHUNK_SIZE": 16
+      },
+      "median_us": 2.377,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "da_cs_ptr",
+            "passed": true,
+            "elements": 64,
+            "max_abs": 1.1920928955078125e-07,
+            "rtol": 0,
+            "atol": 0.0001
+          },
+          {
+            "name": "da_cs_rev_ptr",
+            "passed": true,
+            "elements": 64,
+            "max_abs": 1.1920928955078125e-07,
+            "rtol": 0,
+            "atol": 0.0001
+          },
+          {
+            "name": "segsum_ptr",
+            "passed": true,
+            "elements": 1024,
+            "max_abs": 1.1920928955078125e-07,
+            "rtol": 0,
+            "atol": 0.0001
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "dacs_segsum_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 3.419
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 2.397
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 2.392
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 2.403
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 2.343
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.286
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 2.28
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 2.28
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.306
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.321
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.383
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 2.379
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.353
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 2.377
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.155
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 2.397
+          },
+          {
+            "round": 1,
+            "median_us": 2.286
+          },
+          {
+            "round": 2,
+            "median_us": 2.377
+          }
+        ],
+        "median_us": 2.377
+      },
+      "input_tensors": {
+        "da_ptr": {
+          "shape": [
+            1,
+            2,
+            32
+          ],
+          "dtype": "float32",
+          "stride": [
+            64,
+            32,
+            1
+          ],
+          "sha256": "72af3f4055c2300724dc9e3df1cf8ce9662373c98c15f0e6ab22d2a45aa5a379"
+        }
+      },
+      "source_hashes": {
+        "benchmark.py": "4c8cef26283c7791dfc13db673e1c80893feb1f23de459cba6910c942ee11b19",
+        "test_dacs_segsum_kernel.py": "99d6ae3186452c213619bc7fed71cb646bcd6f0e00df7f1f6eedd79cba3b48f2"
+      },
+      "result_sha256": "0d560fc2449cf9c1cae40014b30a05dba8ea6b7fd3b770b65ef61ec30f0b10ff",
+      "device_monitor_sha256": "d17787e080522b638338495a7076db47087dbd91628dc61082612baf1a801675",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG05",
+      "operator": "segsum_dadt_bwd",
+      "type": "vv",
+      "case": {
+        "id": "smoke",
+        "shape": [
+          1,
+          2,
+          32
+        ],
+        "dtype": "float32",
+        "tile": {
+          "CHUNK_SIZE": 16
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark",
+        "launch_options": {
+          "num_warps": 4,
+          "num_stages": 2,
+          "force_simt_only": true
+        }
+      },
+      "grid": [
+        1,
+        2,
+        2
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "force_simt_only": true,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "CHUNK_SIZE": 16
+      },
+      "median_us": 2.59,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "ddt_out_ptr",
+            "passed": true,
+            "elements": 64,
+            "max_abs": 1.9073486328125e-06,
+            "rtol": 0,
+            "atol": 0.0001
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "bwd_segsum_dadt_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 2.575
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 2.551
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 2.604
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 2.712
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 2.59
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.605
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 2.58
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 2.596
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.535
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.626
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.569
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 2.594
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.542
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 2.551
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.519
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 2.59
+          },
+          {
+            "round": 1,
+            "median_us": 2.596
+          },
+          {
+            "round": 2,
+            "median_us": 2.551
+          }
+        ],
+        "median_us": 2.59
+      },
+      "input_tensors": {
+        "dSSdA_ptr": {
+          "shape": [
+            1,
+            2,
+            2,
+            16,
+            16
+          ],
+          "dtype": "float32",
+          "stride": [
+            1024,
+            512,
+            256,
+            16,
+            1
+          ],
+          "sha256": "f854275fcd558f5731670dd5f1762b414ca5485e01e370c70df03172e6116129"
+        },
+        "SSdA_cs_ptr": {
+          "shape": [
+            1,
+            2,
+            2,
+            16,
+            16
+          ],
+          "dtype": "float32",
+          "stride": [
+            1024,
+            512,
+            256,
+            16,
+            1
+          ],
+          "sha256": "b717609730edd4aa9577404560953811dc9a5778ece523f125b322e10cfcb876"
+        }
+      },
+      "source_hashes": {
+        "benchmark.py": "a03cc5bc56d2db952b3ccb659dc17f52c9fc7fbcc9ad512025648a2ea9a4ef43",
+        "test_bwd_segsum_dadt_kernel_autotune.py": "073b13ca49246c372958f4ed9a94caca024888b286d02a4e39e11230c6386ddd"
+      },
+      "result_sha256": "ad824ab5b6d9bfbb75cc9ccd5945f3c9e4be573b6b1073c4c9d6d98125a0549f",
+      "device_monitor_sha256": "b386502b47bc1420cd70b8f67944c09bec3f9ae949a6da41f630b093db9fa051",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG06",
+      "operator": "dadt_cumsum_fused_bwd",
+      "type": "vv",
+      "case": {
+        "id": "smoke",
+        "shape": [
+          1,
+          2,
+          32
+        ],
+        "dtype": "float32",
+        "tile": {
+          "CHUNK_SIZE": 16
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark",
+        "launch_options": {
+          "num_warps": 4,
+          "num_stages": 2,
+          "force_simt_only": true
+        }
+      },
+      "grid": [
+        1,
+        2,
+        2
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "force_simt_only": true,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "CHUNK_SIZE": 16
+      },
+      "median_us": 2.314,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "ddt_out_ptr",
+            "passed": true,
+            "elements": 64,
+            "max_abs": 9.5367431640625e-07,
+            "rtol": 0,
+            "atol": 0.0001
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "bwd_dadt_cumsum_fused_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 3.034
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 2.34
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 2.291
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 2.37
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 2.339
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 2.375
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 2.36
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 2.269
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 2.283
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 2.25
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 2.314
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 2.329
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 2.264
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 2.28
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 2.37
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 2.34
+          },
+          {
+            "round": 1,
+            "median_us": 2.283
+          },
+          {
+            "round": 2,
+            "median_us": 2.314
+          }
+        ],
+        "median_us": 2.314
+      },
+      "input_tensors": {
+        "ddA_cs_ptr": {
+          "shape": [
+            1,
+            2,
+            32
+          ],
+          "dtype": "float32",
+          "stride": [
+            64,
+            32,
+            1
+          ],
+          "sha256": "4c79c56545bb8944e8312efe00b41f3fd2f9dae1e1b5f04edb5b1b830c746adc"
+        },
+        "ddA_cs_rev_ptr": {
+          "shape": [
+            1,
+            2,
+            32
+          ],
+          "dtype": "float32",
+          "stride": [
+            64,
+            32,
+            1
+          ],
+          "sha256": "cd80596fb1299d38def062a7774467a5dcb6acf59b3ae32da8e4a7520ef24f12"
+        },
+        "dA_cs_ptr": {
+          "shape": [
+            1,
+            2,
+            32
+          ],
+          "dtype": "float32",
+          "stride": [
+            64,
+            32,
+            1
+          ],
+          "sha256": "cde9f982cd043f642e3af56563423e5941d4c81f7a78b375e02097e2a0c6d035"
+        },
+        "dA_cs_rev_ptr": {
+          "shape": [
+            1,
+            2,
+            32
+          ],
+          "dtype": "float32",
+          "stride": [
+            64,
+            32,
+            1
+          ],
+          "sha256": "3404fc61b31c664749269fd264070005f723972bb4ffca82b5c0089b644c94d3"
+        }
+      },
+      "source_hashes": {
+        "benchmark.py": "fab6ebe0eeb727765b542ed4e99a0d2260c95562e0a509e90fe38f35e5512a07",
+        "test_bwd_dadt_cumsum_fused_kernel.py": "e4e3afe1bcb6e2679ff04571af11a0c7e73290180b4a04a72e5a4c388eecb382"
+      },
+      "result_sha256": "5233899e78065097fb40cfedda73749d21c826a4a10cdf6672e44283fdffbeb7",
+      "device_monitor_sha256": "ec5a1af2f50921d9aa8bea9e00e0a7f084747769712558d90d6b0f7acf70051f",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG07",
+      "operator": "fused_moe_fwd",
+      "type": "cv",
+      "case": {
+        "id": "smoke-block_int8_w8a8",
+        "shape": [
+          4,
+          64,
+          64,
+          4,
+          2
+        ],
+        "dtype": "float16",
+        "tile": {
+          "BLOCK_SIZE_M": 32,
+          "BLOCK_SIZE_N": 64,
+          "BLOCK_SIZE_K": 64,
+          "GROUP_SIZE_M": 4
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark",
+        "mode": "block_int8_w8a8",
+        "output_dtype": "float16",
+        "compute_dtype": "float16",
+        "c_sorted": false,
+        "scale_dtype": "float32",
+        "mul_routed_weight": true
+      },
+      "grid": [
+        3
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 4
+      },
+      "median_us": 9.927,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "c_ptr",
+            "passed": true,
+            "elements": 512,
+            "max_abs": 0.0,
+            "rtol": 0.003,
+            "atol": 0.0002
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "fused_moe_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 10.781
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 9.83
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 9.927
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 9.97
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 9.664
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 9.975
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 10.094
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 10.006
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 9.935
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 9.849
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 10.038
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 9.832
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 9.756
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 9.635
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 10.063
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 9.927
+          },
+          {
+            "round": 1,
+            "median_us": 9.975
+          },
+          {
+            "round": 2,
+            "median_us": 9.832
+          }
+        ],
+        "median_us": 9.927
+      },
+      "input_tensors": {
+        "a_ptr": {
+          "shape": [
+            4,
+            64
+          ],
+          "dtype": "int8",
+          "stride": [
+            64,
+            1
+          ],
+          "sha256": "fb30fd1106f517cb65979d26ed97940ee63ece63f24059860ca44311938020fb"
+        },
+        "b_ptr": {
+          "shape": [
+            4,
+            64,
+            64
+          ],
+          "dtype": "int8",
+          "stride": [
+            4096,
+            64,
+            1
+          ],
+          "sha256": "7bd02b3d971a5870aa5851bcb00db6539aecb0e44b3f085556b223137764e0aa"
+        },
+        "topk_weights_ptr": {
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "float16",
+          "stride": [
+            2,
+            1
+          ],
+          "sha256": "268bff08435e0f3e82315a2acdc69e37fb3f6205db1798c27ecbf9bc2645b3e9"
+        },
+        "sorted_token_ids_ptr": {
+          "shape": [
+            96
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "52e05f64ade21a337ab929e4289a8034b8ff39990f279bf798bba373a2128d83"
+        },
+        "expert_ids_ptr": {
+          "shape": [
+            3
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "ad5dc1478de06a4c2728ea528bd9361a4b945e92a414bf4d180cedaaeaa5f4cc"
+        },
+        "num_tokens_post_padded_ptr": {
+          "shape": [
+            1
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "2baaed212bebc4ebeeb19752c47ff7c4420adf7806f577722b487a08b605ee13"
+        },
+        "a_scale_ptr": {
+          "shape": [
+            4,
+            1
+          ],
+          "dtype": "float32",
+          "stride": [
+            1,
+            1
+          ],
+          "sha256": "890767883458051da0657a9437e237b8da3aaaf219af9b26cc2d48423264e4ab"
+        },
+        "b_scale_ptr": {
+          "shape": [
+            4,
+            1,
+            1
+          ],
+          "dtype": "float32",
+          "stride": [
+            1,
+            1,
+            1
+          ],
+          "sha256": "0f46bbde91b855ea5f391e484d9f41a1fa5f62ab5e051875561161def537be67"
+        }
+      },
+      "source_hashes": {
+        "test_fused_moe_kernel.py": "2e07359f3adae00465ff193f0a857987baa9ea753f43d38b8d1f90af5aec3ca2",
+        "fused_moe_kernel.py": "84cf18f0b6af51e620a7d2521199f11861abc59ee0382268aa1e9127d47eecd8",
+        "benchmark.py": "0049ccf91e876ae672e685965169fd09d9694c7726283e7928a02dfb79189ca4"
+      },
+      "result_sha256": "1bd7c09eb2764694f9d90dc59ca87d8ae8522371ec451b36f325a1fd772c5305",
+      "device_monitor_sha256": "dee3cd4e7a637f9056565800a69afc48502cfe194f532bea93e297fbd205eb21",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG07",
+      "operator": "fused_moe_fwd",
+      "type": "cv",
+      "case": {
+        "id": "smoke-fp8_w8a8_tensor",
+        "shape": [
+          4,
+          64,
+          64,
+          4,
+          2
+        ],
+        "dtype": "float16",
+        "tile": {
+          "BLOCK_SIZE_M": 32,
+          "BLOCK_SIZE_N": 64,
+          "BLOCK_SIZE_K": 64,
+          "GROUP_SIZE_M": 4
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark",
+        "mode": "fp8_w8a8_tensor",
+        "output_dtype": "float16",
+        "compute_dtype": "float16",
+        "c_sorted": true,
+        "scale_dtype": "float32",
+        "mul_routed_weight": true
+      },
+      "grid": [
+        3
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 4
+      },
+      "median_us": 10.808,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "c_ptr",
+            "passed": true,
+            "elements": 6144,
+            "max_abs": 0.0,
+            "rtol": 0.003,
+            "atol": 0.0002
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "fused_moe_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 11.969
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 10.771
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 10.791
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 10.822
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 10.753
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 10.827
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 10.659
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 10.949
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 10.717
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 11.175
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 10.887
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 10.789
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 10.823
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 10.808
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 10.659
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 10.791
+          },
+          {
+            "round": 1,
+            "median_us": 10.827
+          },
+          {
+            "round": 2,
+            "median_us": 10.808
+          }
+        ],
+        "median_us": 10.808
+      },
+      "input_tensors": {
+        "a_ptr": {
+          "shape": [
+            4,
+            64
+          ],
+          "dtype": "float8_e4m3fn",
+          "stride": [
+            64,
+            1
+          ],
+          "sha256": "d9fe6318cad8635e57dd0b601a61981461d29de8d5a64b0c016291f985644ba8"
+        },
+        "b_ptr": {
+          "shape": [
+            4,
+            64,
+            64
+          ],
+          "dtype": "float8_e4m3fn",
+          "stride": [
+            4096,
+            64,
+            1
+          ],
+          "sha256": "9874d548dd22e89bf58356ccf1e54f4c2a3b7bda0abfe04e6636588c95dd3634"
+        },
+        "topk_weights_ptr": {
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "float16",
+          "stride": [
+            2,
+            1
+          ],
+          "sha256": "268bff08435e0f3e82315a2acdc69e37fb3f6205db1798c27ecbf9bc2645b3e9"
+        },
+        "sorted_token_ids_ptr": {
+          "shape": [
+            96
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "52e05f64ade21a337ab929e4289a8034b8ff39990f279bf798bba373a2128d83"
+        },
+        "expert_ids_ptr": {
+          "shape": [
+            3
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "ad5dc1478de06a4c2728ea528bd9361a4b945e92a414bf4d180cedaaeaa5f4cc"
+        },
+        "num_tokens_post_padded_ptr": {
+          "shape": [
+            1
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "2baaed212bebc4ebeeb19752c47ff7c4420adf7806f577722b487a08b605ee13"
+        },
+        "a_scale_ptr": {
+          "shape": [
+            1
+          ],
+          "dtype": "float32",
+          "stride": [
+            1
+          ],
+          "sha256": "70282148e600fa68212b207c5dad5cca82401d72148a7a8b58ffb0318d0025bb"
+        },
+        "b_scale_ptr": {
+          "shape": [
+            4
+          ],
+          "dtype": "float32",
+          "stride": [
+            1
+          ],
+          "sha256": "e9214185a35a96bb1dcc8a9923cf427f46d6caaaf8051d59cb488151e331c33e"
+        }
+      },
+      "source_hashes": {
+        "test_fused_moe_kernel.py": "2e07359f3adae00465ff193f0a857987baa9ea753f43d38b8d1f90af5aec3ca2",
+        "fused_moe_kernel.py": "84cf18f0b6af51e620a7d2521199f11861abc59ee0382268aa1e9127d47eecd8",
+        "benchmark.py": "0049ccf91e876ae672e685965169fd09d9694c7726283e7928a02dfb79189ca4"
+      },
+      "result_sha256": "1bd7c09eb2764694f9d90dc59ca87d8ae8522371ec451b36f325a1fd772c5305",
+      "device_monitor_sha256": "dee3cd4e7a637f9056565800a69afc48502cfe194f532bea93e297fbd205eb21",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG07",
+      "operator": "fused_moe_fwd",
+      "type": "cv",
+      "case": {
+        "id": "smoke-int8_w8a16",
+        "shape": [
+          4,
+          64,
+          64,
+          4,
+          2
+        ],
+        "dtype": "float16",
+        "tile": {
+          "BLOCK_SIZE_M": 32,
+          "BLOCK_SIZE_N": 64,
+          "BLOCK_SIZE_K": 64,
+          "GROUP_SIZE_M": 4
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark",
+        "mode": "int8_w8a16",
+        "output_dtype": "float16",
+        "compute_dtype": "float16",
+        "c_sorted": true,
+        "scale_dtype": "float32",
+        "mul_routed_weight": true
+      },
+      "grid": [
+        3
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 4
+      },
+      "median_us": 9.8,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "c_ptr",
+            "passed": true,
+            "elements": 6144,
+            "max_abs": 0.0,
+            "rtol": 0.003,
+            "atol": 0.0002
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "fused_moe_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 10.766
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 10.046
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 9.751
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 9.701
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 9.731
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 9.968
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 10.072
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 10.049
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 9.84
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 9.82
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 9.785
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 9.891
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 9.706
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 9.8
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 9.834
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 9.751
+          },
+          {
+            "round": 1,
+            "median_us": 9.968
+          },
+          {
+            "round": 2,
+            "median_us": 9.8
+          }
+        ],
+        "median_us": 9.8
+      },
+      "input_tensors": {
+        "a_ptr": {
+          "shape": [
+            4,
+            64
+          ],
+          "dtype": "float16",
+          "stride": [
+            64,
+            1
+          ],
+          "sha256": "e705e1551cfa396bbe16d11b340e6e75166c5be075d22945db8b7a152a375575"
+        },
+        "b_ptr": {
+          "shape": [
+            4,
+            64,
+            64
+          ],
+          "dtype": "int8",
+          "stride": [
+            4096,
+            64,
+            1
+          ],
+          "sha256": "b9ae0410943b03ac39e8a84c60083f231f793258d4850375d39f12646d72ddc5"
+        },
+        "topk_weights_ptr": {
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "float16",
+          "stride": [
+            2,
+            1
+          ],
+          "sha256": "268bff08435e0f3e82315a2acdc69e37fb3f6205db1798c27ecbf9bc2645b3e9"
+        },
+        "sorted_token_ids_ptr": {
+          "shape": [
+            96
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "52e05f64ade21a337ab929e4289a8034b8ff39990f279bf798bba373a2128d83"
+        },
+        "expert_ids_ptr": {
+          "shape": [
+            3
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "ad5dc1478de06a4c2728ea528bd9361a4b945e92a414bf4d180cedaaeaa5f4cc"
+        },
+        "num_tokens_post_padded_ptr": {
+          "shape": [
+            1
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "2baaed212bebc4ebeeb19752c47ff7c4420adf7806f577722b487a08b605ee13"
+        },
+        "b_scale_ptr": {
+          "shape": [
+            4,
+            64
+          ],
+          "dtype": "float32",
+          "stride": [
+            64,
+            1
+          ],
+          "sha256": "f39f9088e549cc2e2cc8fa0abd031f7c1ed7920c1e34e69e54e4490f8e684202"
+        }
+      },
+      "source_hashes": {
+        "test_fused_moe_kernel.py": "2e07359f3adae00465ff193f0a857987baa9ea753f43d38b8d1f90af5aec3ca2",
+        "fused_moe_kernel.py": "84cf18f0b6af51e620a7d2521199f11861abc59ee0382268aa1e9127d47eecd8",
+        "benchmark.py": "0049ccf91e876ae672e685965169fd09d9694c7726283e7928a02dfb79189ca4"
+      },
+      "result_sha256": "1bd7c09eb2764694f9d90dc59ca87d8ae8522371ec451b36f325a1fd772c5305",
+      "device_monitor_sha256": "dee3cd4e7a637f9056565800a69afc48502cfe194f532bea93e297fbd205eb21",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    },
+    {
+      "operator_id": "TG07",
+      "operator": "fused_moe_fwd",
+      "type": "cv",
+      "case": {
+        "id": "smoke-no_quant",
+        "shape": [
+          4,
+          64,
+          64,
+          4,
+          2
+        ],
+        "dtype": "float16",
+        "tile": {
+          "BLOCK_SIZE_M": 32,
+          "BLOCK_SIZE_N": 64,
+          "BLOCK_SIZE_K": 64,
+          "GROUP_SIZE_M": 4
+        },
+        "suite": "smoke",
+        "seed": 20261028,
+        "input_origin": "generated_benchmark",
+        "mode": "no_quant",
+        "output_dtype": "float16",
+        "compute_dtype": "float16",
+        "c_sorted": false,
+        "scale_dtype": "float32",
+        "mul_routed_weight": true
+      },
+      "grid": [
+        3
+      ],
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "enable_graph_optimize": false
+      },
+      "variant_id": "baseline",
+      "config": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 64,
+        "BLOCK_SIZE_K": 64,
+        "GROUP_SIZE_M": 4
+      },
+      "median_us": 11.213,
+      "correctness": {
+        "passed": true,
+        "outputs": [
+          {
+            "name": "c_ptr",
+            "passed": true,
+            "elements": 512,
+            "max_abs": 0.0,
+            "rtol": 0.003,
+            "atol": 0.0002
+          }
+        ],
+        "guards": true
+      },
+      "timing": {
+        "kernel_name": "fused_moe_kernel",
+        "samples": [
+          {
+            "round": 0,
+            "repeat": 0,
+            "duration_us": 11.85
+          },
+          {
+            "round": 0,
+            "repeat": 1,
+            "duration_us": 11.047
+          },
+          {
+            "round": 0,
+            "repeat": 2,
+            "duration_us": 11.22
+          },
+          {
+            "round": 0,
+            "repeat": 3,
+            "duration_us": 11.196
+          },
+          {
+            "round": 0,
+            "repeat": 4,
+            "duration_us": 11.032
+          },
+          {
+            "round": 1,
+            "repeat": 0,
+            "duration_us": 11.367
+          },
+          {
+            "round": 1,
+            "repeat": 1,
+            "duration_us": 11.48
+          },
+          {
+            "round": 1,
+            "repeat": 2,
+            "duration_us": 11.418
+          },
+          {
+            "round": 1,
+            "repeat": 3,
+            "duration_us": 11.363
+          },
+          {
+            "round": 1,
+            "repeat": 4,
+            "duration_us": 11.094
+          },
+          {
+            "round": 2,
+            "repeat": 0,
+            "duration_us": 11.281
+          },
+          {
+            "round": 2,
+            "repeat": 1,
+            "duration_us": 11.194
+          },
+          {
+            "round": 2,
+            "repeat": 2,
+            "duration_us": 11.324
+          },
+          {
+            "round": 2,
+            "repeat": 3,
+            "duration_us": 11.12
+          },
+          {
+            "round": 2,
+            "repeat": 4,
+            "duration_us": 11.213
+          }
+        ],
+        "rounds": [
+          {
+            "round": 0,
+            "median_us": 11.196
+          },
+          {
+            "round": 1,
+            "median_us": 11.367
+          },
+          {
+            "round": 2,
+            "median_us": 11.213
+          }
+        ],
+        "median_us": 11.213
+      },
+      "input_tensors": {
+        "a_ptr": {
+          "shape": [
+            4,
+            64
+          ],
+          "dtype": "float16",
+          "stride": [
+            64,
+            1
+          ],
+          "sha256": "e705e1551cfa396bbe16d11b340e6e75166c5be075d22945db8b7a152a375575"
+        },
+        "b_ptr": {
+          "shape": [
+            4,
+            64,
+            64
+          ],
+          "dtype": "float16",
+          "stride": [
+            4096,
+            64,
+            1
+          ],
+          "sha256": "58a37afd0ee3a08ba18db665f2d39f96425a4e31de009dea75ffd9f1bca63ee0"
+        },
+        "topk_weights_ptr": {
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "float16",
+          "stride": [
+            2,
+            1
+          ],
+          "sha256": "268bff08435e0f3e82315a2acdc69e37fb3f6205db1798c27ecbf9bc2645b3e9"
+        },
+        "sorted_token_ids_ptr": {
+          "shape": [
+            96
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "52e05f64ade21a337ab929e4289a8034b8ff39990f279bf798bba373a2128d83"
+        },
+        "expert_ids_ptr": {
+          "shape": [
+            3
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "ad5dc1478de06a4c2728ea528bd9361a4b945e92a414bf4d180cedaaeaa5f4cc"
+        },
+        "num_tokens_post_padded_ptr": {
+          "shape": [
+            1
+          ],
+          "dtype": "int32",
+          "stride": [
+            1
+          ],
+          "sha256": "2baaed212bebc4ebeeb19752c47ff7c4420adf7806f577722b487a08b605ee13"
+        }
+      },
+      "source_hashes": {
+        "test_fused_moe_kernel.py": "2e07359f3adae00465ff193f0a857987baa9ea753f43d38b8d1f90af5aec3ca2",
+        "fused_moe_kernel.py": "84cf18f0b6af51e620a7d2521199f11861abc59ee0382268aa1e9127d47eecd8",
+        "benchmark.py": "0049ccf91e876ae672e685965169fd09d9694c7726283e7928a02dfb79189ca4"
+      },
+      "result_sha256": "1bd7c09eb2764694f9d90dc59ca87d8ae8522371ec451b36f325a1fd772c5305",
+      "device_monitor_sha256": "dee3cd4e7a637f9056565800a69afc48502cfe194f532bea93e297fbd205eb21",
+      "graph_optimization": false,
+      "timing_scope": "direct Triton kernel device Duration(us)",
+      "status": "measured"
+    }
+  ]
+}

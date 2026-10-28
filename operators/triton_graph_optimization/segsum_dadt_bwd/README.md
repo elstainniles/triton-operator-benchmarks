@@ -1,13 +1,18 @@
-# segsum_dadt_bwd
+# TG05 · segsum_dadt_bwd
 
-TG05 · bwd · vv（按是否包含 matmul 分类）
+默认性能入口自带输入和 CPU 参考，无需外部 `.pt`。输入规格和固定 seed 见 [cases.json](cases.json)，准备与绑定见 [benchmark.py](benchmark.py)。共 2 个配置，其中 1 个 smoke 配置。
 
-来源：[bwd_segsum_dadt_kernel](https://gitcode.com/weizhan4/TritonGraphOptimizationTests/tree/2e67d5b6723b1d472dcef91adb8a83c5b6761765/bwd_segsum_dadt_kernel)，固定提交 `2e67d5b6723b1d472dcef91adb8a83c5b6761765`。
+```bash
+python -I tools/run.py run --operator TG05 --suite smoke --variants baseline \
+  --physical-card 6 --environment environment.local.json --output runs/tg05-001
+```
 
-**测试前必须关闭图优化：所有执行版 Triton kernel launch 显式传入 `enable_graph_optimize=False`。** 原始源码位于 `upstream/`，不可直接当作关闭图优化的执行版；本目录同名 `.py` 是只增加该选项的版本。
+从仓库根目录、已配置的隔离 Ascend runtime 执行；`--suite all` 运行全部登记配置。本批 **必须关闭图优化**，新入口显式传入 `enable_graph_optimize=False` 并核对编译后 metadata。
 
-FP32 dSSdA/SSdA[16,32,128,16,16]；S=2048，chunk_size=16，输出[16,32,2048]。原 profiler 循环含 PyTorch 参考与缩放，不能整体当成 Triton 时间。
+新基线只加载 `upstream/` 中的 JIT 函数，函数体及签名不变；省略 autotune 装饰器，使用 `cases.json` 中固定 tile/launch 参数。默认不执行上游脚本的分配、profiler 或文件清理逻辑。旧脚本和图优化关闭版保留供来源核查；原数据回放另用 `tools/replay_graph_tests.py`。
 
-入口：[test_bwd_segsum_dadt_kernel_autotune.py](test_bwd_segsum_dadt_kernel_autotune.py)；文件 hash、kernel 名和依赖见 [operator.json](operator.json)。未运行 NPU 测试、未记录性能基线、尚未新增手改 tile 候选。
+输入是新增合成用例，不是缺失 `.pt` 的复现。数值通过且设备独占检查通过后才记录直接 Triton kernel 耗时；失败保留状态、耗时为空。尚未添加手改 tile 候选。
 
-[测试说明与关闭图优化方法](../../../docs/GRAPH_OPTIMIZATION_TESTS.md) · [本批总览](../README.md) · [来源许可记录](../SOURCE_NOTICE.md)
+本算子固定启用 `force_simt_only=True`（TA 规范化为 `compile_mode=simt_only`）。默认 SIMD 小配置首次编译超过 10 分钟；显式 SIMT 已通过 smoke 数值/性能测试。函数体不变，不能将其耗时标作默认 SIMD 结果。
+
+[统一测试说明](../../../docs/GRAPH_OPTIMIZATION_TESTS.md) · [来源与许可](../SOURCE_NOTICE.md) · [验证范围](../../../docs/VALIDATION.md)

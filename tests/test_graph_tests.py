@@ -1,4 +1,3 @@
-import ast
 import copy
 import hashlib
 import json
@@ -7,11 +6,19 @@ import tempfile
 import unittest
 
 from opbench.catalog import operators, plans, read_json, resolve
-from opbench.graph_tests import launch_calls, verify_graph_suite
-from tools.run_graph_tests import validate_request
+from opbench.graph_tests import verify_graph_suite
+from tools.replay_graph_tests import validate_request
 
 
 class GraphTests(unittest.TestCase):
+    def test_entire_catalog_has_self_contained_smoke_cases(self):
+        schedule = plans('all', 'smoke', 'baseline')
+        self.assertEqual({p['operator_id'] for p in schedule}, {e['id'] for e in operators()})
+        graph = [p for p in schedule if p['operator_id'].startswith('TG')]
+        self.assertEqual(len(graph), 10)
+        self.assertTrue(all(p['required_input_file'] is None for p in graph))
+        self.assertEqual(len(plans('TG01,TG03', 'smoke', 'baseline')), 2)
+
     def test_all_imported_launches_disable_graph_without_changing_algorithm(self):
         entries = [e for e in operators() if e.get('runner') == 'graph_tests']
         self.assertEqual(len(entries), 7)
