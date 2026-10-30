@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA081",
+  "name": "copy_last_chunk_kernel",
+  "family": "flash_linear_attention/log_linear_attn",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "copy_last_chunk_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/log_linear_attn/chunk.py",
+    "snapshot": "upstream/chunk.py",
+    "sha256": "72848618b2dd18016e198cb0330082588c2fdedb1f825aa15a81cabef8cd1fdf",
+    "original_sha256": "72848618b2dd18016e198cb0330082588c2fdedb1f825aa15a81cabef8cd1fdf",
+    "snapshot_changes": [],
+    "symbol": "copy_last_chunk_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "08a653a7b05d2ae303da5f063d5bac5115f6e304e9f877517cbdfa8d5979eac6",
+    "ast_preserved": true,
+    "ast_sha256": "f8703836b2810d17ca7f01d2f5e8efe68e39f288ed868ca868dbd34e9770b6aa",
+    "existing_extraction_file": "extracted/cases/vv_c9a74877fb24f321/yb_5797d3e04fb6ed.py",
+    "existing_extraction_sha256": "d7d2a2429046cd4e7f8703284baec8b076b16cdb619b1fbf759d4b3641067ad7",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_c9a74877fb24f321",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_copy_last_chunk_kernel/test_copy_last_chunk_kernel_npu.py::test_copy_last_chunk_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/test_copy_last_chunk_kernel/test_copy_last_chunk_kernel_npu.py:27"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

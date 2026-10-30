@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA233",
+  "name": "fused_recurrent_rwkv6_bwd_kernel_dw",
+  "family": "flash_linear_attention/rwkv6",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_recurrent_rwkv6_bwd_kernel_dw",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/test_fused_recurrent_rwkv6_bwd_kernel_dw/test_fused_recurrent_rwkv6_bwd_kernel_dw_cuda.py",
+    "snapshot": "upstream/test_fused_recurrent_rwkv6_bwd_kernel_dw_cuda.py",
+    "sha256": "9d2cf71cc6307a617cd97a7adb629d6897005318e08c61ed5665c4fe60103832",
+    "original_sha256": "9d2cf71cc6307a617cd97a7adb629d6897005318e08c61ed5665c4fe60103832",
+    "snapshot_changes": [],
+    "symbol": "fused_recurrent_rwkv6_bwd_kernel_dw",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "1c8d511911a1d46fac023639839b463f527572d1b82b5bfc1cfb8abca9590027",
+    "ast_preserved": true,
+    "ast_sha256": "ef59c9124591589c524a525115773cfd263e9c62d0415312013262a0e9cb4b78",
+    "existing_extraction_file": "extracted/cases/cv_a43772ee606c111b/yb_c8f34344490fdd.py",
+    "existing_extraction_sha256": "73debc0e752c138cbe8a1bc1d6e767b16b0db2c9c5dd60624a3293d07422f658",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_a43772ee606c111b",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/test_fused_recurrent_rwkv6_bwd_kernel_dw/test_fused_recurrent_rwkv6_bwd_kernel_dw_npu.py::test_fused_recurrent_rwkv6_bwd_kernel_dw"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/test_fused_recurrent_rwkv6_bwd_kernel_dw/test_fused_recurrent_rwkv6_bwd_kernel_dw_cuda.py:87"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

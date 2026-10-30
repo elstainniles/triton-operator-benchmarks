@@ -17,7 +17,11 @@ class LigerTests(unittest.TestCase):
         self.assertEqual(result['historical'],dict(measured=42,compile_failed=3,blocked_by_forward_compile=1))
 
     def test_batch_selectors_do_not_mix_families(self):
-        self.assertEqual([len(select(s)) for s in ('flaggems','graph','liger','all')],[8,7,46,61])
+        self.assertEqual([len(select(s)) for s in ('flaggems','graph','liger')],[8,7,46])
+        batches = [select(s) for s in ('flaggems','graph','liger','fla')]
+        self.assertEqual(len(select('all')), sum(len(batch) for batch in batches))
+        self.assertEqual({e['id'] for e in select('all')},
+                         {e['id'] for batch in batches for e in batch})
         self.assertEqual(len(plans('liger','all','baseline')),46)
         self.assertEqual(plans('LK46')[0]['source_kind'],'experimental')
         with self.assertRaises(ValueError):

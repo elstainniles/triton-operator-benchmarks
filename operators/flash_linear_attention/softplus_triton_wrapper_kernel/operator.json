@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "FLA292",
+  "name": "softplus_triton_wrapper_kernel",
+  "family": "flash_linear_attention/test_kernels/softplus_triton_wrapper",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "softplus_triton_wrapper_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/softplus_triton/test_softplus_triton_npu.py",
+    "snapshot": "upstream/test_softplus_triton_npu.py",
+    "sha256": "8bf6af2fd15355fa58e913dae0a91edd4553fbc0117fd28b8884639cf52e6df2",
+    "original_sha256": "8bf6af2fd15355fa58e913dae0a91edd4553fbc0117fd28b8884639cf52e6df2",
+    "snapshot_changes": [],
+    "symbol": "softplus_triton_wrapper_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "6538922cac77a885e772ebef7e08603e959ad103b7fba3cf5d419c9f7abd4423",
+    "ast_preserved": true,
+    "ast_sha256": "0cb72e17478038a567db210d4a8066bc2253d1f1712676231c050b578e877962",
+    "existing_extraction_file": "extracted/cases/vv_19d36c337af987c6/yb_c80efecb89e91d.py",
+    "existing_extraction_sha256": "b783e00b8646756392c4226ea46c205bd9302478911b75acd5cc59d4e4257ae0",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/softplus.py",
+      "source": "fla/ops/utils/softplus.py",
+      "sha256": "f826ee89eaed66bdc83aeaeee931dc6523593bef078167cb1d9babc5b40d4c4f",
+      "original_sha256": "f826ee89eaed66bdc83aeaeee931dc6523593bef078167cb1d9babc5b40d4c4f",
+      "snapshot_changes": [],
+      "extracted_module": "yb_90891058742c80"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_19d36c337af987c6",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/softplus_triton/test_softplus_triton_npu.py::test_softplus_triton_functiontest"
+    },
+    {
+      "id": "vv_5b5b4b90cd06e5cb",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/softplus_triton/test_softplus_triton_npu.py::test_softplus_triton_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/softplus_triton/test_softplus_triton_npu.py:112"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

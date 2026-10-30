@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA190",
+  "name": "chunk_mesa_net_h_kv_bwd_intra_kernel_dkv__abc08a45",
+  "family": "flash_linear_attention/test_kernels/chunk_mesa_net_h_kv_intra_kernel_dkv",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_mesa_net_h_kv_bwd_intra_kernel_dkv",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_h_kv_bwd_intra_kernel_dq/test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py",
+    "snapshot": "upstream/test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py",
+    "sha256": "e4494343b63cfe3f2a6418272bce08639e3a894eb3b828b0b05a4ab9b4d0ff85",
+    "original_sha256": "e4494343b63cfe3f2a6418272bce08639e3a894eb3b828b0b05a4ab9b4d0ff85",
+    "snapshot_changes": [],
+    "symbol": "chunk_mesa_net_h_kv_bwd_intra_kernel_dkv",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "560e9f0a1042abb79cb6eb89e73f37d534c3c607ddf9e1d0e921ca1831368ec3",
+    "ast_preserved": true,
+    "ast_sha256": "ef14a6c97bf30fa5456810e9dcc4c00ed2031c252a7aa4a29cf9bb0902f7785e",
+    "existing_extraction_file": "extracted/cases/cv_10e3db9fa19b5e99/yb_abc08a45c4581f.py",
+    "existing_extraction_sha256": "0502af1e8be2533c2e5f3b9179d1e20bc7de3f25c6a2defffd600e04a038af69",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/tests/ops/ascend_ops/cv_operator/utils.py",
+      "source": "tests/ops/ascend_ops/cv_operator/utils.py",
+      "sha256": "47f667f0783627ee69472eb38c3e02a5c8bbfb0495af42f1b41f8393bf3a41f0",
+      "original_sha256": "47f667f0783627ee69472eb38c3e02a5c8bbfb0495af42f1b41f8393bf3a41f0",
+      "snapshot_changes": [],
+      "extracted_module": "yb_f95f816dd5c2a2"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_10e3db9fa19b5e99",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_h_kv_bwd_intra_kernel_dq/test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py::test_3way_precision"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_h_kv_bwd_intra_kernel_dq/test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py:337"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

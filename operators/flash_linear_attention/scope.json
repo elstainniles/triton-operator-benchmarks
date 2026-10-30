@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+  "source_revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+  "original_test_definitions": 352,
+  "original_cv_test_definitions": 174,
+  "original_vv_test_definitions": 178,
+  "static_jit_definitions": 464,
+  "launch_referenced_operator_entries": 296,
+  "jit_definitions_without_static_launch_reference": 168,
+  "definition_origins": {
+    "fla_source": 122,
+    "original_test": 174
+  },
+  "identical_ast_candidate_groups": [
+    [
+      "FLA037",
+      "FLA218"
+    ],
+    [
+      "FLA139",
+      "FLA241"
+    ],
+    [
+      "FLA140",
+      "FLA242"
+    ],
+    [
+      "FLA156",
+      "FLA181"
+    ],
+    [
+      "FLA188",
+      "FLA190"
+    ],
+    [
+      "FLA189",
+      "FLA191"
+    ],
+    [
+      "FLA257",
+      "FLA259",
+      "FLA279"
+    ]
+  ],
+  "counting_rule": "Every statically launch-referenced source-path plus symbol is retained, regardless of timing or compilation outcome. Helpers are dependencies, not separate operators.",
+  "device_execution_by_importer": false
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA241",
+  "name": "chunk_abc_bwd_kernel_rcum_inter__34ec7862",
+  "family": "flash_linear_attention/abc",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_abc_bwd_kernel_rcum_inter",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/chunk_abc_bwd_kernel_rcum_inter/test_chunk_abc_bwd_kernel_rcum_inter_npu.py",
+    "snapshot": "upstream/test_chunk_abc_bwd_kernel_rcum_inter_npu.py",
+    "sha256": "360009a7f82090efa8aaae8ebfd5f5818629755969e797a1505c140a455bc977",
+    "original_sha256": "360009a7f82090efa8aaae8ebfd5f5818629755969e797a1505c140a455bc977",
+    "snapshot_changes": [],
+    "symbol": "chunk_abc_bwd_kernel_rcum_inter",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "588d7f4232aab2d31304c95995963ce53ea077f7f44a1b57f8a8cfb7c64c18af",
+    "ast_preserved": true,
+    "ast_sha256": "dd434646dbda0c1f565aadb84b3544a0e5d5036b91d34f8b5cf655f2a878e3b9",
+    "existing_extraction_file": "extracted/cases/vv_91e2658d1de86580/yb_34ec786212a870.py",
+    "existing_extraction_sha256": "45b5f1c57b1ae78848a0e453499d6b0b69d6c1fd9fed65469c8ae768ab0dbd02",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/tests/ops/ascend_ops/utils.py",
+      "source": "tests/ops/ascend_ops/utils.py",
+      "sha256": "ba87c7299af90d0994e7f0aa82bee6b782ee4dd582fbd335488683d166d20df4",
+      "original_sha256": "ba87c7299af90d0994e7f0aa82bee6b782ee4dd582fbd335488683d166d20df4",
+      "snapshot_changes": [],
+      "extracted_module": "yb_22cded5b91bba3"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_91e2658d1de86580",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/chunk_abc_bwd_kernel_rcum_inter/test_chunk_abc_bwd_kernel_rcum_inter_npu.py::test_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/chunk_abc_bwd_kernel_rcum_inter/test_chunk_abc_bwd_kernel_rcum_inter_npu.py:81"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

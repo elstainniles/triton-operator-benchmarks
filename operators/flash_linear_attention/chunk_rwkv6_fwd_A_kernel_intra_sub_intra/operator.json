@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "FLA089",
+  "name": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+  "family": "flash_linear_attention/rwkv6",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/rwkv6/chunk.py",
+    "snapshot": "upstream/chunk.py",
+    "sha256": "78171b0c8594ac0a28e0247c0796832c661abed6520f90fec53d39294618a961",
+    "original_sha256": "78171b0c8594ac0a28e0247c0796832c661abed6520f90fec53d39294618a961",
+    "snapshot_changes": [],
+    "symbol": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "b1169d8a59c7827620d2bdba347ee9daa6ef4a163f1d56873496a81a07ad31e5",
+    "ast_preserved": true,
+    "ast_sha256": "b2e28f8b5957419c5925e3ce28ec2b40094af62972445997da7056f3ab813377",
+    "existing_extraction_file": "extracted/cases/vv_9e5f518adbb8ea1b/yb_27b3e18bfc1d3a.py",
+    "existing_extraction_sha256": "f622f1b3b5af0ce56923c9a03176a493f0955a908db89456e990a03926c38a5a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_9e5f518adbb8ea1b",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/chunk_rwkv6_fwd_A_kernel_intra_sub_intra/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_npu.py::test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/chunk_rwkv6_fwd_A_kernel_intra_sub_intra/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_npu.py:115"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

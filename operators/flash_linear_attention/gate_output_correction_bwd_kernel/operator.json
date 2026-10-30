@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA102",
+  "name": "gate_output_correction_bwd_kernel",
+  "family": "flash_linear_attention/rwkv7",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "gate_output_correction_bwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/rwkv7/gate_output_correction.py",
+    "snapshot": "upstream/gate_output_correction.py",
+    "sha256": "4bff30e3badcad185ea32900cac7abbd17e7f08f1d9ec0e8737f55ed7ea7a982",
+    "original_sha256": "4bff30e3badcad185ea32900cac7abbd17e7f08f1d9ec0e8737f55ed7ea7a982",
+    "snapshot_changes": [],
+    "symbol": "gate_output_correction_bwd_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "e0d845fb389cbf526bf460677a4821c47859e539330b4df594bc489a31cc1ff9",
+    "ast_preserved": true,
+    "ast_sha256": "76e6a081884c75c66b974019450257bb085602fce7e309d9e0d84b7493a9ac26",
+    "existing_extraction_file": "extracted/cases/vv_9ecf456248792a04/yb_7f11d67c9b6fb9.py",
+    "existing_extraction_sha256": "3b24fa82b2f7c1034f2b11c1233d7cf44721ac8bf9b7ca6bf1dd6b85dc97a55e",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_9ecf456248792a04",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_gate_output_correction_bwd_kernel/test_gate_output_correction_bwd_kernel_npu.py::test_gate_output_correction_bwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/rwkv7/gate_output_correction.py:203"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

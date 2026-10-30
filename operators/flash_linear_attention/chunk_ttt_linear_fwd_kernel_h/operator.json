@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "id": "FLA103",
+  "name": "chunk_ttt_linear_fwd_kernel_h",
+  "family": "flash_linear_attention/ttt",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_ttt_linear_fwd_kernel_h",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/ttt/chunk.py",
+    "snapshot": "upstream/chunk.py",
+    "sha256": "c3adbff36c0d6c4784aae583e1af119cfe08992c61e52c80b1c184c97f2b2790",
+    "original_sha256": "c3adbff36c0d6c4784aae583e1af119cfe08992c61e52c80b1c184c97f2b2790",
+    "snapshot_changes": [],
+    "symbol": "chunk_ttt_linear_fwd_kernel_h",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "29f88b72ef364b15a2f2d413cf95a78d419cc0ab9badb9452bb7cf50b97a18bd",
+    "ast_preserved": true,
+    "ast_sha256": "d43e7169c7fa050e910e25112dc65314835a109ab4f7457e33e128adc7e07ba2",
+    "existing_extraction_file": "extracted/cases/cv_14a6cab3ee24872a/yb_7bff0dd87eff27.py",
+    "existing_extraction_sha256": "20a406369778077510df3382081db40a9b054c95d5ff8abc2fa4927c11341241",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/__init__.py",
+      "source": "fla/ops/utils/__init__.py",
+      "sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "original_sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "snapshot_changes": [],
+      "extracted_module": "yb_1858bf26d5878c"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/index.py",
+      "source": "fla/ops/utils/index.py",
+      "sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "original_sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "snapshot_changes": [],
+      "extracted_module": "yb_4f3456615af619"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_14a6cab3ee24872a",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_ttt_linear_fwd_kernel_h/test_chunk_ttt_linear_fwd_kernel_h_npu.py::test_chunk_ttt_linear_fwd_kernel_h_function"
+    },
+    {
+      "id": "cv_20a4a5e85050e613",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_ttt_linear_fwd_kernel_h/test_chunk_ttt_linear_fwd_kernel_h_npu.py::test_chunk_ttt_linear_fwd_kernel_h_perf"
+    },
+    {
+      "id": "cv_5067cd1f970a3099",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_ttt_linear_fwd_kernel_o/test_chunk_ttt_linear_fwd_kernel_o_npu.py::test_chunk_ttt_linear_fwd_kernel_o_function"
+    },
+    {
+      "id": "cv_42e858e6d88ea342",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_ttt_linear_fwd_kernel_o/test_chunk_ttt_linear_fwd_kernel_o_npu.py::test_chunk_ttt_linear_fwd_kernel_o_performance"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/ttt/chunk.py:717"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

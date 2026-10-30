@@ -30,10 +30,13 @@ def module(entry, suffix):
 
 
 def plans(name, suite='all', variants='all'):
-    if name in ('all', 'graph', 'flaggems', 'liger') or ',' in name:
+    if name in ('all', 'graph', 'flaggems', 'liger', 'fla') or ',' in name:
         return [plan for entry in select(name)
                 for plan in plans(entry['id'], suite, variants)]
     entry, path = resolve(name)
+    if entry.get('runner') == 'fla':
+        from .fla import plans as fla_plans
+        return fla_plans(entry, path, suite, variants)
     if entry.get('runner') == 'liger':
         if variants == 'manual':
             raise ValueError('Liger batch contains original baselines; no manual variants')
@@ -73,8 +76,8 @@ def plans(name, suite='all', variants='all'):
 
 
 def select(name):
-    if name in ('all', 'graph', 'flaggems', 'liger'):
-        runners = {'graph':'graph_tests', 'liger':'liger', 'flaggems':None}
+    if name in ('all', 'graph', 'flaggems', 'liger', 'fla'):
+        runners = {'graph':'graph_tests', 'liger':'liger', 'flaggems':None, 'fla':'fla'}
         return [entry for entry in operators() if name == 'all' or
                 entry.get('runner') == runners[name]]
     result = [resolve(part.strip())[0] for part in name.split(',')]

@@ -11,9 +11,15 @@ from tools.replay_graph_tests import validate_request
 
 
 class GraphTests(unittest.TestCase):
-    def test_entire_catalog_has_self_contained_smoke_cases(self):
+    def test_entire_catalog_has_smoke_cases_or_explicit_archive_status(self):
         schedule = plans('all', 'smoke', 'baseline')
         self.assertEqual({p['operator_id'] for p in schedule}, {e['id'] for e in operators()})
+        for plan in schedule:
+            if plan.get('source_kind') == 'source_archive':
+                self.assertEqual(plan['status'], 'not_executable')
+                self.assertIsNone(plan['case'])
+            else:
+                self.assertIsNotNone(plan['case'])
         graph = [p for p in schedule if p['operator_id'].startswith('TG')]
         self.assertEqual(len(graph), 10)
         self.assertTrue(all(p['required_input_file'] is None for p in graph))

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "FLA216",
+  "name": "parallel_nsa_bwd_kernel_dkv",
+  "family": "flash_linear_attention/test_kernels/parallel_nsa_kernel_dkv",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_nsa_bwd_kernel_dkv",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/parallel_nsa_bwd_kernel_dkv/test_parallel_nsa_bwd_kernel_dkv_npu.py",
+    "snapshot": "upstream/test_parallel_nsa_bwd_kernel_dkv_npu.py",
+    "sha256": "d9777230c02d98c6bb3e9e9660f6f23e5386be957896f52048e4313982b39a96",
+    "original_sha256": "457e397e6ceab9470f3112f2f9c9fb21784b7749a517a7dadaa3340d68707a2c",
+    "snapshot_changes": [
+      {
+        "line": 2,
+        "change": "Replace the personal absolute checkout prefix in an extraction provenance comment with the repository-relative path."
+      }
+    ],
+    "symbol": "parallel_nsa_bwd_kernel_dkv",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "93faa85eb7cb2c3e5a6d911f6925a9ad727a074bc9d52daba880da4a44a4dd24",
+    "ast_preserved": true,
+    "ast_sha256": "272340b8e10b09c63b29c63be6c49b5f2d42e54d3bcc97aa74c5828ffac5f7f3",
+    "existing_extraction_file": "extracted/cases/cv_7b95480fcaa21cb8/yb_af499cb491e367.py",
+    "existing_extraction_sha256": "98961ee3c97c64284b127b1e37873e0b900b76e87a6108f6383110d7dd1cd9ff",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_7b95480fcaa21cb8",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_nsa_bwd_kernel_dkv/test_parallel_nsa_bwd_kernel_dkv_npu.py::test_parallel_nsa_bwd_kernel_dkv"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_nsa_bwd_kernel_dkv/test_parallel_nsa_bwd_kernel_dkv_npu.py:174"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

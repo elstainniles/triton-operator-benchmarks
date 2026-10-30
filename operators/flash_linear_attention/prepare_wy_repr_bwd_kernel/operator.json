@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "FLA038",
+  "name": "prepare_wy_repr_bwd_kernel",
+  "family": "flash_linear_attention/comba",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "prepare_wy_repr_bwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/comba/wy_fast.py",
+    "snapshot": "upstream/wy_fast.py",
+    "sha256": "f2769cdfcee6bd66aaa4b2a6282cf7d67c4f0a267dc3acd4661b3ec9e63dc1ee",
+    "original_sha256": "f2769cdfcee6bd66aaa4b2a6282cf7d67c4f0a267dc3acd4661b3ec9e63dc1ee",
+    "snapshot_changes": [],
+    "symbol": "prepare_wy_repr_bwd_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "afcc344d5f4c48c2d63ff0665cba7807cb720676b515c3efcd604a68cd342a51",
+    "ast_preserved": true,
+    "ast_sha256": "99a664388aed02ab6c43ccb81da2e0bea61ef38e9405cc843144f13bdff02578",
+    "existing_extraction_file": "extracted/cases/cv_61dc8d378d1190a3/yb_5deca3efb6cf0b.py",
+    "existing_extraction_sha256": "a241dd64f0fc6bad63e7651f299442fa28ba35c89600c7aca59f111bf2b848cf",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_61dc8d378d1190a3",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/prepare_wy_repr_bwd_kernel/test_prepare_wy_repr_bwd_kernel_npu.py::test_prepare_wy_repr_bwd_kernel_function"
+    },
+    {
+      "id": "cv_b0290c76cedaa932",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/prepare_wy_repr_bwd_kernel/test_prepare_wy_repr_bwd_kernel_npu.py::test_prepare_wy_repr_bwd_kernel_performance"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/prepare_wy_repr_bwd_kernel/test_prepare_wy_repr_bwd_kernel_npu.py:123",
+    "tests/ops/ascend_ops/cv_operator/prepare_wy_repr_bwd_kernel/test_prepare_wy_repr_bwd_kernel_npu.py:185"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

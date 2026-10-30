@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "FLA296",
+  "name": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split",
+  "family": "flash_linear_attention/rwkv6",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split_cuda.py",
+    "snapshot": "upstream/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split_cuda.py",
+    "sha256": "9a82e3360333295260959647576aac125b14a8bcd58b9e6ec278096cd9df7840",
+    "original_sha256": "9a82e3360333295260959647576aac125b14a8bcd58b9e6ec278096cd9df7840",
+    "snapshot_changes": [],
+    "symbol": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "6ed41d90ad474cc3346eb67c9e3970108c83f157edd4fefd32dafb884d3b9fd2",
+    "ast_preserved": true,
+    "ast_sha256": "85a3077ce9110404648b222cfe39ed50b8d5e8f2127be4e58be2fe4ea1e85b06",
+    "existing_extraction_file": "extracted/cases/vv_26508aa3960b6209/yb_55d32324cd9df0.py",
+    "existing_extraction_sha256": "d58707e50f1557feb7ff3e6742c3300d79fc2eba71f25c445601f4cec853a09a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_26508aa3960b6209",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split_npu.py::test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split_cuda.py:108"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

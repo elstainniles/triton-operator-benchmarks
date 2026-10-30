@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "FLA256",
+  "name": "exp_kernel",
+  "family": "flash_linear_attention/test_kernels/exp",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "exp_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/exp/test_exp_npu.py",
+    "snapshot": "upstream/test_exp_npu.py",
+    "sha256": "e4df21d6eb6fb86527be608dcfbb06d0f5262b1648dabf5b6c9f693672871434",
+    "original_sha256": "e4df21d6eb6fb86527be608dcfbb06d0f5262b1648dabf5b6c9f693672871434",
+    "snapshot_changes": [],
+    "symbol": "exp_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "4d35609daf44ffbf1191ec09eb1e6d791c075951e6a50cf66ef65ac8a5d2934f",
+    "ast_preserved": true,
+    "ast_sha256": "0d1e841a3cea3a35d40dbe72f5fc6e7f6a417a2d5d586d4b15322afd07f9c788",
+    "existing_extraction_file": "extracted/cases/vv_77383e2e4fe3e562/yb_508a5fa3cbaa49.py",
+    "existing_extraction_sha256": "756f5a899735ef440c2678ea6b14b619d65b1deee71c14f2c1fbede89b93244e",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_77383e2e4fe3e562",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/exp/test_exp_npu.py::test_exp_functiontest"
+    },
+    {
+      "id": "vv_962b35c2b1bf253a",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/exp/test_exp_npu.py::test_exp_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/exp/test_exp_npu.py:73"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

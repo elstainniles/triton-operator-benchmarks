@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "id": "FLA086",
+  "name": "parallel_path_bwd_intra_chunk_kernel",
+  "family": "flash_linear_attention/path_attn",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_path_bwd_intra_chunk_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/path_attn/parallel_path_bwd_intra.py",
+    "snapshot": "upstream/parallel_path_bwd_intra.py",
+    "sha256": "da9bbe513fa1cb10e944ddfa60a8c0c048a89ed420f256898cc8491a95d16638",
+    "original_sha256": "da9bbe513fa1cb10e944ddfa60a8c0c048a89ed420f256898cc8491a95d16638",
+    "snapshot_changes": [],
+    "symbol": "parallel_path_bwd_intra_chunk_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "00faa5f3e474e4950bf74bbd7257073a3b5beabf97043d9def7704e6c45b2af3",
+    "ast_preserved": true,
+    "ast_sha256": "e440dad1e726a268929753c8de4057dab59d1106dd16364f75295fcf3167f412",
+    "existing_extraction_file": "extracted/cases/cv_813ebff40b00f0f7/yb_c00524fd58ccb9.py",
+    "existing_extraction_sha256": "f498948cd0c09764bb6ddd64fe7804d96a03e6a71f51719db8557dbe50b1c76d",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/__init__.py",
+      "source": "fla/ops/utils/__init__.py",
+      "sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "original_sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "snapshot_changes": [],
+      "extracted_module": "yb_1858bf26d5878c"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/index.py",
+      "source": "fla/ops/utils/index.py",
+      "sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "original_sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "snapshot_changes": [],
+      "extracted_module": "yb_4f3456615af619"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_813ebff40b00f0f7",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_path_bwd_intra_chunk_kernel/test_parallel_path_bwd_intra_chunk_kernel_npu.py::test_parallel_path_bwd_intra_chunk_fn"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/path_attn/parallel_path_bwd_intra.py:172"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "id": "FLA079",
+  "name": "prepare_wy_repr_bwd_kda_kernel",
+  "family": "flash_linear_attention/kda",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "prepare_wy_repr_bwd_kda_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/kda/wy_fast.py",
+    "snapshot": "upstream/wy_fast.py",
+    "sha256": "7fa9bb8ed558cc888500b59fa6b37d91294802255381b6272bcca98d35329ba4",
+    "original_sha256": "7fa9bb8ed558cc888500b59fa6b37d91294802255381b6272bcca98d35329ba4",
+    "snapshot_changes": [],
+    "symbol": "prepare_wy_repr_bwd_kda_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "8a1f221ea91e7bc86252721bfb4f702f01bfbb291751818109e2015165c13155",
+    "ast_preserved": true,
+    "ast_sha256": "849ac361635012fafaff1dbfbd2970efd024bab56f8ce50a6e0e67b349be5432",
+    "existing_extraction_file": "extracted/cases/cv_960b1e70173be735/yb_42903005eb2150.py",
+    "existing_extraction_sha256": "bd57b64e4d5888646db4ad7d71ab6abf8714532ad06db9cc5fb1edea90a7346b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/__init__.py",
+      "source": "fla/ops/utils/__init__.py",
+      "sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "original_sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "snapshot_changes": [],
+      "extracted_module": "yb_1858bf26d5878c"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/cache.py",
+      "source": "fla/ops/utils/cache.py",
+      "sha256": "a64b09ffd3f51aed547ad72559dee94cb9aeafd2a5f02c6c8e60a6e020147a9c",
+      "original_sha256": "a64b09ffd3f51aed547ad72559dee94cb9aeafd2a5f02c6c8e60a6e020147a9c",
+      "snapshot_changes": [],
+      "extracted_module": "yb_ab84b57b842c37"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/index.py",
+      "source": "fla/ops/utils/index.py",
+      "sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "original_sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "snapshot_changes": [],
+      "extracted_module": "yb_4f3456615af619"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_960b1e70173be735",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/prepare_wy_repr_bwd_kda_kernel/test_prepare_wy_repr_bwd_kda_kernel_npu.py::test_prepare_wy_repr_bwd_kda_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/kda/wy_fast.py:325"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

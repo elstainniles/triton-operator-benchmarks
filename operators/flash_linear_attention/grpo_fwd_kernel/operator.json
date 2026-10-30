@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "FLA021",
+  "name": "grpo_fwd_kernel",
+  "family": "flash_linear_attention/modules/grpo",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "grpo_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/modules/grpo.py",
+    "snapshot": "upstream/grpo.py",
+    "sha256": "ecb75f96b872a730d6a9edfce4d5567c6309980a5e2e810f3abb0b0335944c95",
+    "original_sha256": "ecb75f96b872a730d6a9edfce4d5567c6309980a5e2e810f3abb0b0335944c95",
+    "snapshot_changes": [],
+    "symbol": "grpo_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "9b6fb90ce2b446762a0b1a5e59b44e85df506899ff671086fe5d8cd5d52ae29c",
+    "ast_preserved": true,
+    "ast_sha256": "aaf96b255a5c0fcaae4e48e56fe275da144837407c6f4a5acfd32d06e2aff074",
+    "existing_extraction_file": "extracted/cases/vv_4e7b5a0967a2b961/yb_3e77d2739161a0.py",
+    "existing_extraction_sha256": "7a3a15797f230ff5657a2d391569eb6cb6f02927870c5aae6f44b00356a90d6a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_4e7b5a0967a2b961",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py::test_grpo_fwd_kernel_functiontest"
+    },
+    {
+      "id": "vv_6c97bc8a9d6edaae",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py::test_grpo_fwd_kernel_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "fla/modules/grpo.py:243"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

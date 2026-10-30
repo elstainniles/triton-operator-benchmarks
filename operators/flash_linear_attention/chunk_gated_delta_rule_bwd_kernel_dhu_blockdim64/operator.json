@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA162",
+  "name": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+  "family": "flash_linear_attention/test_kernels/chunk_gated_delta_rule_kernel_dhu_blockdim64",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64/test_chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64_npu.py",
+    "snapshot": "upstream/test_chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64_npu.py",
+    "sha256": "741c529c66b0a30ff538516d8972435cb9fce565217b6c24521d8e27f6cb07b8",
+    "original_sha256": "741c529c66b0a30ff538516d8972435cb9fce565217b6c24521d8e27f6cb07b8",
+    "snapshot_changes": [],
+    "symbol": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "aa0fbfaa33038175e9aaf079d5760b065bf44f85e52f3a26b13b478570eec936",
+    "ast_preserved": true,
+    "ast_sha256": "c53ccaae5adf6158d3ae221a52bdc604f834662288f7a28dc7f7e62a721448c1",
+    "existing_extraction_file": "extracted/cases/cv_9d94c64cd12fc55d/yb_0d7d17e3104cb8.py",
+    "existing_extraction_sha256": "50f1c58635840968d6ea5599cfef5442cbe4e78a7cab3ed9f719b0e9e44b0b88",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_9d94c64cd12fc55d",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64/test_chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64_npu.py::test_chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64/test_chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64_npu.py:421"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

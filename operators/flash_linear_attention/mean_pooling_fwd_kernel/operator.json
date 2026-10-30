@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "FLA119",
+  "name": "mean_pooling_fwd_kernel",
+  "family": "flash_linear_attention/utils/pooling",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "mean_pooling_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/utils/pooling.py",
+    "snapshot": "upstream/pooling.py",
+    "sha256": "4eea293b1e9ef2ccb601078e6c60e78e0dbeddce2d88573e64a460148a86d870",
+    "original_sha256": "4eea293b1e9ef2ccb601078e6c60e78e0dbeddce2d88573e64a460148a86d870",
+    "snapshot_changes": [],
+    "symbol": "mean_pooling_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "11cab2e8b9a0a48cc53fe47ffbd4ba736fad5ede8af7f6ea7832b9c4749b4f9f",
+    "ast_preserved": true,
+    "ast_sha256": "f295cf990ab28fb5ee8744277768a44a2e54df133804b0ac20ba3e59f92dce0b",
+    "existing_extraction_file": "extracted/cases/vv_3866c0835c67563f/yb_176304286c7418.py",
+    "existing_extraction_sha256": "5884e26eef4a04331d4ebb1db40d8013f1b1214826457b61e32d2a658469b03a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/index.py",
+      "source": "fla/ops/utils/index.py",
+      "sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "original_sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "snapshot_changes": [],
+      "extracted_module": "yb_4f3456615af619"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_3866c0835c67563f",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/mean_pooling_fwd_kernel/test_mean_pooling_fwd_kernel_npu.py::test_mean_pooling_fwd_kernel_functiontest"
+    },
+    {
+      "id": "vv_c3714539299b27d6",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/mean_pooling_fwd_kernel/test_mean_pooling_fwd_kernel_npu.py::test_mean_pooling_fwd_kernel_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/utils/pooling.py:124"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

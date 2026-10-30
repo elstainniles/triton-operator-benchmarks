@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA248",
+  "name": "chunk_bwd_kernel_dh_reduction__82adc91e",
+  "family": "flash_linear_attention/common",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_bwd_kernel_dh_reduction",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/chunk_h_split_chunk_bwd_kernel_dh_reduction/test_chunk_split_chunk_bwd_kernel_dh_reduction_npu.py",
+    "snapshot": "upstream/test_chunk_split_chunk_bwd_kernel_dh_reduction_npu.py",
+    "sha256": "484df009e1bed934c148d4bbec6a26981851f60666170795d44b55bab4cfb9de",
+    "original_sha256": "484df009e1bed934c148d4bbec6a26981851f60666170795d44b55bab4cfb9de",
+    "snapshot_changes": [],
+    "symbol": "chunk_bwd_kernel_dh_reduction",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "26dd5bac55e99abac1adcf7fd5085c4c2d8a93d189788954910cd5ea26f6ec56",
+    "ast_preserved": true,
+    "ast_sha256": "2fe4efd57c089dad7c26453aec85de60b5ea233e0a758a6a046ce5bf4b57139e",
+    "existing_extraction_file": "extracted/cases/vv_8e2e079b77861172/yb_82adc91efd2f23.py",
+    "existing_extraction_sha256": "3f85a8bb0fdfd1c436360c0da12f7aec55551c639f8ffbcacf829137483a217a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_8e2e079b77861172",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/chunk_h_split_chunk_bwd_kernel_dh_reduction/test_chunk_split_chunk_bwd_kernel_dh_reduction_npu.py::test_chunk_bwd_kernel_dh_reduction"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/chunk_h_split_chunk_bwd_kernel_dh_reduction/test_chunk_split_chunk_bwd_kernel_dh_reduction_npu.py:306"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

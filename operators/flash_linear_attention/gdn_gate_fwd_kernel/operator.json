@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA269",
+  "name": "gdn_gate_fwd_kernel",
+  "family": "flash_linear_attention/test_kernels/gdn_gate",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "gdn_gate_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/gdn_gate_fwd_kernel/test_gdn_gate_fwd_kernel_npu.py",
+    "snapshot": "upstream/test_gdn_gate_fwd_kernel_npu.py",
+    "sha256": "82e197298b9e908bb5fe4d9f0677630e47fcc8d2395cc9db67052b024f0a13ee",
+    "original_sha256": "82e197298b9e908bb5fe4d9f0677630e47fcc8d2395cc9db67052b024f0a13ee",
+    "snapshot_changes": [],
+    "symbol": "gdn_gate_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "ac706a83517345e6561cad450a3c90e84a44d0c45251c3412982e92f92218f51",
+    "ast_preserved": true,
+    "ast_sha256": "8429fd0127080cc71518db0855250f782999c63f06a9414579db153c96812571",
+    "existing_extraction_file": "extracted/cases/vv_7d3d7463e2946f24/yb_60d5fa260dcd25.py",
+    "existing_extraction_sha256": "e8d9a6ade1559f4e77b239e708548e194513b5f67e4e723930bd12821b7623fc",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_7d3d7463e2946f24",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/gdn_gate_fwd_kernel/test_gdn_gate_fwd_kernel_npu.py::test_gdn_gate_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/gdn_gate_fwd_kernel/test_gdn_gate_fwd_kernel_npu.py:147"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

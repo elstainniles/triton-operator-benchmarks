@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA094",
+  "name": "rwkv_seq_mix_kernel",
+  "family": "flash_linear_attention/rwkv7",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "rwkv_seq_mix_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/rwkv7/channel_mixing.py",
+    "snapshot": "upstream/channel_mixing.py",
+    "sha256": "fa228f3dfa9d93dfa652fed2dfe4464eb03e1e3c61090b9d1012cec20d701f0b",
+    "original_sha256": "fa228f3dfa9d93dfa652fed2dfe4464eb03e1e3c61090b9d1012cec20d701f0b",
+    "snapshot_changes": [],
+    "symbol": "rwkv_seq_mix_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "e2d571e4748e99d1796a37e08869c08e0e4b22958061589b95a959eb68374252",
+    "ast_preserved": true,
+    "ast_sha256": "84f917484baf5dc135f384b83611b100395b266dabef780ce94505af749b6159",
+    "existing_extraction_file": "extracted/cases/vv_570b6e27e59a6b07/yb_c6472eed460398.py",
+    "existing_extraction_sha256": "15a513f1a2f80b200a9198c1f2a6a566e5fa632ad8404a3658fda8077269017a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_570b6e27e59a6b07",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_rwkv_seq_mix_kernel/test_rwkv_seq_mix_kernel_npu.py::test_rwkv_seq_mix_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/rwkv7/channel_mixing.py:134"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

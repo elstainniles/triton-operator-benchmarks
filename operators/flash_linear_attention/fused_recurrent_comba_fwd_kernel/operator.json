@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA260",
+  "name": "fused_recurrent_comba_fwd_kernel",
+  "family": "flash_linear_attention/test_kernels/fused_recurrent_comba",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_recurrent_comba_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_comba_fwd_kernel/test_fused_recurrent_comba_fwd_kernel_npu.py",
+    "snapshot": "upstream/test_fused_recurrent_comba_fwd_kernel_npu.py",
+    "sha256": "3e7d18e19e987f2a21c4722f32bb56222fb540f49e7307e944a1cdf5b23a6cec",
+    "original_sha256": "3e7d18e19e987f2a21c4722f32bb56222fb540f49e7307e944a1cdf5b23a6cec",
+    "snapshot_changes": [],
+    "symbol": "fused_recurrent_comba_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "6173622293d72897f39b9525680b9de4557faf7a918170c103515416ebdbfb4b",
+    "ast_preserved": true,
+    "ast_sha256": "b045d01738daeeb8554f27fa4cce4222d097719e6b62ed53a1df6602e8de2384",
+    "existing_extraction_file": "extracted/cases/vv_d542637f368cda48/yb_5cb1436320052a.py",
+    "existing_extraction_sha256": "927ef3e3f8b20401bda105b552a5325ba1d89be1acb88eb0447580273279a863",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_d542637f368cda48",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_comba_fwd_kernel/test_fused_recurrent_comba_fwd_kernel_npu.py::test_fused_recurrent_comba_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/fused_recurrent_comba_fwd_kernel/test_fused_recurrent_comba_fwd_kernel_npu.py:227"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

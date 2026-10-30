@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "FLA264",
+  "name": "fused_recurrent_hgrn_bwd_kernel",
+  "family": "flash_linear_attention/hgrn",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_recurrent_hgrn_bwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_hgrn_bwd_kernel/test_fused_recurrent_hgrn_bwd_kernel_npu.py",
+    "snapshot": "upstream/test_fused_recurrent_hgrn_bwd_kernel_npu.py",
+    "sha256": "0110d09c6a3765e296b3f7c4d8663306383427f7faf0e41527084551a28d22bf",
+    "original_sha256": "ed499e32e450c9be5f84b3a86db70c7e0293111aa4949bc165934d01aa2d3ce1",
+    "snapshot_changes": [
+      {
+        "line": 2,
+        "change": "Replace the personal absolute checkout prefix in an extraction provenance comment with the repository-relative path."
+      }
+    ],
+    "symbol": "fused_recurrent_hgrn_bwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "cee0f422cb5ee84f7076971b01da62f3857f08ead84c4f938134e1f6d34b193c",
+    "ast_preserved": true,
+    "ast_sha256": "97677af8bfd6fcf5c5d70353ef816cc2e4d6385ce0e4e1fd24f4ed2d7b2aaa8f",
+    "existing_extraction_file": "extracted/cases/vv_ad3364f49883ee40/yb_405aadc3a0e78b.py",
+    "existing_extraction_sha256": "4fdc415276eaa1a2d030064d61975cf72867c46ffc6192c23b18caed1419f209",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_ad3364f49883ee40",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_hgrn_bwd_kernel/test_fused_recurrent_hgrn_bwd_kernel_npu.py::test_fused_recurrent_hgrn_bwd_kernel_npu"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/fused_recurrent_hgrn_bwd_kernel/test_fused_recurrent_hgrn_bwd_kernel_npu.py:326"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

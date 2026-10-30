@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA230",
+  "name": "safe_dot_kernel",
+  "family": "flash_linear_attention/test_kernels/safe_dot",
+  "direction": "other",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "safe_dot_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/safe_dot_fp64/test_safe_dot_fp64_npu.py",
+    "snapshot": "upstream/test_safe_dot_fp64_npu.py",
+    "sha256": "85ebe5653d58dc96a7ade17661d705b7fa1821b64c5572a9a5a2d179be7a963f",
+    "original_sha256": "85ebe5653d58dc96a7ade17661d705b7fa1821b64c5572a9a5a2d179be7a963f",
+    "snapshot_changes": [],
+    "symbol": "safe_dot_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "195c5646748d3494fadb6338a51d236cbb911f80e0da61a477d0df8d93f7d08b",
+    "ast_preserved": true,
+    "ast_sha256": "478c9f9c9c76c4b99127dd3951c3a9213506765800607d53efaed38b6c414f3e",
+    "existing_extraction_file": "extracted/cases/cv_ff5b09b2271d7a19/yb_70dc068b2bbc07.py",
+    "existing_extraction_sha256": "97e9abbc306f7f2f85c9f6a71c5e192ec3ea3b58f73796c3dcf93ee4618ec8b9",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_ff5b09b2271d7a19",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/safe_dot_fp64/test_safe_dot_fp64_npu.py::test_safe_dot"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/safe_dot_fp64/test_safe_dot_fp64_npu.py:64"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

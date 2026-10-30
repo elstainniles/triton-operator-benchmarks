@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA238",
+  "name": "wu_fwd_kernel__32e6a58d",
+  "family": "flash_linear_attention/test_kernels/wu",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "wu_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/wu_fwd_kernel/test_wu_fwd_kernel_npu.py",
+    "snapshot": "upstream/test_wu_fwd_kernel_npu.py",
+    "sha256": "73b9010915b74ed151a123ec60cdcb6bc8fc63a6b882b0e2dd9604e4ef2991cd",
+    "original_sha256": "73b9010915b74ed151a123ec60cdcb6bc8fc63a6b882b0e2dd9604e4ef2991cd",
+    "snapshot_changes": [],
+    "symbol": "wu_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "88f0060138bc9d97f6973211617562dc5124f5207b56405be351180ef2d108de",
+    "ast_preserved": true,
+    "ast_sha256": "f902b839e2962b66ffa8380e803f8a373f3a62215f150f497f342b34373d855d",
+    "existing_extraction_file": "extracted/cases/cv_07fb3d44453bae67/yb_32e6a58ddfe73a.py",
+    "existing_extraction_sha256": "afdd86d4992278665af5c515a38cbfdbb5d124a8f2c94a4efebf881ea3e7639f",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_07fb3d44453bae67",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/wu_fwd_kernel/test_wu_fwd_kernel_npu.py::test_wu_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/wu_fwd_kernel/test_wu_fwd_kernel_npu.py:124"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA218",
+  "name": "parallel_attn_bwd_kernel_preprocess__d333188f",
+  "family": "flash_linear_attention/attn",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_attn_bwd_kernel_preprocess",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/parallel_nsa_compression_bwd_kernel_dq/test_parallel_nsa_compression_bwd_kernel_dq_npu.py",
+    "snapshot": "upstream/test_parallel_nsa_compression_bwd_kernel_dq_npu.py",
+    "sha256": "4ffeb7b93b32c505d60ae3639ffcdb6f451509d36177b9e6ef49ae146be570e2",
+    "original_sha256": "4ffeb7b93b32c505d60ae3639ffcdb6f451509d36177b9e6ef49ae146be570e2",
+    "snapshot_changes": [],
+    "symbol": "parallel_attn_bwd_kernel_preprocess",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "07870610fd2ab7bb39adc171d5c3c42050f186a5a71986d3377c0c4a1c41e87e",
+    "ast_preserved": true,
+    "ast_sha256": "8a81f024309df646c82f4aea3a8e254796ad3c2c57eefbf2af20ecbb707a45a0",
+    "existing_extraction_file": "extracted/cases/cv_62624120aad8a29d/yb_d333188f20bfe5.py",
+    "existing_extraction_sha256": "fd076c81f173c86a72e10f5646bbf6098b00c471fc162f325284177f663dca1c",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_62624120aad8a29d",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_nsa_compression_bwd_kernel_dq/test_parallel_nsa_compression_bwd_kernel_dq_npu.py::test_parallel_nsa_compression_bwd_kernel_dq"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_nsa_compression_bwd_kernel_dq/test_parallel_nsa_compression_bwd_kernel_dq_npu.py:185"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

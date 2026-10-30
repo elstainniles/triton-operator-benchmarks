@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA157",
+  "name": "chunk_fwd_kernel_h_split",
+  "family": "flash_linear_attention/test_kernels/chunk_kernel_h_split",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_fwd_kernel_h_split",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_fwd_kernel_h_split_fp64/test_chunk_fwd_kernel_h_split_fp64_npu.py",
+    "snapshot": "upstream/test_chunk_fwd_kernel_h_split_fp64_npu.py",
+    "sha256": "40503ec00500130c0486448c2920a35303b1e70c3e36016a508a6738660ae0fe",
+    "original_sha256": "40503ec00500130c0486448c2920a35303b1e70c3e36016a508a6738660ae0fe",
+    "snapshot_changes": [],
+    "symbol": "chunk_fwd_kernel_h_split",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "d77feb723dec838f95cf21a352c6da1284f46392811e8cb0cef66be953df375d",
+    "ast_preserved": true,
+    "ast_sha256": "3f0b81ef4abd6825dbc58b6ac268a5a482283a56ef9d0a26c03091ed4ba8f9c9",
+    "existing_extraction_file": "extracted/cases/cv_3405385150bae579/yb_38ded883fbdd0c.py",
+    "existing_extraction_sha256": "193c21d0783abf88d373742f5aa1675c167e39a4e83b798c4fe52dc3e9614fab",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_3405385150bae579",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_fwd_kernel_h_split_fp64/test_chunk_fwd_kernel_h_split_fp64_npu.py::test_chunk_fwd_kernel_h_split"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/chunk_fwd_kernel_h_split_fp64/test_chunk_fwd_kernel_h_split_fp64_npu.py:227"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

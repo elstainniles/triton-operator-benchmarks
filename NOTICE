@@ -35,3 +35,15 @@ Extracted JIT functions preserve their signatures, bodies and decorators. The
 benchmark harness selects a specific implementation, generates inputs with the
 archived tests, and profiles only the selected kernel. Historical measurements
 are imported separately from validation of this repository's entry point.
+
+This repository also includes extracted Triton functions and source snapshots from:
+https://gitcode.com/TritonAscendTest/flash-linear-attention
+Revision: 5752e83ce7e469cfc0a3145bf20d3c902b716d48
+Copyright (c) 2023-2026, Songlin Yang, Yu Zhang, Zhiyuan Li.
+Licensed under MIT; the full license is retained in
+operators/flash_linear_attention/LICENSE. Source paths distinguish FLA library
+functions from the Ascend tests in that repository. Those test definitions are
+not represented as identical to the library implementation when they differ.
+The source inventory includes all statically launched extracted definitions;
+helper functions are dependencies, not additional benchmark operators. Generated
+benchmark entry points document their own adaptation and validation scope.

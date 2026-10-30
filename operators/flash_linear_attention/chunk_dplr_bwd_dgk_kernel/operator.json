@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "FLA059",
+  "name": "chunk_dplr_bwd_dgk_kernel",
+  "family": "flash_linear_attention/generalized_delta_rule",
+  "direction": "bwd",
+  "type": "cv_vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_dplr_bwd_dgk_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/generalized_delta_rule/dplr/chunk_A_bwd.py",
+    "snapshot": "upstream/chunk_A_bwd.py",
+    "sha256": "a717b6cab6b6d65507baff61a5ba895e97dd6f69aa6c93b3ad16599a08798abf",
+    "original_sha256": "a717b6cab6b6d65507baff61a5ba895e97dd6f69aa6c93b3ad16599a08798abf",
+    "snapshot_changes": [],
+    "symbol": "chunk_dplr_bwd_dgk_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "fe4d7123027cd46d14c266889395b7be1428bb54948bcfda6e5352fccf7daf62",
+    "ast_preserved": true,
+    "ast_sha256": "bbf9d7290c02108234a1fe35928e06948a1539f8d000373a02eacd5a13f585ce",
+    "existing_extraction_file": "extracted/cases/vv_2ff7e15daa59a49e/yb_93f71b12d34293.py",
+    "existing_extraction_sha256": "7107da94732822277c928fd0bd4780be73c4822a9b3bca809b1a190667a331ac",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_9041e820bbb35cf6",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_dplr_bwd_kernel_intra_tensorcore/test_chunk_dplr_bwd_kernel_intra_tensorcore_npu.py::test_chunk_dplr_bwd_kernel_intra_tensorcore"
+    },
+    {
+      "id": "vv_2ff7e15daa59a49e",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_chunk_dplr_bwd_dgk_kernel/test_chunk_dplr_bwd_dgk_kernel_npu.py::test_chunk_dplr_bwd_dgk_kernel"
+    },
+    {
+      "id": "vv_fc468f2fe597a9d4",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_chunk_dplr_bwd_kernel_intra/test_chunk_dplr_bwd_kernel_intra_npu.py::test_chunk_dplr_bwd_kernel_intra"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/generalized_delta_rule/dplr/chunk_A_bwd.py:549",
+    "tests/ops/ascend_ops/vv_operator/test_chunk_dplr_bwd_dgk_kernel/test_chunk_dplr_bwd_dgk_kernel_npu.py:34"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -14,6 +14,28 @@ sys.path.insert(0, str(ROOT))
 from opbench.catalog import module, operators, plans, read_json, resolve
 from opbench.graph_tests import verify_graph_suite
 from opbench.liger import verify_suite as verify_liger_suite
+from opbench.fla import verify_suite as verify_fla_suite
+
+
+# These three files changed when FLA dispatch was added. Historical evidence
+# continues to bind their exact original bytes, never the newly modified code.
+HISTORICAL_HARNESS = {
+    'catalog.py': 'f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e',
+    'cli.py': 'cf012d361d0e7f9b2f80670090a73b3cd543424b1e1e683217541a695af781d7',
+    'batch.py': 'acbce294a176735f9931fceafc145e1735ae54742449af620df6e40637146cdc',
+}
+
+
+def verify_historical_harness(filename, expected):
+    if filename in HISTORICAL_HARNESS:
+        assert expected == HISTORICAL_HARNESS[filename], ('Unknown historical harness', filename)
+        path = ROOT / 'docs/historical-harness-20261028' / filename
+        manifest = read_json(path.parent / 'manifest.json')
+        assert manifest['source_revision'] == '20cc2f0ad0efafbd494341bff65cbaff0d89d69e'
+        assert manifest['files'] == HISTORICAL_HARNESS
+    else:
+        path = ROOT / 'opbench' / filename
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == expected, ('Historical harness changed', filename)
 
 
 def same(a, b):
@@ -26,6 +48,7 @@ def verify():
     assert len({o['path'] for o in all_entries}) == len(all_entries)
     entries = [e for e in all_entries if not e.get('runner')]
     liger = verify_liger_suite()
+    fla = verify_fla_suite()
     validation = read_json(ROOT/'docs/liger-validation-20261028.json')
     assert validation['total'] == len(validation['evidence']) == 25
     assert validation['counts'] == {'measured':25}
@@ -40,7 +63,7 @@ def verify():
         for filename, digest in evidence['source_hashes'].items():
             assert hashlib.sha256((path/filename).read_bytes()).hexdigest() == digest
         for filename, digest in evidence['harness_sha256'].items():
-            assert hashlib.sha256((ROOT/'opbench'/filename).read_bytes()).hexdigest() == digest
+            verify_historical_harness(filename, digest)
         assert hashlib.sha256((path/'cases.json').read_bytes()).hexdigest() == evidence['cases_sha256']
         assert read_json(path/'operator.json')['current_runner_validation']['status'] == 'SECOND_BATCH_CASE_VALIDATED'
     graph_entries = [e for e in all_entries if e.get('runner') == 'graph_tests']
@@ -161,7 +184,7 @@ def verify():
         assert same(statistics.mean(r['time_reduction_pct'] for r in rows), expected['mean_time_reduction_pct'])
     smoke = read_json(ROOT / 'docs/standalone-smoke-20261028.json')
     expected_smoke = {(p['operator_id'],p['case']['id']):p
-                      for e in all_entries if e.get('runner') != 'liger'
+                      for e in all_entries if e.get('runner') in (None, 'graph_tests')
                       for p in plans(e['id'],'smoke','baseline')}
     measured = {(r['operator_id'],r['case']['id']):r for r in smoke['measurements']}
     assert len(measured) == len(smoke['measurements']) == 18 and measured.keys() == expected_smoke.keys()
@@ -203,7 +226,7 @@ def verify():
     return dict(status='PASS', entries=len(all_entries), flaggems_entries=len(entries),
                 imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
                 graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), liger=liger,
-                verified_liger_entry_cases=validation['total'], **counters)
+                verified_liger_entry_cases=validation['total'], fla=fla, **counters)
 
 
 if __name__ == '__main__':
