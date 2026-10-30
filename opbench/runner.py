@@ -85,8 +85,13 @@ def run(args):
                             for actual in case.actual:
                                 actual.fill_(float('nan'))
                             torch.npu.synchronize()
-                            fn()
+                            compiled = fn()
                             torch.npu.synchronize()
+                            if getattr(args, 'timing', 'profiler') == 'mspti':
+                                import triton
+                                from triton.backends.ascend.compiler import AscendBackend
+                                backend = AscendBackend(triton.runtime.driver.active.get_current_target())
+                                item['runtime_kernel_name'] = backend.pack_metadata(compiled.metadata)['kernel_name']
                             item['correctness'] = case.validate()
                             item['status'] = 'correct' if item['correctness']['passed'] else 'accuracy_failed'
                             if not item['correctness']['guards']:
@@ -109,29 +114,34 @@ def run(args):
                     if not args.correctness_only and accepted:
                         profile_dir = output / ('profile-' + case_id)
                         labels = []
-                        exp = torch_npu.profiler._ExperimentalConfig(
-                            profiler_level=torch_npu.profiler.ProfilerLevel.Level1, l2_cache=False)
-                        rng = random.Random(20261026)
-                        with torch_npu.profiler.profile(
-                            activities=[torch_npu.profiler.ProfilerActivity.CPU, torch_npu.profiler.ProfilerActivity.NPU],
-                            record_shapes=False, profile_memory=False, with_stack=False,
-                            experimental_config=exp,
-                            on_trace_ready=torch_npu.profiler.tensorboard_trace_handler(str(profile_dir))) as prof:
-                            for round_id in range(3):
-                                order = list(accepted)
-                                rng.shuffle(order)
-                                for item, fn in order:
-                                    for repeat in range(5):
-                                        label = f'opbench::{item["variant_id"]}::{round_id}::{repeat}'
-                                        torch.npu.synchronize()
-                                        with torch.profiler.record_function(label):
-                                            fn()
-                                        torch.npu.synchronize()
-                                        labels.append(label)
-                                    prof.step()
-                        record['profile_sequence'] = labels
+                        if getattr(args, 'timing', 'profiler') == 'mspti':
+                            from .mspti import measure_npu
+                            profile = measure_npu([(item['variant_id'], fn, item['runtime_kernel_name'])
+                                                   for item, fn in accepted])
+                        else:
+                            exp = torch_npu.profiler._ExperimentalConfig(
+                                profiler_level=torch_npu.profiler.ProfilerLevel.Level1, l2_cache=False)
+                            rng = random.Random(20261026)
+                            with torch_npu.profiler.profile(
+                                activities=[torch_npu.profiler.ProfilerActivity.CPU, torch_npu.profiler.ProfilerActivity.NPU],
+                                record_shapes=False, profile_memory=False, with_stack=False,
+                                experimental_config=exp,
+                                on_trace_ready=torch_npu.profiler.tensorboard_trace_handler(str(profile_dir))) as prof:
+                                for round_id in range(3):
+                                    order = list(accepted)
+                                    rng.shuffle(order)
+                                    for item, fn in order:
+                                        for repeat in range(5):
+                                            label = f'opbench::{item["variant_id"]}::{round_id}::{repeat}'
+                                            torch.npu.synchronize()
+                                            with torch.profiler.record_function(label):
+                                                fn()
+                                            torch.npu.synchronize()
+                                            labels.append(label)
+                                        prof.step()
+                            record['profile_sequence'] = labels
+                            profile = analyze(profile_dir, labels, metadata['kernel_symbol'])
                         monitor.sample()
-                        profile = analyze(profile_dir, labels, metadata['kernel_symbol'])
                         record['profile'] = profile
                         record['timing_eligible'] = monitor.eligible_since(sample_index)
                         for item, _ in accepted:

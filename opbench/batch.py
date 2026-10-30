@@ -10,6 +10,8 @@ from .runner import save
 
 
 def run(args):
+    if getattr(args, 'timing', 'profiler') == 'mspti' and any(e.get('runner') == 'liger' for e in select(args.operator)):
+        raise ValueError('MSPTI timing is not supported for Liger; select FlagGems or graph operators')
     if args.case_id:
         raise ValueError('--case-id requires a single graph operator')
     output = args.output.resolve()
@@ -27,6 +29,7 @@ def run(args):
                    '--suite', args.suite, '--variants', args.variants,
                    '--physical-card', str(args.physical_card), '--environment', str(args.environment.resolve()),
                    '--output', str(folder)]
+            cmd.extend(['--timing', getattr(args, 'timing', 'profiler')])
             if args.correctness_only:
                 cmd.append('--correctness-only')
             with (output / (entry['id']+'.log')).open('w', encoding='utf-8') as log:

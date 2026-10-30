@@ -19,6 +19,7 @@ def main():
             command.add_argument('--physical-card', required=True, type=int, choices=range(8))
             command.add_argument('--environment', required=True, type=Path)
             command.add_argument('--correctness-only', action='store_true')
+            command.add_argument('--timing', choices=['profiler', 'mspti'], default='profiler')
             command.add_argument('--case-id', action='append', default=[], help='Generated graph case ID; repeatable')
     args = parser.parse_args()
     if args.command == 'list':
@@ -31,6 +32,8 @@ def main():
             return run(args)
         entry, _ = resolve(args.operator)
         if entry.get('runner') == 'liger':
+            if args.timing == 'mspti':
+                parser.error('MSPTI timing is not supported for Liger')
             from .liger_runner import run
         elif entry.get('runner') == 'graph_tests':
             from .graph_runner import run

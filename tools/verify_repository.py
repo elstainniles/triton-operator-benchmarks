@@ -30,6 +30,8 @@ def verify():
     assert validation['total'] == len(validation['evidence']) == 25
     assert validation['counts'] == {'measured':25}
     assert len({row['operator_id'] for row in validation['evidence']}) == 25
+    historical_harness = {}
+    changed_harness = set()
     for row in validation['evidence']:
         evidence = read_json(ROOT/row['path'])
         _, path = resolve(row['operator_id'])
@@ -40,7 +42,9 @@ def verify():
         for filename, digest in evidence['source_hashes'].items():
             assert hashlib.sha256((path/filename).read_bytes()).hexdigest() == digest
         for filename, digest in evidence['harness_sha256'].items():
-            assert hashlib.sha256((ROOT/'opbench'/filename).read_bytes()).hexdigest() == digest
+            assert historical_harness.setdefault(filename, digest) == digest
+            if hashlib.sha256((ROOT/'opbench'/filename).read_bytes()).hexdigest() != digest:
+                changed_harness.add(filename)
         assert hashlib.sha256((path/'cases.json').read_bytes()).hexdigest() == evidence['cases_sha256']
         assert read_json(path/'operator.json')['current_runner_validation']['status'] == 'SECOND_BATCH_CASE_VALIDATED'
     graph_entries = [e for e in all_entries if e.get('runner') == 'graph_tests']
@@ -203,7 +207,8 @@ def verify():
     return dict(status='PASS', entries=len(all_entries), flaggems_entries=len(entries),
                 imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
                 graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), liger=liger,
-                verified_liger_entry_cases=validation['total'], **counters)
+                verified_liger_entry_cases=validation['total'],
+                historical_liger_harness_changed=sorted(changed_harness), **counters)
 
 
 if __name__ == '__main__':

@@ -88,3 +88,9 @@ seed=20261026。历史框架每进程只播种一次，新入口每 case 重置 
 bwd 条目直接测指定反向 Triton kernel，没有先测 fwd 再减时间；此批不存在 fwd+bwd 合并计时。性能比较只在同 case、同设备、同环境、同次运行内进行。最佳值包含基线，不能把逐 case 最优当作固定策略的实际收益。
 
 新结果如需提交，先审核并移除运行路径、主机身份、账号、内部地址等；保留可追溯 hash、公开环境版本和原始数值。`runs/` 默认不进入 Git。
+
+## 可选 MSPTI 计时
+
+FlagGems 和图优化批次可用 `--timing mspti` 替代默认 profiler，例如在上述运行命令中加入 `--timing mspti`。支持单算子及 `--operator flaggems`、`--operator graph`；Liger 和包含 Liger 的批次暂不支持。运行环境需提供 `mspti` Python 模块和兼容的 CANN/MSPTI；本入口禁止继承 `LD_PRELOAD`，因此需要依赖无需预加载的环境（例如 CANN 9.1 或更新版本），较旧环境不在支持范围。
+
+正确性检查、设备监控、warmup 和三轮各五次的统计口径保持一致。每次调用前同步并单独启动 KernelMonitor，调用后同步并停止；仅接受恰好一条名称与已编译 kernel 一致、耗时为正的设备记录。MSPTI 时间戳以纳秒计，转换为微秒，原始样本和各轮中位数保存在 `result.json` 的 `profile` 字段。缺失、额外或名称不匹配的记录会停止计时；不会回退到其他计时方式。此方法与 profiler 方法的运行条件不同，结果应分别标记，不应直接混合比较。MSPTI 路径尚需在目标 NPU 环境验证。
