@@ -126,9 +126,12 @@ def _trace_samples(profile_dir, name):
             "kernel_csv": str(csv_file), "kernel_csv_sha256": _sha(csv_file)}
 
 
-def measure(launch, name, source, run_dir):
+def measure(launch, name, source, run_dir, method="profiler"):
     import torch
-    import torch_npu
+    if method not in ("profiler", "mspti"):
+        raise ValueError("Unknown timing method: " + method)
+    if method == "profiler":
+        import torch_npu
 
     run_dir = Path(run_dir)
     profile_dir = run_dir / "profiles" / name
@@ -149,28 +152,32 @@ def measure(launch, name, source, run_dir):
         return {"status": "INTERFERED_TIMING_REJECTED", "telemetry": telemetry}
     thread.start()
     try:
-        config = torch_npu.profiler._ExperimentalConfig(
-            profiler_level=torch_npu.profiler.ProfilerLevel.Level1,
-            aic_metrics=torch_npu.profiler.AiCMetrics.AiCoreNone)
-        with torch_npu.profiler.profile(
-                activities=[torch_npu.profiler.ProfilerActivity.CPU,
-                            torch_npu.profiler.ProfilerActivity.NPU],
-                schedule=torch_npu.profiler.schedule(wait=0, warmup=1, active=3, repeat=1),
-                record_shapes=False, profile_memory=False, with_stack=False,
-                experimental_config=config,
-                on_trace_ready=torch_npu.profiler.tensorboard_trace_handler(str(profile_dir))) as profiler:
-            for step in range(4):
-                if step == 1:
-                    time.sleep(0.02)
-                for repeat in range(5):
-                    if step == 0:
-                        launch()
-                    else:
-                        with torch.profiler.record_function(
-                                f"ligerbase::{name}::{(step - 1) * 5 + repeat}"):
+        if method == "mspti":
+            from .mspti import measure_npu
+            mspti_profile = measure_npu([("baseline", launch, name)])
+        else:
+            config = torch_npu.profiler._ExperimentalConfig(
+                profiler_level=torch_npu.profiler.ProfilerLevel.Level1,
+                aic_metrics=torch_npu.profiler.AiCMetrics.AiCoreNone)
+            with torch_npu.profiler.profile(
+                    activities=[torch_npu.profiler.ProfilerActivity.CPU,
+                                torch_npu.profiler.ProfilerActivity.NPU],
+                    schedule=torch_npu.profiler.schedule(wait=0, warmup=1, active=3, repeat=1),
+                    record_shapes=False, profile_memory=False, with_stack=False,
+                    experimental_config=config,
+                    on_trace_ready=torch_npu.profiler.tensorboard_trace_handler(str(profile_dir))) as profiler:
+                for step in range(4):
+                    if step == 1:
+                        time.sleep(0.02)
+                    for repeat in range(5):
+                        if step == 0:
                             launch()
-                torch.npu.synchronize()
-                profiler.step()
+                        else:
+                            with torch.profiler.record_function(
+                                    f"ligerbase::{name}::{(step - 1) * 5 + repeat}"):
+                                launch()
+                    torch.npu.synchronize()
+                    profiler.step()
     finally:
         stop.set()
         thread.join(timeout=50)
@@ -181,7 +188,14 @@ def measure(launch, name, source, run_dir):
     if thread.is_alive() or any(item["errors"] for item in telemetry):
         return {"status": "INTERFERED_TIMING_REJECTED", "telemetry_file": str(telemetry_file)}
     evidence = _compiled_evidence(run_dir, name, source)
-    samples = _trace_samples(profile_dir, name)
+    if method == "mspti":
+        variant = mspti_profile["variants"]["baseline"]
+        samples = {"us": variant["median_us"],
+                   "samples_us": [sample["duration_us"] for sample in variant["samples"]],
+                   "rounds": variant["rounds"], "profile": mspti_profile}
+    else:
+        samples = _trace_samples(profile_dir, name)
     return {"status": "MEASURED_KERNEL", "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+            "method": method,
             "sample_count": 15, "host_pid": host_pid, "telemetry_file": str(telemetry_file),
             "compiled_evidence": evidence, **samples}

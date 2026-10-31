@@ -102,9 +102,14 @@ def run(args):
                                 case.launch(kernels, metadata['kernel_symbol'])
                             torch.npu.synchronize()
                             monitor.require_clear()
-                            profile = measure(case, kernels, metadata['kernel_symbol'],
-                                              output / ('profile-' + plan['case']['id']),
-                                              record['runtime_kernel_name'])
+                            if getattr(args, 'timing', 'profiler') == 'mspti':
+                                from .mspti import measure_npu
+                                profile = measure_npu([('baseline', lambda: case.launch(kernels, metadata['kernel_symbol']),
+                                                        record['runtime_kernel_name'])], prepare=case.prepare)
+                            else:
+                                profile = measure(case, kernels, metadata['kernel_symbol'],
+                                                  output / ('profile-' + plan['case']['id']),
+                                                  record['runtime_kernel_name'])
                             record['profile'] = profile
                             monitor.sample()
                             if not monitor.eligible_since(index):

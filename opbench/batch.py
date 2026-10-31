@@ -26,6 +26,7 @@ def run(args):
             cmd = [sys.executable, '-I', str(ROOT/'tools/run.py'), 'run', '--operator', entry['id'],
                    '--suite', args.suite, '--variants', args.variants,
                    '--output', str(folder)]
+            cmd.extend(['--timing', getattr(args, 'timing', 'profiler')])
             if args.physical_card is not None:
                 cmd.extend(['--physical-card', str(args.physical_card)])
             if args.environment is not None:

@@ -47,7 +47,7 @@ python tools/run.py plan --operator liger --variants baseline
   --physical-card 6 --environment environment.local.json --output runs/liger-second-001
 ```
 
-单条使用 `--operator LK03` 或精确 kernel 名称；多条使用 `LK03,LK14,LK46`。支持 `--correctness-only`。每个 kernel 独立进程和缓存，串行运行；同一用户不同 checkout 共用卡锁，另有设备健康/占用监控，不杀进程、不重置设备。
+单条使用 `--operator LK03` 或精确 kernel 名称；多条使用 `LK03,LK14,LK46`。支持 `--correctness-only` 和可选 `--timing mspti`。每个 kernel 独立进程和缓存，串行运行；同一用户不同 checkout 共用卡锁，另有设备健康/占用监控，不杀进程、不重置设备。
 
 每个条目默认重放第二批实际采用的一个 shape/dtype。原计划优先较大候选，部分项目最终采用较小配置；**这些配置不是经搜索确认的最大安全尺寸**。`smoke` 是同一配置，不是小尺寸模式；有的配置包含数亿元素，需预留显存。`fp32`/`bf16` 按登记的主输入 dtype 筛选；`all` 包括 INT8/UINT8 的 experimental matmul。`historical-plan.json` 保存原大尺寸优先候选计划，仅供溯源；新入口不自动降级 shape，也不将不同形状比较成加速比。
 
@@ -58,6 +58,8 @@ python tools/run.py plan --operator liger --variants baseline
 先跑固定的上游正确性用例或本批直接参考用例，setup/call/teardown 全部通过才计时。公开入口在测试进程内绑定到明确选择的源码，目标 JIT 替换为本目录 `kernels.py`；其它 kernel 只是准备/校验依赖。原有数值阈值保留，测试中参考实现使用 PyTorch，不计时。部分上游用例容差较宽，应结合 `test_case.py` 评估适用范围；本次没有加严或放宽。
 
 记录实际 launch 输入、grid、constexpr，重放最终目标 JIT。通过编译缓存源码位置和 profiler 的 CPU→NPU flow，要求每个样本只命中一个同名目标 Triton kernel。**15 个设备 Duration(us) 的中位数**作为耗时；排除参考、Torch/厂商 kernel、host 开销、首次编译。未知归因、缺样本或外来占用不产生有效耗时。重放保持原始参数/缓冲区，包括原位 kernel，不将其当作第二次完整数值测试。bwd 直接计时，不通过 fwd+bwd 相减。
+
+MSPTI 模式对每次重放独立采集，要求恰有一条同名 kernel 记录；取每轮五次的中位数，再取三轮中位数。保留与默认 profiler 相同的编译产物和占用检查，结果中记录采样方法和原始样本。
 
 新结果在 `runs/<批次>/`：`performance.csv`、`summary.json`、每个 ID 的日志及 `result.json`、trace/CSV、源码/编译缓存哈希、占用证据。`completed` 表示调度完成，`all_passed` 才表示全部通过；失败的性能为空。`runs/` 被 Git 忽略，提交新结果前需去除本机路径和主机身份。
 

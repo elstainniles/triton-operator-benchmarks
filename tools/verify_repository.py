@@ -17,10 +17,14 @@ from opbench.liger import verify_suite as verify_liger_suite
 from opbench.fla import verify_suite as verify_fla_suite
 
 
-# These three files changed when FLA dispatch was added. Historical evidence
+# These files changed since the Liger measurements were collected. Historical evidence
 # continues to bind their exact original bytes, never the newly modified code.
 HISTORICAL_HARNESS = {
     'catalog.py': 'f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e',
+    'graph_runner.py': 'e6625eafb80229057b9e93b206cb7962bba4a3bb466403d992fa7242acb7e206',
+    'runner.py': 'a71e1bdab749604c8cd6d1aa9b82ecc6f73260c2093cbef8ad1638610e339d33',
+    'liger_profile.py': '71f8885f2a1fb74fbb3bbd43f464a6cbdbbd31f0703d890e272ad7040535a6ac',
+    'liger_runner.py': 'a8154dc4fac624cec436ca49a12b1986a66a622215ce0d7491556be24b778e6b',
     'cli.py': 'cf012d361d0e7f9b2f80670090a73b3cd543424b1e1e683217541a695af781d7',
     'batch.py': 'acbce294a176735f9931fceafc145e1735ae54742449af620df6e40637146cdc',
 }
@@ -53,6 +57,7 @@ def verify():
     assert validation['total'] == len(validation['evidence']) == 25
     assert validation['counts'] == {'measured':25}
     assert len({row['operator_id'] for row in validation['evidence']}) == 25
+    changed_harness = set()
     for row in validation['evidence']:
         evidence = read_json(ROOT/row['path'])
         _, path = resolve(row['operator_id'])
@@ -64,6 +69,8 @@ def verify():
             assert hashlib.sha256((path/filename).read_bytes()).hexdigest() == digest
         for filename, digest in evidence['harness_sha256'].items():
             verify_historical_harness(filename, digest)
+            if hashlib.sha256((ROOT/'opbench'/filename).read_bytes()).hexdigest() != digest:
+                changed_harness.add(filename)
         assert hashlib.sha256((path/'cases.json').read_bytes()).hexdigest() == evidence['cases_sha256']
         assert read_json(path/'operator.json')['current_runner_validation']['status'] == 'SECOND_BATCH_CASE_VALIDATED'
     graph_entries = [e for e in all_entries if e.get('runner') == 'graph_tests']
@@ -226,7 +233,8 @@ def verify():
     return dict(status='PASS', entries=len(all_entries), flaggems_entries=len(entries),
                 imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
                 graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), liger=liger,
-                verified_liger_entry_cases=validation['total'], fla=fla, **counters)
+                verified_liger_entry_cases=validation['total'], fla=fla,
+                historical_liger_harness_changed=sorted(changed_harness), **counters)
 
 
 if __name__ == '__main__':

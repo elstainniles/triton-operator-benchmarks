@@ -56,6 +56,24 @@ class BatchTests(unittest.TestCase):
             self.assertFalse(summary['all_passed'])
             self.assertEqual(summary['counts'], {'runtime_failed':1})
 
+    def test_mspti_is_forwarded_to_batch_children(self):
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)
+            args = SimpleNamespace(operator='TG04', case_id=[], suite='smoke', variants='baseline',
+                                   output=folder/'run', environment=folder/'env.json',
+                                   physical_card=6, correctness_only=False, timing='mspti')
+            def child(cmd, **kwargs):
+                self.assertEqual(cmd[cmd.index('--timing') + 1], 'mspti')
+                self.assertEqual(cmd[cmd.index('--physical-card') + 1], '6')
+                self.assertEqual(cmd[cmd.index('--environment') + 1], str(args.environment.resolve()))
+                destination = Path(cmd[cmd.index('--output') + 1])
+                destination.mkdir()
+                save(destination/'result.json', dict(completed=True, cases=[dict(
+                    case=dict(id='smoke', shape=[1], dtype='float32'), status='measured', median_us=1)]))
+                return SimpleNamespace(returncode=0)
+            with patch('opbench.batch.subprocess.run', side_effect=child):
+                run(args)
+
     def test_source_archives_do_not_stop_batch_or_require_a_device(self):
         with tempfile.TemporaryDirectory() as directory:
             folder = Path(directory)

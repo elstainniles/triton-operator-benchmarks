@@ -19,6 +19,7 @@ def main():
             command.add_argument('--physical-card', type=int, choices=range(8))
             command.add_argument('--environment', type=Path)
             command.add_argument('--correctness-only', action='store_true')
+            command.add_argument('--timing', choices=['profiler', 'mspti'], default='profiler')
             command.add_argument('--case-id', action='append', default=[], help='Generated graph or FLA case ID; repeatable')
     args = parser.parse_args()
     if args.command == 'list':

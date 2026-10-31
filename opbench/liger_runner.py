@@ -22,7 +22,7 @@ def failure_status(error, launched):
     return 'runtime_failed'
 
 
-def run_case(path, meta, case, output, correctness_only):
+def run_case(path, meta, case, output, correctness_only, timing_method="profiler"):
     import pytest
     import torch
     import triton.runtime.jit
@@ -97,7 +97,7 @@ def run_case(path, meta, case, output, correctness_only):
 
     from .liger_profile import measure
     try:
-        timing = measure(replay, name, str(expected), output)
+        timing = measure(replay, name, str(expected), output, method=timing_method)
         result['timing'] = timing
         if timing['status'] == 'MEASURED_KERNEL':
             result.update(status='measured', median_us=timing['us'])
@@ -167,7 +167,8 @@ def run(args):
                 sys.path.insert(0, str(GROUP/'support'))
                 monitor.require_clear()
                 start = len(monitor.samples)-1
-                record = run_case(path, meta, schedule[0]['case'], output, args.correctness_only)
+                record = run_case(path, meta, schedule[0]['case'], output, args.correctness_only,
+                                  getattr(args, 'timing', 'profiler'))
                 result['cases'].append(record)
                 monitor.sample()
                 if not monitor.eligible_since(start):
