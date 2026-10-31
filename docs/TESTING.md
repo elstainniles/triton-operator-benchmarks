@@ -91,6 +91,6 @@ bwd 条目直接测指定反向 Triton kernel，没有先测 fwd 再减时间；
 
 ## 可选 MSPTI 计时
 
-FlagGems 和图优化批次可用 `--timing mspti` 替代默认 profiler，例如在上述运行命令中加入 `--timing mspti`。支持单算子及 `--operator flaggems`、`--operator graph`；Liger 和包含 Liger 的批次暂不支持。运行环境需提供 `mspti` Python 模块和兼容的 CANN/MSPTI；本入口禁止继承 `LD_PRELOAD`，因此需要依赖无需预加载的环境（例如 CANN 9.1 或更新版本），较旧环境不在支持范围。
+FlagGems、图优化和 Liger 批次可用 `--timing mspti` 替代默认 profiler，例如在上述运行命令中加入 `--timing mspti`。支持单算子、批次选择器和 `--operator all`。运行环境需提供 `mspti` Python 模块和兼容的 CANN/MSPTI；本入口禁止继承 `LD_PRELOAD`，因此需要依赖无需预加载的环境（例如 CANN 9.1 或更新版本），较旧环境不在支持范围。
 
-正确性检查、设备监控、warmup 和三轮各五次的统计口径保持一致。每次调用前同步并单独启动 KernelMonitor，调用后同步并停止；仅接受恰好一条名称与已编译 kernel 一致、耗时为正的设备记录。MSPTI 时间戳以纳秒计，转换为微秒，原始样本和各轮中位数保存在 `result.json` 的 `profile` 字段。缺失、额外或名称不匹配的记录会停止计时；不会回退到其他计时方式。此方法与 profiler 方法的运行条件不同，结果应分别标记，不应直接混合比较。MSPTI 路径尚需在目标 NPU 环境验证。
+正确性检查、设备监控和 warmup 保持不变；MSPTI 使用三轮各五次。Liger 的默认 profiler 使用全部 15 次的中位数，而 MSPTI 先取每轮中位数再取三轮中位数。每次调用前同步并单独启动 KernelMonitor，调用后同步并停止；仅接受恰好一条名称与已编译 kernel 一致、耗时为正的设备记录。MSPTI 时间戳以纳秒计，转换为微秒，原始样本和各轮中位数保存在 `result.json` 的 `profile` 字段。缺失、额外或名称不匹配的记录会停止计时；不会回退到其他计时方式。此方法与 profiler 方法的运行条件不同，结果应分别标记，不应直接混合比较。Liger LK01 已做单 kernel 功能检查：正确性、目标重放与 MSPTI 样本通过；该次使用共享设备且测试脚本未启用正式占用监控，不能作为性能结果或完整入口的设备验证。

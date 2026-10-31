@@ -32,8 +32,6 @@ def main():
             return run(args)
         entry, _ = resolve(args.operator)
         if entry.get('runner') == 'liger':
-            if args.timing == 'mspti':
-                parser.error('MSPTI timing is not supported for Liger')
             from .liger_runner import run
         elif entry.get('runner') == 'graph_tests':
             from .graph_runner import run

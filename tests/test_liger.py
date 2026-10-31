@@ -3,10 +3,12 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
 
 from opbench.catalog import plans, select
 from opbench.liger import verify_suite
-from opbench.liger_profile import _trace_samples
+from opbench.liger_profile import _trace_samples, measure
 from opbench.liger_runner import failure_status
 
 
@@ -29,6 +31,36 @@ class LigerTests(unittest.TestCase):
         self.assertEqual(failure_status("CompilationError: 'dtype' object is not callable",True),'compile_failed')
         self.assertEqual(failure_status('AssertionError: tensor mismatch',True),'accuracy_failed')
         self.assertEqual(failure_status('NPU device fault',False),'runtime_failed')
+
+    def test_mspti_path_preserves_telemetry_and_compiled_evidence(self):
+        profile = {'variants': {'baseline': {
+            'median_us': 2.0, 'samples': [{'duration_us': 2.0}] * 15,
+            'rounds': [{'round': r, 'median_us': 2.0} for r in range(3)]}}}
+        fake_torch = SimpleNamespace(npu=SimpleNamespace(synchronize=lambda: None))
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.dict('sys.modules', {'torch': fake_torch}), \
+             patch('opbench.liger_profile._host_pid', return_value=123), \
+             patch('opbench.liger_profile._telemetry', return_value={'errors': []}), \
+             patch('opbench.liger_profile._compiled_evidence', return_value=[{'hash': 'test'}]), \
+             patch('opbench.mspti.measure_npu', return_value=profile) as collector:
+            result = measure(lambda: None, 'target', '/source.py', tmp, method='mspti')
+        self.assertEqual(result['status'], 'MEASURED_KERNEL')
+        self.assertEqual(result['method'], 'mspti')
+        self.assertEqual(result['us'], 2.0)
+        self.assertEqual(len(result['samples_us']), 15)
+        self.assertEqual(result['compiled_evidence'], [{'hash': 'test'}])
+        self.assertEqual(collector.call_args.args[0][0][2], 'target')
+
+    def test_mspti_rejects_foreign_device_process(self):
+        fake_torch = SimpleNamespace(npu=SimpleNamespace(synchronize=lambda: None))
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.dict('sys.modules', {'torch': fake_torch}), \
+             patch('opbench.liger_profile._host_pid', return_value=123), \
+             patch('opbench.liger_profile._telemetry', return_value={'errors': ['FOREIGN_NPU_PROCESS']}), \
+             patch('opbench.mspti.measure_npu') as collector:
+            result = measure(lambda: None, 'target', '/source.py', tmp, method='mspti')
+        self.assertEqual(result['status'], 'INTERFERED_TIMING_REJECTED')
+        collector.assert_not_called()
 
     def profile(self, folder, unknown=False, missing=False):
         events, rows = [], []

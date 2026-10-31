@@ -10,8 +10,6 @@ from .runner import save
 
 
 def run(args):
-    if getattr(args, 'timing', 'profiler') == 'mspti' and any(e.get('runner') == 'liger' for e in select(args.operator)):
-        raise ValueError('MSPTI timing is not supported for Liger; select FlagGems or graph operators')
     if args.case_id:
         raise ValueError('--case-id requires a single graph operator')
     output = args.output.resolve()
