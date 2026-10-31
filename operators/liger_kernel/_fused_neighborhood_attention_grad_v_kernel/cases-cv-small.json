@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "operator_id": "LK11",
+  "kernel": "_fused_neighborhood_attention_grad_v_kernel",
+  "cases": [
+    {
+      "id": "LK11-bh8-matrix32",
+      "suite": "cv-small",
+      "shape": [
+        2,
+        4,
+        32,
+        32
+      ],
+      "shape_axes": [
+        "B",
+        "H",
+        "S",
+        "D"
+      ],
+      "dtype": "float32",
+      "type": "CV",
+      "tensors": {
+        "Attn_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        },
+        "grad_output_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        },
+        "grad_V_ptr": {
+          "shape": [
+            2,
+            4,
+            32,
+            32
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            4096,
+            1024,
+            32,
+            1
+          ]
+        }
+      },
+      "scalar_arguments": {
+        "attn_batch_stride": 4096,
+        "attn_head_stride": 1024,
+        "attn_seq_stride": 32,
+        "attn_seq2_stride": 1,
+        "grad_out_batch_stride": 4096,
+        "grad_out_head_stride": 1024,
+        "grad_out_seq_stride": 32,
+        "grad_out_dim_stride": 1,
+        "grad_v_batch_stride": 4096,
+        "grad_v_head_stride": 1024,
+        "grad_v_seq_stride": 32,
+        "grad_v_dim_stride": 1,
+        "batch_size": 2,
+        "num_heads": 4,
+        "seq_len": 32,
+        "head_dim": 32,
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 32,
+        "num_stages": 2,
+        "num_warps": 4
+      },
+      "dimensions": {
+        "batch_size": 2,
+        "num_heads": 4,
+        "seq_len": 32,
+        "head_dim": 32,
+        "hidden_size": 128
+      },
+      "tile": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 32
+      },
+      "grid": [
+        8,
+        1,
+        1
+      ],
+      "output": "grad_V_ptr",
+      "seed": 20261031,
+      "correctness": {
+        "reference": "CPU float64 per-kernel equations; original repository thresholds; not upstream transformer end-to-end test",
+        "rtol": 0.005,
+        "atol": 0.005,
+        "sentinel_elements_per_side": 64,
+        "sentinel_value": 12345
+      },
+      "input_origin": "direct_cpu_fp64_fixture_from_cv_bh_batch_20261031",
+      "original_case_id": "second-batch",
+      "original_nodeid": "test/transformers/test_fused_neighborhood_attention.py::test_fused_neighborhood_attention_correctness[dtype0-0.005-0.005-False-2-32-128-4-7]",
+      "original_case_file_sha256": "93976e10494bb6e71b476e4022be86f85df0237caff5754b682e00f4f2cc94b0"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+kernel,repository,shape_dtype,type,factor,baseline_us,merged_us,speedup
+_fused_neighborhood_attention_qk_kernel (fwd),linkedin/Liger-Kernel,B=2 H=4 S=32 D=32; float32,CV,2,4.1850000000000005,3.2885,1.2726166945415844
+_fused_neighborhood_attention_av_kernel (fwd),linkedin/Liger-Kernel,B=2 H=4 S=32 D=32; float32,CV,2,4.109500000000001,3.55,1.1576056338028171
+_fused_neighborhood_attention_grad_qk_kernel (bwd),linkedin/Liger-Kernel,B=2 H=4 S=32 D=32; float32,CV,2,4.25,3.456,1.2297453703703705
+_fused_neighborhood_attention_grad_k_kernel (bwd),linkedin/Liger-Kernel,B=2 H=4 S=32 D=32; float32,CV,2,4.1225000000000005,3.6695,1.1234500613162557
+_fused_neighborhood_attention_grad_v_kernel (bwd),linkedin/Liger-Kernel,B=2 H=4 S=32 D=32; float32,CV,2,4.2095,3.751,1.122234070914423
+_fused_neighborhood_attention_grad_attn_kernel (bwd),linkedin/Liger-Kernel,B=2 H=4 S=32 D=32; float32,CV,2,4.0525,3.241,1.2503856834310398

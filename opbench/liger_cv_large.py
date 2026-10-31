@@ -26,24 +26,26 @@ IDS = tuple(f'LK{i:02}' for i in range(7, 13))
 MANIFEST = GROUP / 'cv-large-manifest.json'
 
 
-def load_case(operator):
+def load_case(operator, suite='large'):
+    if suite not in ('large', 'small'):
+        raise ValueError('Unknown CV suite: ' + suite)
     entry, path = resolve(operator)
     if entry['id'] not in IDS:
-        raise ValueError('The large CV suite contains only LK07-LK12')
-    records = read_json(MANIFEST)['entries']
+        raise ValueError('The CV suite contains only LK07-LK12')
+    records = read_json(GROUP / f'cv-{suite}-manifest.json')['entries']
     record, = [r for r in records if r['operator_id'] == entry['id']]
     case_path = ROOT / record['case']
-    if case_path.resolve() != (path / 'cases-cv-large.json').resolve():
-        raise ValueError('Large case path does not match operator')
+    if case_path.resolve() != (path / f'cases-cv-{suite}.json').resolve():
+        raise ValueError('CV case path does not match operator')
     if digest(case_path) != record['case_sha256']:
-        raise ValueError('Large case differs from frozen manifest')
+        raise ValueError('CV case differs from frozen manifest')
     case, = read_json(case_path)['cases']
     return entry, path, case
 
 
-def selected(selector):
+def selected(selector, suite='large'):
     names = IDS if selector == 'all' else selector.split(',')
-    rows = [load_case(n.strip()) for n in names]
+    rows = [load_case(n.strip(), suite) for n in names]
     if not rows or len({r[0]['id'] for r in rows}) != len(rows):
         raise ValueError('Empty or duplicate operator selection')
     return rows
@@ -108,6 +110,26 @@ def validate_merge(launch, lowering, factor, grid):
         raise RuntimeError('Requested first-version CV merge was not applied; reject candidate timing')
 
 
+def launch_options(factor, suite='large', batch_control=False):
+    if suite not in ('large', 'small') or factor not in (1, 2, 4, 8):
+        raise ValueError('Unknown CV suite or factor')
+    if batch_control and (suite != 'small' or factor != 1):
+        raise ValueError('Batch control requires the small suite and factor=1')
+    options = dict(enable_hivm_batch_matmul=suite == 'small' and (factor > 1 or batch_control), debug=False)
+    if factor > 1:
+        options.update(block_batching_cv=True, block_batching_factor=factor, block_batching_axis=0)
+    return options
+
+
+def validate_candidate(compiled, factor, grid, suite):
+    if suite == 'small':
+        from .liger_cv_small import validate_compiled
+        return validate_compiled(compiled, factor, grid)
+    else:
+        validate_merge(getattr(compiled, 'last_launch', {}),
+                       getattr(compiled, 'block_batching', {}).get('cv_lowering'), factor, grid)
+
+
 def fixture(torch, entry, case):
     """CPU FP64 equations; contiguous FP32 operands; guarded NPU output."""
     B, H, S, D = case['shape']
@@ -170,13 +192,14 @@ def run_one(args):
     from .liger import audit_dependency, load_kernel
     from .liger_profile import measure
 
-    entry, path, case = load_case(args.operator)
+    entry, path, case = load_case(args.operator, args.suite)
     meta, _ = verify_operator(path)
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    result = dict(origin='new_large_case_runner', operator=entry, case=case, factor=args.factor,
+    result = dict(origin=f'new_{args.suite}_case_runner', operator=entry, case=case, factor=args.factor,
+                  batch_control=args.batch_control,
                   completed=False, status='RUNNING', median_us=None,
-                  source_sha256=digest(path / 'kernels.py'), case_sha256=digest(path / 'cases-cv-large.json'),
+                  source_sha256=digest(path / 'kernels.py'), case_sha256=digest(path / f'cases-cv-{args.suite}.json'),
                   harness_sha256={p.name: digest(p) for p in Path(__file__).parent.glob('*.py')},
                   started_utc=datetime.now(timezone.utc).isoformat())
     try:
@@ -225,19 +248,16 @@ def run_one(args):
                 start = len(monitor.samples) - 1
                 values, target, check = fixture(torch, entry, case)
                 grid = tuple(case['grid'])
-                base_options = dict(enable_hivm_batch_matmul=False, debug=False)
+                base_options = launch_options(1, args.suite)
                 target.fill_(float('nan'))
                 fn[grid](**values, **base_options)
                 baseline, result['baseline_correctness'] = check()
-                options = dict(base_options)
-                if args.factor > 1:
-                    options.update(block_batching_cv=True, block_batching_factor=args.factor, block_batching_axis=0)
+                options = launch_options(args.factor, args.suite, args.batch_control)
 
                 def launch():
                     compiled = fn[grid](**values, **options)
                     if args.factor > 1:
-                        validate_merge(getattr(compiled, 'last_launch', {}),
-                                       getattr(compiled, 'block_batching', {}).get('cv_lowering'), args.factor, grid)
+                        validate_candidate(compiled, args.factor, grid, args.suite)
                     return compiled
 
                 target.fill_(float('nan'))
@@ -245,6 +265,8 @@ def run_one(args):
                 _, result['correctness'] = check(baseline)
                 result.update(options=options, grid=grid, compiler_hash=compiled.hash,
                               last_launch=getattr(compiled, 'last_launch', None))
+                if args.factor > 1:
+                    result['merge_validation'] = validate_candidate(compiled, args.factor, grid, args.suite)
                 if args.correctness_only:
                     result['status'] = 'correct'
                 else:
@@ -267,18 +289,20 @@ def run_one(args):
 
 
 def run_batch(args):
-    rows = selected(args.operator)
+    rows = selected(args.operator, args.suite)
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    summary = dict(completed=False, cases=[], factor=args.factor)
+    summary = dict(completed=False, cases=[], suite=args.suite, factor=args.factor, batch_control=args.batch_control)
     try:
         for entry, _, case in rows:
             folder = output / entry['id']
-            cmd = [sys.executable, '-I', str(ROOT / 'tools/run_liger_cv_large.py'), '_worker',
+            cmd = [sys.executable, '-I', str(ROOT / f'tools/run_liger_cv_{args.suite}.py'), '_worker',
                    '--operator', entry['id'], '--factor', str(args.factor), '--physical-card', str(args.physical_card),
                    '--environment', str(args.environment.resolve()), '--output', str(folder)]
             if args.correctness_only:
                 cmd.append('--correctness-only')
+            if args.batch_control:
+                cmd.append('--batch-control')
             if args.task_lock:
                 cmd.extend(['--task-lock', str(args.task_lock.resolve())])
             if args.card_lock:
@@ -302,8 +326,9 @@ def run_batch(args):
             writer.writerows(summary['cases'])
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+def main(suite='large'):
+    parser = argparse.ArgumentParser(description=f'Six frozen {suite} Liger CV cases, LK07-LK12.')
+    parser.set_defaults(suite=suite, batch_control=False)
     commands = parser.add_subparsers(dest='command', required=True)
     commands.add_parser('verify')
     plan = commands.add_parser('plan')
@@ -312,6 +337,9 @@ def main():
         sub = commands.add_parser(command)
         sub.add_argument('--operator', default='all')
         sub.add_argument('--factor', type=int, choices=[1, 2, 4, 8], default=1)
+        if suite == 'small':
+            sub.add_argument('--batch-control', action='store_true',
+                             help='Factor=1 with lower-level batch matmul enabled; no CV merge')
         sub.add_argument('--physical-card', type=int, choices=range(8), required=True)
         sub.add_argument('--environment', type=Path, required=True)
         sub.add_argument('--output', type=Path, required=True)
@@ -319,12 +347,19 @@ def main():
         sub.add_argument('--card-lock', type=Path, help='Optional existing site-wide physical-card lock')
         sub.add_argument('--correctness-only', action='store_true')
     args = parser.parse_args()
+    if args.command in ('run', '_worker'):
+        launch_options(args.factor, args.suite, args.batch_control)
     if args.command == 'verify':
         import json
-        print(json.dumps(verify_all(), indent=2))
+        if suite == 'small':
+            from .liger_cv_small import verify_all as verify_small
+            print(json.dumps(verify_small(), indent=2))
+        else:
+            print(json.dumps(verify_all(), indent=2))
     elif args.command == 'plan':
         import json
-        print(json.dumps([dict(id=e['id'], kernel=e['name'], case=c) for e, _, c in selected(args.operator)], indent=2))
+        print(json.dumps([dict(id=e['id'], kernel=e['name'], case=c)
+                          for e, _, c in selected(args.operator, suite)], indent=2))
     elif args.command == '_worker':
         run_one(args)
     else:

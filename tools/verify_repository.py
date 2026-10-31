@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT))
 from opbench.catalog import module, operators, plans, read_json, resolve
 from opbench.graph_tests import verify_graph_suite
 from opbench.liger import verify_suite as verify_liger_suite
+from opbench.liger_cv_small import verify_all as verify_liger_cv_small
 from opbench.fla import verify_suite as verify_fla_suite
 
 
@@ -52,6 +53,7 @@ def verify():
     assert len({o['path'] for o in all_entries}) == len(all_entries)
     entries = [e for e in all_entries if not e.get('runner')]
     liger = verify_liger_suite()
+    liger_cv_small = verify_liger_cv_small()
     fla = verify_fla_suite()
     validation = read_json(ROOT/'docs/liger-validation-20261028.json')
     assert validation['total'] == len(validation['evidence']) == 25
@@ -233,7 +235,7 @@ def verify():
     return dict(status='PASS', entries=len(all_entries), flaggems_entries=len(entries),
                 imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
                 graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), liger=liger,
-                verified_liger_entry_cases=validation['total'], fla=fla,
+                verified_liger_entry_cases=validation['total'], fla=fla, liger_cv_small=liger_cv_small,
                 historical_liger_harness_changed=sorted(changed_harness), **counters)
 
 

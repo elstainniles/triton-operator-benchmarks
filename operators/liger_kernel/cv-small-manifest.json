@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "suite": "cv-small",
+  "entries": [
+    {
+      "operator_id": "LK07",
+      "kernel": "_fused_neighborhood_attention_qk_kernel",
+      "case": "operators/liger_kernel/_fused_neighborhood_attention_qk_kernel/cases-cv-small.json",
+      "case_sha256": "765969f6f6f4fe7d8320031a6473efd1409e947843c30f43fe033b2baaa6e464",
+      "measurement": "operators/liger_kernel/_fused_neighborhood_attention_qk_kernel/results/20261031-cv-small/measurement.json",
+      "measurement_sha256": "de3cef04a6f14f8bc213a1ab0ea5b2090dca42fd6e1d7087c7978f7d89c2b433"
+    },
+    {
+      "operator_id": "LK08",
+      "kernel": "_fused_neighborhood_attention_av_kernel",
+      "case": "operators/liger_kernel/_fused_neighborhood_attention_av_kernel/cases-cv-small.json",
+      "case_sha256": "539558a08827231d9fa0fed717946b305a36870fe7101e4ca5ca5e8cb01df557",
+      "measurement": "operators/liger_kernel/_fused_neighborhood_attention_av_kernel/results/20261031-cv-small/measurement.json",
+      "measurement_sha256": "de2b34ced1b07ef29c00a9f80a9e192eb9161b0b511d0b39cf437535d9abe49b"
+    },
+    {
+      "operator_id": "LK09",
+      "kernel": "_fused_neighborhood_attention_grad_qk_kernel",
+      "case": "operators/liger_kernel/_fused_neighborhood_attention_grad_qk_kernel/cases-cv-small.json",
+      "case_sha256": "31b77f4a4cb79c76a59698fea81a42bd1a58e9f599c5c38724e4aba11e53a536",
+      "measurement": "operators/liger_kernel/_fused_neighborhood_attention_grad_qk_kernel/results/20261031-cv-small/measurement.json",
+      "measurement_sha256": "a681c3255ed0f471e33dc855a5bdddcd2a5d084138c96538d454645c0a00ba47"
+    },
+    {
+      "operator_id": "LK10",
+      "kernel": "_fused_neighborhood_attention_grad_k_kernel",
+      "case": "operators/liger_kernel/_fused_neighborhood_attention_grad_k_kernel/cases-cv-small.json",
+      "case_sha256": "02d930869136cb9726c6d07a896eeec0755ffa3698c7e8aeb6ff432db39b4d61",
+      "measurement": "operators/liger_kernel/_fused_neighborhood_attention_grad_k_kernel/results/20261031-cv-small/measurement.json",
+      "measurement_sha256": "6d4acaf4f3b642b308695ee12e403d946f1a95e4b26c35e22242614006405343"
+    },
+    {
+      "operator_id": "LK11",
+      "kernel": "_fused_neighborhood_attention_grad_v_kernel",
+      "case": "operators/liger_kernel/_fused_neighborhood_attention_grad_v_kernel/cases-cv-small.json",
+      "case_sha256": "58df558a8f42ad9c90cea20872888a20a82ee8f2a50568d2e523461527f61535",
+      "measurement": "operators/liger_kernel/_fused_neighborhood_attention_grad_v_kernel/results/20261031-cv-small/measurement.json",
+      "measurement_sha256": "4469729153f674c3036b1a371404b31075e7eb098c9949611a6eb4d6479159af"
+    },
+    {
+      "operator_id": "LK12",
+      "kernel": "_fused_neighborhood_attention_grad_attn_kernel",
+      "case": "operators/liger_kernel/_fused_neighborhood_attention_grad_attn_kernel/cases-cv-small.json",
+      "case_sha256": "5dc400d01901526f420fb10bb5d9440ef873582a97be18f1113668ef8e4b0a34",
+      "measurement": "operators/liger_kernel/_fused_neighborhood_attention_grad_attn_kernel/results/20261031-cv-small/measurement.json",
+      "measurement_sha256": "1a9ade7ccf8b9b747337557ce7f571f79a0d0d9148fddedbfb18f92e8e72e853"
+    }
+  ],
+  "source_evidence_archive_sha256": "28fc04877fe891d6eeb0dc4bb941f255a86c2dd6ded9f364ff9073864f0cc07e",
+  "source_summary_sha256": "851800a887ca7e782c9959d813aeff79fc763b5c524c7f7ffc225de661ed05cf"
+}

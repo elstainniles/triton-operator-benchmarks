@@ -24,3 +24,10 @@ python -I tools/run.py run --operator LK11 --variants baseline \
 ## 大尺寸 CV 配置（2026-10-31）
 
 `cases-cv-large.json` 登记 B=8、H=16、S=128、D=64 的独立 kernel 配置。使用完整 K tile，并保留原 kernel 函数；不走旧小尺寸 transformer wrapper。一键入口、第一版合并结果和口径见 [大尺寸说明](../../../docs/LIGER_CV_LARGE.md)。历史小尺寸配置与结果继续保留。
+
+## 小尺寸 CV / BH batch matmul（2026-10-31）
+
+`cases-cv-small.json` 登记 B=2、H=4、S=D=32、float32，BM=BN=BK=32，原 grid=(8,1,1)。
+复用原 kernel，独立 CPU FP64 参考与输出哨兵；基线、batch control 和实验编译器 factor=2/4/8 可分别运行。
+从仓库根执行 `python -I tools/run_liger_cv_small.py run --operator LK11 --physical-card 6 --environment environment.local.json --output runs/LK11-small-001`。
+依赖准备、合并开关及测量口径见[小尺寸说明](../../../docs/LIGER_CV_SMALL.md)，已有完整结果见[历史测量](results/20261031-cv-small/measurement.json)。

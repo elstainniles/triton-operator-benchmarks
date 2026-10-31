@@ -4,7 +4,10 @@
 
 2026-10-31 增加 [LK07–LK12 大尺寸 CV 配置](../../docs/LIGER_CV_LARGE.md)：B=8/H=16/S=128/D=64、float32。
 `tools/run_liger_cv_large.py` 提供独立一键入口；六项的真实输入、tile、grid 和第一版合并实测已归档。
-下文和 `tools/run.py` 仍描述第二批历史配置；新增大尺寸不会覆盖旧结果。
+另有 [LK07–LK12 小尺寸 CV 配置](../../docs/LIGER_CV_SMALL.md)：B=2/H=4/S=D=32、float32，
+使用 `tools/run_liger_cv_small.py` 一键独立调用六个 kernel，可选择基线、batch control 或实验编译器的 BH 合并。
+[小尺寸配置与数据索引](cv-small-manifest.json)保存输入指纹及已完成的 F2/F4/F8 历史结果。
+下文和 `tools/run.py` 仍描述第二批历史配置；新增 CV 用例不会覆盖旧结果。
 
 每个目录包含 `kernels.py`、`test_case.py`、`cases.json`、`operator.json`、`upstream/` 和 `results/20261028/`。目标 JIT 函数、装饰器、算法、原始 grid/tile/autotune 均未修改。完整上游模块保留在 `upstream/`，执行仅抽取目标函数；wrapper、其它辅助 kernel 和参考模型来自固定 wheel。本目录不提供手改优化候选，也不测 PyTorch/ACLNN 的性能。
 

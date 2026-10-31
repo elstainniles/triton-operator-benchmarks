@@ -1,0 +1,830 @@
+{
+  "schema_version": 1,
+  "origin": "historical_import_not_new_runner_validation",
+  "operator_id": "LK11",
+  "kernel": "_fused_neighborhood_attention_grad_v_kernel",
+  "direction": "bwd",
+  "shape": [
+    2,
+    4,
+    32,
+    32
+  ],
+  "dtype": "float32",
+  "type": "CV",
+  "tile": {
+    "BLOCK_SIZE_M": 32,
+    "BLOCK_SIZE_N": 32,
+    "BLOCK_SIZE_K": 32
+  },
+  "original_grid": [
+    8,
+    1,
+    1
+  ],
+  "repo_kernel_sha256": "b42dce4485feceb1850a8a51eb1d6c58c80fc109ad49320f13823481a26d844e",
+  "original_standalone_sha256": "70a40aeed9ec4c1f1cfaef75385cc602ccc7155cbcb1d2008e815303e021eca4",
+  "screen_result_sha256": "482af1aa3b202e59a14d5002ef081cc077d3211daf66b053ecf2efb3cc9cea6f",
+  "environment": {
+    "compiler_revision": "329a9708f9077e0938f966faf9c86c8772ddfdfe",
+    "benchmark_revision": "20cc2f0ad0efafbd494341bff65cbaff0d89d69e",
+    "liger_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+    "wheel_sha256": "fbef92b94a1ff8256e13fcc1f2a5452b1c71465222e98bcc7093d16d81d7e450",
+    "libtriton_sha256": "3ba6e43cec2e38ec7ffb1f21e462a461d3f7be582143e7cb55274ad789759a34",
+    "device": "Ascend950PR_9579",
+    "cann": "9.1.0",
+    "precision": "ieee",
+    "dtype": "float32"
+  },
+  "timing": {
+    "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+    "samples_per_side_per_round": 15,
+    "screen_rounds": 2,
+    "screen_seed": 20261031,
+    "replay_rounds": 2,
+    "replay_seed": 20261101,
+    "aggregation": "median of paired round medians",
+    "confirmed_gain_rule": "all four paired round speedups > 1.05",
+    "coexisting_foreign_pid_rounds": 0
+  },
+  "variants": [
+    {
+      "variant": "batch_control",
+      "factor": 1,
+      "status": "MEASURED_BATCH_CONTROL",
+      "correctness": {
+        "passed": true,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "max_abs_error": 2.384185791015625e-07,
+        "bitwise_equal_baseline": true
+      },
+      "screen_baseline_us": 4.258,
+      "screen_candidate_us": 4.164,
+      "screen_round_speedups": [
+        1.035559827006247,
+        1.0096015362457993
+      ],
+      "replayed": false,
+      "confirmed_gain": false,
+      "reason": null,
+      "baseline_us": 4.258,
+      "candidate_us": 4.164,
+      "rounds": 2,
+      "paired_rounds": [
+        {
+          "baseline_us": 4.31,
+          "candidate_us": 4.162,
+          "speedup": 1.035559827006247,
+          "baseline_samples_us": [
+            4.174,
+            4.31,
+            4.299,
+            4.497,
+            4.194,
+            4.208,
+            4.357,
+            4.314,
+            4.527,
+            4.2,
+            4.343,
+            4.248,
+            4.323,
+            4.494,
+            4.263
+          ],
+          "candidate_samples_us": [
+            4.082,
+            4.203,
+            4.284,
+            4.182,
+            4.097,
+            4.06,
+            4.207,
+            4.169,
+            4.162,
+            4.063,
+            4.115,
+            4.221,
+            4.122,
+            4.301,
+            4.05
+          ]
+        },
+        {
+          "baseline_us": 4.206,
+          "candidate_us": 4.166,
+          "speedup": 1.0096015362457993,
+          "baseline_samples_us": [
+            4.156,
+            4.113,
+            4.211,
+            4.316,
+            4.259,
+            4.164,
+            4.135,
+            4.349,
+            4.344,
+            4.227,
+            4.132,
+            4.154,
+            4.206,
+            4.184,
+            4.241
+          ],
+          "candidate_samples_us": [
+            4.318,
+            4.145,
+            4.166,
+            4.092,
+            4.276,
+            4.277,
+            4.301,
+            4.092,
+            4.05,
+            4.254,
+            4.199,
+            4.342,
+            4.096,
+            4.116,
+            4.144
+          ]
+        }
+      ],
+      "speedup": 1.0225744476464937,
+      "latency_reduction": 0.022076092062001007,
+      "options": {
+        "block_batching_cv": false,
+        "block_batching_axis": 0,
+        "block_batching_factor": 1,
+        "enable_hivm_batch_matmul": true,
+        "debug": false
+      },
+      "binary_sha256": "6cf5ad74298b08515123fd2a77d3cbfcdda83515c939bbf5e4e87ddad44a8b80",
+      "compiler_metadata": {
+        "enable_hivm_batch_matmul": true,
+        "auto_blockify_enabled": true,
+        "default_dot_input_precision": "ieee",
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "ir_sha256": {
+        "source": "bb3d515ecfb08f539dd8e74e7d76866db3e5237aa577622973f9a928c443f6bc",
+        "ttir": "03a5adac607011926480680622f24d83e7b531755fa89dd16a1dea7e1d8ea6b6",
+        "ttadapter": "d6a4b0687850f553f30358ee6cd2560159374bee2540490337264bbcb61f0c98"
+      }
+    },
+    {
+      "variant": "f2_batch",
+      "factor": 2,
+      "status": "MEASURED_APPLIED",
+      "correctness": {
+        "passed": true,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "max_abs_error": 2.384185791015625e-07,
+        "bitwise_equal_baseline": true
+      },
+      "screen_baseline_us": 4.223,
+      "screen_candidate_us": 3.8095,
+      "screen_round_speedups": [
+        1.1082718651211803,
+        1.1088150667015433
+      ],
+      "replayed": true,
+      "confirmed_gain": true,
+      "reason": null,
+      "replay_seed": 20261101,
+      "replay_round_speedups": [
+        1.1454990481370682,
+        1.1130599028602266
+      ],
+      "baseline_us": 4.2095,
+      "candidate_us": 3.751,
+      "rounds": 4,
+      "paired_rounds": [
+        {
+          "baseline_us": 4.207,
+          "candidate_us": 3.796,
+          "speedup": 1.1082718651211803,
+          "baseline_samples_us": [
+            4.22,
+            4.239,
+            4.112,
+            4.207,
+            4.264,
+            4.198,
+            4.225,
+            4.152,
+            4.177,
+            4.286,
+            4.304,
+            4.2,
+            4.185,
+            4.195,
+            4.315
+          ],
+          "candidate_samples_us": [
+            3.558,
+            3.743,
+            3.724,
+            3.951,
+            3.932,
+            3.724,
+            3.613,
+            3.767,
+            3.859,
+            3.903,
+            3.71,
+            3.796,
+            3.919,
+            3.898,
+            3.955
+          ]
+        },
+        {
+          "baseline_us": 4.239,
+          "candidate_us": 3.823,
+          "speedup": 1.1088150667015433,
+          "baseline_samples_us": [
+            4.207,
+            4.301,
+            4.344,
+            4.373,
+            4.211,
+            4.214,
+            4.303,
+            4.211,
+            4.239,
+            4.17,
+            4.13,
+            4.285,
+            4.266,
+            4.24,
+            4.202
+          ],
+          "candidate_samples_us": [
+            3.901,
+            3.723,
+            3.703,
+            3.823,
+            3.847,
+            3.895,
+            3.741,
+            3.628,
+            3.812,
+            3.918,
+            3.914,
+            3.634,
+            3.627,
+            3.885,
+            3.973
+          ]
+        },
+        {
+          "baseline_us": 4.212,
+          "candidate_us": 3.677,
+          "speedup": 1.1454990481370682,
+          "baseline_samples_us": [
+            4.249,
+            4.097,
+            4.21,
+            4.309,
+            4.25,
+            4.13,
+            4.112,
+            4.319,
+            4.328,
+            4.212,
+            4.159,
+            4.108,
+            4.214,
+            4.243,
+            4.188
+          ],
+          "candidate_samples_us": [
+            3.716,
+            3.667,
+            3.809,
+            3.661,
+            3.714,
+            3.662,
+            3.63,
+            3.677,
+            3.578,
+            3.743,
+            3.78,
+            3.471,
+            3.683,
+            3.637,
+            3.758
+          ]
+        },
+        {
+          "baseline_us": 4.125,
+          "candidate_us": 3.706,
+          "speedup": 1.1130599028602266,
+          "baseline_samples_us": [
+            4.1,
+            4.342,
+            4.356,
+            4.125,
+            4.106,
+            4.111,
+            4.32,
+            4.352,
+            4.124,
+            4.088,
+            4.102,
+            4.219,
+            4.33,
+            4.121,
+            4.161
+          ],
+          "candidate_samples_us": [
+            3.708,
+            3.657,
+            3.756,
+            3.656,
+            3.61,
+            3.779,
+            3.734,
+            3.544,
+            3.706,
+            3.794,
+            3.763,
+            3.548,
+            3.695,
+            3.666,
+            3.738
+          ]
+        }
+      ],
+      "speedup": 1.122234070914423,
+      "latency_reduction": 0.1089202993229601,
+      "grid": [
+        4,
+        1,
+        1
+      ],
+      "options": {
+        "block_batching_cv": true,
+        "block_batching_axis": 0,
+        "block_batching_factor": 2,
+        "enable_hivm_batch_matmul": true,
+        "debug": false
+      },
+      "binary_sha256": "6a752ff42e52c56cc72b43af01d649d09ccc39160d9e336b792d411b9cb5332c",
+      "compiler_metadata": {
+        "enable_hivm_batch_matmul": true,
+        "auto_blockify_enabled": false,
+        "default_dot_input_precision": "ieee",
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "ir_sha256": {
+        "source": "d104be3fa092df6c31225a5a36373bcf25b58f96c8d240084bd4bb83ea180195",
+        "ttir": "cb1188b17961d6560b8e1fd9a61f1b0b59dd8c0ca69de99c702011801e1a3f89",
+        "ttadapter": "336eecf6c36155839a6a6e58cc4e441f278d89c2db055f3b69ee37459288c0cc"
+      },
+      "replay_result_sha256": "1e6e961b80e379d64d5c8ac4ec14bc89716f9f86065989761f5f1b15ba6e7b33",
+      "runtime_launch": {
+        "runtime_status": "APPLIED",
+        "owner": "block_batching",
+        "requested_factor": 2,
+        "applied_factor": 2,
+        "selected_axis": 0,
+        "original_grid": [
+          8,
+          1,
+          1
+        ],
+        "batch_grid": [
+          4,
+          1,
+          1
+        ],
+        "reason": "PROVEN_AT_RUNTIME",
+        "plan_id": "2a23fb80bcbcf6c212478af6fc3c883edf0cbf033278e9192b413411575b5dcd"
+      },
+      "cv_lowering": "rank3_full_tile_batch_v2",
+      "require_full_masks": true,
+      "dot": "%acc_65 = tt.dot %acc, %grad_out_chunk, %attn_chunk_41 : tensor<2x32x32xf32> * tensor<2x32x32xf32> -> tensor<2x32x32xf32> loc(#loc103)",
+      "lowering_proof": {
+        "source_sha256": "ffd49ac6fb2931611ff794289b128cf3f8145ca9fc93f161117f2fa45a60e990",
+        "original_binary_sha256": "6a752ff42e52c56cc72b43af01d649d09ccc39160d9e336b792d411b9cb5332c",
+        "diagnostic_binary_sha256": "6a752ff42e52c56cc72b43af01d649d09ccc39160d9e336b792d411b9cb5332c",
+        "same_binary": true,
+        "batch_mma_lines": [
+          "call @batch_mma_tile_float_to_float_ta(%cast_11, %cast_12, %0, %19, %19, %19, %cast_13, %10, %11, %9, %9, %9, %9, %9, %7, %10) : (memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, i1, index, index, index, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cc>>, i64, i64, i64, i64, i64, i64, i64, i8, i64) -> ()",
+          "func.func private @batch_mma_tile_float_to_float_ta(memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, i1, index, index, index, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cc>>, i64, i64, i64, i64, i64, i64, i64, i8, i64) attributes {hacc.always_inline, hivm.func_core_type = #hivm.func_core_type<AIC>, llvm.emit_c_interface}",
+          "call void @batch_mma_tile_float_to_float_ta(ptr addrspace(2) null, ptr addrspace(2) null, i64 0, i64 2, i64 4, i64 2, i64 16, i64 8, i64 1024, i64 256, i64 128, i64 8, i64 1, ptr addrspace(2) inttoptr (i64 8192 to ptr addrspace(2)), ptr addrspace(2) inttoptr (i64 8192 to ptr addrspace(2)), i64 0, i64 2, i64 4, i64 2, i64 16, i64 8, i64 1024, i64 256, i64 128, i64 8, i64 1, i1 true, i64 32, i64 32, i64 32, ptr addrspace(5) null, ptr addrspace(5) null, i64 0, i64 2, i64 2, i64 2, i64 16, i64 16, i64 1024, i64 512, i64 256, i64 16, i64 1, i64 0, i64 1, i64 -1, i64 -1, i64 -1, i64 -1, i64 -1, i8 0, i64 0)",
+          "define private void @batch_mma_tile_float_to_float_ta(ptr addrspace(2) %0, ptr addrspace(2) %1, i64 %2, i64 %3, i64 %4, i64 %5, i64 %6, i64 %7, i64 %8, i64 %9, i64 %10, i64 %11, i64 %12, ptr addrspace(2) %13, ptr addrspace(2) %14, i64 %15, i64 %16, i64 %17, i64 %18, i64 %19, i64 %20, i64 %21, i64 %22, i64 %23, i64 %24, i64 %25, i1 %26, i64 %27, i64 %28, i64 %29, ptr addrspace(5) %30, ptr addrspace(5) %31, i64 %32, i64 %33, i64 %34, i64 %35, i64 %36, i64 %37, i64 %38, i64 %39, i64 %40, i64 %41, i64 %42, i64 %43, i64 %44, i64 %45, i64 %46, i64 %47, i64 %48, i64 %49, i8 %50, i64 %51) #1 {",
+          "call void @_mlir_ciface_batch_mma_tile_float_to_float_ta(ptr %66, ptr %80, i1 %26, i64 %27, i64 %28, i64 %29, ptr %94, i64 %43, i64 %44, i64 %45, i64 %46, i64 %47, i64 %48, i64 %49, i8 %50, i64 %51)",
+          "declare dso_local void @_mlir_ciface_batch_mma_tile_float_to_float_ta(ptr, ptr, i1, i64, i64, i64, ptr, i64, i64, i64, i64, i64, i64, i64, i8, i64) #1"
+        ],
+        "evidence_sha256": [
+          "5c0c35fd3b3ced60b3341539cfb544b37a27d177bc7833d438761f48aac828d9",
+          "ad403736aeef2c0e0e1579f2aa7ee57eda4b390a931d020257800e613c6a2f7f"
+        ]
+      }
+    },
+    {
+      "variant": "f4_batch",
+      "factor": 4,
+      "status": "MEASURED_APPLIED",
+      "correctness": {
+        "passed": true,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "max_abs_error": 2.384185791015625e-07,
+        "bitwise_equal_baseline": true
+      },
+      "screen_baseline_us": 4.221,
+      "screen_candidate_us": 4.9745,
+      "screen_round_speedups": [
+        0.849808737668613,
+        0.8472501003613007
+      ],
+      "replayed": false,
+      "confirmed_gain": false,
+      "reason": null,
+      "baseline_us": 4.221,
+      "candidate_us": 4.9745,
+      "rounds": 2,
+      "paired_rounds": [
+        {
+          "baseline_us": 4.221,
+          "candidate_us": 4.967,
+          "speedup": 0.849808737668613,
+          "baseline_samples_us": [
+            4.253,
+            4.255,
+            4.214,
+            4.194,
+            4.221,
+            4.258,
+            4.257,
+            4.241,
+            4.154,
+            4.155,
+            4.25,
+            4.32,
+            4.214,
+            4.168,
+            4.214
+          ],
+          "candidate_samples_us": [
+            4.997,
+            5.024,
+            4.943,
+            4.938,
+            5.114,
+            4.898,
+            5.041,
+            5.043,
+            4.95,
+            5.036,
+            4.866,
+            4.967,
+            5.074,
+            4.904,
+            4.964
+          ]
+        },
+        {
+          "baseline_us": 4.221,
+          "candidate_us": 4.982,
+          "speedup": 0.8472501003613007,
+          "baseline_samples_us": [
+            4.319,
+            4.341,
+            4.229,
+            4.144,
+            4.116,
+            4.221,
+            4.326,
+            4.405,
+            4.175,
+            4.121,
+            4.351,
+            4.196,
+            4.238,
+            4.186,
+            4.177
+          ],
+          "candidate_samples_us": [
+            5.013,
+            5.065,
+            4.966,
+            4.942,
+            4.958,
+            4.963,
+            5.017,
+            4.931,
+            4.917,
+            5.002,
+            4.982,
+            5.02,
+            5.089,
+            5.014,
+            4.922
+          ]
+        }
+      ],
+      "speedup": 0.8485274902000202,
+      "latency_reduction": -0.17851220090026065,
+      "grid": [
+        2,
+        1,
+        1
+      ],
+      "options": {
+        "block_batching_cv": true,
+        "block_batching_axis": 0,
+        "block_batching_factor": 4,
+        "enable_hivm_batch_matmul": true,
+        "debug": false
+      },
+      "binary_sha256": "0f5b217fad9634918c199669bde9f4ef1abc22d1af3f3d9afba7b9ae6458b9ad",
+      "compiler_metadata": {
+        "enable_hivm_batch_matmul": true,
+        "auto_blockify_enabled": false,
+        "default_dot_input_precision": "ieee",
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "ir_sha256": {
+        "source": "d104be3fa092df6c31225a5a36373bcf25b58f96c8d240084bd4bb83ea180195",
+        "ttir": "2d9fdba8d5599557b538cdbdbbf8ff0e4092bfb6107b714bfc1d4594ca309020",
+        "ttadapter": "7b7206d3fa382680b4cc5fe8a87a467df838f06a7c05f18b3b951ee3cfc8da30"
+      },
+      "runtime_launch": {
+        "runtime_status": "APPLIED",
+        "owner": "block_batching",
+        "requested_factor": 4,
+        "applied_factor": 4,
+        "selected_axis": 0,
+        "original_grid": [
+          8,
+          1,
+          1
+        ],
+        "batch_grid": [
+          2,
+          1,
+          1
+        ],
+        "reason": "PROVEN_AT_RUNTIME",
+        "plan_id": "beee4f5587319b33856099f26c9f800db0cc78da4f21f375b24f7fd2621211ca"
+      },
+      "cv_lowering": "rank3_full_tile_batch_v2",
+      "require_full_masks": true,
+      "dot": "%acc_65 = tt.dot %acc, %grad_out_chunk, %attn_chunk_41 : tensor<4x32x32xf32> * tensor<4x32x32xf32> -> tensor<4x32x32xf32> loc(#loc103)",
+      "lowering_proof": {
+        "source_sha256": "3f5f8baff560d1fb9a0be110f244331d097350b02a63ce1e95c90a02558546aa",
+        "original_binary_sha256": "0f5b217fad9634918c199669bde9f4ef1abc22d1af3f3d9afba7b9ae6458b9ad",
+        "diagnostic_binary_sha256": "0f5b217fad9634918c199669bde9f4ef1abc22d1af3f3d9afba7b9ae6458b9ad",
+        "same_binary": true,
+        "batch_mma_lines": [
+          "call @batch_mma_tile_float_to_float_ta(%cast_11, %cast_12, %0, %19, %19, %19, %cast_13, %10, %11, %9, %9, %9, %9, %9, %7, %10) : (memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, i1, index, index, index, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cc>>, i64, i64, i64, i64, i64, i64, i64, i8, i64) -> ()",
+          "func.func private @batch_mma_tile_float_to_float_ta(memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, i1, index, index, index, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cc>>, i64, i64, i64, i64, i64, i64, i64, i8, i64) attributes {hacc.always_inline, hivm.func_core_type = #hivm.func_core_type<AIC>, llvm.emit_c_interface}",
+          "call void @batch_mma_tile_float_to_float_ta(ptr addrspace(2) null, ptr addrspace(2) null, i64 0, i64 4, i64 4, i64 2, i64 16, i64 8, i64 1024, i64 256, i64 128, i64 8, i64 1, ptr addrspace(2) inttoptr (i64 16384 to ptr addrspace(2)), ptr addrspace(2) inttoptr (i64 16384 to ptr addrspace(2)), i64 0, i64 4, i64 4, i64 2, i64 16, i64 8, i64 1024, i64 256, i64 128, i64 8, i64 1, i1 true, i64 32, i64 32, i64 32, ptr addrspace(5) null, ptr addrspace(5) null, i64 0, i64 4, i64 2, i64 2, i64 16, i64 16, i64 1024, i64 512, i64 256, i64 16, i64 1, i64 0, i64 1, i64 -1, i64 -1, i64 -1, i64 -1, i64 -1, i8 0, i64 0)",
+          "define private void @batch_mma_tile_float_to_float_ta(ptr addrspace(2) %0, ptr addrspace(2) %1, i64 %2, i64 %3, i64 %4, i64 %5, i64 %6, i64 %7, i64 %8, i64 %9, i64 %10, i64 %11, i64 %12, ptr addrspace(2) %13, ptr addrspace(2) %14, i64 %15, i64 %16, i64 %17, i64 %18, i64 %19, i64 %20, i64 %21, i64 %22, i64 %23, i64 %24, i64 %25, i1 %26, i64 %27, i64 %28, i64 %29, ptr addrspace(5) %30, ptr addrspace(5) %31, i64 %32, i64 %33, i64 %34, i64 %35, i64 %36, i64 %37, i64 %38, i64 %39, i64 %40, i64 %41, i64 %42, i64 %43, i64 %44, i64 %45, i64 %46, i64 %47, i64 %48, i64 %49, i8 %50, i64 %51) #1 {",
+          "call void @_mlir_ciface_batch_mma_tile_float_to_float_ta(ptr %66, ptr %80, i1 %26, i64 %27, i64 %28, i64 %29, ptr %94, i64 %43, i64 %44, i64 %45, i64 %46, i64 %47, i64 %48, i64 %49, i8 %50, i64 %51)",
+          "declare dso_local void @_mlir_ciface_batch_mma_tile_float_to_float_ta(ptr, ptr, i1, i64, i64, i64, ptr, i64, i64, i64, i64, i64, i64, i64, i8, i64) #1"
+        ],
+        "evidence_sha256": [
+          "c695098bdf5d2e144b12b46d4c48a86eb4c5df5f0850e350c82b8de0bbe9d2c2",
+          "dbb0bdb191b2e9fa0da02f3d9c64a309f5fcd9d407925da2610912027c43cad4"
+        ]
+      }
+    },
+    {
+      "variant": "f8_batch",
+      "factor": 8,
+      "status": "MEASURED_APPLIED",
+      "correctness": {
+        "passed": true,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "max_abs_error": 2.384185791015625e-07,
+        "bitwise_equal_baseline": true
+      },
+      "screen_baseline_us": 4.234500000000001,
+      "screen_candidate_us": 8.9595,
+      "screen_round_speedups": [
+        0.4707063943756277,
+        0.4745478901540523
+      ],
+      "replayed": false,
+      "confirmed_gain": false,
+      "reason": null,
+      "baseline_us": 4.234500000000001,
+      "candidate_us": 8.9595,
+      "rounds": 2,
+      "paired_rounds": [
+        {
+          "baseline_us": 4.218,
+          "candidate_us": 8.961,
+          "speedup": 0.4707063943756277,
+          "baseline_samples_us": [
+            4.182,
+            4.218,
+            4.34,
+            4.39,
+            4.111,
+            4.19,
+            4.243,
+            4.34,
+            4.164,
+            4.176,
+            4.279,
+            4.279,
+            4.459,
+            4.18,
+            4.181
+          ],
+          "candidate_samples_us": [
+            9.015,
+            8.961,
+            8.832,
+            8.841,
+            8.967,
+            8.999,
+            9.032,
+            8.827,
+            8.896,
+            9.009,
+            8.96,
+            9.018,
+            8.816,
+            8.856,
+            9.023
+          ]
+        },
+        {
+          "baseline_us": 4.251,
+          "candidate_us": 8.958,
+          "speedup": 0.4745478901540523,
+          "baseline_samples_us": [
+            4.197,
+            4.191,
+            4.269,
+            4.294,
+            4.19,
+            4.193,
+            4.23,
+            4.304,
+            4.289,
+            4.177,
+            4.251,
+            4.409,
+            4.442,
+            4.307,
+            4.171
+          ],
+          "candidate_samples_us": [
+            8.831,
+            8.995,
+            8.958,
+            8.981,
+            8.862,
+            8.852,
+            9.019,
+            8.982,
+            8.962,
+            8.835,
+            8.833,
+            9.02,
+            8.989,
+            8.944,
+            8.892
+          ]
+        }
+      ],
+      "speedup": 0.47262682069311907,
+      "latency_reduction": -1.1158342189160466,
+      "grid": [
+        1,
+        1,
+        1
+      ],
+      "options": {
+        "block_batching_cv": true,
+        "block_batching_axis": 0,
+        "block_batching_factor": 8,
+        "enable_hivm_batch_matmul": true,
+        "debug": false
+      },
+      "binary_sha256": "22e83f135f27e2bbde4d46244cc115bb76ed48c760a1bea7297471cac25fd516",
+      "compiler_metadata": {
+        "enable_hivm_batch_matmul": true,
+        "auto_blockify_enabled": false,
+        "default_dot_input_precision": "ieee",
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "ir_sha256": {
+        "source": "d104be3fa092df6c31225a5a36373bcf25b58f96c8d240084bd4bb83ea180195",
+        "ttir": "b27425d7f622730aa53d84682dcddb80fce40c54802d029ff81c5d845c132f17",
+        "ttadapter": "cb6e4d5f628981d897cecd1dc3865084d37ca6b63f738160d871c0ac2a9a1431"
+      },
+      "runtime_launch": {
+        "runtime_status": "APPLIED",
+        "owner": "block_batching",
+        "requested_factor": 8,
+        "applied_factor": 8,
+        "selected_axis": 0,
+        "original_grid": [
+          8,
+          1,
+          1
+        ],
+        "batch_grid": [
+          1,
+          1,
+          1
+        ],
+        "reason": "PROVEN_AT_RUNTIME",
+        "plan_id": "28de2f98443f2453c4fa3fc0ed4f25738ca820f4951480ca701fac0bb3600fab"
+      },
+      "cv_lowering": "rank3_full_tile_batch_v2",
+      "require_full_masks": true,
+      "dot": "%acc_65 = tt.dot %acc, %grad_out_chunk, %attn_chunk_41 : tensor<8x32x32xf32> * tensor<8x32x32xf32> -> tensor<8x32x32xf32> loc(#loc103)",
+      "lowering_proof": {
+        "source_sha256": "e5447df1e47942b7537dc5ea05eac8d3be5df459be368fc5011c89ea6fe6cc4d",
+        "original_binary_sha256": "22e83f135f27e2bbde4d46244cc115bb76ed48c760a1bea7297471cac25fd516",
+        "diagnostic_binary_sha256": "22e83f135f27e2bbde4d46244cc115bb76ed48c760a1bea7297471cac25fd516",
+        "same_binary": true,
+        "batch_mma_lines": [
+          "call @batch_mma_tile_float_to_float_ta(%cast_11, %cast_12, %0, %19, %19, %19, %cast_13, %10, %11, %9, %9, %9, %9, %9, %7, %10) : (memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, i1, index, index, index, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cc>>, i64, i64, i64, i64, i64, i64, i64, i8, i64) -> ()",
+          "func.func private @batch_mma_tile_float_to_float_ta(memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cbuf>>, i1, index, index, index, memref<?x?x?x?x?xf32, strided<[?, ?, ?, ?, ?], offset: ?>, #hivm.address_space<cc>>, i64, i64, i64, i64, i64, i64, i64, i8, i64) attributes {hacc.always_inline, hivm.func_core_type = #hivm.func_core_type<AIC>, llvm.emit_c_interface}",
+          "call void @batch_mma_tile_float_to_float_ta(ptr addrspace(2) null, ptr addrspace(2) null, i64 0, i64 8, i64 4, i64 2, i64 16, i64 8, i64 1024, i64 256, i64 128, i64 8, i64 1, ptr addrspace(2) inttoptr (i64 32768 to ptr addrspace(2)), ptr addrspace(2) inttoptr (i64 32768 to ptr addrspace(2)), i64 0, i64 8, i64 4, i64 2, i64 16, i64 8, i64 1024, i64 256, i64 128, i64 8, i64 1, i1 true, i64 32, i64 32, i64 32, ptr addrspace(5) null, ptr addrspace(5) null, i64 0, i64 8, i64 2, i64 2, i64 16, i64 16, i64 1024, i64 512, i64 256, i64 16, i64 1, i64 0, i64 1, i64 -1, i64 -1, i64 -1, i64 -1, i64 -1, i8 0, i64 0)",
+          "define private void @batch_mma_tile_float_to_float_ta(ptr addrspace(2) %0, ptr addrspace(2) %1, i64 %2, i64 %3, i64 %4, i64 %5, i64 %6, i64 %7, i64 %8, i64 %9, i64 %10, i64 %11, i64 %12, ptr addrspace(2) %13, ptr addrspace(2) %14, i64 %15, i64 %16, i64 %17, i64 %18, i64 %19, i64 %20, i64 %21, i64 %22, i64 %23, i64 %24, i64 %25, i1 %26, i64 %27, i64 %28, i64 %29, ptr addrspace(5) %30, ptr addrspace(5) %31, i64 %32, i64 %33, i64 %34, i64 %35, i64 %36, i64 %37, i64 %38, i64 %39, i64 %40, i64 %41, i64 %42, i64 %43, i64 %44, i64 %45, i64 %46, i64 %47, i64 %48, i64 %49, i8 %50, i64 %51) #1 {",
+          "call void @_mlir_ciface_batch_mma_tile_float_to_float_ta(ptr %66, ptr %80, i1 %26, i64 %27, i64 %28, i64 %29, ptr %94, i64 %43, i64 %44, i64 %45, i64 %46, i64 %47, i64 %48, i64 %49, i8 %50, i64 %51)",
+          "declare dso_local void @_mlir_ciface_batch_mma_tile_float_to_float_ta(ptr, ptr, i1, i64, i64, i64, ptr, i64, i64, i64, i64, i64, i64, i64, i8, i64) #1"
+        ],
+        "evidence_sha256": [
+          "8b15358efa1f904b1f10747a45a72bf227fe8ec2ae061cf2edba9378cb1642d9",
+          "74b6c699206f7c580468938c7f387c2036e26bd60b96ab57f2712dcd5c603771"
+        ]
+      }
+    }
+  ],
+  "guard_probes": [
+    {
+      "probe": "tail",
+      "shape": [
+        2,
+        4,
+        29,
+        23
+      ],
+      "status": "CORRECT_BASELINE_FALLBACK",
+      "reason": "CV_FULL_TILE_MASK_NOT_PROVEN",
+      "correctness": {
+        "passed": true,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "max_abs_error": 2.384185791015625e-07,
+        "bitwise_equal_baseline": true
+      },
+      "result_sha256": "d2322d326271db64752262a1d62907c1cc41a6260509939f6f97c56e5c1c90c3"
+    },
+    {
+      "probe": "nondivisible",
+      "shape": [
+        1,
+        3,
+        32,
+        32
+      ],
+      "status": "CORRECT_BASELINE_FALLBACK",
+      "reason": "CV_GRID_NOT_DIVISIBLE",
+      "correctness": {
+        "passed": true,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "max_abs_error": 2.384185791015625e-07,
+        "bitwise_equal_baseline": true
+      },
+      "result_sha256": "1894be39b7f4d4ec749588cfddbaa8f6151a04a078ef2b2e4cd5b66d206f4d86"
+    }
+  ],
+  "best": {
+    "variant": "f2_batch",
+    "factor": 2,
+    "baseline_us": 4.2095,
+    "candidate_us": 3.751,
+    "speedup": 1.122234070914423,
+    "latency_reduction": 0.1089202993229601,
+    "confirmed_gain": true,
+    "rounds": 4,
+    "grid": [
+      4,
+      1,
+      1
+    ]
+  }
+}
