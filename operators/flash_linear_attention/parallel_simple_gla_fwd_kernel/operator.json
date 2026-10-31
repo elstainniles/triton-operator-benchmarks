@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA227",
+  "name": "parallel_simple_gla_fwd_kernel",
+  "family": "flash_linear_attention/test_kernels/parallel_simple_gla",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_simple_gla_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/parallel_simple_gla_fwd/parallel_simple_gla_fwd.py",
+    "snapshot": "upstream/parallel_simple_gla_fwd.py",
+    "sha256": "d1e1955106738b00266df8a35a2d42a3c1cd28295e8a5dc3e59f609ef3bdc427",
+    "original_sha256": "d1e1955106738b00266df8a35a2d42a3c1cd28295e8a5dc3e59f609ef3bdc427",
+    "snapshot_changes": [],
+    "symbol": "parallel_simple_gla_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "01ae5202c2cfe65ce6cdd967b76e0f735b2bede0c7e3af314e318cd563b8c307",
+    "ast_preserved": true,
+    "ast_sha256": "97b5af6b63a74823e41c12f3bab4b55e64244580410a0deb09755795a26b6045",
+    "existing_extraction_file": "extracted/cases/cv_47012568d32d3a96/yb_a017fb308312f4.py",
+    "existing_extraction_sha256": "40fd99491c7bc9cf285e639f6b3de8f60149177426b1e3129fb4d259cad4186a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_47012568d32d3a96",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_simple_gla_fwd/test_parallel_simple_gla_fwd.py::test_parallel_simple_gla_fwd"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_simple_gla_fwd/parallel_simple_gla_fwd.py:176"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "id": "FLA011",
+  "name": "causal_conv1d_update_kernel",
+  "family": "flash_linear_attention/modules/conv",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "causal_conv1d_update_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/modules/conv/triton/kernels.py",
+    "snapshot": "upstream/kernels.py",
+    "sha256": "d766c60774a4237ebc82dd3cb37084f7972cc4a89b5f6a485967c90196e80430",
+    "original_sha256": "d766c60774a4237ebc82dd3cb37084f7972cc4a89b5f6a485967c90196e80430",
+    "snapshot_changes": [],
+    "symbol": "causal_conv1d_update_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "9ab83c9bda5031439eccace8ea564b2d1c9c1dc490e7fc52fb2258b98da9e142",
+    "ast_preserved": true,
+    "ast_sha256": "5e24c11730b7a97396221741d5358c7c835588aff55a57ccbc5fdb10e9744720",
+    "existing_extraction_file": "extracted/cases/vv_179e0e17c5750aa8/yb_b8b54c33391267.py",
+    "existing_extraction_sha256": "09bd99a710d5dd83be01b5ff19bbd945edbde3ffcc929d15b16d864b5af85e6a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/cache.py",
+      "source": "fla/ops/utils/cache.py",
+      "sha256": "a64b09ffd3f51aed547ad72559dee94cb9aeafd2a5f02c6c8e60a6e020147a9c",
+      "original_sha256": "a64b09ffd3f51aed547ad72559dee94cb9aeafd2a5f02c6c8e60a6e020147a9c",
+      "snapshot_changes": [],
+      "extracted_module": "yb_ab84b57b842c37"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_179e0e17c5750aa8",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/causal_conv1d_states_fwd_kernel/test_causal_conv1d_states_fwd_npu.py::test_causal_conv1d_states_fwd_kernel_functiontest"
+    },
+    {
+      "id": "vv_ecb7231c8ea30e6e",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/causal_conv1d_states_fwd_kernel/test_causal_conv1d_states_fwd_npu.py::test_causal_conv1d_states_fwd_kernel_perftest"
+    },
+    {
+      "id": "vv_c9aef6a607036cc7",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/compute_dh0_kernel/test_compute_dh0_npu.py::test_compute_dh0_kernel_functiontest"
+    },
+    {
+      "id": "vv_2e4a3fce6a0faa13",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/compute_dh0_kernel/test_compute_dh0_npu.py::test_compute_dh0_kernel_perftest"
+    },
+    {
+      "id": "vv_b20e4b8eeeb801ec",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_causal_conv1d_bwd_kernel/test_causal_conv1d_bwd_kernel_npu.py::test_causal_conv1d_bwd_kernel"
+    },
+    {
+      "id": "vv_f0171e551580ed8b",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_causal_conv1d_fwd_kernel/test_causal_conv1d_fwd_kernel_npu.py::test_causal_conv1d_fwd_kernel"
+    },
+    {
+      "id": "vv_2899008551315181",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_causal_conv1d_update_kernel/test_causal_conv1d_update_kernel_npu.py::test_causal_conv1d_update_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "fla/modules/conv/triton/ops.py:326"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

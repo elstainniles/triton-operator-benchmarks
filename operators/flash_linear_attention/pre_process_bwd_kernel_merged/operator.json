@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA235",
+  "name": "pre_process_bwd_kernel_merged",
+  "family": "flash_linear_attention/test_kernels/pre_process_kernel_merged",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "pre_process_bwd_kernel_merged",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/test_pre_process_bwd_kernel_merged/test_pre_process_bwd_kernel_merged_npu.py",
+    "snapshot": "upstream/test_pre_process_bwd_kernel_merged_npu.py",
+    "sha256": "1be3884420f68bc8c763063517726fbd05917514d376717c6f4af7442dd9da3a",
+    "original_sha256": "1be3884420f68bc8c763063517726fbd05917514d376717c6f4af7442dd9da3a",
+    "snapshot_changes": [],
+    "symbol": "pre_process_bwd_kernel_merged",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "9a07ca59d46a8a29bc829da4cd3423a076c52df1df5eb2fa20cd44fdb780c4f7",
+    "ast_preserved": true,
+    "ast_sha256": "76fd86e5b1645beaccadbbf1d06511f361e973b55547257fe60e39a00d8c7712",
+    "existing_extraction_file": "extracted/cases/cv_151ab6d14390e39a/yb_47e28d9eb8884b.py",
+    "existing_extraction_sha256": "207d3a6a70394d85997d6707a347ac02abb242cb86b356d516d34b9b7bf8c700",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_151ab6d14390e39a",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/test_pre_process_bwd_kernel_merged/test_pre_process_bwd_kernel_merged_npu.py::test_pre_process_bwd_kernel_merged"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/test_pre_process_bwd_kernel_merged/test_pre_process_bwd_kernel_merged_npu.py:293"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA199",
+  "name": "chunkwise_bwd_kernel_diag",
+  "family": "flash_linear_attention/test_kernels/chunkwise_kernel_diag",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunkwise_bwd_kernel_diag",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/chunkwise_bwd_kernel_diag/test_chunkwise_bwd_kernel_diag_npu.py",
+    "snapshot": "upstream/test_chunkwise_bwd_kernel_diag_npu.py",
+    "sha256": "457f0eaf56456e1c9974818e0c2a1c2868c8186cb3de82591cdede565b0feb83",
+    "original_sha256": "457f0eaf56456e1c9974818e0c2a1c2868c8186cb3de82591cdede565b0feb83",
+    "snapshot_changes": [],
+    "symbol": "chunkwise_bwd_kernel_diag",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "0a6fd6d53d58d8e959e306039247e322caa2cced7f2c70d57076849ff1843666",
+    "ast_preserved": true,
+    "ast_sha256": "f523fb70a7a5229c198668db28413999e4099ad96644b032657396e0e972ca41",
+    "existing_extraction_file": "extracted/cases/cv_b8fd1f105c14e648/yb_f288a8c0999c44.py",
+    "existing_extraction_sha256": "8875d0fad364de1744ef8ac5e708bcadaedc56e17d03aaa87ed2b9395bbcfc20",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_b8fd1f105c14e648",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunkwise_bwd_kernel_diag/test_chunkwise_bwd_kernel_diag_npu.py::test_chunkwise_bwd_kernel_diag"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/chunkwise_bwd_kernel_diag/test_chunkwise_bwd_kernel_diag_npu.py:317"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

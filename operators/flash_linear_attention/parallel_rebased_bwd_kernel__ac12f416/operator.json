@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA224",
+  "name": "parallel_rebased_bwd_kernel__ac12f416",
+  "family": "flash_linear_attention/rebased",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_rebased_bwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/parallel_rebased_bwd_kernel/test_parallel_rebased_bwd_kernel_npu.py",
+    "snapshot": "upstream/test_parallel_rebased_bwd_kernel_npu.py",
+    "sha256": "edbfdb272bfe0576bcb8e956bd8f134ba7679aabebb70ec194d5fd2f886cc55d",
+    "original_sha256": "edbfdb272bfe0576bcb8e956bd8f134ba7679aabebb70ec194d5fd2f886cc55d",
+    "snapshot_changes": [],
+    "symbol": "parallel_rebased_bwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "30f86cb22bd2ce336acdb60912bc9345fa4cb63abbe31df44efa872e1206f83a",
+    "ast_preserved": true,
+    "ast_sha256": "186e1c60d7f6fbad9d38f9500be4564fdc10fe30bac80c52a9b527ba97b3a915",
+    "existing_extraction_file": "extracted/cases/cv_e89b5d607dd61fc4/yb_ac12f4167df774.py",
+    "existing_extraction_sha256": "1fd87a7ef1c53ba55805ed016dc7ef3f5f09035353730c2819fb8ac90ab24af6",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_e89b5d607dd61fc4",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_rebased_bwd_kernel/test_parallel_rebased_bwd_kernel_npu.py::test_parallel_rebased_bwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_rebased_bwd_kernel/test_parallel_rebased_bwd_kernel_npu.py:408"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

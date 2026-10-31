@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA222",
+  "name": "parallel_path_bwd_dq_kernel",
+  "family": "flash_linear_attention/path_attn",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_path_bwd_dq_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/parallel_path_bwd_dq_kernel/test_parallel_path_bwd_dq_kernel_npu.py",
+    "snapshot": "upstream/test_parallel_path_bwd_dq_kernel_npu.py",
+    "sha256": "a38b007899d6d056b1dc930d696238e46d7a03bb1dafe143a557e7000412d4dc",
+    "original_sha256": "a38b007899d6d056b1dc930d696238e46d7a03bb1dafe143a557e7000412d4dc",
+    "snapshot_changes": [],
+    "symbol": "parallel_path_bwd_dq_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "644823971eb4f6f9e1abe6f5281750d323f074e8fb4067a02caf50731087059d",
+    "ast_preserved": true,
+    "ast_sha256": "df347caa57c05245d24371c2105c08295e32ba4fe8a91c138dd054d345773851",
+    "existing_extraction_file": "extracted/cases/cv_5894861799ba8f24/yb_e67d7ab0fe4b5e.py",
+    "existing_extraction_sha256": "7d0f5f59cb68e70728767a42a6a3f38f80bcc7742850caf284894f1e00c5fd2c",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_5894861799ba8f24",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_path_bwd_dq_kernel/test_parallel_path_bwd_dq_kernel_npu.py::test_parallel_path_bwd_dq_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_path_bwd_dq_kernel/test_parallel_path_bwd_dq_kernel_npu.py:259"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

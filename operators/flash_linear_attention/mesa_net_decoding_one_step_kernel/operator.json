@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA282",
+  "name": "mesa_net_decoding_one_step_kernel",
+  "family": "flash_linear_attention/mesa_net",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "mesa_net_decoding_one_step_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/mesa_net_decoding_one_step_kernel/test_mesa_net_decoding_one_step_kernel.py",
+    "snapshot": "upstream/test_mesa_net_decoding_one_step_kernel.py",
+    "sha256": "8e807dbe1e4db3a18944d5da56203b30631a5a1272910ecc0de85f0b72fc1e7f",
+    "original_sha256": "8e807dbe1e4db3a18944d5da56203b30631a5a1272910ecc0de85f0b72fc1e7f",
+    "snapshot_changes": [],
+    "symbol": "mesa_net_decoding_one_step_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "2f85ded8ebb26a890fce90bdecb722606723cf595018900b5948cb5264cdffd3",
+    "ast_preserved": true,
+    "ast_sha256": "765e0eff3e8b76e04a0b8609f08e80618f87fa536d5fe9b0fbf2a78e1bc91064",
+    "existing_extraction_file": "extracted/cases/vv_01909b7e2f421746/yb_175c0a23d94883.py",
+    "existing_extraction_sha256": "e7a8de3f8f7937fcae9e9ef3d66e213fe69b857a726ac11044950d7dc2110259",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_01909b7e2f421746",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/mesa_net_decoding_one_step_kernel/test_mesa_net_decoding_one_step_kernel.py::test_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/mesa_net_decoding_one_step_kernel/test_mesa_net_decoding_one_step_kernel.py:211"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

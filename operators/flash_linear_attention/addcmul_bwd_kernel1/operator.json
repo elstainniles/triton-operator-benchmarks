@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "FLA099",
+  "name": "addcmul_bwd_kernel1",
+  "family": "flash_linear_attention/rwkv7",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "addcmul_bwd_kernel1",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/rwkv7/fused_addcmul.py",
+    "snapshot": "upstream/fused_addcmul.py",
+    "sha256": "65a505e1923c661945309e115da10e2aa71baf58b2e46e8d60249e41e83b0fa9",
+    "original_sha256": "65a505e1923c661945309e115da10e2aa71baf58b2e46e8d60249e41e83b0fa9",
+    "snapshot_changes": [],
+    "symbol": "addcmul_bwd_kernel1",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "f951c69881c2736750cdff1f5cfea2796e91f1017d4af71fcb5094b4abb9deb8",
+    "ast_preserved": true,
+    "ast_sha256": "ff2662c14aba85a642228db8fb304b67e9b6adb5c0bd2fd1412a6fb6f592c025",
+    "existing_extraction_file": "extracted/cases/vv_a679392925bf0d06/yb_2854025b508f9d.py",
+    "existing_extraction_sha256": "42f8676b22c03e8e33aad54855ae8d3843e95d2b90db076d823b86327217f796",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_a679392925bf0d06",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_addcmul_bwd_kernel1/test_addcmul_bwd_kernel1_npu.py::test_addcmul_bwd_kernel1"
+    },
+    {
+      "id": "vv_c55f012f45d8f495",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_fused_addcmul_fwd_kernel/test_fused_addcmul_fwd_kernel_npu.py::test_fused_addcmul_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/rwkv7/fused_addcmul.py:184"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

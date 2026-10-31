@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "id": "FLA122",
+  "name": "softmax_bwd_kernel__aef642ef",
+  "family": "flash_linear_attention/utils/softmax",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "generated_benchmark",
+  "kernel_symbol": "softmax_bwd_kernel",
+  "baseline_id": "original_candidate_w4_s2",
+  "adaptation_status": "host_contract_validated",
+  "adaptation_reason": null,
+  "implementation": "standalone_generated_benchmark",
+  "validation": "HOST_CONTRACT_VALIDATED_NPU_UNEXECUTED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/utils/softmax.py",
+    "snapshot": "upstream/softmax.py",
+    "sha256": "8cddf00343ad55899308a95882846956bd07b93d2dbf67e8e6712c6e1ef87527",
+    "original_sha256": "8cddf00343ad55899308a95882846956bd07b93d2dbf67e8e6712c6e1ef87527",
+    "snapshot_changes": [],
+    "symbol": "softmax_bwd_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "fdad16856a15b50d6ff50a1a261f728f8a42527412aa50a7297640955b576cbe",
+    "ast_preserved": true,
+    "ast_sha256": "30005c0f703606e585d2c5220d9302a587ed7bb662a363f46529da1ce24b5f8f",
+    "existing_extraction_file": "extracted/cases/vv_6ff72367ccea9db5/yb_aef642efa9b1c6.py",
+    "existing_extraction_sha256": "ecf4d7babda509670eb512f686fe9e2c301b572e5f6501437dd8d10859d40e9a",
+    "changes": [
+      "Drop only autotune and fix an original candidate; preserve kernel signature, body, masks, strides and JIT decorator.",
+      "Keep original default exp/log helpers, generate CPU FP32 inputs and independent FP64 reference.",
+      "Add checked guard storage and output NaN initialization; no numerical or graph optimization changes."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_c3ab20bd1b9cd5fe",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/softmax_bwd_kernel/test_softmax_bwd_kernel_npu.py::test_softmax_bwd_kernel_functiontest"
+    },
+    {
+      "id": "vv_6ff72367ccea9db5",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/softmax_bwd_kernel/test_softmax_bwd_kernel_npu.py::test_softmax_bwd_kernel_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/utils/softmax.py:103"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries.",
+  "decorator_policy": "fixed_autotune_candidate",
+  "helper_policy": "default_FLA_USE_FAST_OPS_0",
+  "kernel_helpers": [],
+  "entrypoint": "benchmark.py",
+  "case_count": 3,
+  "input_mode": "generated_benchmark",
+  "required_input_file": null,
+  "manual_tile_status": "NOT_ADDED",
+  "manual_candidates": {},
+  "numerical_status": "NPU_UNEXECUTED",
+  "performance_status": "NPU_UNEXECUTED",
+  "compile_options": {
+    "enable_graph_optimize": false
+  },
+  "acceptance": {
+    "dtype": "float32",
+    "elementwise_atol": 1e-05,
+    "elementwise_rtol": 1e-05,
+    "require_finite": true,
+    "additional_activation_rms_gate": {
+      "absolute_escape": 1e-06,
+      "relative_rms_strictly_less_than": 0.001,
+      "denominator_epsilon": 1e-08
+    },
+    "source_snapshot": "upstream/tests/ops/ascend_ops/vv_operator/softmax_bwd_kernel/test_softmax_bwd_kernel_npu.py"
+  },
+  "adaptation_scope": [
+    "Drop only autotune and fix an original candidate; preserve kernel signature, body, masks, strides and JIT decorator.",
+    "Keep original default exp/log helpers, generate CPU FP32 inputs and independent FP64 reference.",
+    "Add checked guard storage and output NaN initialization; no numerical or graph optimization changes."
+  ],
+  "current_runner_validation": {
+    "status": "HOST_CONTRACT_VALIDATED",
+    "device_execution": false,
+    "full_matrix_validated": false
+  }
+}

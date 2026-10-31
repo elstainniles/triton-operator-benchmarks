@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA196",
+  "name": "chunk_scaled_dot_kkt_fwd_kernel__1b21e262",
+  "family": "flash_linear_attention/test_kernels/chunk_scaled_dot_kkt",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_scaled_dot_kkt_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel/test_chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel_npu.py",
+    "snapshot": "upstream/test_chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel_npu.py",
+    "sha256": "3999bfed116bd9894ef3e4b5356d67c22e93417773e63230626f079b98f1d2d3",
+    "original_sha256": "3999bfed116bd9894ef3e4b5356d67c22e93417773e63230626f079b98f1d2d3",
+    "snapshot_changes": [],
+    "symbol": "chunk_scaled_dot_kkt_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "57259dca37debf8af56540e04e5d672eb882f0925be59792a66adc2fa102d681",
+    "ast_preserved": true,
+    "ast_sha256": "eedfc54a3d0e596847894e988333bcb6f5210d06e86228986831b2af9236a2dc",
+    "existing_extraction_file": "extracted/cases/cv_3e86e39d225ab590/yb_1b21e26231baef.py",
+    "existing_extraction_sha256": "92c31408b382bb909269c436434747cbd4be71ffce8eee828aef30469c9503a5",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_3e86e39d225ab590",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel/test_chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel/test_chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel_npu.py:170"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

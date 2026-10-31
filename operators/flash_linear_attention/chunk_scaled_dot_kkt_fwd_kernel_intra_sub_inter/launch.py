@@ -1,0 +1,2 @@
+"""Static launch locations only; no executable launch adapter is registered."""
+STATIC_LAUNCH_REFERENCES = ('fla/ops/gated_oja_rule/chunk_kkt.py:447', 'tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_npu.py:123', 'tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_npu.py:154')

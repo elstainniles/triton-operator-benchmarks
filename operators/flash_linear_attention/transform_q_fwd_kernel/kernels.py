@@ -1,0 +1,68 @@
+# Copyright (c) 2023-2026 Songlin Yang, Yu Zhang, Zhiyuan Li
+# SPDX-License-Identifier: MIT
+# Source: tests/ops/ascend_ops/cv_operator/transform_q_fwd_kernel/test_transform_q_fwd_kernel_npu.py:87 at 5752e83ce7e469cfc0a3145bf20d3c902b716d48
+# Source archive: dependencies and launch adaptation are not executable here.
+# The complete original file and dependency snapshots are under upstream/.
+import triton
+import triton.language as tl
+
+
+@triton.heuristics({
+    'IS_VARLEN': lambda args: args['cu_seqlens'] is not None,
+})
+@triton.jit(do_not_specialize=['T'])
+def transform_q_fwd_kernel(
+    q,
+    q_new,
+    w1,
+    w2,
+    cu_seqlens,
+    indices,
+    T,
+    S: tl.constexpr,
+    G: tl.constexpr,
+    HQ: tl.constexpr,
+    H: tl.constexpr,
+    K: tl.constexpr,
+    BT: tl.constexpr,
+    BS: tl.constexpr,
+    BK: tl.constexpr,
+    NUM_BLOCKS: tl.constexpr,
+    IS_VARLEN: tl.constexpr,
+):
+    i_t, i_bh = tl.program_id(0), tl.program_id(1)
+    i_b, i_hq = i_bh // HQ, i_bh % HQ
+    i_h = i_hq // G
+
+    if IS_VARLEN:
+        i_n, i_t = tl.load(indices + i_t * 2).to(tl.int32), tl.load(indices + i_t * 2 + 1).to(tl.int32)
+        bos, eos = tl.load(cu_seqlens + i_n).to(tl.int32), tl.load(cu_seqlens + i_n + 1).to(tl.int32)
+        T = eos - bos
+    else:
+        i_n = i_b
+        bos, eos = i_n * T, i_n * T + T
+        # boh = i_n * tl.cdiv(T, BS)
+    p_q = tl.make_block_ptr(q + (bos * HQ + i_hq) * K, (T, K), (HQ*K, 1), (i_t * BT, 0), (BT, BK), (1, 0))
+    b_q = tl.zeros([BT, BK], dtype=tl.float32)
+    b_q += tl.load(p_q, boundary_check=(0, 1))
+
+    if BS == BT:
+        if (i_t * BT) % S == 0:
+            p_q_new = tl.make_block_ptr(q_new + ((bos.to(tl.int64) * NUM_BLOCKS + (i_t * BT // S)) * HQ + i_hq) * K,
+                                        (T, K), (HQ*K*NUM_BLOCKS, 1), (i_t * BT, 0), (BT, BK), (1, 0))
+            tl.store(p_q_new, b_q.to(q_new.dtype.element_ty), boundary_check=(0, 1))
+
+    for offset in range((i_t + 1) * BT - 2 * BS, S-BS, -BS):
+        p_w1 = tl.make_block_ptr(w1 + (bos * H + i_h) * K, (K, T), (1, K*H), (0, offset), (BK, BS), (0, 1))
+        p_w2 = tl.make_block_ptr(w2 + (bos * H + i_h) * K, (T, K), (K*H, 1), (offset, 0), (BS, BK), (1, 0))
+        b_w1 = tl.load(p_w1, boundary_check=(0, 1))
+        b_w2 = tl.load(p_w2, boundary_check=(0, 1))
+        m_s = i_t * BT + tl.arange(0, BT) >= (offset + BS)
+        b_s2 = tl.dot(b_q.to(b_w1.dtype), b_w1)
+        b_s2 = tl.where(m_s[:, None], b_s2, 0)
+        b_q -= tl.dot(b_s2.to(b_w2.dtype), b_w2)
+
+        if offset % S == 0:
+            p_q_new = tl.make_block_ptr(q_new + ((bos.to(tl.int64) * NUM_BLOCKS + (offset // S)) * HQ + i_hq) * K,
+                                        (T, K), (HQ*K*NUM_BLOCKS, 1), (i_t * BT, 0), (BT, BK), (1, 0))
+            tl.store(p_q_new, b_q.to(q_new.dtype.element_ty), boundary_check=(0, 1))

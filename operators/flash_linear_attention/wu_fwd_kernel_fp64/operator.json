@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "id": "FLA067",
+  "name": "wu_fwd_kernel_fp64",
+  "family": "flash_linear_attention/generalized_delta_rule",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "wu_fwd_kernel_fp64",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/generalized_delta_rule/iplr/wy_fast.py",
+    "snapshot": "upstream/wy_fast.py",
+    "sha256": "93ee2be2c963197e6c6a762f409bf19100d4e012601b45161cefa442c82a456f",
+    "original_sha256": "93ee2be2c963197e6c6a762f409bf19100d4e012601b45161cefa442c82a456f",
+    "snapshot_changes": [],
+    "symbol": "wu_fwd_kernel_fp64",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "9b4ec6e0ae26b6fe8a02d1aaf9e15306189b74ada1cf771dbe1110df29827daf",
+    "ast_preserved": true,
+    "ast_sha256": "f2a4dd3212eb45dcf526bc453d7270756484e557ed9a913b7df1f04aa7f33b5d",
+    "existing_extraction_file": "extracted/cases/cv_4b3c86e3b1137f4e/yb_7c9b498e75e1da.py",
+    "existing_extraction_sha256": "c11ad47c2d374ef6c1707d301660868f84541c13014cb80038fc2e1b8a83d19b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/__init__.py",
+      "source": "fla/ops/utils/__init__.py",
+      "sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "original_sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "snapshot_changes": [],
+      "extracted_module": "yb_1858bf26d5878c"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/index.py",
+      "source": "fla/ops/utils/index.py",
+      "sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "original_sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "snapshot_changes": [],
+      "extracted_module": "yb_4f3456615af619"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_4b3c86e3b1137f4e",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_generalized_iplr_delta_rule_fwd_kernel_h/test_chunk_generalized_iplr_delta_rule_fwd_kernel_h_npu.py::test_chunk_generalized_iplr_delta_rule_fwd_kernel_h"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/generalized_delta_rule/iplr/wy_fast.py:567"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

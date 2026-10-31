@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA255",
+  "name": "cross_entropy_fwd_kernel",
+  "family": "flash_linear_attention/modules/fused_cross_entropy",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "cross_entropy_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/cross_entropy_fwd_kernel/test_cross_entropy_fwd_kernel.py",
+    "snapshot": "upstream/test_cross_entropy_fwd_kernel.py",
+    "sha256": "919c573fc2248fffe7b72a8beda17445ae990f13b7facbaa98024a744dcf240c",
+    "original_sha256": "919c573fc2248fffe7b72a8beda17445ae990f13b7facbaa98024a744dcf240c",
+    "snapshot_changes": [],
+    "symbol": "cross_entropy_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "13beaaa7937d9771f6d95b2ae88d7ced5a9c5277c30371a3d8907fd5c46d24c7",
+    "ast_preserved": true,
+    "ast_sha256": "40224d8b64a5a83211e16e90f909697891a2b63b911e4836c28c5a239478837e",
+    "existing_extraction_file": "extracted/cases/vv_70a5ecad569ece7c/yb_05758c6b1d1c51.py",
+    "existing_extraction_sha256": "ce2541ab6e59b615a3f28f1d5c28aa5895a6a46ff646f88cbdabf9cc59ba355b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/tests/ops/ascend_ops/utils.py",
+      "source": "tests/ops/ascend_ops/utils.py",
+      "sha256": "ba87c7299af90d0994e7f0aa82bee6b782ee4dd582fbd335488683d166d20df4",
+      "original_sha256": "ba87c7299af90d0994e7f0aa82bee6b782ee4dd582fbd335488683d166d20df4",
+      "snapshot_changes": [],
+      "extracted_module": "yb_22cded5b91bba3"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_70a5ecad569ece7c",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/cross_entropy_fwd_kernel/test_cross_entropy_fwd_kernel.py::test_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/cross_entropy_fwd_kernel/test_cross_entropy_fwd_kernel.py:129"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

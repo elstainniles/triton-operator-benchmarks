@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "FLA284",
+  "name": "parallel_nsa_kernel_mask",
+  "family": "flash_linear_attention/nsa",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_nsa_kernel_mask",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/parallel_nsa_kernel_mask/test_parallel_nsa_kernel_mask_npu.py",
+    "snapshot": "upstream/test_parallel_nsa_kernel_mask_npu.py",
+    "sha256": "7c984fa41fac13a4bad11f1bd1fc032bc6be5de13880609728dcb3e620358f00",
+    "original_sha256": "7a42021d14d732047ffa4d4eb560f964873dda896d7c7cc28b06da775a940f85",
+    "snapshot_changes": [
+      {
+        "line": 2,
+        "change": "Replace the personal absolute checkout prefix in an extraction provenance comment with the repository-relative path."
+      }
+    ],
+    "symbol": "parallel_nsa_kernel_mask",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "4d924ec6a1c4dc0f1f928de23bf675e3d445b8ae9f4db1895f7e74180a256c7d",
+    "ast_preserved": true,
+    "ast_sha256": "59b5a514e7eb26bd46065ddddf23c60aa0b39acf38797d3af0151383396e11b5",
+    "existing_extraction_file": "extracted/cases/vv_38b1a8dea8089564/yb_9020d6e5d9e788.py",
+    "existing_extraction_sha256": "3d05b921a0430ec941aee231060caa3822c6935ca7eb0ba017f115e9645f622b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_38b1a8dea8089564",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/parallel_nsa_kernel_mask/test_parallel_nsa_kernel_mask_npu.py::test_parallel_nsa_kernel_mask"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/parallel_nsa_kernel_mask/test_parallel_nsa_kernel_mask_npu.py:93"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

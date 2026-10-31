@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA165",
+  "name": "chunk_generalized_iplr_delta_rule_fwd_kernel_o",
+  "family": "flash_linear_attention/test_kernels/chunk_generalized_iplr_delta_rule_kernel_o",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_generalized_iplr_delta_rule_fwd_kernel_o",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_generalized_iplr_delta_rule_fwd_kernel_o/test_chunk_generalized_iplr_delta_rule_fwd_kernel_o_npu.py",
+    "snapshot": "upstream/test_chunk_generalized_iplr_delta_rule_fwd_kernel_o_npu.py",
+    "sha256": "b06ead3f6e050c09d11778fe71ff4f38402f21026b11e76535a505c3d3610fef",
+    "original_sha256": "b06ead3f6e050c09d11778fe71ff4f38402f21026b11e76535a505c3d3610fef",
+    "snapshot_changes": [],
+    "symbol": "chunk_generalized_iplr_delta_rule_fwd_kernel_o",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "78c869d43544b5f7d2cbd05dca98b0618f6bc746377d4dc13b41a3fe036d67c7",
+    "ast_preserved": true,
+    "ast_sha256": "35a0348d7d6a0e3452c18b563579cc59378f8a8ce608f98e29db1d0d5e9745da",
+    "existing_extraction_file": "extracted/cases/cv_f132c421cbe9eba9/yb_84c342ad35ce71.py",
+    "existing_extraction_sha256": "0a975438e772ebb75e5479b7f84eeee275ce8c7cf3b94939cd9925b71dc8fd53",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_f132c421cbe9eba9",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_generalized_iplr_delta_rule_fwd_kernel_o/test_chunk_generalized_iplr_delta_rule_fwd_kernel_o_npu.py::test_chunk_generalized_iplr_delta_rule_fwd_kernel_o"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/chunk_generalized_iplr_delta_rule_fwd_kernel_o/test_chunk_generalized_iplr_delta_rule_fwd_kernel_o_npu.py:132"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

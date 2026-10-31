@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA240",
+  "name": "compare_and_swap_kernel",
+  "family": "flash_linear_attention/test_kernels/compare_and_swap",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "compare_and_swap_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/_compare_and_swap/test_compare_and_swap_npu.py",
+    "snapshot": "upstream/test_compare_and_swap_npu.py",
+    "sha256": "6a37276319e9a5f346558dc4c8eceaebd4d5836b910ee484b48f5cf4a1b2548d",
+    "original_sha256": "6a37276319e9a5f346558dc4c8eceaebd4d5836b910ee484b48f5cf4a1b2548d",
+    "snapshot_changes": [],
+    "symbol": "compare_and_swap_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "7f623a1f6c416be8c49dc73a584e3a744a14128fd3e54ee5f81c9578bd9cbcec",
+    "ast_preserved": true,
+    "ast_sha256": "da209f47bd4b5dd5b386ce29c9fdf835aba96c7483e061ea465f10ce468a9b5e",
+    "existing_extraction_file": "extracted/cases/vv_5d08d557b2242491/yb_cd36697cc6924b.py",
+    "existing_extraction_sha256": "305891100254e7da9a48dc585fb5c5bfe606614c7a7f7cd74623f4a1c2d377a5",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_5d08d557b2242491",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/_compare_and_swap/test_compare_and_swap_npu.py::test_compare_and_swap"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/_compare_and_swap/test_compare_and_swap_npu.py:141"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA286",
+  "name": "baseline_relu_kernel",
+  "family": "flash_linear_attention/test_kernels/baseline_relu",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "baseline_relu_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py",
+    "snapshot": "upstream/test_relu_npu.py",
+    "sha256": "72bf98210423463519850147976703a60202f78da2672cbc301851990fa0121a",
+    "original_sha256": "72bf98210423463519850147976703a60202f78da2672cbc301851990fa0121a",
+    "snapshot_changes": [],
+    "symbol": "baseline_relu_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "23d7a22b799bfa577eef39ffffbaa0a271905c2a80c438ee3523f4d0a5bfa853",
+    "ast_preserved": true,
+    "ast_sha256": "3d4c1a8bc6d2d9fe33dd899e1f69d666ab406b32bae5cbafb5eef71bc67309f7",
+    "existing_extraction_file": "extracted/cases/vv_e6bc06c107264d2f/yb_966724afd65522.py",
+    "existing_extraction_sha256": "cd4cb2ec93062fa280f0a9c46da80799d22a432c446a660197bdf7a19a0af906",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_e6bc06c107264d2f",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py::test_relu_kernel_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py:164"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "id": "FLA050",
+  "name": "chunk_scaled_dot_kkt_fwd_kernel__3a11c7d2",
+  "family": "flash_linear_attention/gated_oja_rule",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_scaled_dot_kkt_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/gated_oja_rule/chunk_kkt.py",
+    "snapshot": "upstream/chunk_kkt.py",
+    "sha256": "243402cbf4399182bd514bbde9bc140272b70b36c1763333c37b981eabeab41e",
+    "original_sha256": "243402cbf4399182bd514bbde9bc140272b70b36c1763333c37b981eabeab41e",
+    "snapshot_changes": [],
+    "symbol": "chunk_scaled_dot_kkt_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "8b7f9171598f2924514133585b4e015d937b1cf93bfa2aeb0a67bc066a5724ed",
+    "ast_preserved": true,
+    "ast_sha256": "335083cbaee6377fafb3b103f95bf1858c9606c3e86a436512a493ca11e33913",
+    "existing_extraction_file": "extracted/cases/cv_61541c50a43796fc/yb_3a11c7d24ffaf7.py",
+    "existing_extraction_sha256": "56c68b70a2e504cf01ce84fc1f64569b322cdc01b8ec283938e8faa99702b224",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/__init__.py",
+      "source": "fla/ops/utils/__init__.py",
+      "sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "original_sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "snapshot_changes": [],
+      "extracted_module": "yb_1858bf26d5878c"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/index.py",
+      "source": "fla/ops/utils/index.py",
+      "sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "original_sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "snapshot_changes": [],
+      "extracted_module": "yb_4f3456615af619"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_98e40d84f6fa1ddc",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel/test_chunk_scaled_dot_kkt_fwd_kernel_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_function"
+    },
+    {
+      "id": "cv_61541c50a43796fc",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel/test_chunk_scaled_dot_kkt_fwd_kernel_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_performance"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/gated_oja_rule/chunk_kkt.py:428"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

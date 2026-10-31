@@ -1,0 +1,9 @@
+{
+  "source_revision": "20cc2f0ad0efafbd494341bff65cbaff0d89d69e",
+  "purpose": "Byte-identical harness files used by historical 20261028 Liger evidence; new FLA dispatch is not covered by that historical validation.",
+  "files": {
+    "cli.py": "cf012d361d0e7f9b2f80670090a73b3cd543424b1e1e683217541a695af781d7",
+    "batch.py": "acbce294a176735f9931fceafc145e1735ae54742449af620df6e40637146cdc",
+    "catalog.py": "f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e"
+  }
+}

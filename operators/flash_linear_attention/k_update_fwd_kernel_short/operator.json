@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA273",
+  "name": "k_update_fwd_kernel_short",
+  "family": "flash_linear_attention/test_kernels/k_update_kernel_short",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "k_update_fwd_kernel_short",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/k_update_fwd_kernel_short/test_k_update_fwd_kernel_short_npu.py",
+    "snapshot": "upstream/test_k_update_fwd_kernel_short_npu.py",
+    "sha256": "9ea3db2d8b705ff1d0f2028464d99f21947ad7f6fcd94e8080ea158fd1247423",
+    "original_sha256": "9ea3db2d8b705ff1d0f2028464d99f21947ad7f6fcd94e8080ea158fd1247423",
+    "snapshot_changes": [],
+    "symbol": "k_update_fwd_kernel_short",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "f20a6badfe57343055eaaaa37ba9a6d527ecb4fda4eab09a2bfc35a3e61dfe8d",
+    "ast_preserved": true,
+    "ast_sha256": "d51e204dac94eefc91c230a78a34e43a318e706b010a02ab77219307c61774ba",
+    "existing_extraction_file": "extracted/cases/vv_4aeab0ff686343bf/yb_fd56362b54c205.py",
+    "existing_extraction_sha256": "729bdc19f130b7d1eb03da951d2db2a241ddfb01eb02adbd88fc0e6bc321b476",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_4aeab0ff686343bf",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/k_update_fwd_kernel_short/test_k_update_fwd_kernel_short_npu.py::test_k_update_fwd_kernel_short"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/k_update_fwd_kernel_short/test_k_update_fwd_kernel_short_npu.py:141"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

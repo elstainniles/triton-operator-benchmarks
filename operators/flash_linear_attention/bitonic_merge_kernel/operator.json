@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA239",
+  "name": "bitonic_merge_kernel",
+  "family": "flash_linear_attention/test_kernels/bitonic_merge",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "bitonic_merge_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/_bitonic_merge/test_bitonic_merge_npu.py",
+    "snapshot": "upstream/test_bitonic_merge_npu.py",
+    "sha256": "ef7c8e9415de311d296db1d9d3d48e88e30e5c09bb67086bfae97eac0abc4006",
+    "original_sha256": "ef7c8e9415de311d296db1d9d3d48e88e30e5c09bb67086bfae97eac0abc4006",
+    "snapshot_changes": [],
+    "symbol": "bitonic_merge_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "22a7b3cfda46ced0fcf8844627d95a606a5dd5586570906e7d1754e4eb0bcb4e",
+    "ast_preserved": true,
+    "ast_sha256": "8dc423a729ba5ec129afe8ecbd7ae3a0aef34413dea7f52311444836f68cc6ab",
+    "existing_extraction_file": "extracted/cases/vv_f3068d0d09a06634/yb_35f77e82469140.py",
+    "existing_extraction_sha256": "655c8886f66952db3adf7c7b465baa13b6fce10a1f56003d46f7aece584628da",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_f3068d0d09a06634",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/_bitonic_merge/test_bitonic_merge_npu.py::test_bitonic_merge"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/_bitonic_merge/test_bitonic_merge_npu.py:171"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

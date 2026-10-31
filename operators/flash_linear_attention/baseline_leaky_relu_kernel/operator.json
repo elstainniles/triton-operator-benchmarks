@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA277",
+  "name": "baseline_leaky_relu_kernel",
+  "family": "flash_linear_attention/test_kernels/baseline_leaky_relu",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "baseline_leaky_relu_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py",
+    "snapshot": "upstream/test_leaky_relu_npu.py",
+    "sha256": "d7e62b1fa327a6a85ab3895027279910848589d295df6b8c049dbf1f63c952aa",
+    "original_sha256": "d7e62b1fa327a6a85ab3895027279910848589d295df6b8c049dbf1f63c952aa",
+    "snapshot_changes": [],
+    "symbol": "baseline_leaky_relu_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "34da7a56d724b4dab3222b940851a28c9f156fa4bda4a3b94c8e411b81dfca44",
+    "ast_preserved": true,
+    "ast_sha256": "eb0eafa7b48bb2f9670b69b95739c8300b4d052470a53f169850c2569fd7ab5e",
+    "existing_extraction_file": "extracted/cases/vv_36103cdc2fc2ab3d/yb_82ce437607daa6.py",
+    "existing_extraction_sha256": "974ff73ecb6e7dcc66119f89c70616ccb06eaa33e81f3741a1406a2f19714610",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_36103cdc2fc2ab3d",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py::test_leaky_relu_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py:164"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

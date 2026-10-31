@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA018",
+  "name": "elementwise_mul_kernel",
+  "family": "flash_linear_attention/modules/fused_kl_div",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "elementwise_mul_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/modules/fused_linear_cross_entropy.py",
+    "snapshot": "upstream/fused_linear_cross_entropy.py",
+    "sha256": "1c5b6e47c5c2b7696e78762e58d699304856fcdfa5c9e642e7da3c060c750a56",
+    "original_sha256": "1c5b6e47c5c2b7696e78762e58d699304856fcdfa5c9e642e7da3c060c750a56",
+    "snapshot_changes": [],
+    "symbol": "elementwise_mul_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "f23091cae89d4d26526454b8f8a9a4fe810da044693b848c926aa4f5799ef269",
+    "ast_preserved": true,
+    "ast_sha256": "7025c937f65148b8c09dff002b2a8685700395e63a2db70976e58cf011f8bd1a",
+    "existing_extraction_file": "extracted/cases/vv_2d9f458414bc4e42/yb_0c04dfbe64c0ce.py",
+    "existing_extraction_sha256": "91ac2a88528d3474d6fe09e3bbc70cd36fdc27550d7c7c97bc78b6e2bc68438b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_2d9f458414bc4e42",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_elementwise_mul_kernel/test_elementwise_mul_kernel_npu.py::test_elementwise_mul_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/test_elementwise_mul_kernel/test_elementwise_mul_kernel_npu.py:27"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

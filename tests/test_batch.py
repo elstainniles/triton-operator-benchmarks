@@ -56,6 +56,33 @@ class BatchTests(unittest.TestCase):
             self.assertFalse(summary['all_passed'])
             self.assertEqual(summary['counts'], {'runtime_failed':1})
 
+    def test_source_archives_do_not_stop_batch_or_require_a_device(self):
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)
+            entries = [dict(id='FLA_ARCHIVE_' + str(i), name='archive_' + str(i), type='vv')
+                       for i in range(2)]
+            args = SimpleNamespace(operator='fla', case_id=[], suite='all', variants='baseline',
+                                   output=folder/'run', environment=None, physical_card=None,
+                                   correctness_only=False)
+
+            def child(cmd, **kwargs):
+                self.assertNotIn('--physical-card', cmd)
+                self.assertNotIn('--environment', cmd)
+                destination = Path(cmd[cmd.index('--output')+1])
+                destination.mkdir()
+                save(destination/'result.json', dict(completed=True, all_passed=False, cases=[dict(
+                    case=None, status='not_executable', median_us=None, reason='No standalone adapter')]))
+                return SimpleNamespace(returncode=0)
+
+            with patch('opbench.batch.select', return_value=entries), \
+                    patch('opbench.batch.plans', return_value=[dict(status='not_executable')]), \
+                    patch('opbench.batch.subprocess.run', side_effect=child):
+                run(args)
+            summary = read_json(args.output/'summary.json')
+            self.assertTrue(summary['completed'])
+            self.assertFalse(summary['all_passed'])
+            self.assertEqual(summary['counts'], {'not_executable':2})
+
 
 if __name__ == '__main__':
     unittest.main()

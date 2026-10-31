@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "FLA093",
+  "name": "fused_recurrent_rwkv6_bwd_kernel_dkv",
+  "family": "flash_linear_attention/rwkv6",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_recurrent_rwkv6_bwd_kernel_dkv",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/rwkv6/fused_recurrent.py",
+    "snapshot": "upstream/fused_recurrent.py",
+    "sha256": "7d14e112384c3e97c11d35f5c376f8242d600e27eed5a1806f6f26d424a795dc",
+    "original_sha256": "7d14e112384c3e97c11d35f5c376f8242d600e27eed5a1806f6f26d424a795dc",
+    "snapshot_changes": [],
+    "symbol": "fused_recurrent_rwkv6_bwd_kernel_dkv",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "442c414d9ebd63eedba832bb3124054b27a0627d9ad00bfb2f9339ae00aa44f9",
+    "ast_preserved": true,
+    "ast_sha256": "69c1a764f71680f74f0d88403aa9085358bae4fd1f4e4254620f5c5d20a16372",
+    "existing_extraction_file": "extracted/cases/vv_ae7bd32b032e9de3/yb_ec8ad59510d3ad.py",
+    "existing_extraction_sha256": "011db6af78c09e5203df7b0a578eacaacf69cedf2e2b72f78e361b00e742362e",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_ae7bd32b032e9de3",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_rwkv6_bwd_kernel_dkv/test_fused_recurrent_rwkv6_bwd_kernel_dkv_npu.py::test_fused_recurrent_rwkv6_bwd_kernel_dkv"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/fused_recurrent_rwkv6_bwd_kernel_dkv/test_fused_recurrent_rwkv6_bwd_kernel_dkv_cuda.py:30"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

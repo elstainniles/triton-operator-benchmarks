@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA195",
+  "name": "chunk_scaled_dot_comba_pkt_fwd_kernel",
+  "family": "flash_linear_attention/comba",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_scaled_dot_comba_pkt_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_comba_pkt_fwd_kernel_fp64/test_chunk_scaled_dot_comba_pkt_fwd_kernel_fp64_npu.py",
+    "snapshot": "upstream/test_chunk_scaled_dot_comba_pkt_fwd_kernel_fp64_npu.py",
+    "sha256": "d7baf1d618863390b45136014ce05d4a16f0044f2675d9c2a10342db0b9221a8",
+    "original_sha256": "d7baf1d618863390b45136014ce05d4a16f0044f2675d9c2a10342db0b9221a8",
+    "snapshot_changes": [],
+    "symbol": "chunk_scaled_dot_comba_pkt_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "c1729750b3ab19c6ce8ed96c056ef105f8608ac4955aff647badbeafb23fc42e",
+    "ast_preserved": true,
+    "ast_sha256": "62d71b2e76abba6c74b11ae4d4f1e137487c4ae0b5662a0abf1c8d952b1c1b94",
+    "existing_extraction_file": "extracted/cases/cv_0607a3fa99c8cf11/yb_420f688ca8beba.py",
+    "existing_extraction_sha256": "01f48afed008b3198889677f355047ee3541dbc357f0d3fec6b8d33287e1e8e9",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_0607a3fa99c8cf11",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_comba_pkt_fwd_kernel_fp64/test_chunk_scaled_dot_comba_pkt_fwd_kernel_fp64_npu.py::test_chunk_scaled_dot_comba_pkt_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_comba_pkt_fwd_kernel_fp64/test_chunk_scaled_dot_comba_pkt_fwd_kernel_fp64_npu.py:128"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

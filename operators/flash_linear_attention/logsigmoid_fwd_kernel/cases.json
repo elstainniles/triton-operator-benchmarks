@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "input_origin": "generated_benchmark",
+  "external_input_required": false,
+  "cases": [
+    {
+      "id": "smoke",
+      "shape": [
+        3,
+        17
+      ],
+      "suite": "smoke",
+      "dtype": "float32",
+      "seed": 20261030,
+      "input_origin": "generated_benchmark",
+      "tile": {
+        "B": 512
+      },
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "temperature": 1.0
+    },
+    {
+      "id": "masked-tail",
+      "shape": [
+        7,
+        257
+      ],
+      "suite": "default",
+      "dtype": "float32",
+      "seed": 20261031,
+      "input_origin": "generated_benchmark",
+      "tile": {
+        "B": 512
+      },
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "temperature": 0.5
+    },
+    {
+      "id": "row-padding",
+      "shape": [
+        5,
+        129
+      ],
+      "suite": "default",
+      "row_padding": {
+        "x": 7,
+        "y": 13
+      },
+      "dtype": "float32",
+      "seed": 20261032,
+      "input_origin": "generated_benchmark",
+      "tile": {
+        "B": 512
+      },
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "temperature": 2.0
+    },
+    {
+      "id": "upstream-shape",
+      "shape": [
+        2048,
+        512
+      ],
+      "suite": "default",
+      "dtype": "float32",
+      "seed": 20261033,
+      "input_origin": "generated_benchmark",
+      "tile": {
+        "B": 512
+      },
+      "launch_options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "temperature": 0.75
+    }
+  ]
+}

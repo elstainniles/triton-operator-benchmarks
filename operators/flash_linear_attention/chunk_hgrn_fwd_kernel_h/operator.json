@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "FLA251",
+  "name": "chunk_hgrn_fwd_kernel_h",
+  "family": "flash_linear_attention/hgrn",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_hgrn_fwd_kernel_h",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/chunk_hgrn_fwd_kernel_h/test_chunk_hgrn_fwd_kernel_h_npu.py",
+    "snapshot": "upstream/test_chunk_hgrn_fwd_kernel_h_npu.py",
+    "sha256": "9d6240118987f5797eb265c8d6d0b10ff502b7d0977c7f88377784dbe798ba9d",
+    "original_sha256": "c71cee20baa599f26c6a11309a60a62554e5b55b36560a6ed9498586dfee4247",
+    "snapshot_changes": [
+      {
+        "line": 2,
+        "change": "Replace the personal absolute checkout prefix in an extraction provenance comment with the repository-relative path."
+      }
+    ],
+    "symbol": "chunk_hgrn_fwd_kernel_h",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "00521c63bed17ed6781eefddf3fb9d3c0b44cb616cf92a45841368af25bcfc52",
+    "ast_preserved": true,
+    "ast_sha256": "8ed0d1b24b9e503e9f0ccfbb606ac4b3ff43a9bf9088ca55349d97f543dfa180",
+    "existing_extraction_file": "extracted/cases/vv_224ba42dda9e9c03/yb_ffa5a407b2f384.py",
+    "existing_extraction_sha256": "de9b5d57208d5d4456df0479ea3d16aaf379899066d25e17ff97cd9778f53c5c",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_224ba42dda9e9c03",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/chunk_hgrn_fwd_kernel_h/test_chunk_hgrn_fwd_kernel_h_npu.py::test_chunk_hgrn_fwd_h"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/chunk_hgrn_fwd_kernel_h/test_chunk_hgrn_fwd_kernel_h_npu.py:210"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}
