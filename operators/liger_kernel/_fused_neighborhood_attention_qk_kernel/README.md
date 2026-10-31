@@ -20,3 +20,7 @@ python -I tools/run.py run --operator LK07 --variants baseline \
 ```
 
 从仓库根执行；先按 [Liger 运行说明](../README.md) 配置隔离依赖。
+
+## 大尺寸 CV 配置（2026-10-31）
+
+`cases-cv-large.json` 登记 B=8、H=16、S=128、D=64 的独立 kernel 配置。使用完整 K tile，并保留原 kernel 函数；不走旧小尺寸 transformer wrapper。一键入口、第一版合并结果和口径见 [大尺寸说明](../../../docs/LIGER_CV_LARGE.md)。历史小尺寸配置与结果继续保留。

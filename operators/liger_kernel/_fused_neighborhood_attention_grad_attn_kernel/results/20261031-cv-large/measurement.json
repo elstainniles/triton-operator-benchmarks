@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "origin": "imported_existing_cv_large_probe",
+  "date": "2026-10-31",
+  "operator_id": "LK12",
+  "kernel": "_fused_neighborhood_attention_grad_attn_kernel",
+  "direction": "bwd",
+  "status": "COMPLETE",
+  "shape": [
+    8,
+    16,
+    128,
+    64
+  ],
+  "dtype": "float32",
+  "grid": [
+    128,
+    4,
+    4
+  ],
+  "tile": {
+    "BLOCK_SIZE_M": 32,
+    "BLOCK_SIZE_N": 32,
+    "BLOCK_SIZE_K": 64
+  },
+  "environment": {
+    "compiler_revision": "7edb1aafc3d99f9fb11103a33cdb71db8ba868c1",
+    "compiler_implementation": 21,
+    "cv_policy": "ta_cv_structured_v2",
+    "libtriton_sha256": "c3bd9fceb6f9f88f3978a5513860ddcbf00cb41203a568e16e3df6df938c4bcc",
+    "wheel_sha256": "facdf6ddf3b1171df82c1484bce1dabda30851cbe8bda5106198f09f44775990",
+    "cann": "9.1.0",
+    "device_arch": "Ascend950PR_9579",
+    "physical_card": 6,
+    "bishengir_revision": "8995ba08834c"
+  },
+  "source_revision": "781a8aef64bf6105bdefb5f4c991e0d14c08e793",
+  "source_sha256": "bcf8b9c5b9e1eb0c7265e85aaa8e93ba296aa367cde5218388e3639cd9882aab",
+  "repo_kernel_sha256": "469184262be1562cd448cab526e9bdd37ec591d5aeae2dfe551b55c1da6bcc04",
+  "metric": "TARGET_TRITON_KERNEL_DEVICE_US",
+  "aggregation": "For each candidate: median of two round medians; each round has 15 adjacent interleaved baseline/candidate samples.",
+  "selection": "Lowest measured candidate duration among actually APPLIED factors 2,4,8; excludes baseline fallback.",
+  "correctness": {
+    "max_abs_error": 1.33514404296875e-05,
+    "canaries_ok": true,
+    "inputs_unchanged": true
+  },
+  "variants": [
+    {
+      "id": "f2_loop",
+      "factor": 2,
+      "status": "MEASURED_APPLIED",
+      "options": {
+        "block_batching_cv": true,
+        "block_batching_axis": 0,
+        "block_batching_factor": 2,
+        "enable_hivm_batch_matmul": false,
+        "debug": false
+      },
+      "correctness": {
+        "max_abs_error": 1.33514404296875e-05,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "bitwise_equal_baseline": true
+      },
+      "baseline_us": 140.5,
+      "candidate_us": 190.2785,
+      "speedup": 0.7383913579306122,
+      "pair_speedups": [
+        0.7355096532568954,
+        0.741300467847374
+      ],
+      "confirmed_gain": false,
+      "runtime_launch": {
+        "runtime_status": "APPLIED",
+        "owner": "block_batching",
+        "requested_factor": 2,
+        "applied_factor": 2,
+        "selected_axis": 0,
+        "original_grid": [
+          128,
+          4,
+          4
+        ],
+        "batch_grid": [
+          64,
+          4,
+          4
+        ],
+        "reason": "PROVEN_AT_RUNTIME",
+        "plan_id": "66d86be88736038e2887b60fdee17545ee1072767a066021ade2d5ab5d49d24d"
+      },
+      "merged_ir": {
+        "dot_count": 2,
+        "sha256": "463b987f909ed56c11d2b6caeb8aaf2a3bb8b62612099c1c2f0f7374d2cd92fa",
+        "actual_grid": [
+          64,
+          4,
+          4
+        ]
+      },
+      "binary_sha256": "aa09d0d66922ecb3aa44dfdc81d7580ae422dc0a44c94e65fc2084e309624557",
+      "rounds": [
+        {
+          "round": 0,
+          "candidate": "f2_loop",
+          "baseline_us": 140.614,
+          "candidate_us": 191.179,
+          "speedup": 0.7355096532568954,
+          "baseline_samples_us": [
+            140.29,
+            140.539,
+            140.677,
+            140.25,
+            140.538,
+            140.648,
+            140.714,
+            140.59,
+            140.849,
+            140.599,
+            140.614,
+            140.738,
+            140.646,
+            140.309,
+            140.664
+          ],
+          "candidate_samples_us": [
+            191.915,
+            193.338,
+            193.642,
+            188.222,
+            204.139,
+            191.179,
+            187.398,
+            188.247,
+            179.798,
+            186.305,
+            187.402,
+            193.937,
+            199.448,
+            186.614,
+            192.509
+          ]
+        },
+        {
+          "round": 1,
+          "candidate": "f2_loop",
+          "baseline_us": 140.386,
+          "candidate_us": 189.378,
+          "speedup": 0.741300467847374,
+          "baseline_samples_us": [
+            140.208,
+            140.529,
+            140.444,
+            140.67,
+            140.188,
+            140.295,
+            140.316,
+            140.386,
+            140.416,
+            140.386,
+            140.361,
+            140.445,
+            140.442,
+            140.909,
+            140.354
+          ],
+          "candidate_samples_us": [
+            191.134,
+            201.831,
+            183.192,
+            191.044,
+            189.378,
+            184.819,
+            187.776,
+            191.823,
+            193.07,
+            190.877,
+            185.786,
+            195.381,
+            186.452,
+            188.949,
+            188.966
+          ]
+        }
+      ],
+      "cv_lowering": "static_masked_lanes_v1"
+    },
+    {
+      "id": "f4_loop",
+      "factor": 4,
+      "status": "MEASURED_APPLIED",
+      "options": {
+        "block_batching_cv": true,
+        "block_batching_axis": 0,
+        "block_batching_factor": 4,
+        "enable_hivm_batch_matmul": false,
+        "debug": false
+      },
+      "correctness": {
+        "max_abs_error": 1.33514404296875e-05,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "bitwise_equal_baseline": true
+      },
+      "baseline_us": 140.43650000000002,
+      "candidate_us": 159.61399999999998,
+      "speedup": 0.8798507649704916,
+      "pair_speedups": [
+        0.8816237116637585,
+        0.8780844704028417
+      ],
+      "confirmed_gain": false,
+      "runtime_launch": {
+        "runtime_status": "APPLIED",
+        "owner": "block_batching",
+        "requested_factor": 4,
+        "applied_factor": 4,
+        "selected_axis": 0,
+        "original_grid": [
+          128,
+          4,
+          4
+        ],
+        "batch_grid": [
+          32,
+          4,
+          4
+        ],
+        "reason": "PROVEN_AT_RUNTIME",
+        "plan_id": "d0892a1b089fa830d71d03cb64807ac0e7f6a2ed884044a63cb82fb09cdd8b01"
+      },
+      "merged_ir": {
+        "dot_count": 4,
+        "sha256": "787353411492dbf50f2a622fbabbe3f86f275c545de792ca5978274983e8a9f7",
+        "actual_grid": [
+          32,
+          4,
+          4
+        ]
+      },
+      "binary_sha256": "47c7adeb51136141db5952f8ef5deb7ca42984f0b6467fd3bea7e25c55f581c5",
+      "rounds": [
+        {
+          "round": 0,
+          "candidate": "f4_loop",
+          "baseline_us": 140.455,
+          "candidate_us": 159.314,
+          "speedup": 0.8816237116637585,
+          "baseline_samples_us": [
+            140.481,
+            140.377,
+            140.637,
+            140.644,
+            140.392,
+            140.216,
+            140.232,
+            140.68,
+            140.061,
+            140.466,
+            140.363,
+            140.358,
+            140.579,
+            140.521,
+            140.455
+          ],
+          "candidate_samples_us": [
+            158.383,
+            159.044,
+            159.314,
+            156.966,
+            160.439,
+            159.521,
+            159.937,
+            158.15,
+            158.097,
+            159.454,
+            162.762,
+            157.536,
+            158.172,
+            159.489,
+            160.148
+          ]
+        },
+        {
+          "round": 1,
+          "candidate": "f4_loop",
+          "baseline_us": 140.418,
+          "candidate_us": 159.914,
+          "speedup": 0.8780844704028417,
+          "baseline_samples_us": [
+            140.418,
+            140.417,
+            140.357,
+            140.472,
+            140.48,
+            140.62,
+            140.397,
+            140.281,
+            140.53,
+            140.446,
+            140.413,
+            140.429,
+            140.321,
+            140.507,
+            140.184
+          ],
+          "candidate_samples_us": [
+            160.798,
+            159.775,
+            160.077,
+            159.138,
+            161.192,
+            160.579,
+            160.056,
+            158.367,
+            158.078,
+            159.914,
+            158.747,
+            158.881,
+            160.344,
+            160.13,
+            158.149
+          ]
+        }
+      ],
+      "cv_lowering": "static_masked_lanes_v1"
+    },
+    {
+      "id": "f8_loop",
+      "factor": 8,
+      "status": "MEASURED_APPLIED",
+      "options": {
+        "block_batching_cv": true,
+        "block_batching_axis": 0,
+        "block_batching_factor": 8,
+        "enable_hivm_batch_matmul": false,
+        "debug": false
+      },
+      "correctness": {
+        "max_abs_error": 1.33514404296875e-05,
+        "canaries_ok": true,
+        "inputs_unchanged": true,
+        "bitwise_equal_baseline": true
+      },
+      "baseline_us": 140.47899999999998,
+      "candidate_us": 155.1695,
+      "speedup": 0.9053261111236421,
+      "pair_speedups": [
+        0.9056799778040172,
+        0.9049730940549447
+      ],
+      "confirmed_gain": false,
+      "runtime_launch": {
+        "runtime_status": "APPLIED",
+        "owner": "block_batching",
+        "requested_factor": 8,
+        "applied_factor": 8,
+        "selected_axis": 0,
+        "original_grid": [
+          128,
+          4,
+          4
+        ],
+        "batch_grid": [
+          16,
+          4,
+          4
+        ],
+        "reason": "PROVEN_AT_RUNTIME",
+        "plan_id": "173e26d7e868706143e98818c3fc6dc903d0ebd3b29266687d2829eb0bc15476"
+      },
+      "merged_ir": {
+        "dot_count": 8,
+        "sha256": "2acfd1cc973a5c4f7b82be4b8bc2c91f90906991d31fb97516e89c3a2559c22a",
+        "actual_grid": [
+          16,
+          4,
+          4
+        ]
+      },
+      "binary_sha256": "ae6a8c7858f7c8b84c1324a64ced9d272dbdd2a70251d3a7e37199a82bc04801",
+      "rounds": [
+        {
+          "round": 0,
+          "candidate": "f8_loop",
+          "baseline_us": 140.365,
+          "candidate_us": 154.983,
+          "speedup": 0.9056799778040172,
+          "baseline_samples_us": [
+            140.641,
+            140.328,
+            140.256,
+            140.309,
+            140.09,
+            140.582,
+            140.252,
+            140.525,
+            140.365,
+            140.295,
+            140.486,
+            140.306,
+            140.564,
+            140.717,
+            140.567
+          ],
+          "candidate_samples_us": [
+            154.853,
+            154.396,
+            154.965,
+            155.162,
+            154.649,
+            154.983,
+            155.745,
+            155.186,
+            153.988,
+            156.092,
+            154.822,
+            155.533,
+            155.353,
+            153.9,
+            155.708
+          ]
+        },
+        {
+          "round": 1,
+          "candidate": "f8_loop",
+          "baseline_us": 140.593,
+          "candidate_us": 155.356,
+          "speedup": 0.9049730940549447,
+          "baseline_samples_us": [
+            140.747,
+            140.45,
+            140.557,
+            140.737,
+            140.454,
+            140.596,
+            140.593,
+            140.645,
+            140.753,
+            140.347,
+            140.592,
+            140.459,
+            140.696,
+            140.507,
+            140.785
+          ],
+          "candidate_samples_us": [
+            155.483,
+            155.562,
+            155.142,
+            155.935,
+            155.628,
+            155.405,
+            154.835,
+            153.838,
+            155.356,
+            155.855,
+            153.762,
+            155.349,
+            155.179,
+            156.598,
+            155.153
+          ]
+        }
+      ],
+      "cv_lowering": "static_masked_lanes_v1"
+    }
+  ],
+  "best": {
+    "id": "f8_loop",
+    "factor": 8,
+    "baseline_us": 140.47899999999998,
+    "candidate_us": 155.1695,
+    "speedup": 0.9053261111236421,
+    "confirmed_gain": false
+  },
+  "provenance": {
+    "original_result_sha256": "57d4db1c6768814878cfc08632553ea4be4301427d7114a4728f92ae179ef784",
+    "original_scope_sha256": "41ffa9b5dbd20c7798f7d38f5d5d653415a88fc6b1c28b5bbde0d31e84973b4b",
+    "benchmark_revision": "20cc2f0ad0efafbd494341bff65cbaff0d89d69e",
+    "trace_sha256": [
+      "ca1a2e9b93fc407c91e9c563353e74ada0ab5a8da90df20dc9606fd8f2cb51ea",
+      "9f725d710f0e61fc329f1645509a74d722ed47cfbd6a1e49fc3c67fe8679eb25"
+    ],
+    "timing_admission": "Only the explicitly verified fixed residual was ignored in the archived experiment; no such exception is enabled in the portable runner.",
+    "portability": "Historical measurement; the newly packaged large-case entry point has offline checks only."
+  }
+}

@@ -30,6 +30,7 @@ Where/GELU 没有接入 FlagGems 的 `pointwise_dynamic` 生成器，不能用�
 - [测试说明](docs/TESTING.md)：环境、输入、数值校验、计时、命令和限制。
 - [图优化测试批次](docs/GRAPH_OPTIMIZATION_TESTS.md)：必须关闭图优化、7 组入口及输入依赖。
 - [Liger 批跑说明](operators/liger_kernel/README.md)：通用优先的 46 个 kernel、依赖与目标 kernel 计时。
+- [Liger 六个大尺寸 CV 用例](docs/LIGER_CV_LARGE.md)：B=8/H=16/S=128/D=64，独立批跑入口与第一版 factor 合并实测对照。
 - [手改 tile/grid 说明](docs/MANUAL_TILING.md)：基线、候选、grid 联动及退化例子。
 - [历史基线汇总](docs/BASELINE.md)：FP32/BF16、每个算子的历史收益。
 - [新增算子约定](CONTRIBUTING.md)：目录、接口、数据和验证要求。
