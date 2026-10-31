@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA228",
+  "name": "prepare_wy_repr_fwd_kernel_chunk64",
+  "family": "flash_linear_attention/test_kernels/prepare_wy_repr_kernel_chunk64",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "prepare_wy_repr_fwd_kernel_chunk64",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/prepare_wy_repr_fwd_kernel_chunk64/test_prepare_wy_repr_fwd_kernel_chunk64_npu.py",
+    "snapshot": "upstream/test_prepare_wy_repr_fwd_kernel_chunk64_npu.py",
+    "sha256": "011782986034c919d7ee790f0d87a54e24e436a4d1862fcf169504824e59c531",
+    "original_sha256": "011782986034c919d7ee790f0d87a54e24e436a4d1862fcf169504824e59c531",
+    "snapshot_changes": [],
+    "symbol": "prepare_wy_repr_fwd_kernel_chunk64",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "efa7fa1ae8d1458a6a02fc26ad2cebf287bb68b5b198d39682c2a681dba6db3b",
+    "ast_preserved": true,
+    "ast_sha256": "c574b9c8949923b83dfc7f9b947249512e5188d0df6d1d0e186ac7f36f95cfaf",
+    "existing_extraction_file": "extracted/cases/cv_3de7e791555908a3/yb_2cd1d5e1a06727.py",
+    "existing_extraction_sha256": "79f1ae0fb54c122aae4d5ac62498fb104e9b5dd394e03ebe40e4fd3877f01a20",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_3de7e791555908a3",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/prepare_wy_repr_fwd_kernel_chunk64/test_prepare_wy_repr_fwd_kernel_chunk64_npu.py::test_prepare_wy_repr_fwd_kernel_chunk64"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/prepare_wy_repr_fwd_kernel_chunk64/test_prepare_wy_repr_fwd_kernel_chunk64_npu.py:124"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

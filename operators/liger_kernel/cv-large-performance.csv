@@ -1,0 +1,7 @@
+算子名称,输入 shape / dtype,原始性能 (us),第一版合并最优性能 (us)
+_fused_neighborhood_attention_qk_kernel (fwd),"Q,K: [8,16,128,64]; mask: [128,128]; f32",140.5385,164.883
+_fused_neighborhood_attention_av_kernel (fwd),"Attn: [8,16,128,128]; V: [8,16,128,64]; f32",72.46950000000001,81.849
+_fused_neighborhood_attention_grad_qk_kernel (bwd),"grad_attn: [8,16,128,128]; K: [8,16,128,64]; f32",73.486,86.262
+_fused_neighborhood_attention_grad_k_kernel (bwd),"grad_attn: [8,16,128,128]; Q: [8,16,128,64]; f32",69.0575,83.3215
+_fused_neighborhood_attention_grad_v_kernel (bwd),"Attn: [8,16,128,128]; grad_output: [8,16,128,64]; f32",72.4025,81.3305
+_fused_neighborhood_attention_grad_attn_kernel (bwd),"grad_output,V: [8,16,128,64]; f32",140.47899999999998,155.1695

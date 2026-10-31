@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "FLA221",
+  "name": "parallel_nsa_fwd_kernel",
+  "family": "flash_linear_attention/test_kernels/parallel_nsa",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_nsa_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/parallel_nsa_fwd_kernel/test_parallel_nsa_fwd_kernel_npu.py",
+    "snapshot": "upstream/test_parallel_nsa_fwd_kernel_npu.py",
+    "sha256": "fcb6bf6f3c43ffdeae8b2781d333e12f62d4c07f247c229e03cc5a14236b40c8",
+    "original_sha256": "7a6246eef7f6cae8b1a7b9a8706ef0f250d785af00e0ead7ef729bfe5b152182",
+    "snapshot_changes": [
+      {
+        "line": 2,
+        "change": "Replace the personal absolute checkout prefix in an extraction provenance comment with the repository-relative path."
+      }
+    ],
+    "symbol": "parallel_nsa_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "b55eef6e0d9f2fee816f0f1228cc447fcaf301eff0bbaf059339cd8d7b4e5fcf",
+    "ast_preserved": true,
+    "ast_sha256": "4acde6889c6f0a1e62d86c3f689d9254a69d806f5d2c0fa49d0d2eba7ee4b0c0",
+    "existing_extraction_file": "extracted/cases/cv_bb52bc5ec4f30103/yb_4fbc5bb13ee9be.py",
+    "existing_extraction_sha256": "1c7368c74555bcfe58950212f9261102fd339adf6df4238ab138a07ada10dd1d",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_bb52bc5ec4f30103",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_nsa_fwd_kernel/test_parallel_nsa_fwd_kernel_npu.py::test_parallel_nsa_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_nsa_fwd_kernel/test_parallel_nsa_fwd_kernel_npu.py:197"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "id": "FLA023",
+  "name": "l2norm_fwd_kernel1",
+  "family": "flash_linear_attention/modules/l2norm",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "l2norm_fwd_kernel1",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/modules/l2norm.py",
+    "snapshot": "upstream/l2norm.py",
+    "sha256": "f86d6e072b6a46bcdeba6b1ead2e319dce3ca2cb849c3cabf525dd5702d4c52e",
+    "original_sha256": "f86d6e072b6a46bcdeba6b1ead2e319dce3ca2cb849c3cabf525dd5702d4c52e",
+    "snapshot_changes": [],
+    "symbol": "l2norm_fwd_kernel1",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "f17a76e067b4276021892ea76d82022efb677821ddff5dc3c0e43ce3c93ba0ff",
+    "ast_preserved": true,
+    "ast_sha256": "5dd1fb784dc88eb09b95e17285900ba3cb2edfa8b443269e673910feaf7d4bff",
+    "existing_extraction_file": "extracted/cases/vv_1f7681f39d4067bf/yb_e55e216cd329fa.py",
+    "existing_extraction_sha256": "5b634710c3be44da9fc007dbc9cdc96f002966a5c15f4e8f7800937e52bea740",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/cache.py",
+      "source": "fla/ops/utils/cache.py",
+      "sha256": "a64b09ffd3f51aed547ad72559dee94cb9aeafd2a5f02c6c8e60a6e020147a9c",
+      "original_sha256": "a64b09ffd3f51aed547ad72559dee94cb9aeafd2a5f02c6c8e60a6e020147a9c",
+      "snapshot_changes": [],
+      "extracted_module": "yb_ab84b57b842c37"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_65adf4143abd3a32",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/l2norm_bwd_kernel/test_l2norm_bwd_kernel_npu.py::test_l2norm_bwd_kernel_functiontest"
+    },
+    {
+      "id": "vv_4748e922652a8071",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/l2norm_bwd_kernel/test_l2norm_bwd_kernel_npu.py::test_l2norm_bwd_kernel_perftest"
+    },
+    {
+      "id": "vv_6a24f7759f2468ea",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/l2norm_bwd_kernel1/test_l2norm_bwd_kernel1_npu.py::test_l2norm_bwd_kernel_functiontest"
+    },
+    {
+      "id": "vv_66da0233d6c0a094",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/l2norm_bwd_kernel1/test_l2norm_bwd_kernel1_npu.py::test_l2norm_bwd_kernel_perftest"
+    },
+    {
+      "id": "vv_99e80b8e89cc4849",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/l2norm_fwd_kernel/test_l2norm_fwd_kernel_npu.py::test_l2norm_fwd_kernel_functiontest"
+    },
+    {
+      "id": "vv_2ae432b6c5d6bbae",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/l2norm_fwd_kernel/test_l2norm_fwd_kernel_npu.py::test_l2norm_fwd_kernel_perftest"
+    },
+    {
+      "id": "vv_22acbb56f730aa69",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/l2norm_fwd_kernel1/test_l2norm_fwd_kernel1_npu.py::test_l2norm_fwd_kernel_functiontest"
+    },
+    {
+      "id": "vv_1f7681f39d4067bf",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/l2norm_fwd_kernel1/test_l2norm_fwd_kernel1_npu.py::test_l2norm_fwd_kernel_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "fla/modules/l2norm.py:179"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

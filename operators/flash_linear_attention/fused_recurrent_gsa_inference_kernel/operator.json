@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "FLA070",
+  "name": "fused_recurrent_gsa_inference_kernel",
+  "family": "flash_linear_attention/gsa",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_recurrent_gsa_inference_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/gsa/fused_recurrent.py",
+    "snapshot": "upstream/fused_recurrent.py",
+    "sha256": "ef930bdc7819112a863944e4232345e0c10fcb036ed76ad12db5f37f5d58b203",
+    "original_sha256": "ef930bdc7819112a863944e4232345e0c10fcb036ed76ad12db5f37f5d58b203",
+    "snapshot_changes": [],
+    "symbol": "fused_recurrent_gsa_inference_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "20a2590181f11d7cd266795badf8832d58d02a87bdad10b6df38fe5d11bd2ded",
+    "ast_preserved": true,
+    "ast_sha256": "b99c36e731479d51f02e0d49db80875773ce8430695fe6012542e23a4735650e",
+    "existing_extraction_file": "extracted/cases/vv_27318c79ea37c398/yb_2558c710edc3b7.py",
+    "existing_extraction_sha256": "88a8794697d3dda642c3ea5ae65d46852e0cb6e3cf502e171bdc3817644ecccc",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_27318c79ea37c398",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_gsa_inference_kernel/test_fused_recurrent_gsa_inference_kernel_npu.py::test_fused_recurrent_gsa_inference_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_gsa_inference_kernel/test_fused_recurrent_gsa_inference_kernel_cuda.py:42"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

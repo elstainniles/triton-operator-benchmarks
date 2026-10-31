@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "id": "FLA076",
+  "name": "kda_gate_fwd_kernel",
+  "family": "flash_linear_attention/kda",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "kda_gate_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/kda/gate.py",
+    "snapshot": "upstream/gate.py",
+    "sha256": "c91affd33fda529e9545e1c2e48d8df569225acae8e68159e87d68ed10d340f4",
+    "original_sha256": "c91affd33fda529e9545e1c2e48d8df569225acae8e68159e87d68ed10d340f4",
+    "snapshot_changes": [],
+    "symbol": "kda_gate_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "576a36001335ad526ad1fb93f2dafad4de71b8fe33bae561b86c10ebd48870bd",
+    "ast_preserved": true,
+    "ast_sha256": "935d3084bbb580ea6f7ed25d48ce00956100ee1958c31e9d42828ee4672c1eb1",
+    "existing_extraction_file": "extracted/cases/vv_c97b063af19c5289/yb_18dc009e5fff3c.py",
+    "existing_extraction_sha256": "9582babf1261dd3799c692c467bc34fff24f34d1cc64c0dbbf250eac6de88af8",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/cache.py",
+      "source": "fla/ops/utils/cache.py",
+      "sha256": "a64b09ffd3f51aed547ad72559dee94cb9aeafd2a5f02c6c8e60a6e020147a9c",
+      "original_sha256": "a64b09ffd3f51aed547ad72559dee94cb9aeafd2a5f02c6c8e60a6e020147a9c",
+      "snapshot_changes": [],
+      "extracted_module": "yb_ab84b57b842c37"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/softplus.py",
+      "source": "fla/ops/utils/softplus.py",
+      "sha256": "f826ee89eaed66bdc83aeaeee931dc6523593bef078167cb1d9babc5b40d4c4f",
+      "original_sha256": "f826ee89eaed66bdc83aeaeee931dc6523593bef078167cb1d9babc5b40d4c4f",
+      "snapshot_changes": [],
+      "extracted_module": "yb_90891058742c80"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_c97b063af19c5289",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/kda_gate_fwd_kernel/test_kda_gate_fwd_kernel_npu.py::test_kda_gate_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/kda/gate.py:225"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

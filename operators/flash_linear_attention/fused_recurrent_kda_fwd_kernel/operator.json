@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA266",
+  "name": "fused_recurrent_kda_fwd_kernel",
+  "family": "flash_linear_attention/test_kernels/fused_recurrent_kda",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_recurrent_kda_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_kda_fwd_kernel/test_fused_recurrent_kda_fwd_kernel_npu.py",
+    "snapshot": "upstream/test_fused_recurrent_kda_fwd_kernel_npu.py",
+    "sha256": "e9a8622ef166bdc6fbba5d5335fea6e30d123d4d09f48f823c741d741ccf1320",
+    "original_sha256": "e9a8622ef166bdc6fbba5d5335fea6e30d123d4d09f48f823c741d741ccf1320",
+    "snapshot_changes": [],
+    "symbol": "fused_recurrent_kda_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "d1b19422ecaa40a6b6a30d2e818142df4fffee632cb996f995bffcdbdd3c4534",
+    "ast_preserved": true,
+    "ast_sha256": "b1c74b1b660f9e9fd688bf346453cfde62b06d72c5b8a5b6dfcdfe73fdcefd0b",
+    "existing_extraction_file": "extracted/cases/vv_f80c22227a9560b3/yb_b2153a9ac339a9.py",
+    "existing_extraction_sha256": "6ece5596797190b2465a1678904ed393a8bd99c1a1db42bf890a6182b9af8394",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_f80c22227a9560b3",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_kda_fwd_kernel/test_fused_recurrent_kda_fwd_kernel_npu.py::test_fused_recurrent_kda_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/fused_recurrent_kda_fwd_kernel/test_fused_recurrent_kda_fwd_kernel_npu.py:327"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

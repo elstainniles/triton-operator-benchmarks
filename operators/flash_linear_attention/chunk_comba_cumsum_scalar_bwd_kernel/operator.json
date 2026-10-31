@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA243",
+  "name": "chunk_comba_cumsum_scalar_bwd_kernel",
+  "family": "flash_linear_attention/test_kernels/chunk_comba_cumsum_scalar",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_comba_cumsum_scalar_bwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/chunk_comba_cumsum_scalar_bwd_kernel/test_chunk_comba_cumsum_scalar_bwd_kernel_npu.py",
+    "snapshot": "upstream/test_chunk_comba_cumsum_scalar_bwd_kernel_npu.py",
+    "sha256": "42d1aa333f86457a32927a00d69224f9e2d1745d3dd189823fa223d3eff214e6",
+    "original_sha256": "42d1aa333f86457a32927a00d69224f9e2d1745d3dd189823fa223d3eff214e6",
+    "snapshot_changes": [],
+    "symbol": "chunk_comba_cumsum_scalar_bwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "085c29a1fa449ceffb1623f253fd69072e3cbb719d045eada99ddecfdffb69b3",
+    "ast_preserved": true,
+    "ast_sha256": "af3816bd16e7563de96e05ba3e2496186840a71783bced9e867f95d5fd8644ff",
+    "existing_extraction_file": "extracted/cases/vv_53320191cb95088f/yb_ff65cf7d4a7bc2.py",
+    "existing_extraction_sha256": "39cbb3bbc8278e29576a2acbda7758ab31794e61624abaf40335317d5bb2b281",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_53320191cb95088f",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/chunk_comba_cumsum_scalar_bwd_kernel/test_chunk_comba_cumsum_scalar_bwd_kernel_npu.py::test_chunk_comba_cumsum_scalar_bwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/chunk_comba_cumsum_scalar_bwd_kernel/test_chunk_comba_cumsum_scalar_bwd_kernel_npu.py:137"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

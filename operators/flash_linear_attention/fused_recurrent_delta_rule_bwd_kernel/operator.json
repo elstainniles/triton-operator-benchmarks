@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA261",
+  "name": "fused_recurrent_delta_rule_bwd_kernel",
+  "family": "flash_linear_attention/delta_rule",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_recurrent_delta_rule_bwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_bwd_kernel/test_fused_recurrent_delta_rule_bwd_kernel_with_cpu_golden_npu.py",
+    "snapshot": "upstream/test_fused_recurrent_delta_rule_bwd_kernel_with_cpu_golden_npu.py",
+    "sha256": "95f2ec01c56430076f20f8d0c2e31a9ac3ed70b07d4b607564b933d3001541ba",
+    "original_sha256": "95f2ec01c56430076f20f8d0c2e31a9ac3ed70b07d4b607564b933d3001541ba",
+    "snapshot_changes": [],
+    "symbol": "fused_recurrent_delta_rule_bwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "7b0c01072e301dc9213e1429945ab4028500fe13169991bf5c8d0b6fcc47fc8e",
+    "ast_preserved": true,
+    "ast_sha256": "ad96ba24403f2037b9cc06f638e122af382ad43877b175b62e873ad0b8d22589",
+    "existing_extraction_file": "extracted/cases/vv_a6dcf78e14c6af50/yb_3bbb884047bf2c.py",
+    "existing_extraction_sha256": "cc308a90ac885d418a366ac20f2df15bc63ced1f8d1171a0c8ce4f53eb8f5ea2",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_a6dcf78e14c6af50",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_bwd_kernel/test_fused_recurrent_delta_rule_bwd_kernel_with_cpu_golden_npu.py::test_with_cpu_fp64_as_golden"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_bwd_kernel/test_fused_recurrent_delta_rule_bwd_kernel_with_cpu_golden_npu.py:266"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

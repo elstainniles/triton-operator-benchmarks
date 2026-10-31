@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA275",
+  "name": "layer_norm_gated_bwd_kernel1",
+  "family": "flash_linear_attention/modules/fused_norm_gate",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "layer_norm_gated_bwd_kernel1",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/layer_norm_gated_bwd_kernel1/test_layer_norm_gated_bwd_kernel1_npu.py",
+    "snapshot": "upstream/test_layer_norm_gated_bwd_kernel1_npu.py",
+    "sha256": "479f42a176b41b189daf9b607a7d203277414270813d6c8ef76a7a7e24dd5e05",
+    "original_sha256": "479f42a176b41b189daf9b607a7d203277414270813d6c8ef76a7a7e24dd5e05",
+    "snapshot_changes": [],
+    "symbol": "layer_norm_gated_bwd_kernel1",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "ae0534796294455945acf96bc61001c315f3801e75381c779f5c81fc1ac0d6fe",
+    "ast_preserved": true,
+    "ast_sha256": "95eb4c0b9f09f1adf8ab6da9ca045fdf2176d0d50c869b61d7f101b774ebdd71",
+    "existing_extraction_file": "extracted/cases/vv_4b541841d7fdaeca/yb_ea1c28f246f7e1.py",
+    "existing_extraction_sha256": "a92533f313f3a3a6693c288799a02e86e455cfdbc539b23d644f2cfb7ee4f083",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_4b541841d7fdaeca",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/layer_norm_gated_bwd_kernel1/test_layer_norm_gated_bwd_kernel1_npu.py::test_layer_norm_gated_bwd_kernel1"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/layer_norm_gated_bwd_kernel1/test_layer_norm_gated_bwd_kernel1_npu.py:192"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

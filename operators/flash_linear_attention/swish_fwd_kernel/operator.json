@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "id": "FLA005",
+  "name": "swish_fwd_kernel",
+  "family": "flash_linear_attention/activations/swish",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "swish_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/modules/activations.py",
+    "snapshot": "upstream/activations.py",
+    "sha256": "febf0a8d8c26de1087ca901f90d4a474f713ba97b77e0de07c507bd1e555048d",
+    "original_sha256": "febf0a8d8c26de1087ca901f90d4a474f713ba97b77e0de07c507bd1e555048d",
+    "snapshot_changes": [],
+    "symbol": "swish_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "a80061dbcdcdc6624c44cfc28fb74d614e87ce5fd0b34e425d7e0f6b6e0bddb8",
+    "ast_preserved": true,
+    "ast_sha256": "2dd122256e0ff16cf084de5ccf13362bfae7df5bf25737398c93487c57fa268b",
+    "existing_extraction_file": "extracted/cases/vv_a526488165bbc8f8/yb_dce32337bf0092.py",
+    "existing_extraction_sha256": "5c1096bc7fcdf327c661049433480dc731f74b0c94eef1fa5cf917a83272014a",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_a526488165bbc8f8",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_swish_fwd_kernel/test_swish_fwd_kernel_npu.py::test_swish_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "fla/modules/activations.py:385"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,2 @@
+"""Static launch locations only; no executable launch adapter is registered."""
+STATIC_LAUNCH_REFERENCES = ('tests/ops/ascend_ops/vv_operator/chunk_gla_fwd_A_kernel_intra_sub_intra_split/test_chunk_gla_fwd_A_kernel_intra_sub_intra_split_npu.py:229',)

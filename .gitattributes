@@ -7,3 +7,8 @@ operators/triton_graph_optimization/external_references/upstream_run.md -text -w
 operators/liger_kernel/**/*.py -text -whitespace
 operators/liger_kernel/LICENSE -text -whitespace
 operators/liger_kernel/UPSTREAM_NOTICE -text -whitespace
+
+# Preserve the imported FLA source snapshots and MIT license bytes.
+operators/flash_linear_attention/**/upstream/** -text -whitespace
+operators/flash_linear_attention/LICENSE -text -whitespace
+operators/flash_linear_attention/**/kernels.py -text -whitespace

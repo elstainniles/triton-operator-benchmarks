@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "id": "FLA082",
+  "name": "parallel_nsa_kernel_topk",
+  "family": "flash_linear_attention/nsa",
+  "direction": "other",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_nsa_kernel_topk",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/nsa/parallel.py",
+    "snapshot": "upstream/parallel.py",
+    "sha256": "37b4e0e3ef0439f6be8cb45977f15a6afe4c27a427ddac68b6d1d8d10e740165",
+    "original_sha256": "37b4e0e3ef0439f6be8cb45977f15a6afe4c27a427ddac68b6d1d8d10e740165",
+    "snapshot_changes": [],
+    "symbol": "parallel_nsa_kernel_topk",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "6a33423d1d8ca3d6e8f2d0ea6e632d76de3062d22267a1e5c00c0e0ff1a72572",
+    "ast_preserved": true,
+    "ast_sha256": "1e120265424eba362f5a9d27a30cd8643448084d03daf596645b2cf66e001dc4",
+    "existing_extraction_file": "extracted/cases/cv_217dc93540f347d5/yb_b716f65a487720.py",
+    "existing_extraction_sha256": "c9ec15a541c53c0384277481e53a84ac891719f2d1c507d5b527300149c6f5e4",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/nsa/utils.py",
+      "source": "fla/ops/nsa/utils.py",
+      "sha256": "3a6590ed28e119e21308581d5a04e9782b534d3ef070f99f9dbf5834eb6f1948",
+      "original_sha256": "3a6590ed28e119e21308581d5a04e9782b534d3ef070f99f9dbf5834eb6f1948",
+      "snapshot_changes": [],
+      "extracted_module": "yb_29ce9b22189284"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_217dc93540f347d5",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_nsa_kernel_topk/test_parallel_nsa_kernel_topk_npu.py::test_parallel_nsa_kernel_topk"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_nsa_kernel_topk/test_parallel_nsa_kernel_topk_npu.py:121",
+    "tests/ops/ascend_ops/cv_operator/parallel_nsa_kernel_topk/test_parallel_nsa_kernel_topk_npu.py:172",
+    "tests/ops/ascend_ops/cv_operator/parallel_nsa_kernel_topk/test_parallel_nsa_kernel_topk_npu.py:218"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

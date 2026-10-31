@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA095",
+  "name": "rwkv_channel_mixing_pow_and_relu",
+  "family": "flash_linear_attention/rwkv7",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "rwkv_channel_mixing_pow_and_relu",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/rwkv7/channel_mixing.py",
+    "snapshot": "upstream/channel_mixing.py",
+    "sha256": "fa228f3dfa9d93dfa652fed2dfe4464eb03e1e3c61090b9d1012cec20d701f0b",
+    "original_sha256": "fa228f3dfa9d93dfa652fed2dfe4464eb03e1e3c61090b9d1012cec20d701f0b",
+    "snapshot_changes": [],
+    "symbol": "rwkv_channel_mixing_pow_and_relu",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "5bd5ee7373374b95ed089df256ccdfb54d844df238f80d6eb1ad3e4f1bcc8578",
+    "ast_preserved": true,
+    "ast_sha256": "56ed5cb4577bc5add7305d82e37b0af01b3d5cb045b7c85fbdcc043f698d8a05",
+    "existing_extraction_file": "extracted/cases/vv_290a82491ffe119d/yb_c6472eed460398.py",
+    "existing_extraction_sha256": "e318d1f784a8c0d6c2298aa70e60ac20345167782bf880d079e2578d7dad175c",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_290a82491ffe119d",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_rwkv_channel_mixing_pow_and_relu/test_rwkv_channel_mixing_pow_and_relu_npu.py::test_rwkv_channel_mixing_pow_and_relu"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/rwkv7/channel_mixing.py:164"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA267",
+  "name": "fused_recurrent_oja_fwd_kernel",
+  "family": "flash_linear_attention/gated_oja_rule",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_recurrent_oja_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_oja_fwd_kernel/test_fused_recurrent_oja_fwd_kernel_npu.py",
+    "snapshot": "upstream/test_fused_recurrent_oja_fwd_kernel_npu.py",
+    "sha256": "bc7a35adc235f9bf79c2ae467cc6b42c67acb574065c9564768d3e000ffcb5b2",
+    "original_sha256": "bc7a35adc235f9bf79c2ae467cc6b42c67acb574065c9564768d3e000ffcb5b2",
+    "snapshot_changes": [],
+    "symbol": "fused_recurrent_oja_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "6534502cb1c526d38e8c349b7b4479ec9454cf6098bc93ce12c751dd813998f4",
+    "ast_preserved": true,
+    "ast_sha256": "0e81cc5020e2a866c01e48e37aec8781efdb6e0e2af86196cbfab6aaf9e1a25d",
+    "existing_extraction_file": "extracted/cases/vv_3ab783978f1e1dfb/yb_dddb2504839769.py",
+    "existing_extraction_sha256": "8be71c9a88e5fdfc2cc9fbe9f0f823a1888b8434f9f93a7d064bc03278d7ac48",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_3ab783978f1e1dfb",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_oja_fwd_kernel/test_fused_recurrent_oja_fwd_kernel_npu.py::test_fused_recurrent_oja_fwd_kernel_vs_gpu"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/fused_recurrent_oja_fwd_kernel/test_fused_recurrent_oja_fwd_kernel_npu.py:146"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

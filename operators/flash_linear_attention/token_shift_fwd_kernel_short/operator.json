@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "id": "FLA032",
+  "name": "token_shift_fwd_kernel_short",
+  "family": "flash_linear_attention/modules/token_shift",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "token_shift_fwd_kernel_short",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/modules/token_shift.py",
+    "snapshot": "upstream/token_shift.py",
+    "sha256": "b9c0f7d611602a0730cba7d8353e267456229b7ab78560a8f96c10a62dd8b26c",
+    "original_sha256": "b9c0f7d611602a0730cba7d8353e267456229b7ab78560a8f96c10a62dd8b26c",
+    "snapshot_changes": [],
+    "symbol": "token_shift_fwd_kernel_short",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "be4a1ae2fde1ec79eeb745c2e4168ed52c34df4f13a57a6880af310909ac55bd",
+    "ast_preserved": true,
+    "ast_sha256": "d90b09b77a63f40378829975cc25f57ceb855d942a7e009c41e3eadebf0086f6",
+    "existing_extraction_file": "extracted/cases/vv_0771ae9438c41fcf/yb_8696e5ac02b2ad.py",
+    "existing_extraction_sha256": "62edc1ba12efe3399cc04c9ceadbfe16b91be1c79d4a8275d589a9abcc7fc1b2",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/__init__.py",
+      "source": "fla/ops/utils/__init__.py",
+      "sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "original_sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "snapshot_changes": [],
+      "extracted_module": "yb_1858bf26d5878c"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/index.py",
+      "source": "fla/ops/utils/index.py",
+      "sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "original_sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "snapshot_changes": [],
+      "extracted_module": "yb_4f3456615af619"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_fb5c6f3fabf2542f",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_long/test_token_shift_bwd_kernel_long_npu.py::test_token_shift_fwd_functiontest"
+    },
+    {
+      "id": "vv_346e201260a3fef2",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_long/test_token_shift_bwd_kernel_long_npu.py::test_token_shift_bwd_functiontest"
+    },
+    {
+      "id": "vv_0771ae9438c41fcf",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_long/test_token_shift_bwd_kernel_long_npu.py::test_token_shift_fwd_perftest"
+    },
+    {
+      "id": "vv_1c09752b47bc84c2",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_long/test_token_shift_bwd_kernel_long_npu.py::test_token_shift_bwd_perftest"
+    },
+    {
+      "id": "vv_46525962825003f6",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_short/test_token_shift_bwd_kernel_short_npu.py::test_token_shift_fwd_functiontest"
+    },
+    {
+      "id": "vv_5b3f6ac3a5a50b4d",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_short/test_token_shift_bwd_kernel_short_npu.py::test_token_shift_bwd_functiontest"
+    },
+    {
+      "id": "vv_1ba27642c4d77172",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_short/test_token_shift_bwd_kernel_short_npu.py::test_token_shift_fwd_perftest"
+    },
+    {
+      "id": "vv_0f277491153af19f",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_short/test_token_shift_bwd_kernel_short_npu.py::test_token_shift_bwd_perftest"
+    },
+    {
+      "id": "vv_f466485bec92634c",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_long/test_token_shift_fwd_kernel_long_npu.py::test_token_shift_fwd_functiontest"
+    },
+    {
+      "id": "vv_34129e07c94bf430",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_long/test_token_shift_fwd_kernel_long_npu.py::test_token_shift_bwd_functiontest"
+    },
+    {
+      "id": "vv_418341851e57edcc",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_long/test_token_shift_fwd_kernel_long_npu.py::test_token_shift_fwd_perftest"
+    },
+    {
+      "id": "vv_455dfd5b3ad0d256",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_long/test_token_shift_fwd_kernel_long_npu.py::test_token_shift_bwd_perftest"
+    },
+    {
+      "id": "vv_ec37a9a09d137abd",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_short/test_token_shift_fwd_kernel_short_npu.py::test_token_shift_fwd_functiontest"
+    },
+    {
+      "id": "vv_2cfdc27a0ec3f6fe",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_short/test_token_shift_fwd_kernel_short_npu.py::test_token_shift_bwd_functiontest"
+    },
+    {
+      "id": "vv_d26ed3c24be375f1",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_short/test_token_shift_fwd_kernel_short_npu.py::test_token_shift_fwd_perftest"
+    },
+    {
+      "id": "vv_7b0fd018f163cb43",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_short/test_token_shift_fwd_kernel_short_npu.py::test_token_shift_bwd_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "fla/modules/token_shift.py:408"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

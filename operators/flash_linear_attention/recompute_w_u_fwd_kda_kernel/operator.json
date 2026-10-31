@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA229",
+  "name": "recompute_w_u_fwd_kda_kernel",
+  "family": "flash_linear_attention/test_kernels/recompute_w_u_kda",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "recompute_w_u_fwd_kda_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/recompute_w_u_fwd_kda_kernel/test_recompute_w_u_fwd_kda_kernel_npu.py",
+    "snapshot": "upstream/test_recompute_w_u_fwd_kda_kernel_npu.py",
+    "sha256": "0099594708233ad179ccf4d46b8fe4ed9c0aa6be78f24e6124d45a0328f9db16",
+    "original_sha256": "0099594708233ad179ccf4d46b8fe4ed9c0aa6be78f24e6124d45a0328f9db16",
+    "snapshot_changes": [],
+    "symbol": "recompute_w_u_fwd_kda_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "ac1d2abc037327d11cb9753ac1071997190ded66bf53f50a1d341e89c3fa44ff",
+    "ast_preserved": true,
+    "ast_sha256": "a7363ad62963c3d80741cfcc175bbf0c8f77a8e71ef530f0fd7b029c282be789",
+    "existing_extraction_file": "extracted/cases/cv_c50e6992f94a049c/yb_332986ff2b58a3.py",
+    "existing_extraction_sha256": "26fd2944e7aa5bbb458c3794a3bfd78238b3f113617f937b42395a6ddc53b4b5",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_c50e6992f94a049c",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/recompute_w_u_fwd_kda_kernel/test_recompute_w_u_fwd_kda_kernel_npu.py::test_recompute_w_u_fwd_kda_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/recompute_w_u_fwd_kda_kernel/test_recompute_w_u_fwd_kda_kernel_npu.py:162"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

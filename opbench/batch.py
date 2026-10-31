@@ -11,7 +11,7 @@ from .runner import save
 
 def run(args):
     if args.case_id:
-        raise ValueError('--case-id requires a single graph operator')
+        raise ValueError('--case-id requires a single generated operator')
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     summary = dict(completed=False, all_passed=False,
@@ -25,9 +25,12 @@ def run(args):
             folder = output / entry['id']
             cmd = [sys.executable, '-I', str(ROOT/'tools/run.py'), 'run', '--operator', entry['id'],
                    '--suite', args.suite, '--variants', args.variants,
-                   '--physical-card', str(args.physical_card), '--environment', str(args.environment.resolve()),
                    '--output', str(folder)]
             cmd.extend(['--timing', getattr(args, 'timing', 'profiler')])
+            if args.physical_card is not None:
+                cmd.extend(['--physical-card', str(args.physical_card)])
+            if args.environment is not None:
+                cmd.extend(['--environment', str(args.environment.resolve())])
             if args.correctness_only:
                 cmd.append('--correctness-only')
             with (output / (entry['id']+'.log')).open('w', encoding='utf-8') as log:
@@ -35,9 +38,10 @@ def run(args):
             data = read_json(folder/'result.json') if (folder/'result.json').exists() else {}
             first_row = len(rows)
             for record in data.get('cases', []):
+                case = record.get('case') or {}
                 for variant in record.get('variants', [record]):
-                    rows.append(dict(operator=entry['name'], case=record['case']['id'],
-                                     shape=str(record['case']['shape']), dtype=record['case']['dtype'],
+                    rows.append(dict(operator=entry['name'], case=case.get('id'),
+                                     shape=str(case['shape']) if 'shape' in case else None, dtype=case.get('dtype'),
                                      type=entry['type'], variant=variant.get('variant_id', 'baseline'),
                                      status=variant['status'], kernel_us=variant.get('median_us')))
             counts = dict(Counter(row['status'] for row in rows[first_row:]))

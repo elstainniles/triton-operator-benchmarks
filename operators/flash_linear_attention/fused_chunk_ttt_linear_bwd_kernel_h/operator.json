@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "id": "FLA110",
+  "name": "fused_chunk_ttt_linear_bwd_kernel_h",
+  "family": "flash_linear_attention/ttt",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "fused_chunk_ttt_linear_bwd_kernel_h",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/ttt/fused_chunk.py",
+    "snapshot": "upstream/fused_chunk.py",
+    "sha256": "897009d572aadd2945c28fa9c70de4cb535c0245d3edbe9a2c08e82e6ea05766",
+    "original_sha256": "897009d572aadd2945c28fa9c70de4cb535c0245d3edbe9a2c08e82e6ea05766",
+    "snapshot_changes": [],
+    "symbol": "fused_chunk_ttt_linear_bwd_kernel_h",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "719c4bc1e29f3b5ec43dfd9ddcd723ca8c26f778097e0dad95988c816054db1f",
+    "ast_preserved": true,
+    "ast_sha256": "5a531fc83e7a2aca02b2ac8d41a1501f7bf7701b7b430f65154abf7ef8604d20",
+    "existing_extraction_file": "extracted/cases/cv_03bf04f8be680885/yb_14d6a471f4f932.py",
+    "existing_extraction_sha256": "45abde5b93976f1afe79a6a32526f13ca9b9abac989ea7141be3d8388aaabc8b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_03bf04f8be680885",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/fused_chunk_ttt_linear_bwd_kernel_h/test_fused_chunk_ttt_linear_bwd_kernel_h_npu.py::test_fused_chunk_ttt_linear_bwd_kernel_h_function"
+    },
+    {
+      "id": "cv_d280182e964577a3",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/fused_chunk_ttt_linear_bwd_kernel_h/test_fused_chunk_ttt_linear_bwd_kernel_h_npu.py::test_fused_chunk_ttt_linear_bwd_kernel_h_performance"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/fused_chunk_ttt_linear_bwd_kernel_h/test_fused_chunk_ttt_linear_bwd_kernel_h_npu.py:98",
+    "tests/ops/ascend_ops/cv_operator/fused_chunk_ttt_linear_bwd_kernel_h/test_fused_chunk_ttt_linear_bwd_kernel_h_npu.py:207"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

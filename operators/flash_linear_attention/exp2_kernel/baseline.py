@@ -1,0 +1,5 @@
+"""Baseline source policy for this non-executable archive entry."""
+KERNEL_SYMBOL = 'exp2_kernel'
+SOURCE_PATH = 'tests/ops/ascend_ops/vv_operator/exp2/test_exp2_npu.py'
+PRESERVE_ORIGINAL_TILE_GRID_AND_COMPILE_OPTIONS = True
+BENCHMARK_REGISTERED = False

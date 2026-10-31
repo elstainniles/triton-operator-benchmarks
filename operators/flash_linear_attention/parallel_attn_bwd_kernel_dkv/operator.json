@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA211",
+  "name": "parallel_attn_bwd_kernel_dkv",
+  "family": "flash_linear_attention/attn",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_attn_bwd_kernel_dkv",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/parallel_attn_bwd_kernel_dkv/test_parallel_attn_bwd_kernel_dkv_npu.py",
+    "snapshot": "upstream/test_parallel_attn_bwd_kernel_dkv_npu.py",
+    "sha256": "c16b3d61318376140aa409c640245b7ea55d93e92fac08292b6457d767421243",
+    "original_sha256": "c16b3d61318376140aa409c640245b7ea55d93e92fac08292b6457d767421243",
+    "snapshot_changes": [],
+    "symbol": "parallel_attn_bwd_kernel_dkv",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "2caf4a907fbdf599a57b8c1596f2fc28fe95ae8d4c960112ab9a91eea96732d0",
+    "ast_preserved": true,
+    "ast_sha256": "448a8c6617be7803aac115f06b82ba212fe73781141a13b837cef218ce2a8175",
+    "existing_extraction_file": "extracted/cases/cv_72855c36bd430366/yb_fafff1d2709292.py",
+    "existing_extraction_sha256": "735eec5ebbaf708f62282e3cdbf5705498e32a317cda11f7581b911b2156ebf8",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_72855c36bd430366",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_attn_bwd_kernel_dkv/test_parallel_attn_bwd_kernel_dkv_npu.py::test_parallel_attn_bwd_kernel_dkv"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_attn_bwd_kernel_dkv/test_parallel_attn_bwd_kernel_dkv_npu.py:214"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

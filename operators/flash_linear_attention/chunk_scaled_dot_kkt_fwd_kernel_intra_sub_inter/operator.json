@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "FLA051",
+  "name": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter",
+  "family": "flash_linear_attention/gated_oja_rule",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/gated_oja_rule/chunk_kkt.py",
+    "snapshot": "upstream/chunk_kkt.py",
+    "sha256": "243402cbf4399182bd514bbde9bc140272b70b36c1763333c37b981eabeab41e",
+    "original_sha256": "243402cbf4399182bd514bbde9bc140272b70b36c1763333c37b981eabeab41e",
+    "snapshot_changes": [],
+    "symbol": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "f276d4ed9481a7fa08a4588b4938db5ecf6caf7e5b037eb24d436f2f150999fc",
+    "ast_preserved": true,
+    "ast_sha256": "0b9be8659d3babe44218d4cc98a31afce51556882184f290167d9c4162fc0c25",
+    "existing_extraction_file": "extracted/cases/cv_10fd9527837e7bda/yb_3a11c7d24ffaf7.py",
+    "existing_extraction_sha256": "80a4f466e48e0cce997070f3cae7c6ab7a1a7f7768e7b63db5877baeb5d41e31",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_98e40d84f6fa1ddc",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel/test_chunk_scaled_dot_kkt_fwd_kernel_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_function"
+    },
+    {
+      "id": "cv_61541c50a43796fc",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel/test_chunk_scaled_dot_kkt_fwd_kernel_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_performance"
+    },
+    {
+      "id": "cv_67b366a7e7a2935e",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_function"
+    },
+    {
+      "id": "cv_10fd9527837e7bda",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_performance"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/gated_oja_rule/chunk_kkt.py:447",
+    "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_npu.py:123",
+    "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_npu.py:154"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

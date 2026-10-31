@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA246",
+  "name": "chunk_gla_fwd_A_kernel_intra_sub_intra_split",
+  "family": "flash_linear_attention/gla",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_gla_fwd_A_kernel_intra_sub_intra_split",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/chunk_gla_fwd_A_kernel_intra_sub_intra_split/test_chunk_gla_fwd_A_kernel_intra_sub_intra_split_npu.py",
+    "snapshot": "upstream/test_chunk_gla_fwd_A_kernel_intra_sub_intra_split_npu.py",
+    "sha256": "672b0025808524f6a757e6cca16d8e06b9e51f9b68d69dd943a40b8c4df483d6",
+    "original_sha256": "672b0025808524f6a757e6cca16d8e06b9e51f9b68d69dd943a40b8c4df483d6",
+    "snapshot_changes": [],
+    "symbol": "chunk_gla_fwd_A_kernel_intra_sub_intra_split",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "dee9a97ada8033c3b045816289c35d671b699a76f8255f8dafb4a30efdf9342e",
+    "ast_preserved": true,
+    "ast_sha256": "dd6a31d2482fb34791ff4c9a7df04eeb59e0fc6de8fcc11cc206a0eae72febd7",
+    "existing_extraction_file": "extracted/cases/vv_e9180b9c637dfae7/yb_a5b3e167625c6f.py",
+    "existing_extraction_sha256": "b545557ff617c8d3a411d714dd51efa469062802cea98ab0396692125dfc352b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_e9180b9c637dfae7",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/chunk_gla_fwd_A_kernel_intra_sub_intra_split/test_chunk_gla_fwd_A_kernel_intra_sub_intra_split_npu.py::test_chunk_gla_fwd_A_kernel_intra_sub_intra_split"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/chunk_gla_fwd_A_kernel_intra_sub_intra_split/test_chunk_gla_fwd_A_kernel_intra_sub_intra_split_npu.py:229"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

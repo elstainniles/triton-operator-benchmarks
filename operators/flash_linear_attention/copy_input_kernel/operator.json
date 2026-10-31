@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA080",
+  "name": "copy_input_kernel",
+  "family": "flash_linear_attention/log_linear_attn",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "copy_input_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/log_linear_attn/chunk.py",
+    "snapshot": "upstream/chunk.py",
+    "sha256": "72848618b2dd18016e198cb0330082588c2fdedb1f825aa15a81cabef8cd1fdf",
+    "original_sha256": "72848618b2dd18016e198cb0330082588c2fdedb1f825aa15a81cabef8cd1fdf",
+    "snapshot_changes": [],
+    "symbol": "copy_input_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "7e0750b26eacbe8e1697a859f070cbe7d91f337e8bc0d38d6497ad9db8fc82ee",
+    "ast_preserved": true,
+    "ast_sha256": "685c5faa210c4faa6c9f7281f1f6b880822a9a3d6c22bc5bb692a98cdebc2a73",
+    "existing_extraction_file": "extracted/cases/vv_7f19885874663d00/yb_5797d3e04fb6ed.py",
+    "existing_extraction_sha256": "3fd3cf2707110d2adde5b7fb0f63f571e150ed1035666f274dd68381bc155059",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_7f19885874663d00",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_copy_input_kernel/test_copy_input_kernel_npu.py::test_copy_input_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/test_copy_input_kernel/test_copy_input_kernel_npu.py:26"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

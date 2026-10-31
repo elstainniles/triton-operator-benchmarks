@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA271",
+  "name": "k_update_bwd_kernel_short",
+  "family": "flash_linear_attention/test_kernels/k_update_kernel_short",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "k_update_bwd_kernel_short",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/k_update_bwd_kernel_short/test_k_update_bwd_kernel_short_npu.py",
+    "snapshot": "upstream/test_k_update_bwd_kernel_short_npu.py",
+    "sha256": "4f651551d94227db930a7fa6567d0d20e7d6bbb3a5ce93b5e67bdb36a76d4deb",
+    "original_sha256": "4f651551d94227db930a7fa6567d0d20e7d6bbb3a5ce93b5e67bdb36a76d4deb",
+    "snapshot_changes": [],
+    "symbol": "k_update_bwd_kernel_short",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "88d0829591befc60a72835c1ab26cb97b5bc7a786837507eb020a41ad6f257f5",
+    "ast_preserved": true,
+    "ast_sha256": "3c37ee857e04b077f435e28331d8fd19fac6e84608255621ae0ccaff4a4d63a1",
+    "existing_extraction_file": "extracted/cases/vv_b26b70348e1445b0/yb_ffab1495afa9a4.py",
+    "existing_extraction_sha256": "4830b4699e2c4f79aabe9451ca5cfeaeca1ac9efc7cf34101d522f92ad324377",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_b26b70348e1445b0",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/k_update_bwd_kernel_short/test_k_update_bwd_kernel_short_npu.py::test_k_update_bwd_kernel_short"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/k_update_bwd_kernel_short/test_k_update_bwd_kernel_short_npu.py:156"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

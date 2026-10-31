@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "id": "FLA063",
+  "name": "chunk_generalized_iplr_delta_rule_fwd_kernel_h",
+  "family": "flash_linear_attention/generalized_delta_rule",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_generalized_iplr_delta_rule_fwd_kernel_h",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/generalized_delta_rule/iplr/chunk.py",
+    "snapshot": "upstream/chunk.py",
+    "sha256": "09f584c42b718524866458462235fd950dfe003bf456a76b68ba8588cd85b091",
+    "original_sha256": "09f584c42b718524866458462235fd950dfe003bf456a76b68ba8588cd85b091",
+    "snapshot_changes": [],
+    "symbol": "chunk_generalized_iplr_delta_rule_fwd_kernel_h",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "3caa99bc29beafda047163db8acda3542cb9af60e43256b98177ff63b6a84e33",
+    "ast_preserved": true,
+    "ast_sha256": "3ae0b40a705fd82b17ab5669a984d7067a34725f7bfe5caf91d109e6758c134a",
+    "existing_extraction_file": "extracted/cases/cv_4b3c86e3b1137f4e/yb_b0825468b432fa.py",
+    "existing_extraction_sha256": "be3a4641d1e593da5d1bcb90372ec8ff153564fdb296244710c96a5ee816fe37",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/generalized_delta_rule/iplr/wy_fast.py",
+      "source": "fla/ops/generalized_delta_rule/iplr/wy_fast.py",
+      "sha256": "93ee2be2c963197e6c6a762f409bf19100d4e012601b45161cefa442c82a456f",
+      "original_sha256": "93ee2be2c963197e6c6a762f409bf19100d4e012601b45161cefa442c82a456f",
+      "snapshot_changes": [],
+      "extracted_module": "yb_7c9b498e75e1da"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/__init__.py",
+      "source": "fla/ops/utils/__init__.py",
+      "sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "original_sha256": "45b5c52dd55b7fa8b1fafdd08700e1e084a6358492612e675c5d5cd71b0d8dfd",
+      "snapshot_changes": [],
+      "extracted_module": "yb_1858bf26d5878c"
+    },
+    {
+      "path": "upstream/dependencies/fla/ops/utils/index.py",
+      "source": "fla/ops/utils/index.py",
+      "sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "original_sha256": "d7dfaef0f9fcb80be27f0a5d2244ffdf00e76db0727d28d0642b055e97486e28",
+      "snapshot_changes": [],
+      "extracted_module": "yb_4f3456615af619"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_4b3c86e3b1137f4e",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_generalized_iplr_delta_rule_fwd_kernel_h/test_chunk_generalized_iplr_delta_rule_fwd_kernel_h_npu.py::test_chunk_generalized_iplr_delta_rule_fwd_kernel_h"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/generalized_delta_rule/iplr/chunk.py:388"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

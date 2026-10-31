@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA037",
+  "name": "parallel_attn_bwd_kernel_preprocess__29270ece",
+  "family": "flash_linear_attention/attn",
+  "direction": "bwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_attn_bwd_kernel_preprocess",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/attn/parallel.py",
+    "snapshot": "upstream/parallel.py",
+    "sha256": "016e311a62b5bf1cdbc0ee71570bef032f32202814388127c50d0cc55642ff1b",
+    "original_sha256": "016e311a62b5bf1cdbc0ee71570bef032f32202814388127c50d0cc55642ff1b",
+    "snapshot_changes": [],
+    "symbol": "parallel_attn_bwd_kernel_preprocess",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "3842707355523d423e58612300663503e57d0737c9ee631848713f8b933156e4",
+    "ast_preserved": true,
+    "ast_sha256": "8a81f024309df646c82f4aea3a8e254796ad3c2c57eefbf2af20ecbb707a45a0",
+    "existing_extraction_file": "extracted/cases/vv_79c05e2a6845bf60/yb_29270ece94452f.py",
+    "existing_extraction_sha256": "02c589f6198044eef02e6e9b0c76c65ce09255f86ad01f6456bdc3ac869ec084",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_79c05e2a6845bf60",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/test_parallel_attn_bwd_kernel_preprocess/test_parallel_attn_bwd_kernel_preprocess_npu.py::test_parallel_attn_bwd_kernel_preprocess"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/attn/parallel.py:584"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

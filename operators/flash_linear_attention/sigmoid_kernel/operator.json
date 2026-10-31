@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "FLA288",
+  "name": "sigmoid_kernel",
+  "family": "flash_linear_attention/test_kernels/sigmoid",
+  "direction": "other",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "sigmoid_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py",
+    "snapshot": "upstream/test_sigmoid_npu.py",
+    "sha256": "027731faeb3d998a1658c42ba5b8b4edb9286ea8f4054db999734d6566fd8de1",
+    "original_sha256": "027731faeb3d998a1658c42ba5b8b4edb9286ea8f4054db999734d6566fd8de1",
+    "snapshot_changes": [],
+    "symbol": "sigmoid_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "5a63219d901a0ad74f4e235149fb508c92fa279438ba76b54f0a753fd5857bd8",
+    "ast_preserved": true,
+    "ast_sha256": "a3cee7476e4a2ad22ac09e4ae52f6159ce93a13ce3cc9942ea8baf494457cebe",
+    "existing_extraction_file": "extracted/cases/vv_919492cb67b6774f/yb_17151a3944096a.py",
+    "existing_extraction_sha256": "95c57e8c399adcfb73744578face6e3dbc9faece9a0214f30cbf2911383ea849",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "vv_919492cb67b6774f",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py::test_sigmoid_kernel_functiontest"
+    },
+    {
+      "id": "vv_a81b12bc30c8f5aa",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py::test_sigmoid_kernel_perftest"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py:135"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

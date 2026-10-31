@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "operator_id": "LK10",
+  "kernel": "_fused_neighborhood_attention_grad_k_kernel",
+  "cases": [
+    {
+      "id": "LK10-matrix128",
+      "shape": [
+        8,
+        16,
+        128,
+        64
+      ],
+      "dtype": "float32",
+      "tensors": {
+        "grad_attn_ptr": {
+          "shape": [
+            8,
+            16,
+            128,
+            128
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            262144,
+            16384,
+            128,
+            1
+          ]
+        },
+        "Q_ptr": {
+          "shape": [
+            8,
+            16,
+            128,
+            64
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            131072,
+            8192,
+            64,
+            1
+          ]
+        },
+        "grad_K_ptr": {
+          "shape": [
+            8,
+            16,
+            128,
+            64
+          ],
+          "dtype": "torch.float32",
+          "device": "npu:0",
+          "stride": [
+            131072,
+            8192,
+            64,
+            1
+          ]
+        }
+      },
+      "tile": {
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128
+      },
+      "suite": "cv-large",
+      "shape_axes": [
+        "B",
+        "H",
+        "S",
+        "D"
+      ],
+      "seed": 20261031,
+      "grid": [
+        128,
+        4,
+        2
+      ],
+      "output": "grad_K_ptr",
+      "dimensions": {
+        "batch_size": 8,
+        "num_heads": 16,
+        "seq_len": 128,
+        "head_dim": 64,
+        "hidden_size": 1024
+      },
+      "scalar_arguments": {
+        "grad_attn_batch_stride": 262144,
+        "grad_attn_head_stride": 16384,
+        "grad_attn_seq_stride": 128,
+        "grad_attn_seq2_stride": 1,
+        "q_batch_stride": 131072,
+        "q_head_stride": 8192,
+        "q_seq_stride": 64,
+        "q_dim_stride": 1,
+        "grad_k_batch_stride": 131072,
+        "grad_k_head_stride": 8192,
+        "grad_k_seq_stride": 64,
+        "grad_k_dim_stride": 1,
+        "batch_size": 8,
+        "num_heads": 16,
+        "seq_len": 128,
+        "head_dim": 64,
+        "scale": 0.125,
+        "BLOCK_SIZE_M": 32,
+        "BLOCK_SIZE_N": 32,
+        "BLOCK_SIZE_K": 128,
+        "num_stages": 2,
+        "num_warps": 4
+      },
+      "correctness": {
+        "reference": "CPU float64 per-kernel equations; original repository thresholds; not upstream transformer end-to-end test",
+        "rtol": 0.005,
+        "atol": 0.005,
+        "sentinel_elements_per_side": 64,
+        "sentinel_value": 12345
+      },
+      "input_origin": "direct_per_kernel_fixture_from_cv_large_20261031",
+      "original_result_sha256": "7fa79637ef4b66dbcddd3310f1f55f0e52e810b9c16f65bf9eaaa8aa579145b8"
+    }
+  ]
+}

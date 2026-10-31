@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA149",
+  "name": "chunk_cumprod_householder_fwd_kernel",
+  "family": "flash_linear_attention/path_attn",
+  "direction": "fwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_cumprod_householder_fwd_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_cumprod_householder_fwd_kernel/test_chunk_cumprod_householder_fwd_kernel_npu.py",
+    "snapshot": "upstream/test_chunk_cumprod_householder_fwd_kernel_npu.py",
+    "sha256": "ae85917b2e81645f79cf563313f5726daaacb6d889d181d75d74c353d5ee1560",
+    "original_sha256": "ae85917b2e81645f79cf563313f5726daaacb6d889d181d75d74c353d5ee1560",
+    "snapshot_changes": [],
+    "symbol": "chunk_cumprod_householder_fwd_kernel",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "b5aecddbe216802a6fae1434f8fa2a8460718ccd8d028104a579ef9419e40121",
+    "ast_preserved": true,
+    "ast_sha256": "c640a19f86e94f6de7df5fbf927dc75f8d7d92eecdf31d7294ce6d5ad6f1f430",
+    "existing_extraction_file": "extracted/cases/cv_19657fd9a4f99850/yb_4f82be51244fd9.py",
+    "existing_extraction_sha256": "854ca1d9e0ff10448233978f52f3044063a77422c7b2598228b2f5c1033b1d6b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_19657fd9a4f99850",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/chunk_cumprod_householder_fwd_kernel/test_chunk_cumprod_householder_fwd_kernel_npu.py::test_chunk_cumprod_householder_fwd_kernel"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/chunk_cumprod_householder_fwd_kernel/test_chunk_cumprod_householder_fwd_kernel_npu.py:216"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

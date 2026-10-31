@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "FLA118",
+  "name": "matmul_kernel",
+  "family": "flash_linear_attention/utils/matmul",
+  "direction": "other",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "matmul_kernel",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/utils/matmul.py",
+    "snapshot": "upstream/matmul.py",
+    "sha256": "3d5e0baca469357c19f29aea321f9c1f463fadb16ad11a2bbfee192f2d939e2c",
+    "original_sha256": "3d5e0baca469357c19f29aea321f9c1f463fadb16ad11a2bbfee192f2d939e2c",
+    "snapshot_changes": [],
+    "symbol": "matmul_kernel",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "66927097e374f2556950f3fe5fc1c50cf66b521efad1c291df4d4001250a8a39",
+    "ast_preserved": true,
+    "ast_sha256": "f22d93efb81e048d0c804f2c9d15317e9a9e31c9d560a7768ce747d0b845605f",
+    "existing_extraction_file": "extracted/cases/cv_374c9e0c1c960494/yb_0679786a1dee28.py",
+    "existing_extraction_sha256": "10ed62f089c5a1ceea0f979b1883407f4f06eecf93b7b8fdca601a0cf0d6232b",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [
+    {
+      "path": "upstream/dependencies/fla/ops/utils/op.py",
+      "source": "fla/ops/utils/op.py",
+      "sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "original_sha256": "a8c46c96015c55b1146459f3714f1c18de78d83c3a5774aabb2397756c2353f7",
+      "snapshot_changes": [],
+      "extracted_module": "yb_8459c530c3d6be"
+    },
+    {
+      "path": "upstream/dependencies/fla/utils.py",
+      "source": "fla/utils.py",
+      "sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "original_sha256": "bc6383e1482705a7be5d8b7f0a00c2af5cf9d35b31ee4e0e6b3b267aff8e76aa",
+      "snapshot_changes": [],
+      "extracted_module": "yb_74f55558e08fc1"
+    }
+  ],
+  "original_test_cases": [
+    {
+      "id": "cv_374c9e0c1c960494",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/matmul_kernel/test_matmul_kernel_npu.py::test_matmul_kernel_function"
+    },
+    {
+      "id": "cv_90c0618af29d0d9b",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/matmul_kernel/test_matmul_kernel_npu.py::test_matmul_kernel_performance"
+    }
+  ],
+  "static_launch_references": [
+    "fla/ops/utils/matmul.py:200"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

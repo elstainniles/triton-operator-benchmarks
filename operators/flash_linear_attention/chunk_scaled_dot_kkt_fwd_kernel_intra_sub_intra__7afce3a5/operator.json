@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "FLA253",
+  "name": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra__7afce3a5",
+  "family": "flash_linear_attention/test_kernels/chunk_scaled_dot_kkt_kernel_intra_sub_intra",
+  "direction": "fwd",
+  "type": "vv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "tests/ops/ascend_ops/vv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra_npu.py",
+    "snapshot": "upstream/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra_npu.py",
+    "sha256": "602fd11f1cdaf3e85acfa9050c3e11bfb824dae7a118852e37986f56c3d979f9",
+    "original_sha256": "602fd11f1cdaf3e85acfa9050c3e11bfb824dae7a118852e37986f56c3d979f9",
+    "snapshot_changes": [],
+    "symbol": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra",
+    "license": "MIT",
+    "definition_origin": "original_test"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "43fe1facc07d0e33bb22e78abe38e475ca9d1949c89d2cf65fef653e61c96ec4",
+    "ast_preserved": true,
+    "ast_sha256": "0f601f391fbb15f6b36770a2a3bbee8d5ec1fdadaabc852f26f333a384f65ef3",
+    "existing_extraction_file": "extracted/cases/vv_48f8fa4d98a8e5cc/yb_7afce3a5ed853b.py",
+    "existing_extraction_sha256": "1fb63bd348bdae14dc14bebed961a8314a54917438c6025c50786319634681a8",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "vv_48f8fa4d98a8e5cc",
+      "nodeid": "tests/ops/ascend_ops/vv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/vv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra_npu.py:166"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

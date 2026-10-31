@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "id": "FLA045",
+  "name": "parallel_deltaformer_bwd_kernel_qk",
+  "family": "flash_linear_attention/deltaformer",
+  "direction": "bwd",
+  "type": "cv",
+  "runner": "fla",
+  "entry_mode": "source_archive",
+  "kernel_symbol": "parallel_deltaformer_bwd_kernel_qk",
+  "baseline_id": "baseline",
+  "adaptation_status": "blocked_adaptation",
+  "adaptation_reason": "The original kernel and dependency sources are archived; an independently checked, self-generated benchmark launch is not yet registered.",
+  "implementation": "original_kernel_source_archive",
+  "validation": "SOURCE_AST_VERIFIED",
+  "source": {
+    "repository": "https://gitcode.com/TritonAscendTest/flash-linear-attention.git",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "path": "fla/ops/deltaformer/parallel.py",
+    "snapshot": "upstream/parallel.py",
+    "sha256": "0839349740ac14839f4c26ff63f90103c1fc42ea58b94357af1ab1e6bdc621fc",
+    "original_sha256": "0839349740ac14839f4c26ff63f90103c1fc42ea58b94357af1ab1e6bdc621fc",
+    "snapshot_changes": [],
+    "symbol": "parallel_deltaformer_bwd_kernel_qk",
+    "license": "MIT",
+    "definition_origin": "fla_source"
+  },
+  "extraction": {
+    "path": "kernels.py",
+    "sha256": "74cc43270e21fe28cd7d2f3c0a20afa2e2591ae459c712475cda4a158925aa47",
+    "ast_preserved": true,
+    "ast_sha256": "d05cd2a9f69ada8f78ae6be50ac49b9b90718cc173f7975010d0e7b884042607",
+    "existing_extraction_file": "extracted/cases/cv_39fd39a2e6db2b9c/yb_a87c34e2ef2580.py",
+    "existing_extraction_sha256": "102ddbc6d39458ed4cd8b083c6a3347c7161de1d1f6388980ba032fd1c743a62",
+    "changes": [
+      "Retain the selected JIT function and all its decorators unchanged; add an archive header and common Triton imports.",
+      "Keep full original source and dependency snapshots; do not import archive entries from the benchmark runner."
+    ]
+  },
+  "dependencies": [],
+  "original_test_cases": [
+    {
+      "id": "cv_8c81caa5940d4145",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_deltaformer_bwd_kernel_qk/test_parallel_deltaformer_bwd_qk_npu.py::test_parallel_deltaformer_bwd_qk_function"
+    },
+    {
+      "id": "cv_39fd39a2e6db2b9c",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_deltaformer_bwd_kernel_qk/test_parallel_deltaformer_bwd_qk_npu.py::test_parallel_deltaformer_bwd_qk_performance"
+    },
+    {
+      "id": "cv_b4b4404ab9453e41",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_deltaformer_bwd_kernel_row_sum_torch/test_parallel_deltaformer_bwd_kernel_row_sum_torch_npu.py::test_bwd_kernel_row_sum"
+    },
+    {
+      "id": "cv_89c6c4902c6a8065",
+      "nodeid": "tests/ops/ascend_ops/cv_operator/parallel_deltaformer_bwd_kernel_u_torch/test_parallel_deltaformer_bwd_kernel_u_torch_npu.py::test_bwd_kernel_u"
+    }
+  ],
+  "static_launch_references": [
+    "tests/ops/ascend_ops/cv_operator/parallel_deltaformer_bwd_kernel_qk/test_parallel_deltaformer_bwd_qk_npu.py:85",
+    "tests/ops/ascend_ops/cv_operator/parallel_deltaformer_bwd_kernel_qk/test_parallel_deltaformer_bwd_qk_npu.py:129",
+    "fla/ops/deltaformer/parallel.py:95"
+  ],
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+}

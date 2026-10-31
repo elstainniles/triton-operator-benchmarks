@@ -2,6 +2,10 @@
 
 46 个精确 kernel 函数，固定 [Liger-Kernel 781a8aef64bf](https://github.com/linkedin/Liger-Kernel/commit/781a8aef64bf6105bdefb5f4c991e0d14c08e793)：**38 generic、7 Ascend-only、1 experimental；CV 7、VV 39**。同名选择顺序是 generic > Ascend > experimental，不会因通用版失败自动换成 Ascend 版。[完整名称和历史性能表](catalog-table.md)按用户第二批清单排序，ID 为 LK01–LK46。
 
+2026-10-31 增加 [LK07–LK12 大尺寸 CV 配置](../../docs/LIGER_CV_LARGE.md)：B=8/H=16/S=128/D=64、float32。
+`tools/run_liger_cv_large.py` 提供独立一键入口；六项的真实输入、tile、grid 和第一版合并实测已归档。
+下文和 `tools/run.py` 仍描述第二批历史配置；新增大尺寸不会覆盖旧结果。
+
 每个目录包含 `kernels.py`、`test_case.py`、`cases.json`、`operator.json`、`upstream/` 和 `results/20261028/`。目标 JIT 函数、装饰器、算法、原始 grid/tile/autotune 均未修改。完整上游模块保留在 `upstream/`，执行仅抽取目标函数；wrapper、其它辅助 kernel 和参考模型来自固定 wheel。本目录不提供手改优化候选，也不测 PyTorch/ACLNN 的性能。
 
 ## 环境准备（一次）
