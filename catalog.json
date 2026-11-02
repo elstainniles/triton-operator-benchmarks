@@ -1118,7 +1118,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA039",
@@ -1130,7 +1134,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA040",
@@ -1166,7 +1174,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA043",
@@ -1178,7 +1190,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA044",
@@ -1190,7 +1206,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA045",
@@ -1202,7 +1222,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA046",
@@ -1226,7 +1250,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA048",
@@ -1238,7 +1266,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA049",
@@ -1250,7 +1282,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA050",
@@ -1262,7 +1298,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA051",
@@ -1274,7 +1314,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA052",
@@ -1298,7 +1342,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA054",
@@ -1310,7 +1358,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA055",
@@ -1322,7 +1374,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA056",
@@ -1334,7 +1390,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA057",
@@ -1346,7 +1406,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA058",
@@ -1358,7 +1422,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA059",
@@ -1370,7 +1438,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA060",
@@ -1382,7 +1454,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA061",
@@ -1418,7 +1494,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA064",
@@ -1490,7 +1570,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA070",
@@ -1514,7 +1598,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA072",
@@ -1526,7 +1614,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA073",
@@ -1538,7 +1630,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA074",
@@ -1550,7 +1646,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA075",
@@ -1610,7 +1710,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA080",
@@ -1646,7 +1750,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA083",
@@ -1658,7 +1766,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA084",
@@ -1682,7 +1794,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA086",
@@ -1694,7 +1810,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA087",
@@ -1706,7 +1826,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA088",
@@ -1898,7 +2022,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA104",
@@ -1910,7 +2038,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA105",
@@ -1922,7 +2054,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA106",
@@ -1934,7 +2070,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA107",
@@ -1946,7 +2086,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA108",
@@ -1958,7 +2102,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA109",
@@ -1970,7 +2118,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA110",
@@ -1982,7 +2134,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA111",
@@ -1994,7 +2150,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA112",
@@ -2078,7 +2238,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA119",
@@ -2138,7 +2302,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA124",
@@ -2150,7 +2318,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA125",
@@ -2162,7 +2334,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA126",
@@ -2174,7 +2350,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA127",
@@ -2186,7 +2366,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA128",
@@ -2198,7 +2382,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA129",
@@ -2210,7 +2398,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA130",
@@ -2222,7 +2414,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA131",
@@ -2234,7 +2430,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA132",
@@ -2246,7 +2446,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA133",
@@ -2258,7 +2462,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA134",
@@ -2270,7 +2478,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA135",
@@ -2282,7 +2494,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA136",
@@ -2294,7 +2510,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA137",
@@ -2306,7 +2526,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA138",
@@ -2318,7 +2542,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA139",
@@ -2330,7 +2558,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA140",
@@ -2342,7 +2574,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA141",
@@ -2354,7 +2590,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA142",
@@ -2366,7 +2606,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA143",
@@ -2378,7 +2622,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA144",
@@ -2402,7 +2650,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA146",
@@ -2414,7 +2666,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA147",
@@ -2426,7 +2682,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA148",
@@ -2438,7 +2698,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA149",
@@ -2450,7 +2714,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA150",
@@ -2462,7 +2730,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA151",
@@ -2474,7 +2746,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA152",
@@ -2486,7 +2762,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA153",
@@ -2498,7 +2778,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA154",
@@ -2510,7 +2794,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA155",
@@ -2522,7 +2810,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA156",
@@ -2534,7 +2826,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA157",
@@ -2546,7 +2842,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA158",
@@ -2570,7 +2870,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA160",
@@ -2582,7 +2886,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA161",
@@ -2594,7 +2902,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA162",
@@ -2606,7 +2918,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA163",
@@ -2618,7 +2934,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA164",
@@ -2630,7 +2950,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA165",
@@ -2642,7 +2966,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA166",
@@ -2654,7 +2982,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA167",
@@ -2666,7 +2998,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA168",
@@ -2678,7 +3014,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA169",
@@ -2690,7 +3030,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA170",
@@ -2702,7 +3046,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA171",
@@ -2714,7 +3062,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA172",
@@ -2726,7 +3078,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA173",
@@ -2738,7 +3094,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA174",
@@ -2750,7 +3110,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA175",
@@ -2774,7 +3138,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA177",
@@ -2786,7 +3154,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA178",
@@ -2798,7 +3170,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA179",
@@ -2810,7 +3186,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA180",
@@ -2822,7 +3202,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA181",
@@ -2846,7 +3230,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA183",
@@ -2858,7 +3246,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA184",
@@ -2870,7 +3262,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA185",
@@ -2882,7 +3278,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA186",
@@ -2894,7 +3294,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA187",
@@ -2906,7 +3310,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA188",
@@ -2918,7 +3326,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA189",
@@ -2954,7 +3366,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA192",
@@ -2966,7 +3382,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA193",
@@ -2978,7 +3398,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA194",
@@ -2990,7 +3414,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA195",
@@ -3002,7 +3430,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA196",
@@ -3014,7 +3446,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA197",
@@ -3026,7 +3462,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA198",
@@ -3038,7 +3478,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA199",
@@ -3050,7 +3494,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA200",
@@ -3062,7 +3510,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA201",
@@ -3074,7 +3526,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA202",
@@ -3086,7 +3542,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA203",
@@ -3098,7 +3558,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA204",
@@ -3110,7 +3574,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA205",
@@ -3122,7 +3590,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA206",
@@ -3134,7 +3606,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA207",
@@ -3146,7 +3622,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA208",
@@ -3158,7 +3638,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA209",
@@ -3170,7 +3654,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA210",
@@ -3182,7 +3670,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA211",
@@ -3194,7 +3686,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA212",
@@ -3206,7 +3702,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA213",
@@ -3218,7 +3718,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA214",
@@ -3230,7 +3734,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA215",
@@ -3242,7 +3750,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA216",
@@ -3254,7 +3766,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA217",
@@ -3266,7 +3782,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA218",
@@ -3290,7 +3810,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA220",
@@ -3302,7 +3826,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA221",
@@ -3314,7 +3842,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA222",
@@ -3326,7 +3858,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA223",
@@ -3338,7 +3874,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA224",
@@ -3350,7 +3890,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA225",
@@ -3362,7 +3906,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA226",
@@ -3374,7 +3922,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA227",
@@ -3386,7 +3938,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA228",
@@ -3398,7 +3954,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA229",
@@ -3410,7 +3970,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA230",
@@ -3422,7 +3986,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA231",
@@ -3434,7 +4002,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA232",
@@ -3446,7 +4018,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA233",
@@ -3458,7 +4034,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA234",
@@ -3470,7 +4050,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA235",
@@ -3482,7 +4066,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA236",
@@ -3494,7 +4082,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA237",
@@ -3506,7 +4098,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA238",
@@ -3518,7 +4114,11 @@
       "implementation": "original_kernel_source_archive",
       "runner": "fla",
       "entry_mode": "source_archive",
-      "validation": "SOURCE_AST_VERIFIED"
+      "validation": "SOURCE_AST_VERIFIED",
+      "cv_benchmark": {
+        "entry": "tools/run_fla_cv.py",
+        "cases": "cases-cv.json"
+      }
     },
     {
       "id": "FLA239",

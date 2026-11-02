@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 42,
+  "case": "cv-row-042",
+  "status": "MEASURED",
+  "baseline_us": 16.4625,
+  "candidate_us": null,
+  "has_dot": false,
+  "source_sha256": "41193c51aa6b53fcfee1386680dabe573a846e573c21a75dd806cf1f8b0d2bdd",
+  "compiled_source_sha256": "71853b158767475f82884482838b160c0e6fe18220ae7a8c1600b938a23f2542",
+  "published_source_sha256": "da12c54d4cb16bd15a56a4137cd68d01afa90c84e38e8c535fce919a6a504608",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "p",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dp",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "ds",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.00048828125,
+          "rtol": 0.005,
+          "atol": 0.005
+        },
+        {
+          "name": "p_guard",
+          "passed": true
+        },
+        {
+          "name": "dp_guard",
+          "passed": true
+        },
+        {
+          "name": "ds_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "p",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dp",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "ds",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.00048828125,
+          "rtol": 0.005,
+          "atol": 0.005
+        },
+        {
+          "name": "p_guard",
+          "passed": true
+        },
+        {
+          "name": "dp_guard",
+          "passed": true
+        },
+        {
+          "name": "ds_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    4096
+  ],
+  "samples": [
+    [
+      16.405,
+      16.484,
+      16.51,
+      16.587,
+      16.392,
+      16.334,
+      16.828,
+      16.737,
+      16.653,
+      16.17,
+      16.321,
+      16.268,
+      16.691,
+      16.285,
+      16.105
+    ],
+    [
+      16.744,
+      16.581,
+      16.685,
+      16.361,
+      16.541,
+      16.376,
+      16.334,
+      16.387,
+      16.423,
+      16.314,
+      16.451,
+      16.788,
+      16.52,
+      16.55,
+      16.576
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DOT_REQUIRED"
+    }
+  ]
+}

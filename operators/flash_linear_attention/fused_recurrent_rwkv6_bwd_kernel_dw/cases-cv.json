@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 135,
+      "symbol": "fused_recurrent_rwkv6_bwd_kernel_dw",
+      "operator_id": "FLA233",
+      "source_path": "tests/ops/ascend_ops/cv_operator/test_fused_recurrent_rwkv6_bwd_kernel_dw/test_fused_recurrent_rwkv6_bwd_kernel_dw_cuda.py",
+      "source_sha256": "9d2cf71cc6307a617cd97a7adb629d6897005318e08c61ed5665c4fe60103832",
+      "tensors": {
+        "q": {
+          "shape": [
+            4,
+            2048,
+            4,
+            256
+          ],
+          "dtype": "float16"
+        },
+        "k": {
+          "shape": [
+            4,
+            2048,
+            4,
+            256
+          ],
+          "dtype": "float16"
+        },
+        "dq": {
+          "shape": [
+            4,
+            2048,
+            4,
+            256
+          ],
+          "dtype": "float16"
+        },
+        "dk": {
+          "shape": [
+            4,
+            2048,
+            4,
+            256
+          ],
+          "dtype": "float16"
+        },
+        "dw": {
+          "shape": [
+            4,
+            2048,
+            4,
+            256
+          ],
+          "dtype": "float16"
+        }
+      },
+      "config": {
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "dk": {
+          "tensor": "dk"
+        },
+        "dw": {
+          "tensor": "dw"
+        },
+        "cu_seqlens": null,
+        "scale": 0.0625,
+        "T": 2048,
+        "H": 4,
+        "K": 256,
+        "BT": 64,
+        "BK": 64,
+        "REVERSE": false,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "REVERSE"
+      ],
+      "scalar_choices": {
+        "B": 4,
+        "T": 2048,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 256,
+        "V": 256,
+        "D": 256,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 32,
+        "NC": 4,
+        "NV": 4,
+        "NK": 4,
+        "S": 256,
+        "L": 12,
+        "scale": 0.0625,
+        "fa_scale": 0.0625,
+        "qk_scale": 0.0625,
+        "eps": 1e-06,
+        "C": 2048,
+        "TC": 2048,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 32,
+        "M": 2048,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 4,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-135",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "fused_recurrent_rwkv6_bwd_kernel_dw",
+          "source": "upstream/test_fused_recurrent_rwkv6_bwd_kernel_dw_cuda.py",
+          "body_sha256": "a5cc9920d4c92a958ed61c389a7e2d15a8d3a45d4c1c8863ffd2455794a0ecb1"
+        }
+      ],
+      "module_sha256": "b319a55f82d2f00de07a66cf45923a86ec6f76de7a7b89b42488d264ed6da6f2",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

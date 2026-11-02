@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 200,
+      "symbol": "chunk_fwd_kernel_h_parallel",
+      "operator_id": "FLA156",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_fwd_kernel_h_parallel_fp64/test_chunk_fwd_kernel_h_parallel_fp64_npu.py",
+      "source_sha256": "9be869e96ab8c25d6ffb3a29cf6ccaeb718a612ff6c457a3bd09e1807a492428",
+      "tensors": {
+        "k": {
+          "shape": [
+            4,
+            1024,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            4,
+            1024,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "h": {
+          "shape": [
+            4,
+            16,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "h": {
+          "tensor": "h"
+        },
+        "g": null,
+        "gk": null,
+        "gv": null,
+        "h0": null,
+        "ht": null,
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 1024,
+        "H": 8,
+        "K": 128,
+        "V": 128,
+        "BT": 64,
+        "BK": 32,
+        "BV": 128,
+        "USE_G": false,
+        "USE_GK": false,
+        "USE_GV": false,
+        "USE_INITIAL_STATE": false,
+        "STORE_FINAL_STATE": false,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "STORE_FINAL_STATE",
+        "USE_G",
+        "USE_GK",
+        "USE_GV",
+        "USE_INITIAL_STATE",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 4,
+        "T": 1024,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 32,
+        "BV": 128,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 1,
+        "NK": 4,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 4,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from state h chunk count 16"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-200",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/test_chunk_fwd_kernel_h_parallel_fp64_npu.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_fwd_kernel_h_parallel",
+          "source": "upstream/test_chunk_fwd_kernel_h_parallel_fp64_npu.py",
+          "body_sha256": "ce263a9d86cda85cbce629e921a6e6d11f2aeb9f7a2a0c6df7826bf7f5b3dd00"
+        }
+      ],
+      "module_sha256": "1cde46a8fa9462c989b052317701ffae6ec6faa155380b73684ccf12ce7a3de7",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

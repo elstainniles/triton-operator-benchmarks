@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 96,
+      "symbol": "intra_chunk_preprocess_bwd_kernel",
+      "operator_id": "FLA208",
+      "source_path": "tests/ops/ascend_ops/cv_operator/intra_chunk_preprocess_bwd_kernel/test_intra_chunk_preprocess_bwd_kernel_npu.py",
+      "source_sha256": "fae1bd9bfb8b9a5570e492936b52546fba6f5988a44921a56ed439c6963b1276",
+      "tensors": {
+        "q": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dA_local": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dq": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dq_new": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dk": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dk_new": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dw": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dw1": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dw2": {
+          "shape": [
+            4,
+            256,
+            16,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            4,
+            256,
+            4,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "w": {
+          "shape": [
+            4,
+            256,
+            4,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "w2": {
+          "shape": [
+            4,
+            256,
+            4,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "beta": {
+          "shape": [
+            4,
+            256,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "AT": {
+          "shape": [
+            4,
+            256,
+            4,
+            32,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dbeta": {
+          "shape": [
+            4,
+            256,
+            16
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 1,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "w": {
+          "tensor": "w"
+        },
+        "w2": {
+          "tensor": "w2"
+        },
+        "beta": {
+          "tensor": "beta"
+        },
+        "AT": {
+          "tensor": "AT"
+        },
+        "dA_local": {
+          "tensor": "dA_local"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "dq_new": {
+          "tensor": "dq_new"
+        },
+        "dk": {
+          "tensor": "dk"
+        },
+        "dk_new": {
+          "tensor": "dk_new"
+        },
+        "dw": {
+          "tensor": "dw"
+        },
+        "dbeta": {
+          "tensor": "dbeta"
+        },
+        "dw1": {
+          "tensor": "dw1"
+        },
+        "dw2": {
+          "tensor": "dw2"
+        },
+        "T": 256,
+        "offsets": null,
+        "indices": null,
+        "HQ": 16,
+        "G": 4,
+        "H": 4,
+        "K": 32,
+        "BT": 32,
+        "BK": 32,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "G",
+        "H",
+        "HQ",
+        "IS_VARLEN",
+        "K"
+      ],
+      "scalar_choices": {
+        "B": 4,
+        "T": 256,
+        "H": 4,
+        "HQ": 16,
+        "HV": 4,
+        "G": 4,
+        "NG": 4,
+        "K": 32,
+        "V": 32,
+        "D": 32,
+        "BT": 32,
+        "BS": 32,
+        "BC": 16,
+        "BK": 32,
+        "BV": 32,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 8,
+        "NC": 2,
+        "NV": 1,
+        "NK": 1,
+        "S": 32,
+        "L": 12,
+        "scale": 0.1767766952966369,
+        "fa_scale": 0.1767766952966369,
+        "qk_scale": 0.1767766952966369,
+        "eps": 1e-06,
+        "C": 256,
+        "TC": 256,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 4,
+        "M": 256,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 4,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-096",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "intra_chunk_preprocess_bwd_kernel",
+          "source": "upstream/test_intra_chunk_preprocess_bwd_kernel_npu.py",
+          "body_sha256": "292367f8b12408be67b43948ad76bb312206a2e5caaf01e3b37e26a786f2e208"
+        }
+      ],
+      "module_sha256": "925224562d38b1b6ac516515e5c30ab4b8e823fabdc59ae269a1db0a748db895",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        8,
+        64
+      ]
+    }
+  ]
+}

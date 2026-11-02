@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 23,
+      "symbol": "recompute_w_u_fwd_kernel",
+      "operator_id": "FLA039",
+      "source_path": "fla/ops/comba/wy_fast.py",
+      "source_sha256": "f2769cdfcee6bd66aaa4b2a6282cf7d67c4f0a267dc3acd4661b3ec9e63dc1ee",
+      "tensors": {
+        "k": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "w": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "u": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "A": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "beta": {
+          "shape": [
+            4,
+            2048,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "g": {
+          "shape": [
+            4,
+            2048,
+            8
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "beta": {
+          "tensor": "beta"
+        },
+        "w": {
+          "tensor": "w"
+        },
+        "u": {
+          "tensor": "u"
+        },
+        "A": {
+          "tensor": "A"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 2048,
+        "H": 8,
+        "K": 64,
+        "V": 64,
+        "BT": 64,
+        "BK": 64,
+        "BV": 64,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 4,
+        "T": 2048,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 32,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 2048,
+        "TC": 2048,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 32,
+        "M": 2048,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 4,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from A row width"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-023",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp2",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "recompute_w_u_fwd_kernel",
+          "source": "upstream/wy_fast.py",
+          "body_sha256": "a6cbbde321d32c4549e7e85c200b1dabfd83ac56f3782a0d2acaaf350c7fdbe7"
+        }
+      ],
+      "module_sha256": "2b7abe07ee72fce4b647d26ce032cedf199d8092bc1b465cd98b3627f1ab01df",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        32,
+        32
+      ]
+    },
+    {
+      "row": 131,
+      "symbol": "recompute_w_u_fwd_kernel",
+      "operator_id": "FLA039",
+      "source_path": "fla/ops/comba/wy_fast.py",
+      "source_sha256": "f2769cdfcee6bd66aaa4b2a6282cf7d67c4f0a267dc3acd4661b3ec9e63dc1ee",
+      "tensors": {
+        "k": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "w": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "u": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "A": {
+          "shape": [
+            4,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "beta": {
+          "shape": [
+            4,
+            2048,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "g": {
+          "shape": [
+            4,
+            2048,
+            8
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 2,
+        "num_stages": 4,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "beta": {
+          "tensor": "beta"
+        },
+        "w": {
+          "tensor": "w"
+        },
+        "u": {
+          "tensor": "u"
+        },
+        "A": {
+          "tensor": "A"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 2048,
+        "H": 8,
+        "K": 64,
+        "V": 64,
+        "BT": 64,
+        "BK": 64,
+        "BV": 64,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 4,
+        "T": 2048,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 32,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 2048,
+        "TC": 2048,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 32,
+        "M": 2048,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 4,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from A row width"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-131",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp2",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "recompute_w_u_fwd_kernel",
+          "source": "upstream/wy_fast.py",
+          "body_sha256": "a6cbbde321d32c4549e7e85c200b1dabfd83ac56f3782a0d2acaaf350c7fdbe7"
+        }
+      ],
+      "module_sha256": "2b7abe07ee72fce4b647d26ce032cedf199d8092bc1b465cd98b3627f1ab01df",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        32,
+        32
+      ]
+    }
+  ]
+}

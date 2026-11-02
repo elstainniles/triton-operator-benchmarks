@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 49,
+      "symbol": "matmul_kernel",
+      "operator_id": "FLA118",
+      "source_path": "fla/ops/utils/matmul.py",
+      "source_sha256": "3d5e0baca469357c19f29aea321f9c1f463fadb16ad11a2bbfee192f2d939e2c",
+      "tensors": {
+        "a": {
+          "shape": [
+            4,
+            1024,
+            512
+          ],
+          "dtype": "float16"
+        },
+        "b": {
+          "shape": [
+            512,
+            2048
+          ],
+          "dtype": "float16"
+        },
+        "c": {
+          "shape": [
+            4,
+            1024,
+            2048
+          ],
+          "dtype": "float16"
+        }
+      },
+      "config": {
+        "num_warps": 8,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "a": {
+          "tensor": "a"
+        },
+        "b": {
+          "tensor": "b"
+        },
+        "c": {
+          "tensor": "c"
+        },
+        "input": null,
+        "alpha": null,
+        "beta": null,
+        "M": 1024,
+        "N": 2048,
+        "K": 512,
+        "stride_ab": 524288,
+        "stride_am": 512,
+        "stride_ak": 1,
+        "stride_bk": 2048,
+        "stride_bn": 1,
+        "stride_cb": 2097152,
+        "stride_cm": 2048,
+        "stride_cn": 1,
+        "BM": 32,
+        "BK": 32,
+        "BN": 64,
+        "G": 8,
+        "ACTIVATION": "",
+        "HAS_INPUT": false,
+        "HAS_ALPHA": false,
+        "HAS_BETA": false,
+        "ALLOW_TF32": false,
+        "X_DIM": 1
+      },
+      "constexprs": [
+        "ACTIVATION",
+        "ALLOW_TF32",
+        "BK",
+        "BM",
+        "BN",
+        "G",
+        "HAS_ALPHA",
+        "HAS_BETA",
+        "HAS_INPUT",
+        "X_DIM"
+      ],
+      "scalar_choices": {
+        "B": 1,
+        "T": 4,
+        "H": 1024,
+        "HQ": 1024,
+        "HV": 1024,
+        "G": 8,
+        "NG": 1,
+        "K": 512,
+        "V": 64,
+        "D": 512,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 32,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 1,
+        "NC": 4,
+        "NV": 1,
+        "NK": 16,
+        "S": 512,
+        "L": 12,
+        "scale": 0.04419417382415922,
+        "fa_scale": 0.04419417382415922,
+        "qk_scale": 0.04419417382415922,
+        "eps": 1e-06,
+        "C": 4,
+        "TC": 4,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 1,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1,
+        "N": 2048,
+        "BM": 32,
+        "BN": 64,
+        "stride_ab": 524288,
+        "stride_am": 512,
+        "stride_ak": 1,
+        "stride_bk": 2048,
+        "stride_bn": 1,
+        "stride_cb": 2097152,
+        "stride_cm": 2048,
+        "stride_cn": 1,
+        "alpha": null,
+        "beta": null
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-049",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "tanh",
+          "source": "upstream/matmul.py",
+          "body_sha256": "22c095622d23185aee4f82b7722a4959d89c384a320c80e55430589df1a8fcae"
+        },
+        {
+          "name": "exp",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "sigmoid",
+          "source": "upstream/matmul.py",
+          "body_sha256": "9c8ceaf8634e211e0164d71fc9e60a9b0416f6d7f9efc45843bee605a505476e"
+        },
+        {
+          "name": "relu",
+          "source": "upstream/matmul.py",
+          "body_sha256": "3466decaa6e3bd85ce094180bbbea8f21591db3a95f86966fd408b030977db8a"
+        },
+        {
+          "name": "leaky_relu",
+          "source": "upstream/matmul.py",
+          "body_sha256": "db99af9942c4d3934fd49b9923abb71838aaefd986f40d985caff856873cd49d"
+        },
+        {
+          "name": "matmul_kernel",
+          "source": "upstream/matmul.py",
+          "body_sha256": "3b25f9285f211c55cabefe1bcc26d21313b573bb740481d878fe93b3ddabf21e"
+        }
+      ],
+      "module_sha256": "2cf15aba7b119dbd5762033813ae1bca5d29c4dac64625b77afa50ace8825d23",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    },
+    {
+      "row": 115,
+      "symbol": "matmul_kernel",
+      "operator_id": "FLA118",
+      "source_path": "fla/ops/utils/matmul.py",
+      "source_sha256": "3d5e0baca469357c19f29aea321f9c1f463fadb16ad11a2bbfee192f2d939e2c",
+      "tensors": {
+        "a": {
+          "shape": [
+            4,
+            1024,
+            512
+          ],
+          "dtype": "float16"
+        },
+        "b": {
+          "shape": [
+            512,
+            2048
+          ],
+          "dtype": "float16"
+        },
+        "c": {
+          "shape": [
+            4,
+            1024,
+            2048
+          ],
+          "dtype": "float16"
+        }
+      },
+      "config": {
+        "num_warps": 8,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "a": {
+          "tensor": "a"
+        },
+        "b": {
+          "tensor": "b"
+        },
+        "c": {
+          "tensor": "c"
+        },
+        "input": null,
+        "alpha": null,
+        "beta": null,
+        "M": 1024,
+        "N": 2048,
+        "K": 512,
+        "stride_ab": 524288,
+        "stride_am": 512,
+        "stride_ak": 1,
+        "stride_bk": 2048,
+        "stride_bn": 1,
+        "stride_cb": 2097152,
+        "stride_cm": 2048,
+        "stride_cn": 1,
+        "BM": 32,
+        "BK": 32,
+        "BN": 64,
+        "G": 8,
+        "ACTIVATION": "",
+        "HAS_INPUT": false,
+        "HAS_ALPHA": false,
+        "HAS_BETA": false,
+        "ALLOW_TF32": false,
+        "X_DIM": 1
+      },
+      "constexprs": [
+        "ACTIVATION",
+        "ALLOW_TF32",
+        "BK",
+        "BM",
+        "BN",
+        "G",
+        "HAS_ALPHA",
+        "HAS_BETA",
+        "HAS_INPUT",
+        "X_DIM"
+      ],
+      "scalar_choices": {
+        "B": 1,
+        "T": 4,
+        "H": 1024,
+        "HQ": 1024,
+        "HV": 1024,
+        "G": 8,
+        "NG": 1,
+        "K": 512,
+        "V": 64,
+        "D": 512,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 32,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 1,
+        "NC": 4,
+        "NV": 1,
+        "NK": 16,
+        "S": 512,
+        "L": 12,
+        "scale": 0.04419417382415922,
+        "fa_scale": 0.04419417382415922,
+        "qk_scale": 0.04419417382415922,
+        "eps": 1e-06,
+        "C": 4,
+        "TC": 4,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 1,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1,
+        "N": 2048,
+        "BM": 32,
+        "BN": 64,
+        "stride_ab": 524288,
+        "stride_am": 512,
+        "stride_ak": 1,
+        "stride_bk": 2048,
+        "stride_bn": 1,
+        "stride_cb": 2097152,
+        "stride_cm": 2048,
+        "stride_cn": 1,
+        "alpha": null,
+        "beta": null
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-115",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "tanh",
+          "source": "upstream/matmul.py",
+          "body_sha256": "22c095622d23185aee4f82b7722a4959d89c384a320c80e55430589df1a8fcae"
+        },
+        {
+          "name": "exp",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "sigmoid",
+          "source": "upstream/matmul.py",
+          "body_sha256": "9c8ceaf8634e211e0164d71fc9e60a9b0416f6d7f9efc45843bee605a505476e"
+        },
+        {
+          "name": "relu",
+          "source": "upstream/matmul.py",
+          "body_sha256": "3466decaa6e3bd85ce094180bbbea8f21591db3a95f86966fd408b030977db8a"
+        },
+        {
+          "name": "leaky_relu",
+          "source": "upstream/matmul.py",
+          "body_sha256": "db99af9942c4d3934fd49b9923abb71838aaefd986f40d985caff856873cd49d"
+        },
+        {
+          "name": "matmul_kernel",
+          "source": "upstream/matmul.py",
+          "body_sha256": "3b25f9285f211c55cabefe1bcc26d21313b573bb740481d878fe93b3ddabf21e"
+        }
+      ],
+      "module_sha256": "2cf15aba7b119dbd5762033813ae1bca5d29c4dac64625b77afa50ace8825d23",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

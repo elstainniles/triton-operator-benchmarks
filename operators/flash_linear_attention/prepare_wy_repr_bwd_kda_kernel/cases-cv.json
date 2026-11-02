@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 120,
+      "symbol": "prepare_wy_repr_bwd_kda_kernel",
+      "operator_id": "FLA079",
+      "source_path": "fla/ops/kda/wy_fast.py",
+      "source_sha256": "7fa9bb8ed558cc888500b59fa6b37d91294802255381b6272bcca98d35329ba4",
+      "tensors": {
+        "k": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "gk": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "A": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dA": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dw": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "du": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dk": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dk2": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dv": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dg": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dg2": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "beta": {
+          "shape": [
+            2,
+            1024,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "db": {
+          "shape": [
+            2,
+            1024,
+            8
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "beta": {
+          "tensor": "beta"
+        },
+        "gk": {
+          "tensor": "gk"
+        },
+        "A": {
+          "tensor": "A"
+        },
+        "dA": {
+          "tensor": "dA"
+        },
+        "dw": {
+          "tensor": "dw"
+        },
+        "du": {
+          "tensor": "du"
+        },
+        "dk": {
+          "tensor": "dk"
+        },
+        "dk2": {
+          "tensor": "dk2"
+        },
+        "dv": {
+          "tensor": "dv"
+        },
+        "db": {
+          "tensor": "db"
+        },
+        "dg": {
+          "tensor": "dg"
+        },
+        "dg2": {
+          "tensor": "dg2"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 1024,
+        "H": 8,
+        "HV": 8,
+        "K": 64,
+        "V": 64,
+        "BT": 64,
+        "BK": 64,
+        "BV": 64,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "H",
+        "HV",
+        "IS_VARLEN",
+        "K",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 1024,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from A row width"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-120",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp2",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "prepare_wy_repr_bwd_kda_kernel",
+          "source": "upstream/wy_fast.py",
+          "body_sha256": "154c71702ecbbb940a6b2d2f908fbae131a4b23ea2d42d2773de45b6acb3cf22"
+        }
+      ],
+      "module_sha256": "4aef4bc5256a5157ce2c9e675e16adb9dcb3607a0b131168653436c59be664fb",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        16,
+        16
+      ]
+    }
+  ]
+}

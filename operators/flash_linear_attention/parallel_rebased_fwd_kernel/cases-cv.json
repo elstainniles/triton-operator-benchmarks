@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 16,
+      "symbol": "parallel_rebased_fwd_kernel",
+      "operator_id": "FLA225",
+      "source_path": "tests/ops/ascend_ops/cv_operator/parallel_rebased_fwd_kernel/test_parallel_rebased_fwd_kernel_npu.py",
+      "source_sha256": "1a66cf04887583a1f65857b5d3f9caec52a7c51fbf9c5ff0f2cba869f427e094",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            8,
+            1024,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            2,
+            8,
+            1024,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            2,
+            8,
+            1024,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "o": {
+          "shape": [
+            1,
+            2,
+            8,
+            1024,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "z": {
+          "shape": [
+            1,
+            2,
+            8,
+            1024
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "o": {
+          "tensor": "o"
+        },
+        "z": {
+          "tensor": "z"
+        },
+        "scale": 0.125,
+        "T": 1024,
+        "B": 2,
+        "H": 8,
+        "K": 64,
+        "V": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BK": 64,
+        "BV": 64
+      },
+      "constexprs": [
+        "B",
+        "BK",
+        "BTL",
+        "BTS",
+        "BV",
+        "H",
+        "K",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 1024,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 8,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": true,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-016",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "parallel_rebased_fwd_kernel",
+          "source": "upstream/test_parallel_rebased_fwd_kernel_npu.py",
+          "body_sha256": "98df43bedc122dc34fd72c2ecb09cbf7100cbf7e42a1e2b02b63c3b035364708"
+        }
+      ],
+      "module_sha256": "c1e786fe9d5ffa4897e1040384a049129cdbcc459c01c4cceb1b354e806f996b",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

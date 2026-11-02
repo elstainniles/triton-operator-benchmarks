@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 105,
+      "symbol": "parallel_path_bwd_intra_chunk_kernel",
+      "operator_id": "FLA086",
+      "source_path": "fla/ops/path_attn/parallel_path_bwd_intra.py",
+      "source_sha256": "da9bbe513fa1cb10e944ddfa60a8c0c048a89ed420f256898cc8491a95d16638",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            2000,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "dq_new": {
+          "shape": [
+            2,
+            2000,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "do": {
+          "shape": [
+            2,
+            2000,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "k": {
+          "shape": [
+            2,
+            2000,
+            1,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "v": {
+          "shape": [
+            2,
+            2000,
+            1,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "w1": {
+          "shape": [
+            2,
+            2000,
+            1,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "w2": {
+          "shape": [
+            2,
+            2000,
+            1,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "L": {
+          "shape": [
+            2,
+            2000,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "D": {
+          "shape": [
+            2,
+            2000,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "dq": {
+          "shape": [
+            2,
+            2000,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dk": {
+          "shape": [
+            2,
+            2000,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dv": {
+          "shape": [
+            2,
+            2000,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dw1": {
+          "shape": [
+            2,
+            2000,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dw2": {
+          "shape": [
+            2,
+            2000,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "g_cumsum": null,
+        "w1": {
+          "tensor": "w1"
+        },
+        "w2": {
+          "tensor": "w2"
+        },
+        "L": {
+          "tensor": "L"
+        },
+        "D": {
+          "tensor": "D"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "dq_new": {
+          "tensor": "dq_new"
+        },
+        "dk": {
+          "tensor": "dk"
+        },
+        "dv": {
+          "tensor": "dv"
+        },
+        "dw1": {
+          "tensor": "dw1"
+        },
+        "dw2": {
+          "tensor": "dw2"
+        },
+        "do": {
+          "tensor": "do"
+        },
+        "dg_cumsum": null,
+        "offsets": null,
+        "indices": null,
+        "T": 2000,
+        "scale": 0.125,
+        "G": 4,
+        "HQ": 4,
+        "H": 1,
+        "K": 64,
+        "V": 64,
+        "BK": 64,
+        "BV": 64,
+        "BT": 64,
+        "S": 64,
+        "IS_VARLEN": false,
+        "USE_GATE": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "G",
+        "H",
+        "HQ",
+        "IS_VARLEN",
+        "K",
+        "S",
+        "USE_GATE",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 2000,
+        "H": 1,
+        "HQ": 4,
+        "HV": 1,
+        "G": 4,
+        "NG": 4,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 32,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 2000,
+        "TC": 2000,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 32,
+        "M": 2000,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-105",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "parallel_path_bwd_intra_chunk_kernel",
+          "source": "upstream/parallel_path_bwd_intra.py",
+          "body_sha256": "577f2f02643fe775b7191fe3d12dfb2eb1c79e0f77ae197a8b4ed97584bb339a"
+        }
+      ],
+      "module_sha256": "b351c2a6e34c7a1985a4d33e609e388b20665242e6b266ce9a937b2bd198e769",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

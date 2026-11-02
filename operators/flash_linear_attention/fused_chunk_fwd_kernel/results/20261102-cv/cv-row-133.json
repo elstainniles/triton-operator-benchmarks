@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 133,
+  "case": "cv-row-133",
+  "status": "CONTROL_FLOW_BLOCKED",
+  "baseline_us": null,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "cc3ab4b1248febb8243e1b872a43dcc1ea2532cb10a540b2a68b6475621c1f04",
+  "compiled_source_sha256": "3ed03e2ea8c7e6ed635498d06b41a06bf9352648867cfaf4a0422899e4d5fbdc",
+  "published_source_sha256": "f095f5c4bbd248eda6cdf3435df5eaa6c0fb9354469f69ad78b1bc5539fe76c3",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": false,
+  "new_portable_runner_device_validated": false,
+  "reason": "Control-flow capability precheck only; no NPU baseline run.",
+  "normalized_ir_sha256": "839ffb144ba63b69e39fe5b20ac64bc36417d20130ccc33e7866db6752a986c1"
+}

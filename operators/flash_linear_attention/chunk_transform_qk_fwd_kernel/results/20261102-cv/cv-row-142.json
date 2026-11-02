@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 142,
+  "case": "cv-row-142",
+  "status": "MEASURED",
+  "baseline_us": 819.764,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "ad8d27cf95b5e3ae55beec11043545fa34a99865612839a6e08dadf6101e7479",
+  "compiled_source_sha256": "afb6a10b7b734fe76d1c64931e5a096091aae13c0f6a5dcd72120095bdb5a405",
+  "published_source_sha256": "4b05d6a12c22c9d9bfc1cd0c1685f74f852ad1f1208b4556bb961a63bd565d46",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "o",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 6.51925802230835e-09,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "q_new",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 3.725290298461914e-09,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "k_new",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 5.960464477539063e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "beta",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "o_guard",
+          "passed": true
+        },
+        {
+          "name": "q_new_guard",
+          "passed": true
+        },
+        {
+          "name": "k_new_guard",
+          "passed": true
+        },
+        {
+          "name": "beta_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "o",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 6.51925802230835e-09,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "q_new",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 3.725290298461914e-09,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "k_new",
+          "passed": true,
+          "elements": 8388608,
+          "mismatches": 0,
+          "max_abs": 5.960464477539063e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "beta",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "o_guard",
+          "passed": true
+        },
+        {
+          "name": "q_new_guard",
+          "passed": true
+        },
+        {
+          "name": "k_new_guard",
+          "passed": true
+        },
+        {
+          "name": "beta_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    64,
+    32
+  ],
+  "samples": [
+    [
+      819.507,
+      819.678,
+      819.603,
+      820.957,
+      819.368,
+      819.676,
+      820.459,
+      820.124,
+      821.856,
+      819.483,
+      819.684,
+      819.401,
+      819.454,
+      819.858,
+      819.338
+    ],
+    [
+      820.104,
+      819.268,
+      821.747,
+      819.852,
+      820.338,
+      819.427,
+      819.465,
+      820.742,
+      819.314,
+      820.722,
+      819.716,
+      820.42,
+      819.674,
+      819.683,
+      821.123
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    },
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    }
+  ]
+}

@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 194,
+  "case": "cv-row-194",
+  "status": "MEASURED",
+  "baseline_us": 39.934,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "86565b902ff8b4d275b98b9809545981672f48edccfa50dd0accee5276f7172d",
+  "compiled_source_sha256": "06d77358cd776040885a18b6431a16ad21afe601c7f260111f84fa19c143a7a2",
+  "published_source_sha256": "42c7771481723df4c7e83c65f96372890d608128755ba1fdcd55f28448253244",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "g",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dk",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq2",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 2.9802322387695312e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dk2",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 1.7881393432617188e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dg",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 1.2665987014770508e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "h",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dh",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "g_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "dq_guard",
+          "passed": true
+        },
+        {
+          "name": "dk_guard",
+          "passed": true
+        },
+        {
+          "name": "dq2_guard",
+          "passed": true
+        },
+        {
+          "name": "dk2_guard",
+          "passed": true
+        },
+        {
+          "name": "dg_guard",
+          "passed": true
+        },
+        {
+          "name": "h_guard",
+          "passed": true
+        },
+        {
+          "name": "dh_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "g",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dk",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq2",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 2.9802322387695312e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dk2",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 1.7881393432617188e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dg",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 1.1920928955078125e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "h",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dh",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "g_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "dq_guard",
+          "passed": true
+        },
+        {
+          "name": "dk_guard",
+          "passed": true
+        },
+        {
+          "name": "dq2_guard",
+          "passed": true
+        },
+        {
+          "name": "dk2_guard",
+          "passed": true
+        },
+        {
+          "name": "dg_guard",
+          "passed": true
+        },
+        {
+          "name": "h_guard",
+          "passed": true
+        },
+        {
+          "name": "dh_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    1,
+    16,
+    16
+  ],
+  "samples": [
+    [
+      38.912,
+      39.852,
+      39.563,
+      40.482,
+      39.774,
+      40.362,
+      39.481,
+      41.714,
+      39.721,
+      39.032,
+      40.466,
+      39.496,
+      40.786,
+      39.555,
+      40.86
+    ],
+    [
+      40.094,
+      39.56,
+      40.364,
+      39.464,
+      40.458,
+      39.668,
+      40.726,
+      40.227,
+      39.413,
+      41.372,
+      39.527,
+      40.338,
+      39.782,
+      40.864,
+      39.923
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    },
+    {
+      "axis": 2,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    }
+  ]
+}

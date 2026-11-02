@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 60,
+      "symbol": "parallel_simple_gla_fwd_kernel",
+      "operator_id": "FLA227",
+      "source_path": "tests/ops/ascend_ops/cv_operator/parallel_simple_gla_fwd/parallel_simple_gla_fwd.py",
+      "source_sha256": "d1e1955106738b00266df8a35a2d42a3c1cd28295e8a5dc3e59f609ef3bdc427",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            64,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "k": {
+          "shape": [
+            2,
+            64,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "v": {
+          "shape": [
+            2,
+            64,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "o": {
+          "shape": [
+            1,
+            2,
+            64,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "g": null,
+        "o": {
+          "tensor": "o"
+        },
+        "attn": null,
+        "scale": 0.125,
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 64,
+        "B": 2,
+        "H": 4,
+        "K": 64,
+        "V": 64,
+        "BT": 64,
+        "BS": 32,
+        "BK": 64,
+        "BV": 64,
+        "NV": 1,
+        "OUTPUT_ATTENTIONS": false,
+        "IS_VARLEN": false,
+        "USE_G": false
+      },
+      "constexprs": [
+        "B",
+        "BK",
+        "BS",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "NV",
+        "OUTPUT_ATTENTIONS",
+        "USE_G",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 64,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 1,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 64,
+        "TC": 64,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 1,
+        "M": 64,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-060",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/parallel_simple_gla_fwd.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "parallel_simple_gla_fwd_kernel",
+          "source": "upstream/parallel_simple_gla_fwd.py",
+          "body_sha256": "a877a0bb5ebe91760df1c328b65efb0850419427cdea2c56c1ce7dd7f8fa2123"
+        }
+      ],
+      "module_sha256": "b36112bee86b60a3dc9f6f789d58667915b1a9a8e779d1e4df4f703e86275a77",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

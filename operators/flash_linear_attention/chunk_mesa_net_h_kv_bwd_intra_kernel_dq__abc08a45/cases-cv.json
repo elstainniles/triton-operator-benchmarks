@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 26,
+      "symbol": "chunk_mesa_net_h_kv_bwd_intra_kernel_dq",
+      "operator_id": "FLA191",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_h_kv_bwd_intra_kernel_dq/test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py",
+      "source_sha256": "e4494343b63cfe3f2a6418272bce08639e3a894eb3b828b0b05a4ab9b4d0ff85",
+      "tensors": {
+        "q_star": {
+          "shape": [
+            2,
+            64,
+            8,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "k": {
+          "shape": [
+            2,
+            64,
+            8,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "v": {
+          "shape": [
+            2,
+            64,
+            8,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "do": {
+          "shape": [
+            2,
+            64,
+            8,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "beta": {
+          "shape": [
+            2,
+            64,
+            8
+          ],
+          "dtype": "float16"
+        },
+        "h_kv": {
+          "shape": [
+            8,
+            8,
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "g": {
+          "shape": [
+            2,
+            64,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "dg_prev": {
+          "shape": [
+            2,
+            64,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "dg": {
+          "shape": [
+            2,
+            64,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "dq": {
+          "shape": [
+            2,
+            64,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q_star": {
+          "tensor": "q_star"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "beta": {
+          "tensor": "beta"
+        },
+        "h_kv": {
+          "tensor": "h_kv"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "do": {
+          "tensor": "do"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "dg_prev": {
+          "tensor": "dg_prev"
+        },
+        "dg": {
+          "tensor": "dg"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "B": 2,
+        "T": 64,
+        "H": 8,
+        "K": 64,
+        "V": 64,
+        "BT": 16,
+        "BK": 64,
+        "BV": 64,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "B",
+        "BK",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 64,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 16,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 4,
+        "NC": 1,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 64,
+        "TC": 64,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 1,
+        "M": 64,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=16 from state h_kv chunk count 4"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-026",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_mesa_net_h_kv_bwd_intra_kernel_dq",
+          "source": "upstream/test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py",
+          "body_sha256": "816cdccbabad68dbbd8169ef4bfc8154e936a0dd150c716070a6b46244e1db2a"
+        }
+      ],
+      "module_sha256": "e1080d1246856e7d7dcf2c88a967c85ece00c19567820ff44372cf1df5fe483f",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "BASELINE_ACCURACY_FAILED",
+      "historical_has_dot": true,
+      "reference_exp": "fp64_then_declared_dtype",
+      "reference_validation": "device_checked",
+      "grid": [
+        4,
+        16
+      ]
+    }
+  ]
+}

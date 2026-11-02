@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 189,
+  "case": "cv-row-189",
+  "status": "MEASURED",
+  "baseline_us": 163.10250000000002,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "b06ead3f6e050c09d11778fe71ff4f38402f21026b11e76535a505c3d3610fef",
+  "compiled_source_sha256": "d5514b02039f0b3c430d8d23e14f7de9e2b3d6025ad1882158c252236c77fd21",
+  "published_source_sha256": "1a4b25e44533e1d0e03f6d3519e28b8249a0953b0ef0f1f92d251ed262da40b5",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "b",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "u",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "o",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 4.470348358154297e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "h",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "b_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "u_guard",
+          "passed": true
+        },
+        {
+          "name": "o_guard",
+          "passed": true
+        },
+        {
+          "name": "h_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "b",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "u",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "o",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 4.0978193283081055e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "h",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "b_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "u_guard",
+          "passed": true
+        },
+        {
+          "name": "o_guard",
+          "passed": true
+        },
+        {
+          "name": "h_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    2,
+    8,
+    32
+  ],
+  "samples": [
+    [
+      162.469,
+      163.186,
+      163.734,
+      163.303,
+      164.551,
+      163.62,
+      162.067,
+      163.339,
+      163.683,
+      163.594,
+      162.931,
+      162.161,
+      164.689,
+      164.242,
+      162.853
+    ],
+    [
+      163.631,
+      163.121,
+      162.795,
+      163.622,
+      162.456,
+      163.552,
+      162.531,
+      163.176,
+      162.796,
+      162.133,
+      163.541,
+      163.557,
+      162.412,
+      162.866,
+      162.474
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    },
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    },
+    {
+      "axis": 2,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 125,
+      "symbol": "chunkwise_fwd_kernel",
+      "operator_id": "FLA203",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunkwise_fwd_kernel/test_chunkwise_fwd_kernel_npu.py",
+      "source_sha256": "fc15d96729af8fcdfcfaca5af42bbc06235eebbd91921e2ffce28279aaac35fd",
+      "tensors": {
+        "q": {
+          "shape": [
+            1,
+            256,
+            1,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            1,
+            256,
+            1,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            1,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "g": {
+          "shape": [
+            1,
+            256,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "level_scales": {
+          "shape": [
+            1,
+            256,
+            4,
+            10
+          ],
+          "dtype": "float32"
+        },
+        "llut": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "int32"
+        },
+        "o": {
+          "shape": [
+            1,
+            256,
+            4,
+            2,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "new_offsets": {
+          "shape": [
+            1
+          ],
+          "dtype": "int32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "level_scales": {
+          "tensor": "level_scales"
+        },
+        "llut": {
+          "tensor": "llut"
+        },
+        "o": {
+          "tensor": "o"
+        },
+        "h0": null,
+        "ht": null,
+        "offsets": null,
+        "new_offsets": {
+          "tensor": "new_offsets"
+        },
+        "cu_seqlens": null,
+        "T": 256,
+        "H": 4,
+        "K": 64,
+        "V": 64,
+        "L": 12,
+        "BT": 64,
+        "BK": 32,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1,
+        "IS_VARLEN": false,
+        "USE_INITIAL_STATE": false,
+        "STORE_FINAL_STATE": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "L",
+        "L_IN",
+        "L_OUT",
+        "MAX_LEVEL",
+        "MIN_LEVEL",
+        "STORE_FINAL_STATE",
+        "USE_INITIAL_STATE",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 1,
+        "T": 256,
+        "H": 4,
+        "HQ": 1,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 32,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 4,
+        "NC": 4,
+        "NV": 1,
+        "NK": 2,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 256,
+        "TC": 256,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 4,
+        "M": 256,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-125",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "chunkwise_fwd_kernel",
+          "source": "upstream/test_chunkwise_fwd_kernel_npu.py",
+          "body_sha256": "b4cae5484b183c5b66a2112c7af77386ef96caf40fceac876ce5eed8a1d45563"
+        }
+      ],
+      "module_sha256": "79dd05b5639f8d231e77157ab7846ea30f7e6412a59f86362e257603e619247b",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

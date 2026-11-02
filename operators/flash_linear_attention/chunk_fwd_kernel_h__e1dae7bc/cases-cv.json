@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 54,
+      "symbol": "chunk_fwd_kernel_h",
+      "operator_id": "FLA155",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_fwd_kernel_h/test_chunk_fwd_kernel_h_npu.py",
+      "source_sha256": "02b21c5ac85edcc83fabf20da26243e555109bf423b975c2251be4ea008781cf",
+      "tensors": {
+        "k": {
+          "shape": [
+            4,
+            1024,
+            8,
+            128
+          ],
+          "dtype": "float16"
+        },
+        "v": {
+          "shape": [
+            4,
+            1024,
+            8,
+            128
+          ],
+          "dtype": "float16"
+        },
+        "h": {
+          "shape": [
+            4,
+            16,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float16"
+        }
+      },
+      "config": {
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "h": {
+          "tensor": "h"
+        },
+        "g": null,
+        "g_gamma": null,
+        "gk": null,
+        "gv": null,
+        "h0": null,
+        "ht": null,
+        "cu_seqlens": null,
+        "split_offsets": null,
+        "T": 1024,
+        "H": 8,
+        "K": 128,
+        "V": 128,
+        "BT": 64,
+        "BS": 32,
+        "BK": 32,
+        "BV": 32,
+        "USE_G": false,
+        "USE_G_GAMMA": false,
+        "USE_GK": false,
+        "USE_GV": false,
+        "USE_INITIAL_STATE": false,
+        "STORE_FINAL_STATE": false,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BS",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "STORE_FINAL_STATE",
+        "USE_G",
+        "USE_GK",
+        "USE_GV",
+        "USE_G_GAMMA",
+        "USE_INITIAL_STATE",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 4,
+        "T": 1024,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 32,
+        "BV": 32,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 4,
+        "NK": 4,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 4,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from state h chunk count 16"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-054",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/test_chunk_fwd_kernel_h_npu.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_fwd_kernel_h",
+          "source": "upstream/test_chunk_fwd_kernel_h_npu.py",
+          "body_sha256": "1222cc280791e3d0317914404eb72dd64e11518bbf9a88732898e5f94721491c"
+        }
+      ],
+      "module_sha256": "0d8e6bf7a001a15912e0509b05922fc05bbb450e99474f31f7bc9f13fd5ecc19",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

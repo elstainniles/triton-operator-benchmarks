@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 127,
+      "symbol": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+      "operator_id": "FLA162",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64/test_chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64_npu.py",
+      "source_sha256": "741c529c66b0a30ff538516d8972435cb9fce565217b6c24521d8e27f6cb07b8",
+      "tensors": {
+        "q": {
+          "shape": [
+            4,
+            2048,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            4,
+            2048,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "w": {
+          "shape": [
+            4,
+            2048,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "do": {
+          "shape": [
+            4,
+            2048,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "dv": {
+          "shape": [
+            4,
+            2048,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "dv2": {
+          "shape": [
+            4,
+            2048,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "g": {
+          "shape": [
+            4,
+            2048,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "dh": {
+          "shape": [
+            4,
+            32,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "w": {
+          "tensor": "w"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "gk": null,
+        "dht": null,
+        "dh0": null,
+        "do": {
+          "tensor": "do"
+        },
+        "dh": {
+          "tensor": "dh"
+        },
+        "dv": {
+          "tensor": "dv"
+        },
+        "dv2": {
+          "tensor": "dv2"
+        },
+        "cu_seqlens": null,
+        "chunk_offsets": null,
+        "scale": 0.08838834764831845,
+        "T": 2048,
+        "H": 8,
+        "HV": 8,
+        "K": 128,
+        "V": 128,
+        "BT": 64,
+        "BV": 32,
+        "USE_G": true,
+        "USE_GK": false,
+        "USE_INITIAL_STATE": false,
+        "USE_FINAL_STATE_GRADIENT": false,
+        "TRANSPOSE_STATE": false,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BT",
+        "BV",
+        "H",
+        "HV",
+        "IS_VARLEN",
+        "K",
+        "TRANSPOSE_STATE",
+        "USE_FINAL_STATE_GRADIENT",
+        "USE_G",
+        "USE_GK",
+        "USE_INITIAL_STATE",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 4,
+        "T": 2048,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 32,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 32,
+        "NC": 4,
+        "NV": 4,
+        "NK": 2,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 2048,
+        "TC": 2048,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 32,
+        "M": 2048,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 4,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from state dh chunk count 32"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-127",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp2",
+          "source": "upstream/test_chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64_npu.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+          "source": "upstream/test_chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64_fp64_npu.py",
+          "body_sha256": "134c25a7005079d9cd4f2176ec297932228e22860f5dd1aaa7e703dc442bed17"
+        }
+      ],
+      "module_sha256": "3283defc4127986366a430a1c722d18c9a001b8bdff4ba3e910b3aa4fb434d58",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

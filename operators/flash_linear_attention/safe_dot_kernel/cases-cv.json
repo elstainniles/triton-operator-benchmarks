@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 201,
+      "symbol": "safe_dot_kernel",
+      "operator_id": "FLA230",
+      "source_path": "tests/ops/ascend_ops/cv_operator/safe_dot_fp64/test_safe_dot_fp64_npu.py",
+      "source_sha256": "85ebe5653d58dc96a7ade17661d705b7fa1821b64c5572a9a5a2d179be7a963f",
+      "tensors": {
+        "a_ptr": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "b_ptr": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "c_ptr": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "a_ptr": {
+          "tensor": "a_ptr"
+        },
+        "b_ptr": {
+          "tensor": "b_ptr"
+        },
+        "c_ptr": {
+          "tensor": "c_ptr"
+        },
+        "BM": 64,
+        "BN": 64,
+        "BK": 64
+      },
+      "constexprs": [
+        "BK",
+        "BM",
+        "BN"
+      ],
+      "scalar_choices": {
+        "B": 1,
+        "T": 64,
+        "H": 1,
+        "HQ": 1,
+        "HV": 1,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 1,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 64,
+        "TC": 64,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 1,
+        "M": 64,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1,
+        "BM": 64,
+        "BN": 64
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-201",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "safe_dot",
+          "source": "upstream/test_safe_dot_fp64_npu.py",
+          "body_sha256": "817cd7b8ceb9259a1cfce309acac39ef49180b38564bcabe529a5745f69ed245"
+        },
+        {
+          "name": "safe_dot_kernel",
+          "source": "upstream/test_safe_dot_fp64_npu.py",
+          "body_sha256": "4676c896bb8f2abbb7a61258886aeff8c35a3461bb93f8c1140f50ecde2b3148"
+        }
+      ],
+      "module_sha256": "e2d411779a2bec8a7fbb689b707f0921913e02fc2fe3bdca89aeea1850a151f0",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        1
+      ]
+    }
+  ]
+}

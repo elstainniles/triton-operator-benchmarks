@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 46,
+  "case": "cv-row-046",
+  "status": "MEASURED",
+  "baseline_us": 40.611999999999995,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "ceea1c4c6021f9031f80bd2978bb273982017b2b45712b0a2927aeeee4079245",
+  "compiled_source_sha256": "a9640415b0a880c8bf140403388500dac3f524fc9df71ce0b18eadc5efc1677c",
+  "published_source_sha256": "6d810d8439d3cd2dbc36e829d84bd6b43aeab8990e5b060ff4cc0712f4c20303",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "gi",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "ge",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dk",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq2",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 2.9802322387695312e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dk2",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 1.7881393432617188e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dg",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 1.1920928955078125e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "h",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dh",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "u",
+          "passed": true,
+          "elements": 256,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dA",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "du",
+          "passed": true,
+          "elements": 16384,
+          "mismatches": 0,
+          "max_abs": 5.587935447692871e-09,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "gi_guard",
+          "passed": true
+        },
+        {
+          "name": "ge_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "dq_guard",
+          "passed": true
+        },
+        {
+          "name": "dk_guard",
+          "passed": true
+        },
+        {
+          "name": "dq2_guard",
+          "passed": true
+        },
+        {
+          "name": "dk2_guard",
+          "passed": true
+        },
+        {
+          "name": "dg_guard",
+          "passed": true
+        },
+        {
+          "name": "h_guard",
+          "passed": true
+        },
+        {
+          "name": "dh_guard",
+          "passed": true
+        },
+        {
+          "name": "u_guard",
+          "passed": true
+        },
+        {
+          "name": "dA_guard",
+          "passed": true
+        },
+        {
+          "name": "du_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "gi",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "ge",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dk",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq2",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 2.9802322387695312e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dk2",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 1.7881393432617188e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dg",
+          "passed": true,
+          "elements": 524288,
+          "mismatches": 0,
+          "max_abs": 1.1920928955078125e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "h",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dh",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "u",
+          "passed": true,
+          "elements": 256,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dA",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "du",
+          "passed": true,
+          "elements": 16384,
+          "mismatches": 0,
+          "max_abs": 7.450580596923828e-09,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "gi_guard",
+          "passed": true
+        },
+        {
+          "name": "ge_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "dq_guard",
+          "passed": true
+        },
+        {
+          "name": "dk_guard",
+          "passed": true
+        },
+        {
+          "name": "dq2_guard",
+          "passed": true
+        },
+        {
+          "name": "dk2_guard",
+          "passed": true
+        },
+        {
+          "name": "dg_guard",
+          "passed": true
+        },
+        {
+          "name": "h_guard",
+          "passed": true
+        },
+        {
+          "name": "dh_guard",
+          "passed": true
+        },
+        {
+          "name": "u_guard",
+          "passed": true
+        },
+        {
+          "name": "dA_guard",
+          "passed": true
+        },
+        {
+          "name": "du_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    1,
+    16,
+    16
+  ],
+  "samples": [
+    [
+      40.451,
+      41.844,
+      40.386,
+      41.29,
+      40.51,
+      40.862,
+      39.934,
+      40.932,
+      40.407,
+      41.349,
+      40.4,
+      40.809,
+      40.234,
+      40.934,
+      41.029
+    ],
+    [
+      40.733,
+      40.415,
+      40.305,
+      40.629,
+      40.855,
+      39.932,
+      43.269,
+      39.885,
+      40.046,
+      40.55,
+      41.425,
+      40.337,
+      42.732,
+      39.798,
+      39.911
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "UNSUPPORTED_ADDRESS_EXPRESSION"
+    },
+    {
+      "axis": 2,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "UNSUPPORTED_ADDRESS_EXPRESSION"
+    }
+  ]
+}

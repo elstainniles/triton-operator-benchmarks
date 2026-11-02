@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 15,
+  "case": "cv-row-015",
+  "status": "MEASURED",
+  "baseline_us": 14.765,
+  "candidate_us": null,
+  "has_dot": false,
+  "source_sha256": "41193c51aa6b53fcfee1386680dabe573a846e573c21a75dd806cf1f8b0d2bdd",
+  "compiled_source_sha256": "03a0d3ee8e3524a02d170a1e7b6ead8abe9a06b5dab51c391cbabab7fb4f08db",
+  "published_source_sha256": "f1c2b7ffac711aace3142e702e5455e1e79e2e28079861c0bdf85d9309fb74de",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "x",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "p",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 1.1175870895385742e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "x_guard",
+          "passed": true
+        },
+        {
+          "name": "p_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "x",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "p",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 1.1175870895385742e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "x_guard",
+          "passed": true
+        },
+        {
+          "name": "p_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    4096
+  ],
+  "samples": [
+    [
+      14.811,
+      15.639,
+      14.613,
+      14.9,
+      14.668,
+      15.975,
+      14.749,
+      14.887,
+      14.54,
+      15.761,
+      14.605,
+      14.855,
+      14.833,
+      15.355,
+      14.744
+    ],
+    [
+      15.152,
+      14.67,
+      14.643,
+      14.7,
+      15.516,
+      14.706,
+      14.559,
+      14.598,
+      15.675,
+      14.575,
+      14.697,
+      14.616,
+      15.963,
+      14.629,
+      14.893
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DOT_REQUIRED"
+    }
+  ]
+}

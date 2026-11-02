@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 163,
+      "symbol": "parallel_based_bwd_kernel",
+      "operator_id": "FLA215",
+      "source_path": "tests/ops/ascend_ops/cv_operator/parallel_based_bwd/test_parallel_based_bwd_kernel_npu.py",
+      "source_sha256": "1793fc014f99b52aef2856516e31a7d857d08226dfbe0a51c9affe438c8ca287",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            4,
+            512,
+            16
+          ],
+          "dtype": "float16"
+        },
+        "k": {
+          "shape": [
+            2,
+            4,
+            512,
+            16
+          ],
+          "dtype": "float16"
+        },
+        "v": {
+          "shape": [
+            2,
+            4,
+            512,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "do": {
+          "shape": [
+            2,
+            4,
+            512,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "dz": {
+          "shape": [
+            2,
+            4,
+            512
+          ],
+          "dtype": "float16"
+        },
+        "dq": {
+          "shape": [
+            1,
+            2,
+            4,
+            512,
+            16
+          ],
+          "dtype": "float32"
+        },
+        "dk": {
+          "shape": [
+            1,
+            2,
+            4,
+            512,
+            16
+          ],
+          "dtype": "float32"
+        },
+        "dv": {
+          "shape": [
+            1,
+            2,
+            4,
+            512,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "do": {
+          "tensor": "do"
+        },
+        "dz": {
+          "tensor": "dz"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "dk": {
+          "tensor": "dk"
+        },
+        "dv": {
+          "tensor": "dv"
+        },
+        "scale": 0.25,
+        "T": 512,
+        "B": 2,
+        "H": 4,
+        "K": 16,
+        "V": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BK": 16,
+        "BV": 64
+      },
+      "constexprs": [
+        "B",
+        "BK",
+        "BTL",
+        "BTS",
+        "BV",
+        "H",
+        "K",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 512,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 16,
+        "V": 64,
+        "D": 16,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 16,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 8,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 16,
+        "L": 12,
+        "scale": 0.25,
+        "fa_scale": 0.25,
+        "qk_scale": 0.25,
+        "eps": 1e-06,
+        "C": 512,
+        "TC": 4,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": true,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 8,
+        "M": 512,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-163",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "_parallel_based_bwd_dkv",
+          "source": "upstream/test_parallel_based_bwd_kernel_npu.py",
+          "body_sha256": "12ea960baf3ecc6167ccd5e56090a9d80691b9f9cc5b2192371545b360de6336"
+        },
+        {
+          "name": "_parallel_based_bwd_dq",
+          "source": "upstream/test_parallel_based_bwd_kernel_npu.py",
+          "body_sha256": "2d860c5a2d8d8a97d3e089f00113cd4cb931e4d587e75474dd92888b69605478"
+        },
+        {
+          "name": "parallel_based_bwd_kernel",
+          "source": "upstream/test_parallel_based_bwd_kernel_npu.py",
+          "body_sha256": "4703bf8a76d0d3a6aed1a9d6668780dac8772e1d7b1bb6edb0f1fcb5304af9a3"
+        }
+      ],
+      "module_sha256": "2bcbbbe39f890683f6658b267726d134bd055bf47901100c9de11e94a7c79559",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

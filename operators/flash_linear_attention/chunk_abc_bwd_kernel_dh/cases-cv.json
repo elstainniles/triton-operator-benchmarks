@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 5,
+      "symbol": "chunk_abc_bwd_kernel_dh",
+      "operator_id": "FLA133",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_abc/chunk_abc.py",
+      "source_sha256": "41193c51aa6b53fcfee1386680dabe573a846e573c21a75dd806cf1f8b0d2bdd",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            4,
+            512,
+            32
+          ],
+          "dtype": "bfloat16"
+        },
+        "z": {
+          "shape": [
+            2,
+            4,
+            512,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "do": {
+          "shape": [
+            2,
+            4,
+            512,
+            64
+          ],
+          "dtype": "bfloat16"
+        },
+        "dh": {
+          "shape": [
+            2,
+            4,
+            256,
+            64
+          ],
+          "dtype": "bfloat16"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_stages": 1,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "z": {
+          "tensor": "z"
+        },
+        "do": {
+          "tensor": "do"
+        },
+        "dh": {
+          "tensor": "dh"
+        },
+        "scale": 0.1767766952966369,
+        "T": 512,
+        "K": 32,
+        "V": 64,
+        "BT": 64,
+        "BK": 32,
+        "BV": 64,
+        "NT": 8,
+        "NORMK": true
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "K",
+        "NORMK",
+        "NT",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 512,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 32,
+        "V": 64,
+        "D": 32,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 32,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 8,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 32,
+        "L": 12,
+        "scale": 0.1767766952966369,
+        "fa_scale": 0.1767766952966369,
+        "qk_scale": 0.1767766952966369,
+        "eps": 1e-06,
+        "C": 512,
+        "TC": 512,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": true,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": true,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 8,
+        "M": 512,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-005",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/chunk_abc.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_abc_bwd_kernel_dh",
+          "source": "upstream/chunk_abc.py",
+          "body_sha256": "abe0cb4c3f628d23f70bbfeed468bf814d153f94c8cf7f1f93136d59f7f2a853"
+        }
+      ],
+      "module_sha256": "df4fd8607d90155db5e1b3d1e2b11302d74b45cc94f3479301ba8a1404b4dd16",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    },
+    {
+      "row": 6,
+      "symbol": "chunk_abc_bwd_kernel_dh",
+      "operator_id": "FLA133",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_abc/chunk_abc.py",
+      "source_sha256": "41193c51aa6b53fcfee1386680dabe573a846e573c21a75dd806cf1f8b0d2bdd",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            4,
+            512,
+            64
+          ],
+          "dtype": "bfloat16"
+        },
+        "z": {
+          "shape": [
+            2,
+            4,
+            512,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "do": {
+          "shape": [
+            2,
+            4,
+            512,
+            32
+          ],
+          "dtype": "bfloat16"
+        },
+        "dh": {
+          "shape": [
+            2,
+            4,
+            512,
+            32
+          ],
+          "dtype": "bfloat16"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_stages": 1,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "z": {
+          "tensor": "z"
+        },
+        "do": {
+          "tensor": "do"
+        },
+        "dh": {
+          "tensor": "dh"
+        },
+        "scale": 0.125,
+        "T": 512,
+        "K": 64,
+        "V": 32,
+        "BT": 64,
+        "BK": 64,
+        "BV": 32,
+        "NT": 8,
+        "NORMK": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "K",
+        "NORMK",
+        "NT",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 512,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 32,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 32,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 8,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 512,
+        "TC": 512,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": true,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 8,
+        "M": 512,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-006",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/chunk_abc.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_abc_bwd_kernel_dh",
+          "source": "upstream/chunk_abc.py",
+          "body_sha256": "abe0cb4c3f628d23f70bbfeed468bf814d153f94c8cf7f1f93136d59f7f2a853"
+        }
+      ],
+      "module_sha256": "df4fd8607d90155db5e1b3d1e2b11302d74b45cc94f3479301ba8a1404b4dd16",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

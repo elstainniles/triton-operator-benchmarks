@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 71,
+      "symbol": "merge_fwd_bwd_kernel",
+      "operator_id": "FLA210",
+      "source_path": "tests/ops/ascend_ops/cv_operator/merge_fwd_bwd_kernel/test_merge_fwd_bwd_kernel_npu.py",
+      "source_sha256": "7c47b6d069b70d38ec6dbcb134a3699ef4647c83f54ea6eace7b69670b9fb1a6",
+      "tensors": {
+        "h": {
+          "shape": [
+            8,
+            64,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "ag_hm": {
+          "shape": [
+            2,
+            8,
+            64,
+            192
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "config_origin": "workbook",
+      "args": {
+        "h": {
+          "tensor": "h"
+        },
+        "ag_hm": {
+          "tensor": "ag_hm"
+        },
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "seq_offsets": null,
+        "init_offsets": null,
+        "h0_seq_ids": null,
+        "h0": null,
+        "HV": 64,
+        "K": 128,
+        "V": 64,
+        "BV": 64,
+        "BK": 64,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "HAS_H0": false,
+        "TRANSPOSE_STATE": false
+      },
+      "constexprs": [
+        "BK",
+        "BV",
+        "FORWARD",
+        "HAS_H0",
+        "HV",
+        "INTRACARD_MODE",
+        "K",
+        "TRANSPOSE_STATE",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 1,
+        "T": 8,
+        "H": 64,
+        "HQ": 64,
+        "HV": 64,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 64,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 1,
+        "NC": 4,
+        "NV": 1,
+        "NK": 2,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 8,
+        "TC": 8,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 1,
+        "M": 8,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-071",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "merge_fwd_bwd_kernel",
+          "source": "upstream/test_merge_fwd_bwd_kernel_npu.py",
+          "body_sha256": "27e0456999e73cbcb26aed22d6e7909b25007dc313aa8e47c6e6ecaf7b4c906f"
+        }
+      ],
+      "module_sha256": "91910d0f2b392f5680c7047937d555b1c6aefa7206de262b879b2dbbcba13176",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

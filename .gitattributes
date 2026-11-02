@@ -12,3 +12,5 @@ operators/liger_kernel/UPSTREAM_NOTICE -text -whitespace
 operators/flash_linear_attention/**/upstream/** -text -whitespace
 operators/flash_linear_attention/LICENSE -text -whitespace
 operators/flash_linear_attention/**/kernels.py -text -whitespace
+# CV adapters have byte-exact hashes in their per-operator case manifests.
+operators/flash_linear_attention/**/cv_kernels.py -text -whitespace

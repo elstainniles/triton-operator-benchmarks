@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 169,
+      "symbol": "chunk_mesa_net_fwd_kernel_h",
+      "operator_id": "FLA185",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_fwd_kernel_h/test_chunk_mesa_net_fwd_kernel_h_npu.py",
+      "source_sha256": "7cfb15bbf6366ad19a26752a08f568293d614d66367b67a2fed647f17e8e76f9",
+      "tensors": {
+        "k": {
+          "shape": [
+            2,
+            1024,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            2,
+            1024,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "beta": {
+          "shape": [
+            2,
+            1024,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "g": {
+          "shape": [
+            2,
+            1024,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "h": {
+          "shape": [
+            2,
+            16,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "h_kv": {
+          "shape": [
+            2,
+            16,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "h_init": {
+          "shape": [
+            2,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "h_kv_init": {
+          "shape": [
+            2,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "h_final": {
+          "shape": [
+            2,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "h_kv_final": {
+          "shape": [
+            2,
+            8,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "beta": {
+          "tensor": "beta"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "h": {
+          "tensor": "h"
+        },
+        "h_kv": {
+          "tensor": "h_kv"
+        },
+        "h_init": {
+          "tensor": "h_init"
+        },
+        "h_kv_init": {
+          "tensor": "h_kv_init"
+        },
+        "h_final": {
+          "tensor": "h_final"
+        },
+        "h_kv_final": {
+          "tensor": "h_kv_final"
+        },
+        "cu_seqlens": null,
+        "split_offsets": null,
+        "T": 1024,
+        "H": 8,
+        "K": 128,
+        "V": 128,
+        "BT": 64,
+        "BS": 32,
+        "BK": 64,
+        "BV": 64,
+        "USE_INITIAL_STATE": true,
+        "STORE_FINAL_STATE": true,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BS",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "STORE_FINAL_STATE",
+        "USE_INITIAL_STATE",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 1024,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 2,
+        "NK": 2,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from state h chunk count 16"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-169",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/test_chunk_mesa_net_fwd_kernel_h_npu.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_mesa_net_fwd_kernel_h",
+          "source": "upstream/test_chunk_mesa_net_fwd_kernel_h_npu.py",
+          "body_sha256": "2fbd29e48f44931d991ddd91d467338bc35148e40b7a387d7257cb399d5cd86b"
+        }
+      ],
+      "module_sha256": "b31269d2d4f96c73adeb9826f9c68f55b65e7088c4dc893007625c08be5bd9f9",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

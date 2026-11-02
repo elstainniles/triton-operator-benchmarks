@@ -29,6 +29,10 @@ New generated entry points have not been validated on an NPU. No local continuou
 queue timing, block speedup or external `.pt` is imported as evidence for them.
 Full-output correctness and guard checks must pass before a new run is timed.
 
+The separate [CV workbook batch](../../docs/FLA_CV.md) adds frozen per-operator
+`cases-cv.json`/`cv_kernels.py` adapters and a serial runner without changing
+the existing `source_archive`/`generated_benchmark` modes or historic results.
+
 ```bash
 python tools/run.py plan --operator fla --suite smoke --variants baseline
 python tools/verify_repository.py

@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 128,
+      "symbol": "chunkwise_bwd_kernel_dv",
+      "operator_id": "FLA201",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunkwise_bwd_kernel_dv/test_chunkwise_bwd_kernel_dv_npu.py",
+      "source_sha256": "9452d4e33c8a4b7fe94ba807678b9d8581a2294c42e5aebd51e3228e9ce26870",
+      "tensors": {
+        "dh": {
+          "shape": [
+            2,
+            16,
+            8,
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            2,
+            1024,
+            1,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "g": {
+          "shape": [
+            2,
+            1024,
+            8
+          ],
+          "dtype": "float32"
+        },
+        "dv": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "config_origin": "workbook",
+      "args": {
+        "dh": {
+          "tensor": "dh"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "dv": {
+          "tensor": "dv"
+        },
+        "T": 1024,
+        "cu_seqlens": null,
+        "H": 8,
+        "K": 64,
+        "V": 64,
+        "L": 12,
+        "BT": 64,
+        "NT": 16,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BT",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "L",
+        "NT",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 1024,
+        "H": 8,
+        "HQ": 1,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from state dh chunk count 16"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-128",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "chunkwise_bwd_kernel_dv",
+          "source": "upstream/test_chunkwise_bwd_kernel_dv_npu.py",
+          "body_sha256": "55e5a63c3e23418e96bf409e134c4663e20a4096d9709ff64c249cc7f417e775"
+        }
+      ],
+      "module_sha256": "3a72cbb2ec3d113dc7e27c0008544cdbbb915f6d052d7485f80cd037dbf53722",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        16,
+        16
+      ]
+    }
+  ]
+}

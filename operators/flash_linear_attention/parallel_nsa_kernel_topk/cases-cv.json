@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 35,
+      "symbol": "parallel_nsa_kernel_topk",
+      "operator_id": "FLA082",
+      "source_path": "fla/ops/nsa/parallel.py",
+      "source_sha256": "37b4e0e3ef0439f6be8cb45977f15a6afe4c27a427ddac68b6d1d8d10e740165",
+      "tensors": {
+        "q": {
+          "shape": [
+            3,
+            1024,
+            32,
+            128
+          ],
+          "dtype": "float16"
+        },
+        "k": {
+          "shape": [
+            3,
+            32,
+            2,
+            128
+          ],
+          "dtype": "float16"
+        },
+        "lse": {
+          "shape": [
+            3,
+            1024,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "block_indices": {
+          "shape": [
+            3,
+            1024,
+            2,
+            16
+          ],
+          "dtype": "int32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "lse": {
+          "tensor": "lse"
+        },
+        "scale": 0.08838834764831845,
+        "block_indices": {
+          "tensor": "block_indices"
+        },
+        "cu_seqlens": null,
+        "token_indices": null,
+        "chunk_offsets": null,
+        "T": 1024,
+        "H": 2,
+        "HQ": 32,
+        "G": 16,
+        "K": 128,
+        "S": 16,
+        "BC": 16,
+        "BS": 32,
+        "BK": 64,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BC",
+        "BK",
+        "BS",
+        "G",
+        "H",
+        "HQ",
+        "IS_VARLEN",
+        "K",
+        "S"
+      ],
+      "scalar_choices": {
+        "B": 3,
+        "T": 1024,
+        "H": 2,
+        "HQ": 32,
+        "HV": 2,
+        "G": 16,
+        "NG": 16,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 2,
+        "NK": 2,
+        "S": 16,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 32,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 3,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-035",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "log",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "03de2672db74f178f759bd5a4f617781835c96ddcc557c3895d1641e48caf76e"
+        },
+        {
+          "name": "_compare_and_swap",
+          "source": "upstream/dependencies/fla/ops/nsa/utils.py",
+          "body_sha256": "d7518a23ab594be4dc2e531d3d061e9517ff9ea4657a1c30611995efd70892e3"
+        },
+        {
+          "name": "_bitonic_merge",
+          "source": "upstream/dependencies/fla/ops/nsa/utils.py",
+          "body_sha256": "17afeac66a85b4e1a387facd984889519315ba966e756f5486d92f57bab8f525"
+        },
+        {
+          "name": "exp",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "parallel_nsa_kernel_topk",
+          "source": "upstream/parallel.py",
+          "body_sha256": "5aa6a46e496d164b1bbfdebc71935cf09d013646b820d23bc72f26d8c4e5524d"
+        }
+      ],
+      "module_sha256": "00953c172474273e8e82f62e51a25db3877a104581e722c2dc8ff13b99e24a3b",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

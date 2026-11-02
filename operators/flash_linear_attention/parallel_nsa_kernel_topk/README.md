@@ -9,3 +9,11 @@ Source archive from `fla/ops/nsa/parallel.py` at `5752e83ce7e469cfc0a3145bf20d3c
 Original test associations:
 
 - `tests/ops/ascend_ops/cv_operator/parallel_nsa_kernel_topk/test_parallel_nsa_kernel_topk_npu.py::test_parallel_nsa_kernel_topk`
+
+## Frozen CV workbook cases
+
+`cases-cv.json` adds workbook rows 35; `cv_kernels.py` preserves the original JIT function bodies and binds fixed launch settings. These cases use generated inputs and a CPU execution of the kernel semantics, not an independent end-to-end mathematical oracle.
+
+Run `python -I tools/run_fla_cv.py run --operator FLA082 --physical-card <card> --environment environment.local.json --output runs/fla-cv-001` from the repository root. See [CV batch instructions](../../../docs/FLA_CV.md) for control-flow exclusions, compiler factors, accuracy and resume behavior. The existing generic entry remains unchanged.
+
+`results/20261102-cv/` is sanitized historical evidence from the original task harness; it does not claim device validation of this newly packaged runner.

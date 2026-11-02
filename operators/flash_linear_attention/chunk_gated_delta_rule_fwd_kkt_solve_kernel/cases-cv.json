@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 199,
+      "symbol": "chunk_gated_delta_rule_fwd_kkt_solve_kernel",
+      "operator_id": "FLA164",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_gated_delta_rule_fwd_kkt_solve_kernel/test_chunk_gated_delta_rule_fwd_kkt_solve_kernel_npu.py",
+      "source_sha256": "b9f84ef205bdfcf7a7ab6a4fdb5bc3891ff0ada9443dcca7d169a665288331ad",
+      "tensors": {
+        "k": {
+          "shape": [
+            2,
+            2048,
+            8,
+            128
+          ],
+          "dtype": "float16"
+        },
+        "beta": {
+          "shape": [
+            2,
+            2048,
+            8
+          ],
+          "dtype": "float16"
+        },
+        "A": {
+          "shape": [
+            2,
+            2048,
+            8,
+            64
+          ],
+          "dtype": "float16"
+        }
+      },
+      "config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "g": null,
+        "beta": {
+          "tensor": "beta"
+        },
+        "A": {
+          "tensor": "A"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 2048,
+        "H": 8,
+        "HV": 8,
+        "K": 128,
+        "BT": 64,
+        "BC": 16,
+        "BK": 64,
+        "USE_G": false,
+        "USE_EXP2": false,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BC",
+        "BK",
+        "BT",
+        "H",
+        "HV",
+        "IS_VARLEN",
+        "K",
+        "USE_EXP2",
+        "USE_G"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 2048,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 32,
+        "NC": 4,
+        "NV": 2,
+        "NK": 2,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 2048,
+        "TC": 2048,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 32,
+        "M": 2048,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from A row width"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-199",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/test_chunk_gated_delta_rule_fwd_kkt_solve_kernel_npu.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "exp2",
+          "source": "upstream/test_chunk_gated_delta_rule_fwd_kkt_solve_kernel_npu.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "chunk_gated_delta_rule_fwd_kkt_solve_kernel",
+          "source": "upstream/test_chunk_gated_delta_rule_fwd_kkt_solve_kernel_npu.py",
+          "body_sha256": "f8bcd36769590423eec3f68e5dcfa8a873d90b6e478a02fe8b4c162c82146ea3"
+        }
+      ],
+      "module_sha256": "36b382fdf12de6a24fafa64383d33b02a4805df27eb004df2b86f4a8eb2d7bf1",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

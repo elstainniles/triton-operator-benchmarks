@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 158,
+  "case": "cv-row-158",
+  "status": "MEASURED",
+  "baseline_us": 10.6995,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "0099594708233ad179ccf4d46b8fe4ed9c0aa6be78f24e6124d45a0328f9db16",
+  "compiled_source_sha256": "a541747a56749846501123a40c82661a6a3af0257cbadab8e6194ac5f871e937",
+  "published_source_sha256": "7b4b7d9bf462a012312bc25f9289bb62de758116cfda1e7ee41c725ae9df9233",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "kg",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 5.960464477539063e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "w",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 3.725290298461914e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "u",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 5.21540641784668e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "gk",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "beta",
+          "passed": true,
+          "elements": 2048,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "kg_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "w_guard",
+          "passed": true
+        },
+        {
+          "name": "u_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        },
+        {
+          "name": "gk_guard",
+          "passed": true
+        },
+        {
+          "name": "beta_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "kg",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 5.960464477539063e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "w",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 4.0978193283081055e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "u",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 4.470348358154297e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "gk",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "beta",
+          "passed": true,
+          "elements": 2048,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "kg_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "w_guard",
+          "passed": true
+        },
+        {
+          "name": "u_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        },
+        {
+          "name": "gk_guard",
+          "passed": true
+        },
+        {
+          "name": "beta_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    4,
+    8
+  ],
+  "samples": [
+    [
+      10.663,
+      10.701,
+      11.313,
+      10.357,
+      11.876,
+      10.304,
+      11.67,
+      10.016,
+      9.778,
+      10.315,
+      10.388,
+      10.505,
+      10.058,
+      9.764,
+      11.05
+    ],
+    [
+      12.028,
+      10.563,
+      9.606,
+      11.119,
+      10.184,
+      11.043,
+      9.522,
+      12.113,
+      11.892,
+      10.544,
+      11.493,
+      10.569,
+      11.176,
+      11.011,
+      10.61
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    },
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    }
+  ]
+}

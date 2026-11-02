@@ -47,5 +47,15 @@
   "static_launch_references": [
     "tests/ops/ascend_ops/cv_operator/chunk_dplr_fwd_kernel_o/test_chunk_dplr_fwd_kernel_o_npu.py:139"
   ],
-  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries."
+  "counting_note": "One source path and symbol; static launch references do not prove a runtime launch. JIT helpers are not separate entries.",
+  "cv_benchmark": {
+    "entry": "tools/run_fla_cv.py",
+    "cases": "cases-cv.json",
+    "kernels": "cv_kernels.py",
+    "reference": "bounded_cpu_kernel_semantics",
+    "external_input_required": false,
+    "current_runner_validation": "HOST_VALIDATION_PENDING",
+    "historical_validation": "results/20261102-cv",
+    "note": "Original kernel semantics on CPU, not an independent end-to-end mathematical oracle."
+  }
 }

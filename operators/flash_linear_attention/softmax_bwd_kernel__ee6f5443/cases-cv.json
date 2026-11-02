@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 42,
+      "symbol": "softmax_bwd_kernel",
+      "operator_id": "FLA127",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_abc/chunk_abc.py",
+      "source_sha256": "41193c51aa6b53fcfee1386680dabe573a846e573c21a75dd806cf1f8b0d2bdd",
+      "tensors": {
+        "p": {
+          "shape": [
+            4096,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "dp": {
+          "shape": [
+            2,
+            4,
+            512,
+            32
+          ],
+          "dtype": "float32"
+        },
+        "ds": {
+          "shape": [
+            4096,
+            32
+          ],
+          "dtype": "bfloat16"
+        }
+      },
+      "config": {
+        "num_warps": 2,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "p": {
+          "tensor": "p"
+        },
+        "dp": {
+          "tensor": "dp"
+        },
+        "ds": {
+          "tensor": "ds"
+        },
+        "D": 32,
+        "B": 32
+      },
+      "constexprs": [
+        "B",
+        "D"
+      ],
+      "scalar_choices": {
+        "B": 32,
+        "T": 64,
+        "H": 1,
+        "HQ": 1,
+        "HV": 1,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 32,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 1,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 64,
+        "TC": 64,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 1,
+        "M": 64,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-042",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "softmax_bwd_kernel",
+          "source": "upstream/chunk_abc.py",
+          "body_sha256": "14ce763a77df8b0e776c37b2accc431f92755ff0566b37cebb0df163193ef534"
+        }
+      ],
+      "module_sha256": "da12c54d4cb16bd15a56a4137cd68d01afa90c84e38e8c535fce919a6a504608",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": false,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        4096
+      ]
+    }
+  ]
+}

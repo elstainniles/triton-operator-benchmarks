@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 114,
+  "case": "cv-row-114",
+  "status": "MEASURED",
+  "baseline_us": 5.151999999999999,
+  "candidate_us": null,
+  "has_dot": false,
+  "source_sha256": "a717b6cab6b6d65507baff61a5ba895e97dd6f69aa6c93b3ad16599a08798abf",
+  "compiled_source_sha256": "ee4cce59e1614dd127ce2a822a6b777202d41dd192c6b834b69e7ee3c488efa4",
+  "published_source_sha256": "c2008bdce5edc5a6b227e5c09fff6641737688e849ee2996421f6f97aa735f43",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "dgk",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dgk_offset",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dgk_output",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 7.152557373046875e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dgk_last",
+          "passed": true,
+          "elements": 4096,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dgk_guard",
+          "passed": true
+        },
+        {
+          "name": "dgk_offset_guard",
+          "passed": true
+        },
+        {
+          "name": "dgk_output_guard",
+          "passed": true
+        },
+        {
+          "name": "dgk_last_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "dgk",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dgk_offset",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dgk_output",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 1.1920928955078125e-06,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dgk_last",
+          "passed": true,
+          "elements": 4096,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dgk_guard",
+          "passed": true
+        },
+        {
+          "name": "dgk_offset_guard",
+          "passed": true
+        },
+        {
+          "name": "dgk_output_guard",
+          "passed": true
+        },
+        {
+          "name": "dgk_last_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    4,
+    1,
+    4
+  ],
+  "samples": [
+    [
+      5.2,
+      5.166,
+      5.322,
+      5.169,
+      5.235,
+      5.143,
+      5.113,
+      5.228,
+      5.116,
+      5.366,
+      5.023,
+      5.413,
+      5.024,
+      5.18,
+      5.021
+    ],
+    [
+      5.19,
+      5.063,
+      5.203,
+      5.11,
+      5.135,
+      5.105,
+      5.22,
+      4.959,
+      5.154,
+      4.959,
+      5.041,
+      5.239,
+      5.073,
+      5.183,
+      5.151
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DOT_REQUIRED"
+    },
+    {
+      "axis": 2,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DOT_REQUIRED"
+    }
+  ]
+}

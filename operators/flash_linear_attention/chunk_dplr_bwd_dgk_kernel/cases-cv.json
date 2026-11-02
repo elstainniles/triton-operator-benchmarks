@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 114,
+      "symbol": "chunk_dplr_bwd_dgk_kernel",
+      "operator_id": "FLA059",
+      "source_path": "fla/ops/generalized_delta_rule/dplr/chunk_A_bwd.py",
+      "source_sha256": "a717b6cab6b6d65507baff61a5ba895e97dd6f69aa6c93b3ad16599a08798abf",
+      "tensors": {
+        "dgk": {
+          "shape": [
+            1,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dgk_offset": {
+          "shape": [
+            1,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dgk_output": {
+          "shape": [
+            1,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dgk_last": {
+          "shape": [
+            16,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "config_origin": "workbook",
+      "args": {
+        "dgk": {
+          "tensor": "dgk"
+        },
+        "dgk_offset": {
+          "tensor": "dgk_offset"
+        },
+        "dgk_last": {
+          "tensor": "dgk_last"
+        },
+        "dgk_output": {
+          "tensor": "dgk_output"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 256,
+        "H": 4,
+        "K": 64,
+        "BT": 64,
+        "BK": 64,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "H",
+        "IS_VARLEN",
+        "K"
+      ],
+      "scalar_choices": {
+        "B": 1,
+        "T": 256,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 4,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 256,
+        "TC": 256,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": true,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 4,
+        "M": 256,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-114",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "chunk_dplr_bwd_dgk_kernel",
+          "source": "upstream/chunk_A_bwd.py",
+          "body_sha256": "b31588f9b6917c5eb5e7d50c09b0a78d08f6dfff98c49788e2acb7bd275557ea"
+        }
+      ],
+      "module_sha256": "c2008bdce5edc5a6b227e5c09fff6641737688e849ee2996421f6f97aa735f43",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": false,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        4,
+        1,
+        4
+      ]
+    }
+  ]
+}

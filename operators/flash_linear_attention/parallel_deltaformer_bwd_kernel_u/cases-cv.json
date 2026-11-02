@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 110,
+      "symbol": "parallel_deltaformer_bwd_kernel_u",
+      "operator_id": "FLA043",
+      "source_path": "fla/ops/deltaformer/parallel.py",
+      "source_sha256": "0839349740ac14839f4c26ff63f90103c1fc42ea58b94357af1ab1e6bdc621fc",
+      "tensors": {
+        "o_ptr": {
+          "shape": [
+            512,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "q_ptr": {
+          "shape": [
+            512,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "k_ptr": {
+          "shape": [
+            512,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "v_ptr": {
+          "shape": [
+            512,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "lse_ptr": {
+          "shape": [
+            512,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "beta_ptr": {
+          "shape": [
+            512,
+            4
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "config_origin": "workbook",
+      "args": {
+        "o_ptr": {
+          "tensor": "o_ptr"
+        },
+        "q_ptr": {
+          "tensor": "q_ptr"
+        },
+        "k_ptr": {
+          "tensor": "k_ptr"
+        },
+        "v_ptr": {
+          "tensor": "v_ptr"
+        },
+        "lse_ptr": {
+          "tensor": "lse_ptr"
+        },
+        "beta_ptr": {
+          "tensor": "beta_ptr"
+        },
+        "H": 4,
+        "T": 512,
+        "C": 512,
+        "D": 128,
+        "fa_scale": 0.08838834764831845,
+        "BLOCK_C": 128,
+        "BLOCK_T": 32
+      },
+      "constexprs": [
+        "BLOCK_C",
+        "BLOCK_T",
+        "D"
+      ],
+      "scalar_choices": {
+        "B": 1,
+        "T": 512,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 128,
+        "BLOCK_T": 32,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 8,
+        "NC": 4,
+        "NV": 2,
+        "NK": 2,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 512,
+        "TC": 512,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 8,
+        "M": 512,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-110",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "parallel_deltaformer_bwd_kernel_u",
+          "source": "upstream/parallel.py",
+          "body_sha256": "44b7979831205bb317b29e3856ce45d42e13c0d3dc2407d8b55516edf038f78c"
+        }
+      ],
+      "module_sha256": "3d6894c8644c655045dba407011c0b97421f85b6556a7f3745d3c0c4a2c4a50c",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

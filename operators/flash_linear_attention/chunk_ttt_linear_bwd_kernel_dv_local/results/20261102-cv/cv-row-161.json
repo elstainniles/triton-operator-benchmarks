@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 161,
+  "case": "cv-row-161",
+  "status": "MEASURED",
+  "baseline_us": 730.4615,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "c3adbff36c0d6c4784aae583e1af119cfe08992c61e52c80b1c184c97f2b2790",
+  "compiled_source_sha256": "81e314115584a9f1103a594dacb2577081f71e51b5635f154b75dc1822b892c7",
+  "published_source_sha256": "07b30d02358bea9f9e3942cae8d11d70b1153bfc79564c3e6e8dfe31edd479d5",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 4194304,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 4194304,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 4194304,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dv",
+          "passed": true,
+          "elements": 4194304,
+          "mismatches": 0,
+          "max_abs": 0.000244140625,
+          "rtol": 0.001,
+          "atol": 0.001
+        },
+        {
+          "name": "eta",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "dv_guard",
+          "passed": true
+        },
+        {
+          "name": "eta_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 4194304,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 4194304,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 4194304,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dv",
+          "passed": true,
+          "elements": 4194304,
+          "mismatches": 0,
+          "max_abs": 0.000244140625,
+          "rtol": 0.001,
+          "atol": 0.001
+        },
+        {
+          "name": "eta",
+          "passed": true,
+          "elements": 65536,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "dv_guard",
+          "passed": true
+        },
+        {
+          "name": "eta_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    128,
+    32
+  ],
+  "samples": [
+    [
+      730.737,
+      730.265,
+      731.567,
+      730.511,
+      730.543,
+      730.063,
+      730.069,
+      730.528,
+      732.053,
+      730.057,
+      730.332,
+      729.919,
+      731.158,
+      730.737,
+      732.543
+    ],
+    [
+      729.79,
+      730.404,
+      730.241,
+      731.583,
+      730.296,
+      730.395,
+      729.848,
+      730.678,
+      730.656,
+      731.026,
+      729.961,
+      730.35,
+      730.363,
+      731.929,
+      730.736
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    },
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    }
+  ]
+}

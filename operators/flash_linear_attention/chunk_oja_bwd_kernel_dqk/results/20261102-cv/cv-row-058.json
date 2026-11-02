@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 58,
+  "case": "cv-row-058",
+  "status": "MEASURED",
+  "baseline_us": 23.7595,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "40470a5de22b4cc6d2827096c4a03c7d3b20d9e8321213fff52567956b54f05b",
+  "compiled_source_sha256": "8bb39da1517e8f0d6283d7e535b50161d18aa6ca669cfefd85ef504df8a51979",
+  "published_source_sha256": "1589ee98ec6bb1c7499627610eaa824df3bf11bb11492eb5692817831515d438",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "gv",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 1.1920928955078125e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dk",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 1.4901161193847656e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dA",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "h",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 1.30385160446167e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "gv_guard",
+          "passed": true
+        },
+        {
+          "name": "dq_guard",
+          "passed": true
+        },
+        {
+          "name": "dk_guard",
+          "passed": true
+        },
+        {
+          "name": "dA_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "h_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "gv",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dq",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 1.4901161193847656e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dk",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 1.1920928955078125e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dA",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "h",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 1.4901161193847656e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "gv_guard",
+          "passed": true
+        },
+        {
+          "name": "dq_guard",
+          "passed": true
+        },
+        {
+          "name": "dk_guard",
+          "passed": true
+        },
+        {
+          "name": "dA_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "h_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    1,
+    8,
+    8
+  ],
+  "samples": [
+    [
+      23.653,
+      24.34,
+      23.532,
+      24.442,
+      23.296,
+      23.49,
+      24.4,
+      23.114,
+      24.763,
+      23.51,
+      23.962,
+      23.116,
+      23.086,
+      24.008,
+      23.199
+    ],
+    [
+      24.006,
+      23.987,
+      23.435,
+      23.987,
+      24.478,
+      23.294,
+      24.012,
+      23.91,
+      25.411,
+      23.128,
+      22.272,
+      23.568,
+      24.692,
+      23.001,
+      24.394
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    },
+    {
+      "axis": 2,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    }
+  ]
+}

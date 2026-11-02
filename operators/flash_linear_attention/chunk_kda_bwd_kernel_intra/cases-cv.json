@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 74,
+      "symbol": "chunk_kda_bwd_kernel_intra",
+      "operator_id": "FLA073",
+      "source_path": "fla/ops/kda/chunk_intra.py",
+      "source_sha256": "09979c0d1e768ce7efd34fbba8b6ce019b542f21e62c13f7a1f79bee3d0a9a0c",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float16"
+        },
+        "k": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float16"
+        },
+        "g": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float32"
+        },
+        "dq": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float32"
+        },
+        "dq2": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float32"
+        },
+        "dk": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float32"
+        },
+        "dk2": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float32"
+        },
+        "dg": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float32"
+        },
+        "dg2": {
+          "shape": [
+            2,
+            500,
+            3,
+            60
+          ],
+          "dtype": "float32"
+        },
+        "beta": {
+          "shape": [
+            2,
+            500,
+            3
+          ],
+          "dtype": "float16"
+        },
+        "dAqk": {
+          "shape": [
+            2,
+            500,
+            3,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dAkk": {
+          "shape": [
+            2,
+            500,
+            3,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "db": {
+          "shape": [
+            2,
+            2,
+            500,
+            3
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "beta": {
+          "tensor": "beta"
+        },
+        "dAqk": {
+          "tensor": "dAqk"
+        },
+        "dAkk": {
+          "tensor": "dAkk"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "dq2": {
+          "tensor": "dq2"
+        },
+        "dk": {
+          "tensor": "dk"
+        },
+        "dk2": {
+          "tensor": "dk2"
+        },
+        "dg": {
+          "tensor": "dg"
+        },
+        "dg2": {
+          "tensor": "dg2"
+        },
+        "db": {
+          "tensor": "db"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "B": 2,
+        "T": 500,
+        "H": 3,
+        "HV": 3,
+        "K": 60,
+        "BT": 64,
+        "BC": 16,
+        "BK": 64,
+        "NC": 4,
+        "IS_VARLEN": false,
+        "SAFE_GATE": false,
+        "USE_GATHER": true
+      },
+      "constexprs": [
+        "BC",
+        "BK",
+        "BT",
+        "H",
+        "HV",
+        "IS_VARLEN",
+        "K",
+        "NC",
+        "SAFE_GATE",
+        "USE_GATHER"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 500,
+        "H": 3,
+        "HQ": 3,
+        "HV": 3,
+        "G": 1,
+        "NG": 1,
+        "K": 60,
+        "V": 60,
+        "D": 60,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 8,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 60,
+        "L": 12,
+        "scale": 0.12909944487358058,
+        "fa_scale": 0.12909944487358058,
+        "qk_scale": 0.12909944487358058,
+        "eps": 1e-06,
+        "C": 500,
+        "TC": 500,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 8,
+        "M": 500,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-074",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp2",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "chunk_kda_bwd_kernel_intra",
+          "source": "upstream/chunk_intra.py",
+          "body_sha256": "fd56cb452aca99654b9258541aa9f25f33ae9633f609f00d0469427e4b1e1e98"
+        }
+      ],
+      "module_sha256": "6325b104c7228ba9a8fe916fd8eec1fb027123e2c4d809f567cf66e94c049ba1",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

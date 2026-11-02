@@ -1,0 +1,1862 @@
+{
+  "schema_version": 1,
+  "source_workbook_sha256": "ce1ced530438ff63251e2ca7fb5b1d0048502f88bda7c0a400df11f602611280",
+  "source_sheet": "11.1全量结果",
+  "source_repository_commit": "6439acd3d91a64a43e300ee6dc270e016df82847",
+  "rows": [
+    {
+      "row": 2,
+      "id": "cv-row-002",
+      "kernel": "parallel_attn_bwd_kernel_dq",
+      "operator_id": "FLA212",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_attn_bwd_kernel_dq"
+    },
+    {
+      "row": 3,
+      "id": "cv-row-003",
+      "kernel": "chunk_mesa_net_h_kv_bwd_intra_kernel",
+      "operator_id": "FLA187",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_mesa_net_h_kv_bwd_intra_kernel"
+    },
+    {
+      "row": 4,
+      "id": "cv-row-004",
+      "kernel": "fused_chunk_ttt_linear_bwd_kernel_h",
+      "operator_id": "FLA110",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_ttt_linear_bwd_kernel_h"
+    },
+    {
+      "row": 5,
+      "id": "cv-row-005",
+      "kernel": "chunk_abc_bwd_kernel_dh",
+      "operator_id": "FLA133",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_dh"
+    },
+    {
+      "row": 6,
+      "id": "cv-row-006",
+      "kernel": "chunk_abc_bwd_kernel_dh",
+      "operator_id": "FLA133",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_dh"
+    },
+    {
+      "row": 7,
+      "id": "cv-row-007",
+      "kernel": "chunk_scaled_dot_comba_pkt_fwd_kernel",
+      "operator_id": "FLA195",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_comba_pkt_fwd_kernel"
+    },
+    {
+      "row": 8,
+      "id": "cv-row-008",
+      "kernel": "chunk_abc_fwd_kernel_V",
+      "operator_id": "FLA132",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_fwd_kernel_V"
+    },
+    {
+      "row": 9,
+      "id": "cv-row-009",
+      "kernel": "chunk_abc_fwd_kernel_K",
+      "operator_id": "FLA130",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_fwd_kernel_K"
+    },
+    {
+      "row": 10,
+      "id": "cv-row-010",
+      "kernel": "chunk_abc_fwd_kernel_h",
+      "operator_id": "FLA128",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_fwd_kernel_h"
+    },
+    {
+      "row": 11,
+      "id": "cv-row-011",
+      "kernel": "chunk_abc_fwd_kernel_h",
+      "operator_id": "FLA128",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_fwd_kernel_h"
+    },
+    {
+      "row": 12,
+      "id": "cv-row-012",
+      "kernel": "chunk_abc_fwd_kernel_intra_K",
+      "operator_id": "FLA129",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_fwd_kernel_intra_K"
+    },
+    {
+      "row": 13,
+      "id": "cv-row-013",
+      "kernel": "chunk_abc_fwd_kernel_intra_V",
+      "operator_id": "FLA131",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_fwd_kernel_intra_V"
+    },
+    {
+      "row": 14,
+      "id": "cv-row-014",
+      "kernel": "logcumsumexp_fwd_kernel",
+      "operator_id": "FLA125",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/logcumsumexp_fwd_kernel"
+    },
+    {
+      "row": 15,
+      "id": "cv-row-015",
+      "kernel": "softmax_fwd_kernel",
+      "operator_id": "FLA126",
+      "historical_status": "MEASURED",
+      "historical_has_dot": false,
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__ee6f5443"
+    },
+    {
+      "row": 16,
+      "id": "cv-row-016",
+      "kernel": "parallel_rebased_fwd_kernel",
+      "operator_id": "FLA225",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_rebased_fwd_kernel"
+    },
+    {
+      "row": 17,
+      "id": "cv-row-017",
+      "kernel": "wu_fwd_kernel",
+      "operator_id": "FLA238",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/wu_fwd_kernel__32e6a58d"
+    },
+    {
+      "row": 18,
+      "id": "cv-row-018",
+      "kernel": "chunk_oja_fwd_kernel_h_blockdim64",
+      "operator_id": "FLA047",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_fwd_kernel_h_blockdim64"
+    },
+    {
+      "row": 19,
+      "id": "cv-row-019",
+      "kernel": "chunk_fwd_kernel_h",
+      "operator_id": "FLA178",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h__5b9c8496"
+    },
+    {
+      "row": 20,
+      "id": "cv-row-020",
+      "kernel": "chunk_gsa_fwd_k_kernel_inter",
+      "operator_id": "FLA179",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_fwd_k_kernel_inter"
+    },
+    {
+      "row": 21,
+      "id": "cv-row-021",
+      "kernel": "chunk_gsa_fwd_k_kernel_intra",
+      "operator_id": "FLA180",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_fwd_k_kernel_intra"
+    },
+    {
+      "row": 22,
+      "id": "cv-row-022",
+      "kernel": "chunk_bwd_kernel_dqkwg",
+      "operator_id": "FLA145",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dqkwg"
+    },
+    {
+      "row": 23,
+      "id": "cv-row-023",
+      "kernel": "recompute_w_u_fwd_kernel",
+      "operator_id": "FLA039",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/recompute_w_u_fwd_kernel"
+    },
+    {
+      "row": 24,
+      "id": "cv-row-024",
+      "kernel": "chunk_mesa_net_h_kv_bwd_intra_kernel_dkv",
+      "operator_id": "FLA188",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_mesa_net_h_kv_bwd_intra_kernel_dkv__08fd572a"
+    },
+    {
+      "row": 25,
+      "id": "cv-row-025",
+      "kernel": "chunk_fwd_kernel_o",
+      "operator_id": "FLA159",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_o"
+    },
+    {
+      "row": 26,
+      "id": "cv-row-026",
+      "kernel": "chunk_mesa_net_h_kv_bwd_intra_kernel_dq",
+      "operator_id": "FLA191",
+      "historical_status": "BASELINE_ACCURACY_FAILED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_mesa_net_h_kv_bwd_intra_kernel_dq__abc08a45"
+    },
+    {
+      "row": 27,
+      "id": "cv-row-027",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter",
+      "operator_id": "FLA051",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter"
+    },
+    {
+      "row": 28,
+      "id": "cv-row-028",
+      "kernel": "chunk_ttt_linear_fwd_kernel_h",
+      "operator_id": "FLA103",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_ttt_linear_fwd_kernel_h"
+    },
+    {
+      "row": 29,
+      "id": "cv-row-029",
+      "kernel": "pre_process_bwd_kernel_merged",
+      "operator_id": "FLA235",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/pre_process_bwd_kernel_merged"
+    },
+    {
+      "row": 30,
+      "id": "cv-row-030",
+      "kernel": "chunk_abc_bwd_kernel_intra_K",
+      "operator_id": "FLA136",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_intra_K"
+    },
+    {
+      "row": 31,
+      "id": "cv-row-031",
+      "kernel": "chunk_cumprod_householder_fwd_kernel",
+      "operator_id": "FLA149",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_cumprod_householder_fwd_kernel"
+    },
+    {
+      "row": 32,
+      "id": "cv-row-032",
+      "kernel": "parallel_nsa_compression_bwd_kernel_dkv",
+      "operator_id": "FLA217",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_nsa_compression_bwd_kernel_dkv"
+    },
+    {
+      "row": 33,
+      "id": "cv-row-033",
+      "kernel": "chunk_rwkv6_bwd_kernel_intra",
+      "operator_id": "FLA231",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_rwkv6_bwd_kernel_intra"
+    },
+    {
+      "row": 34,
+      "id": "cv-row-034",
+      "kernel": "chunk_ttt_linear_fwd_kernel_h",
+      "operator_id": "FLA103",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_ttt_linear_fwd_kernel_h"
+    },
+    {
+      "row": 35,
+      "id": "cv-row-035",
+      "kernel": "parallel_nsa_kernel_topk",
+      "operator_id": "FLA082",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_nsa_kernel_topk"
+    },
+    {
+      "row": 36,
+      "id": "cv-row-036",
+      "kernel": "chunk_gsa_bwd_k_kernel_intra_dvg",
+      "operator_id": "FLA174",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_intra_dvg"
+    },
+    {
+      "row": 37,
+      "id": "cv-row-037",
+      "kernel": "chunk_gsa_bwd_k_kernel_intra_dvg_fixed",
+      "operator_id": null,
+      "historical_status": "SOURCE_NOT_FOUND",
+      "historical_has_dot": null,
+      "reason": "Exact source variant is absent; never substitute a nearby implementation."
+    },
+    {
+      "row": 38,
+      "id": "cv-row-038",
+      "kernel": "chunk_oja_bwd_kernel_dvwg_h",
+      "operator_id": "FLA049",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dvwg_h"
+    },
+    {
+      "row": 39,
+      "id": "cv-row-039",
+      "kernel": "parallel_path_fwd_kernel_prepare_k_cache",
+      "operator_id": "FLA087",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_path_fwd_kernel_prepare_k_cache"
+    },
+    {
+      "row": 40,
+      "id": "cv-row-040",
+      "kernel": "fused_chunk_bwd_kernel",
+      "operator_id": "FLA206",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_bwd_kernel"
+    },
+    {
+      "row": 41,
+      "id": "cv-row-041",
+      "kernel": "merge_16x16_to_32x32_inverse_kernel",
+      "operator_id": null,
+      "historical_status": "SOURCE_NOT_FOUND",
+      "historical_has_dot": null,
+      "reason": "Exact source variant is absent; never substitute a nearby implementation."
+    },
+    {
+      "row": 42,
+      "id": "cv-row-042",
+      "kernel": "softmax_bwd_kernel",
+      "operator_id": "FLA127",
+      "historical_status": "MEASURED",
+      "historical_has_dot": false,
+      "path": "operators/flash_linear_attention/softmax_bwd_kernel__ee6f5443"
+    },
+    {
+      "row": 43,
+      "id": "cv-row-043",
+      "kernel": "chunk_oja_bwd_kernel_dqk",
+      "operator_id": "FLA057",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dqk"
+    },
+    {
+      "row": 44,
+      "id": "cv-row-044",
+      "kernel": "chunk_abc_bwd_kernel_rcum_intra",
+      "operator_id": "FLA140",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_intra__ee6f5443"
+    },
+    {
+      "row": 45,
+      "id": "cv-row-045",
+      "kernel": "parallel_based_bwd_kernel_fixed_v3",
+      "operator_id": "FLA214",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_based_bwd_kernel_fixed_v3"
+    },
+    {
+      "row": 46,
+      "id": "cv-row-046",
+      "kernel": "chunk_rwkv6_bwd_kernel_inter",
+      "operator_id": "FLA193",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_rwkv6_bwd_kernel_inter"
+    },
+    {
+      "row": 47,
+      "id": "cv-row-047",
+      "kernel": "chunk_fwd_kernel_h_split",
+      "operator_id": "FLA157",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h_split"
+    },
+    {
+      "row": 48,
+      "id": "cv-row-048",
+      "kernel": "pre_process_fwd_kernel_merged",
+      "operator_id": "FLA236",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/pre_process_fwd_kernel_merged"
+    },
+    {
+      "row": 49,
+      "id": "cv-row-049",
+      "kernel": "matmul_kernel",
+      "operator_id": "FLA118",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/matmul_kernel"
+    },
+    {
+      "row": 50,
+      "id": "cv-row-050",
+      "kernel": "_parallel_rebased_bwd_dq",
+      "operator_id": "FLA124",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/_parallel_rebased_bwd_dq"
+    },
+    {
+      "row": 51,
+      "id": "cv-row-051",
+      "kernel": "parallel_deltaformer_bwd_kernel_qk",
+      "operator_id": "FLA045",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_deltaformer_bwd_kernel_qk"
+    },
+    {
+      "row": 52,
+      "id": "cv-row-052",
+      "kernel": "prepare_wy_repr_fwd_kernel_chunk64",
+      "operator_id": "FLA228",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/prepare_wy_repr_fwd_kernel_chunk64"
+    },
+    {
+      "row": 53,
+      "id": "cv-row-053",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel",
+      "operator_id": "FLA196",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel__1b21e262"
+    },
+    {
+      "row": 54,
+      "id": "cv-row-054",
+      "kernel": "chunk_fwd_kernel_h",
+      "operator_id": "FLA155",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h__e1dae7bc"
+    },
+    {
+      "row": 55,
+      "id": "cv-row-055",
+      "kernel": "chunk_ttt_linear_fwd_kernel_o",
+      "operator_id": "FLA104",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_ttt_linear_fwd_kernel_o"
+    },
+    {
+      "row": 56,
+      "id": "cv-row-056",
+      "kernel": "chunk_oja_fwd_intra",
+      "operator_id": "FLA055",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_fwd_intra"
+    },
+    {
+      "row": 57,
+      "id": "cv-row-057",
+      "kernel": "chunk_oja_fwd_kernel_h_blockdim64",
+      "operator_id": "FLA047",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_fwd_kernel_h_blockdim64"
+    },
+    {
+      "row": 58,
+      "id": "cv-row-058",
+      "kernel": "chunk_oja_bwd_kernel_dqk",
+      "operator_id": "FLA057",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dqk"
+    },
+    {
+      "row": 59,
+      "id": "cv-row-059",
+      "kernel": "chunk_kda_fwd_kernel_inter_solve_fused",
+      "operator_id": "FLA072",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_kda_fwd_kernel_inter_solve_fused"
+    },
+    {
+      "row": 60,
+      "id": "cv-row-060",
+      "kernel": "parallel_simple_gla_fwd_kernel",
+      "operator_id": "FLA227",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_simple_gla_fwd_kernel"
+    },
+    {
+      "row": 61,
+      "id": "cv-row-061",
+      "kernel": "chunk_kda_bwd_kernel_dAv",
+      "operator_id": "FLA183",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_kda_bwd_kernel_dAv"
+    },
+    {
+      "row": 62,
+      "id": "cv-row-062",
+      "kernel": "chunk_generalized_iplr_delta_rule_fwd_kernel_h",
+      "operator_id": "FLA063",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_generalized_iplr_delta_rule_fwd_kernel_h"
+    },
+    {
+      "row": 63,
+      "id": "cv-row-063",
+      "kernel": "chunk_oja_bwd_kernel_dqk",
+      "operator_id": "FLA057",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dqk"
+    },
+    {
+      "row": 64,
+      "id": "cv-row-064",
+      "kernel": "chunk_bwd_kernel_dh",
+      "operator_id": "FLA176",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh__ab179294"
+    },
+    {
+      "row": 65,
+      "id": "cv-row-065",
+      "kernel": "chunk_gsa_bwd_k_kernel_dA",
+      "operator_id": "FLA172",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_dA"
+    },
+    {
+      "row": 66,
+      "id": "cv-row-066",
+      "kernel": "chunk_gsa_bwd_k_kernel_dqkvg",
+      "operator_id": "FLA173",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_dqkvg__ab179294"
+    },
+    {
+      "row": 67,
+      "id": "cv-row-067",
+      "kernel": "chunk_gsa_bwd_k_kernel_intra_dvg",
+      "operator_id": "FLA174",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_intra_dvg"
+    },
+    {
+      "row": 68,
+      "id": "cv-row-068",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "operator_id": "FLA177",
+      "historical_status": "MEASURED",
+      "historical_has_dot": false,
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__ab179294"
+    },
+    {
+      "row": 69,
+      "id": "cv-row-069",
+      "kernel": "parallel_path_fwd_kernel",
+      "operator_id": "FLA223",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_path_fwd_kernel"
+    },
+    {
+      "row": 70,
+      "id": "cv-row-070",
+      "kernel": "chunk_ttt_linear_fwd_kernel_o",
+      "operator_id": "FLA104",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_ttt_linear_fwd_kernel_o"
+    },
+    {
+      "row": 71,
+      "id": "cv-row-071",
+      "kernel": "merge_fwd_bwd_kernel",
+      "operator_id": "FLA210",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/merge_fwd_bwd_kernel"
+    },
+    {
+      "row": 72,
+      "id": "cv-row-072",
+      "kernel": "parallel_rebased_bwd_kernel",
+      "operator_id": "FLA123",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_rebased_bwd_kernel__073bc736"
+    },
+    {
+      "row": 73,
+      "id": "cv-row-073",
+      "kernel": "fused_chunk_ttt_linear_bwd_kernel_dh",
+      "operator_id": "FLA111",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_ttt_linear_bwd_kernel_dh"
+    },
+    {
+      "row": 74,
+      "id": "cv-row-074",
+      "kernel": "chunk_kda_bwd_kernel_intra",
+      "operator_id": "FLA073",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_kda_bwd_kernel_intra"
+    },
+    {
+      "row": 75,
+      "id": "cv-row-075",
+      "kernel": "parallel_path_bwd_dq_kernel",
+      "operator_id": "FLA222",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_path_bwd_dq_kernel"
+    },
+    {
+      "row": 76,
+      "id": "cv-row-076",
+      "kernel": "chunk_dplr_bwd_kernel_dhu",
+      "operator_id": "FLA151",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_kernel_dhu"
+    },
+    {
+      "row": 77,
+      "id": "cv-row-077",
+      "kernel": "chunk_bwd_kernel_dh_parallel",
+      "operator_id": "FLA142",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_parallel"
+    },
+    {
+      "row": 78,
+      "id": "cv-row-078",
+      "kernel": "chunk_bwd_kernel_dh_split",
+      "operator_id": "FLA143",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_split__55f59134"
+    },
+    {
+      "row": 79,
+      "id": "cv-row-079",
+      "kernel": "chunk_abc_bwd_kernel_V",
+      "operator_id": "FLA134",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_V"
+    },
+    {
+      "row": 80,
+      "id": "cv-row-080",
+      "kernel": "chunk_gla_fwd_A_kernel_intra_sub_inter",
+      "operator_id": "FLA170",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_inter"
+    },
+    {
+      "row": 81,
+      "id": "cv-row-081",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel",
+      "operator_id": "FLA050",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel__3a11c7d2"
+    },
+    {
+      "row": 82,
+      "id": "cv-row-082",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel",
+      "operator_id": "FLA050",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel__3a11c7d2"
+    },
+    {
+      "row": 83,
+      "id": "cv-row-083",
+      "kernel": "prepare_wy_repr_bwd_kernel",
+      "operator_id": "FLA038",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/prepare_wy_repr_bwd_kernel"
+    },
+    {
+      "row": 84,
+      "id": "cv-row-084",
+      "kernel": "parallel_nsa_compression_bwd_kernel_dq",
+      "operator_id": "FLA219",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_nsa_compression_bwd_kernel_dq"
+    },
+    {
+      "row": 85,
+      "id": "cv-row-085",
+      "kernel": "chunk_abc_bwd_kernel_K",
+      "operator_id": "FLA137",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_K"
+    },
+    {
+      "row": 86,
+      "id": "cv-row-086",
+      "kernel": "chunk_rwkv6_bwd_kernel_dh",
+      "operator_id": "FLA192",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_rwkv6_bwd_kernel_dh"
+    },
+    {
+      "row": 87,
+      "id": "cv-row-087",
+      "kernel": "chunk_bwd_kernel_dh",
+      "operator_id": "FLA176",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh__ab179294"
+    },
+    {
+      "row": 88,
+      "id": "cv-row-088",
+      "kernel": "chunk_gsa_bwd_k_kernel_dA",
+      "operator_id": "FLA172",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_dA"
+    },
+    {
+      "row": 89,
+      "id": "cv-row-089",
+      "kernel": "chunk_gsa_bwd_k_kernel_dqkvg",
+      "operator_id": "FLA173",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_dqkvg__ab179294"
+    },
+    {
+      "row": 90,
+      "id": "cv-row-090",
+      "kernel": "chunk_gsa_bwd_k_kernel_intra_dvg",
+      "operator_id": "FLA174",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_intra_dvg"
+    },
+    {
+      "row": 91,
+      "id": "cv-row-091",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "operator_id": "FLA177",
+      "historical_status": "MEASURED",
+      "historical_has_dot": false,
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__ab179294"
+    },
+    {
+      "row": 92,
+      "id": "cv-row-092",
+      "kernel": "merge_16x16_to_64x64_inverse_kernel",
+      "operator_id": null,
+      "historical_status": "SOURCE_NOT_FOUND",
+      "historical_has_dot": null,
+      "reason": "Exact source variant is absent; never substitute a nearby implementation."
+    },
+    {
+      "row": 93,
+      "id": "cv-row-093",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter",
+      "operator_id": "FLA051",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter"
+    },
+    {
+      "row": 94,
+      "id": "cv-row-094",
+      "kernel": "chunk_kda_fwd_kernel_inter_solve_fused",
+      "operator_id": "FLA072",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_kda_fwd_kernel_inter_solve_fused"
+    },
+    {
+      "row": 95,
+      "id": "cv-row-095",
+      "kernel": "chunk_oja_bwd_kernel_dhu_blockdim64",
+      "operator_id": "FLA048",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dhu_blockdim64"
+    },
+    {
+      "row": 96,
+      "id": "cv-row-096",
+      "kernel": "intra_chunk_preprocess_bwd_kernel",
+      "operator_id": "FLA208",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/intra_chunk_preprocess_bwd_kernel"
+    },
+    {
+      "row": 97,
+      "id": "cv-row-097",
+      "kernel": "chunk_dplr_bwd_o_kernel",
+      "operator_id": "FLA153",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_o_kernel"
+    },
+    {
+      "row": 98,
+      "id": "cv-row-098",
+      "kernel": "chunk_rwkv6_fwd_cumsum_kernel",
+      "operator_id": "FLA194",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_cumsum_kernel"
+    },
+    {
+      "row": 99,
+      "id": "cv-row-099",
+      "kernel": "parallel_attn_bwd_kernel_dkv",
+      "operator_id": "FLA211",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_attn_bwd_kernel_dkv"
+    },
+    {
+      "row": 100,
+      "id": "cv-row-100",
+      "kernel": "chunk_scaled_dot_kkt_bwd_kernel_gk",
+      "operator_id": "FLA053",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_bwd_kernel_gk"
+    },
+    {
+      "row": 101,
+      "id": "cv-row-101",
+      "kernel": "parallel_nsa_bwd_kernel_dkv",
+      "operator_id": "FLA216",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_nsa_bwd_kernel_dkv"
+    },
+    {
+      "row": 102,
+      "id": "cv-row-102",
+      "kernel": "chunk_dplr_bwd_kernel_dv",
+      "operator_id": "FLA152",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_kernel_dv"
+    },
+    {
+      "row": 103,
+      "id": "cv-row-103",
+      "kernel": "parallel_simple_gla_bwd_kernel",
+      "operator_id": "FLA226",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_simple_gla_bwd_kernel"
+    },
+    {
+      "row": 104,
+      "id": "cv-row-104",
+      "kernel": "fused_chunk_based_bwd_kernel",
+      "operator_id": "FLA204",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_based_bwd_kernel"
+    },
+    {
+      "row": 105,
+      "id": "cv-row-105",
+      "kernel": "parallel_path_bwd_intra_chunk_kernel",
+      "operator_id": "FLA086",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_path_bwd_intra_chunk_kernel"
+    },
+    {
+      "row": 106,
+      "id": "cv-row-106",
+      "kernel": "chunkwise_bwd_kernel_dkg",
+      "operator_id": "FLA200",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunkwise_bwd_kernel_dkg"
+    },
+    {
+      "row": 107,
+      "id": "cv-row-107",
+      "kernel": "transform_q_fwd_kernel",
+      "operator_id": "FLA237",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/transform_q_fwd_kernel"
+    },
+    {
+      "row": 108,
+      "id": "cv-row-108",
+      "kernel": "chunk_ttt_linear_bwd_kernel_h",
+      "operator_id": "FLA105",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_ttt_linear_bwd_kernel_h"
+    },
+    {
+      "row": 109,
+      "id": "cv-row-109",
+      "kernel": "merge_16x16_to_32x32_inverse_kernel",
+      "operator_id": null,
+      "historical_status": "SOURCE_NOT_FOUND",
+      "historical_has_dot": null,
+      "reason": "Exact source variant is absent; never substitute a nearby implementation."
+    },
+    {
+      "row": 110,
+      "id": "cv-row-110",
+      "kernel": "parallel_deltaformer_bwd_kernel_u",
+      "operator_id": "FLA043",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_deltaformer_bwd_kernel_u"
+    },
+    {
+      "row": 111,
+      "id": "cv-row-111",
+      "kernel": "parallel_deltaformer_bwd_kernel_qk",
+      "operator_id": "FLA045",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_deltaformer_bwd_kernel_qk"
+    },
+    {
+      "row": 112,
+      "id": "cv-row-112",
+      "kernel": "chunk_bwd_kernel_dqke",
+      "operator_id": "FLA108",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dqke"
+    },
+    {
+      "row": 113,
+      "id": "cv-row-113",
+      "kernel": "fused_chunk_ttt_linear_fwd_kernel",
+      "operator_id": "FLA109",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_ttt_linear_fwd_kernel"
+    },
+    {
+      "row": 114,
+      "id": "cv-row-114",
+      "kernel": "chunk_dplr_bwd_dgk_kernel",
+      "operator_id": "FLA059",
+      "historical_status": "MEASURED",
+      "historical_has_dot": false,
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_dgk_kernel"
+    },
+    {
+      "row": 115,
+      "id": "cv-row-115",
+      "kernel": "matmul_kernel",
+      "operator_id": "FLA118",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/matmul_kernel"
+    },
+    {
+      "row": 116,
+      "id": "cv-row-116",
+      "kernel": "chunk_oja_fwd_inter",
+      "operator_id": "FLA054",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_fwd_inter"
+    },
+    {
+      "row": 117,
+      "id": "cv-row-117",
+      "kernel": "chunkwise_bwd_kernel_dhg",
+      "operator_id": "FLA198",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunkwise_bwd_kernel_dhg"
+    },
+    {
+      "row": 118,
+      "id": "cv-row-118",
+      "kernel": "chunk_oja_bwd_kernel_dA",
+      "operator_id": "FLA056",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dA"
+    },
+    {
+      "row": 119,
+      "id": "cv-row-119",
+      "kernel": "chunk_oja_bwd_kernel_dA",
+      "operator_id": "FLA056",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dA"
+    },
+    {
+      "row": 120,
+      "id": "cv-row-120",
+      "kernel": "prepare_wy_repr_bwd_kda_kernel",
+      "operator_id": "FLA079",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/prepare_wy_repr_bwd_kda_kernel"
+    },
+    {
+      "row": 121,
+      "id": "cv-row-121",
+      "kernel": "chunk_oja_bwd_kernel_dvwg_h",
+      "operator_id": "FLA049",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dvwg_h"
+    },
+    {
+      "row": 122,
+      "id": "cv-row-122",
+      "kernel": "chunk_ttt_linear_bwd_kernel_norm",
+      "operator_id": "FLA107",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_ttt_linear_bwd_kernel_norm"
+    },
+    {
+      "row": 123,
+      "id": "cv-row-123",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel",
+      "operator_id": "FLA050",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel__3a11c7d2"
+    },
+    {
+      "row": 124,
+      "id": "cv-row-124",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel",
+      "operator_id": "FLA050",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel__3a11c7d2"
+    },
+    {
+      "row": 125,
+      "id": "cv-row-125",
+      "kernel": "chunkwise_fwd_kernel",
+      "operator_id": "FLA203",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunkwise_fwd_kernel"
+    },
+    {
+      "row": 126,
+      "id": "cv-row-126",
+      "kernel": "chunk_abc_bwd_kernel_intra_V",
+      "operator_id": "FLA135",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_intra_V"
+    },
+    {
+      "row": 127,
+      "id": "cv-row-127",
+      "kernel": "chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64",
+      "operator_id": "FLA162",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gated_delta_rule_bwd_kernel_dhu_blockdim64"
+    },
+    {
+      "row": 128,
+      "id": "cv-row-128",
+      "kernel": "chunkwise_bwd_kernel_dv",
+      "operator_id": "FLA201",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunkwise_bwd_kernel_dv"
+    },
+    {
+      "row": 129,
+      "id": "cv-row-129",
+      "kernel": "chunk_scaled_dot_kkt_bwd_kernel_gk",
+      "operator_id": "FLA053",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_bwd_kernel_gk"
+    },
+    {
+      "row": 130,
+      "id": "cv-row-130",
+      "kernel": "chunk_abc_bwd_kernel_rcum_inter",
+      "operator_id": "FLA139",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": false,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_inter__ee6f5443"
+    },
+    {
+      "row": 131,
+      "id": "cv-row-131",
+      "kernel": "recompute_w_u_fwd_kernel",
+      "operator_id": "FLA039",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/recompute_w_u_fwd_kernel"
+    },
+    {
+      "row": 132,
+      "id": "cv-row-132",
+      "kernel": "parallel_path_bwd_dkv_kernel",
+      "operator_id": "FLA085",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_path_bwd_dkv_kernel"
+    },
+    {
+      "row": 133,
+      "id": "cv-row-133",
+      "kernel": "fused_chunk_fwd_kernel",
+      "operator_id": "FLA207",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_fwd_kernel"
+    },
+    {
+      "row": 134,
+      "id": "cv-row-134",
+      "kernel": "chunk_oja_bwd_kernel_dqk",
+      "operator_id": "FLA057",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dqk"
+    },
+    {
+      "row": 135,
+      "id": "cv-row-135",
+      "kernel": "fused_recurrent_rwkv6_bwd_kernel_dw",
+      "operator_id": "FLA233",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv6_bwd_kernel_dw"
+    },
+    {
+      "row": 136,
+      "id": "cv-row-136",
+      "kernel": "chunk_abc_bwd_kernel_intra_KV",
+      "operator_id": "FLA138",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_intra_KV"
+    },
+    {
+      "row": 137,
+      "id": "cv-row-137",
+      "kernel": "chunk_gsa_bwd_k_kernel_dA",
+      "operator_id": "FLA172",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_dA"
+    },
+    {
+      "row": 138,
+      "id": "cv-row-138",
+      "kernel": "chunk_gsa_bwd_k_kernel_dA_fix1",
+      "operator_id": null,
+      "historical_status": "SOURCE_NOT_FOUND",
+      "historical_has_dot": null,
+      "reason": "Exact source variant is absent; never substitute a nearby implementation."
+    },
+    {
+      "row": 139,
+      "id": "cv-row-139",
+      "kernel": "chunk_oja_fwd_intra",
+      "operator_id": "FLA055",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_fwd_intra"
+    },
+    {
+      "row": 140,
+      "id": "cv-row-140",
+      "kernel": "parallel_attn_fwd_kernel",
+      "operator_id": "FLA213",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_attn_fwd_kernel"
+    },
+    {
+      "row": 141,
+      "id": "cv-row-141",
+      "kernel": "chunk_cumprod_householder_bwd_kernel",
+      "operator_id": "FLA148",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_cumprod_householder_bwd_kernel"
+    },
+    {
+      "row": 142,
+      "id": "cv-row-142",
+      "kernel": "chunk_transform_qk_fwd_kernel",
+      "operator_id": "FLA197",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_transform_qk_fwd_kernel"
+    },
+    {
+      "row": 143,
+      "id": "cv-row-143",
+      "kernel": "chunk_dplr_fwd_kernel_o",
+      "operator_id": "FLA154",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_dplr_fwd_kernel_o"
+    },
+    {
+      "row": 144,
+      "id": "cv-row-144",
+      "kernel": "prepare_wy_repr_bwd_kernel",
+      "operator_id": "FLA038",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/prepare_wy_repr_bwd_kernel"
+    },
+    {
+      "row": 145,
+      "id": "cv-row-145",
+      "kernel": "fused_chunk_ttt_linear_bwd_kernel_dh",
+      "operator_id": "FLA111",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_ttt_linear_bwd_kernel_dh"
+    },
+    {
+      "row": 146,
+      "id": "cv-row-146",
+      "kernel": "parallel_nsa_compression_fwd_kernel",
+      "operator_id": "FLA220",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_nsa_compression_fwd_kernel"
+    },
+    {
+      "row": 147,
+      "id": "cv-row-147",
+      "kernel": "chunk_gla_bwd_kernel_dA",
+      "operator_id": "FLA166",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gla_bwd_kernel_dA"
+    },
+    {
+      "row": 148,
+      "id": "cv-row-148",
+      "kernel": "chunkwise_bwd_kernel_hdqgl",
+      "operator_id": "FLA202",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunkwise_bwd_kernel_hdqgl"
+    },
+    {
+      "row": 149,
+      "id": "cv-row-149",
+      "kernel": "parallel_deltaformer_bwd_kernel_row_sum",
+      "operator_id": "FLA044",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_deltaformer_bwd_kernel_row_sum"
+    },
+    {
+      "row": 150,
+      "id": "cv-row-150",
+      "kernel": "chunk_gla_bwd_kernel_intra",
+      "operator_id": "FLA169",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gla_bwd_kernel_intra"
+    },
+    {
+      "row": 151,
+      "id": "cv-row-151",
+      "kernel": "chunkwise_bwd_kernel_diag",
+      "operator_id": "FLA199",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunkwise_bwd_kernel_diag"
+    },
+    {
+      "row": 152,
+      "id": "cv-row-152",
+      "kernel": "parallel_nsa_fwd_kernel",
+      "operator_id": "FLA221",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_nsa_fwd_kernel"
+    },
+    {
+      "row": 153,
+      "id": "cv-row-153",
+      "kernel": "merge_16x16_to_64x64_inverse_kernel",
+      "operator_id": null,
+      "historical_status": "SOURCE_NOT_FOUND",
+      "historical_has_dot": null,
+      "reason": "Exact source variant is absent; never substitute a nearby implementation."
+    },
+    {
+      "row": 154,
+      "id": "cv-row-154",
+      "kernel": "chunk_gated_delta_product_bwd_kernel_dhu_blockdim64",
+      "operator_id": "FLA160",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gated_delta_product_bwd_kernel_dhu_blockdim64"
+    },
+    {
+      "row": 155,
+      "id": "cv-row-155",
+      "kernel": "chunk_fwd_kernel_h",
+      "operator_id": "FLA178",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h__5b9c8496"
+    },
+    {
+      "row": 156,
+      "id": "cv-row-156",
+      "kernel": "chunk_gsa_fwd_k_kernel_inter",
+      "operator_id": "FLA179",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_fwd_k_kernel_inter"
+    },
+    {
+      "row": 157,
+      "id": "cv-row-157",
+      "kernel": "chunk_gsa_fwd_k_kernel_intra",
+      "operator_id": "FLA180",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_fwd_k_kernel_intra"
+    },
+    {
+      "row": 158,
+      "id": "cv-row-158",
+      "kernel": "recompute_w_u_fwd_kda_kernel",
+      "operator_id": "FLA229",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/recompute_w_u_fwd_kda_kernel"
+    },
+    {
+      "row": 159,
+      "id": "cv-row-159",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_inter",
+      "operator_id": "FLA232",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_inter"
+    },
+    {
+      "row": 160,
+      "id": "cv-row-160",
+      "kernel": "chunk_bwd_kernel_dh",
+      "operator_id": "FLA141",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh__22c03da7"
+    },
+    {
+      "row": 161,
+      "id": "cv-row-161",
+      "kernel": "chunk_ttt_linear_bwd_kernel_dv_local",
+      "operator_id": "FLA106",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_ttt_linear_bwd_kernel_dv_local"
+    },
+    {
+      "row": 162,
+      "id": "cv-row-162",
+      "kernel": "chunk_fwd_mesa_cg_dim64_kernel",
+      "operator_id": "FLA184",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_fwd_mesa_cg_dim64_kernel"
+    },
+    {
+      "row": 163,
+      "id": "cv-row-163",
+      "kernel": "parallel_based_bwd_kernel",
+      "operator_id": "FLA215",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_based_bwd_kernel"
+    },
+    {
+      "row": 164,
+      "id": "cv-row-164",
+      "kernel": "chunk_oja_bwd_kernel_dA",
+      "operator_id": "FLA056",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dA"
+    },
+    {
+      "row": 165,
+      "id": "cv-row-165",
+      "kernel": "chunk_oja_bwd_kernel_dA",
+      "operator_id": "FLA056",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dA"
+    },
+    {
+      "row": 166,
+      "id": "cv-row-166",
+      "kernel": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+      "operator_id": "FLA163",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gated_delta_rule_fwd_kernel_h_blockdim64"
+    },
+    {
+      "row": 167,
+      "id": "cv-row-167",
+      "kernel": "chunk_gsa_bwd_k_kernel_dqkvg",
+      "operator_id": "FLA069",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_dqkvg__b16ff00e"
+    },
+    {
+      "row": 168,
+      "id": "cv-row-168",
+      "kernel": "fused_chunk_ttt_linear_bwd_kernel_h",
+      "operator_id": "FLA110",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_ttt_linear_bwd_kernel_h"
+    },
+    {
+      "row": 169,
+      "id": "cv-row-169",
+      "kernel": "chunk_mesa_net_fwd_kernel_h",
+      "operator_id": "FLA185",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_mesa_net_fwd_kernel_h"
+    },
+    {
+      "row": 170,
+      "id": "cv-row-170",
+      "kernel": "parallel_deltaformer_fwd_kernel",
+      "operator_id": "FLA042",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_deltaformer_fwd_kernel"
+    },
+    {
+      "row": 171,
+      "id": "cv-row-171",
+      "kernel": "chunk_mesa_net_h_kk_bwd_intra_kernel",
+      "operator_id": "FLA186",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_mesa_net_h_kk_bwd_intra_kernel"
+    },
+    {
+      "row": 172,
+      "id": "cv-row-172",
+      "kernel": "chunk_dplr_fwd_A_kernel_intra_tensorcore",
+      "operator_id": null,
+      "historical_status": "SOURCE_NOT_FOUND",
+      "historical_has_dot": null,
+      "reason": "Exact source variant is absent; never substitute a nearby implementation."
+    },
+    {
+      "row": 173,
+      "id": "cv-row-173",
+      "kernel": "chunk_gated_delta_product_fwd_kernel_h_blockdim64",
+      "operator_id": "FLA161",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gated_delta_product_fwd_kernel_h_blockdim64"
+    },
+    {
+      "row": 174,
+      "id": "cv-row-174",
+      "kernel": "chunk_fwd_kernel_h_reduction",
+      "operator_id": "FLA182",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": false,
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h_reduction__5584dc12"
+    },
+    {
+      "row": 175,
+      "id": "cv-row-175",
+      "kernel": "chunk_ttt_linear_bwd_kernel_dv_local",
+      "operator_id": "FLA106",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_ttt_linear_bwd_kernel_dv_local"
+    },
+    {
+      "row": 176,
+      "id": "cv-row-176",
+      "kernel": "chunk_gla_bwd_kernel_dv",
+      "operator_id": "FLA167",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gla_bwd_kernel_dv"
+    },
+    {
+      "row": 177,
+      "id": "cv-row-177",
+      "kernel": "chunk_bwd_kernel_dv_local",
+      "operator_id": "FLA147",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dv_local"
+    },
+    {
+      "row": 178,
+      "id": "cv-row-178",
+      "kernel": "chunk_oja_bwd_kernel_dv_o",
+      "operator_id": "FLA058",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dv_o"
+    },
+    {
+      "row": 179,
+      "id": "cv-row-179",
+      "kernel": "parallel_based_fwd_kernel",
+      "operator_id": "FLA234",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_based_fwd_kernel"
+    },
+    {
+      "row": 180,
+      "id": "cv-row-180",
+      "kernel": "chunk_oja_fwd_inter",
+      "operator_id": "FLA054",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_fwd_inter"
+    },
+    {
+      "row": 181,
+      "id": "cv-row-181",
+      "kernel": "chunk_oja_bwd_kernel_dA",
+      "operator_id": "FLA056",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dA"
+    },
+    {
+      "row": 182,
+      "id": "cv-row-182",
+      "kernel": "chunk_oja_bwd_kernel_dA",
+      "operator_id": "FLA056",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dA"
+    },
+    {
+      "row": 183,
+      "id": "cv-row-183",
+      "kernel": "chunk_fwd_mesa_cg_dim64_kernel",
+      "operator_id": "FLA184",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_fwd_mesa_cg_dim64_kernel"
+    },
+    {
+      "row": 184,
+      "id": "cv-row-184",
+      "kernel": "chunk_dplr_bwd_kernel_dAu",
+      "operator_id": "FLA150",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_kernel_dAu"
+    },
+    {
+      "row": 185,
+      "id": "cv-row-185",
+      "kernel": "parallel_rebased_bwd_kernel",
+      "operator_id": "FLA224",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_rebased_bwd_kernel__ac12f416"
+    },
+    {
+      "row": 186,
+      "id": "cv-row-186",
+      "kernel": "chunk_bwd_kernel_dv",
+      "operator_id": "FLA146",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dv"
+    },
+    {
+      "row": 187,
+      "id": "cv-row-187",
+      "kernel": "intra_chunk_preprocess_fwd_kernel",
+      "operator_id": "FLA209",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/intra_chunk_preprocess_fwd_kernel"
+    },
+    {
+      "row": 188,
+      "id": "cv-row-188",
+      "kernel": "chunk_kda_bwd_kernel_wy_dqkg_fused",
+      "operator_id": "FLA071",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_kda_bwd_kernel_wy_dqkg_fused"
+    },
+    {
+      "row": 189,
+      "id": "cv-row-189",
+      "kernel": "chunk_generalized_iplr_delta_rule_fwd_kernel_o",
+      "operator_id": "FLA165",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_generalized_iplr_delta_rule_fwd_kernel_o"
+    },
+    {
+      "row": 190,
+      "id": "cv-row-190",
+      "kernel": "chunk_gla_fwd_kernel_o",
+      "operator_id": "FLA171",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gla_fwd_kernel_o"
+    },
+    {
+      "row": 191,
+      "id": "cv-row-191",
+      "kernel": "parallel_nsa_bwd_kernel_dq",
+      "operator_id": "FLA083",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_nsa_bwd_kernel_dq"
+    },
+    {
+      "row": 192,
+      "id": "cv-row-192",
+      "kernel": "chunk_dplr_fwd_kernel_h",
+      "operator_id": "FLA060",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_dplr_fwd_kernel_h"
+    },
+    {
+      "row": 193,
+      "id": "cv-row-193",
+      "kernel": "parallel_deltaformer_fwd_kernel",
+      "operator_id": "FLA042",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/parallel_deltaformer_fwd_kernel"
+    },
+    {
+      "row": 194,
+      "id": "cv-row-194",
+      "kernel": "chunk_gla_bwd_kernel_inter",
+      "operator_id": "FLA168",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gla_bwd_kernel_inter"
+    },
+    {
+      "row": 195,
+      "id": "cv-row-195",
+      "kernel": "chunk_oja_bwd_kernel_dA",
+      "operator_id": "FLA056",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dA"
+    },
+    {
+      "row": 196,
+      "id": "cv-row-196",
+      "kernel": "chunk_oja_bwd_kernel_dA",
+      "operator_id": "FLA056",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dA"
+    },
+    {
+      "row": 197,
+      "id": "cv-row-197",
+      "kernel": "chunk_oja_bwd_kernel_dv_o",
+      "operator_id": "FLA058",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_oja_bwd_kernel_dv_o"
+    },
+    {
+      "row": 198,
+      "id": "cv-row-198",
+      "kernel": "fused_chunk_based_fwd_kernel",
+      "operator_id": "FLA205",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/fused_chunk_based_fwd_kernel"
+    },
+    {
+      "row": 199,
+      "id": "cv-row-199",
+      "kernel": "chunk_gated_delta_rule_fwd_kkt_solve_kernel",
+      "operator_id": "FLA164",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_gated_delta_rule_fwd_kkt_solve_kernel"
+    },
+    {
+      "row": 200,
+      "id": "cv-row-200",
+      "kernel": "chunk_fwd_kernel_h_parallel",
+      "operator_id": "FLA156",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h_parallel__6d03dadc"
+    },
+    {
+      "row": 201,
+      "id": "cv-row-201",
+      "kernel": "safe_dot_kernel",
+      "operator_id": "FLA230",
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/safe_dot_kernel"
+    },
+    {
+      "row": 202,
+      "id": "cv-row-202",
+      "kernel": "chunk_kda_fwd_kernel_intra_sub_chunk",
+      "operator_id": "FLA074",
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "path": "operators/flash_linear_attention/chunk_kda_fwd_kernel_intra_sub_chunk"
+    }
+  ],
+  "historical_summary": {
+    "total_rows": 201,
+    "terminal_rows": 201,
+    "counts": {
+      "CONTROL_FLOW_BLOCKED": 152,
+      "MEASURED": 41,
+      "BASELINE_ACCURACY_FAILED": 1,
+      "SOURCE_NOT_FOUND": 7
+    },
+    "applied_rows": 0,
+    "device_executed_rows": 42,
+    "unique_device_results": 40,
+    "measured_rows": 41,
+    "measured_unique_results": 39,
+    "baseline_accuracy_failed_rows": [
+      26
+    ],
+    "source_missing_rows": [
+      37,
+      41,
+      92,
+      109,
+      138,
+      153,
+      172
+    ],
+    "pending_rows": [],
+    "measured_no_dot_rows": [
+      15,
+      42,
+      68,
+      91,
+      114
+    ],
+    "measured_dot_rows": 36,
+    "measured_merge_reasons": {
+      "CROSS_LANE_REORDER": 3,
+      "CV_DEVICE_ADDRESS_NOT_PROVEN": 14,
+      "CV_DOT_REQUIRED": 5,
+      "CV_UNSTRUCTURED_MEMORY_MASK": 16,
+      "UNSUPPORTED_ADDRESS_EXPRESSION": 1,
+      "UNSUPPORTED_REDUCTION_TYPE": 1,
+      "SINGLE_PROGRAM_GRID": 1
+    }
+  }
+}

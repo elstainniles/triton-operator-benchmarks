@@ -1,0 +1,425 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 116,
+      "symbol": "chunk_oja_fwd_inter",
+      "operator_id": "FLA054",
+      "source_path": "fla/ops/gated_oja_rule/chunk_o.py",
+      "source_sha256": "40470a5de22b4cc6d2827096c4a03c7d3b20d9e8321213fff52567956b54f05b",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            1024,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            2,
+            1024,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "gv": {
+          "shape": [
+            2,
+            1024,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "o": {
+          "shape": [
+            2,
+            1024,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "h": {
+          "shape": [
+            2,
+            16,
+            4,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "A": {
+          "shape": [
+            2,
+            1024,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "h": {
+          "tensor": "h"
+        },
+        "gv": {
+          "tensor": "gv"
+        },
+        "o": {
+          "tensor": "o"
+        },
+        "A": {
+          "tensor": "A"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "scale": 0.08838834764831845,
+        "T": 1024,
+        "HQ": 4,
+        "H": 4,
+        "K": 128,
+        "V": 128,
+        "BT": 64,
+        "BK": 64,
+        "BV": 64,
+        "NG": 1,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "H",
+        "HQ",
+        "IS_VARLEN",
+        "K",
+        "NG",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 1024,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 2,
+        "NK": 2,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from A row width",
+        "BT=64 from state h chunk count 16"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-116",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_oja_fwd_inter",
+          "source": "upstream/chunk_o.py",
+          "body_sha256": "2c007ae3fef6bbcf5152d9da24d528cb990acc496a25761fe80cd1b5ef73e785"
+        }
+      ],
+      "module_sha256": "9c66bb950d0fd3d26e9d56c3cf5faa0c0b5cdddd8ec17989ce216af23dff25c0",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    },
+    {
+      "row": 180,
+      "symbol": "chunk_oja_fwd_inter",
+      "operator_id": "FLA054",
+      "source_path": "fla/ops/gated_oja_rule/chunk_o.py",
+      "source_sha256": "40470a5de22b4cc6d2827096c4a03c7d3b20d9e8321213fff52567956b54f05b",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            1024,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            2,
+            1024,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "gv": {
+          "shape": [
+            2,
+            1024,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "o": {
+          "shape": [
+            2,
+            1024,
+            4,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "h": {
+          "shape": [
+            2,
+            16,
+            4,
+            128,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "A": {
+          "shape": [
+            2,
+            1024,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "h": {
+          "tensor": "h"
+        },
+        "gv": {
+          "tensor": "gv"
+        },
+        "o": {
+          "tensor": "o"
+        },
+        "A": {
+          "tensor": "A"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "scale": 0.08838834764831845,
+        "T": 1024,
+        "HQ": 4,
+        "H": 4,
+        "K": 128,
+        "V": 128,
+        "BT": 64,
+        "BK": 64,
+        "BV": 64,
+        "NG": 1,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "H",
+        "HQ",
+        "IS_VARLEN",
+        "K",
+        "NG",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 1024,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 128,
+        "V": 128,
+        "D": 128,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 2,
+        "NK": 2,
+        "S": 128,
+        "L": 12,
+        "scale": 0.08838834764831845,
+        "fa_scale": 0.08838834764831845,
+        "qk_scale": 0.08838834764831845,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from A row width",
+        "BT=64 from state h chunk count 16"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-180",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/dependencies/fla/ops/utils/op.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_oja_fwd_inter",
+          "source": "upstream/chunk_o.py",
+          "body_sha256": "2c007ae3fef6bbcf5152d9da24d528cb990acc496a25761fe80cd1b5ef73e785"
+        }
+      ],
+      "module_sha256": "9c66bb950d0fd3d26e9d56c3cf5faa0c0b5cdddd8ec17989ce216af23dff25c0",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

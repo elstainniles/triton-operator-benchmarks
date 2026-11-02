@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 120,
+  "case": "cv-row-120",
+  "status": "MEASURED",
+  "baseline_us": 99.651,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "7fa9bb8ed558cc888500b59fa6b37d91294802255381b6272bcca98d35329ba4",
+  "compiled_source_sha256": "07b5a277f75df096a3c8efa0b3b677617735ef761d4ba2b69e274d709247be7a",
+  "published_source_sha256": "4aef4bc5256a5157ce2c9e675e16adb9dcb3607a0b131168653436c59be664fb",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "gk",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dA",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 3.3527612686157227e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dw",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "du",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dk",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dk2",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 8.940696716308594e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dv",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 7.450580596923828e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dg",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dg2",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 2.9802322387695312e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "beta",
+          "passed": true,
+          "elements": 16384,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "db",
+          "passed": true,
+          "elements": 16384,
+          "mismatches": 0,
+          "max_abs": 7.450580596923828e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "gk_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        },
+        {
+          "name": "dA_guard",
+          "passed": true
+        },
+        {
+          "name": "dw_guard",
+          "passed": true
+        },
+        {
+          "name": "du_guard",
+          "passed": true
+        },
+        {
+          "name": "dk_guard",
+          "passed": true
+        },
+        {
+          "name": "dk2_guard",
+          "passed": true
+        },
+        {
+          "name": "dv_guard",
+          "passed": true
+        },
+        {
+          "name": "dg_guard",
+          "passed": true
+        },
+        {
+          "name": "dg2_guard",
+          "passed": true
+        },
+        {
+          "name": "beta_guard",
+          "passed": true
+        },
+        {
+          "name": "db_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "gk",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dA",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 3.725290298461914e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dw",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "du",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dk",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dk2",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 7.450580596923828e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dv",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 5.960464477539063e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dg",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dg2",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 2.9802322387695312e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "beta",
+          "passed": true,
+          "elements": 16384,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "db",
+          "passed": true,
+          "elements": 16384,
+          "mismatches": 0,
+          "max_abs": 7.450580596923828e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "gk_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        },
+        {
+          "name": "dA_guard",
+          "passed": true
+        },
+        {
+          "name": "dw_guard",
+          "passed": true
+        },
+        {
+          "name": "du_guard",
+          "passed": true
+        },
+        {
+          "name": "dk_guard",
+          "passed": true
+        },
+        {
+          "name": "dk2_guard",
+          "passed": true
+        },
+        {
+          "name": "dv_guard",
+          "passed": true
+        },
+        {
+          "name": "dg_guard",
+          "passed": true
+        },
+        {
+          "name": "dg2_guard",
+          "passed": true
+        },
+        {
+          "name": "beta_guard",
+          "passed": true
+        },
+        {
+          "name": "db_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    16,
+    16
+  ],
+  "samples": [
+    [
+      100.192,
+      99.385,
+      100.8,
+      99.213,
+      99.542,
+      100.246,
+      99.489,
+      99.933,
+      99.723,
+      100.382,
+      99.508,
+      100.102,
+      98.865,
+      99.601,
+      100.682
+    ],
+    [
+      99.058,
+      99.576,
+      100.981,
+      99.579,
+      99.305,
+      100.168,
+      99.668,
+      101.576,
+      99.501,
+      99.543,
+      100.331,
+      99.217,
+      100.476,
+      99.568,
+      100.329
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    },
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    }
+  ]
+}

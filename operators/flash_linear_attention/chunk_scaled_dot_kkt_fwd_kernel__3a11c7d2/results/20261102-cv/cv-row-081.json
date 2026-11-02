@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 81,
+  "case": "cv-row-081",
+  "status": "MEASURED",
+  "baseline_us": 8.761,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "243402cbf4399182bd514bbde9bc140272b70b36c1763333c37b981eabeab41e",
+  "compiled_source_sha256": "b4450224757216399d22a1a4857233c805135b17deb28ba8ace973e1e30f8ca4",
+  "published_source_sha256": "1d9d036060a0ab2a513239a2a7b805a7000962b78ab15e87785c1efe4482d341",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 8.940696716308594e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "beta",
+          "passed": true,
+          "elements": 4096,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        },
+        {
+          "name": "beta_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 262144,
+          "mismatches": 0,
+          "max_abs": 5.21540641784668e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "beta",
+          "passed": true,
+          "elements": 4096,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        },
+        {
+          "name": "beta_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    8,
+    8
+  ],
+  "samples": [
+    [
+      9.338,
+      8.545,
+      8.409,
+      9.597,
+      8.665,
+      8.424,
+      8.882,
+      8.565,
+      8.786,
+      9.1,
+      8.405,
+      8.636,
+      10.716,
+      8.466,
+      8.848
+    ],
+    [
+      8.467,
+      9.494,
+      8.949,
+      8.857,
+      10.201,
+      8.37,
+      8.624,
+      9.186,
+      8.579,
+      8.384,
+      10.131,
+      10.092,
+      8.759,
+      8.285,
+      9.264
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    },
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    }
+  ]
+}

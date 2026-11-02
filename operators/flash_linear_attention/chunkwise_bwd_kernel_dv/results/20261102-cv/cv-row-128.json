@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 128,
+  "case": "cv-row-128",
+  "status": "MEASURED",
+  "baseline_us": 20.592,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "9452d4e33c8a4b7fe94ba807678b9d8581a2294c42e5aebd51e3228e9ce26870",
+  "compiled_source_sha256": "1ba98f34eac11304fd13ad043194021a2368319dfb2e25ea9394f44dafa6c31e",
+  "published_source_sha256": "3a72cbb2ec3d113dc7e27c0008544cdbbb915f6d052d7485f80cd037dbf53722",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "dh",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "g",
+          "passed": true,
+          "elements": 16384,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dv",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 2.086162567138672e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dh_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "g_guard",
+          "passed": true
+        },
+        {
+          "name": "dv_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "dh",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 131072,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "g",
+          "passed": true,
+          "elements": 16384,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dv",
+          "passed": true,
+          "elements": 1048576,
+          "mismatches": 0,
+          "max_abs": 1.7881393432617188e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dh_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "g_guard",
+          "passed": true
+        },
+        {
+          "name": "dv_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    16,
+    16
+  ],
+  "samples": [
+    [
+      20.462,
+      20.752,
+      22.148,
+      20.595,
+      20.203,
+      20.6,
+      20.956,
+      22.258,
+      20.493,
+      20.513,
+      20.841,
+      20.455,
+      20.245,
+      21.128,
+      20.536
+    ],
+    [
+      20.693,
+      20.429,
+      20.985,
+      20.213,
+      20.287,
+      21.561,
+      20.404,
+      20.361,
+      21.239,
+      20.589,
+      21.408,
+      20.121,
+      20.394,
+      20.739,
+      20.706
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    },
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_DEVICE_ADDRESS_NOT_PROVEN"
+    }
+  ]
+}

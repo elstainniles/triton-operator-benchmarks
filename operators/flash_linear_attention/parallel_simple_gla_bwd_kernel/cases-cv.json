@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 103,
+      "symbol": "parallel_simple_gla_bwd_kernel",
+      "operator_id": "FLA226",
+      "source_path": "tests/ops/ascend_ops/cv_operator/parallel_simple_gla_bwd/test_parallel_simple_gla_bwd_npu.py",
+      "source_sha256": "6396e9881be21fd8a1920500546f08c99bb0741c8bc7b7edc48908d942af7e7a",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "k": {
+          "shape": [
+            2,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "v": {
+          "shape": [
+            2,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "do": {
+          "shape": [
+            2,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "g": {
+          "shape": [
+            2,
+            256,
+            4
+          ],
+          "dtype": "float32"
+        },
+        "dq": {
+          "shape": [
+            2,
+            2,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dk": {
+          "shape": [
+            2,
+            2,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dv": {
+          "shape": [
+            2,
+            2,
+            256,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dg": {
+          "shape": [
+            4,
+            2,
+            256,
+            4
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "do": {
+          "tensor": "do"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "dk": {
+          "tensor": "dk"
+        },
+        "dv": {
+          "tensor": "dv"
+        },
+        "dg": {
+          "tensor": "dg"
+        },
+        "scale": 0.125,
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 256,
+        "B": 2,
+        "H": 4,
+        "K": 64,
+        "V": 64,
+        "BT": 64,
+        "BS": 32,
+        "BK": 64,
+        "BV": 64,
+        "NV": 1,
+        "IS_VARLEN": false,
+        "USE_G": true
+      },
+      "constexprs": [
+        "B",
+        "BK",
+        "BS",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "NV",
+        "USE_G",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 256,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 4,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 256,
+        "TC": 256,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 4,
+        "M": 256,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-103",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "parallel_simple_gla_bwd_kernel_dkv",
+          "source": "upstream/test_parallel_simple_gla_bwd_npu.py",
+          "body_sha256": "954d38470028944e1b0f8ff40c880f02bd974382cccf3e64b0443699c49d6bb7"
+        },
+        {
+          "name": "exp2",
+          "source": "upstream/test_parallel_simple_gla_bwd_npu.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "parallel_simple_gla_bwd_kernel_dq",
+          "source": "upstream/test_parallel_simple_gla_bwd_npu.py",
+          "body_sha256": "4c786e4785f0728cda31519abfd2f47c014220ebf7367e6572534e6e0285a486"
+        },
+        {
+          "name": "parallel_simple_gla_bwd_kernel",
+          "source": "upstream/test_parallel_simple_gla_bwd_npu.py",
+          "body_sha256": "6ce09d28a940fc7092dd5893f6fe8dfabad5ec9d707eaa6b323e46e0a469cbc7"
+        }
+      ],
+      "module_sha256": "2ca5e165a46ef3c2a762ca25f65edb7a9e014e59c019a633ee6286d9e29aeb9b",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

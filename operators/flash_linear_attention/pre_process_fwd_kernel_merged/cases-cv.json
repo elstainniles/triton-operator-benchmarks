@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 48,
+      "symbol": "pre_process_fwd_kernel_merged",
+      "operator_id": "FLA236",
+      "source_path": "tests/ops/ascend_ops/cv_operator/test_pre_process_fwd_kernel_merged/test_pre_process_fwd_kernel_merged_npu.py",
+      "source_sha256": "01be180ce3b0b17bccb4cde9ab6ac3f93bbb53f49eca66fdf79637290bd721bf",
+      "tensors": {
+        "k": {
+          "shape": [
+            1,
+            1024,
+            4,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            1,
+            1024,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "u": {
+          "shape": [
+            1,
+            1024,
+            8,
+            128
+          ],
+          "dtype": "float32"
+        },
+        "w": {
+          "shape": [
+            1,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "hm": {
+          "shape": [
+            8,
+            64,
+            192
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "w": {
+          "tensor": "w"
+        },
+        "g": null,
+        "gk": null,
+        "bg": null,
+        "u": {
+          "tensor": "u"
+        },
+        "hm": {
+          "tensor": "hm"
+        },
+        "cu_seqlens": null,
+        "T": 1024,
+        "H": 4,
+        "HV": 8,
+        "K": 64,
+        "V": 128,
+        "BT": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "USE_G": false,
+        "USE_GK": false,
+        "USE_BG": false,
+        "IS_VARLEN": false,
+        "MULTI_SEQS": false
+      },
+      "constexprs": [
+        "BK1",
+        "BLOCK_SIZE",
+        "BT",
+        "H",
+        "HV",
+        "IS_VARLEN",
+        "K",
+        "MULTI_SEQS",
+        "USE_BG",
+        "USE_G",
+        "USE_GK",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 1,
+        "T": 1024,
+        "H": 4,
+        "HQ": 4,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 128,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 2,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-048",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp2",
+          "source": "upstream/test_pre_process_fwd_kernel_merged_npu.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "pre_process_fwd_kernel_merged",
+          "source": "upstream/test_pre_process_fwd_kernel_merged_npu.py",
+          "body_sha256": "aae23cbbf2f8ede1c2971c1488f1aabc15344e150cdefd0482704df8c835187c"
+        }
+      ],
+      "module_sha256": "850dd6107155140566f7f1c3f21ad758747bbbef9be8be5480c7f9e39acc94d6",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

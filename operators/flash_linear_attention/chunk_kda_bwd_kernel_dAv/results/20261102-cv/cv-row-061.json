@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "origin": "imported_task_results",
+  "row": 61,
+  "case": "cv-row-061",
+  "status": "MEASURED",
+  "baseline_us": 66.17150000000001,
+  "candidate_us": null,
+  "has_dot": true,
+  "source_sha256": "4e6b838a457cc59181b23faa26575ad672de75adf912563f051ec56d1a630cfe",
+  "compiled_source_sha256": "71f66e21a2ba127d6e3b47bf9b18c45b41973684035656021c958790613af81d",
+  "published_source_sha256": "3a0d70ad2edb9dd2bb3be89e4fcef1d752631a63ca4d6ad795b0755519e13a6f",
+  "compiler_commit": "c06b1a4df3d710c6dba23f696da577e499a7feb9",
+  "libtriton_sha256": "5840f711f87bef983c074ab44242b7ae74a5b5ca751a3876ae3429be085f547d",
+  "metric": "mean of two medians, 15 attributed Triton device samples per round, us",
+  "npu_execution": true,
+  "new_portable_runner_device_validated": false,
+  "checks": [
+    {
+      "seed": 20261102,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dv",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 1.1920928955078125e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dA",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 1.862645149230957e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "dv_guard",
+          "passed": true
+        },
+        {
+          "name": "dA_guard",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "seed": 20261103,
+      "variant": "baseline",
+      "checks": [
+        {
+          "name": "q",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "k",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "v",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "A",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "do",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 0.0,
+          "rtol": 0,
+          "atol": 0
+        },
+        {
+          "name": "dv",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 1.1920928955078125e-07,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "dA",
+          "passed": true,
+          "elements": 2097152,
+          "mismatches": 0,
+          "max_abs": 1.862645149230957e-08,
+          "rtol": 1e-05,
+          "atol": 1e-05
+        },
+        {
+          "name": "q_guard",
+          "passed": true
+        },
+        {
+          "name": "k_guard",
+          "passed": true
+        },
+        {
+          "name": "v_guard",
+          "passed": true
+        },
+        {
+          "name": "A_guard",
+          "passed": true
+        },
+        {
+          "name": "do_guard",
+          "passed": true
+        },
+        {
+          "name": "dv_guard",
+          "passed": true
+        },
+        {
+          "name": "dA_guard",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "grid": [
+    32,
+    16
+  ],
+  "samples": [
+    [
+      65.818,
+      65.194,
+      67.365,
+      67.498,
+      66.46,
+      67.63,
+      66.334,
+      65.889,
+      65.397,
+      67.122,
+      66.681,
+      66.07,
+      67.445,
+      65.689,
+      65.689
+    ],
+    [
+      65.691,
+      65.871,
+      65.978,
+      65.305,
+      67.965,
+      67.097,
+      66.572,
+      67.901,
+      65.699,
+      66.009,
+      65.558,
+      67.488,
+      65.472,
+      66.059,
+      67.177
+    ]
+  ],
+  "candidates": [
+    {
+      "axis": 0,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    },
+    {
+      "axis": 1,
+      "factor": 2,
+      "status": "FALLBACK",
+      "reason": "CV_UNSTRUCTURED_MEMORY_MASK"
+    }
+  ]
+}

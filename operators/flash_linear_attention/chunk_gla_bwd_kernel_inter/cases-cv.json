@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 194,
+      "symbol": "chunk_gla_bwd_kernel_inter",
+      "operator_id": "FLA168",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_gla_bwd_kernel_inter/test_chunk_gla_bwd_kernel_inter_npu.py",
+      "source_sha256": "86565b902ff8b4d275b98b9809545981672f48edccfa50dd0accee5276f7172d",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "g": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "do": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dq": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dk": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dq2": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dk2": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dg": {
+          "shape": [
+            2,
+            512,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "h": {
+          "shape": [
+            32,
+            8,
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dh": {
+          "shape": [
+            32,
+            8,
+            64,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "config_origin": "workbook",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "h": {
+          "tensor": "h"
+        },
+        "do": {
+          "tensor": "do"
+        },
+        "dh": {
+          "tensor": "dh"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "dk": {
+          "tensor": "dk"
+        },
+        "dq2": {
+          "tensor": "dq2"
+        },
+        "dk2": {
+          "tensor": "dk2"
+        },
+        "dg": {
+          "tensor": "dg"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "scale": 0.125,
+        "T": 512,
+        "H": 8,
+        "K": 64,
+        "V": 64,
+        "BT": 32,
+        "BK": 64,
+        "BV": 64,
+        "IS_VARLEN": false
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "BV",
+        "H",
+        "IS_VARLEN",
+        "K",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 2,
+        "T": 512,
+        "H": 8,
+        "HQ": 8,
+        "HV": 8,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 32,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 2,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 512,
+        "TC": 512,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 8,
+        "M": 512,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 2,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=32 from state h chunk count 16"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-194",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "chunk_gla_bwd_kernel_inter",
+          "source": "upstream/test_chunk_gla_bwd_kernel_inter_npu.py",
+          "body_sha256": "a9650a7be83c758c1ba61cc970a07e16b26ba58f278798f9525fe2a919f3430f"
+        }
+      ],
+      "module_sha256": "42c7771481723df4c7e83c65f96372890d608128755ba1fdcd55f28448253244",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        1,
+        16,
+        16
+      ]
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 75,
+      "symbol": "parallel_path_bwd_dq_kernel",
+      "operator_id": "FLA222",
+      "source_path": "tests/ops/ascend_ops/cv_operator/parallel_path_bwd_dq_kernel/test_parallel_path_bwd_dq_kernel_npu.py",
+      "source_sha256": "a38b007899d6d056b1dc930d696238e46d7a03bb1dafe143a557e7000412d4dc",
+      "tensors": {
+        "q": {
+          "shape": [
+            2,
+            1024,
+            5,
+            16,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "k": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "v": {
+          "shape": [
+            2,
+            1024,
+            8,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "g_cumsum": {
+          "shape": [
+            2,
+            1024,
+            16
+          ],
+          "dtype": "float32"
+        },
+        "L": {
+          "shape": [
+            2,
+            1024,
+            16
+          ],
+          "dtype": "float32"
+        },
+        "D": {
+          "shape": [
+            2,
+            1024,
+            16
+          ],
+          "dtype": "float32"
+        },
+        "dg_cumsum": {
+          "shape": [
+            2,
+            1024,
+            16
+          ],
+          "dtype": "float32"
+        },
+        "hc_whole": {
+          "shape": [
+            8,
+            8,
+            64,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dq": {
+          "shape": [
+            2,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "do": {
+          "shape": [
+            2,
+            1024,
+            16,
+            64
+          ],
+          "dtype": "float32"
+        },
+        "dhc_whole": {
+          "shape": [
+            8,
+            16,
+            64,
+            64
+          ],
+          "dtype": "float32"
+        }
+      },
+      "config": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "config_origin": "source/default 4 warps 2 stages; historical config absent",
+      "args": {
+        "q": {
+          "tensor": "q"
+        },
+        "k": {
+          "tensor": "k"
+        },
+        "v": {
+          "tensor": "v"
+        },
+        "g_cumsum": {
+          "tensor": "g_cumsum"
+        },
+        "hc_whole": {
+          "tensor": "hc_whole"
+        },
+        "scale": 0.125,
+        "L": {
+          "tensor": "L"
+        },
+        "D": {
+          "tensor": "D"
+        },
+        "dq": {
+          "tensor": "dq"
+        },
+        "do": {
+          "tensor": "do"
+        },
+        "dhc_whole": {
+          "tensor": "dhc_whole"
+        },
+        "dg_cumsum": {
+          "tensor": "dg_cumsum"
+        },
+        "cu_seqlens": null,
+        "indices": null,
+        "split_offsets": null,
+        "T": 5,
+        "G": 2,
+        "HQ": 16,
+        "H": 8,
+        "K": 64,
+        "V": 64,
+        "BT": 64,
+        "BS": 32,
+        "BK": 64,
+        "BV": 64,
+        "S": 64,
+        "NUM_BLOCKS": 1,
+        "IS_VARLEN": false,
+        "USE_GATE": true
+      },
+      "constexprs": [
+        "BK",
+        "BS",
+        "BT",
+        "BV",
+        "G",
+        "H",
+        "HQ",
+        "IS_VARLEN",
+        "K",
+        "NUM_BLOCKS",
+        "S",
+        "USE_GATE",
+        "V"
+      ],
+      "scalar_choices": {
+        "B": 1024,
+        "T": 5,
+        "H": 8,
+        "HQ": 16,
+        "HV": 8,
+        "G": 2,
+        "NG": 2,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 1,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 5,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 1,
+        "M": 5,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 1024,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-075",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp2",
+          "source": "upstream/test_parallel_path_bwd_dq_kernel_npu.py",
+          "body_sha256": "5e93a6f68a21795328c39f7a83556bf1b741648a4a405458276d9c5bdbb58121"
+        },
+        {
+          "name": "parallel_path_bwd_dq_kernel",
+          "source": "upstream/test_parallel_path_bwd_dq_kernel_npu.py",
+          "body_sha256": "c017bd5057f66c338f7177b6601cc742052411c821c7498c0a1fabaaf043a0a7"
+        }
+      ],
+      "module_sha256": "688c2a7f22efab3156fbcfc18f0da27815c23b904b69cdc28e215aac2c1eba5c",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "CONTROL_FLOW_BLOCKED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "not_device_validated"
+    }
+  ]
+}

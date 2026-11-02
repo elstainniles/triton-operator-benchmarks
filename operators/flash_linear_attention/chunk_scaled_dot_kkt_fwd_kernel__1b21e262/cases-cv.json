@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "reference_kind": "bounded_cpu_kernel_semantics",
+  "cases": [
+    {
+      "row": 53,
+      "symbol": "chunk_scaled_dot_kkt_fwd_kernel",
+      "operator_id": "FLA196",
+      "source_path": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel/test_chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel_npu.py",
+      "source_sha256": "3999bfed116bd9894ef3e4b5356d67c22e93417773e63230626f079b98f1d2d3",
+      "tensors": {
+        "k": {
+          "shape": [
+            4,
+            1024,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "A": {
+          "shape": [
+            4,
+            1024,
+            4,
+            64
+          ],
+          "dtype": "float16"
+        },
+        "g": {
+          "shape": [
+            4,
+            1024,
+            4
+          ],
+          "dtype": "float16"
+        },
+        "beta": {
+          "shape": [
+            4,
+            1024,
+            4
+          ],
+          "dtype": "float16"
+        }
+      },
+      "config": {
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "config_origin": "workbook",
+      "args": {
+        "k": {
+          "tensor": "k"
+        },
+        "g": {
+          "tensor": "g"
+        },
+        "beta": {
+          "tensor": "beta"
+        },
+        "A": {
+          "tensor": "A"
+        },
+        "cu_seqlens": null,
+        "chunk_indices": null,
+        "T": 1024,
+        "H": 4,
+        "HV": 4,
+        "K": 64,
+        "BT": 64,
+        "BK": 64,
+        "IS_VARLEN": false,
+        "USE_G": true
+      },
+      "constexprs": [
+        "BK",
+        "BT",
+        "H",
+        "HV",
+        "IS_VARLEN",
+        "K",
+        "USE_G"
+      ],
+      "scalar_choices": {
+        "B": 4,
+        "T": 1024,
+        "H": 4,
+        "HQ": 4,
+        "HV": 4,
+        "G": 1,
+        "NG": 1,
+        "K": 64,
+        "V": 64,
+        "D": 64,
+        "BT": 64,
+        "BS": 32,
+        "BC": 16,
+        "BK": 64,
+        "BV": 64,
+        "BTL": 64,
+        "BTS": 32,
+        "BLOCK_C": 64,
+        "BLOCK_T": 64,
+        "BLOCK_SIZE": 64,
+        "BK1": 64,
+        "NT": 16,
+        "NC": 4,
+        "NV": 1,
+        "NK": 1,
+        "S": 64,
+        "L": 12,
+        "scale": 0.125,
+        "fa_scale": 0.125,
+        "qk_scale": 0.125,
+        "eps": 1e-06,
+        "C": 1024,
+        "TC": 1024,
+        "max_CG_iteration": 16,
+        "num_householder": 2,
+        "ell": 0,
+        "REVERSE": false,
+        "HEAD_FIRST": false,
+        "TRANSPOSE_STATE": false,
+        "STATE_V_FIRST": false,
+        "OUTPUT_ATTENTIONS": false,
+        "NORMK": false,
+        "GATHER_SUPPORTED": true,
+        "USE_GATHER": true,
+        "USE_SAFE_GATE": false,
+        "USE_EXP2": false,
+        "MULTI_SEQS": false,
+        "DOT_PRECISION": "ieee",
+        "ALLOW_TF32": false,
+        "ACTIVATION": "",
+        "X_DIM": 1,
+        "HAVE_GK": false,
+        "SAFE_GATE": false,
+        "NUM_BLOCKS": 16,
+        "M": 1024,
+        "pre_or_post_num_ranks": 2,
+        "rank": 0,
+        "FORWARD": true,
+        "INTRACARD_MODE": false,
+        "NUM_SEQ_ENTRIES": 4,
+        "L_IN": 64,
+        "L_OUT": 128,
+        "MIN_LEVEL": 0,
+        "MAX_LEVEL": 1
+      },
+      "inference_notes": [
+        "missing tile/scalar settings are recorded, never taken from missing .pt",
+        "BT=64 from A row width"
+      ],
+      "decorator_policy": "preserve jit body and do_not_specialize; replace autotune with workbook fixed config; evaluate heuristic booleans from generated inputs",
+      "id": "cv-row-053",
+      "module": "cv_kernels.py",
+      "bodies": [
+        {
+          "name": "exp",
+          "source": "upstream/test_chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel_npu.py",
+          "body_sha256": "32b3c1ec8318e15ec2a53ab07e950bd3867aa969ae803fbd177ecde4b6b004f8"
+        },
+        {
+          "name": "chunk_scaled_dot_kkt_fwd_kernel",
+          "source": "upstream/test_chunk_scaled_dot_kkt_chunk_scaled_dot_kkt_fwd_kernel_npu.py",
+          "body_sha256": "b304c139888817d4a21b286dc601ec9ea826d6abcb9389225ae52d21b7c71807"
+        }
+      ],
+      "module_sha256": "1ff24dfbf432777f0f62ea5c0f1c415e297e885d217afbd78bd4970e3af08675",
+      "seeds": [
+        20261102,
+        20261103
+      ],
+      "historical_status": "MEASURED",
+      "historical_has_dot": true,
+      "reference_exp": "interpreter_default",
+      "reference_validation": "device_checked",
+      "grid": [
+        16,
+        16
+      ]
+    }
+  ]
+}
