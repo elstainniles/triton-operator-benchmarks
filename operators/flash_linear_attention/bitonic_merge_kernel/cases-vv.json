@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA239",
+  "cases": [
+    {
+      "index": 307,
+      "row": 509,
+      "id": "vv-row-509",
+      "operator_id": "FLA239",
+      "kernel": "bitonic_merge_kernel",
+      "path": "operators/flash_linear_attention/bitonic_merge_kernel",
+      "shape_dtype": "x_ptr,output_x_ptr: [4096] / float32\nids_ptr,output_ids_ptr: [4096] / int32",
+      "operator_type": "VV",
+      "original_test": "test_bitonic_merge",
+      "source_test": "tests/ops/ascend_ops/vv_operator/_bitonic_merge/test_bitonic_merge_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 12.64,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_f3068d0d09a06634-091a90c36d76",
+          "test_manifest": "operators/flash_linear_attention/bitonic_merge_kernel/tests/vv_f3068d0d09a06634-091a90c36d76/test.json",
+          "test_manifest_sha256": "6d16b465e065a2d0fa51ad9a4301d9ed1eb3aeaf033f7806f40a75085c7678d4",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 308,
+      "row": 510,
+      "id": "vv-row-510",
+      "operator_id": "FLA239",
+      "kernel": "bitonic_merge_kernel",
+      "path": "operators/flash_linear_attention/bitonic_merge_kernel",
+      "shape_dtype": "x_ptr,output_x_ptr: [4096] / float32\nids_ptr,output_ids_ptr: [4096] / int32",
+      "operator_type": "VV",
+      "original_test": "test_bitonic_merge",
+      "source_test": "tests/ops/ascend_ops/vv_operator/_bitonic_merge/test_bitonic_merge_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_f3068d0d09a06634-091a90c36d76",
+          "test_manifest": "operators/flash_linear_attention/bitonic_merge_kernel/tests/vv_f3068d0d09a06634-091a90c36d76/test.json",
+          "test_manifest_sha256": "6d16b465e065a2d0fa51ad9a4301d9ed1eb3aeaf033f7806f40a75085c7678d4",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

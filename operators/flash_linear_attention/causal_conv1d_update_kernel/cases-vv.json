@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA011",
+  "cases": [
+    {
+      "index": 55,
+      "row": 257,
+      "id": "vv-row-257",
+      "operator_id": "FLA011",
+      "kernel": "causal_conv1d_update_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_update_kernel",
+      "shape_dtype": "x,y: [2,1,128] / float32\ncache: [2,128,3] / float32\nweight: [128,3] / float32\nbias: [128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_causal_conv1d_update_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_causal_conv1d_update_kernel/test_causal_conv1d_update_kernel_npu.py",
+      "table_config": {
+        "BD": 32,
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 4.59,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_2899008551315181-9c30ba09a217",
+          "test_manifest": "operators/flash_linear_attention/causal_conv1d_update_kernel/tests/vv_2899008551315181-9c30ba09a217/test.json",
+          "test_manifest_sha256": "8a905bfc3f125ca6e35875ea998b12ba4ae1a91ff76dcc0c97e976d298c53831",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BD": 32
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/causal_conv1d_update"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_dtype_absolute",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 56,
+      "row": 258,
+      "id": "vv-row-258",
+      "operator_id": "FLA011",
+      "kernel": "causal_conv1d_update_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_update_kernel",
+      "shape_dtype": "x,y: [2,1,128] / float32\ncache: [2,128,3] / float32\nweight: [128,3] / float32\nbias: [128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_causal_conv1d_update_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_causal_conv1d_update_kernel/test_causal_conv1d_update_kernel_npu.py",
+      "table_config": {
+        "BD": 16,
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "block版本合并失败，退回原kernel执行",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_2899008551315181-32044ee92a5e",
+          "test_manifest": "operators/flash_linear_attention/causal_conv1d_update_kernel/tests/vv_2899008551315181-32044ee92a5e/test.json",
+          "test_manifest_sha256": "bf2ae6da7431e6b2b3aa1e25f2d79a79e1778d2c797e3a13745f97a5a324616b",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BD": 16
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/causal_conv1d_update"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

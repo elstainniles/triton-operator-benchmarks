@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA028",
+  "cases": [
+    {
+      "index": 48,
+      "row": 250,
+      "id": "vv-row-250",
+      "operator_id": "FLA028",
+      "kernel": "layer_norm_fwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_fwd_kernel1",
+      "shape_dtype": "x,y: [2048,1024] / float32\nw,b: [1024] / float32\nmean,rstd: [2048] / float32",
+      "operator_type": "VV",
+      "original_test": "test_layer_norm_fwd_kernel1",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_layer_norm_fwd_kernel1/test_layer_norm_fwd_kernel1_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_260d666e1d833c24-167155ae2370",
+          "test_manifest": "operators/flash_linear_attention/layer_norm_fwd_kernel1/tests/vv_260d666e1d833c24-167155ae2370/test.json",
+          "test_manifest_sha256": "de538ea697d15b80c979807443c04537287250e78964a395cb1c9a01b3101d1f",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/layer_norm_fwd1"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 49,
+      "row": 251,
+      "id": "vv-row-251",
+      "operator_id": "FLA028",
+      "kernel": "layer_norm_fwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_fwd_kernel1",
+      "shape_dtype": "x,y: [2048,1024] / float32\nw,b: [1024] / float32\nmean,rstd: [2048] / float32",
+      "operator_type": "VV",
+      "original_test": "test_layer_norm_fwd_kernel1",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_layer_norm_fwd_kernel1/test_layer_norm_fwd_kernel1_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 39.36,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_260d666e1d833c24-adddd265e042",
+          "test_manifest": "operators/flash_linear_attention/layer_norm_fwd_kernel1/tests/vv_260d666e1d833c24-adddd265e042/test.json",
+          "test_manifest_sha256": "2ebabd9de009832d3c57dffc073bae63a8c2df53de436bbdafdb35fb3a04f725",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/layer_norm_fwd1"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

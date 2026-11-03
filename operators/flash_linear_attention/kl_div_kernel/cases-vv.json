@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA015",
+  "cases": [
+    {
+      "index": 9,
+      "row": 211,
+      "id": "vv-row-211",
+      "operator_id": "FLA015",
+      "kernel": "kl_div_kernel",
+      "path": "operators/flash_linear_attention/kl_div_kernel",
+      "shape_dtype": "logits,target_logits: [4096,32000] / float32\nloss: [4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_kl_div_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/kl_div_kernel/test_kl_div_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 1396.7,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_070a176c4e74716d-20577a655d60",
+          "test_manifest": "operators/flash_linear_attention/kl_div_kernel/tests/vv_070a176c4e74716d-20577a655d60/test.json",
+          "test_manifest_sha256": "f71aa89c8f8f9582c71e6bdd30bf001db10404a5a55a3c3b7cf86fa8f6605042",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/kl",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 24,
+      "row": 226,
+      "id": "vv-row-226",
+      "operator_id": "FLA015",
+      "kernel": "kl_div_kernel",
+      "path": "operators/flash_linear_attention/kl_div_kernel",
+      "shape_dtype": "logits,target_logits: [4096,32000] / float32\nloss: [4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_kl_div_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/kl_div_kernel/test_kl_div_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 1400.65,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_0ecea27ce6721116-f2b1c54c5c27",
+          "test_manifest": "operators/flash_linear_attention/kl_div_kernel/tests/vv_0ecea27ce6721116-f2b1c54c5c27/test.json",
+          "test_manifest_sha256": "fd9c3e5ae016a2c221de3c8994ed7612ccc1bbfd3d213e5a847a36cb602eb708",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/kl",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

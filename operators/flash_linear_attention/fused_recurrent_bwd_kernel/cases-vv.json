@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA065",
+  "cases": [
+    {
+      "index": 73,
+      "row": 275,
+      "id": "vv-row-275",
+      "operator_id": "FLA065",
+      "kernel": "fused_recurrent_bwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_bwd_kernel",
+      "shape_dtype": "q,k,v,a,b,do,dv: [2,1024,8,64] / float16\nha,dha: [2,1024,8,64] / float32\ndq,dk,da,db: [1,2,1024,8,64] / float16",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_bwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_bwd_kernel/test_fused_recurrent_bwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_2ec9259896ac4103-fa5bc44c5cdf",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_bwd_kernel/tests/vv_2ec9259896ac4103-fa5bc44c5cdf/test.json",
+          "test_manifest_sha256": "1961a52232944e190cea095e1e827ce4d994c0e19db648025ad4dc548a871570",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/iplr_bwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 74,
+      "row": 276,
+      "id": "vv-row-276",
+      "operator_id": "FLA065",
+      "kernel": "fused_recurrent_bwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_bwd_kernel",
+      "shape_dtype": "q,k,v,a,b,do,dv: [2,1024,8,64] / float16\nha,dha: [2,1024,8,64] / float32\ndq,dk,da,db: [1,2,1024,8,64] / float16",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_bwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_bwd_kernel/test_fused_recurrent_bwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 1295.6,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_2ec9259896ac4103-ad7f790316b6",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_bwd_kernel/tests/vv_2ec9259896ac4103-ad7f790316b6/test.json",
+          "test_manifest_sha256": "08678efca91a9e531859c37f1af670396a669e1fb6e7660ec865401b22639bae",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/iplr_bwd",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

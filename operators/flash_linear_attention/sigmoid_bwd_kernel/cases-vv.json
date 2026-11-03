@@ -1,0 +1,478 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA002",
+  "cases": [
+    {
+      "index": 38,
+      "row": 240,
+      "id": "vv-row-240",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel",
+      "shape_dtype": "x,dy,dx: [4,2048,1024] / float32\n规格：original_config_0",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_bwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid_bwd_kernel/test_sigmoid_bwd_kernel_npu.py",
+      "table_config": {
+        "B": 4096,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 278.95,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_21761d1409e3a3bf-93a21cfe354d",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_bwd_kernel/tests/vv_21761d1409e3a3bf-93a21cfe354d/test.json",
+          "test_manifest_sha256": "a48a1768ad54b71136198af8bdf7fdb2eda76f4f4bb003e552af407932949901",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 4096
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid_bwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 0,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 1024,
+              "dtype": "torch.float32"
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 39,
+      "row": 241,
+      "id": "vv-row-241",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel",
+      "shape_dtype": "x,dy,dx: [4,2048,1024] / float32\n规格：original_config_0",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_bwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid_bwd_kernel/test_sigmoid_bwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_21761d1409e3a3bf-62741153fb08",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_bwd_kernel/tests/vv_21761d1409e3a3bf-62741153fb08/test.json",
+          "test_manifest_sha256": "595d563897fc4f5f939f713beff296484e2e1caff03e08828c69cd429cd8d1b6",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid_bwd_kernel"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 0,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 1024,
+              "dtype": "torch.float32"
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 40,
+      "row": 242,
+      "id": "vv-row-242",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel",
+      "shape_dtype": "x,dy,dx: [4,2048,2048] / bfloat16\n规格：original_config_1",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_bwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid_bwd_kernel/test_sigmoid_bwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_21761d1409e3a3bf-999bb27ed927",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_bwd_kernel/tests/vv_21761d1409e3a3bf-999bb27ed927/test.json",
+          "test_manifest_sha256": "e3ae0adba93c8fce767a2f3a1a9ceb5029c92cf49888e222edc2b221bdb85e9b",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid_bwd_kernel"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 1,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16"
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 41,
+      "row": 243,
+      "id": "vv-row-243",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel",
+      "shape_dtype": "x,dy,dx: [4,2048,2048] / bfloat16\n规格：original_config_1",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_bwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid_bwd_kernel/test_sigmoid_bwd_kernel_npu.py",
+      "table_config": {
+        "B": 8192,
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 495.84,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_21761d1409e3a3bf-3493b878050c",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_bwd_kernel/tests/vv_21761d1409e3a3bf-3493b878050c/test.json",
+          "test_manifest_sha256": "8c3596ec733069710b6a967e540120afd1462b6bc028b0e238f073980d4a88cf",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid_bwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 1,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16"
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 151,
+      "row": 353,
+      "id": "vv-row-353",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel",
+      "shape_dtype": "x,dy,dx: [4,2048,1024] / float32\n规格：original_config_0",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_bwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid_bwd_kernel/test_sigmoid_bwd_kernel_npu.py",
+      "table_config": {
+        "B": 4096,
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 271.59,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_6a6678398fcd6182-6af4e61f0ece",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_bwd_kernel/tests/vv_6a6678398fcd6182-6af4e61f0ece/test.json",
+          "test_manifest_sha256": "059ff4a5d6c82a9976856a60fde7a4b6c93f368e9ffefc736b3d3ce361fafc0c",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 4096
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid_bwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 0,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 1024,
+              "dtype": "torch.float32"
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 152,
+      "row": 354,
+      "id": "vv-row-354",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel",
+      "shape_dtype": "x,dy,dx: [4,2048,1024] / float32\n规格：original_config_0",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_bwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid_bwd_kernel/test_sigmoid_bwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 8,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_6a6678398fcd6182-4e9632dcf3b9",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_bwd_kernel/tests/vv_6a6678398fcd6182-4e9632dcf3b9/test.json",
+          "test_manifest_sha256": "8b4361f3484afdd9c78c74dcb854a241f2ec22fb8c59fbca3df1abd162361fe6",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid_bwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 0,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 1024,
+              "dtype": "torch.float32"
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 153,
+      "row": 355,
+      "id": "vv-row-355",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel",
+      "shape_dtype": "x,dy,dx: [4,2048,2048] / bfloat16\n规格：original_config_1",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_bwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid_bwd_kernel/test_sigmoid_bwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_6a6678398fcd6182-419cb7fa1bd6",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_bwd_kernel/tests/vv_6a6678398fcd6182-419cb7fa1bd6/test.json",
+          "test_manifest_sha256": "40a44dee9218a77d43bf2d00737e920bfb2203efbad465143a5500994e6b983b",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid_bwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 1,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16"
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 154,
+      "row": 356,
+      "id": "vv-row-356",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel",
+      "shape_dtype": "x,dy,dx: [4,2048,2048] / bfloat16\n规格：original_config_1",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_bwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid_bwd_kernel/test_sigmoid_bwd_kernel_npu.py",
+      "table_config": {
+        "B": 8192,
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 491.77,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_6a6678398fcd6182-b7979d6fcf35",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_bwd_kernel/tests/vv_6a6678398fcd6182-b7979d6fcf35/test.json",
+          "test_manifest_sha256": "d3c00efd56d67f0c18e69d14f43fd84bd8c7bd749516ee5e3514e40d8dbf26a3",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid_bwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 1,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16"
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

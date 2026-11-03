@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA241",
+  "cases": [
+    {
+      "index": 4,
+      "row": 206,
+      "id": "vv-row-206",
+      "operator_id": "FLA241",
+      "kernel": "chunk_abc_bwd_kernel_rcum_inter",
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_inter__34ec7862",
+      "shape_dtype": "s,z,ss,doo: [2,128,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_perf",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_abc_bwd_kernel_rcum_inter/test_chunk_abc_bwd_kernel_rcum_inter_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3.15,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_91e2658d1de86580-fd36031a29b2",
+          "test_manifest": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_inter__34ec7862/tests/vv_91e2658d1de86580-fd36031a29b2/test.json",
+          "test_manifest_sha256": "a82ea5ff5cc617528a9b62103408c53ba1bb51b947074e64ffa4093fa481353b",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/abc"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 204,
+      "row": 406,
+      "id": "vv-row-406",
+      "operator_id": "FLA241",
+      "kernel": "chunk_abc_bwd_kernel_rcum_inter",
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_inter__34ec7862",
+      "shape_dtype": "s,z,ss,doo: [2,128,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_abc_bwd_kernel_rcum_inter/test_chunk_abc_bwd_kernel_rcum_inter_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 5.59,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_91e2658d1de86580-fd36031a29b2",
+          "test_manifest": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_inter__34ec7862/tests/vv_91e2658d1de86580-fd36031a29b2/test.json",
+          "test_manifest_sha256": "a82ea5ff5cc617528a9b62103408c53ba1bb51b947074e64ffa4093fa481353b",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/abc"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

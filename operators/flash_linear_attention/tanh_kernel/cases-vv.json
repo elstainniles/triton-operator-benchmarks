@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA294",
+  "cases": [
+    {
+      "index": 68,
+      "row": 270,
+      "id": "vv-row-270",
+      "operator_id": "FLA294",
+      "kernel": "tanh_kernel",
+      "path": "operators/flash_linear_attention/tanh_kernel",
+      "shape_dtype": "x_ptr,y_ptr: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_tanh_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/tanh/test_tanh_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3.52,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_2cdfc6e46e9f0f95-88c1d797fa7c",
+          "test_manifest": "operators/flash_linear_attention/tanh_kernel/tests/vv_2cdfc6e46e9f0f95-88c1d797fa7c/test.json",
+          "test_manifest_sha256": "78a9191fa9ee1f7986c0947b5f52d05a62e6699ba70d6b63d27d7a46edfc6266",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/tanh"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 163,
+      "row": 365,
+      "id": "vv-row-365",
+      "operator_id": "FLA294",
+      "kernel": "tanh_kernel",
+      "path": "operators/flash_linear_attention/tanh_kernel",
+      "shape_dtype": "x_ptr,y_ptr: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_tanh_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/tanh/test_tanh_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3.23,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_70348d4afa6723b8-fb262e65d871",
+          "test_manifest": "operators/flash_linear_attention/tanh_kernel/tests/vv_70348d4afa6723b8-fb262e65d871/test.json",
+          "test_manifest_sha256": "21ee2189e95685076439042134593986ffa2c1d7053c5bc4ac2884a1cb7a6c86",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/tanh"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

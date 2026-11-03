@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA280",
+  "cases": [
+    {
+      "index": 64,
+      "row": 266,
+      "id": "vv-row-266",
+      "operator_id": "FLA280",
+      "kernel": "log2_kernel",
+      "path": "operators/flash_linear_attention/log2_kernel",
+      "shape_dtype": "x_ptr,output_ptr: [4,2048,8,1024] / float32",
+      "operator_type": "VV",
+      "original_test": "test_log2_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/log2/test_log2_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 325.25,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_2bd7e3ed0e209f67-1c9e68db08b9",
+          "test_manifest": "operators/flash_linear_attention/log2_kernel/tests/vv_2bd7e3ed0e209f67-1c9e68db08b9/test.json",
+          "test_manifest_sha256": "e73c3ec90ec9872b72458e386595ce162f1ef2677f7bbf31b987f81176a01553",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/log2",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 231,
+      "row": 433,
+      "id": "vv-row-433",
+      "operator_id": "FLA280",
+      "kernel": "log2_kernel",
+      "path": "operators/flash_linear_attention/log2_kernel",
+      "shape_dtype": "x_ptr,output_ptr: [4,2048,8,1024] / float32",
+      "operator_type": "VV",
+      "original_test": "test_log2_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/log2/test_log2_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 322.8,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "性能下降",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_ab52a2ea7627760b-90f51deaeecb",
+          "test_manifest": "operators/flash_linear_attention/log2_kernel/tests/vv_ab52a2ea7627760b-90f51deaeecb/test.json",
+          "test_manifest_sha256": "b5dae014ea3cce227bfd8d51eed0ba4bfd1b6658f5aab2dcccf887a33c48f786",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/log2",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

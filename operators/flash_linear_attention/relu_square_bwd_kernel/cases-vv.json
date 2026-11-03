@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA096",
+  "cases": [
+    {
+      "index": 112,
+      "row": 314,
+      "id": "vv-row-314",
+      "operator_id": "FLA096",
+      "kernel": "relu_square_bwd_kernel",
+      "path": "operators/flash_linear_attention/relu_square_bwd_kernel",
+      "shape_dtype": "out_ptr,forward_input_ptr: [2,1024,4096] / bfloat16",
+      "operator_type": "VV",
+      "original_test": "test_relu_square_bwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_relu_square_bwd_kernel/test_relu_square_bwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 105.51,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "block版本合并失败，退回原kernel执行",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_4b777a715a863e2b-0e6acbf05ec2",
+          "test_manifest": "operators/flash_linear_attention/relu_square_bwd_kernel/tests/vv_4b777a715a863e2b-0e6acbf05ec2/test.json",
+          "test_manifest_sha256": "d149322bf1fbb719bb52a7190e4f1c8fe27c79efb4daafda270b696bbaa1e2cc",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/relu_square_bwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

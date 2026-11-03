@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA265",
+  "cases": [
+    {
+      "index": 125,
+      "row": 327,
+      "id": "vv-row-327",
+      "operator_id": "FLA265",
+      "kernel": "fused_recurrent_hgrn_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_hgrn_fwd_kernel",
+      "shape_dtype": "x,g,o: [4,2048,512] / float32\nh0,ht: [4,512] / float32",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_hgrn_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/fused_recurrent_hgrn_fwd_kernel/test_fused_recurrent_hgrn_fwd_kernel_npu.py",
+      "table_config": {
+        "BD": 64,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_55829b2d3a80e148-40890c57bdf8",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_hgrn_fwd_kernel/tests/vv_55829b2d3a80e148-40890c57bdf8/test.json",
+          "test_manifest_sha256": "1835c9abb523ec7047e55f11317595f5db34d2580278e9a1459b7507923913c9",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BD": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions_unchanged",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 126,
+      "row": 328,
+      "id": "vv-row-328",
+      "operator_id": "FLA265",
+      "kernel": "fused_recurrent_hgrn_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_hgrn_fwd_kernel",
+      "shape_dtype": "x,g,o: [4,2048,512] / float32\nh0,ht: [4,512] / float32",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_hgrn_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/fused_recurrent_hgrn_fwd_kernel/test_fused_recurrent_hgrn_fwd_kernel_npu.py",
+      "table_config": {
+        "BD": 64,
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 452.95,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_55829b2d3a80e148-3125f0d63f5c",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_hgrn_fwd_kernel/tests/vv_55829b2d3a80e148-3125f0d63f5c/test.json",
+          "test_manifest_sha256": "1b998673aa911c0024fe48037ce80c049f7245db9aceac79a888acac89e189b2",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BD": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

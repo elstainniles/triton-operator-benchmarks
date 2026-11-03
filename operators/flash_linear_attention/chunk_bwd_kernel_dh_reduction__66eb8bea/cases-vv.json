@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA040",
+  "cases": [
+    {
+      "index": 280,
+      "row": 482,
+      "id": "vv-row-482",
+      "operator_id": "FLA040",
+      "kernel": "chunk_bwd_kernel_dh_reduction",
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__66eb8bea",
+      "shape_dtype": "g: [4,2048,8] / float32\ndh: [4,32,8,128,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_bwd_kernel_dh_reduction_npu",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_chunk_h_parallel_chunk_bwd_kernel_dh_reduction/test_chunk_h_parallel_chunk_bwd_kernel_dh_reduction_npu.py",
+      "table_config": {
+        "BK": 128,
+        "BV": 128,
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 68.86,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_e4609d5a9a7ab1e8-00e47cc2ef25",
+          "test_manifest": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__66eb8bea/tests/vv_e4609d5a9a7ab1e8-00e47cc2ef25/test.json",
+          "test_manifest_sha256": "40d71e7732a8f27476a935019b51c13ef78f250b1f92ef5c73025c991de7bf4c",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BK": 128,
+            "BV": 128
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/dh_reduction",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 281,
+      "row": 483,
+      "id": "vv-row-483",
+      "operator_id": "FLA040",
+      "kernel": "chunk_bwd_kernel_dh_reduction",
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__66eb8bea",
+      "shape_dtype": "g: [4,2048,8] / float32\ndh: [4,32,8,128,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_bwd_kernel_dh_reduction_npu",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_chunk_h_parallel_chunk_bwd_kernel_dh_reduction/test_chunk_h_parallel_chunk_bwd_kernel_dh_reduction_npu.py",
+      "table_config": {
+        "BK": 128,
+        "BV": 128,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 2,
+      "configurations": [
+        {
+          "test_id": "vv_e4609d5a9a7ab1e8-3bcc371a26ac",
+          "test_manifest": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__66eb8bea/tests/vv_e4609d5a9a7ab1e8-3bcc371a26ac/test.json",
+          "test_manifest_sha256": "9c8e8ea013055ef16dfb7777b09a0149c74994dd5e861421bad9efc45ea973ae",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BK": 128,
+            "BV": 128
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/dh_reduction",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "profiling_only",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

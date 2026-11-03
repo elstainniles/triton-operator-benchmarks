@@ -51,7 +51,7 @@ class FlaTestSources(unittest.TestCase):
         path.write_text(json.dumps(data))
 
     def rehash(self):
-        self.record['files'] = [dict(path=str(p.relative_to(self.variant)),sha256=self.sha(p),role=role)
+        self.record['files'] = [dict(path=p.relative_to(self.variant).as_posix(),sha256=self.sha(p),role=role)
                                for p,role in [(self.source,'test'),(self.fixture,'fixture_provider')]]
 
     def save(self):

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA283",
+  "cases": [
+    {
+      "index": 271,
+      "row": 473,
+      "id": "vv-row-473",
+      "operator_id": "FLA283",
+      "kernel": "packunpack_sequence_kernel",
+      "path": "operators/flash_linear_attention/packunpack_sequence_kernel",
+      "shape_dtype": "x: [4,512,256] / float32\ny: [1288,256] / float32\ncu_seqlens: [5] / int64",
+      "operator_type": "VV",
+      "original_test": "test_packunpack_sequence_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/packunpack_sequence_kernel/test_packunpack_sequence_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_d168ebc75713b444-42907dbd0ab4",
+          "test_manifest": "operators/flash_linear_attention/packunpack_sequence_kernel/tests/vv_d168ebc75713b444-42907dbd0ab4/test.json",
+          "test_manifest_sha256": "57b5c6c32f8170291875aafa37a716e6187895aadb647ed2b76f93e14731520b",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 272,
+      "row": 474,
+      "id": "vv-row-474",
+      "operator_id": "FLA283",
+      "kernel": "packunpack_sequence_kernel",
+      "path": "operators/flash_linear_attention/packunpack_sequence_kernel",
+      "shape_dtype": "x: [4,512,256] / float32\ny: [1288,256] / float32\ncu_seqlens: [5] / int64",
+      "operator_type": "VV",
+      "original_test": "test_packunpack_sequence_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/packunpack_sequence_kernel/test_packunpack_sequence_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 10.63,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_d168ebc75713b444-832448747e0f",
+          "test_manifest": "operators/flash_linear_attention/packunpack_sequence_kernel/tests/vv_d168ebc75713b444-832448747e0f/test.json",
+          "test_manifest_sha256": "bdc9122c2371756739e5bab0233fc20c24a60cb4abfc823ed1777523c043bfcc",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

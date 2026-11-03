@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA094",
+  "cases": [
+    {
+      "index": 127,
+      "row": 329,
+      "id": "vv-row-329",
+      "operator_id": "FLA094",
+      "kernel": "rwkv_seq_mix_kernel",
+      "path": "operators/flash_linear_attention/rwkv_seq_mix_kernel",
+      "shape_dtype": "x_ptr,output_ptr: [2,1024,1024] / float16\nx_prev_ptr: [2,1,1024] / float16\nmix_k_ptr: [1024] / float16",
+      "operator_type": "VV",
+      "original_test": "test_rwkv_seq_mix_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_rwkv_seq_mix_kernel/test_rwkv_seq_mix_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 106.55,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_570b6e27e59a6b07-1824025310d6",
+          "test_manifest": "operators/flash_linear_attention/rwkv_seq_mix_kernel/tests/vv_570b6e27e59a6b07-1824025310d6/test.json",
+          "test_manifest_sha256": "6aad3f2774745ce94b54224b99156eab7932da92cf51f833ba6eeffd1193bb9d",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/rwkv_seq_mix"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

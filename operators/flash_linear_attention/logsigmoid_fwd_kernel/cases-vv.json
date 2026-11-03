@@ -1,0 +1,499 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA003",
+  "cases": [
+    {
+      "index": 18,
+      "row": 220,
+      "id": "vv-row-220",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel",
+      "shape_dtype": "x,y: [4,2048,1024] / float32\n规格：original_config_0",
+      "operator_type": "VV",
+      "original_test": "test_logsigmoid_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/logsigmoid_fwd_kernel/test_logsigmoid_fwd_kernel_npu.py",
+      "table_config": {
+        "B": 8192,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 173.15,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_0a311168edf14e8d-cfac4431fdb2",
+          "test_manifest": "operators/flash_linear_attention/logsigmoid_fwd_kernel/tests/vv_0a311168edf14e8d-cfac4431fdb2/test.json",
+          "test_manifest_sha256": "1c99a88ff4c043f568e4234e3f4473c61a662ed55370069dc5e3ab9de4069f4a",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/logsigmoid_fwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 0,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 1024,
+              "dtype": "torch.float32",
+              "temperature": 1.0
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [
+        "vv_0a311168edf14e8d-474e38cc04d3"
+      ],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 19,
+      "row": 221,
+      "id": "vv-row-221",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel",
+      "shape_dtype": "x,y: [4,2048,2048] / bfloat16\n规格：original_config_1",
+      "operator_type": "VV",
+      "original_test": "test_logsigmoid_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/logsigmoid_fwd_kernel/test_logsigmoid_fwd_kernel_npu.py",
+      "table_config": {
+        "B": 8192,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 357.71,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_0a311168edf14e8d-12e04515bd98",
+          "test_manifest": "operators/flash_linear_attention/logsigmoid_fwd_kernel/tests/vv_0a311168edf14e8d-12e04515bd98/test.json",
+          "test_manifest_sha256": "ac07885f52fe4106eaef2a99a55c7273b3a7fe99b8e985cd8ed915eb445b2cbc",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/logsigmoid_fwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 1,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16",
+              "temperature": 0.5
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 20,
+      "row": 222,
+      "id": "vv-row-222",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel",
+      "shape_dtype": "x,y: [4,2048,2048] / bfloat16\n规格：original_config_2",
+      "operator_type": "VV",
+      "original_test": "test_logsigmoid_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/logsigmoid_fwd_kernel/test_logsigmoid_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 8,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_0a311168edf14e8d-51853a86b844",
+          "test_manifest": "operators/flash_linear_attention/logsigmoid_fwd_kernel/tests/vv_0a311168edf14e8d-51853a86b844/test.json",
+          "test_manifest_sha256": "86180f3856a6d9fec70ee2fd6efdbb23a9ae746419dd2b8ff79a6adbd7aea58a",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/logsigmoid_fwd_kernel"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 2,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16",
+              "temperature": 2.0
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 21,
+      "row": 223,
+      "id": "vv-row-223",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel",
+      "shape_dtype": "x,y: [4,2048,2048] / bfloat16\n规格：original_config_2",
+      "operator_type": "VV",
+      "original_test": "test_logsigmoid_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/logsigmoid_fwd_kernel/test_logsigmoid_fwd_kernel_npu.py",
+      "table_config": {
+        "B": 8192,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 331.72,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_0a311168edf14e8d-cfac4431fdb2",
+          "test_manifest": "operators/flash_linear_attention/logsigmoid_fwd_kernel/tests/vv_0a311168edf14e8d-cfac4431fdb2/test.json",
+          "test_manifest_sha256": "1c99a88ff4c043f568e4234e3f4473c61a662ed55370069dc5e3ab9de4069f4a",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/logsigmoid_fwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 2,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16",
+              "temperature": 2.0
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [
+        "vv_0a311168edf14e8d-474e38cc04d3"
+      ],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 227,
+      "row": 429,
+      "id": "vv-row-429",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel",
+      "shape_dtype": "x,y: [4,2048,1024] / float32\n规格：original_config_0",
+      "operator_type": "VV",
+      "original_test": "test_logsigmoid_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/logsigmoid_fwd_kernel/test_logsigmoid_fwd_kernel_npu.py",
+      "table_config": {
+        "B": 8192,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 172.83,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_a9535e34bbabfb16-dfa11e9546c8",
+          "test_manifest": "operators/flash_linear_attention/logsigmoid_fwd_kernel/tests/vv_a9535e34bbabfb16-dfa11e9546c8/test.json",
+          "test_manifest_sha256": "9837774521e23f8d8a57b3379666b0b8ba6a859ae666c6e776da212215764624",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/logsigmoid_fwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 0,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 1024,
+              "dtype": "torch.float32",
+              "temperature": 1.0
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [
+        "vv_a9535e34bbabfb16-c46a2b0f4b63",
+        "vv_a9535e34bbabfb16-53de8f4b093a"
+      ],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 228,
+      "row": 430,
+      "id": "vv-row-430",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel",
+      "shape_dtype": "x,y: [4,2048,2048] / bfloat16\n规格：original_config_1",
+      "operator_type": "VV",
+      "original_test": "test_logsigmoid_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/logsigmoid_fwd_kernel/test_logsigmoid_fwd_kernel_npu.py",
+      "table_config": {
+        "B": 8192,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 330.24,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_a9535e34bbabfb16-dfa11e9546c8",
+          "test_manifest": "operators/flash_linear_attention/logsigmoid_fwd_kernel/tests/vv_a9535e34bbabfb16-dfa11e9546c8/test.json",
+          "test_manifest_sha256": "9837774521e23f8d8a57b3379666b0b8ba6a859ae666c6e776da212215764624",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/logsigmoid_fwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 1,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16",
+              "temperature": 0.5
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [
+        "vv_a9535e34bbabfb16-c46a2b0f4b63",
+        "vv_a9535e34bbabfb16-53de8f4b093a"
+      ],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 229,
+      "row": 431,
+      "id": "vv-row-431",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel",
+      "shape_dtype": "x,y: [4,2048,2048] / bfloat16\n规格：original_config_2",
+      "operator_type": "VV",
+      "original_test": "test_logsigmoid_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/logsigmoid_fwd_kernel/test_logsigmoid_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_a9535e34bbabfb16-96fdf74e973a",
+          "test_manifest": "operators/flash_linear_attention/logsigmoid_fwd_kernel/tests/vv_a9535e34bbabfb16-96fdf74e973a/test.json",
+          "test_manifest_sha256": "3eaae894a32829f84ddd56070c26c6ca539e6484e4b87a4d06935945936d8c14",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/logsigmoid_fwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 2,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16",
+              "temperature": 2.0
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 230,
+      "row": 432,
+      "id": "vv-row-432",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel",
+      "shape_dtype": "x,y: [4,2048,2048] / bfloat16\n规格：original_config_2",
+      "operator_type": "VV",
+      "original_test": "test_logsigmoid_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/logsigmoid_fwd_kernel/test_logsigmoid_fwd_kernel_npu.py",
+      "table_config": {
+        "B": 8192,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 330.81,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_a9535e34bbabfb16-dfa11e9546c8",
+          "test_manifest": "operators/flash_linear_attention/logsigmoid_fwd_kernel/tests/vv_a9535e34bbabfb16-dfa11e9546c8/test.json",
+          "test_manifest_sha256": "9837774521e23f8d8a57b3379666b0b8ba6a859ae666c6e776da212215764624",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "B": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/logsigmoid_fwd_kernel"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": {
+            "global_name": "CONFIGS",
+            "index": 2,
+            "expected": {
+              "B": 4,
+              "T": 2048,
+              "D": 2048,
+              "dtype": "torch.bfloat16",
+              "temperature": 2.0
+            }
+          }
+        }
+      ],
+      "equivalent_test_ids": [
+        "vv_a9535e34bbabfb16-c46a2b0f4b63",
+        "vv_a9535e34bbabfb16-53de8f4b093a"
+      ],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA041",
+  "cases": [
+    {
+      "index": 58,
+      "row": 260,
+      "id": "vv-row-260",
+      "operator_id": "FLA041",
+      "kernel": "chunk_fwd_kernel_h_reduction",
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h_reduction__7a0a718e",
+      "shape_dtype": "hs,hr: [16,8,128,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_fwd_kernel_h_reduction",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_chunk_h_split_chunk_fwd_kernel_h_reduction/test_chunk_h_split_chunk_fwd_kernel_h_reduction_npu.py",
+      "table_config": {
+        "BK": 64,
+        "BV": 64,
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 55.85,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_29944ae865da32f1-4326b7a32de8",
+          "test_manifest": "operators/flash_linear_attention/chunk_fwd_kernel_h_reduction__7a0a718e/tests/vv_29944ae865da32f1-4326b7a32de8/test.json",
+          "test_manifest_sha256": "3da61a62077c20dcd998ff9ecf45ece4918a237799f86297dd9a31e7c2bd61b6",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BK": 64,
+            "BV": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/chunk_fwd_h_reduction"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 59,
+      "row": 261,
+      "id": "vv-row-261",
+      "operator_id": "FLA041",
+      "kernel": "chunk_fwd_kernel_h_reduction",
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h_reduction__7a0a718e",
+      "shape_dtype": "hs,hr: [16,8,128,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_fwd_kernel_h_reduction",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_chunk_h_split_chunk_fwd_kernel_h_reduction/test_chunk_h_split_chunk_fwd_kernel_h_reduction_npu.py",
+      "table_config": {
+        "BK": 64,
+        "BV": 64,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_29944ae865da32f1-c922bfced868",
+          "test_manifest": "operators/flash_linear_attention/chunk_fwd_kernel_h_reduction__7a0a718e/tests/vv_29944ae865da32f1-c922bfced868/test.json",
+          "test_manifest_sha256": "c549341f5b710ccd26c006945281fef32acee601555b7f464e5199a99fc7ebca",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BK": 64,
+            "BV": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/chunk_fwd_h_reduction"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

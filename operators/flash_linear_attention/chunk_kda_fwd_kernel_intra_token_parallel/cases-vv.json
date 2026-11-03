@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA075",
+  "cases": [
+    {
+      "index": 270,
+      "row": 472,
+      "id": "vv-row-472",
+      "operator_id": "FLA075",
+      "kernel": "chunk_kda_fwd_kernel_intra_token_parallel",
+      "path": "operators/flash_linear_attention/chunk_kda_fwd_kernel_intra_token_parallel",
+      "shape_dtype": "q,k,g,Aqk: [2,2048,8,64] / float16\nbeta: [2,2048,8] / float16\nAkk: [2,2048,8,16] / float16",
+      "operator_type": "VV",
+      "original_test": "test_chunk_kda_fwd_kernel_intra_token_parallel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_chunk_kda_fwd_kernel_intra_token_parallel/test_chunk_kda_fwd_kernel_intra_token_parallel_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 401.85,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_ce8659814059cca9-b5ef133d8264",
+          "test_manifest": "operators/flash_linear_attention/chunk_kda_fwd_kernel_intra_token_parallel/tests/vv_ce8659814059cca9-b5ef133d8264/test.json",
+          "test_manifest_sha256": "422148f72714ba0b5bc4f44a12dcb9d058ea518de3e3132db33059c1dd0b4e80",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/chunk_kda_intra_token"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

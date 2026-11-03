@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+  "cases": [
+    {
+      "index": 66,
+      "row": 268,
+      "id": "vv-row-268",
+      "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+      "kernel": "solve_tril_16x16_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel",
+      "shape_dtype": "A,Ai: [4,256,4,16] / float32",
+      "operator_type": "VV",
+      "original_test": "test_solve_tril_16x16_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/solve_tril_16x16_kernel/test_solve_tril_16x16_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_stages": 5,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_2c791eb1ddd455e5-1968e8b0997a",
+          "test_manifest": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel/tests/vv_2c791eb1ddd455e5-1968e8b0997a/test.json",
+          "test_manifest_sha256": "0079af547932e4cc0504d00c394831c568dae1f9af2e62328e44d781627eda7a",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 5,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/solve_tril_16x16"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 67,
+      "row": 269,
+      "id": "vv-row-269",
+      "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+      "kernel": "solve_tril_16x16_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel",
+      "shape_dtype": "A,Ai: [4,256,4,16] / float32",
+      "operator_type": "VV",
+      "original_test": "test_solve_tril_16x16_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/solve_tril_16x16_kernel/test_solve_tril_16x16_kernel_npu.py",
+      "table_config": {
+        "DOT_PRECISION": "ieee",
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 19.29,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_2c791eb1ddd455e5-32e481aec826",
+          "test_manifest": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel/tests/vv_2c791eb1ddd455e5-32e481aec826/test.json",
+          "test_manifest_sha256": "76d1a866c5e3440c08697a0cba8882c44b8fe0724b1974e9302944488960be07",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "DOT_PRECISION": "ieee"
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/solve_tril_16x16"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 155,
+      "row": 357,
+      "id": "vv-row-357",
+      "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+      "kernel": "solve_tril_16x16_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel",
+      "shape_dtype": "A,Ai: [4,256,4,16] / float32",
+      "operator_type": "VV",
+      "original_test": "test_solve_tril_16x16_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/solve_tril_16x16_kernel/test_solve_tril_16x16_kernel_npu.py",
+      "table_config": {
+        "num_warps": 8,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_6ac1ab6635b17bea-c62f407fcb42",
+          "test_manifest": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel/tests/vv_6ac1ab6635b17bea-c62f407fcb42/test.json",
+          "test_manifest_sha256": "5329555ac5227c820048b4a7a66592d1c2fbb07a4e80bc0bee76ad0a1b7e72da",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/solve_tril_16x16"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 156,
+      "row": 358,
+      "id": "vv-row-358",
+      "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+      "kernel": "solve_tril_16x16_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel",
+      "shape_dtype": "A,Ai: [4,256,4,16] / float32",
+      "operator_type": "VV",
+      "original_test": "test_solve_tril_16x16_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/solve_tril_16x16_kernel/test_solve_tril_16x16_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 19.62,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_6ac1ab6635b17bea-e52243c979d6",
+          "test_manifest": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel/tests/vv_6ac1ab6635b17bea-e52243c979d6/test.json",
+          "test_manifest_sha256": "94d01f82521f697384a6b87739888bf8ce9543785d875ef24025b9072521f636",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/solve_tril_16x16"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

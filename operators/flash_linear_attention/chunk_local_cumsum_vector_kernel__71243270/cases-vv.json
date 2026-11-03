@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA113",
+  "cases": [
+    {
+      "index": 185,
+      "row": 387,
+      "id": "vv-row-387",
+      "operator_id": "FLA113",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270",
+      "shape_dtype": "s,o: [4,2048,8,1024] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_local_cumsum_vector_kernel_function",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_local_cumsum_vector_kernel/test_chunk_local_cumsum_vector_kernel_torch_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_838d1377c54356dc-2cc61f1f4491",
+          "test_manifest": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270/tests/vv_838d1377c54356dc-2cc61f1f4491/test.json",
+          "test_manifest_sha256": "5993d0796dcf36c725b6b8012811b6ff06431d0d18fb7e53c8234a973b3d8bfd",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/cumsum_local_original"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 186,
+      "row": 388,
+      "id": "vv-row-388",
+      "operator_id": "FLA113",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270",
+      "shape_dtype": "s,o: [4,2048,8,1024] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_local_cumsum_vector_kernel_function",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_local_cumsum_vector_kernel/test_chunk_local_cumsum_vector_kernel_torch_npu.py",
+      "table_config": {
+        "BS": 32,
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 916.05,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_838d1377c54356dc-ce7d707fb54f",
+          "test_manifest": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270/tests/vv_838d1377c54356dc-ce7d707fb54f/test.json",
+          "test_manifest_sha256": "4d18ec1724baa1005aed19a692b069de36ac8666f050724125591be1ae45904f",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BS": 32
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/cumsum_local_original"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 187,
+      "row": 389,
+      "id": "vv-row-389",
+      "operator_id": "FLA113",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270",
+      "shape_dtype": "s,o: [2,256,3,129] / float32\n规格：cumsum_local_tail",
+      "operator_type": "VV",
+      "original_test": "test_chunk_local_cumsum_vector_kernel_function",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_local_cumsum_vector_kernel/test_chunk_local_cumsum_vector_kernel_torch_npu.py",
+      "table_config": {
+        "BS": 32,
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 9.77,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_838d1377c54356dc-8a4ff13c499f",
+          "test_manifest": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270/tests/vv_838d1377c54356dc-8a4ff13c499f/test.json",
+          "test_manifest_sha256": "0fc681e34fe539043cb0fd23fc83ec68857624ce113b00bfb1f4a0d2f549a18a",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BS": 32
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/cumsum_local_tail"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 188,
+      "row": 390,
+      "id": "vv-row-390",
+      "operator_id": "FLA113",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270",
+      "shape_dtype": "s,o: [2,256,3,129] / float32\n规格：cumsum_local_tail",
+      "operator_type": "VV",
+      "original_test": "test_chunk_local_cumsum_vector_kernel_function",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_local_cumsum_vector_kernel/test_chunk_local_cumsum_vector_kernel_torch_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_838d1377c54356dc-0e247176acd6",
+          "test_manifest": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270/tests/vv_838d1377c54356dc-0e247176acd6/test.json",
+          "test_manifest_sha256": "c4622d8fd2f39c67ba8c5ee807df2bab3910b14cdde964be661d280eb4c8cfcd",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/cumsum_local_tail"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

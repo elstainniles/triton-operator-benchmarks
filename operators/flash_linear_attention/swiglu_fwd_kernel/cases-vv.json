@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA007",
+  "cases": [
+    {
+      "index": 284,
+      "row": 486,
+      "id": "vv-row-486",
+      "operator_id": "FLA007",
+      "kernel": "swiglu_fwd_kernel",
+      "path": "operators/flash_linear_attention/swiglu_fwd_kernel",
+      "shape_dtype": "x,y,z: [2,1024,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_swiglu_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_swiglu_fwd_kernel/test_swiglu_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 16,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_e6759d0fb3978577-64f0dc0e672f",
+          "test_manifest": "operators/flash_linear_attention/swiglu_fwd_kernel/tests/vv_e6759d0fb3978577-64f0dc0e672f/test.json",
+          "test_manifest_sha256": "d420c58f3b96e88136ba209a88739f57e35f23dbe6378faa1eb26a4fc6d336e7",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/swiglu_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 285,
+      "row": 487,
+      "id": "vv-row-487",
+      "operator_id": "FLA007",
+      "kernel": "swiglu_fwd_kernel",
+      "path": "operators/flash_linear_attention/swiglu_fwd_kernel",
+      "shape_dtype": "x,y,z: [2,1024,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_swiglu_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_swiglu_fwd_kernel/test_swiglu_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 13.96,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_e6759d0fb3978577-2e9ff58511f7",
+          "test_manifest": "operators/flash_linear_attention/swiglu_fwd_kernel/tests/vv_e6759d0fb3978577-2e9ff58511f7/test.json",
+          "test_manifest_sha256": "7cee03a484542c00ad04c0030f0a5b4b4b0a6908b0ee4552d67c94bb2e6e567d",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/swiglu_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA102",
+  "cases": [
+    {
+      "index": 214,
+      "row": 416,
+      "id": "vv-row-416",
+      "operator_id": "FLA102",
+      "kernel": "gate_output_correction_bwd_kernel",
+      "path": "operators/flash_linear_attention/gate_output_correction_bwd_kernel",
+      "shape_dtype": "grad_output_ptr,o_ptr,g_ptr,grad_o_ptr,grad_g_ptr: [2,1024,1024] / float32\nr_ptr,k_ptr,v_ptr,grad_r_ptr,grad_k_ptr,grad_r_k_intermediate_ptr,grad_v_ptr: [2,1024,16,64] / float32\nr_k_ptr: [16,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_gate_output_correction_bwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_gate_output_correction_bwd_kernel/test_gate_output_correction_bwd_kernel_npu.py",
+      "table_config": {
+        "BT": 4,
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "精度问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_9ecf456248792a04-f2f3a0c2c60d",
+          "test_manifest": "operators/flash_linear_attention/gate_output_correction_bwd_kernel/tests/vv_9ecf456248792a04-f2f3a0c2c60d/test.json",
+          "test_manifest_sha256": "b60df7c93446d528cc947964f0aea652cc0ea8d80f47bea672c00f5e543257f6",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 4,
+            "num_ctas": 1,
+            "BT": 4
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/gate_bwd",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 215,
+      "row": 417,
+      "id": "vv-row-417",
+      "operator_id": "FLA102",
+      "kernel": "gate_output_correction_bwd_kernel",
+      "path": "operators/flash_linear_attention/gate_output_correction_bwd_kernel",
+      "shape_dtype": "grad_output_ptr,o_ptr,g_ptr,grad_o_ptr,grad_g_ptr: [2,1024,1024] / float32\nr_ptr,k_ptr,v_ptr,grad_r_ptr,grad_k_ptr,grad_r_k_intermediate_ptr,grad_v_ptr: [2,1024,16,64] / float32\nr_k_ptr: [16,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_gate_output_correction_bwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_gate_output_correction_bwd_kernel/test_gate_output_correction_bwd_kernel_npu.py",
+      "table_config": {
+        "BT": 4,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "精度问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_9ecf456248792a04-587da5c70e92",
+          "test_manifest": "operators/flash_linear_attention/gate_output_correction_bwd_kernel/tests/vv_9ecf456248792a04-587da5c70e92/test.json",
+          "test_manifest_sha256": "b087f7a7f0f6d038af0da5d1a09eb4683c1b78dc8b7ee2365ad0b2356c1eef72",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BT": 4
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/gate_bwd",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

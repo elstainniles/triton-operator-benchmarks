@@ -153,6 +153,14 @@ class CpuExecution(unittest.TestCase):
         self.execute();self.assertEqual(self.result['status'],'correct')
         self.assertEqual(self.result['last_launch']['batch_grid'],[3,2,1])
 
+    def test_vv_policy_does_not_leave_an_embedded_block_factor_in_baseline(self):
+        from opbench.fla_vv_runner import target_launch_policy
+        self.args.target_launch_policy = target_launch_policy
+        self.write(' kernel.run(x,y,grid=(5,2),warmup=False,block_batching_factor=4,block_batching_axis=0)\n torch.testing.assert_close(y,x+1)\n')
+        self.execute()
+        self.assertEqual(self.result['status'], 'correct')
+        self.assertNotIn('block_batching_factor', self.result['launch_options'])
+
     def test_device_samples_are_target_only_mean_and_restore_outside_profile(self):
         active={'value':False};counter={'i':0}
         class Snapshot:

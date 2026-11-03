@@ -243,6 +243,10 @@ def execute(directory, spec, args, result):
     def record(jit, *values, grid, warmup, **kwargs):
         is_target = (jit.fn.__name__ == target and not state.get('tuning')
                      and Path(jit.fn.__code__.co_filename).resolve().is_relative_to(directory.resolve()))
+        # Opt-in for the ordered VV runner; legacy single-test/CV behavior stays intact.
+        policy = getattr(args, 'target_launch_policy', None)
+        if is_target and policy is not None:
+            values, kwargs = policy(jit, values, kwargs, selection)
         snapshot = None
         actual = {'grid': grid if not callable(grid) else None}
         def chosen_grid(meta):
@@ -259,6 +263,10 @@ def execute(directory, spec, args, result):
         compiled = original_run(jit, *values, grid=chosen_grid if callable(grid) else grid,
                                 warmup=warmup, **kwargs)
         if is_target and not warmup:
+            if policy is not None and not args.block_factor:
+                launch = getattr(compiled, 'last_launch', None)
+                if isinstance(launch, dict) and launch.get('runtime_status') == 'APPLIED':
+                    raise RuntimeError('Baseline unexpectedly applied block batching')
             if snapshot: snapshot.capture_post()
             name = runtime_kernel_name(compiled, target)
             launch = getattr(compiled, 'last_launch', None)
@@ -283,6 +291,9 @@ def execute(directory, spec, args, result):
         for name in ('allclose', 'equal'):
             stack.enter_context(patch.object(torch, name, observer.compare(getattr(torch, name))))
         module = importlib.import_module(spec['module'])
+        module_policy = getattr(args, 'test_module_policy', None)
+        if module_policy is not None:
+            module_policy(module)
         function = getattr(module, spec['function'])
         old_trace = sys.gettrace()
         state['recording'] = True

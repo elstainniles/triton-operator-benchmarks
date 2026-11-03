@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA059",
+  "cases": [
+    {
+      "index": 75,
+      "row": 277,
+      "id": "vv-row-277",
+      "operator_id": "FLA059",
+      "kernel": "chunk_dplr_bwd_dgk_kernel",
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_dgk_kernel",
+      "shape_dtype": "dgk,dgk_offset,dgk_output: [2,256,4,64] / float32\ndgk_last: [16,4,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_dplr_bwd_dgk_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_chunk_dplr_bwd_dgk_kernel/test_chunk_dplr_bwd_dgk_kernel_npu.py",
+      "table_config": {
+        "BK": 64,
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 5.88,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_2ff7e15daa59a49e-8cd85cf9f040",
+          "test_manifest": "operators/flash_linear_attention/chunk_dplr_bwd_dgk_kernel/tests/vv_2ff7e15daa59a49e-8cd85cf9f040/test.json",
+          "test_manifest_sha256": "3d2e7c069a05e6b32b188c58ff4aaf74d3b09529da88513765826e5749df2caa",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 4,
+            "num_ctas": 1,
+            "BK": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/dplr_dgk"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 76,
+      "row": 278,
+      "id": "vv-row-278",
+      "operator_id": "FLA059",
+      "kernel": "chunk_dplr_bwd_dgk_kernel",
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_dgk_kernel",
+      "shape_dtype": "dgk,dgk_offset,dgk_output: [2,256,4,64] / float32\ndgk_last: [16,4,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_dplr_bwd_dgk_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_chunk_dplr_bwd_dgk_kernel/test_chunk_dplr_bwd_dgk_kernel_npu.py",
+      "table_config": {
+        "BK": 64,
+        "num_warps": 16,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_2ff7e15daa59a49e-b2ea18a48f7a",
+          "test_manifest": "operators/flash_linear_attention/chunk_dplr_bwd_dgk_kernel/tests/vv_2ff7e15daa59a49e-b2ea18a48f7a/test.json",
+          "test_manifest_sha256": "7eb8728aa77d8de43b43ea1b082cd95f444531b3c80e2d9f16e260a278311bc5",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BK": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/dplr_dgk"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

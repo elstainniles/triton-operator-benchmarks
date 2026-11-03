@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA240",
+  "cases": [
+    {
+      "index": 136,
+      "row": 338,
+      "id": "vv-row-338",
+      "operator_id": "FLA240",
+      "kernel": "compare_and_swap_kernel",
+      "path": "operators/flash_linear_attention/compare_and_swap_kernel",
+      "shape_dtype": "x_ptr,output_x_ptr: [4096] / float32\nids_ptr,output_ids_ptr: [4096] / int32",
+      "operator_type": "VV",
+      "original_test": "test_compare_and_swap",
+      "source_test": "tests/ops/ascend_ops/vv_operator/_compare_and_swap/test_compare_and_swap_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3.89,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "没有足够的块合并",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_5d08d557b2242491-706d94de5a04",
+          "test_manifest": "operators/flash_linear_attention/compare_and_swap_kernel/tests/vv_5d08d557b2242491-706d94de5a04/test.json",
+          "test_manifest_sha256": "fdaf54e947e92a020b3276b849a5efb446867bb5f1ebb456f9f804cd97df6b03",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

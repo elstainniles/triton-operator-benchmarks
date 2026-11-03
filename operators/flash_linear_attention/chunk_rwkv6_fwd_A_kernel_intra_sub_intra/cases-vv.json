@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA089",
+  "cases": [
+    {
+      "index": 212,
+      "row": 414,
+      "id": "vv-row-414",
+      "operator_id": "FLA089",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+      "shape_dtype": "q,k: [4,1000,4,64] / float16\ngi,ge,A: [4,1000,4,64] / float32\nu: [4,64] / float16",
+      "operator_type": "VV",
+      "original_test": "test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_rwkv6_fwd_A_kernel_intra_sub_intra/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_9e5f518adbb8ea1b-384a434017b1",
+          "test_manifest": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra/tests/vv_9e5f518adbb8ea1b-384a434017b1/test.json",
+          "test_manifest_sha256": "e3b533f42a7a92a64bebbf74b5b836c5875f7729ab1a2fa6006ad69fcc115296",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions_unchanged",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 213,
+      "row": 415,
+      "id": "vv-row-415",
+      "operator_id": "FLA089",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+      "shape_dtype": "q,k: [4,1000,4,64] / float16\ngi,ge,A: [4,1000,4,64] / float32\nu: [4,64] / float16",
+      "operator_type": "VV",
+      "original_test": "test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_rwkv6_fwd_A_kernel_intra_sub_intra/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 94.29,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_9e5f518adbb8ea1b-ed0d83ead4da",
+          "test_manifest": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra/tests/vv_9e5f518adbb8ea1b-ed0d83ead4da/test.json",
+          "test_manifest_sha256": "5f19747a3400443d925772324f6df19c84d487f7426af39dc35e804b938c3182",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

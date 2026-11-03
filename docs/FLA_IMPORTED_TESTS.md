@@ -4,6 +4,10 @@
 
 全量索引见 [test-sources.json](../operators/flash_linear_attention/test-sources.json)。同一原用例可能有不同 shape、dtype、tile 或修订后的测试实现，因此使用完整 `id` 选择配置；`case_id` 用于关联原用例。`test.json` 记录来源、原验收方式、生成器及各文件哈希。此前静态清单未登记的动态调用目标保存在 `additional_tests/<kernel>/`，来源另行列明。
 
+按 `11.1全量结果` 中 VV 顺序整批运行，请使用统一的 [VV 批跑入口](FLA_VV.md)：
+`python tools/run_fla_vv.py plan --cases 1-20` 可先预览，`run --cases 1-20 ...` 串行测试并汇总。
+该入口直接复用这里的精确测试配置，支持范围选择、任务/卡锁和续跑。
+
 本批覆盖已有可复测清单中的 351 个原用例、631 个配置变体，关联 286 个源码目标。原始 352 项中，`cv_eb0c60313edf85dd` 未加入执行入口：`fla/ops/path_attn/intra_chunk_preprocess_bwd_prepare.py` 的原 wrapper 在 `return_h=True` 时分配的 `h` 与 kernel 写地址不匹配，原规格存在越界及重叠写入；这不是缺少输入文件，需要先修复原实现。
 
 ## 查看和检查输入

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA078",
+  "cases": [
+    {
+      "index": 92,
+      "row": 294,
+      "id": "vv-row-294",
+      "operator_id": "FLA078",
+      "kernel": "kda_gate_chunk_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_chunk_cumsum_vector_kernel",
+      "shape_dtype": "s: [2,1024,8,64] / float16\nA_log: [8] / float16\ndt_bias: [512] / float16\no: [2,1024,8,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_kda_gate_chunk_cumsum_vector_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/kda_gate_chunk_cumsum_vector_kernel/test_kda_gate_chunk_cumsum_vector_kernel_npu.py",
+      "table_config": {
+        "num_warps": 8,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_40b6ead2edffb6d7-334cb66167e8",
+          "test_manifest": "operators/flash_linear_attention/kda_gate_chunk_cumsum_vector_kernel/tests/vv_40b6ead2edffb6d7-334cb66167e8/test.json",
+          "test_manifest_sha256": "6346914b7e4b308e4fbe0da2a51af0da1b0ff20c7d3e08be11cdd4861a28da74",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 93,
+      "row": 295,
+      "id": "vv-row-295",
+      "operator_id": "FLA078",
+      "kernel": "kda_gate_chunk_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_chunk_cumsum_vector_kernel",
+      "shape_dtype": "s: [2,1024,8,64] / float16\nA_log: [8] / float16\ndt_bias: [512] / float16\no: [2,1024,8,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_kda_gate_chunk_cumsum_vector_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/kda_gate_chunk_cumsum_vector_kernel/test_kda_gate_chunk_cumsum_vector_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 2236.93,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_40b6ead2edffb6d7-0969229831e7",
+          "test_manifest": "operators/flash_linear_attention/kda_gate_chunk_cumsum_vector_kernel/tests/vv_40b6ead2edffb6d7-0969229831e7/test.json",
+          "test_manifest_sha256": "50fac69f5cff27fa588b59fe2d55c6e460373d1d9d115ac4c88a94000efdefb5",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

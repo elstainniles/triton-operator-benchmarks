@@ -1,0 +1,320 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA288",
+  "cases": [
+    {
+      "index": 201,
+      "row": 403,
+      "id": "vv-row-403",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 512,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "启动配置错误",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_919492cb67b6774f-149a2dd45ec6",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_kernel/tests/vv_919492cb67b6774f-149a2dd45ec6/test.json",
+          "test_manifest_sha256": "d39c7ee4e28f21cf1e17575285f96828662c368e9570ec407b511f13c0337551",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 512
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 202,
+      "row": 404,
+      "id": "vv-row-404",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 256,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "启动配置错误",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_919492cb67b6774f-0592be006d60",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_kernel/tests/vv_919492cb67b6774f-0592be006d60/test.json",
+          "test_manifest_sha256": "81cb751ed8412ac980856a5e36dcacf22883c3fd9274fd9b2b13e7a551da792e",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 256
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。",
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 203,
+      "row": 405,
+      "id": "vv-row-405",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel",
+      "shape_dtype": "input,output: [65539] / float32\n规格：original_autotune_bs1024_w1_fixed_wrapper_grid",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 1024,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_919492cb67b6774f-545c8f6429c6",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_kernel/tests/vv_919492cb67b6774f-545c8f6429c6/test.json",
+          "test_manifest_sha256": "abbd11d4f61e204d357a9cfddd2ac7f0ff34f1beaafce18daac7739146cd0c3c",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 1024
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 224,
+      "row": 426,
+      "id": "vv-row-426",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 512,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "启动配置错误",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_a81b12bc30c8f5aa-19e0ae068447",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_kernel/tests/vv_a81b12bc30c8f5aa-19e0ae068447/test.json",
+          "test_manifest_sha256": "81e5369460b1591fbf1b725ac3aff2475b792981995da1093136b12ed1d25487",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 512
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 225,
+      "row": 427,
+      "id": "vv-row-427",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 256,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "启动配置错误",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_a81b12bc30c8f5aa-5c78414faec5",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_kernel/tests/vv_a81b12bc30c8f5aa-5c78414faec5/test.json",
+          "test_manifest_sha256": "c46a5a493caf3637cb140f424be2ffa37bf8866ba1be59634ab25405e8d60038",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 256
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。",
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 226,
+      "row": 428,
+      "id": "vv-row-428",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel",
+      "shape_dtype": "input,output: [65539] / float32\n规格：original_autotune_bs1024_w1_fixed_wrapper_grid",
+      "operator_type": "VV",
+      "original_test": "test_sigmoid_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 1024,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_a81b12bc30c8f5aa-9eef41c45ae6",
+          "test_manifest": "operators/flash_linear_attention/sigmoid_kernel/tests/vv_a81b12bc30c8f5aa-9eef41c45ae6/test.json",
+          "test_manifest_sha256": "20c4809e20a2dc7c12921f3bdabb304aef27313a88426da41ff5946cec69de59",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 1024
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/sigmoid"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

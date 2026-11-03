@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA021",
+  "cases": [
+    {
+      "index": 115,
+      "row": 317,
+      "id": "vv-row-317",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel",
+      "shape_dtype": "logits_ptr: [2,1025,32000] / bfloat16\nref_logp_ptr,loss_ptr,lse_ptr: [2,1024] / float32\ninput_ids_ptr: [2,1088] / int64\nadvantages_ptr: [2] / float32\ncompletion_mask_ptr: [2,1024] / int32\n规格：grpo_save_kl_false",
+      "operator_type": "VV",
+      "original_test": "test_grpo_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 8192,
+        "num_warps": 16,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_4e7b5a0967a2b961-309a443914d1",
+          "test_manifest": "operators/flash_linear_attention/grpo_fwd_kernel/tests/vv_4e7b5a0967a2b961-309a443914d1/test.json",
+          "test_manifest_sha256": "aa8631f36ec677178ccd223989dca5fdc18955a426b3594d65a19e1cadc85bf8",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 4,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/data",
+              "save_kl": false
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 116,
+      "row": 318,
+      "id": "vv-row-318",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel",
+      "shape_dtype": "logits_ptr: [2,1025,32000] / bfloat16\nref_logp_ptr,loss_ptr,lse_ptr: [2,1024] / float32\ninput_ids_ptr: [2,1088] / int64\nadvantages_ptr: [2] / float32\ncompletion_mask_ptr: [2,1024] / int32\n规格：grpo_save_kl_false",
+      "operator_type": "VV",
+      "original_test": "test_grpo_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 8192,
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 193.42,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_4e7b5a0967a2b961-ece95e8f23b7",
+          "test_manifest": "operators/flash_linear_attention/grpo_fwd_kernel/tests/vv_4e7b5a0967a2b961-ece95e8f23b7/test.json",
+          "test_manifest_sha256": "1919680980d81d65468aee325022e2ab17bc88adafa9e49e01a77c1dad910543",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/data",
+              "save_kl": false
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 117,
+      "row": 319,
+      "id": "vv-row-319",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel",
+      "shape_dtype": "logits_ptr: [2,1025,32000] / bfloat16\nref_logp_ptr,lse_ptr: [2,1024] / float32\ninput_ids_ptr: [2,1088] / int64\nadvantages_ptr: [2] / float32\ncompletion_mask_ptr: [2,1024] / int32\nloss_ptr: [4,1024] / float32\n规格：grpo_save_kl_true",
+      "operator_type": "VV",
+      "original_test": "test_grpo_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 8192,
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 194.43,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_4e7b5a0967a2b961-190eb63bec1f",
+          "test_manifest": "operators/flash_linear_attention/grpo_fwd_kernel/tests/vv_4e7b5a0967a2b961-190eb63bec1f/test.json",
+          "test_manifest_sha256": "391d1a41533da6e09fa40f99756cb0e424226a7618abd23cec2a2ae480cd909f",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/data",
+              "save_kl": true
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 118,
+      "row": 320,
+      "id": "vv-row-320",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel",
+      "shape_dtype": "logits_ptr: [2,1025,32000] / bfloat16\nref_logp_ptr,lse_ptr: [2,1024] / float32\ninput_ids_ptr: [2,1088] / int64\nadvantages_ptr: [2] / float32\ncompletion_mask_ptr: [2,1024] / int32\nloss_ptr: [4,1024] / float32\n规格：grpo_save_kl_true",
+      "operator_type": "VV",
+      "original_test": "test_grpo_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 8192,
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_4e7b5a0967a2b961-f8eb133d86e0",
+          "test_manifest": "operators/flash_linear_attention/grpo_fwd_kernel/tests/vv_4e7b5a0967a2b961-f8eb133d86e0/test.json",
+          "test_manifest_sha256": "06e06c2e62a827f825890880a73ccd3ba1fd839aafe4aa1abe44dfc258662346",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/data",
+              "save_kl": true
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 157,
+      "row": 359,
+      "id": "vv-row-359",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel",
+      "shape_dtype": "logits_ptr: [2,1025,32000] / bfloat16\nref_logp_ptr,loss_ptr,lse_ptr: [2,1024] / float32\ninput_ids_ptr: [2,1088] / int64\nadvantages_ptr: [2] / float32\ncompletion_mask_ptr: [2,1024] / int32\n规格：grpo_save_kl_false",
+      "operator_type": "VV",
+      "original_test": "test_grpo_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 8192,
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 193.32,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_6c97bc8a9d6edaae-fa6ca15d93bd",
+          "test_manifest": "operators/flash_linear_attention/grpo_fwd_kernel/tests/vv_6c97bc8a9d6edaae-fa6ca15d93bd/test.json",
+          "test_manifest_sha256": "523167f37f7fda3d6466fe27c15af196a6be01eccc3781c5f786bf88d6090151",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 4,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/data",
+              "save_kl": false
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 158,
+      "row": 360,
+      "id": "vv-row-360",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel",
+      "shape_dtype": "logits_ptr: [2,1025,32000] / bfloat16\nref_logp_ptr,lse_ptr: [2,1024] / float32\ninput_ids_ptr: [2,1088] / int64\nadvantages_ptr: [2] / float32\ncompletion_mask_ptr: [2,1024] / int32\nloss_ptr: [4,1024] / float32\n规格：grpo_save_kl_true",
+      "operator_type": "VV",
+      "original_test": "test_grpo_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 8192,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 192.29,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_6c97bc8a9d6edaae-5742ec6f2ee3",
+          "test_manifest": "operators/flash_linear_attention/grpo_fwd_kernel/tests/vv_6c97bc8a9d6edaae-5742ec6f2ee3/test.json",
+          "test_manifest_sha256": "2e3b2388193d27b133ebcc3ffcd790feb73b1c92cf8ec8f49103ce0b9e5fffb3",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/data",
+              "save_kl": true
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 159,
+      "row": 361,
+      "id": "vv-row-361",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel",
+      "shape_dtype": "logits_ptr: [2,1025,32000] / bfloat16\nref_logp_ptr,lse_ptr: [2,1024] / float32\ninput_ids_ptr: [2,1088] / int64\nadvantages_ptr: [2] / float32\ncompletion_mask_ptr: [2,1024] / int32\nloss_ptr: [4,1024] / float32\n规格：grpo_save_kl_true",
+      "operator_type": "VV",
+      "original_test": "test_grpo_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/grpo_fwd_kernel/test_grpo_fwd_kernel_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 8192,
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_6c97bc8a9d6edaae-89a1dde43c54",
+          "test_manifest": "operators/flash_linear_attention/grpo_fwd_kernel/tests/vv_6c97bc8a9d6edaae-89a1dde43c54/test.json",
+          "test_manifest_sha256": "e995bdbb6df42ba512d6064cd37801992ebbec325bb512cf844d07e22dfd8e89",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 4,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 8192
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/data",
+              "save_kl": true
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

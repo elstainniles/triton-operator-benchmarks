@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA267",
+  "cases": [
+    {
+      "index": 89,
+      "row": 291,
+      "id": "vv-row-291",
+      "operator_id": "FLA267",
+      "kernel": "fused_recurrent_oja_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_oja_fwd_kernel",
+      "shape_dtype": "q,k,v,o: [2,8,4,64] / bfloat16\ngv: [2,8,4,64] / float32\nbeta: [2,8,4] / bfloat16\nh0,ht: [2,4,64,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_oja_fwd_kernel_vs_gpu",
+      "source_test": "tests/ops/ascend_ops/vv_operator/fused_recurrent_oja_fwd_kernel/test_fused_recurrent_oja_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 9.38,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_3ab783978f1e1dfb-13b55fc51b5b",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_oja_fwd_kernel/tests/vv_3ab783978f1e1dfb-13b55fc51b5b/test.json",
+          "test_manifest_sha256": "bddd0811b3a04221a3418fd2d8f4a4d4ff1861b7014c1232da0b632075b47b48",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

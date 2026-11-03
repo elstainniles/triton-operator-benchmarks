@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA260",
+  "cases": [
+    {
+      "index": 275,
+      "row": 477,
+      "id": "vv-row-477",
+      "operator_id": "FLA260",
+      "kernel": "fused_recurrent_comba_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_comba_fwd_kernel",
+      "shape_dtype": "q,k,p,v: [2,1024,8,128] / float32\ng,beta: [2,1024,8] / float32\no: [1,2,1024,8,128] / float32\nh0,ht: [2,8,128,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_comba_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/fused_recurrent_comba_fwd_kernel/test_fused_recurrent_comba_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3519.3,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_d542637f368cda48-7cc2ba23959c",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_comba_fwd_kernel/tests/vv_d542637f368cda48-7cc2ba23959c/test.json",
+          "test_manifest_sha256": "f101939ea8d189de6e2572c8a964030dd094053c2c09df248b9296d8f97c1972",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

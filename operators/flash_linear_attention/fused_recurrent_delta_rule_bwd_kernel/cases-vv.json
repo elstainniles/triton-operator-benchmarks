@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA261",
+  "cases": [
+    {
+      "index": 223,
+      "row": 425,
+      "id": "vv-row-425",
+      "operator_id": "FLA261",
+      "kernel": "fused_recurrent_delta_rule_bwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_delta_rule_bwd_kernel",
+      "shape_dtype": "q,k,v,do: [3,2000,4,128] / float16\nbeta: [3,2000,4] / float16\nh0,dh0,dht: [3,4,128,128] / float32\ndq,dk: [4,3,2000,4,128] / float16\ndv: [1,3,2000,4,128] / float16\ndb: [4,3,2000,4] / float16",
+      "operator_type": "VV",
+      "original_test": "test_with_cpu_fp64_as_golden",
+      "source_test": "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_bwd_kernel/test_fused_recurrent_delta_rule_bwd_kernel_with_cpu_golden_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_stages": 1,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "精度问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_a6dcf78e14c6af50-f62d6bbf5d50",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_delta_rule_bwd_kernel/tests/vv_a6dcf78e14c6af50-f62d6bbf5d50/test.json",
+          "test_manifest_sha256": "1dcbf103043b8cda04d1079adf072796db0a1e532550b0c70401ee80cdd75b08",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 1,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/delta_bwd",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

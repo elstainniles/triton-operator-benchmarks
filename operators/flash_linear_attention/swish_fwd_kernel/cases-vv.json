@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA005",
+  "cases": [
+    {
+      "index": 219,
+      "row": 421,
+      "id": "vv-row-421",
+      "operator_id": "FLA005",
+      "kernel": "swish_fwd_kernel",
+      "path": "operators/flash_linear_attention/swish_fwd_kernel",
+      "shape_dtype": "x,y: [2,1024,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_swish_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_swish_fwd_kernel/test_swish_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 9.79,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_a526488165bbc8f8-5779d2c90131",
+          "test_manifest": "operators/flash_linear_attention/swish_fwd_kernel/tests/vv_a526488165bbc8f8-5779d2c90131/test.json",
+          "test_manifest_sha256": "1b6a3b4463ff7c475390e8c7df2d7ae3d9a0c921efa7e811265f83ca864d08eb",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/swish_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 220,
+      "row": 422,
+      "id": "vv-row-422",
+      "operator_id": "FLA005",
+      "kernel": "swish_fwd_kernel",
+      "path": "operators/flash_linear_attention/swish_fwd_kernel",
+      "shape_dtype": "x,y: [2,1024,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_swish_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_swish_fwd_kernel/test_swish_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_a526488165bbc8f8-18244c670d9e",
+          "test_manifest": "operators/flash_linear_attention/swish_fwd_kernel/tests/vv_a526488165bbc8f8-18244c670d9e/test.json",
+          "test_manifest_sha256": "600346af28f71e9bc1a96746867248192009cd7c26120b3d4f98f711a6bb9975",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/swish_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

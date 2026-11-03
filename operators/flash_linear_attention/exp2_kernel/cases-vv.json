@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA258",
+  "cases": [
+    {
+      "index": 65,
+      "row": 267,
+      "id": "vv-row-267",
+      "operator_id": "FLA258",
+      "kernel": "exp2_kernel",
+      "path": "operators/flash_linear_attention/exp2_kernel",
+      "shape_dtype": "x_ptr,output_ptr: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_exp2_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/exp2/test_exp2_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 2.37,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "性能下降",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_2bd9ca46d0a9f996-6f434f762e1f",
+          "test_manifest": "operators/flash_linear_attention/exp2_kernel/tests/vv_2bd9ca46d0a9f996-6f434f762e1f/test.json",
+          "test_manifest_sha256": "6ae289c713bedc7129d73b8af4ecb4506859b382cef918b8836502055017c59a",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/exp2"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 309,
+      "row": 511,
+      "id": "vv-row-511",
+      "operator_id": "FLA258",
+      "kernel": "exp2_kernel",
+      "path": "operators/flash_linear_attention/exp2_kernel",
+      "shape_dtype": "x_ptr,output_ptr: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_exp2_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/exp2/test_exp2_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 2.65,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_f3175236bb4c6114-f5450ec61dbd",
+          "test_manifest": "operators/flash_linear_attention/exp2_kernel/tests/vv_f3175236bb4c6114-f5450ec61dbd/test.json",
+          "test_manifest_sha256": "e999a43cd64f3768832e9720ff929a054881fd358693a0c4859d2df4d181bf73",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/exp2"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

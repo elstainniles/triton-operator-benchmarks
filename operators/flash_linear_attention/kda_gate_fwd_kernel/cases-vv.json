@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA076",
+  "cases": [
+    {
+      "index": 261,
+      "row": 463,
+      "id": "vv-row-463",
+      "operator_id": "FLA076",
+      "kernel": "kda_gate_fwd_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_fwd_kernel",
+      "shape_dtype": "g: [2,1024,8,64] / float16\nA_log: [8] / float16\ndt_bias: [512] / float16\nyg: [2,1024,8,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_kda_gate_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/kda_gate_fwd_kernel/test_kda_gate_fwd_kernel_npu.py",
+      "table_config": {
+        "BT": 128,
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_c97b063af19c5289-cf1106ba7482",
+          "test_manifest": "operators/flash_linear_attention/kda_gate_fwd_kernel/tests/vv_c97b063af19c5289-cf1106ba7482/test.json",
+          "test_manifest_sha256": "945c7296281f9c27842b08fbfcaca55f94036dbaf30ac5adda9edd92539806b2",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BT": 128
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 262,
+      "row": 464,
+      "id": "vv-row-464",
+      "operator_id": "FLA076",
+      "kernel": "kda_gate_fwd_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_fwd_kernel",
+      "shape_dtype": "g: [2,1024,8,64] / float16\nA_log: [8] / float16\ndt_bias: [512] / float16\nyg: [2,1024,8,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_kda_gate_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/kda_gate_fwd_kernel/test_kda_gate_fwd_kernel_npu.py",
+      "table_config": {
+        "BT": 128,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 6.65,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "性能下降",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_c97b063af19c5289-5d9ce5343bdd",
+          "test_manifest": "operators/flash_linear_attention/kda_gate_fwd_kernel/tests/vv_c97b063af19c5289-5d9ce5343bdd/test.json",
+          "test_manifest_sha256": "d993d0b9bbd0d58078542f4f2ecc14d7cfab200c13eea1041223616f0d13546e",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BT": 128
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

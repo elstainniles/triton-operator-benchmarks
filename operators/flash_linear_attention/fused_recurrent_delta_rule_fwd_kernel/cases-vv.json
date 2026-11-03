@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA262",
+  "cases": [
+    {
+      "index": 178,
+      "row": 380,
+      "id": "vv-row-380",
+      "operator_id": "FLA262",
+      "kernel": "fused_recurrent_delta_rule_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_delta_rule_fwd_kernel",
+      "shape_dtype": "q,k,v,u: [4,128,8,128] / float32\nbeta: [4,128,8] / float32\no: [1,4,128,8,128] / float32\nh0,ht: [4,8,128,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_delta_rule_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_fwd_kernel/test_fused_recurrent_delta_rule_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_stages": 1,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 542.06,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_7c35de7b088a5a38-08b2f52c7139",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_delta_rule_fwd_kernel/tests/vv_7c35de7b088a5a38-08b2f52c7139/test.json",
+          "test_manifest_sha256": "ddf0a6b574661f061f5b20b718ebec6a59dad7b9f05d3e5da99393a89aac2931",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 1,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/delta_fwd",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

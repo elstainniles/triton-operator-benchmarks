@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA285",
+  "cases": [
+    {
+      "index": 119,
+      "row": 321,
+      "id": "vv-row-321",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_relu_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 2048,
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_4ffa23756a3ba60a-0af8d041c745",
+          "test_manifest": "operators/flash_linear_attention/relu_kernel/tests/vv_4ffa23756a3ba60a-0af8d041c745/test.json",
+          "test_manifest_sha256": "82b80f414926a17413b386bc50f06fd9072b3c62ceadff2fa8939e7983e5bf1d",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 2048
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/relu"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 120,
+      "row": 322,
+      "id": "vv-row-322",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_relu_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 256,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "启动配置错误",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_4ffa23756a3ba60a-5870e32a6263",
+          "test_manifest": "operators/flash_linear_attention/relu_kernel/tests/vv_4ffa23756a3ba60a-5870e32a6263/test.json",
+          "test_manifest_sha256": "95d8c8a6a503538b4dbd2ced3c49af4c7eca17171adb47b872b704a79fb3aba4",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 256
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/relu"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 286,
+      "row": 488,
+      "id": "vv-row-488",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_relu_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 256,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "启动配置错误",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_e6bc06c107264d2f-74f08031ee8d",
+          "test_manifest": "operators/flash_linear_attention/relu_kernel/tests/vv_e6bc06c107264d2f-74f08031ee8d/test.json",
+          "test_manifest_sha256": "63b74158dca23fc55cd2924bf099a7e421e21bb2ab1bed71740081deacbe684f",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 256
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/relu"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        },
+        {
+          "test_id": "vv_e6bc06c107264d2f-55efda5ec4b6",
+          "test_manifest": "operators/flash_linear_attention/relu_kernel/tests/vv_e6bc06c107264d2f-55efda5ec4b6/test.json",
+          "test_manifest_sha256": "ce9d1d125127050af44bd48d056232cb480245fb34daffe90d43c2cf14328ab3",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 256
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/relu"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。",
+        "原表缺少 num_warps，仓库有 4/8 两个匹配配置，均保留并分别记录，禁止选最快值冒充原表基线。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 287,
+      "row": 489,
+      "id": "vv-row-489",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_relu_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 256,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "启动配置错误",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_e6bc06c107264d2f-55efda5ec4b6",
+          "test_manifest": "operators/flash_linear_attention/relu_kernel/tests/vv_e6bc06c107264d2f-55efda5ec4b6/test.json",
+          "test_manifest_sha256": "ce9d1d125127050af44bd48d056232cb480245fb34daffe90d43c2cf14328ab3",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 256
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/relu"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。",
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 288,
+      "row": 490,
+      "id": "vv-row-490",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32\n规格：original_autotune_bs1024_w1_fixed_wrapper_grid",
+      "operator_type": "VV",
+      "original_test": "test_relu_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 1024,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_e6bc06c107264d2f-0786f087b5d4",
+          "test_manifest": "operators/flash_linear_attention/relu_kernel/tests/vv_e6bc06c107264d2f-0786f087b5d4/test.json",
+          "test_manifest_sha256": "5f72d2ab08e2d31758c9fe0ca1d6addd2fff49005ea7da5a6b2de5a960161a4e",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 1024
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/relu"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

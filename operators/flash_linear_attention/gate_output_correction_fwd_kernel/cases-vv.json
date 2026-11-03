@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA101",
+  "cases": [
+    {
+      "index": 17,
+      "row": 219,
+      "id": "vv-row-219",
+      "operator_id": "FLA101",
+      "kernel": "gate_output_correction_fwd_kernel",
+      "path": "operators/flash_linear_attention/gate_output_correction_fwd_kernel",
+      "shape_dtype": "o_ptr,g_ptr,output_ptr: [2,1024,1024] / float32\nr_ptr,k_ptr,v_ptr: [2,1024,16,64] / float32\nr_k_ptr: [16,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_gate_output_correction_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_gate_output_correction_fwd_kernel/test_gate_output_correction_fwd_kernel_npu.py",
+      "table_config": {
+        "BT": 4,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 67.36,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_07df4bbe51f098fb-282a334bb2ed",
+          "test_manifest": "operators/flash_linear_attention/gate_output_correction_fwd_kernel/tests/vv_07df4bbe51f098fb-282a334bb2ed/test.json",
+          "test_manifest_sha256": "7d1c47a2c76e82e01eeddb69e6b29c5e54ee88b2dd37ba468e96cbbfd52206e5",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BT": 4
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/gate_fwd",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA290",
+  "cases": [
+    {
+      "index": 88,
+      "row": 290,
+      "id": "vv-row-290",
+      "operator_id": "FLA290",
+      "kernel": "softplus2_triton_wrapper_kernel",
+      "path": "operators/flash_linear_attention/softplus2_triton_wrapper_kernel",
+      "shape_dtype": "x_ptr,y_ptr: [1048576] / float32",
+      "operator_type": "VV",
+      "original_test": "test_softplus2_triton_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/softplus2_triton/test_softplus2_triton_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 5.5,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "性能下降",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_3a129996a55dc23f-0d8a5ece93e6",
+          "test_manifest": "operators/flash_linear_attention/softplus2_triton_wrapper_kernel/tests/vv_3a129996a55dc23f-0d8a5ece93e6/test.json",
+          "test_manifest_sha256": "453149b432689d68c97d369241da138da73bd9441530c277419939fa56746839",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/softplus2_triton"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 218,
+      "row": 420,
+      "id": "vv-row-420",
+      "operator_id": "FLA290",
+      "kernel": "softplus2_triton_wrapper_kernel",
+      "path": "operators/flash_linear_attention/softplus2_triton_wrapper_kernel",
+      "shape_dtype": "x_ptr,y_ptr: [1048576] / float32",
+      "operator_type": "VV",
+      "original_test": "test_softplus2_triton_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/softplus2_triton/test_softplus2_triton_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 5.47,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "性能下降",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_a22ab559a009286a-7673458949ec",
+          "test_manifest": "operators/flash_linear_attention/softplus2_triton_wrapper_kernel/tests/vv_a22ab559a009286a-7673458949ec/test.json",
+          "test_manifest_sha256": "23e555531bc1ff2f5b42ab3ff7521d1c9176fd3859b5f53fc667328715f553b3",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/softplus2_triton"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

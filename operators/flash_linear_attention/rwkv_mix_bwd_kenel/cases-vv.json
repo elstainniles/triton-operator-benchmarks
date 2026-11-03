@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA097",
+  "cases": [
+    {
+      "index": 47,
+      "row": 249,
+      "id": "vv-row-249",
+      "operator_id": "FLA097",
+      "kernel": "rwkv_mix_bwd_kenel",
+      "path": "operators/flash_linear_attention/rwkv_mix_bwd_kenel",
+      "shape_dtype": "dk1_ptr0: [2048,1024] / float32\nxk_ptr: [1024] / float32\ndx_ptr: [2,1024,1024] / float32\ndx_prev_ptr: [2,1,1024] / float32",
+      "operator_type": "VV",
+      "original_test": "test_rwkv_mix_bwd_kenel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_rwkv_mix_bwd_kenel/test_rwkv_mix_bwd_kenel_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 4096,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 79.31,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_247323a57efcc9ad-787c9ba60659",
+          "test_manifest": "operators/flash_linear_attention/rwkv_mix_bwd_kenel/tests/vv_247323a57efcc9ad-787c9ba60659/test.json",
+          "test_manifest_sha256": "f35e3c9ced85d608ccca115df49af3112905ea082c959f47e86461dd7d3df74e",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 4096
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/rwkv_mix_bwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

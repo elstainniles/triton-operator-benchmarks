@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA282",
+  "cases": [
+    {
+      "index": 1,
+      "row": 203,
+      "id": "vv-row-203",
+      "operator_id": "FLA282",
+      "kernel": "mesa_net_decoding_one_step_kernel",
+      "path": "operators/flash_linear_attention/mesa_net_decoding_one_step_kernel",
+      "shape_dtype": "q,k,v,o: [2,4,60] / float32\ng,beta: [2,4] / float32\nlamb: [4,60] / float32\nprev_h_kk,prev_h_kv,curr_h_kk,curr_h_kv: [2,4,60,60] / float32",
+      "operator_type": "VV",
+      "original_test": "test_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/mesa_net_decoding_one_step_kernel/test_mesa_net_decoding_one_step_kernel.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "精度问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_01909b7e2f421746-2a87e1928495",
+          "test_manifest": "operators/flash_linear_attention/mesa_net_decoding_one_step_kernel/tests/vv_01909b7e2f421746-2a87e1928495/test.json",
+          "test_manifest_sha256": "237dcd8fa9bc955560ced53d89bfaada59c25b41487a85cc2f6a405c783c25d5",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/mesa",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

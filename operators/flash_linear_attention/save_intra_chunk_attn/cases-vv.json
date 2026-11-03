@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA287",
+  "cases": [
+    {
+      "index": 128,
+      "row": 330,
+      "id": "vv-row-330",
+      "operator_id": "FLA287",
+      "kernel": "save_intra_chunk_attn",
+      "path": "operators/flash_linear_attention/save_intra_chunk_attn",
+      "shape_dtype": "A: [4,8,2048,2048] / float16\nA_local: [4,8,2048,32] / float16",
+      "operator_type": "VV",
+      "original_test": "test_save_intra_chunk_attn",
+      "source_test": "tests/ops/ascend_ops/vv_operator/save_intra_chunk_attn/test_save_intra_chunk_attn_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_57605cea5b47a5cf-b4a3695dcb8d",
+          "test_manifest": "operators/flash_linear_attention/save_intra_chunk_attn/tests/vv_57605cea5b47a5cf-b4a3695dcb8d/test.json",
+          "test_manifest_sha256": "2dbe6223849a64bdf1eb64af582a5cce4afbbcb3dc44d6727e0cb5343e9e919e",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 129,
+      "row": 331,
+      "id": "vv-row-331",
+      "operator_id": "FLA287",
+      "kernel": "save_intra_chunk_attn",
+      "path": "operators/flash_linear_attention/save_intra_chunk_attn",
+      "shape_dtype": "A: [4,8,2048,2048] / float16\nA_local: [4,8,2048,32] / float16",
+      "operator_type": "VV",
+      "original_test": "test_save_intra_chunk_attn",
+      "source_test": "tests/ops/ascend_ops/vv_operator/save_intra_chunk_attn/test_save_intra_chunk_attn_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 19.27,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_57605cea5b47a5cf-ae931ce4a2d2",
+          "test_manifest": "operators/flash_linear_attention/save_intra_chunk_attn/tests/vv_57605cea5b47a5cf-ae931ce4a2d2/test.json",
+          "test_manifest_sha256": "5768c9eb45d3f3b3ad79f3661d64611e683fa573bb917d3da9bda56051c70d88",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

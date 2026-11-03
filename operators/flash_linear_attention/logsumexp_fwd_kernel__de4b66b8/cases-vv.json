@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA117",
+  "cases": [
+    {
+      "index": 130,
+      "row": 332,
+      "id": "vv-row-332",
+      "operator_id": "FLA117",
+      "kernel": "logsumexp_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsumexp_fwd_kernel__de4b66b8",
+      "shape_dtype": "x: [2048,128] / bfloat16\nz: [2048,1] / float32",
+      "operator_type": "VV",
+      "original_test": "test_logsumexp_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_logsumexp_fwd_kernel/test_logsumexp_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_5840019a6ff414d6-8961ecb01950",
+          "test_manifest": "operators/flash_linear_attention/logsumexp_fwd_kernel__de4b66b8/tests/vv_5840019a6ff414d6-8961ecb01950/test.json",
+          "test_manifest_sha256": "d673674ab4cea1792384067df9e8664b9212eb814c2cd8296d882ad736cf21d0",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/logsumexp_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 131,
+      "row": 333,
+      "id": "vv-row-333",
+      "operator_id": "FLA117",
+      "kernel": "logsumexp_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsumexp_fwd_kernel__de4b66b8",
+      "shape_dtype": "x: [2048,128] / bfloat16\nz: [2048,1] / float32",
+      "operator_type": "VV",
+      "original_test": "test_logsumexp_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_logsumexp_fwd_kernel/test_logsumexp_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 13.91,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_5840019a6ff414d6-b88ab71f9aaa",
+          "test_manifest": "operators/flash_linear_attention/logsumexp_fwd_kernel__de4b66b8/tests/vv_5840019a6ff414d6-b88ab71f9aaa/test.json",
+          "test_manifest_sha256": "235abb5ba042a2522877cc909e6732d8c988e571a999870289a7aec8de27ff86",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/logsumexp_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

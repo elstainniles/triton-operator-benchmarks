@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA093",
+  "cases": [
+    {
+      "index": 235,
+      "row": 437,
+      "id": "vv-row-437",
+      "operator_id": "FLA093",
+      "kernel": "fused_recurrent_rwkv6_bwd_kernel_dkv",
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv6_bwd_kernel_dkv",
+      "shape_dtype": "q,k,v,w,do: [4,2048,4,256] / float16\nu: [4,256] / float16\ndk,dk1,dv: [8,4,2048,4,256] / float32\ndh0: [4,4,256,256] / float16",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_rwkv6_bwd_kernel_dkv",
+      "source_test": "tests/ops/ascend_ops/vv_operator/fused_recurrent_rwkv6_bwd_kernel_dkv/test_fused_recurrent_rwkv6_bwd_kernel_dkv_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 20978.23,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_ae7bd32b032e9de3-6853f607ae4b",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_rwkv6_bwd_kernel_dkv/tests/vv_ae7bd32b032e9de3-6853f607ae4b/test.json",
+          "test_manifest_sha256": "220a6ea8f85a19ec0ca01bbcb941a4d5cad1ff871648171c084f0299735eae29",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

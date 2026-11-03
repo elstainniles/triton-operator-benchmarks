@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_fused_recurrent_rwkv4_backward_kernel",
+  "cases": [
+    {
+      "index": 276,
+      "row": 478,
+      "id": "vv-row-478",
+      "operator_id": "FLA_EXTRA_fused_recurrent_rwkv4_backward_kernel",
+      "kernel": "fused_recurrent_rwkv4_backward_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/fused_recurrent_rwkv4_backward_kernel",
+      "shape_dtype": "w_ptr,u_ptr: [512] / float32\nk_ptr,v_ptr,gwkv_ptr,gk_ptr,gv_ptr: [4,2048,512] / float32\nstate_ptr: [4,3,2049,512] / float32\ngstate_out_ptr,gstate_ptr: [4,3,1,512] / float32\ngw_ptr,gu_ptr: [4,512] / float32",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_rwkv4_backward",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_rwkv4_backward/test_fused_recurrent_rwkv4_backward_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "精度问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_da4454ec88c074cd-0d9b671a175b",
+          "test_manifest": "operators/flash_linear_attention/additional_tests/fused_recurrent_rwkv4_backward_kernel/tests/vv_da4454ec88c074cd-0d9b671a175b/test.json",
+          "test_manifest_sha256": "63e6af77ee872a04f06b3a0cc8ab26c952787476552fc61410aeaa3aeb8ba5a5",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/rwkv4_bwd",
+              "reference_path": "generated-data/reference_cpu64.pt"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "cpu_fp64_absolute_v1",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA018",
+  "cases": [
+    {
+      "index": 71,
+      "row": 273,
+      "id": "vv-row-273",
+      "operator_id": "FLA018",
+      "kernel": "elementwise_mul_kernel",
+      "path": "operators/flash_linear_attention/elementwise_mul_kernel",
+      "shape_dtype": "x: [2048,128] / float32\ng: [] / float32",
+      "operator_type": "VV",
+      "original_test": "test_elementwise_mul_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_elementwise_mul_kernel/test_elementwise_mul_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 20.86,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "block版本合并失败，退回原kernel执行",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_2d9f458414bc4e42-cf4b3c331dd9",
+          "test_manifest": "operators/flash_linear_attention/elementwise_mul_kernel/tests/vv_2d9f458414bc4e42-cf4b3c331dd9/test.json",
+          "test_manifest_sha256": "fbe397d890bf0667f64467f25122c9d0617a265e52488d4e2d21bbe53467f8de",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/elementwise_mul"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

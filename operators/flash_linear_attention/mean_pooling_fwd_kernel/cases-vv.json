@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA119",
+  "cases": [
+    {
+      "index": 85,
+      "row": 287,
+      "id": "vv-row-287",
+      "operator_id": "FLA119",
+      "kernel": "mean_pooling_fwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel",
+      "shape_dtype": "x: [2,257,4,64] / float32\no: [2,3,4,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_mean_pooling_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/mean_pooling_fwd_kernel/test_mean_pooling_fwd_kernel_npu.py",
+      "table_config": {
+        "BD": 64,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_3866c0835c67563f-7c32b9c12b17",
+          "test_manifest": "operators/flash_linear_attention/mean_pooling_fwd_kernel/tests/vv_3866c0835c67563f-7c32b9c12b17/test.json",
+          "test_manifest_sha256": "0838bd1bcc03121b47b07ad9481537cbdb7ea48d21717b9ed89c773a6cb9e914",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BD": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/mean_pooling_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 86,
+      "row": 288,
+      "id": "vv-row-288",
+      "operator_id": "FLA119",
+      "kernel": "mean_pooling_fwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel",
+      "shape_dtype": "x: [2,257,4,64] / float32\no: [2,3,4,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_mean_pooling_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/mean_pooling_fwd_kernel/test_mean_pooling_fwd_kernel_npu.py",
+      "table_config": {
+        "BD": 64,
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3.08,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_3866c0835c67563f-41471eb4fe17",
+          "test_manifest": "operators/flash_linear_attention/mean_pooling_fwd_kernel/tests/vv_3866c0835c67563f-41471eb4fe17/test.json",
+          "test_manifest_sha256": "ab3f35c3b19210f64815392633b06187db598c449607ef06def8bcd8e8903f23",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BD": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/mean_pooling_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 253,
+      "row": 455,
+      "id": "vv-row-455",
+      "operator_id": "FLA119",
+      "kernel": "mean_pooling_fwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel",
+      "shape_dtype": "x: [2,257,4,64] / float32\no: [2,3,4,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_mean_pooling_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/mean_pooling_fwd_kernel/test_mean_pooling_fwd_kernel_npu.py",
+      "table_config": {
+        "BD": 128,
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_c3714539299b27d6-d7c5d575d20d",
+          "test_manifest": "operators/flash_linear_attention/mean_pooling_fwd_kernel/tests/vv_c3714539299b27d6-d7c5d575d20d/test.json",
+          "test_manifest_sha256": "e049d4c3cef688b7b42906b3c294f57baf6d0ccb3d0c8dc754fa157338469172",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BD": 128
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/mean_pooling_fwd"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 254,
+      "row": 456,
+      "id": "vv-row-456",
+      "operator_id": "FLA119",
+      "kernel": "mean_pooling_fwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel",
+      "shape_dtype": "x: [2,257,4,64] / float32\no: [2,3,4,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_mean_pooling_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/mean_pooling_fwd_kernel/test_mean_pooling_fwd_kernel_npu.py",
+      "table_config": {
+        "BD": 64,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 2.86,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_c3714539299b27d6-6eda2ea3acf7",
+          "test_manifest": "operators/flash_linear_attention/mean_pooling_fwd_kernel/tests/vv_c3714539299b27d6-6eda2ea3acf7/test.json",
+          "test_manifest_sha256": "39dd641cf9ba1374a6fa88ae97bfe12cc3283ba64a899563fee72dc7b652abc8",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BD": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/mean_pooling_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

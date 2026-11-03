@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA013",
+  "cases": [
+    {
+      "index": 27,
+      "row": 229,
+      "id": "vv-row-229",
+      "operator_id": "FLA013",
+      "kernel": "causal_conv1d_states_fwd_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_states_fwd_kernel",
+      "shape_dtype": "x: [4,1024,1024] / float32\ninitial_state,final_state: [4,1024,4] / float32",
+      "operator_type": "VV",
+      "original_test": "test_causal_conv1d_states_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/causal_conv1d_states_fwd_kernel/test_causal_conv1d_states_fwd_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3.8,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "性能下降",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_179e0e17c5750aa8-99feeb2ee9b9",
+          "test_manifest": "operators/flash_linear_attention/causal_conv1d_states_fwd_kernel/tests/vv_179e0e17c5750aa8-99feeb2ee9b9/test.json",
+          "test_manifest_sha256": "0b3857f73cf7422fc2c9f16581bd02ca41bae0061cc5fac0579cdcf89cdfa25d",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/causal_conv1d_states_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 298,
+      "row": 500,
+      "id": "vv-row-500",
+      "operator_id": "FLA013",
+      "kernel": "causal_conv1d_states_fwd_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_states_fwd_kernel",
+      "shape_dtype": "x: [4,1024,1024] / float32\ninitial_state,final_state: [4,1024,4] / float32",
+      "operator_type": "VV",
+      "original_test": "test_causal_conv1d_states_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/causal_conv1d_states_fwd_kernel/test_causal_conv1d_states_fwd_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3.55,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "性能下降",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_ecb7231c8ea30e6e-5f9e968b4e62",
+          "test_manifest": "operators/flash_linear_attention/causal_conv1d_states_fwd_kernel/tests/vv_ecb7231c8ea30e6e-5f9e968b4e62/test.json",
+          "test_manifest_sha256": "5d03d61e906d9beb5117bc0c734e42ee12c5437b36a72532809d14c7f4b727a1",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/causal_conv1d_states_fwd"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

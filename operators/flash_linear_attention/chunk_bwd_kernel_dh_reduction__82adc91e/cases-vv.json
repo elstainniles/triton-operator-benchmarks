@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA248",
+  "cases": [
+    {
+      "index": 197,
+      "row": 399,
+      "id": "vv-row-399",
+      "operator_id": "FLA248",
+      "kernel": "chunk_bwd_kernel_dh_reduction",
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__82adc91e",
+      "shape_dtype": "dhs,dhr: [16,8,128,128] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_bwd_kernel_dh_reduction",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_h_split_chunk_bwd_kernel_dh_reduction/test_chunk_split_chunk_bwd_kernel_dh_reduction_npu.py",
+      "table_config": {
+        "BK": 64,
+        "BV": 64,
+        "num_warps": 8,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 8.08,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_8e2e079b77861172-603593302352",
+          "test_manifest": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__82adc91e/tests/vv_8e2e079b77861172-603593302352/test.json",
+          "test_manifest_sha256": "d28d9c1e106b8a63670174aa5aeee64212757279ba6369f423ea7b2f516a76d8",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BK": 64,
+            "BV": 64
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

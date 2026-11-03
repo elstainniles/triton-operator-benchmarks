@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA024",
+  "cases": [
+    {
+      "index": 146,
+      "row": 348,
+      "id": "vv-row-348",
+      "operator_id": "FLA024",
+      "kernel": "l2norm_bwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel1",
+      "shape_dtype": "y,dy,dx: [8192,1024] / float32\nrstd: [4,2048] / float32",
+      "operator_type": "VV",
+      "original_test": "test_l2norm_bwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/l2norm_bwd_kernel1/test_l2norm_bwd_kernel1_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 55.77,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_66da0233d6c0a094-96aa36cc8aef",
+          "test_manifest": "operators/flash_linear_attention/l2norm_bwd_kernel1/tests/vv_66da0233d6c0a094-96aa36cc8aef/test.json",
+          "test_manifest_sha256": "a03676eb31824e258cf2c7e69a104667035042f73a1a7f8a8bd07d622e0529c0",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/l2norm_bwd1"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 149,
+      "row": 351,
+      "id": "vv-row-351",
+      "operator_id": "FLA024",
+      "kernel": "l2norm_bwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel1",
+      "shape_dtype": "y,dy,dx: [8192,1024] / float32\nrstd: [4,2048] / float32",
+      "operator_type": "VV",
+      "original_test": "test_l2norm_bwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/l2norm_bwd_kernel1/test_l2norm_bwd_kernel1_npu.py",
+      "table_config": {
+        "num_warps": 16,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_6a24f7759f2468ea-def0cc37d36f",
+          "test_manifest": "operators/flash_linear_attention/l2norm_bwd_kernel1/tests/vv_6a24f7759f2468ea-def0cc37d36f/test.json",
+          "test_manifest_sha256": "f63d17d7a206dab8e4d7e641810743cd810f4a716e512b247b2f37f5cdf24bf8",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/l2norm_bwd1"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 150,
+      "row": 352,
+      "id": "vv-row-352",
+      "operator_id": "FLA024",
+      "kernel": "l2norm_bwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel1",
+      "shape_dtype": "y,dy,dx: [8192,1024] / float32\nrstd: [4,2048] / float32",
+      "operator_type": "VV",
+      "original_test": "test_l2norm_bwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/l2norm_bwd_kernel1/test_l2norm_bwd_kernel1_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 56.73,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_6a24f7759f2468ea-f7ab6096721a",
+          "test_manifest": "operators/flash_linear_attention/l2norm_bwd_kernel1/tests/vv_6a24f7759f2468ea-f7ab6096721a/test.json",
+          "test_manifest_sha256": "cfd5b922507d0a346e8423d8c42014ceaf5f688089aa1453dd8d51d8099033f2",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/l2norm_bwd1"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

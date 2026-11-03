@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA244",
+  "cases": [
+    {
+      "index": 104,
+      "row": 306,
+      "id": "vv-row-306",
+      "operator_id": "FLA244",
+      "kernel": "chunk_comba_cumsum_scalar_fwd_kernel",
+      "path": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_fwd_kernel",
+      "shape_dtype": "g,g0,g1: [32,2048,8] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_comba_cumsum_scalar_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_comba_cumsum_scalar_fwd_kernel/test_chunk_comba_cumsum_scalar_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 35.81,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_4770618836a6c218-82514989a072",
+          "test_manifest": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_fwd_kernel/tests/vv_4770618836a6c218-82514989a072/test.json",
+          "test_manifest_sha256": "3366de22b7c7402e2a7c719f9b23561e1e064988d4da421ca802d3dcdac957bb",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 105,
+      "row": 307,
+      "id": "vv-row-307",
+      "operator_id": "FLA244",
+      "kernel": "chunk_comba_cumsum_scalar_fwd_kernel",
+      "path": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_fwd_kernel",
+      "shape_dtype": "g,g0,g1: [32,2048,8] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_comba_cumsum_scalar_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_comba_cumsum_scalar_fwd_kernel/test_chunk_comba_cumsum_scalar_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_4770618836a6c218-19face0b8fb8",
+          "test_manifest": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_fwd_kernel/tests/vv_4770618836a6c218-19face0b8fb8/test.json",
+          "test_manifest_sha256": "7f3eac2d76a8a637b15214556374513e5a78e49af28b765c883b13bf644626a0",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

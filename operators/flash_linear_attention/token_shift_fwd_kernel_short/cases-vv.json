@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA032",
+  "cases": [
+    {
+      "index": 32,
+      "row": 234,
+      "id": "vv-row-234",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short",
+      "shape_dtype": "x,y: [8,4096,4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_token_shift_fwd_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_short/test_token_shift_bwd_kernel_short_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 717.71,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_46525962825003f6-dd6d7a4f05ac",
+          "test_manifest": "operators/flash_linear_attention/token_shift_fwd_kernel_short/tests/vv_46525962825003f6-dd6d7a4f05ac/test.json",
+          "test_manifest_sha256": "aac51c424c4446f7ab6bc23c3f7a38b796f1fd21749d73b4e0ccf0713c9ecf50",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [
+              "generated-data/attempt1",
+              {
+                "B": 8,
+                "T": 4096,
+                "kernel_type": "short"
+              }
+            ],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 33,
+      "row": 235,
+      "id": "vv-row-235",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short",
+      "shape_dtype": "x,y: [8,4096,4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_token_shift_fwd_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_short/test_token_shift_bwd_kernel_short_npu.py",
+      "table_config": {
+        "num_warps": 16,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_1ba27642c4d77172-f1e7038f18e8",
+          "test_manifest": "operators/flash_linear_attention/token_shift_fwd_kernel_short/tests/vv_1ba27642c4d77172-f1e7038f18e8/test.json",
+          "test_manifest_sha256": "055f394651751b40f8f23ef5e7582fa8a5df1ea542b22b7d1c1e89f48a4d8b8f",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [
+              "generated-data/attempt1",
+              {
+                "B": 8,
+                "T": 4096,
+                "kernel_type": "short"
+              }
+            ],
+            "kwargs": {}
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 100,
+      "row": 302,
+      "id": "vv-row-302",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short",
+      "shape_dtype": "x,y: [8,4096,4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_token_shift_fwd_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_short/test_token_shift_bwd_kernel_short_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_46525962825003f6-dd6d7a4f05ac",
+          "test_manifest": "operators/flash_linear_attention/token_shift_fwd_kernel_short/tests/vv_46525962825003f6-dd6d7a4f05ac/test.json",
+          "test_manifest_sha256": "aac51c424c4446f7ab6bc23c3f7a38b796f1fd21749d73b4e0ccf0713c9ecf50",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [
+              "generated-data/attempt1",
+              {
+                "B": 8,
+                "T": 4096,
+                "kernel_type": "short"
+              }
+            ],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 101,
+      "row": 303,
+      "id": "vv-row-303",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short",
+      "shape_dtype": "x,y: [8,4096,4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_token_shift_fwd_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/token_shift_bwd_kernel_short/test_token_shift_bwd_kernel_short_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 712.21,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_46525962825003f6-2993f5ac53a8",
+          "test_manifest": "operators/flash_linear_attention/token_shift_fwd_kernel_short/tests/vv_46525962825003f6-2993f5ac53a8/test.json",
+          "test_manifest_sha256": "420f1dc1df598d8331595f5dc2ed5de155db66f9874826fa0b52108ff26d5048",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [
+              "generated-data/attempt1",
+              {
+                "B": 8,
+                "T": 4096,
+                "kernel_type": "short"
+              }
+            ],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 273,
+      "row": 475,
+      "id": "vv-row-475",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short",
+      "shape_dtype": "x,y: [8,4096,4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_token_shift_fwd_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_short/test_token_shift_fwd_kernel_short_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 717.28,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_d26ed3c24be375f1-802344e5effe",
+          "test_manifest": "operators/flash_linear_attention/token_shift_fwd_kernel_short/tests/vv_d26ed3c24be375f1-802344e5effe/test.json",
+          "test_manifest_sha256": "bb06d11da5744b68039041ac8baebef955dc6f34acb1fc7618da882e88c1c247",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [
+              "generated-data/attempt1",
+              {
+                "B": 8,
+                "T": 4096,
+                "kernel_type": "short"
+              }
+            ],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 274,
+      "row": 476,
+      "id": "vv-row-476",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short",
+      "shape_dtype": "x,y: [8,4096,4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_token_shift_fwd_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_short/test_token_shift_fwd_kernel_short_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_d26ed3c24be375f1-c7929893e19d",
+          "test_manifest": "operators/flash_linear_attention/token_shift_fwd_kernel_short/tests/vv_d26ed3c24be375f1-c7929893e19d/test.json",
+          "test_manifest_sha256": "0ab28a3cf237a6ff5352edd1a8e30093bd4911807e85c580523a52239b6f225e",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [
+              "generated-data/attempt1",
+              {
+                "B": 8,
+                "T": 4096,
+                "kernel_type": "short"
+              }
+            ],
+            "kwargs": {}
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 294,
+      "row": 496,
+      "id": "vv-row-496",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short",
+      "shape_dtype": "x,y: [8,4096,4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_token_shift_fwd_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_short/test_token_shift_fwd_kernel_short_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 711.45,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_ec37a9a09d137abd-bd01a3a0ff8e",
+          "test_manifest": "operators/flash_linear_attention/token_shift_fwd_kernel_short/tests/vv_ec37a9a09d137abd-bd01a3a0ff8e/test.json",
+          "test_manifest_sha256": "eefaa31f1d0eaef477d6499fc2d0a2fc4ac56f77e41c677ab67ff7f697c54085",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [
+              "generated-data/attempt1",
+              {
+                "B": 8,
+                "T": 4096,
+                "kernel_type": "short"
+              }
+            ],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 295,
+      "row": 497,
+      "id": "vv-row-497",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short",
+      "shape_dtype": "x,y: [8,4096,4096] / float32",
+      "operator_type": "VV",
+      "original_test": "test_token_shift_fwd_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/token_shift_fwd_kernel_short/test_token_shift_fwd_kernel_short_npu.py",
+      "table_config": {
+        "num_warps": 16,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_ec37a9a09d137abd-0e61d384a86b",
+          "test_manifest": "operators/flash_linear_attention/token_shift_fwd_kernel_short/tests/vv_ec37a9a09d137abd-0e61d384a86b/test.json",
+          "test_manifest_sha256": "1e1dfdf5d9844228eaacc37c891c1fd29c905c835d988c442050f2c483e23201",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [
+              "generated-data/attempt1",
+              {
+                "B": 8,
+                "T": 4096,
+                "kernel_type": "short"
+              }
+            ],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions_unchanged",
+          "seed": 42,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA061",
+  "cases": [
+    {
+      "index": 138,
+      "row": 340,
+      "id": "vv-row-340",
+      "operator_id": "FLA061",
+      "kernel": "fused_recurrent_dplr_delta_rule_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_dplr_delta_rule_fwd_kernel",
+      "shape_dtype": "q,k,v,a,b,gk,o: [1,256,4,16] / float32\nh0,ht: [1,4,16,16] / float32",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_dplr_delta_rule_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_dplr_delta_rule_fwd_kernel/test_fused_recurrent_dplr_delta_rule_fwd_kernel_npu.py",
+      "table_config": {
+        "BV": 16,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 4
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 77.33,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_6161f5614a1fc80f-caddecacf947",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_dplr_delta_rule_fwd_kernel/tests/vv_6161f5614a1fc80f-caddecacf947/test.json",
+          "test_manifest_sha256": "76c71330f093e37fc80ebd4baf2a04bf32578fbff5a48c69f869fe55dbd0e983",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 4,
+            "num_ctas": 1,
+            "BV": 16
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/dplr_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 139,
+      "row": 341,
+      "id": "vv-row-341",
+      "operator_id": "FLA061",
+      "kernel": "fused_recurrent_dplr_delta_rule_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_dplr_delta_rule_fwd_kernel",
+      "shape_dtype": "q,k,v,a,b,gk,o: [1,256,4,16] / float32\nh0,ht: [1,4,16,16] / float32",
+      "operator_type": "VV",
+      "original_test": "test_fused_recurrent_dplr_delta_rule_fwd_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_dplr_delta_rule_fwd_kernel/test_fused_recurrent_dplr_delta_rule_fwd_kernel_npu.py",
+      "table_config": {
+        "BV": 16,
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_6161f5614a1fc80f-ca7970adceb7",
+          "test_manifest": "operators/flash_linear_attention/fused_recurrent_dplr_delta_rule_fwd_kernel/tests/vv_6161f5614a1fc80f-ca7970adceb7/test.json",
+          "test_manifest_sha256": "9cd2e27951715f75a2ab0c492c833cae63839d97116d431159429f640089330d",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BV": 16
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/dplr_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -41,6 +41,24 @@ The separate [CV workbook batch](../../docs/FLA_CV.md) adds frozen per-operator
 `cases-cv.json`/`cv_kernels.py` adapters and a serial runner without changing
 the existing `source_archive`/`generated_benchmark` modes or historic results.
 
+The [VV workbook batch](../../docs/FLA_VV.md) now unifies the remaining 317
+workbook specifications in `vv-manifest.json` and each operator's `cases-vv.json`.
+It references the existing `tests/<id>/` sources and fixtures, including
+`additional_tests/`, rather than duplicating kernels. Use the
+[ordered catalog](vv-catalog.md) to find an ordinal or original Excel row:
+
+```bash
+python tools/run_fla_vv.py plan --cases 1-20
+python tools/run_fla_vv.py plan --rows 203-222
+python -I tools/run_fla_vv.py run --cases 1-20 --physical-card 6 \
+  --environment environment.local.json --output runs/fla-vv-001-020
+```
+
+Both range endpoints are included. The default is baseline only; add
+`--factor 2 --axis 0` for a same-configuration block comparison and `--resume`
+to continue the identical batch. New runs need the isolated runtime described
+in the VV documentation. No new NPU validation is claimed by this reorganization.
+
 ```bash
 python tools/run.py plan --operator fla --suite smoke --variants baseline
 python tools/verify_repository.py

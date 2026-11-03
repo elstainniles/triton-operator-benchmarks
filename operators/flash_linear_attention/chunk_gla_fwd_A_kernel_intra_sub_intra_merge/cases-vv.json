@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA068",
+  "cases": [
+    {
+      "index": 177,
+      "row": 379,
+      "id": "vv-row-379",
+      "operator_id": "FLA068",
+      "kernel": "chunk_gla_fwd_A_kernel_intra_sub_intra_merge",
+      "path": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_intra_merge",
+      "shape_dtype": "A: [4,2,1024,8,16] / float32\nA2: [2,1024,8,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_gla_fwd_A_kernel_intra_sub_intra_merge",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_gla_fwd_A_kernel_intra_sub_intra_merge/test_chunk_gla_fwd_A_kernel_intra_sub_intra_merge_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 20.38,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_7be36593c6fd368b-4fd2151190c6",
+          "test_manifest": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_intra_merge/tests/vv_7be36593c6fd368b-4fd2151190c6/test.json",
+          "test_manifest_sha256": "1c22dfc022a220c6cf5445a157ff7cacf75e6203303661fd7b00dabb123b31c0",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

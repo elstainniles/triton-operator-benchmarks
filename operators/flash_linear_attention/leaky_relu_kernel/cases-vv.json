@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA276",
+  "cases": [
+    {
+      "index": 14,
+      "row": 216,
+      "id": "vv-row-216",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_leaky_relu_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 512,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "启动配置错误",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_07db2f251fb1933b-fc032705f9d0",
+          "test_manifest": "operators/flash_linear_attention/leaky_relu_kernel/tests/vv_07db2f251fb1933b-fc032705f9d0/test.json",
+          "test_manifest_sha256": "7af41d02f78f1b0fb0574f61f6debaf99fe08338787152b755ea94a3034329ac",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 512
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/leaky_relu"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 15,
+      "row": 217,
+      "id": "vv-row-217",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_leaky_relu_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 256,
+        "num_warps": null,
+        "num_ctas": null,
+        "num_stages": null
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "启动配置错误",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_07db2f251fb1933b-def888eedf6c",
+          "test_manifest": "operators/flash_linear_attention/leaky_relu_kernel/tests/vv_07db2f251fb1933b-def888eedf6c/test.json",
+          "test_manifest_sha256": "4ecffea8deb84a4c09261e8d9bd876c4255668bf37b82691899bef03e29981db",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 256
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/leaky_relu"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表 null 表示未记录；实际固定参数见 configurations，不把 null 当作编译参数。",
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 16,
+      "row": 218,
+      "id": "vv-row-218",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32\n规格：original_autotune_bs1024_w1_fixed_wrapper_grid",
+      "operator_type": "VV",
+      "original_test": "test_leaky_relu_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 1024,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_07db2f251fb1933b-33f4467780a9",
+          "test_manifest": "operators/flash_linear_attention/leaky_relu_kernel/tests/vv_07db2f251fb1933b-33f4467780a9/test.json",
+          "test_manifest_sha256": "d68f26495a919928c94b2112e1642966090a75e34fe990bbbd398816a6dc899a",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 1024
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/leaky_relu"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 83,
+      "row": 285,
+      "id": "vv-row-285",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32",
+      "operator_type": "VV",
+      "original_test": "test_leaky_relu_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 2048,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 3.22,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_36103cdc2fc2ab3d-0f9df7a09fdd",
+          "test_manifest": "operators/flash_linear_attention/leaky_relu_kernel/tests/vv_36103cdc2fc2ab3d-0f9df7a09fdd/test.json",
+          "test_manifest_sha256": "383bc16e7fb8f013d70438fc596985a01415de64b6f4196b62f5ba115b44d433",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 2048
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/leaky_relu"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 84,
+      "row": 286,
+      "id": "vv-row-286",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel",
+      "shape_dtype": "input,output: [65539] / float32\n规格：original_autotune_bs1024_w1_fixed_wrapper_grid",
+      "operator_type": "VV",
+      "original_test": "test_leaky_relu_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py",
+      "table_config": {
+        "BLOCK_SIZE": 1024,
+        "num_warps": 1,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 2.92,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_36103cdc2fc2ab3d-51f5ffb2d514",
+          "test_manifest": "operators/flash_linear_attention/leaky_relu_kernel/tests/vv_36103cdc2fc2ab3d-51f5ffb2d514/test.json",
+          "test_manifest_sha256": "cc3b89846fc84c2c5472ea35cb34bb90a15b4a5b86a5bb136f18f25b383d9775",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BLOCK_SIZE": 1024
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/leaky_relu"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_functional_assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

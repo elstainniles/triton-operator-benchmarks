@@ -94,7 +94,7 @@ def verify_test(path, metadata):
             read_json(source)
         else:
             raise ValueError('FLA test source must be Python or JSON dependency metadata')
-    if {name for name in files if name.endswith('.py')} != {str(p.relative_to(directory)) for p in directory.rglob('*.py')}:
+    if {name for name in files if name.endswith('.py')} != {p.relative_to(directory).as_posix() for p in directory.rglob('*.py')}:
         raise ValueError('FLA file manifest does not cover its Python sources')
     definitions = {n.name for tree in trees.values() for n in ast.walk(tree)
                    if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))}

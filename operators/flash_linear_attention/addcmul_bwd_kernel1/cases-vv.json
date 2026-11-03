@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA099",
+  "cases": [
+    {
+      "index": 221,
+      "row": 423,
+      "id": "vv-row-423",
+      "operator_id": "FLA099",
+      "kernel": "addcmul_bwd_kernel1",
+      "path": "operators/flash_linear_attention/addcmul_bwd_kernel1",
+      "shape_dtype": "ixr,ixw,ixk,ixv,ixa,ixg: [1,1,33] / float32\ndxr,dxw,dxk,dxv,dxa,dxg,ghidden,gx: [4,67,33] / float32",
+      "operator_type": "VV",
+      "original_test": "test_addcmul_bwd_kernel1",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_addcmul_bwd_kernel1/test_addcmul_bwd_kernel1_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 8.73,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "性能下降",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_a679392925bf0d06-b775216b67b8",
+          "test_manifest": "operators/flash_linear_attention/addcmul_bwd_kernel1/tests/vv_a679392925bf0d06-b775216b67b8/test.json",
+          "test_manifest_sha256": "ea8dad50c4b5ec8a1157a773716e0085dbdaf8f5a878fce5fd4a5fdf6d732b2c",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/addcmul"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 222,
+      "row": 424,
+      "id": "vv-row-424",
+      "operator_id": "FLA099",
+      "kernel": "addcmul_bwd_kernel1",
+      "path": "operators/flash_linear_attention/addcmul_bwd_kernel1",
+      "shape_dtype": "ixr,ixw,ixk,ixv,ixa,ixg: [1,1,33] / float32\ndxr,dxw,dxk,dxv,dxa,dxg,ghidden,gx: [4,67,33] / float32",
+      "operator_type": "VV",
+      "original_test": "test_addcmul_bwd_kernel1",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_addcmul_bwd_kernel1/test_addcmul_bwd_kernel1_npu.py",
+      "table_config": {
+        "BT": 8,
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_a679392925bf0d06-09c3bedc93dc",
+          "test_manifest": "operators/flash_linear_attention/addcmul_bwd_kernel1/tests/vv_a679392925bf0d06-09c3bedc93dc/test.json",
+          "test_manifest_sha256": "cfa17396b2f0086eba6e4701c2dd8d86b0b55d2f2f55828a4f7c14e86de83d9e",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BT": 8
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/addcmul"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

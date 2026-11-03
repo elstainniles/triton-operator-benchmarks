@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA017",
+  "cases": [
+    {
+      "index": 279,
+      "row": 481,
+      "id": "vv-row-481",
+      "operator_id": "FLA017",
+      "kernel": "cross_entropy_kernel",
+      "path": "operators/flash_linear_attention/cross_entropy_kernel",
+      "shape_dtype": "logits: [2,128,1024] / float32\nlse,loss: [2,128] / float32\ntarget: [2,128] / int64",
+      "operator_type": "VV",
+      "original_test": "test_cross_entropy_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_cross_entropy_kernel/test_cross_entropy_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 30.88,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_de4149a4226c113f-62b9c5daf1dd",
+          "test_manifest": "operators/flash_linear_attention/cross_entropy_kernel/tests/vv_de4149a4226c113f-62b9c5daf1dd/test.json",
+          "test_manifest_sha256": "bf1bda2a2c715eaaec1ee65b4144b8af6aeb7db71d923c4f4f61a6d588f412db",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_path": "generated-data/fused_linear_cross_entropy"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

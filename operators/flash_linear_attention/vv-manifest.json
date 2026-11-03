@@ -1,0 +1,2553 @@
+{
+  "schema_version": 1,
+  "workbook": "FLA已确认测试结果_最新.xlsx",
+  "workbook_sha256": "ce1ced530438ff63251e2ca7fb5b1d0048502f88bda7c0a400df11f602611280",
+  "sheet": "11.1全量结果",
+  "ordering": "Workbook VV rows, retained without sorting or deduplication; index is 1-based.",
+  "source_revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+  "classification": "Original workbook VV label; not a fresh static no-dot classification.",
+  "summary": {
+    "rows": 317,
+    "configurations": 318,
+    "operator_entries": 130,
+    "kernel_symbols": 127
+  },
+  "rows": [
+    {
+      "index": 1,
+      "row": 203,
+      "id": "vv-row-203",
+      "operator_id": "FLA282",
+      "kernel": "mesa_net_decoding_one_step_kernel",
+      "path": "operators/flash_linear_attention/mesa_net_decoding_one_step_kernel"
+    },
+    {
+      "index": 2,
+      "row": 204,
+      "id": "vv-row-204",
+      "operator_id": "FLA030",
+      "kernel": "layer_norm_bwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_bwd_kernel1"
+    },
+    {
+      "index": 3,
+      "row": 205,
+      "id": "vv-row-205",
+      "operator_id": "FLA030",
+      "kernel": "layer_norm_bwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_bwd_kernel1"
+    },
+    {
+      "index": 4,
+      "row": 206,
+      "id": "vv-row-206",
+      "operator_id": "FLA241",
+      "kernel": "chunk_abc_bwd_kernel_rcum_inter",
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_inter__34ec7862"
+    },
+    {
+      "index": 5,
+      "row": 207,
+      "id": "vv-row-207",
+      "operator_id": "FLA115",
+      "kernel": "chunk_global_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_global_cumsum_vector_kernel"
+    },
+    {
+      "index": 6,
+      "row": 208,
+      "id": "vv-row-208",
+      "operator_id": "FLA115",
+      "kernel": "chunk_global_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_global_cumsum_vector_kernel"
+    },
+    {
+      "index": 7,
+      "row": 209,
+      "id": "vv-row-209",
+      "operator_id": "FLA020",
+      "kernel": "layer_norm_gated_fwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_gated_fwd_kernel1"
+    },
+    {
+      "index": 8,
+      "row": 210,
+      "id": "vv-row-210",
+      "operator_id": "FLA020",
+      "kernel": "layer_norm_gated_fwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_gated_fwd_kernel1"
+    },
+    {
+      "index": 9,
+      "row": 211,
+      "id": "vv-row-211",
+      "operator_id": "FLA015",
+      "kernel": "kl_div_kernel",
+      "path": "operators/flash_linear_attention/kl_div_kernel"
+    },
+    {
+      "index": 10,
+      "row": 212,
+      "id": "vv-row-212",
+      "operator_id": "FLA006",
+      "kernel": "swish_bwd_kernel",
+      "path": "operators/flash_linear_attention/swish_bwd_kernel"
+    },
+    {
+      "index": 11,
+      "row": 213,
+      "id": "vv-row-213",
+      "operator_id": "FLA006",
+      "kernel": "swish_bwd_kernel",
+      "path": "operators/flash_linear_attention/swish_bwd_kernel"
+    },
+    {
+      "index": 12,
+      "row": 214,
+      "id": "vv-row-214",
+      "operator_id": "FLA033",
+      "kernel": "token_shift_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_long"
+    },
+    {
+      "index": 13,
+      "row": 215,
+      "id": "vv-row-215",
+      "operator_id": "FLA033",
+      "kernel": "token_shift_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_long"
+    },
+    {
+      "index": 14,
+      "row": 216,
+      "id": "vv-row-216",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel"
+    },
+    {
+      "index": 15,
+      "row": 217,
+      "id": "vv-row-217",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel"
+    },
+    {
+      "index": 16,
+      "row": 218,
+      "id": "vv-row-218",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel"
+    },
+    {
+      "index": 17,
+      "row": 219,
+      "id": "vv-row-219",
+      "operator_id": "FLA101",
+      "kernel": "gate_output_correction_fwd_kernel",
+      "path": "operators/flash_linear_attention/gate_output_correction_fwd_kernel"
+    },
+    {
+      "index": 18,
+      "row": 220,
+      "id": "vv-row-220",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel"
+    },
+    {
+      "index": 19,
+      "row": 221,
+      "id": "vv-row-221",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel"
+    },
+    {
+      "index": 20,
+      "row": 222,
+      "id": "vv-row-222",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel"
+    },
+    {
+      "index": 21,
+      "row": 223,
+      "id": "vv-row-223",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel"
+    },
+    {
+      "index": 22,
+      "row": 224,
+      "id": "vv-row-224",
+      "operator_id": "FLA120",
+      "kernel": "mean_pooling_bwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_bwd_kernel"
+    },
+    {
+      "index": 23,
+      "row": 225,
+      "id": "vv-row-225",
+      "operator_id": "FLA120",
+      "kernel": "mean_pooling_bwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_bwd_kernel"
+    },
+    {
+      "index": 24,
+      "row": 226,
+      "id": "vv-row-226",
+      "operator_id": "FLA015",
+      "kernel": "kl_div_kernel",
+      "path": "operators/flash_linear_attention/kl_div_kernel"
+    },
+    {
+      "index": 25,
+      "row": 227,
+      "id": "vv-row-227",
+      "operator_id": "FLA034",
+      "kernel": "token_shift_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_short"
+    },
+    {
+      "index": 26,
+      "row": 228,
+      "id": "vv-row-228",
+      "operator_id": "FLA034",
+      "kernel": "token_shift_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_short"
+    },
+    {
+      "index": 27,
+      "row": 229,
+      "id": "vv-row-229",
+      "operator_id": "FLA013",
+      "kernel": "causal_conv1d_states_fwd_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_states_fwd_kernel"
+    },
+    {
+      "index": 28,
+      "row": 230,
+      "id": "vv-row-230",
+      "operator_id": "FLA022",
+      "kernel": "grpo_bwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_bwd_kernel"
+    },
+    {
+      "index": 29,
+      "row": 231,
+      "id": "vv-row-231",
+      "operator_id": "FLA100",
+      "kernel": "fused_recurrent_rwkv7_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv7_fwd_kernel"
+    },
+    {
+      "index": 30,
+      "row": 232,
+      "id": "vv-row-232",
+      "operator_id": "FLA100",
+      "kernel": "fused_recurrent_rwkv7_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv7_fwd_kernel"
+    },
+    {
+      "index": 31,
+      "row": 233,
+      "id": "vv-row-233",
+      "operator_id": "FLA292",
+      "kernel": "softplus_triton_wrapper_kernel",
+      "path": "operators/flash_linear_attention/softplus_triton_wrapper_kernel"
+    },
+    {
+      "index": 32,
+      "row": 234,
+      "id": "vv-row-234",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short"
+    },
+    {
+      "index": 33,
+      "row": 235,
+      "id": "vv-row-235",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short"
+    },
+    {
+      "index": 34,
+      "row": 236,
+      "id": "vv-row-236",
+      "operator_id": "FLA035",
+      "kernel": "token_shift_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_long"
+    },
+    {
+      "index": 35,
+      "row": 237,
+      "id": "vv-row-237",
+      "operator_id": "FLA035",
+      "kernel": "token_shift_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_long"
+    },
+    {
+      "index": 36,
+      "row": 238,
+      "id": "vv-row-238",
+      "operator_id": "FLA023",
+      "kernel": "l2norm_fwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_fwd_kernel1"
+    },
+    {
+      "index": 37,
+      "row": 239,
+      "id": "vv-row-239",
+      "operator_id": "FLA023",
+      "kernel": "l2norm_fwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_fwd_kernel1"
+    },
+    {
+      "index": 38,
+      "row": 240,
+      "id": "vv-row-240",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel"
+    },
+    {
+      "index": 39,
+      "row": 241,
+      "id": "vv-row-241",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel"
+    },
+    {
+      "index": 40,
+      "row": 242,
+      "id": "vv-row-242",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel"
+    },
+    {
+      "index": 41,
+      "row": 243,
+      "id": "vv-row-243",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel"
+    },
+    {
+      "index": 42,
+      "row": 244,
+      "id": "vv-row-244",
+      "operator_id": "FLA251",
+      "kernel": "chunk_hgrn_fwd_kernel_h",
+      "path": "operators/flash_linear_attention/chunk_hgrn_fwd_kernel_h"
+    },
+    {
+      "index": 43,
+      "row": 245,
+      "id": "vv-row-245",
+      "operator_id": "FLA251",
+      "kernel": "chunk_hgrn_fwd_kernel_h",
+      "path": "operators/flash_linear_attention/chunk_hgrn_fwd_kernel_h"
+    },
+    {
+      "index": 44,
+      "row": 246,
+      "id": "vv-row-246",
+      "operator_id": "FLA023",
+      "kernel": "l2norm_fwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_fwd_kernel1"
+    },
+    {
+      "index": 45,
+      "row": 247,
+      "id": "vv-row-247",
+      "operator_id": "FLA_EXTRA_chunk_dplr_fwd_A_kernel_intra_sub_intra",
+      "kernel": "chunk_dplr_fwd_A_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/additional_tests/chunk_dplr_fwd_A_kernel_intra_sub_intra"
+    },
+    {
+      "index": 46,
+      "row": 248,
+      "id": "vv-row-248",
+      "operator_id": "FLA_EXTRA_chunk_dplr_fwd_A_kernel_intra_sub_intra",
+      "kernel": "chunk_dplr_fwd_A_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/additional_tests/chunk_dplr_fwd_A_kernel_intra_sub_intra"
+    },
+    {
+      "index": 47,
+      "row": 249,
+      "id": "vv-row-249",
+      "operator_id": "FLA097",
+      "kernel": "rwkv_mix_bwd_kenel",
+      "path": "operators/flash_linear_attention/rwkv_mix_bwd_kenel"
+    },
+    {
+      "index": 48,
+      "row": 250,
+      "id": "vv-row-250",
+      "operator_id": "FLA028",
+      "kernel": "layer_norm_fwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_fwd_kernel1"
+    },
+    {
+      "index": 49,
+      "row": 251,
+      "id": "vv-row-251",
+      "operator_id": "FLA028",
+      "kernel": "layer_norm_fwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_fwd_kernel1"
+    },
+    {
+      "index": 50,
+      "row": 252,
+      "id": "vv-row-252",
+      "operator_id": "FLA014",
+      "kernel": "layer_norm_fwd_kernel_quant",
+      "path": "operators/flash_linear_attention/layer_norm_fwd_kernel_quant"
+    },
+    {
+      "index": 51,
+      "row": 253,
+      "id": "vv-row-253",
+      "operator_id": "FLA014",
+      "kernel": "layer_norm_fwd_kernel_quant",
+      "path": "operators/flash_linear_attention/layer_norm_fwd_kernel_quant"
+    },
+    {
+      "index": 52,
+      "row": 254,
+      "id": "vv-row-254",
+      "operator_id": "FLA296",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split",
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split"
+    },
+    {
+      "index": 53,
+      "row": 255,
+      "id": "vv-row-255",
+      "operator_id": "FLA296",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split",
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split"
+    },
+    {
+      "index": 54,
+      "row": 256,
+      "id": "vv-row-256",
+      "operator_id": "FLA070",
+      "kernel": "fused_recurrent_gsa_inference_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_gsa_inference_kernel"
+    },
+    {
+      "index": 55,
+      "row": 257,
+      "id": "vv-row-257",
+      "operator_id": "FLA011",
+      "kernel": "causal_conv1d_update_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_update_kernel"
+    },
+    {
+      "index": 56,
+      "row": 258,
+      "id": "vv-row-258",
+      "operator_id": "FLA011",
+      "kernel": "causal_conv1d_update_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_update_kernel"
+    },
+    {
+      "index": 57,
+      "row": 259,
+      "id": "vv-row-259",
+      "operator_id": "FLA095",
+      "kernel": "rwkv_channel_mixing_pow_and_relu",
+      "path": "operators/flash_linear_attention/rwkv_channel_mixing_pow_and_relu"
+    },
+    {
+      "index": 58,
+      "row": 260,
+      "id": "vv-row-260",
+      "operator_id": "FLA041",
+      "kernel": "chunk_fwd_kernel_h_reduction",
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h_reduction__7a0a718e"
+    },
+    {
+      "index": 59,
+      "row": 261,
+      "id": "vv-row-261",
+      "operator_id": "FLA041",
+      "kernel": "chunk_fwd_kernel_h_reduction",
+      "path": "operators/flash_linear_attention/chunk_fwd_kernel_h_reduction__7a0a718e"
+    },
+    {
+      "index": 60,
+      "row": 262,
+      "id": "vv-row-262",
+      "operator_id": "FLA025",
+      "kernel": "l2norm_fwd_kernel",
+      "path": "operators/flash_linear_attention/l2norm_fwd_kernel"
+    },
+    {
+      "index": 61,
+      "row": 263,
+      "id": "vv-row-263",
+      "operator_id": "FLA025",
+      "kernel": "l2norm_fwd_kernel",
+      "path": "operators/flash_linear_attention/l2norm_fwd_kernel"
+    },
+    {
+      "index": 62,
+      "row": 264,
+      "id": "vv-row-264",
+      "operator_id": "FLA027",
+      "kernel": "layer_norm_fwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_fwd_kernel"
+    },
+    {
+      "index": 63,
+      "row": 265,
+      "id": "vv-row-265",
+      "operator_id": "FLA027",
+      "kernel": "layer_norm_fwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_fwd_kernel"
+    },
+    {
+      "index": 64,
+      "row": 266,
+      "id": "vv-row-266",
+      "operator_id": "FLA280",
+      "kernel": "log2_kernel",
+      "path": "operators/flash_linear_attention/log2_kernel"
+    },
+    {
+      "index": 65,
+      "row": 267,
+      "id": "vv-row-267",
+      "operator_id": "FLA258",
+      "kernel": "exp2_kernel",
+      "path": "operators/flash_linear_attention/exp2_kernel"
+    },
+    {
+      "index": 66,
+      "row": 268,
+      "id": "vv-row-268",
+      "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+      "kernel": "solve_tril_16x16_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel"
+    },
+    {
+      "index": 67,
+      "row": 269,
+      "id": "vv-row-269",
+      "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+      "kernel": "solve_tril_16x16_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel"
+    },
+    {
+      "index": 68,
+      "row": 270,
+      "id": "vv-row-270",
+      "operator_id": "FLA294",
+      "kernel": "tanh_kernel",
+      "path": "operators/flash_linear_attention/tanh_kernel"
+    },
+    {
+      "index": 69,
+      "row": 271,
+      "id": "vv-row-271",
+      "operator_id": "FLA034",
+      "kernel": "token_shift_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_short"
+    },
+    {
+      "index": 70,
+      "row": 272,
+      "id": "vv-row-272",
+      "operator_id": "FLA034",
+      "kernel": "token_shift_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_short"
+    },
+    {
+      "index": 71,
+      "row": 273,
+      "id": "vv-row-273",
+      "operator_id": "FLA018",
+      "kernel": "elementwise_mul_kernel",
+      "path": "operators/flash_linear_attention/elementwise_mul_kernel"
+    },
+    {
+      "index": 72,
+      "row": 274,
+      "id": "vv-row-274",
+      "operator_id": "FLA012",
+      "kernel": "compute_dh0_kernel",
+      "path": "operators/flash_linear_attention/compute_dh0_kernel"
+    },
+    {
+      "index": 73,
+      "row": 275,
+      "id": "vv-row-275",
+      "operator_id": "FLA065",
+      "kernel": "fused_recurrent_bwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_bwd_kernel"
+    },
+    {
+      "index": 74,
+      "row": 276,
+      "id": "vv-row-276",
+      "operator_id": "FLA065",
+      "kernel": "fused_recurrent_bwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_bwd_kernel"
+    },
+    {
+      "index": 75,
+      "row": 277,
+      "id": "vv-row-277",
+      "operator_id": "FLA059",
+      "kernel": "chunk_dplr_bwd_dgk_kernel",
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_dgk_kernel"
+    },
+    {
+      "index": 76,
+      "row": 278,
+      "id": "vv-row-278",
+      "operator_id": "FLA059",
+      "kernel": "chunk_dplr_bwd_dgk_kernel",
+      "path": "operators/flash_linear_attention/chunk_dplr_bwd_dgk_kernel"
+    },
+    {
+      "index": 77,
+      "row": 279,
+      "id": "vv-row-279",
+      "operator_id": "FLA035",
+      "kernel": "token_shift_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_long"
+    },
+    {
+      "index": 78,
+      "row": 280,
+      "id": "vv-row-280",
+      "operator_id": "FLA035",
+      "kernel": "token_shift_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_long"
+    },
+    {
+      "index": 79,
+      "row": 281,
+      "id": "vv-row-281",
+      "operator_id": "FLA035",
+      "kernel": "token_shift_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_long"
+    },
+    {
+      "index": 80,
+      "row": 282,
+      "id": "vv-row-282",
+      "operator_id": "FLA035",
+      "kernel": "token_shift_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_long"
+    },
+    {
+      "index": 81,
+      "row": 283,
+      "id": "vv-row-283",
+      "operator_id": "FLA090",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra_merge",
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra_merge"
+    },
+    {
+      "index": 82,
+      "row": 284,
+      "id": "vv-row-284",
+      "operator_id": "FLA090",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra_merge",
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra_merge"
+    },
+    {
+      "index": 83,
+      "row": 285,
+      "id": "vv-row-285",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel"
+    },
+    {
+      "index": 84,
+      "row": 286,
+      "id": "vv-row-286",
+      "operator_id": "FLA276",
+      "kernel": "leaky_relu_kernel",
+      "path": "operators/flash_linear_attention/leaky_relu_kernel"
+    },
+    {
+      "index": 85,
+      "row": 287,
+      "id": "vv-row-287",
+      "operator_id": "FLA119",
+      "kernel": "mean_pooling_fwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel"
+    },
+    {
+      "index": 86,
+      "row": 288,
+      "id": "vv-row-288",
+      "operator_id": "FLA119",
+      "kernel": "mean_pooling_fwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel"
+    },
+    {
+      "index": 87,
+      "row": 289,
+      "id": "vv-row-289",
+      "operator_id": "FLA284",
+      "kernel": "parallel_nsa_kernel_mask",
+      "path": "operators/flash_linear_attention/parallel_nsa_kernel_mask"
+    },
+    {
+      "index": 88,
+      "row": 290,
+      "id": "vv-row-290",
+      "operator_id": "FLA290",
+      "kernel": "softplus2_triton_wrapper_kernel",
+      "path": "operators/flash_linear_attention/softplus2_triton_wrapper_kernel"
+    },
+    {
+      "index": 89,
+      "row": 291,
+      "id": "vv-row-291",
+      "operator_id": "FLA267",
+      "kernel": "fused_recurrent_oja_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_oja_fwd_kernel"
+    },
+    {
+      "index": 90,
+      "row": 292,
+      "id": "vv-row-292",
+      "operator_id": "FLA019",
+      "kernel": "layer_norm_gated_fwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_gated_fwd_kernel"
+    },
+    {
+      "index": 91,
+      "row": 293,
+      "id": "vv-row-293",
+      "operator_id": "FLA019",
+      "kernel": "layer_norm_gated_fwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_gated_fwd_kernel"
+    },
+    {
+      "index": 92,
+      "row": 294,
+      "id": "vv-row-294",
+      "operator_id": "FLA078",
+      "kernel": "kda_gate_chunk_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_chunk_cumsum_vector_kernel"
+    },
+    {
+      "index": 93,
+      "row": 295,
+      "id": "vv-row-295",
+      "operator_id": "FLA078",
+      "kernel": "kda_gate_chunk_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_chunk_cumsum_vector_kernel"
+    },
+    {
+      "index": 94,
+      "row": 296,
+      "id": "vv-row-296",
+      "operator_id": "FLA033",
+      "kernel": "token_shift_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_long"
+    },
+    {
+      "index": 95,
+      "row": 297,
+      "id": "vv-row-297",
+      "operator_id": "FLA033",
+      "kernel": "token_shift_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_long"
+    },
+    {
+      "index": 96,
+      "row": 298,
+      "id": "vv-row-298",
+      "operator_id": "FLA091",
+      "kernel": "fused_recurrent_rwkv6_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv6_fwd_kernel"
+    },
+    {
+      "index": 97,
+      "row": 299,
+      "id": "vv-row-299",
+      "operator_id": "FLA091",
+      "kernel": "fused_recurrent_rwkv6_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv6_fwd_kernel"
+    },
+    {
+      "index": 98,
+      "row": 300,
+      "id": "vv-row-300",
+      "operator_id": "FLA035",
+      "kernel": "token_shift_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_long"
+    },
+    {
+      "index": 99,
+      "row": 301,
+      "id": "vv-row-301",
+      "operator_id": "FLA035",
+      "kernel": "token_shift_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_long"
+    },
+    {
+      "index": 100,
+      "row": 302,
+      "id": "vv-row-302",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short"
+    },
+    {
+      "index": 101,
+      "row": 303,
+      "id": "vv-row-303",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short"
+    },
+    {
+      "index": 102,
+      "row": 304,
+      "id": "vv-row-304",
+      "operator_id": "FLA026",
+      "kernel": "l2norm_bwd_kernel",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel"
+    },
+    {
+      "index": 103,
+      "row": 305,
+      "id": "vv-row-305",
+      "operator_id": "FLA026",
+      "kernel": "l2norm_bwd_kernel",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel"
+    },
+    {
+      "index": 104,
+      "row": 306,
+      "id": "vv-row-306",
+      "operator_id": "FLA244",
+      "kernel": "chunk_comba_cumsum_scalar_fwd_kernel",
+      "path": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_fwd_kernel"
+    },
+    {
+      "index": 105,
+      "row": 307,
+      "id": "vv-row-307",
+      "operator_id": "FLA244",
+      "kernel": "chunk_comba_cumsum_scalar_fwd_kernel",
+      "path": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_fwd_kernel"
+    },
+    {
+      "index": 106,
+      "row": 308,
+      "id": "vv-row-308",
+      "operator_id": "FLA253",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra__7afce3a5"
+    },
+    {
+      "index": 107,
+      "row": 309,
+      "id": "vv-row-309",
+      "operator_id": "FLA253",
+      "kernel": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra__7afce3a5"
+    },
+    {
+      "index": 108,
+      "row": 310,
+      "id": "vv-row-310",
+      "operator_id": "FLA273",
+      "kernel": "k_update_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/k_update_fwd_kernel_short"
+    },
+    {
+      "index": 109,
+      "row": 311,
+      "id": "vv-row-311",
+      "operator_id": "FLA273",
+      "kernel": "k_update_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/k_update_fwd_kernel_short"
+    },
+    {
+      "index": 110,
+      "row": 312,
+      "id": "vv-row-312",
+      "operator_id": "FLA275",
+      "kernel": "layer_norm_gated_bwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_gated_bwd_kernel1"
+    },
+    {
+      "index": 111,
+      "row": 313,
+      "id": "vv-row-313",
+      "operator_id": "FLA275",
+      "kernel": "layer_norm_gated_bwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_gated_bwd_kernel1"
+    },
+    {
+      "index": 112,
+      "row": 314,
+      "id": "vv-row-314",
+      "operator_id": "FLA096",
+      "kernel": "relu_square_bwd_kernel",
+      "path": "operators/flash_linear_attention/relu_square_bwd_kernel"
+    },
+    {
+      "index": 113,
+      "row": 315,
+      "id": "vv-row-315",
+      "operator_id": "FLA031",
+      "kernel": "rotary_embedding_kernel",
+      "path": "operators/flash_linear_attention/rotary_embedding_kernel"
+    },
+    {
+      "index": 114,
+      "row": 316,
+      "id": "vv-row-316",
+      "operator_id": "FLA031",
+      "kernel": "rotary_embedding_kernel",
+      "path": "operators/flash_linear_attention/rotary_embedding_kernel"
+    },
+    {
+      "index": 115,
+      "row": 317,
+      "id": "vv-row-317",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel"
+    },
+    {
+      "index": 116,
+      "row": 318,
+      "id": "vv-row-318",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel"
+    },
+    {
+      "index": 117,
+      "row": 319,
+      "id": "vv-row-319",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel"
+    },
+    {
+      "index": 118,
+      "row": 320,
+      "id": "vv-row-320",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel"
+    },
+    {
+      "index": 119,
+      "row": 321,
+      "id": "vv-row-321",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel"
+    },
+    {
+      "index": 120,
+      "row": 322,
+      "id": "vv-row-322",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel"
+    },
+    {
+      "index": 121,
+      "row": 323,
+      "id": "vv-row-323",
+      "operator_id": "FLA114",
+      "kernel": "chunk_global_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/chunk_global_cumsum_scalar_kernel"
+    },
+    {
+      "index": 122,
+      "row": 324,
+      "id": "vv-row-324",
+      "operator_id": "FLA114",
+      "kernel": "chunk_global_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/chunk_global_cumsum_scalar_kernel"
+    },
+    {
+      "index": 123,
+      "row": 325,
+      "id": "vv-row-325",
+      "operator_id": "FLA243",
+      "kernel": "chunk_comba_cumsum_scalar_bwd_kernel",
+      "path": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_bwd_kernel"
+    },
+    {
+      "index": 124,
+      "row": 326,
+      "id": "vv-row-326",
+      "operator_id": "FLA243",
+      "kernel": "chunk_comba_cumsum_scalar_bwd_kernel",
+      "path": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_bwd_kernel"
+    },
+    {
+      "index": 125,
+      "row": 327,
+      "id": "vv-row-327",
+      "operator_id": "FLA265",
+      "kernel": "fused_recurrent_hgrn_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_hgrn_fwd_kernel"
+    },
+    {
+      "index": 126,
+      "row": 328,
+      "id": "vv-row-328",
+      "operator_id": "FLA265",
+      "kernel": "fused_recurrent_hgrn_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_hgrn_fwd_kernel"
+    },
+    {
+      "index": 127,
+      "row": 329,
+      "id": "vv-row-329",
+      "operator_id": "FLA094",
+      "kernel": "rwkv_seq_mix_kernel",
+      "path": "operators/flash_linear_attention/rwkv_seq_mix_kernel"
+    },
+    {
+      "index": 128,
+      "row": 330,
+      "id": "vv-row-330",
+      "operator_id": "FLA287",
+      "kernel": "save_intra_chunk_attn",
+      "path": "operators/flash_linear_attention/save_intra_chunk_attn"
+    },
+    {
+      "index": 129,
+      "row": 331,
+      "id": "vv-row-331",
+      "operator_id": "FLA287",
+      "kernel": "save_intra_chunk_attn",
+      "path": "operators/flash_linear_attention/save_intra_chunk_attn"
+    },
+    {
+      "index": 130,
+      "row": 332,
+      "id": "vv-row-332",
+      "operator_id": "FLA117",
+      "kernel": "logsumexp_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsumexp_fwd_kernel__de4b66b8"
+    },
+    {
+      "index": 131,
+      "row": 333,
+      "id": "vv-row-333",
+      "operator_id": "FLA117",
+      "kernel": "logsumexp_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsumexp_fwd_kernel__de4b66b8"
+    },
+    {
+      "index": 132,
+      "row": 334,
+      "id": "vv-row-334",
+      "operator_id": "FLA088",
+      "kernel": "fused_recurrent_rwkv4_forward_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv4_forward_kernel"
+    },
+    {
+      "index": 133,
+      "row": 335,
+      "id": "vv-row-335",
+      "operator_id": "FLA034",
+      "kernel": "token_shift_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_short"
+    },
+    {
+      "index": 134,
+      "row": 336,
+      "id": "vv-row-336",
+      "operator_id": "FLA034",
+      "kernel": "token_shift_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_short"
+    },
+    {
+      "index": 135,
+      "row": 337,
+      "id": "vv-row-337",
+      "operator_id": "FLA292",
+      "kernel": "softplus_triton_wrapper_kernel",
+      "path": "operators/flash_linear_attention/softplus_triton_wrapper_kernel"
+    },
+    {
+      "index": 136,
+      "row": 338,
+      "id": "vv-row-338",
+      "operator_id": "FLA240",
+      "kernel": "compare_and_swap_kernel",
+      "path": "operators/flash_linear_attention/compare_and_swap_kernel"
+    },
+    {
+      "index": 137,
+      "row": 339,
+      "id": "vv-row-339",
+      "operator_id": "FLA278",
+      "kernel": "log_kernel",
+      "path": "operators/flash_linear_attention/log_kernel"
+    },
+    {
+      "index": 138,
+      "row": 340,
+      "id": "vv-row-340",
+      "operator_id": "FLA061",
+      "kernel": "fused_recurrent_dplr_delta_rule_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_dplr_delta_rule_fwd_kernel"
+    },
+    {
+      "index": 139,
+      "row": 341,
+      "id": "vv-row-341",
+      "operator_id": "FLA061",
+      "kernel": "fused_recurrent_dplr_delta_rule_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_dplr_delta_rule_fwd_kernel"
+    },
+    {
+      "index": 140,
+      "row": 342,
+      "id": "vv-row-342",
+      "operator_id": "FLA252",
+      "kernel": "chunk_hgrn_fwd_kernel_o",
+      "path": "operators/flash_linear_attention/chunk_hgrn_fwd_kernel_o"
+    },
+    {
+      "index": 141,
+      "row": 343,
+      "id": "vv-row-343",
+      "operator_id": "FLA252",
+      "kernel": "chunk_hgrn_fwd_kernel_o",
+      "path": "operators/flash_linear_attention/chunk_hgrn_fwd_kernel_o"
+    },
+    {
+      "index": 142,
+      "row": 344,
+      "id": "vv-row-344",
+      "operator_id": "FLA272",
+      "kernel": "k_update_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/k_update_fwd_kernel_long"
+    },
+    {
+      "index": 143,
+      "row": 345,
+      "id": "vv-row-345",
+      "operator_id": "FLA272",
+      "kernel": "k_update_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/k_update_fwd_kernel_long"
+    },
+    {
+      "index": 144,
+      "row": 346,
+      "id": "vv-row-346",
+      "operator_id": "FLA026",
+      "kernel": "l2norm_bwd_kernel",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel"
+    },
+    {
+      "index": 145,
+      "row": 347,
+      "id": "vv-row-347",
+      "operator_id": "FLA026",
+      "kernel": "l2norm_bwd_kernel",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel"
+    },
+    {
+      "index": 146,
+      "row": 348,
+      "id": "vv-row-348",
+      "operator_id": "FLA024",
+      "kernel": "l2norm_bwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel1"
+    },
+    {
+      "index": 147,
+      "row": 349,
+      "id": "vv-row-349",
+      "operator_id": "FLA112",
+      "kernel": "chunk_local_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel"
+    },
+    {
+      "index": 148,
+      "row": 350,
+      "id": "vv-row-350",
+      "operator_id": "FLA263",
+      "kernel": "fused_recurrent_gated_delta_rule_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_gated_delta_rule_fwd_kernel"
+    },
+    {
+      "index": 149,
+      "row": 351,
+      "id": "vv-row-351",
+      "operator_id": "FLA024",
+      "kernel": "l2norm_bwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel1"
+    },
+    {
+      "index": 150,
+      "row": 352,
+      "id": "vv-row-352",
+      "operator_id": "FLA024",
+      "kernel": "l2norm_bwd_kernel1",
+      "path": "operators/flash_linear_attention/l2norm_bwd_kernel1"
+    },
+    {
+      "index": 151,
+      "row": 353,
+      "id": "vv-row-353",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel"
+    },
+    {
+      "index": 152,
+      "row": 354,
+      "id": "vv-row-354",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel"
+    },
+    {
+      "index": 153,
+      "row": 355,
+      "id": "vv-row-355",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel"
+    },
+    {
+      "index": 154,
+      "row": 356,
+      "id": "vv-row-356",
+      "operator_id": "FLA002",
+      "kernel": "sigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_bwd_kernel"
+    },
+    {
+      "index": 155,
+      "row": 357,
+      "id": "vv-row-357",
+      "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+      "kernel": "solve_tril_16x16_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel"
+    },
+    {
+      "index": 156,
+      "row": 358,
+      "id": "vv-row-358",
+      "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+      "kernel": "solve_tril_16x16_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/solve_tril_16x16_kernel"
+    },
+    {
+      "index": 157,
+      "row": 359,
+      "id": "vv-row-359",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel"
+    },
+    {
+      "index": 158,
+      "row": 360,
+      "id": "vv-row-360",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel"
+    },
+    {
+      "index": 159,
+      "row": 361,
+      "id": "vv-row-361",
+      "operator_id": "FLA021",
+      "kernel": "grpo_fwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_fwd_kernel"
+    },
+    {
+      "index": 160,
+      "row": 362,
+      "id": "vv-row-362",
+      "operator_id": "FLA022",
+      "kernel": "grpo_bwd_kernel",
+      "path": "operators/flash_linear_attention/grpo_bwd_kernel"
+    },
+    {
+      "index": 161,
+      "row": 363,
+      "id": "vv-row-363",
+      "operator_id": "FLA122",
+      "kernel": "softmax_bwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_bwd_kernel__aef642ef"
+    },
+    {
+      "index": 162,
+      "row": 364,
+      "id": "vv-row-364",
+      "operator_id": "FLA122",
+      "kernel": "softmax_bwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_bwd_kernel__aef642ef"
+    },
+    {
+      "index": 163,
+      "row": 365,
+      "id": "vv-row-365",
+      "operator_id": "FLA294",
+      "kernel": "tanh_kernel",
+      "path": "operators/flash_linear_attention/tanh_kernel"
+    },
+    {
+      "index": 164,
+      "row": 366,
+      "id": "vv-row-366",
+      "operator_id": "FLA255",
+      "kernel": "cross_entropy_fwd_kernel",
+      "path": "operators/flash_linear_attention/cross_entropy_fwd_kernel"
+    },
+    {
+      "index": 165,
+      "row": 367,
+      "id": "vv-row-367",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 166,
+      "row": 368,
+      "id": "vv-row-368",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 167,
+      "row": 369,
+      "id": "vv-row-369",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 168,
+      "row": 370,
+      "id": "vv-row-370",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 169,
+      "row": 371,
+      "id": "vv-row-371",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 170,
+      "row": 372,
+      "id": "vv-row-372",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 171,
+      "row": 373,
+      "id": "vv-row-373",
+      "operator_id": "FLA256",
+      "kernel": "exp_kernel",
+      "path": "operators/flash_linear_attention/exp_kernel"
+    },
+    {
+      "index": 172,
+      "row": 374,
+      "id": "vv-row-374",
+      "operator_id": "FLA242",
+      "kernel": "chunk_abc_bwd_kernel_rcum_intra",
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_intra__828ee053"
+    },
+    {
+      "index": 173,
+      "row": 375,
+      "id": "vv-row-375",
+      "operator_id": "FLA037",
+      "kernel": "parallel_attn_bwd_kernel_preprocess",
+      "path": "operators/flash_linear_attention/parallel_attn_bwd_kernel_preprocess__29270ece"
+    },
+    {
+      "index": 174,
+      "row": 376,
+      "id": "vv-row-376",
+      "operator_id": "FLA046",
+      "kernel": "gdn_gate_chunk_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/gdn_gate_chunk_cumsum_scalar_kernel"
+    },
+    {
+      "index": 175,
+      "row": 377,
+      "id": "vv-row-377",
+      "operator_id": "FLA046",
+      "kernel": "gdn_gate_chunk_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/gdn_gate_chunk_cumsum_scalar_kernel"
+    },
+    {
+      "index": 176,
+      "row": 378,
+      "id": "vv-row-378",
+      "operator_id": "FLA034",
+      "kernel": "token_shift_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_bwd_kernel_short"
+    },
+    {
+      "index": 177,
+      "row": 379,
+      "id": "vv-row-379",
+      "operator_id": "FLA068",
+      "kernel": "chunk_gla_fwd_A_kernel_intra_sub_intra_merge",
+      "path": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_intra_merge"
+    },
+    {
+      "index": 178,
+      "row": 380,
+      "id": "vv-row-380",
+      "operator_id": "FLA262",
+      "kernel": "fused_recurrent_delta_rule_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_delta_rule_fwd_kernel"
+    },
+    {
+      "index": 179,
+      "row": 381,
+      "id": "vv-row-381",
+      "operator_id": "FLA269",
+      "kernel": "gdn_gate_fwd_kernel",
+      "path": "operators/flash_linear_attention/gdn_gate_fwd_kernel"
+    },
+    {
+      "index": 180,
+      "row": 382,
+      "id": "vv-row-382",
+      "operator_id": "FLA080",
+      "kernel": "copy_input_kernel",
+      "path": "operators/flash_linear_attention/copy_input_kernel"
+    },
+    {
+      "index": 181,
+      "row": 383,
+      "id": "vv-row-383",
+      "operator_id": "FLA080",
+      "kernel": "copy_input_kernel",
+      "path": "operators/flash_linear_attention/copy_input_kernel"
+    },
+    {
+      "index": 182,
+      "row": 384,
+      "id": "vv-row-384",
+      "operator_id": "FLA274",
+      "kernel": "layer_norm_gated_bwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_gated_bwd_kernel"
+    },
+    {
+      "index": 183,
+      "row": 385,
+      "id": "vv-row-385",
+      "operator_id": "FLA274",
+      "kernel": "layer_norm_gated_bwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_gated_bwd_kernel"
+    },
+    {
+      "index": 184,
+      "row": 386,
+      "id": "vv-row-386",
+      "operator_id": "FLA278",
+      "kernel": "log_kernel",
+      "path": "operators/flash_linear_attention/log_kernel"
+    },
+    {
+      "index": 185,
+      "row": 387,
+      "id": "vv-row-387",
+      "operator_id": "FLA113",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270"
+    },
+    {
+      "index": 186,
+      "row": 388,
+      "id": "vv-row-388",
+      "operator_id": "FLA113",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270"
+    },
+    {
+      "index": 187,
+      "row": 389,
+      "id": "vv-row-389",
+      "operator_id": "FLA113",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270"
+    },
+    {
+      "index": 188,
+      "row": 390,
+      "id": "vv-row-390",
+      "operator_id": "FLA113",
+      "kernel": "chunk_local_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_vector_kernel__71243270"
+    },
+    {
+      "index": 189,
+      "row": 391,
+      "id": "vv-row-391",
+      "operator_id": "FLA245",
+      "kernel": "chunk_gla_fwd_A_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_intra"
+    },
+    {
+      "index": 190,
+      "row": 392,
+      "id": "vv-row-392",
+      "operator_id": "FLA245",
+      "kernel": "chunk_gla_fwd_A_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_intra"
+    },
+    {
+      "index": 191,
+      "row": 393,
+      "id": "vv-row-393",
+      "operator_id": "FLA268",
+      "kernel": "gdn_gate_bwd_kernel",
+      "path": "operators/flash_linear_attention/gdn_gate_bwd_kernel"
+    },
+    {
+      "index": 192,
+      "row": 394,
+      "id": "vv-row-394",
+      "operator_id": "FLA268",
+      "kernel": "gdn_gate_bwd_kernel",
+      "path": "operators/flash_linear_attention/gdn_gate_bwd_kernel"
+    },
+    {
+      "index": 193,
+      "row": 395,
+      "id": "vv-row-395",
+      "operator_id": "FLA001",
+      "kernel": "sigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_fwd_kernel"
+    },
+    {
+      "index": 194,
+      "row": 396,
+      "id": "vv-row-396",
+      "operator_id": "FLA001",
+      "kernel": "sigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_fwd_kernel"
+    },
+    {
+      "index": 195,
+      "row": 397,
+      "id": "vv-row-397",
+      "operator_id": "FLA036",
+      "kernel": "naive_attn_decoding_kernel",
+      "path": "operators/flash_linear_attention/naive_attn_decoding_kernel"
+    },
+    {
+      "index": 196,
+      "row": 398,
+      "id": "vv-row-398",
+      "operator_id": "FLA036",
+      "kernel": "naive_attn_decoding_kernel",
+      "path": "operators/flash_linear_attention/naive_attn_decoding_kernel"
+    },
+    {
+      "index": 197,
+      "row": 399,
+      "id": "vv-row-399",
+      "operator_id": "FLA248",
+      "kernel": "chunk_bwd_kernel_dh_reduction",
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__82adc91e"
+    },
+    {
+      "index": 198,
+      "row": 400,
+      "id": "vv-row-400",
+      "operator_id": "FLA001",
+      "kernel": "sigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_fwd_kernel"
+    },
+    {
+      "index": 199,
+      "row": 401,
+      "id": "vv-row-401",
+      "operator_id": "FLA001",
+      "kernel": "sigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_fwd_kernel"
+    },
+    {
+      "index": 200,
+      "row": 402,
+      "id": "vv-row-402",
+      "operator_id": "FLA001",
+      "kernel": "sigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_fwd_kernel"
+    },
+    {
+      "index": 201,
+      "row": 403,
+      "id": "vv-row-403",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel"
+    },
+    {
+      "index": 202,
+      "row": 404,
+      "id": "vv-row-404",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel"
+    },
+    {
+      "index": 203,
+      "row": 405,
+      "id": "vv-row-405",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel"
+    },
+    {
+      "index": 204,
+      "row": 406,
+      "id": "vv-row-406",
+      "operator_id": "FLA241",
+      "kernel": "chunk_abc_bwd_kernel_rcum_inter",
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_inter__34ec7862"
+    },
+    {
+      "index": 205,
+      "row": 407,
+      "id": "vv-row-407",
+      "operator_id": "FLA008",
+      "kernel": "swiglu_fwdbwd_kernel",
+      "path": "operators/flash_linear_attention/swiglu_fwdbwd_kernel"
+    },
+    {
+      "index": 206,
+      "row": 408,
+      "id": "vv-row-408",
+      "operator_id": "FLA008",
+      "kernel": "swiglu_fwdbwd_kernel",
+      "path": "operators/flash_linear_attention/swiglu_fwdbwd_kernel"
+    },
+    {
+      "index": 207,
+      "row": 409,
+      "id": "vv-row-409",
+      "operator_id": "FLA121",
+      "kernel": "softmax_fwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef"
+    },
+    {
+      "index": 208,
+      "row": 410,
+      "id": "vv-row-410",
+      "operator_id": "FLA121",
+      "kernel": "softmax_fwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef"
+    },
+    {
+      "index": 209,
+      "row": 411,
+      "id": "vv-row-411",
+      "operator_id": "FLA256",
+      "kernel": "exp_kernel",
+      "path": "operators/flash_linear_attention/exp_kernel"
+    },
+    {
+      "index": 210,
+      "row": 412,
+      "id": "vv-row-412",
+      "operator_id": "FLA025",
+      "kernel": "l2norm_fwd_kernel",
+      "path": "operators/flash_linear_attention/l2norm_fwd_kernel"
+    },
+    {
+      "index": 211,
+      "row": 413,
+      "id": "vv-row-413",
+      "operator_id": "FLA025",
+      "kernel": "l2norm_fwd_kernel",
+      "path": "operators/flash_linear_attention/l2norm_fwd_kernel"
+    },
+    {
+      "index": 212,
+      "row": 414,
+      "id": "vv-row-414",
+      "operator_id": "FLA089",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra"
+    },
+    {
+      "index": 213,
+      "row": 415,
+      "id": "vv-row-415",
+      "operator_id": "FLA089",
+      "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra",
+      "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra"
+    },
+    {
+      "index": 214,
+      "row": 416,
+      "id": "vv-row-416",
+      "operator_id": "FLA102",
+      "kernel": "gate_output_correction_bwd_kernel",
+      "path": "operators/flash_linear_attention/gate_output_correction_bwd_kernel"
+    },
+    {
+      "index": 215,
+      "row": 417,
+      "id": "vv-row-417",
+      "operator_id": "FLA102",
+      "kernel": "gate_output_correction_bwd_kernel",
+      "path": "operators/flash_linear_attention/gate_output_correction_bwd_kernel"
+    },
+    {
+      "index": 216,
+      "row": 418,
+      "id": "vv-row-418",
+      "operator_id": "FLA249",
+      "kernel": "chunk_hgrn_bwd_kernel_h",
+      "path": "operators/flash_linear_attention/chunk_hgrn_bwd_kernel_h"
+    },
+    {
+      "index": 217,
+      "row": 419,
+      "id": "vv-row-419",
+      "operator_id": "FLA249",
+      "kernel": "chunk_hgrn_bwd_kernel_h",
+      "path": "operators/flash_linear_attention/chunk_hgrn_bwd_kernel_h"
+    },
+    {
+      "index": 218,
+      "row": 420,
+      "id": "vv-row-420",
+      "operator_id": "FLA290",
+      "kernel": "softplus2_triton_wrapper_kernel",
+      "path": "operators/flash_linear_attention/softplus2_triton_wrapper_kernel"
+    },
+    {
+      "index": 219,
+      "row": 421,
+      "id": "vv-row-421",
+      "operator_id": "FLA005",
+      "kernel": "swish_fwd_kernel",
+      "path": "operators/flash_linear_attention/swish_fwd_kernel"
+    },
+    {
+      "index": 220,
+      "row": 422,
+      "id": "vv-row-422",
+      "operator_id": "FLA005",
+      "kernel": "swish_fwd_kernel",
+      "path": "operators/flash_linear_attention/swish_fwd_kernel"
+    },
+    {
+      "index": 221,
+      "row": 423,
+      "id": "vv-row-423",
+      "operator_id": "FLA099",
+      "kernel": "addcmul_bwd_kernel1",
+      "path": "operators/flash_linear_attention/addcmul_bwd_kernel1"
+    },
+    {
+      "index": 222,
+      "row": 424,
+      "id": "vv-row-424",
+      "operator_id": "FLA099",
+      "kernel": "addcmul_bwd_kernel1",
+      "path": "operators/flash_linear_attention/addcmul_bwd_kernel1"
+    },
+    {
+      "index": 223,
+      "row": 425,
+      "id": "vv-row-425",
+      "operator_id": "FLA261",
+      "kernel": "fused_recurrent_delta_rule_bwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_delta_rule_bwd_kernel"
+    },
+    {
+      "index": 224,
+      "row": 426,
+      "id": "vv-row-426",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel"
+    },
+    {
+      "index": 225,
+      "row": 427,
+      "id": "vv-row-427",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel"
+    },
+    {
+      "index": 226,
+      "row": 428,
+      "id": "vv-row-428",
+      "operator_id": "FLA288",
+      "kernel": "sigmoid_kernel",
+      "path": "operators/flash_linear_attention/sigmoid_kernel"
+    },
+    {
+      "index": 227,
+      "row": 429,
+      "id": "vv-row-429",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel"
+    },
+    {
+      "index": 228,
+      "row": 430,
+      "id": "vv-row-430",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel"
+    },
+    {
+      "index": 229,
+      "row": 431,
+      "id": "vv-row-431",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel"
+    },
+    {
+      "index": 230,
+      "row": 432,
+      "id": "vv-row-432",
+      "operator_id": "FLA003",
+      "kernel": "logsigmoid_fwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_fwd_kernel"
+    },
+    {
+      "index": 231,
+      "row": 433,
+      "id": "vv-row-433",
+      "operator_id": "FLA280",
+      "kernel": "log2_kernel",
+      "path": "operators/flash_linear_attention/log2_kernel"
+    },
+    {
+      "index": 232,
+      "row": 434,
+      "id": "vv-row-434",
+      "operator_id": "FLA121",
+      "kernel": "softmax_fwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef"
+    },
+    {
+      "index": 233,
+      "row": 435,
+      "id": "vv-row-435",
+      "operator_id": "FLA121",
+      "kernel": "softmax_fwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef"
+    },
+    {
+      "index": 234,
+      "row": 436,
+      "id": "vv-row-436",
+      "operator_id": "FLA264",
+      "kernel": "fused_recurrent_hgrn_bwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_hgrn_bwd_kernel"
+    },
+    {
+      "index": 235,
+      "row": 437,
+      "id": "vv-row-437",
+      "operator_id": "FLA093",
+      "kernel": "fused_recurrent_rwkv6_bwd_kernel_dkv",
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv6_bwd_kernel_dkv"
+    },
+    {
+      "index": 236,
+      "row": 438,
+      "id": "vv-row-438",
+      "operator_id": "FLA250",
+      "kernel": "chunk_hgrn_bwd_kernel_o",
+      "path": "operators/flash_linear_attention/chunk_hgrn_bwd_kernel_o"
+    },
+    {
+      "index": 237,
+      "row": 439,
+      "id": "vv-row-439",
+      "operator_id": "FLA250",
+      "kernel": "chunk_hgrn_bwd_kernel_o",
+      "path": "operators/flash_linear_attention/chunk_hgrn_bwd_kernel_o"
+    },
+    {
+      "index": 238,
+      "row": 440,
+      "id": "vv-row-440",
+      "operator_id": "FLA010",
+      "kernel": "causal_conv1d_bwd_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_bwd_kernel"
+    },
+    {
+      "index": 239,
+      "row": 441,
+      "id": "vv-row-441",
+      "operator_id": "FLA010",
+      "kernel": "causal_conv1d_bwd_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_bwd_kernel"
+    },
+    {
+      "index": 240,
+      "row": 442,
+      "id": "vv-row-442",
+      "operator_id": "FLA271",
+      "kernel": "k_update_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/k_update_bwd_kernel_short"
+    },
+    {
+      "index": 241,
+      "row": 443,
+      "id": "vv-row-443",
+      "operator_id": "FLA271",
+      "kernel": "k_update_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/k_update_bwd_kernel_short"
+    },
+    {
+      "index": 242,
+      "row": 444,
+      "id": "vv-row-444",
+      "operator_id": "FLA270",
+      "kernel": "k_update_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/k_update_bwd_kernel_long"
+    },
+    {
+      "index": 243,
+      "row": 445,
+      "id": "vv-row-445",
+      "operator_id": "FLA270",
+      "kernel": "k_update_bwd_kernel_long",
+      "path": "operators/flash_linear_attention/k_update_bwd_kernel_long"
+    },
+    {
+      "index": 244,
+      "row": 446,
+      "id": "vv-row-446",
+      "operator_id": "FLA254",
+      "kernel": "cross_entropy_bwd_kernel",
+      "path": "operators/flash_linear_attention/cross_entropy_bwd_kernel"
+    },
+    {
+      "index": 245,
+      "row": 447,
+      "id": "vv-row-447",
+      "operator_id": "FLA077",
+      "kernel": "kda_gate_bwd_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_bwd_kernel"
+    },
+    {
+      "index": 246,
+      "row": 448,
+      "id": "vv-row-448",
+      "operator_id": "FLA077",
+      "kernel": "kda_gate_bwd_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_bwd_kernel"
+    },
+    {
+      "index": 247,
+      "row": 449,
+      "id": "vv-row-449",
+      "operator_id": "FLA077",
+      "kernel": "kda_gate_bwd_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_bwd_kernel"
+    },
+    {
+      "index": 248,
+      "row": 450,
+      "id": "vv-row-450",
+      "operator_id": "FLA112",
+      "kernel": "chunk_local_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel"
+    },
+    {
+      "index": 249,
+      "row": 451,
+      "id": "vv-row-451",
+      "operator_id": "FLA112",
+      "kernel": "chunk_local_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel"
+    },
+    {
+      "index": 250,
+      "row": 452,
+      "id": "vv-row-452",
+      "operator_id": "FLA064",
+      "kernel": "fused_recurrent_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_fwd_kernel"
+    },
+    {
+      "index": 251,
+      "row": 453,
+      "id": "vv-row-453",
+      "operator_id": "FLA064",
+      "kernel": "fused_recurrent_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_fwd_kernel"
+    },
+    {
+      "index": 252,
+      "row": 454,
+      "id": "vv-row-454",
+      "operator_id": "FLA092",
+      "kernel": "fused_recurrent_rwkv6_bwd_kernel_dq",
+      "path": "operators/flash_linear_attention/fused_recurrent_rwkv6_bwd_kernel_dq"
+    },
+    {
+      "index": 253,
+      "row": 455,
+      "id": "vv-row-455",
+      "operator_id": "FLA119",
+      "kernel": "mean_pooling_fwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel"
+    },
+    {
+      "index": 254,
+      "row": 456,
+      "id": "vv-row-456",
+      "operator_id": "FLA119",
+      "kernel": "mean_pooling_fwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel"
+    },
+    {
+      "index": 255,
+      "row": 457,
+      "id": "vv-row-457",
+      "operator_id": "FLA122",
+      "kernel": "softmax_bwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_bwd_kernel__aef642ef"
+    },
+    {
+      "index": 256,
+      "row": 458,
+      "id": "vv-row-458",
+      "operator_id": "FLA122",
+      "kernel": "softmax_bwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_bwd_kernel__aef642ef"
+    },
+    {
+      "index": 257,
+      "row": 459,
+      "id": "vv-row-459",
+      "operator_id": "FLA098",
+      "kernel": "fused_addcmul_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_addcmul_fwd_kernel"
+    },
+    {
+      "index": 258,
+      "row": 460,
+      "id": "vv-row-460",
+      "operator_id": "FLA098",
+      "kernel": "fused_addcmul_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_addcmul_fwd_kernel"
+    },
+    {
+      "index": 259,
+      "row": 461,
+      "id": "vv-row-461",
+      "operator_id": "FLA098",
+      "kernel": "fused_addcmul_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_addcmul_fwd_kernel"
+    },
+    {
+      "index": 260,
+      "row": 462,
+      "id": "vv-row-462",
+      "operator_id": "FLA020",
+      "kernel": "layer_norm_gated_fwd_kernel1",
+      "path": "operators/flash_linear_attention/layer_norm_gated_fwd_kernel1"
+    },
+    {
+      "index": 261,
+      "row": 463,
+      "id": "vv-row-463",
+      "operator_id": "FLA076",
+      "kernel": "kda_gate_fwd_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_fwd_kernel"
+    },
+    {
+      "index": 262,
+      "row": 464,
+      "id": "vv-row-464",
+      "operator_id": "FLA076",
+      "kernel": "kda_gate_fwd_kernel",
+      "path": "operators/flash_linear_attention/kda_gate_fwd_kernel"
+    },
+    {
+      "index": 263,
+      "row": 465,
+      "id": "vv-row-465",
+      "operator_id": "FLA081",
+      "kernel": "copy_last_chunk_kernel",
+      "path": "operators/flash_linear_attention/copy_last_chunk_kernel"
+    },
+    {
+      "index": 264,
+      "row": 466,
+      "id": "vv-row-466",
+      "operator_id": "FLA081",
+      "kernel": "copy_last_chunk_kernel",
+      "path": "operators/flash_linear_attention/copy_last_chunk_kernel"
+    },
+    {
+      "index": 265,
+      "row": 467,
+      "id": "vv-row-467",
+      "operator_id": "FLA012",
+      "kernel": "compute_dh0_kernel",
+      "path": "operators/flash_linear_attention/compute_dh0_kernel"
+    },
+    {
+      "index": 266,
+      "row": 468,
+      "id": "vv-row-468",
+      "operator_id": "FLA_EXTRA_cross_entropy_fwd_kernel",
+      "kernel": "cross_entropy_fwd_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/cross_entropy_fwd_kernel"
+    },
+    {
+      "index": 267,
+      "row": 469,
+      "id": "vv-row-469",
+      "operator_id": "FLA_EXTRA_cross_entropy_bwd_kernel",
+      "kernel": "cross_entropy_bwd_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/cross_entropy_bwd_kernel"
+    },
+    {
+      "index": 268,
+      "row": 470,
+      "id": "vv-row-470",
+      "operator_id": "FLA029",
+      "kernel": "layer_norm_bwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_bwd_kernel"
+    },
+    {
+      "index": 269,
+      "row": 471,
+      "id": "vv-row-471",
+      "operator_id": "FLA029",
+      "kernel": "layer_norm_bwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_bwd_kernel"
+    },
+    {
+      "index": 270,
+      "row": 472,
+      "id": "vv-row-472",
+      "operator_id": "FLA075",
+      "kernel": "chunk_kda_fwd_kernel_intra_token_parallel",
+      "path": "operators/flash_linear_attention/chunk_kda_fwd_kernel_intra_token_parallel"
+    },
+    {
+      "index": 271,
+      "row": 473,
+      "id": "vv-row-473",
+      "operator_id": "FLA283",
+      "kernel": "packunpack_sequence_kernel",
+      "path": "operators/flash_linear_attention/packunpack_sequence_kernel"
+    },
+    {
+      "index": 272,
+      "row": 474,
+      "id": "vv-row-474",
+      "operator_id": "FLA283",
+      "kernel": "packunpack_sequence_kernel",
+      "path": "operators/flash_linear_attention/packunpack_sequence_kernel"
+    },
+    {
+      "index": 273,
+      "row": 475,
+      "id": "vv-row-475",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short"
+    },
+    {
+      "index": 274,
+      "row": 476,
+      "id": "vv-row-476",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short"
+    },
+    {
+      "index": 275,
+      "row": 477,
+      "id": "vv-row-477",
+      "operator_id": "FLA260",
+      "kernel": "fused_recurrent_comba_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_comba_fwd_kernel"
+    },
+    {
+      "index": 276,
+      "row": 478,
+      "id": "vv-row-478",
+      "operator_id": "FLA_EXTRA_fused_recurrent_rwkv4_backward_kernel",
+      "kernel": "fused_recurrent_rwkv4_backward_kernel",
+      "path": "operators/flash_linear_attention/additional_tests/fused_recurrent_rwkv4_backward_kernel"
+    },
+    {
+      "index": 277,
+      "row": 479,
+      "id": "vv-row-479",
+      "operator_id": "FLA031",
+      "kernel": "rotary_embedding_kernel",
+      "path": "operators/flash_linear_attention/rotary_embedding_kernel"
+    },
+    {
+      "index": 278,
+      "row": 480,
+      "id": "vv-row-480",
+      "operator_id": "FLA031",
+      "kernel": "rotary_embedding_kernel",
+      "path": "operators/flash_linear_attention/rotary_embedding_kernel"
+    },
+    {
+      "index": 279,
+      "row": 481,
+      "id": "vv-row-481",
+      "operator_id": "FLA017",
+      "kernel": "cross_entropy_kernel",
+      "path": "operators/flash_linear_attention/cross_entropy_kernel"
+    },
+    {
+      "index": 280,
+      "row": 482,
+      "id": "vv-row-482",
+      "operator_id": "FLA040",
+      "kernel": "chunk_bwd_kernel_dh_reduction",
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__66eb8bea"
+    },
+    {
+      "index": 281,
+      "row": 483,
+      "id": "vv-row-483",
+      "operator_id": "FLA040",
+      "kernel": "chunk_bwd_kernel_dh_reduction",
+      "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__66eb8bea"
+    },
+    {
+      "index": 282,
+      "row": 484,
+      "id": "vv-row-484",
+      "operator_id": "FLA120",
+      "kernel": "mean_pooling_bwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_bwd_kernel"
+    },
+    {
+      "index": 283,
+      "row": 485,
+      "id": "vv-row-485",
+      "operator_id": "FLA120",
+      "kernel": "mean_pooling_bwd_kernel",
+      "path": "operators/flash_linear_attention/mean_pooling_bwd_kernel"
+    },
+    {
+      "index": 284,
+      "row": 486,
+      "id": "vv-row-486",
+      "operator_id": "FLA007",
+      "kernel": "swiglu_fwd_kernel",
+      "path": "operators/flash_linear_attention/swiglu_fwd_kernel"
+    },
+    {
+      "index": 285,
+      "row": 487,
+      "id": "vv-row-487",
+      "operator_id": "FLA007",
+      "kernel": "swiglu_fwd_kernel",
+      "path": "operators/flash_linear_attention/swiglu_fwd_kernel"
+    },
+    {
+      "index": 286,
+      "row": 488,
+      "id": "vv-row-488",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel"
+    },
+    {
+      "index": 287,
+      "row": 489,
+      "id": "vv-row-489",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel"
+    },
+    {
+      "index": 288,
+      "row": 490,
+      "id": "vv-row-490",
+      "operator_id": "FLA285",
+      "kernel": "relu_kernel",
+      "path": "operators/flash_linear_attention/relu_kernel"
+    },
+    {
+      "index": 289,
+      "row": 491,
+      "id": "vv-row-491",
+      "operator_id": "FLA115",
+      "kernel": "chunk_global_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_global_cumsum_vector_kernel"
+    },
+    {
+      "index": 290,
+      "row": 492,
+      "id": "vv-row-492",
+      "operator_id": "FLA115",
+      "kernel": "chunk_global_cumsum_vector_kernel",
+      "path": "operators/flash_linear_attention/chunk_global_cumsum_vector_kernel"
+    },
+    {
+      "index": 291,
+      "row": 493,
+      "id": "vv-row-493",
+      "operator_id": "FLA246",
+      "kernel": "chunk_gla_fwd_A_kernel_intra_sub_intra_split",
+      "path": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_intra_split"
+    },
+    {
+      "index": 292,
+      "row": 494,
+      "id": "vv-row-494",
+      "operator_id": "FLA246",
+      "kernel": "chunk_gla_fwd_A_kernel_intra_sub_intra_split",
+      "path": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_intra_split"
+    },
+    {
+      "index": 293,
+      "row": 495,
+      "id": "vv-row-495",
+      "operator_id": "FLA116",
+      "kernel": "prepare_position_ids_kernel",
+      "path": "operators/flash_linear_attention/prepare_position_ids_kernel"
+    },
+    {
+      "index": 294,
+      "row": 496,
+      "id": "vv-row-496",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short"
+    },
+    {
+      "index": 295,
+      "row": 497,
+      "id": "vv-row-497",
+      "operator_id": "FLA032",
+      "kernel": "token_shift_fwd_kernel_short",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_short"
+    },
+    {
+      "index": 296,
+      "row": 498,
+      "id": "vv-row-498",
+      "operator_id": "FLA019",
+      "kernel": "layer_norm_gated_fwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_gated_fwd_kernel"
+    },
+    {
+      "index": 297,
+      "row": 499,
+      "id": "vv-row-499",
+      "operator_id": "FLA019",
+      "kernel": "layer_norm_gated_fwd_kernel",
+      "path": "operators/flash_linear_attention/layer_norm_gated_fwd_kernel"
+    },
+    {
+      "index": 298,
+      "row": 500,
+      "id": "vv-row-500",
+      "operator_id": "FLA013",
+      "kernel": "causal_conv1d_states_fwd_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_states_fwd_kernel"
+    },
+    {
+      "index": 299,
+      "row": 501,
+      "id": "vv-row-501",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 300,
+      "row": 502,
+      "id": "vv-row-502",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 301,
+      "row": 503,
+      "id": "vv-row-503",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 302,
+      "row": 504,
+      "id": "vv-row-504",
+      "operator_id": "FLA004",
+      "kernel": "logsigmoid_bwd_kernel",
+      "path": "operators/flash_linear_attention/logsigmoid_bwd_kernel"
+    },
+    {
+      "index": 303,
+      "row": 505,
+      "id": "vv-row-505",
+      "operator_id": "FLA009",
+      "kernel": "causal_conv1d_fwd_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_fwd_kernel"
+    },
+    {
+      "index": 304,
+      "row": 506,
+      "id": "vv-row-506",
+      "operator_id": "FLA009",
+      "kernel": "causal_conv1d_fwd_kernel",
+      "path": "operators/flash_linear_attention/causal_conv1d_fwd_kernel"
+    },
+    {
+      "index": 305,
+      "row": 507,
+      "id": "vv-row-507",
+      "operator_id": "FLA116",
+      "kernel": "prepare_position_ids_kernel",
+      "path": "operators/flash_linear_attention/prepare_position_ids_kernel"
+    },
+    {
+      "index": 306,
+      "row": 508,
+      "id": "vv-row-508",
+      "operator_id": "FLA116",
+      "kernel": "prepare_position_ids_kernel",
+      "path": "operators/flash_linear_attention/prepare_position_ids_kernel"
+    },
+    {
+      "index": 307,
+      "row": 509,
+      "id": "vv-row-509",
+      "operator_id": "FLA239",
+      "kernel": "bitonic_merge_kernel",
+      "path": "operators/flash_linear_attention/bitonic_merge_kernel"
+    },
+    {
+      "index": 308,
+      "row": 510,
+      "id": "vv-row-510",
+      "operator_id": "FLA239",
+      "kernel": "bitonic_merge_kernel",
+      "path": "operators/flash_linear_attention/bitonic_merge_kernel"
+    },
+    {
+      "index": 309,
+      "row": 511,
+      "id": "vv-row-511",
+      "operator_id": "FLA258",
+      "kernel": "exp2_kernel",
+      "path": "operators/flash_linear_attention/exp2_kernel"
+    },
+    {
+      "index": 310,
+      "row": 512,
+      "id": "vv-row-512",
+      "operator_id": "FLA033",
+      "kernel": "token_shift_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_long"
+    },
+    {
+      "index": 311,
+      "row": 513,
+      "id": "vv-row-513",
+      "operator_id": "FLA033",
+      "kernel": "token_shift_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_long"
+    },
+    {
+      "index": 312,
+      "row": 514,
+      "id": "vv-row-514",
+      "operator_id": "FLA062",
+      "kernel": "prepare_wy_repr_fwd_kernel_chunk32",
+      "path": "operators/flash_linear_attention/prepare_wy_repr_fwd_kernel_chunk32"
+    },
+    {
+      "index": 313,
+      "row": 515,
+      "id": "vv-row-515",
+      "operator_id": "FLA266",
+      "kernel": "fused_recurrent_kda_fwd_kernel",
+      "path": "operators/flash_linear_attention/fused_recurrent_kda_fwd_kernel"
+    },
+    {
+      "index": 314,
+      "row": 516,
+      "id": "vv-row-516",
+      "operator_id": "FLA242",
+      "kernel": "chunk_abc_bwd_kernel_rcum_intra",
+      "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_rcum_intra__828ee053"
+    },
+    {
+      "index": 315,
+      "row": 517,
+      "id": "vv-row-517",
+      "operator_id": "FLA033",
+      "kernel": "token_shift_fwd_kernel_long",
+      "path": "operators/flash_linear_attention/token_shift_fwd_kernel_long"
+    },
+    {
+      "index": 316,
+      "row": 518,
+      "id": "vv-row-518",
+      "operator_id": "FLA_EXTRA_chunk_dplr_bwd_kernel_intra",
+      "kernel": "chunk_dplr_bwd_kernel_intra",
+      "path": "operators/flash_linear_attention/additional_tests/chunk_dplr_bwd_kernel_intra"
+    },
+    {
+      "index": 317,
+      "row": 519,
+      "id": "vv-row-519",
+      "operator_id": "FLA_EXTRA_chunk_dplr_bwd_kernel_intra",
+      "kernel": "chunk_dplr_bwd_kernel_intra",
+      "path": "operators/flash_linear_attention/additional_tests/chunk_dplr_bwd_kernel_intra"
+    }
+  ]
+}

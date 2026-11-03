@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA012",
+  "cases": [
+    {
+      "index": 72,
+      "row": 274,
+      "id": "vv-row-274",
+      "operator_id": "FLA012",
+      "kernel": "compute_dh0_kernel",
+      "path": "operators/flash_linear_attention/compute_dh0_kernel",
+      "shape_dtype": "dy,y: [4,1024,4096] / float32\nweight: [4096,4] / float32\ndh0: [4,4096,4] / float32",
+      "operator_type": "VV",
+      "original_test": "test_compute_dh0_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/compute_dh0_kernel/test_compute_dh0_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 38.43,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "block版本合并失败，退回原kernel执行",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_2e4a3fce6a0faa13-5352ea9a92b1",
+          "test_manifest": "operators/flash_linear_attention/compute_dh0_kernel/tests/vv_2e4a3fce6a0faa13-5352ea9a92b1/test.json",
+          "test_manifest_sha256": "b8659a98bd191ce25558849dd51ded45a0f8bada74f3dd3d0bf972207a5815ff",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/compute_dh0"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 265,
+      "row": 467,
+      "id": "vv-row-467",
+      "operator_id": "FLA012",
+      "kernel": "compute_dh0_kernel",
+      "path": "operators/flash_linear_attention/compute_dh0_kernel",
+      "shape_dtype": "dy,y: [4,1024,4096] / float32\nweight: [4096,4] / float32\ndh0: [4,4096,4] / float32",
+      "operator_type": "VV",
+      "original_test": "test_compute_dh0_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/compute_dh0_kernel/test_compute_dh0_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 37.93,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "block版本合并失败，退回原kernel执行",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_c9aef6a607036cc7-3df37ef2233e",
+          "test_manifest": "operators/flash_linear_attention/compute_dh0_kernel/tests/vv_c9aef6a607036cc7-3df37ef2233e/test.json",
+          "test_manifest_sha256": "fa8f03bf3bbdd72f8522d6d2b9dd552fa284d69108dea6598a33a5b3fc0e217f",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/compute_dh0"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA271",
+  "cases": [
+    {
+      "index": 240,
+      "row": 442,
+      "id": "vv-row-442",
+      "operator_id": "FLA271",
+      "kernel": "k_update_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/k_update_bwd_kernel_short",
+      "shape_dtype": "grad_out,k,a,dk,da,dka: [4,512,4096] / float16\nka: [4096] / float16",
+      "operator_type": "VV",
+      "original_test": "test_k_update_bwd_kernel_short",
+      "source_test": "tests/ops/ascend_ops/vv_operator/k_update_bwd_kernel_short/test_k_update_bwd_kernel_short_npu.py",
+      "table_config": {
+        "BT": 8,
+        "num_warps": 16,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 6.72,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_b26b70348e1445b0-632312301f85",
+          "test_manifest": "operators/flash_linear_attention/k_update_bwd_kernel_short/tests/vv_b26b70348e1445b0-632312301f85/test.json",
+          "test_manifest_sha256": "7b12f821a5cb4b779e08d4f3febeace0570e5ff6914e0393dfc61cd952099d4c",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 3,
+            "num_ctas": 1,
+            "BT": 8
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 241,
+      "row": 443,
+      "id": "vv-row-443",
+      "operator_id": "FLA271",
+      "kernel": "k_update_bwd_kernel_short",
+      "path": "operators/flash_linear_attention/k_update_bwd_kernel_short",
+      "shape_dtype": "grad_out,k,a,dk,da,dka: [4,512,4096] / float16\nka: [4096] / float16",
+      "operator_type": "VV",
+      "original_test": "test_k_update_bwd_kernel_short",
+      "source_test": "tests/ops/ascend_ops/vv_operator/k_update_bwd_kernel_short/test_k_update_bwd_kernel_short_npu.py",
+      "table_config": {
+        "BT": 8,
+        "num_warps": 16,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_b26b70348e1445b0-5803560bbc4d",
+          "test_manifest": "operators/flash_linear_attention/k_update_bwd_kernel_short/tests/vv_b26b70348e1445b0-5803560bbc4d/test.json",
+          "test_manifest_sha256": "ff35e5130f768b894323d1fcb30102833944bf0107e3daf8c40174496dd6f95a",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 2,
+            "num_ctas": 1,
+            "BT": 8
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {}
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA081",
+  "cases": [
+    {
+      "index": 263,
+      "row": 465,
+      "id": "vv-row-465",
+      "operator_id": "FLA081",
+      "kernel": "copy_last_chunk_kernel",
+      "path": "operators/flash_linear_attention/copy_last_chunk_kernel",
+      "shape_dtype": "q,k: [2,1024,1,128] / float16\nv: [2,1024,8,64] / float16\ng: [2,1024,8] / float16\nlevel_scales: [2,1024,8,7] / float16\nq_prev,k_prev: [2,64,1,128] / float16\nv_prev: [2,64,8,64] / float16\ng_prev: [2,64,8] / float16\nlevel_scales_prev: [2,64,8,7] / float16\noffsets: [2] / int32",
+      "operator_type": "VV",
+      "original_test": "test_copy_last_chunk_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_copy_last_chunk_kernel/test_copy_last_chunk_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_c9a74877fb24f321-bbcc482b9533",
+          "test_manifest": "operators/flash_linear_attention/copy_last_chunk_kernel/tests/vv_c9a74877fb24f321-bbcc482b9533/test.json",
+          "test_manifest_sha256": "653842dc965ec167f6debff821ca799d9fc1cd2ea7ec811effa13fe8413c6976",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/copy_last"
+            }
+          },
+          "correctness_kind": "diagnostic_only",
+          "validation_standard": "diagnostic_only",
+          "seed": 20261031,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 264,
+      "row": 466,
+      "id": "vv-row-466",
+      "operator_id": "FLA081",
+      "kernel": "copy_last_chunk_kernel",
+      "path": "operators/flash_linear_attention/copy_last_chunk_kernel",
+      "shape_dtype": "q,k: [2,1055,1,128] / float16\nv: [2,1055,8,64] / float16\ng: [2,1055,8] / float16\nlevel_scales: [2,1055,8,7] / float16\nq_prev,k_prev: [2,64,1,128] / float16\nv_prev: [2,64,8,64] / float16\ng_prev: [2,64,8] / float16\nlevel_scales_prev: [2,64,8,7] / float16\noffsets: [2] / int32\n规格：synthetic_T1055_valid_tail31",
+      "operator_type": "VV",
+      "original_test": "test_copy_last_chunk_kernel",
+      "source_test": "tests/ops/ascend_ops/vv_operator/test_copy_last_chunk_kernel/test_copy_last_chunk_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "精度问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_c9a74877fb24f321-29bbdb27018e",
+          "test_manifest": "operators/flash_linear_attention/copy_last_chunk_kernel/tests/vv_c9a74877fb24f321-29bbdb27018e/test.json",
+          "test_manifest_sha256": "bcf8b9b3ccc584801fd53a94f45e420b17af9fd03ce602ecf0900276e82b679e",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/copy-last-T1055"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "original_dtype_absolute",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

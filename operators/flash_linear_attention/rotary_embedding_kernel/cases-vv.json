@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA031",
+  "cases": [
+    {
+      "index": 113,
+      "row": 315,
+      "id": "vv-row-315",
+      "operator_id": "FLA031",
+      "kernel": "rotary_embedding_kernel",
+      "path": "operators/flash_linear_attention/rotary_embedding_kernel",
+      "shape_dtype": "x,y: [2,4096,4,128] / float32\ncos,sin: [4096,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_rotary_embedding_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/rotary_embedding_kernel/test_rotary_embedding_kernel_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 2
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 15.13,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_4d0a07731b58c894-7bfa30963976",
+          "test_manifest": "operators/flash_linear_attention/rotary_embedding_kernel/tests/vv_4d0a07731b58c894-7bfa30963976/test.json",
+          "test_manifest_sha256": "94b1ca7bdc9d0e82dd42c139db2204a91a1a85ceeefb16b4ad744ece3057aefc",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/rotary_embedding"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 114,
+      "row": 316,
+      "id": "vv-row-316",
+      "operator_id": "FLA031",
+      "kernel": "rotary_embedding_kernel",
+      "path": "operators/flash_linear_attention/rotary_embedding_kernel",
+      "shape_dtype": "x,y: [2,4096,4,128] / float32\ncos,sin: [4096,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_rotary_embedding_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/rotary_embedding_kernel/test_rotary_embedding_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_stages": 2,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_4d0a07731b58c894-ded0a9b5812e",
+          "test_manifest": "operators/flash_linear_attention/rotary_embedding_kernel/tests/vv_4d0a07731b58c894-ded0a9b5812e/test.json",
+          "test_manifest_sha256": "d23f302ab8660db49cc330630589752917f54acb941a1bf390fa6114f4f78a48",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 2,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/rotary_embedding"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 277,
+      "row": 479,
+      "id": "vv-row-479",
+      "operator_id": "FLA031",
+      "kernel": "rotary_embedding_kernel",
+      "path": "operators/flash_linear_attention/rotary_embedding_kernel",
+      "shape_dtype": "x,y: [2,4096,4,128] / float32\ncos,sin: [4096,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_rotary_embedding_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/rotary_embedding_kernel/test_rotary_embedding_kernel_npu.py",
+      "table_config": {
+        "num_warps": 8,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_dcd88af2000a0efb-1e8c02200eb3",
+          "test_manifest": "operators/flash_linear_attention/rotary_embedding_kernel/tests/vv_dcd88af2000a0efb-1e8c02200eb3/test.json",
+          "test_manifest_sha256": "5e5c2d8857d67b81971d2a6b82c249872f613224c37030b624bbbad24afc6550",
+          "config": {
+            "num_warps": 8,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/rotary_embedding"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 278,
+      "row": 480,
+      "id": "vv-row-480",
+      "operator_id": "FLA031",
+      "kernel": "rotary_embedding_kernel",
+      "path": "operators/flash_linear_attention/rotary_embedding_kernel",
+      "shape_dtype": "x,y: [2,4096,4,128] / float32\ncos,sin: [4096,64] / float32",
+      "operator_type": "VV",
+      "original_test": "test_rotary_embedding_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/rotary_embedding_kernel/test_rotary_embedding_kernel_npu.py",
+      "table_config": {
+        "num_warps": 16,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 15.24,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_dcd88af2000a0efb-86a66db1e0ea",
+          "test_manifest": "operators/flash_linear_attention/rotary_embedding_kernel/tests/vv_dcd88af2000a0efb-86a66db1e0ea/test.json",
+          "test_manifest_sha256": "9bd8c50e8703eb8b093bf7c5ec9362626dc15ce0ff39998ca8ebd61723a2f08b",
+          "config": {
+            "num_warps": 16,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/rotary_embedding"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA112",
+  "cases": [
+    {
+      "index": 147,
+      "row": 349,
+      "id": "vv-row-349",
+      "operator_id": "FLA112",
+      "kernel": "chunk_local_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel",
+      "shape_dtype": "s,o: [4,2048,8] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_local_cumsum_scalar_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_local_cumsum_scalar_kernel/test_chunk_local_cumsum_scalar_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 8.74,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_671a193fcf6a23c3-9acf3636d3a2",
+          "test_manifest": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel/tests/vv_671a193fcf6a23c3-9acf3636d3a2/test.json",
+          "test_manifest_sha256": "d4aa32f1a5db8cf81f65c421c8e89cea258acce840ca6d8d9e3b4b2624c7b36b",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/chunk_local_cumsum_scalar"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 248,
+      "row": 450,
+      "id": "vv-row-450",
+      "operator_id": "FLA112",
+      "kernel": "chunk_local_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel",
+      "shape_dtype": "s,o: [4,2048,8] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_local_cumsum_scalar_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_local_cumsum_scalar_kernel/test_chunk_local_cumsum_scalar_kernel_npu.py",
+      "table_config": {
+        "num_warps": 1,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "编译拒绝",
+      "historical_axis": 1,
+      "configurations": [
+        {
+          "test_id": "vv_bbf47708015e4b9a-87865c1bfdc2",
+          "test_manifest": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel/tests/vv_bbf47708015e4b9a-87865c1bfdc2/test.json",
+          "test_manifest_sha256": "2dbc87aa61be8677364fa13170fc99a2468aac6a62f7090b7ede620cce44a8c0",
+          "config": {
+            "num_warps": 1,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/chunk_local_cumsum_scalar"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 249,
+      "row": 451,
+      "id": "vv-row-451",
+      "operator_id": "FLA112",
+      "kernel": "chunk_local_cumsum_scalar_kernel",
+      "path": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel",
+      "shape_dtype": "s,o: [4,2048,8] / float32",
+      "operator_type": "VV",
+      "original_test": "test_chunk_local_cumsum_scalar_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/chunk_local_cumsum_scalar_kernel/test_chunk_local_cumsum_scalar_kernel_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 9.54,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_bbf47708015e4b9a-b614adb74ede",
+          "test_manifest": "operators/flash_linear_attention/chunk_local_cumsum_scalar_kernel/tests/vv_bbf47708015e4b9a-b614adb74ede/test.json",
+          "test_manifest_sha256": "f2cb666f88398690e548a9e6f20910b35172587dc41e959fde82febaa5db4600",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/chunk_local_cumsum_scalar"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}

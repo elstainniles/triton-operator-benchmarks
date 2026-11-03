@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA121",
+  "cases": [
+    {
+      "index": 207,
+      "row": 409,
+      "id": "vv-row-409",
+      "operator_id": "FLA121",
+      "kernel": "softmax_fwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef",
+      "shape_dtype": "x,p: [1024,256] / float32",
+      "operator_type": "VV",
+      "original_test": "test_softmax_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/softmax_fwd_kernel/test_softmax_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 32,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 7.75,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "待补测",
+      "historical_axis": null,
+      "configurations": [
+        {
+          "test_id": "vv_93867c85aadded1c-09b47bb174f6",
+          "test_manifest": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef/tests/vv_93867c85aadded1c-09b47bb174f6/test.json",
+          "test_manifest_sha256": "9c986dde98a72ac7537088ec89fedd4ae14d1e7c71f218322af9a8fcb7713478",
+          "config": {
+            "num_warps": 32,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/softmax_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 208,
+      "row": 410,
+      "id": "vv-row-410",
+      "operator_id": "FLA121",
+      "kernel": "softmax_fwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef",
+      "shape_dtype": "x,p: [1024,256] / float32",
+      "operator_type": "VV",
+      "original_test": "test_softmax_fwd_kernel_perftest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/softmax_fwd_kernel/test_softmax_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_93867c85aadded1c-160565fd95c7",
+          "test_manifest": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef/tests/vv_93867c85aadded1c-160565fd95c7/test.json",
+          "test_manifest_sha256": "0b74991a8cbf0cfbc0e0b62cfc8e680869ad352a68d07ca94fae4b72a1729d7c",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/softmax_fwd"
+            }
+          },
+          "correctness_kind": "requires_acceptance_review",
+          "validation_standard": "requires_acceptance_review",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 232,
+      "row": 434,
+      "id": "vv-row-434",
+      "operator_id": "FLA121",
+      "kernel": "softmax_fwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef",
+      "shape_dtype": "x,p: [1024,256] / float32",
+      "operator_type": "VV",
+      "original_test": "test_softmax_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/softmax_fwd_kernel/test_softmax_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 2,
+        "num_stages": 3,
+        "num_ctas": 1
+      },
+      "table_side": "baseline",
+      "historical_baseline_us": 8.26,
+      "historical_baseline_status": "无问题",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_ad1d0ab0a2617335-a8197f6c8a08",
+          "test_manifest": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef/tests/vv_ad1d0ab0a2617335-a8197f6c8a08/test.json",
+          "test_manifest_sha256": "3cf8852f9689e10617d66fc79c30ea3360b702329e77d2f899e59a9e4e6e1d53",
+          "config": {
+            "num_warps": 2,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/softmax_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    },
+    {
+      "index": 233,
+      "row": 435,
+      "id": "vv-row-435",
+      "operator_id": "FLA121",
+      "kernel": "softmax_fwd_kernel",
+      "path": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef",
+      "shape_dtype": "x,p: [1024,256] / float32",
+      "operator_type": "VV",
+      "original_test": "test_softmax_fwd_kernel_functiontest",
+      "source_test": "tests/ops/ascend_ops/vv_operator/softmax_fwd_kernel/test_softmax_fwd_kernel_npu.py",
+      "table_config": {
+        "num_warps": 4,
+        "num_ctas": 1,
+        "num_stages": 3
+      },
+      "table_side": "block",
+      "historical_baseline_us": null,
+      "historical_baseline_status": "基线结果对照待补测",
+      "historical_block_status": "无问题",
+      "historical_axis": 0,
+      "configurations": [
+        {
+          "test_id": "vv_ad1d0ab0a2617335-8b77e4aa43d0",
+          "test_manifest": "operators/flash_linear_attention/softmax_fwd_kernel__aef642ef/tests/vv_ad1d0ab0a2617335-8b77e4aa43d0/test.json",
+          "test_manifest_sha256": "89a95c9ccc43bcd3da9d4e20ad63c6ea62cc4f6f33ececb5394ea7e8083007c4",
+          "config": {
+            "num_warps": 4,
+            "num_stages": 3,
+            "num_ctas": 1
+          },
+          "invocation": {
+            "kind": "function",
+            "args": [],
+            "kwargs": {
+              "load_dir": "generated-data/softmax_fwd"
+            }
+          },
+          "correctness_kind": "assertions",
+          "validation_standard": "assertions",
+          "seed": 20261030,
+          "input_selection": null
+        }
+      ],
+      "equivalent_test_ids": [],
+      "mapping_notes": [
+        "原表仅有 Block 脚本；新基线与 Block 均从同一导入配置生成，历史耗时不参与加速比。"
+      ],
+      "port_validation": "HOST_ONLY_NPU_UNEXECUTED"
+    }
+  ]
+}
