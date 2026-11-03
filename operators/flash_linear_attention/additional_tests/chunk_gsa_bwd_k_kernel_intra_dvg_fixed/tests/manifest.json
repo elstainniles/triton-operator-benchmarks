@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_chunk_gsa_bwd_k_kernel_intra_dvg_fixed",
+  "tests": [
+    {
+      "id": "cv_23467ec91bc8e2b1-0c99fb653864",
+      "case_id": "cv_23467ec91bc8e2b1",
+      "path": "cv_23467ec91bc8e2b1-0c99fb653864/test.json"
+    }
+  ]
+}

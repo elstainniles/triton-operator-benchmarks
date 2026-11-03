@@ -1,0 +1,74 @@
+{
+  "id": "cv_b1f04ab9f7e3a514-0e2dc041f497",
+  "case_id": "cv_b1f04ab9f7e3a514",
+  "operator_id": "FLA220",
+  "kernel": "parallel_nsa_compression_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/parallel_nsa_compression_fwd_kernel/test_parallel_nsa_compression_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_nsa_compression_fwd_kernel/test_parallel_nsa_compression_fwd_kernel_npu.py::test_parallel_nsa_compression_fwd_kernel",
+  "entrypoint": "source/standalone/yb_e85955c12e86ab.py",
+  "module": "yb_e85955c12e86ab",
+  "function": "test_parallel_nsa_compression_fwd_kernel",
+  "pythonpath": [
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_compression_fwd_kernel/q.pt": "generated-data/q.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_compression_fwd_kernel/k.pt": "generated-data/k.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_compression_fwd_kernel/v.pt": "generated-data/v.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_compression_fwd_kernel/o.pt": "generated-data/o.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_compression_fwd_kernel/lse.pt": "generated-data/lse.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "compression_generate.py",
+      "sha256": "d83dfa411593698b9615fe1d1902993741ceec934b77304fc705e3d8379eedaa",
+      "functions": [
+        "make_fixtures"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/standalone/yb_e85955c12e86ab.py",
+      "sha256": "83241f8f940f69f638d4e0ed894ccad406c6345af721b5d442acc36a8caa5398",
+      "original_sha256": "b2a92e994247d754cbe35ddd79083997bec099723bac41f162138c16c5524866",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6454e3e1056e22a416e4dc22b4444bafb1c4cdc07189a02b85e131db478ea5d2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe.py",
+      "sha256": "9f0471ebdcbcca73fe5defdfcfdb5c52a63ae830b8c6d6a209af2fb5dbbb29ac",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_nsa_compression_fwd_kernel/tests/cv_b1f04ab9f7e3a514-0e2dc041f497"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "vv_919492cb67b6774f-545c8f6429c6",
+  "case_id": "vv_919492cb67b6774f",
+  "operator_id": "FLA288",
+  "kernel": "sigmoid_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/sigmoid/test_sigmoid_npu.py::test_sigmoid_kernel_functiontest",
+  "entrypoint": "source/synthetic/standalone/yb_17151a3944096a.py",
+  "module": "yb_17151a3944096a",
+  "function": "test_sigmoid_kernel_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/sigmoid"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "sigmoid"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BLOCK_SIZE": 1024
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_17151a3944096a.py",
+      "sha256": "2803d844889f7ecb869dda3b1845c54747f97176e33795dbc0f98786dda110b1",
+      "original_sha256": "95c57e8c399adcfb73744578face6e3dbc9faece9a0214f30cbf2911383ea849",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_8459c530c3d6be.py",
+      "sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "original_sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "9439a219a11bc3b0ffe464b85cb89f8f05c593c9cab776b6589daa6d669cf73c",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/sigmoid_kernel/tests/vv_919492cb67b6774f-545c8f6429c6"
+}

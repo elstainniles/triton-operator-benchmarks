@@ -1,0 +1,80 @@
+{
+  "id": "vv_4b777a715a863e2b-e856d722efce",
+  "case_id": "vv_4b777a715a863e2b",
+  "operator_id": "FLA096",
+  "kernel": "relu_square_bwd_kernel",
+  "source_path": "fla/ops/rwkv7/channel_mixing.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_relu_square_bwd_kernel/test_relu_square_bwd_kernel_npu.py::test_relu_square_bwd_kernel",
+  "entrypoint": "source/synthetic/standalone/yb_590c401bd45140.py",
+  "module": "yb_590c401bd45140",
+  "function": "test_relu_square_bwd_kernel",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/relu_square_bwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "relu_square_bwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_22cded5b91bba3.py",
+      "sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "original_sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_590c401bd45140.py",
+      "sha256": "352ec77080fdb69548a9a8c5a578fc6abedeb896289234a17bb2930f5d2bd9e4",
+      "original_sha256": "0f0565976fc83d1bf51d0f97887f62f164dce07c0af7876ecb4d2a81664bf514",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_c6472eed460398.py",
+      "sha256": "f3da40a0dd3b7417aa7d2b260f813f4814bf36f92cd81008c0696ca116543ec3",
+      "original_sha256": "f3da40a0dd3b7417aa7d2b260f813f4814bf36f92cd81008c0696ca116543ec3",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "a26eb2bda92ab8f0aebf0cb69bae236b14f4b50cae632d4fa569245f6167aba8",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/relu_square_bwd_kernel/tests/vv_4b777a715a863e2b-e856d722efce"
+}

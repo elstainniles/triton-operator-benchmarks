@@ -1,0 +1,10 @@
+{
+  "id": "FLA_EXTRA_solve_tril_16x16_kernel",
+  "kernel_symbol": "solve_tril_16x16_kernel",
+  "source": {
+    "path": "fla/ops/utils/solve_tril.py",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "sha256": "9d13ccc158b4b2e876df1c835c3b0aa5d889ab7e05f0ca778e811de52738e850",
+    "snapshot": "upstream/solve_tril.py"
+  }
+}

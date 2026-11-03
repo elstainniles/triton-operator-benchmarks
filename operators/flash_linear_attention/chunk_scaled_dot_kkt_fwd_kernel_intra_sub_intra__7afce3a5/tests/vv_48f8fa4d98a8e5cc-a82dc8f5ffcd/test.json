@@ -1,0 +1,60 @@
+{
+  "id": "vv_48f8fa4d98a8e5cc-a82dc8f5ffcd",
+  "case_id": "vv_48f8fa4d98a8e5cc",
+  "operator_id": "FLA253",
+  "kernel": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra",
+  "source_path": "tests/ops/ascend_ops/vv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra",
+  "entrypoint": "source/synthetic/standalone/yb_7afce3a5ed853b.py",
+  "module": "yb_7afce3a5ed853b",
+  "function": "test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra_cuda.pt": "generated-data/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "chunk_scaled_dot_kkt_intra"
+  },
+  "validation_standard": "original_functional_assertions_unchanged",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_7afce3a5ed853b.py",
+      "sha256": "f9b226b52228982c2a79bc4b2d9a5517d71b56182aba877da237d41ae9b91bc1",
+      "original_sha256": "1fb63bd348bdae14dc14bebed961a8314a54917438c6025c50786319634681a8",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "517d9bfc4a6d31b86914841259903db59c4e94ba573da1e6c9cdb8d2e779e975",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_intra__7afce3a5/tests/vv_48f8fa4d98a8e5cc-a82dc8f5ffcd"
+}

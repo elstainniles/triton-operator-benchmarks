@@ -1,0 +1,111 @@
+{
+  "id": "vv_e4609d5a9a7ab1e8-3bcc371a26ac",
+  "case_id": "vv_e4609d5a9a7ab1e8",
+  "operator_id": "FLA040",
+  "kernel": "chunk_bwd_kernel_dh_reduction",
+  "source_path": "fla/ops/common/chunk_h_parallel.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_chunk_h_parallel_chunk_bwd_kernel_dh_reduction/test_chunk_h_parallel_chunk_bwd_kernel_dh_reduction_npu.py::test_chunk_bwd_kernel_dh_reduction_npu",
+  "entrypoint": "source/cpu64_case_vv_e4609d5a9a7ab1e8.py",
+  "module": "cpu64_case_vv_e4609d5a9a7ab1e8",
+  "function": "launch_only",
+  "pythonpath": [
+    "source/extracted/cases/vv_e4609d5a9a7ab1e8",
+    "source/."
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/dh_reduction",
+      "reference_path": "generated-data/reference_cpu64.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "profiling_only",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "476250335a742a0abac565923562ac5af11096395ba70b5be1ff53eb10ce133b"
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "3": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 2,
+    "num_ctas": 1,
+    "BK": 128,
+    "BV": 128
+  },
+  "block_config": {
+    "axis": 2,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/cpu64_absolute.py",
+      "sha256": "b04aad52bf5e7f56bcaae95939fd1ce74b181bd520fec1fb00dc7ce9f3b285cc",
+      "original_sha256": "b04aad52bf5e7f56bcaae95939fd1ce74b181bd520fec1fb00dc7ce9f3b285cc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/cpu64_case_vv_e4609d5a9a7ab1e8.py",
+      "sha256": "23d201237f22c5a258e60834519ddbc5ac7aeded9586f01044be1844f18f418f",
+      "original_sha256": "1a155a1be4bcce70b5feadc511926f979cde21e446edbeb52dcc9184bb95dc71",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_e4609d5a9a7ab1e8/yb_43e166b2d13510.py",
+      "sha256": "6d40cfe93817528025fcb3b9ed274a40a2a37f3a341c914e8a37ce06a2f71346",
+      "original_sha256": "fb8f15263566d645be1230d07e5aa6f444a501da171d4042b8eaa7e0d801c14b",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_e4609d5a9a7ab1e8/yb_4524c847f154b7.py",
+      "sha256": "83864c9de7c23165ccc8ebd633496c3cb64303d67aa62d87c197c0e9834c28f4",
+      "original_sha256": "83864c9de7c23165ccc8ebd633496c3cb64303d67aa62d87c197c0e9834c28f4",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_e4609d5a9a7ab1e8/yb_66eb8bea22f328.py",
+      "sha256": "39c5101f3b44a0ec2eb334f9ab7005f0628ea2592d2b96a8fc2c2bd3e8ec2e09",
+      "original_sha256": "39c5101f3b44a0ec2eb334f9ab7005f0628ea2592d2b96a8fc2c2bd3e8ec2e09",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_e4609d5a9a7ab1e8/yb_74f55558e08fc1.py",
+      "sha256": "b1c57085f15dd1fd06189370b088d68f39c23d11a3ba24b3ca59f5ce41656d92",
+      "original_sha256": "b1c57085f15dd1fd06189370b088d68f39c23d11a3ba24b3ca59f5ce41656d92",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_e4609d5a9a7ab1e8/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "bb336b84fef0690ef1be1e8c7fba9c3651453bf44ae9ae0fc137b5e57b3b6f85",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_bwd_kernel_dh_reduction__66eb8bea/tests/vv_e4609d5a9a7ab1e8-3bcc371a26ac"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "vv_4ffa23756a3ba60a-0af8d041c745",
+  "case_id": "vv_4ffa23756a3ba60a",
+  "operator_id": "FLA285",
+  "kernel": "relu_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/relu/test_relu_npu.py::test_relu_kernel_functiontest",
+  "entrypoint": "source/synthetic/standalone/yb_966724afd65522.py",
+  "module": "yb_966724afd65522",
+  "function": "test_relu_kernel_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/relu"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "relu"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BLOCK_SIZE": 2048
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_966724afd65522.py",
+      "sha256": "e368af84731d214a1809cfd6d6ff0622a424995d11667db6b4aa32964db8c095",
+      "original_sha256": "9b8bab2dd725cadea7f31b0557c0dba0829bbb746edd7de46ae597f2a46a9585",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "75bea81df630d3c54b37c3a0c94dac142c1e5936a2a058ee13a4a57c194f8c61",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/relu_kernel/tests/vv_4ffa23756a3ba60a-0af8d041c745"
+}

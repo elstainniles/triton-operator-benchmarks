@@ -1,0 +1,135 @@
+{
+  "id": "cv_d48d38fb9a8501d5-2fab69419031",
+  "case_id": "cv_d48d38fb9a8501d5",
+  "operator_id": "FLA186",
+  "kernel": "chunk_mesa_net_h_kk_bwd_intra_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_h_kk_bwd_intra_fn/test_chunk_mesa_net_h_kk_bwd_intra_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_h_kk_bwd_intra_fn/test_chunk_mesa_net_h_kk_bwd_intra_kernel_npu.py::test_chunk_mesa_net_h_kk_bwd_intra_kernel_npu_thirdparty",
+  "entrypoint": "source/mesa_ttt_approved_cpu64/cv_d48d38fb9a8501d5.py",
+  "module": "mesa_ttt_approved_cpu64.cv_d48d38fb9a8501d5",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_d48d38fb9a8501d5"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_mesa_net_h_kk_bwd_intra_kernel/test_chunk_mesa_net_h_kk_bwd_intra_kernel_fp16_v2.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 42,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_chunk_mesa_net_h_kk_bwd_intra_kernel_gpu.py",
+      "sha256": "e3854de91fb6ef5de4404ea47dab9f871cc63a341ca3cd084813fe025e029bb8",
+      "functions": [
+        "generate_test_data"
+      ]
+    },
+    {
+      "name": "test_chunk_mesa_net_h_kk_bwd_intra_kernel_npu.py",
+      "sha256": "e0682d5afc502291da9c343d9dff889361a37ca460402650255ce246e33d37c3",
+      "functions": [
+        "naive_chunk_mesa_net_h_kk_bwd_intra"
+      ]
+    },
+    {
+      "name": "mesa_ttt_cpu64_math.py",
+      "sha256": "7c55dde23f148cdd423be557c52398279abe11faceee5a09013468cd645c0193",
+      "functions": [
+        "mesa"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "dk": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dg": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dbeta": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dlamb": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_d48d38fb9a8501d5/yb_143ec199a07895.py",
+      "sha256": "8bd552d97a8e9210dd9ed9b8a279ebb9f9695d6eca86d4b2bbb9cbec69f903bc",
+      "original_sha256": "3a838ccd81683ee187bf7469ad2270c2c5eed3f9d67b1c3a7ac9b4826340ef90",
+      "role": "dependency"
+    },
+    {
+      "path": "source/mesa_ttt_approved_cpu64/cv_d48d38fb9a8501d5.py",
+      "sha256": "d3ddc2f15cb8b18392f1182680991c6319fc2c41357d07217bbd02ca85685a5a",
+      "original_sha256": "bdf87f812c42ecffbd74623ca2dda707243fdd3fb0d93797245bc85ad3d43e81",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "79ea69d590df86ff1272e92b56655819da88419debabb772c3c8ef98d09364e6",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "099008baa0cdca7d350bc5df5196b5e91b5f5ab6a5be50a8e1afee00facf11c3",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_original.py",
+      "sha256": "dcfb7ca51f8d554eddc8c9cacdcbd25e9e3998f5b3c00bab60bc5b78f1ca33da",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/original_cpu.py",
+      "sha256": "56be3f4f549c1b6d073ab931becaac3fbee7e063e9476b84a15eb65ae1708906",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "27a598e09ea27cca4d0e9d38db76ccf09630e3f4938e89f0db6e9f5551ce8b0f",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_mesa_net_h_kk_bwd_intra_kernel/tests/cv_d48d38fb9a8501d5-2fab69419031"
+}

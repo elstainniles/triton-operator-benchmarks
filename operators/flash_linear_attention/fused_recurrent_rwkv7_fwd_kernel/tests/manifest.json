@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA100",
+  "tests": [
+    {
+      "id": "vv_194e3af7c77eaa7b-e1dddda4af81",
+      "case_id": "vv_194e3af7c77eaa7b",
+      "path": "vv_194e3af7c77eaa7b-e1dddda4af81/test.json"
+    },
+    {
+      "id": "vv_194e3af7c77eaa7b-b24a646d24a7",
+      "case_id": "vv_194e3af7c77eaa7b",
+      "path": "vv_194e3af7c77eaa7b-b24a646d24a7/test.json"
+    }
+  ]
+}

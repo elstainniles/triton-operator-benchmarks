@@ -1,0 +1,94 @@
+{
+  "id": "vv_2ec9259896ac4103-ad7f790316b6",
+  "case_id": "vv_2ec9259896ac4103",
+  "operator_id": "FLA065",
+  "kernel": "fused_recurrent_bwd_kernel",
+  "source_path": "fla/ops/generalized_delta_rule/iplr/fused_recurrent.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_bwd_kernel/test_fused_recurrent_bwd_kernel_npu.py::test_fused_recurrent_bwd_kernel",
+  "entrypoint": "source/baseline_vv_reference_cases/vv_2ec9259896ac4103.py",
+  "module": "baseline_vv_reference_cases.vv_2ec9259896ac4103",
+  "function": "test_reference",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_2ec9259896ac4103"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/iplr_bwd",
+      "reference_path": "generated-data/reference_cpu64.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "476250335a742a0abac565923562ac5af11096395ba70b5be1ff53eb10ce133b"
+    }
+  ],
+  "validation_standard": "original_functional_assertions",
+  "validation_tolerances": {},
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/baseline_reference_checks.py",
+      "sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "original_sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "role": "dependency"
+    },
+    {
+      "path": "source/baseline_vv_reference_cases/vv_2ec9259896ac4103.py",
+      "sha256": "4dbb6801461d7a6475a457259e219a31591ea1f100ac524c1c20f6d9cce2bd2b",
+      "original_sha256": "7a61595f109b1d5f6307d287d3b69010a61a545a47c152f64f8b40d5aff03a6c",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_2ec9259896ac4103/yb_22cded5b91bba3.py",
+      "sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "original_sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_2ec9259896ac4103/yb_58af370c8c7b7d.py",
+      "sha256": "438e9fbdd2d0c1904ca7289eead723b25251036a9a2927bd4e9ec9b4445679af",
+      "original_sha256": "438e9fbdd2d0c1904ca7289eead723b25251036a9a2927bd4e9ec9b4445679af",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_2ec9259896ac4103/yb_74f55558e08fc1.py",
+      "sha256": "8d72b09db1d9f2e7445b762e835eab6b18953c3339225d0c45acf5457b67d26f",
+      "original_sha256": "8d72b09db1d9f2e7445b762e835eab6b18953c3339225d0c45acf5457b67d26f",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_2ec9259896ac4103/yb_ecb4498f323529.py",
+      "sha256": "4298f1c3523983ef24445c8cd7ecb9ccca6f9206e65a9328d6bf84dc24f14d1c",
+      "original_sha256": "70c8d0f7f9cd778b5b06bdb94569b9afd099e42e2d8663d9d01008c47b171524",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "af15d63bd4b136d854f39675e2ddfca3c398b2ca93900994843b0830c32efdfc",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/fused_recurrent_bwd_kernel/tests/vv_2ec9259896ac4103-ad7f790316b6"
+}

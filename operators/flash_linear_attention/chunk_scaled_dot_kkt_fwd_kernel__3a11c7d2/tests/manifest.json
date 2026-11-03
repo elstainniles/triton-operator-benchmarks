@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA050",
+  "tests": [
+    {
+      "id": "cv_61541c50a43796fc-dc10c9383bc4",
+      "case_id": "cv_61541c50a43796fc",
+      "path": "cv_61541c50a43796fc-dc10c9383bc4/test.json"
+    },
+    {
+      "id": "cv_61541c50a43796fc-7f2ab9ed1f2c",
+      "case_id": "cv_61541c50a43796fc",
+      "path": "cv_61541c50a43796fc-7f2ab9ed1f2c/test.json"
+    },
+    {
+      "id": "cv_98e40d84f6fa1ddc-a659ba5ab280",
+      "case_id": "cv_98e40d84f6fa1ddc",
+      "path": "cv_98e40d84f6fa1ddc-a659ba5ab280/test.json"
+    },
+    {
+      "id": "cv_98e40d84f6fa1ddc-53bda6f55fb4",
+      "case_id": "cv_98e40d84f6fa1ddc",
+      "path": "cv_98e40d84f6fa1ddc-53bda6f55fb4/test.json"
+    }
+  ]
+}

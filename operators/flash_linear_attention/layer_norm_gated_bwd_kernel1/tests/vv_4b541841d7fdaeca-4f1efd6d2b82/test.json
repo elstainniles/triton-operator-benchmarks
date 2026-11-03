@@ -1,0 +1,60 @@
+{
+  "id": "vv_4b541841d7fdaeca-4f1efd6d2b82",
+  "case_id": "vv_4b541841d7fdaeca",
+  "operator_id": "FLA275",
+  "kernel": "layer_norm_gated_bwd_kernel1",
+  "source_path": "tests/ops/ascend_ops/vv_operator/layer_norm_gated_bwd_kernel1/test_layer_norm_gated_bwd_kernel1_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/layer_norm_gated_bwd_kernel1/test_layer_norm_gated_bwd_kernel1_npu.py::test_layer_norm_gated_bwd_kernel1",
+  "entrypoint": "source/synthetic/standalone/yb_ea1c28f246f7e1.py",
+  "module": "yb_ea1c28f246f7e1",
+  "function": "test_layer_norm_gated_bwd_kernel1",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/layer_norm_gated_bwd_kernel1/test_layer_norm_gated_bwd_kernel1_cuda.pt": "generated-data/test_layer_norm_gated_bwd_kernel1_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "layer_norm_gated_bwd1"
+  },
+  "validation_standard": "original_functional_assertions_unchanged",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_ea1c28f246f7e1.py",
+      "sha256": "e3153be1df4adc94d534ef913aadfcba96a2cadaaa618566872e1fea46cd9dc7",
+      "original_sha256": "a92533f313f3a3a6693c288799a02e86e455cfdbc539b23d644f2cfb7ee4f083",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "29d3aaae7a86146473b6ae2b53650dd3136ffc2c83545ef115f68ee3f135bb5d",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/layer_norm_gated_bwd_kernel1/tests/vv_4b541841d7fdaeca-4f1efd6d2b82"
+}

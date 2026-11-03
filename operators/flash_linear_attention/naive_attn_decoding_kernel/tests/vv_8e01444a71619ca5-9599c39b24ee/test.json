@@ -1,0 +1,110 @@
+{
+  "id": "vv_8e01444a71619ca5-9599c39b24ee",
+  "case_id": "vv_8e01444a71619ca5",
+  "operator_id": "FLA036",
+  "kernel": "naive_attn_decoding_kernel",
+  "source_path": "fla/ops/attn/decoding.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_naive_attn_decoding_kernel/test_naive_attn_decoding_kernel_npu.py::test_naive_attn_decoding_kernel",
+  "entrypoint": "source/baseline_vv_reference_cases/vv_8e01444a71619ca5.py",
+  "module": "baseline_vv_reference_cases.vv_8e01444a71619ca5",
+  "function": "test_reference",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_8e01444a71619ca5"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/naive_attn",
+      "reference_path": "generated-data/reference_cpu64.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "08efb85c51072b0209099f7eb4554fc6c224f679039c63e6a7a04f8674cb1c7b"
+    },
+    {
+      "path": "generated-data/cpu_refs.py",
+      "sha256": "29938e3659a7e1efcd69dae4701c5f828439e3dff55636236528d0abcc6771a8"
+    }
+  ],
+  "validation_standard": "original_functional_assertions_unchanged",
+  "validation_tolerances": {},
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/baseline_reference_checks.py",
+      "sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "original_sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "role": "dependency"
+    },
+    {
+      "path": "source/baseline_vv_reference_cases/vv_8e01444a71619ca5.py",
+      "sha256": "6d649621095faa7e4418b3890ea9391e47d2f2ca0151ea7241e1c99d828a198c",
+      "original_sha256": "fdde2758729f0273015f071c8e91949c801565b6882b4d56c0d46ee98e10b72f",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_03aaadc1e61d1b.py",
+      "sha256": "782688ecce7737f6f1b876860759faa0b2b35ad01522f78ee95cab08b1e35bc6",
+      "original_sha256": "782688ecce7737f6f1b876860759faa0b2b35ad01522f78ee95cab08b1e35bc6",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_0f209d06292290.py",
+      "sha256": "c075f327a1d8c22cc40132af3f83d01c8b16e7423b92dec95f8b0b1c8ea9510b",
+      "original_sha256": "434a7966745abb474d9e88c4a031f29c9b869e22c804d13b70f65a619586f34f",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_22cded5b91bba3.py",
+      "sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "original_sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_712432704460d6.py",
+      "sha256": "bbb69852286c2fbe902a5b4fba00a5a46656db6d1c2f18c74d7b79e107832d41",
+      "original_sha256": "bbb69852286c2fbe902a5b4fba00a5a46656db6d1c2f18c74d7b79e107832d41",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_74f55558e08fc1.py",
+      "sha256": "ccb225bbabf13b114bb945ee9de9c320fe76439f24c634941e11a3ae1f76ee5e",
+      "original_sha256": "ccb225bbabf13b114bb945ee9de9c320fe76439f24c634941e11a3ae1f76ee5e",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6a497626913436559e527789a243f61403f3e04621dbb16d0ca6c697d44c98a5",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/naive_attn_decoding_kernel/tests/vv_8e01444a71619ca5-9599c39b24ee"
+}

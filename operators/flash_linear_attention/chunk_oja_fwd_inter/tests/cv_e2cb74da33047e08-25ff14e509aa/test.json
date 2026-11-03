@@ -1,0 +1,135 @@
+{
+  "id": "cv_e2cb74da33047e08-25ff14e509aa",
+  "case_id": "cv_e2cb74da33047e08",
+  "operator_id": "FLA054",
+  "kernel": "chunk_oja_fwd_inter",
+  "source_path": "fla/ops/gated_oja_rule/chunk_o.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_oja_fwd_inter/test_chunk_oja_fwd_inter_npu.py::test_chunk_oja_fwd_inter_kernel_performance",
+  "entrypoint": "source/oja_based_pending_cpu64/cv_e2cb74da33047e08.py",
+  "module": "oja_based_pending_cpu64.cv_e2cb74da33047e08",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_e2cb74da33047e08"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_oja_fwd_inter/test_chunk_oja_fwd_inter_v2.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "manual_generate.py",
+      "sha256": "eed89b5ea24bf042306411fe89bd6c0f61cfe87fc8c862debf756df4a5128faa",
+      "functions": [
+        "build"
+      ]
+    },
+    {
+      "name": "manual_generate.py",
+      "sha256": "eed89b5ea24bf042306411fe89bd6c0f61cfe87fc8c862debf756df4a5128faa",
+      "functions": [
+        "oja_reference"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "5c4d74fbb15bca40c0ce29232a68ef333b0ca4099ab857ac65b48031d14c6564",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "o": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "A": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 4,
+    "num_ctas": 1,
+    "BK": 64,
+    "BV": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_e2cb74da33047e08/yb_0e02d4c68e6ca1.py",
+      "sha256": "e4de196f4893f9048b146381271df2fb86ddf8cc74de98c7f04d2eef4f896e5e",
+      "original_sha256": "5b9c993bd180eeed437e9a58ae032d373e2aff2cffec443479923878cbe4ae04",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_e2cb74da33047e08/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_e2cb74da33047e08/yb_8b1f9f64c8c620.py",
+      "sha256": "d6dd8b2d9e41226199108b68f5c22240fb0284bdbdc5aca19453bf710d679a51",
+      "original_sha256": "d6dd8b2d9e41226199108b68f5c22240fb0284bdbdc5aca19453bf710d679a51",
+      "role": "dependency"
+    },
+    {
+      "path": "source/oja_based_pending_cpu64/cv_e2cb74da33047e08.py",
+      "sha256": "98437a78102c27c7dfe90df071f010c60d4e7dadd979dd753fe09d4ee8cd4e39",
+      "original_sha256": "ed908dfefaf35a01b7be1a28ce4762e0ca813f4fcb1519b7c707ab79d454eee4",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "2e10f3fcdf00c34681c7a814b44d217c99dbd9661ed7141745a17b17900f2ed2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "c7d15239968a4022badf8ae498bd5231e2a78c761f3bd1d5844b504f925fbaf2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_manual.py",
+      "sha256": "21633621d617c31e745cf5a7f3f5ac523762d6b7b5c0207ad8ea9848a8f455a2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/original_oja.py",
+      "sha256": "b4e13eaae6ac199749f2c5ba08925e2b0fbc7731d309b877748bb467480f6664",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "b79dab35f77771b722220be6c829fcb407409da637b2fdf814683eb33b08b876",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_oja_fwd_inter/tests/cv_e2cb74da33047e08-25ff14e509aa"
+}

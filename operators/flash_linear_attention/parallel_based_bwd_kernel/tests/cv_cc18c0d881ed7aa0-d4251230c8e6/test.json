@@ -1,0 +1,88 @@
+{
+  "id": "cv_cc18c0d881ed7aa0-d4251230c8e6",
+  "case_id": "cv_cc18c0d881ed7aa0",
+  "operator_id": "FLA215",
+  "kernel": "parallel_based_bwd_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/parallel_based_bwd/test_parallel_based_bwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_based_bwd/test_parallel_based_bwd_kernel_npu.py::test_parallel_based_bwd_kernel_npu",
+  "entrypoint": "source/resume_cv_input_slices/cases/cv_cc18c0d881ed7aa0.py",
+  "module": "resume_cv_input_slices.cases.cv_cc18c0d881ed7aa0",
+  "function": "test_diagnostic",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_cc18c0d881ed7aa0"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_based_bwd/test_parallel_based_bwd_kernel_v2.pt": "generated-data/inputs_synthetic.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_based_bwd/test_parallel_based_bwd_kernel_fp64_v2.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 42,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "generate.py",
+      "sha256": "fa5f129e3995e27ef544bd2f346e037938b7877b1af9028f23fbf472b72f0893",
+      "functions": [
+        "based_math"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_cc18c0d881ed7aa0/yb_fbb62dba127526.py",
+      "sha256": "b4d7ea1e16aa601c11ea55d2e3a0e99080af31bee35fe00a5b2dfc3c03246a40",
+      "original_sha256": "1f582897d1efd6c0bcdb4772d5357154f1365af9829ec2094b0d2d062c22382b",
+      "role": "dependency"
+    },
+    {
+      "path": "source/resume_cv_input_slices/cases/cv_cc18c0d881ed7aa0.py",
+      "sha256": "89c6108f7bcfd531baa70b80128c297856b5f4b4257db405c915baac7e811ed5",
+      "original_sha256": "0610b303831281042603b58281da21d21bad7b851498f3ff26280f2bff07d919",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "b6ce4109124fc216d0c2de213597ab9c0664de9e982bdbb764d0d02533ac29b9",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "887135df2c64f6a3bf1cb47a10ee003b83bc4fd3511470235854a390153d8318",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_manual.py",
+      "sha256": "cb06037e59433eb429c5945e420650d96d854ac23f3c72a1668ac289944c8e6a",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "66577ebec721c548205caf4f59250b15f5ca422d8b0cd046ba7cd7e73539dc56",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_based_bwd_kernel/tests/cv_cc18c0d881ed7aa0-d4251230c8e6"
+}

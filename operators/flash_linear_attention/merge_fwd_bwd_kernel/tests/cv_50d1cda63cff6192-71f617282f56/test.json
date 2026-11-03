@@ -1,0 +1,76 @@
+{
+  "id": "cv_50d1cda63cff6192-71f617282f56",
+  "case_id": "cv_50d1cda63cff6192",
+  "operator_id": "FLA210",
+  "kernel": "merge_fwd_bwd_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/merge_fwd_bwd_kernel/test_merge_fwd_bwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/merge_fwd_bwd_kernel/test_merge_fwd_bwd_kernel_npu.py::test_merge_fwd_bwd_kernel",
+  "entrypoint": "source/cv_absolute_reference/cv_50d1cda63cff6192.py",
+  "module": "cv_absolute_reference.cv_50d1cda63cff6192",
+  "function": "test_merge_fwd_bwd_kernel",
+  "pythonpath": [
+    "source/."
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/merge_fwd_bwd_kernel/test_merge_fwd_bwd_kernel_cuda.pt": "generated-data/inputs_and_reference.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "generate_reference.py",
+      "sha256": "f75300bf4e387b06d0689be46434c0dcbf2a26ed261c6104fc16704c3514fd46",
+      "functions": [
+        "reference_merge"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BV": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/cv_absolute_reference/cv_50d1cda63cff6192.py",
+      "sha256": "5f0c9e896cac965afb2251b28967f113f7fbc0994c7fd8dc9280246945e189be",
+      "original_sha256": "7c47b6d069b70d38ec6dbcb134a3699ef4647c83f54ea6eace7b69670b9fb1a6",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "d86599210ecbdbead7814f8b2be960e6ee40d0bbc58bbb0d67122674ce21213e",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "2b7974177101182acb4e0ed444f53e17b680af0d5d7c18cae96480c86505d466",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "79212cb0b12dd3e65c282c5bd16b17d47321c3ac6494430563b5acf8c4d611be",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/merge_fwd_bwd_kernel/tests/cv_50d1cda63cff6192-71f617282f56"
+}

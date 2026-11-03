@@ -1,0 +1,75 @@
+{
+  "id": "vv_79c05e2a6845bf60-4cb768fc6508",
+  "case_id": "vv_79c05e2a6845bf60",
+  "operator_id": "FLA037",
+  "kernel": "parallel_attn_bwd_kernel_preprocess",
+  "source_path": "fla/ops/attn/parallel.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_parallel_attn_bwd_kernel_preprocess/test_parallel_attn_bwd_kernel_preprocess_npu.py::test_parallel_attn_bwd_kernel_preprocess",
+  "entrypoint": "source/standalone/yb_14c815bc069ccb.py",
+  "module": "yb_14c815bc069ccb",
+  "function": "test_parallel_attn_bwd_kernel_preprocess",
+  "pythonpath": [
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/attn_preprocess"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/prepare.py",
+      "sha256": "7915380b0055a65101dfb00997c03443e0f83186c9e7065b59b00b1be7c4a60f"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/standalone/yb_14c815bc069ccb.py",
+      "sha256": "98443eb0f9a521239fc8c8e2925b27eb6d41e8f6a629e3d8d55ce402a6138f09",
+      "original_sha256": "bfd52a6339aff2788f261f2aea9a4e52d4c4e37d0413c6bee25bcd1eec178b5d",
+      "role": "test"
+    },
+    {
+      "path": "source/standalone/yb_22cded5b91bba3.py",
+      "sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "original_sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_29270ece94452f.py",
+      "sha256": "02c589f6198044eef02e6e9b0c76c65ce09255f86ad01f6456bdc3ac869ec084",
+      "original_sha256": "02c589f6198044eef02e6e9b0c76c65ce09255f86ad01f6456bdc3ac869ec084",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "05fd0048ab26d54ea743c3f6bf677042e1841b49c6b9fc97da5457daaf286339",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_attn_bwd_kernel_preprocess__29270ece/tests/vv_79c05e2a6845bf60-4cb768fc6508"
+}

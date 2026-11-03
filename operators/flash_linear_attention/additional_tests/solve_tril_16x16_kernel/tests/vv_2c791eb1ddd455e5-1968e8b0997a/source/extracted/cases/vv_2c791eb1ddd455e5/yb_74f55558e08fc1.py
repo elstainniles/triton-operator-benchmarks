@@ -1,0 +1,212 @@
+# Copyright (c) 2023-2026, Songlin Yang, Yu Zhang, Zhiyuan Li
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+# For a list of all contributors, visit:
+#   https://github.com/fla-org/flash-linear-attention/graphs/contributors
+
+import contextlib
+
+import functools
+
+import inspect
+
+import os
+
+import warnings
+
+from collections import deque
+
+from collections.abc import Callable
+
+from typing import TYPE_CHECKING, Any
+
+import torch
+
+import triton
+
+from packaging import version
+
+FLA_CACHE_RESULTS = os.getenv('FLA_CACHE_RESULTS', '1') == '1'
+
+FLA_DISABLE_TENSOR_CACHE = os.getenv('FLA_DISABLE_TENSOR_CACHE', '0') == '1'
+
+FLA_TENSOR_CACHE_SIZE = int(os.getenv('FLA_TENSOR_CACHE_SIZE', "4"))
+
+SUPPORTS_AUTOTUNE_CACHE = "cache_results" in inspect.signature(triton.autotune).parameters
+
+autotune_cache_kwargs = {"cache_results": FLA_CACHE_RESULTS} if SUPPORTS_AUTOTUNE_CACHE else {}
+
+def tensor_cache(
+    fn: Callable[..., torch.Tensor],
+) -> Callable[..., torch.Tensor]:
+    """
+    A decorator that memoizes the most recent results of a function call by argument identity.
+
+    The decorator keeps a bounded queue of up to ``FLA_TENSOR_CACHE_SIZE`` (default 4)
+    recent ``(args, kwargs, result)`` triples. On each call, every cached entry is checked
+    in order; an entry is considered a hit when the positional arg count and kwarg key set
+    match and every argument is the *same object* (``is`` identity) as the cached one. On a
+    hit the cached result is returned and ``fn`` is skipped; on a miss ``fn`` is invoked and
+    the new triple is appended (evicting the oldest when the queue is full).
+
+    Caching is fully bypassed when the ``FLA_DISABLE_TENSOR_CACHE`` environment variable is
+    set to ``'1'``.
+
+    Args:
+        fn (Callable[..., torch.Tensor]):
+            The function to be decorated. Intended for functions whose inputs are tensors
+            (or other objects compared by identity) and whose output is a tensor.
+
+    Returns:
+        Callable[..., torch.Tensor]:
+            A wrapped version of ``fn`` backed by an identity-based bounded cache.
+    """
+    cached: deque = deque(maxlen=FLA_TENSOR_CACHE_SIZE)
+
+    @functools.wraps(fn)
+    def wrapper(*args: Any, **kwargs: Any) -> Any:
+        if FLA_DISABLE_TENSOR_CACHE:
+            return fn(*args, **kwargs)
+
+        for cached_args, cached_kwargs, cached_result in cached:
+            if len(args) != len(cached_args) or len(kwargs) != len(cached_kwargs):
+                continue
+            if all(a is b for a, b in zip(args, cached_args, strict=False)) and \
+                    all(k in cached_kwargs and v is cached_kwargs[k] for k, v in kwargs.items()):
+                return cached_result
+
+        result = fn(*args, **kwargs)
+        cached.append((args, kwargs, result))
+        return result
+
+    return wrapper
+
+def input_guard(
+    fn: Callable[..., torch.Tensor] | None = None,
+    *,
+    no_guard_contiguous: bool | list[str] = False,
+) -> Callable[[Callable[..., torch.Tensor]], Callable[..., torch.Tensor]] | Callable[..., torch.Tensor]:
+    """
+    A decorator to make sure all input tensors are contiguous and set the device based on input tensors.
+
+    Args:
+        no_guard_contiguous (bool | list[str]):
+            If True, skip all contiguous checks. If a list of parameter names, skip contiguous check for those parameters.
+    """
+
+    def decorator(fn: Callable[..., torch.Tensor]) -> Callable[..., torch.Tensor]:
+        # Get function signature for parameter name mapping
+        sig = inspect.signature(fn)
+        param_names = list(sig.parameters.keys())
+
+        @functools.wraps(fn)
+        def wrapper(*args, **kwargs):
+            # Convert no_guard_contiguous to list of parameter names if it's a list
+            skip_params = set()
+            if isinstance(no_guard_contiguous, list):
+                skip_params = set(no_guard_contiguous)
+
+            # Process args with parameter name mapping
+            processed_args = []
+            for i, arg in enumerate(args):
+                if i < len(param_names):
+                    param_name = param_names[i]
+                else:
+                    # For *args beyond signature, use position as name
+                    param_name = f"__arg_{i}"
+
+                if isinstance(arg, torch.Tensor):
+                    if no_guard_contiguous is True or param_name in skip_params:
+                        processed_args.append(arg)
+                    else:
+                        processed_args.append(arg.contiguous())
+                else:
+                    processed_args.append(arg)
+
+            # Process kwargs
+            processed_kwargs = {}
+            for k, v in kwargs.items():
+                if isinstance(v, torch.Tensor):
+                    if no_guard_contiguous is True or k in skip_params:
+                        processed_kwargs[k] = v
+                    else:
+                        processed_kwargs[k] = v.contiguous()
+                else:
+                    processed_kwargs[k] = v
+
+            tensor = None
+            for arg in args:
+                if isinstance(arg, torch.Tensor):
+                    tensor = arg
+                    break
+            if tensor is None:
+                for value in kwargs.values():
+                    if isinstance(value, torch.Tensor):
+                        tensor = value
+                        break
+
+            if tensor is not None:
+                ctx = custom_device_ctx(tensor.device.index)
+            else:
+                ctx = contextlib.nullcontext()
+
+            with ctx:
+                return fn(*processed_args, **processed_kwargs)
+
+        return wrapper
+
+    # Handle direct usage without parentheses: @input_guard
+    if fn is not None:
+        return decorator(fn)
+
+    return decorator
+
+@functools.cache
+def check_pytorch_version(version_s: str = '2.4') -> bool:
+    return version.parse(torch.__version__) >= version.parse(version_s)
+
+def _cpu_device_warning():
+    warnings.warn(('Triton is not supported on current platform, roll back to CPU.'), stacklevel=1)
+
+@functools.cache
+def get_available_device() -> str:
+    try:
+        return triton.runtime.driver.active.get_current_target().backend
+    except BaseException:
+        _cpu_device_warning()
+        return 'cpu'
+
+device = get_available_device() if get_available_device() != 'hip' else 'cuda'
+
+device_torch_lib = getattr(torch, device)
+
+device_platform = get_available_device()
+
+IS_NVIDIA = (device_platform == 'cuda')
+
+IS_TF32_SUPPORTED = (IS_NVIDIA and torch.cuda.get_device_capability(0)[0] >= 8)
+
+IS_TMA_SUPPORTED = (IS_NVIDIA and torch.cuda.get_device_capability(0)[0] >= 9) \
+    and os.environ.get('FLA_USE_TMA', '0') == '1' and \
+    (hasattr(triton.language, '_experimental_make_tensor_descriptor') or hasattr(triton.language, 'make_tensor_descriptor'))
+
+if IS_NVIDIA and not IS_TF32_SUPPORTED:
+    # Make old card happy, since triton will use tf32 by default.
+    # This is a workaround for old nvidia card.
+    os.environ['TRITON_F32_DEFAULT'] = 'ieee'
+
+if check_pytorch_version('2.4'):
+    device = 'cuda' if device == 'cpu' else device
+    autocast_custom_fwd = functools.partial(torch.amp.custom_fwd, device_type=device)
+    autocast_custom_bwd = functools.partial(torch.amp.custom_bwd, device_type=device)
+
+    def custom_device_ctx(index: int):
+        return device_torch_lib.device(index)
+else:
+    assert device == 'cuda', 'Only cuda device is supported for PyTorch version < 2.4.0.'
+    autocast_custom_fwd = device_torch_lib.amp.custom_fwd
+    autocast_custom_bwd = device_torch_lib.amp.custom_bwd
+
+    def custom_device_ctx(index: int):
+        return torch.cuda.device(index)

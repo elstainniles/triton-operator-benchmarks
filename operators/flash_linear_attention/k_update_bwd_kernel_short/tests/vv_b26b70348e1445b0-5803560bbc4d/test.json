@@ -1,0 +1,74 @@
+{
+  "id": "vv_b26b70348e1445b0-5803560bbc4d",
+  "case_id": "vv_b26b70348e1445b0",
+  "operator_id": "FLA271",
+  "kernel": "k_update_bwd_kernel_short",
+  "source_path": "tests/ops/ascend_ops/vv_operator/k_update_bwd_kernel_short/test_k_update_bwd_kernel_short_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/k_update_bwd_kernel_short/test_k_update_bwd_kernel_short_npu.py::test_k_update_bwd_kernel_short",
+  "entrypoint": "source/source_repair/cases/vv_b26b70348e1445b0/yb_ffab1495afa9a4.py",
+  "module": "yb_ffab1495afa9a4",
+  "function": "test_k_update_bwd_kernel_short",
+  "pythonpath": [
+    "source/source_repair/cases/vv_b26b70348e1445b0",
+    "source/source_repair/original"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/k_update_bwd_kernel_short/test_k_update_bwd_kernel_short_cuda.pt": "generated-data/test_k_update_bwd_kernel_short_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "k_update_bwd_short"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 16,
+    "num_stages": 2,
+    "num_ctas": 1,
+    "BT": 8
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/source_repair/cases/vv_b26b70348e1445b0/yb_ffab1495afa9a4.py",
+      "sha256": "3c4472bdd7bb22f2d688ce0584667a7113e0d435ec032b219f8f0ba35b79fed3",
+      "original_sha256": "25fe3157ea93294515bf1fcd47ef9af2cee71538c528955a3bca8dff80df76bd",
+      "role": "test"
+    },
+    {
+      "path": "source/source_repair/original/ofla_08a10575df4b02.py",
+      "sha256": "574c5cbeba3a68ea675ea2a86d04dc918e06893951c7c40a607767e0f5ea93cb",
+      "original_sha256": "574c5cbeba3a68ea675ea2a86d04dc918e06893951c7c40a607767e0f5ea93cb",
+      "role": "dependency"
+    },
+    {
+      "path": "source/source_repair/original/ofla_74f55558e08fc1.py",
+      "sha256": "6510ac9be94e473e0242db73a3f2c1be907fd13fab69f56db48c61a65a67203e",
+      "original_sha256": "6510ac9be94e473e0242db73a3f2c1be907fd13fab69f56db48c61a65a67203e",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "de0bc509a15da1d0e2d9f696b53a488bff96ed5da517ade033de3b1715a8da1a",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/k_update_bwd_kernel_short/tests/vv_b26b70348e1445b0-5803560bbc4d"
+}

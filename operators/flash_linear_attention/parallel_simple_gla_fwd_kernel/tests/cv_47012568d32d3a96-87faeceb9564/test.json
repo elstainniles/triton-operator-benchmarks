@@ -1,0 +1,59 @@
+{
+  "id": "cv_47012568d32d3a96-87faeceb9564",
+  "case_id": "cv_47012568d32d3a96",
+  "operator_id": "FLA227",
+  "kernel": "parallel_simple_gla_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/parallel_simple_gla_fwd/parallel_simple_gla_fwd.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_simple_gla_fwd/test_parallel_simple_gla_fwd.py::test_parallel_simple_gla_fwd",
+  "entrypoint": "source/standalone/yb_5bf9f6d7316ace.py",
+  "module": "yb_5bf9f6d7316ace",
+  "function": "test_parallel_simple_gla_fwd",
+  "pythonpath": [
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": null,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/standalone/yb_5bf9f6d7316ace.py",
+      "sha256": "9cd657feef796161723a1531d3758467859173c6c694bc1e33f383fa6d989fc9",
+      "original_sha256": "9cd657feef796161723a1531d3758467859173c6c694bc1e33f383fa6d989fc9",
+      "role": "test"
+    },
+    {
+      "path": "source/standalone/yb_a017fb308312f4.py",
+      "sha256": "40fd99491c7bc9cf285e639f6b3de8f60149177426b1e3129fb4d259cad4186a",
+      "original_sha256": "40fd99491c7bc9cf285e639f6b3de8f60149177426b1e3129fb4d259cad4186a",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "b9b0ac4e8ac0a594fa1dfd784f9342592276a3a948191ea4dcd229a7fd30f6aa",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_simple_gla_fwd_kernel/tests/cv_47012568d32d3a96-87faeceb9564"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "cv_a1323defc2a3e115-ad83986041ca",
+  "case_id": "cv_a1323defc2a3e115",
+  "operator_id": "FLA039",
+  "kernel": "recompute_w_u_fwd_kernel",
+  "source_path": "fla/ops/comba/wy_fast.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/recompute_w_u_fwd_kernel/test_recompute_w_u_fwd_kernel_npu.py::test_recompute_w_u_fwd_kernel_function",
+  "entrypoint": "source/standalone/yb_2116fbdce3a911.py",
+  "module": "yb_2116fbdce3a911",
+  "function": "test_recompute_w_u_fwd_kernel_function",
+  "pythonpath": [
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/recompute_w_u_fwd_kernel/k.pt": "generated-data/k.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/recompute_w_u_fwd_kernel/v.pt": "generated-data/v.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/recompute_w_u_fwd_kernel/beta.pt": "generated-data/beta.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/recompute_w_u_fwd_kernel/g_cumsum.pt": "generated-data/g_cumsum.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/recompute_w_u_fwd_kernel/A.pt": "generated-data/A.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/recompute_w_u_fwd_kernel/output_0.pt": "generated-data/output_0.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/recompute_w_u_fwd_kernel/output_1.pt": "generated-data/output_1.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_recompute_w_u_fwd_kernel_gpu.py",
+      "sha256": "e3f388326e7ed52bcc0586f077b6be354ac4a790ae115644a69c330ab794ea77",
+      "functions": [
+        "make_fixtures"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 4,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/standalone/yb_1858bf26d5878c.py",
+      "sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "original_sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_2116fbdce3a911.py",
+      "sha256": "0b3154cb95eef5357fed2dc8ddd4db7292b17e398f3b0ac874cebd50a58d8a19",
+      "original_sha256": "4b4a0b65cae9fd53bfdb508b986a00cf58902de5a70d975d7b79240add7db750",
+      "role": "test"
+    },
+    {
+      "path": "source/standalone/yb_4f3456615af619.py",
+      "sha256": "188ca9fbb8fbaa3a5d2f137cdcbfe4d13b0b6f08da4f6793d5d0c222102de1b1",
+      "original_sha256": "188ca9fbb8fbaa3a5d2f137cdcbfe4d13b0b6f08da4f6793d5d0c222102de1b1",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_5deca3efb6cf0b.py",
+      "sha256": "2cb04805843e5b7dcbfa845e4c89a5532d9f5724a2a39893d49541bd981090ca",
+      "original_sha256": "2cb04805843e5b7dcbfa845e4c89a5532d9f5724a2a39893d49541bd981090ca",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_74f55558e08fc1.py",
+      "sha256": "9be3a91404cf790c05c8c927d3ce6ce65c922a44d95952486d142ba65fd7439d",
+      "original_sha256": "9be3a91404cf790c05c8c927d3ce6ce65c922a44d95952486d142ba65fd7439d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_8459c530c3d6be.py",
+      "sha256": "b171617519ca4d362fb389188fc88c4da4f0f47754ab732920122b7df0adf6b8",
+      "original_sha256": "b171617519ca4d362fb389188fc88c4da4f0f47754ab732920122b7df0adf6b8",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6454e3e1056e22a416e4dc22b4444bafb1c4cdc07189a02b85e131db478ea5d2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe.py",
+      "sha256": "63d2a374c543f5883cef52b13634ad5af45bcfebf7ca49996412c914a81203f6",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/recompute_w_u_fwd_kernel/tests/cv_a1323defc2a3e115-ad83986041ca"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "vv_2bd7e3ed0e209f67-1c9e68db08b9",
+  "case_id": "vv_2bd7e3ed0e209f67",
+  "operator_id": "FLA280",
+  "kernel": "log2_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/log2/test_log2_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/log2/test_log2_npu.py::test_log2_kernel_perftest",
+  "entrypoint": "source/cpu64_case_vv_2bd7e3ed0e209f67.py",
+  "module": "cpu64_case_vv_2bd7e3ed0e209f67",
+  "function": "test_cpu64",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_ab52a2ea7627760b"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/log2",
+      "reference_path": "generated-data/reference_cpu64.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "855973465f892471038ead38a5bde2743f0c640ba72b4be5b047cd8369546f50"
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "1": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/cpu64_absolute.py",
+      "sha256": "33eab3016c5aaaae14e5e6d5304a36c5a253b683f3a275093ab38f448f3ef09d",
+      "original_sha256": "33eab3016c5aaaae14e5e6d5304a36c5a253b683f3a275093ab38f448f3ef09d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/cpu64_case_vv_2bd7e3ed0e209f67.py",
+      "sha256": "bb23db18f182ec622a2192920d27649ecb0a393e40008fd1d6d1e29c9ba561c6",
+      "original_sha256": "7a12d1e80aa5221f4b7dd6e8a826f580761357f502d94a368dfc49d2538431d2",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_ab52a2ea7627760b/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_ab52a2ea7627760b/yb_eeed3605e3bd12.py",
+      "sha256": "f878a673c995411c40eb8ca7b42877b82219480916ddb121c43fdea6b21c9cb9",
+      "original_sha256": "857fcf838cc054c7c8ca4d34a18ea4a6bb7b593c20879af40cfd9d3df2f85d69",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "da2cb5ffe4dd7ed5c9bed81560a25606b02bb5ff798df773ee13728b4e852256",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/log2_kernel/tests/vv_2bd7e3ed0e209f67-1c9e68db08b9"
+}

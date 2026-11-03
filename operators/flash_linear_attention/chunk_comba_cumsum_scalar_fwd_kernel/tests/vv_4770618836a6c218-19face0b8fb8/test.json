@@ -1,0 +1,73 @@
+{
+  "id": "vv_4770618836a6c218-19face0b8fb8",
+  "case_id": "vv_4770618836a6c218",
+  "operator_id": "FLA244",
+  "kernel": "chunk_comba_cumsum_scalar_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/chunk_comba_cumsum_scalar_fwd_kernel/test_chunk_comba_cumsum_scalar_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/chunk_comba_cumsum_scalar_fwd_kernel/test_chunk_comba_cumsum_scalar_fwd_kernel_npu.py::test_chunk_comba_cumsum_scalar_fwd_kernel",
+  "entrypoint": "source/source_repair/cases/vv_4770618836a6c218/yb_b9bd0f06e26d06.py",
+  "module": "yb_b9bd0f06e26d06",
+  "function": "test_chunk_comba_cumsum_scalar_fwd_kernel",
+  "pythonpath": [
+    "source/source_repair/cases/vv_4770618836a6c218",
+    "source/source_repair/original"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_comba_cumsum_scalar_fwd_kernel/test_chunk_comba_cumsum_scalar_fwd_kernel_cuda.pt": "generated-data/test_chunk_comba_cumsum_scalar_fwd_kernel_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "chunk_comba_cumsum_scalar_fwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/source_repair/cases/vv_4770618836a6c218/yb_b9bd0f06e26d06.py",
+      "sha256": "38e9e5239e0d2b1cfc8ee0e9d3011395a7e8bbcc50ebd6a1dcc58de913d310ae",
+      "original_sha256": "d17494337cd69651172848df0498c2bc0fa1b185fa004fe1bdc60a58a0993ce1",
+      "role": "test"
+    },
+    {
+      "path": "source/source_repair/original/ofla_10006874aa06c8.py",
+      "sha256": "7a866b385cc51a41111a4b0b704baabfaa273cc6b788fbc1f5c8814e62764d78",
+      "original_sha256": "7a866b385cc51a41111a4b0b704baabfaa273cc6b788fbc1f5c8814e62764d78",
+      "role": "dependency"
+    },
+    {
+      "path": "source/source_repair/original/ofla_74f55558e08fc1.py",
+      "sha256": "6510ac9be94e473e0242db73a3f2c1be907fd13fab69f56db48c61a65a67203e",
+      "original_sha256": "6510ac9be94e473e0242db73a3f2c1be907fd13fab69f56db48c61a65a67203e",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "2aacf9c646c1f0bf8f13823c0da895836b2cf094a3d53538a4896a405766d9bc",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_comba_cumsum_scalar_fwd_kernel/tests/vv_4770618836a6c218-19face0b8fb8"
+}

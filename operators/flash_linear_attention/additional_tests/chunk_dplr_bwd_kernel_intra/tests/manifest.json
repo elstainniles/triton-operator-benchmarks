@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_chunk_dplr_bwd_kernel_intra",
+  "tests": [
+    {
+      "id": "vv_fc468f2fe597a9d4-29a67a292929",
+      "case_id": "vv_fc468f2fe597a9d4",
+      "path": "vv_fc468f2fe597a9d4-29a67a292929/test.json"
+    },
+    {
+      "id": "vv_fc468f2fe597a9d4-15a2e2bfddca",
+      "case_id": "vv_fc468f2fe597a9d4",
+      "path": "vv_fc468f2fe597a9d4-15a2e2bfddca/test.json"
+    },
+    {
+      "id": "vv_fc468f2fe597a9d4-fd82f5f749d6",
+      "case_id": "vv_fc468f2fe597a9d4",
+      "path": "vv_fc468f2fe597a9d4-fd82f5f749d6/test.json"
+    }
+  ]
+}

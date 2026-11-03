@@ -1,0 +1,109 @@
+{
+  "id": "cv_a7181325ade2b3f0-77c3b6416bb5",
+  "case_id": "cv_a7181325ade2b3f0",
+  "operator_id": "FLA172",
+  "kernel": "chunk_gsa_bwd_k_kernel_dA",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_gsa_bwd_k/op_impl.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_gsa_bwd_k/test_chunk_gsa_bwd_k_kernel_dA.py::test_chunk_gsa_bwd_k_kernel_dA",
+  "entrypoint": "source/gsa_backward_pending_reference/cv_a7181325ade2b3f0__target_chunk_gsa_bwd_k_kernel_dA.py",
+  "module": "gsa_backward_pending_reference.cv_a7181325ade2b3f0__target_chunk_gsa_bwd_k_kernel_dA",
+  "function": "test_reference",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_a7181325ade2b3f0"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_gsa_bwd_k/test_chunk_gsa_bwd_k.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 42,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_chunk_gsa_bwd_k_pt.py",
+      "sha256": "4670b3d731be5199cac3fa1bd1a69c16078b43996bda45aebd0a461fad8a4875",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "8a44d59707493ad847ee76f180ebd291d8db8e7b31f0fd1bcf1c195571257ff1",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "original_absolute",
+  "validation_tolerances": {
+    "dA": {
+      "dtype": "float32",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_a7181325ade2b3f0/yb_249d3453092fd3.py",
+      "sha256": "8d5951608a804232a7af0dfad96c6f1b09d75c29b21d32acb8e16016f43cd677",
+      "original_sha256": "8d5951608a804232a7af0dfad96c6f1b09d75c29b21d32acb8e16016f43cd677",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_a7181325ade2b3f0/yb_7a589d36409b80.py",
+      "sha256": "952aead5276bde34c28eca0bf0ac72b996036070410b071a24991db976da3fdf",
+      "original_sha256": "b8f0b64d98d8dedf96d471de5bc31264b438fcd238b131f7df71745405ba6ff8",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_a7181325ade2b3f0/yb_ab1792945eaa4c.py",
+      "sha256": "58c5e9bf6b5512646ed260aa6c3a1f2f3e9965f056bf363757c657b1ebd198fc",
+      "original_sha256": "58c5e9bf6b5512646ed260aa6c3a1f2f3e9965f056bf363757c657b1ebd198fc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/gsa_backward_pending_reference/cv_a7181325ade2b3f0__target_chunk_gsa_bwd_k_kernel_dA.py",
+      "sha256": "330f809673f1f4b3cce0fadedd5506bd55b89de4387d2572340047c2bdf869c1",
+      "original_sha256": "5553cdd8c027e721226eff662c25402b1bdb781fd2597d4e1b6695f762e3d88e",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "24c8cfba0cd9638851e658cb99fabe87060366830a2114d5e7a06e4c4f082a56",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "7adf159315fa676d2203d2ddcfab19866d65eb389c2e2eba292979aa2ca74e66",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "632e1b7facbba4f3c520d3cb653ffcd442806beb07c8ea80deff4a16b79ccfc6",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_gsa_bwd_k_kernel_dA/tests/cv_a7181325ade2b3f0-77c3b6416bb5"
+}

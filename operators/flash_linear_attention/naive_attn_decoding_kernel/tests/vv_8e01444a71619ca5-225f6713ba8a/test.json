@@ -1,0 +1,112 @@
+{
+  "id": "vv_8e01444a71619ca5-225f6713ba8a",
+  "case_id": "vv_8e01444a71619ca5",
+  "operator_id": "FLA036",
+  "kernel": "naive_attn_decoding_kernel",
+  "source_path": "fla/ops/attn/decoding.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_naive_attn_decoding_kernel/test_naive_attn_decoding_kernel_npu.py::test_naive_attn_decoding_kernel",
+  "entrypoint": "source/resume_scope_data/cases/vv_8e01444a71619ca5.py",
+  "module": "resume_scope_data.cases.vv_8e01444a71619ca5",
+  "function": "test_diagnostic",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_8e01444a71619ca5"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/naive_attn"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "08efb85c51072b0209099f7eb4554fc6c224f679039c63e6a7a04f8674cb1c7b"
+    },
+    {
+      "path": "generated-data/cpu_refs.py",
+      "sha256": "29938e3659a7e1efcd69dae4701c5f828439e3dff55636236528d0abcc6771a8"
+    }
+  ],
+  "validation_standard": "original",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 1,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_03aaadc1e61d1b.py",
+      "sha256": "782688ecce7737f6f1b876860759faa0b2b35ad01522f78ee95cab08b1e35bc6",
+      "original_sha256": "782688ecce7737f6f1b876860759faa0b2b35ad01522f78ee95cab08b1e35bc6",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_0f209d06292290.py",
+      "sha256": "c075f327a1d8c22cc40132af3f83d01c8b16e7423b92dec95f8b0b1c8ea9510b",
+      "original_sha256": "434a7966745abb474d9e88c4a031f29c9b869e22c804d13b70f65a619586f34f",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_22cded5b91bba3.py",
+      "sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "original_sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_712432704460d6.py",
+      "sha256": "bbb69852286c2fbe902a5b4fba00a5a46656db6d1c2f18c74d7b79e107832d41",
+      "original_sha256": "bbb69852286c2fbe902a5b4fba00a5a46656db6d1c2f18c74d7b79e107832d41",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_74f55558e08fc1.py",
+      "sha256": "ccb225bbabf13b114bb945ee9de9c320fe76439f24c634941e11a3ae1f76ee5e",
+      "original_sha256": "ccb225bbabf13b114bb945ee9de9c320fe76439f24c634941e11a3ae1f76ee5e",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_8e01444a71619ca5/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "source/resume_precision_contract.py",
+      "sha256": "0770477caef1299b6bff27cd55e197e0235b57ea67b398665b301f5fea73d645",
+      "original_sha256": "0770477caef1299b6bff27cd55e197e0235b57ea67b398665b301f5fea73d645",
+      "role": "dependency"
+    },
+    {
+      "path": "source/resume_scope_data/cases/vv_8e01444a71619ca5.py",
+      "sha256": "8149cbf2e2b297c08bebf93b98764fdae552dd3e001f793223defb670f1a6a7e",
+      "original_sha256": "f7931074902cffb94bd53d9232a059aa08acd1781729b22740beb35887d84a75",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6a497626913436559e527789a243f61403f3e04621dbb16d0ca6c697d44c98a5",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/naive_attn_decoding_kernel/tests/vv_8e01444a71619ca5-225f6713ba8a"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA172",
+  "tests": [
+    {
+      "id": "cv_4e6531093fdbc3b3-221d8b64e42c",
+      "case_id": "cv_4e6531093fdbc3b3",
+      "path": "cv_4e6531093fdbc3b3-221d8b64e42c/test.json"
+    },
+    {
+      "id": "cv_660e1aba0ec77a49-1190cda8a77c",
+      "case_id": "cv_660e1aba0ec77a49",
+      "path": "cv_660e1aba0ec77a49-1190cda8a77c/test.json"
+    },
+    {
+      "id": "cv_a7181325ade2b3f0-77c3b6416bb5",
+      "case_id": "cv_a7181325ade2b3f0",
+      "path": "cv_a7181325ade2b3f0-77c3b6416bb5/test.json"
+    }
+  ]
+}

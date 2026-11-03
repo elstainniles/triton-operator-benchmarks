@@ -1,0 +1,88 @@
+{
+  "id": "vv_6161f5614a1fc80f-caddecacf947",
+  "case_id": "vv_6161f5614a1fc80f",
+  "operator_id": "FLA061",
+  "kernel": "fused_recurrent_dplr_delta_rule_fwd_kernel",
+  "source_path": "fla/ops/generalized_delta_rule/dplr/fused_recurrent.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_dplr_delta_rule_fwd_kernel/test_fused_recurrent_dplr_delta_rule_fwd_kernel_npu.py::test_fused_recurrent_dplr_delta_rule_fwd_kernel",
+  "entrypoint": "source/extracted/cases/vv_6161f5614a1fc80f/yb_7e86efcfe1ff2a.py",
+  "module": "yb_7e86efcfe1ff2a",
+  "function": "test_fused_recurrent_dplr_delta_rule_fwd_kernel",
+  "pythonpath": [
+    "source/extracted/cases/vv_6161f5614a1fc80f",
+    "source/."
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/dplr_fwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "67f3d1a0a12925b78d9b82e56d8d5b3048cb178c6137d6d5c4d5c4cc9a3a7f28"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 4,
+    "num_ctas": 1,
+    "BV": 16
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_6161f5614a1fc80f/yb_22cded5b91bba3.py",
+      "sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "original_sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_6161f5614a1fc80f/yb_470913040c248c.py",
+      "sha256": "f24e801260d3ff450f9232943b02d835e4e56d7a783783fbc37d61e8b94f49e0",
+      "original_sha256": "f24e801260d3ff450f9232943b02d835e4e56d7a783783fbc37d61e8b94f49e0",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_6161f5614a1fc80f/yb_74f55558e08fc1.py",
+      "sha256": "5a68190b86d9dcfe8de7ef36e0f44ad190d2dc2fccc52d87e14738eca1318758",
+      "original_sha256": "5a68190b86d9dcfe8de7ef36e0f44ad190d2dc2fccc52d87e14738eca1318758",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_6161f5614a1fc80f/yb_7e86efcfe1ff2a.py",
+      "sha256": "abb5f927ce67f75849579aa8b4ba88a1aca724ab5ca3a63c51e7be0d907c381e",
+      "original_sha256": "bfcd3351e861a959c6af3c12d9768945d2c6adf596592bd559e39c5a7483975a",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_6161f5614a1fc80f/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "4357aa02556c740a5d32114cf64e72e23bed41913fbe317f394a8980918be47f",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/fused_recurrent_dplr_delta_rule_fwd_kernel/tests/vv_6161f5614a1fc80f-caddecacf947"
+}

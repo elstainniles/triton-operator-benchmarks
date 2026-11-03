@@ -1,0 +1,252 @@
+# Copyright (c) 2023-2026, Songlin Yang, Yu Zhang, Zhiyuan Li
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+# For a list of all contributors, visit:
+#   https://github.com/fla-org/flash-linear-attention/graphs/contributors
+
+import triton
+
+import triton.language as tl
+
+@triton.heuristics({
+    "IS_VARLEN": lambda args: args["cu_seqlens"] is not None,
+})
+@triton.jit(do_not_specialize=["T"])
+def copy_input_kernel(
+    q,
+    k,
+    v,
+    g,
+    level_scales,
+    cu_seqlens,
+    q_prev,
+    k_prev,
+    v_prev,
+    g_prev,
+    level_scales_prev,
+    offsets,
+    q_new,
+    k_new,
+    v_new,
+    g_new,
+    level_scales_new,
+    T,
+    H: tl.constexpr,
+    K: tl.constexpr,
+    V: tl.constexpr,
+    L: tl.constexpr,
+    BT: tl.constexpr,
+    IS_VARLEN: tl.constexpr,
+):
+    # parallel over sequences and heads
+    i_nh = tl.program_id(0)
+    i_n, i_h = i_nh // H, i_nh % H
+
+    if IS_VARLEN:
+        bos, eos = (
+            tl.load(cu_seqlens + i_n).to(tl.int32),
+            tl.load(cu_seqlens + i_n + 1).to(tl.int32),
+        )
+        T = eos - bos
+    else:
+        bos, eos = i_n * T, i_n * T + T
+
+    offset = tl.load(offsets + i_n)
+    input_offset = -1 * (offset % BT)
+
+    NT = tl.cdiv(T, BT)
+
+    for i_t in range(NT):
+        p_g = tl.make_block_ptr(
+            g + bos * H + i_h, (T,), (H,), (i_t * BT + input_offset,), (BT,), (0,),
+        )
+        p_q = tl.make_block_ptr(
+            q + bos * K, (T, K), (K, 1), (i_t * BT + input_offset, 0), (BT, K), (1, 0),
+        )
+        p_k = tl.make_block_ptr(
+            k + bos * K, (T, K), (K, 1), (i_t * BT + input_offset, 0), (BT, K), (1, 0),
+        )
+        p_v = tl.make_block_ptr(
+            v + (bos * H + i_h) * V,
+            (T, V),
+            (H * V, 1),
+            (i_t * BT + input_offset, 0),
+            (BT, V),
+            (1, 0),
+        )
+        p_g_new = tl.make_block_ptr(
+            g_new + bos * H + i_h, (T,), (H,), (i_t * BT,), (BT,), (0,),
+        )
+        p_q_new = tl.make_block_ptr(
+            q_new + bos * K, (T, K), (K, 1), (i_t * BT, 0), (BT, K), (1, 0),
+        )
+        p_k_new = tl.make_block_ptr(
+            k_new + bos * K, (T, K), (K, 1), (i_t * BT, 0), (BT, K), (1, 0),
+        )
+        p_v_new = tl.make_block_ptr(
+            v_new + (bos * H + i_h) * V,
+            (T, V),
+            (H * V, 1),
+            (i_t * BT, 0),
+            (BT, V),
+            (1, 0),
+        )
+
+        b_g = tl.load(p_g, boundary_check=(0,))
+        b_q = tl.load(p_q, boundary_check=(0, 1))
+        b_k = tl.load(p_k, boundary_check=(0, 1))
+        b_v = tl.load(p_v, boundary_check=(0, 1))
+
+        if i_t == 0:
+            p_g_prev = tl.make_block_ptr(
+                g_prev + i_n * BT * H + i_h, (BT,), (H,), (0,), (BT,), (0,),
+            )
+            p_q_prev = tl.make_block_ptr(
+                q_prev + i_n * BT * K, (BT, K), (K, 1), (0, 0), (BT, K), (1, 0),
+            )
+            p_k_prev = tl.make_block_ptr(
+                k_prev + i_n * BT * K, (BT, K), (K, 1), (0, 0), (BT, K), (1, 0),
+            )
+            p_v_prev = tl.make_block_ptr(
+                v_prev + (i_n * BT * H + i_h) * V,
+                (BT, V),
+                (H * V, 1),
+                (0, 0),
+                (BT, V),
+                (1, 0),
+            )
+
+            b_g += tl.load(p_g_prev, boundary_check=(0,))
+            b_q += tl.load(p_q_prev, boundary_check=(0, 1))
+            b_k += tl.load(p_k_prev, boundary_check=(0, 1))
+            b_v += tl.load(p_v_prev, boundary_check=(0, 1))
+
+        tl.store(p_g_new, b_g, boundary_check=(0,))
+        tl.store(p_q_new, b_q, boundary_check=(0, 1))
+        tl.store(p_k_new, b_k, boundary_check=(0, 1))
+        tl.store(p_v_new, b_v, boundary_check=(0, 1))
+
+        for i in range(L):
+            p_l = tl.make_block_ptr(
+                level_scales + (bos * H + i_h) * L,
+                (T, L),
+                (H * L, 1),
+                (i_t * BT + input_offset, i),
+                (BT, 1),
+                (1, 0),
+            )
+            p_l_new = tl.make_block_ptr(
+                level_scales_new + (bos * H + i_h) * L,
+                (T, L),
+                (H * L, 1),
+                (i_t * BT, i),
+                (BT, 1),
+                (1, 0),
+            )
+            b_l = tl.load(p_l, boundary_check=(0,))
+            if i_t == 0:
+                p_l_prev = tl.make_block_ptr(
+                    level_scales_prev + (i_n * BT * H + i_h) * L,
+                    (BT, L),
+                    (H * L, 1),
+                    (0, i),
+                    (BT, 1),
+                    (1, 0),
+                )
+                b_l += tl.load(p_l_prev, boundary_check=(0,))
+            tl.store(p_l_new, b_l, boundary_check=(0,))
+
+@triton.heuristics(
+    {
+        "IS_VARLEN": lambda args: args["cu_seqlens"] is not None,
+    },
+)
+@triton.jit(do_not_specialize=["T"])
+def copy_last_chunk_kernel(
+    q,
+    k,
+    v,
+    g,
+    level_scales,
+    cu_seqlens,
+    q_prev,
+    k_prev,
+    v_prev,
+    g_prev,
+    level_scales_prev,
+    offsets,
+    T,
+    H: tl.constexpr,
+    K: tl.constexpr,
+    V: tl.constexpr,
+    L: tl.constexpr,
+    BT: tl.constexpr,
+    IS_VARLEN: tl.constexpr,
+):
+    # parallel over sequences and heads
+    i_nh = tl.program_id(0)
+    i_n, i_h = i_nh // H, i_nh % H
+
+    if IS_VARLEN:
+        bos, eos = (
+            tl.load(cu_seqlens + i_n).to(tl.int32),
+            tl.load(cu_seqlens + i_n + 1).to(tl.int32),
+        )
+        T = eos - bos
+    else:
+        bos, eos = i_n * T, i_n * T + T
+
+    seq_offset = (T // BT) * BT
+
+    p_g = tl.make_block_ptr(g + bos * H + i_h, (T,), (H,), (seq_offset,), (BT,), (0,))
+    p_q = tl.make_block_ptr(
+        q + bos * K, (T, K), (K, 1), (seq_offset, 0), (BT, K), (1, 0),
+    )
+    p_k = tl.make_block_ptr(
+        k + bos * K, (T, K), (K, 1), (seq_offset, 0), (BT, K), (1, 0),
+    )
+    p_v = tl.make_block_ptr(
+        v + (bos * H + i_h) * V,
+        (T, V),
+        (H * V, 1),
+        (seq_offset, 0),
+        (BT, V),
+        (1, 0),
+    )
+    p_g_prev = tl.make_block_ptr(
+        g_prev + i_n * BT * H + i_h, (BT,), (H,), (0,), (BT,), (0,),
+    )
+    p_q_prev = tl.make_block_ptr(
+        q_prev + i_n * BT * K, (BT, K), (K, 1), (0, 0), (BT, K), (1, 0),
+    )
+    p_k_prev = tl.make_block_ptr(
+        k_prev + i_n * BT * K, (BT, K), (K, 1), (0, 0), (BT, K), (1, 0),
+    )
+    p_v_prev = tl.make_block_ptr(
+        v_prev + (i_n * BT * H + i_h) * V, (BT, V), (H * V, 1), (0, 0), (BT, V), (1, 0),
+    )
+
+    tl.store(p_g_prev, tl.load(p_g, boundary_check=(0,)), boundary_check=(0,))
+    tl.store(p_q_prev, tl.load(p_q, boundary_check=(0, 1)), boundary_check=(0, 1))
+    tl.store(p_k_prev, tl.load(p_k, boundary_check=(0, 1)), boundary_check=(0, 1))
+    tl.store(p_v_prev, tl.load(p_v, boundary_check=(0, 1)), boundary_check=(0, 1))
+
+    for i in range(L):
+        p_l = tl.make_block_ptr(
+            level_scales + (bos * H + i_h) * L,
+            (T, L),
+            (H * L, 1),
+            (seq_offset, i),
+            (BT, 1),
+            (1, 0),
+        )
+        p_l_prev = tl.make_block_ptr(
+            level_scales_prev + (i_n * BT * H + i_h) * L,
+            (BT, L),
+            (H * L, 1),
+            (0, i),
+            (BT, 1),
+            (1, 0),
+        )
+        tl.store(p_l_prev, tl.load(p_l, boundary_check=(0,)), boundary_check=(0,))

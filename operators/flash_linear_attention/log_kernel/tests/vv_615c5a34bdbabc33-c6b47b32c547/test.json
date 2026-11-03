@@ -1,0 +1,71 @@
+{
+  "id": "vv_615c5a34bdbabc33-c6b47b32c547",
+  "case_id": "vv_615c5a34bdbabc33",
+  "operator_id": "FLA278",
+  "kernel": "log_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/log/test_log_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/log/test_log_npu.py::test_log_perftest",
+  "entrypoint": "source/synthetic/standalone/yb_fbb74da5de4233.py",
+  "module": "yb_fbb74da5de4233",
+  "function": "test_log_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/log"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "log"
+  },
+  "validation_standard": "original_functional_assertions",
+  "validation_tolerances": {
+    "output": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    }
+  },
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_8459c530c3d6be.py",
+      "sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "original_sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_fbb74da5de4233.py",
+      "sha256": "2411ea389ba1d12a98ee53b5d91e35a1dee88f676292d244e4de2fb28c94d557",
+      "original_sha256": "586ca00c23e2b1bbbc689b3acd323a401d0a0543e88f46881677e4e68cb00f19",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "668180767ec435d873f1db323844066e7008c24704fe215794164c07e340b4c0",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/log_kernel/tests/vv_615c5a34bdbabc33-c6b47b32c547"
+}

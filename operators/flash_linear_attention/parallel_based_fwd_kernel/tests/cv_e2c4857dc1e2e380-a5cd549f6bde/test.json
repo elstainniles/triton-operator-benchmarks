@@ -1,0 +1,117 @@
+{
+  "id": "cv_e2c4857dc1e2e380-a5cd549f6bde",
+  "case_id": "cv_e2c4857dc1e2e380",
+  "operator_id": "FLA234",
+  "kernel": "parallel_based_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/test_parallel_based_fwd_kernel/test_parallel_based_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/test_parallel_based_fwd_kernel/test_parallel_based_fwd_kernel_npu.py::test_parallel_based_fwd_kernel",
+  "entrypoint": "source/oja_based_pending_cpu64/cv_e2c4857dc1e2e380.py",
+  "module": "oja_based_pending_cpu64.cv_e2c4857dc1e2e380",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_e2c4857dc1e2e380"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/test_parallel_based_fwd_kernel/inputs.pt": "generated-data/inputs_synthetic.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/test_parallel_based_fwd_kernel/outputs.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_parallel_based_fwd_kernel_cuda.py",
+      "sha256": "5e679b1eb7d5f78f8c4b1b0df9fb7f526ba21a373d2f9233f38b8a70a1549f3f",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "manual_generate.py",
+      "sha256": "eed89b5ea24bf042306411fe89bd6c0f61cfe87fc8c862debf756df4a5128faa",
+      "functions": [
+        "oja_reference"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "5c4d74fbb15bca40c0ce29232a68ef333b0ca4099ab857ac65b48031d14c6564",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "o": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "z": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_e2c4857dc1e2e380/yb_c56d3ca9c5e0cd.py",
+      "sha256": "9abfdefd2e75388e4aa29a318555587f3d86796b5e0062a4bdd119cfc9ec41aa",
+      "original_sha256": "8be042e990c9b2f52a7b92084f155b35a67620e6e05da7b157f58c39c0f53ea4",
+      "role": "dependency"
+    },
+    {
+      "path": "source/oja_based_pending_cpu64/cv_e2c4857dc1e2e380.py",
+      "sha256": "58726564f1cdea95e8d5fed0e5b95f876058846839fa5ad64bfb4682ddc9c943",
+      "original_sha256": "0deabc89f84837b36aa0b7729d4b98ae1402d5c390bbd20885a405fe542f02b0",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "b76500c671adee76bfcf22510d493103ef2d3c05b19ff662b402f494841f7f87",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "198c66f760a6b1f47091b59aa9c0f727425386a41d2a57c36272d58517916d76",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/original_oja.py",
+      "sha256": "b4e13eaae6ac199749f2c5ba08925e2b0fbc7731d309b877748bb467480f6664",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "55fb91453c65a0e920d4e36d5e1e8a59843026fb03a0bf43c6bfc7024ebe3912",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_based_fwd_kernel/tests/cv_e2c4857dc1e2e380-a5cd549f6bde"
+}

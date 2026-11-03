@@ -1,0 +1,82 @@
+{
+  "id": "vv_58dafd2e9536e801-26fa07339dfe",
+  "case_id": "vv_58dafd2e9536e801",
+  "operator_id": "FLA088",
+  "kernel": "fused_recurrent_rwkv4_forward_kernel",
+  "source_path": "fla/ops/rwkv4/fused_recurrent.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_rwkv4_forward/test_fused_recurrent_rwkv4_forward_npu.py::test_fused_recurrent_rwkv4_forward",
+  "entrypoint": "source/resume_data/rwkv4_test.py",
+  "module": "resume_data.rwkv4_test",
+  "function": "test_rwkv4",
+  "pythonpath": [
+    "source/extracted/cases/vv_58dafd2e9536e801",
+    "source/."
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/rwkv4"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "67f3d1a0a12925b78d9b82e56d8d5b3048cb178c6137d6d5c4d5c4cc9a3a7f28"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_58dafd2e9536e801/yb_22cded5b91bba3.py",
+      "sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "original_sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_58dafd2e9536e801/yb_83cc11308a4a36.py",
+      "sha256": "726f5676b747ebf164231df4049f6ba56af5a5076bc9ee96573f5546c212d4b0",
+      "original_sha256": "726f5676b747ebf164231df4049f6ba56af5a5076bc9ee96573f5546c212d4b0",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_58dafd2e9536e801/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "source/resume_data/rwkv4_test.py",
+      "sha256": "d7a3a55f446589b1a486de2e3c269da155aaf15c024ce37d5b062b9d08747a4e",
+      "original_sha256": "37ad849151b6b11616054c442db9bc0860f6cebc3bffc7937d0375c40f7707b7",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "1af04c6253be217fc1a24ece6f3a2a0ce1bfff6cf6439c22513794e1c62aceee",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/fused_recurrent_rwkv4_forward_kernel/tests/vv_58dafd2e9536e801-26fa07339dfe"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "vv_7f19885874663d00-2fd27c551e52",
+  "case_id": "vv_7f19885874663d00",
+  "operator_id": "FLA080",
+  "kernel": "copy_input_kernel",
+  "source_path": "fla/ops/log_linear_attn/chunk.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_copy_input_kernel/test_copy_input_kernel_npu.py::test_copy_input_kernel",
+  "entrypoint": "source/standalone/yb_6b527b1c6216a9.py",
+  "module": "yb_6b527b1c6216a9",
+  "function": "test_copy_input_kernel",
+  "pythonpath": [
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/copy_input"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/copy_input_data.py",
+      "sha256": "263f08d52d0fd19a705e4b0f1de943ef2b1d89cccc5fdc92e695e2e1f8392591"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/standalone/yb_22cded5b91bba3.py",
+      "sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "original_sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_5797d3e04fb6ed.py",
+      "sha256": "44785c12a8888c3710a718feaf69911b3a826e4939649ccaeeb520590d2fcdc8",
+      "original_sha256": "44785c12a8888c3710a718feaf69911b3a826e4939649ccaeeb520590d2fcdc8",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_6b527b1c6216a9.py",
+      "sha256": "6bf1783df5fa87e79e4aa30398daed2158736b3f9f4d98bd268b2b64d18f4309",
+      "original_sha256": "ee5123b1aca97391fc60579a166ec14879955fa4470335be3a8c0b672a91a17e",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "a375e8dedae236dec9db5bc95dea861521daad964038b4c39bd2ce6bfff4911c",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/copy_input_kernel/tests/vv_7f19885874663d00-2fd27c551e52"
+}

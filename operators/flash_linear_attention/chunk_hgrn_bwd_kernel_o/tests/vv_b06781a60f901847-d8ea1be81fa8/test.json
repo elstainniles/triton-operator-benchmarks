@@ -1,0 +1,68 @@
+{
+  "id": "vv_b06781a60f901847-d8ea1be81fa8",
+  "case_id": "vv_b06781a60f901847",
+  "operator_id": "FLA250",
+  "kernel": "chunk_hgrn_bwd_kernel_o",
+  "source_path": "tests/ops/ascend_ops/vv_operator/chunk_hgrn_bwd_kernel_o/test_chunk_hgrn_bwd_kernel_o_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/chunk_hgrn_bwd_kernel_o/test_chunk_hgrn_bwd_kernel_o_npu.py::test_chunk_hgrn_fwd_h",
+  "entrypoint": "source/synthetic/standalone/yb_ad74a7f77d12b9.py",
+  "module": "yb_ad74a7f77d12b9",
+  "function": "test_chunk_hgrn_fwd_h",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/x.pt": "generated-data/x.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/g.pt": "generated-data/g.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/h0.pt": "generated-data/h0.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/do.pt": "generated-data/do.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/o.pt": "generated-data/o.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/gc.pt": "generated-data/gc.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/dx.pt": "generated-data/dx.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/dx_out.pt": "generated-data/dx_out.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_o/dg.pt": "generated-data/dg.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "chunk_hgrn_bwd_o"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_ad74a7f77d12b9.py",
+      "sha256": "1496e6821eeb8cb8161844cde905b477871a5337a863962c2cee647fc70abe8a",
+      "original_sha256": "30027ac64ea337f9b25fce41ac71a0397b49eb9c3e66d21da713e96b1b26c982",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6faa9e98fc53a64959fefb98293328e7b24f730a22812457371a3e8a5c6748db",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_hgrn_bwd_kernel_o/tests/vv_b06781a60f901847-d8ea1be81fa8"
+}

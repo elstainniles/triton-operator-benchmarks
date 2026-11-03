@@ -1,0 +1,115 @@
+{
+  "id": "cv_62624120aad8a29d-ffbec1be65d9",
+  "case_id": "cv_62624120aad8a29d",
+  "operator_id": "FLA219",
+  "kernel": "parallel_nsa_compression_bwd_kernel_dq",
+  "source_path": "tests/ops/ascend_ops/cv_operator/parallel_nsa_compression_bwd_kernel_dq/test_parallel_nsa_compression_bwd_kernel_dq_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_nsa_compression_bwd_kernel_dq/test_parallel_nsa_compression_bwd_kernel_dq_npu.py::test_parallel_nsa_compression_bwd_kernel_dq",
+  "entrypoint": "source/old_five_approved_cpu64/cv_62624120aad8a29d.py",
+  "module": "old_five_approved_cpu64.cv_62624120aad8a29d",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_62624120aad8a29d"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_compression_bwd_kernel_dq/inputs.pt": "generated-data/inputs.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_compression_bwd_kernel_dq/outputs.pt": "generated-data/inputs.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 42,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "manual_input_generator.py",
+      "sha256": "04c975e0a7d73eff39c6b5528aecb600a3a9b0eb1a7e9552c2ce1a3fd0a577a5",
+      "functions": [
+        "build"
+      ]
+    },
+    {
+      "name": "generate.py",
+      "sha256": "04c975e0a7d73eff39c6b5528aecb600a3a9b0eb1a7e9552c2ce1a3fd0a577a5",
+      "functions": [
+        "attention"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "4d962dcab2a20a9b5fae7b8b4423fde335a43a2362fc24bfc0eb2d3a73aef0d0",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "dq": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_62624120aad8a29d/yb_d333188f20bfe5.py",
+      "sha256": "32ede3ea98d6a9094a58d9435a40efd8e0116727b3f5fb5bf055aeb2050a2313",
+      "original_sha256": "fd076c81f173c86a72e10f5646bbf6098b00c471fc162f325284177f663dca1c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/old_five_approved_cpu64/cv_62624120aad8a29d.py",
+      "sha256": "d843201000ceb66f699fd7fdc29a2cb12eb3f0c39dcd73269a420dcf6055f167",
+      "original_sha256": "db4828fe647617b3f43265a01888f452641f44777d8821b8e74b519b3d333b0b",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "014328a284962a5c81ea651cf2d564e226b7d52a96ac470d64b835621296e89e",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "8cd075169fdf986008ba6a105ca60e9ebe2dce4d476af8072157ca94513b00e9",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_manual.py",
+      "sha256": "95f150c610b147543f02ace4de6530d6eed16a94ca6ac9a7ade803c23e9a223c",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/math_helper.py",
+      "sha256": "7e7c2012232c4ccd03705a7f6e61b217ca0f080aa493690cc2d70862e2ac9f8a",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "0744ba3761e8c67f9ad6cf542017c600edb0ba4a92503893ac622ca4f242db57",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_nsa_compression_bwd_kernel_dq/tests/cv_62624120aad8a29d-ffbec1be65d9"
+}

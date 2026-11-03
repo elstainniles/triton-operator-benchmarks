@@ -1,0 +1,67 @@
+{
+  "id": "cv_b4b4404ab9453e41-03147e4722cb",
+  "case_id": "cv_b4b4404ab9453e41",
+  "operator_id": "FLA044",
+  "kernel": "parallel_deltaformer_bwd_kernel_row_sum",
+  "source_path": "fla/ops/deltaformer/parallel.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_deltaformer_bwd_kernel_row_sum_torch/test_parallel_deltaformer_bwd_kernel_row_sum_torch_npu.py::test_bwd_kernel_row_sum",
+  "entrypoint": "source/standalone/yb_0b400ad018af38.py",
+  "module": "yb_0b400ad018af38",
+  "function": "test_bwd_kernel_row_sum",
+  "pythonpath": [
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": null,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 2,
+    "num_ctas": 1,
+    "BLOCK_C": 64,
+    "BLOCK_T": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/standalone/yb_0b400ad018af38.py",
+      "sha256": "1824b354ec23eb47d92ee81159a636e7e067d30357a1ecdcc1ac756462d92f2d",
+      "original_sha256": "1824b354ec23eb47d92ee81159a636e7e067d30357a1ecdcc1ac756462d92f2d",
+      "role": "test"
+    },
+    {
+      "path": "source/standalone/yb_a87c34e2ef2580.py",
+      "sha256": "2526015c01090ba553facefc4c05ce6b9015f52e7ae476526ff1da5f2b1b0a07",
+      "original_sha256": "2526015c01090ba553facefc4c05ce6b9015f52e7ae476526ff1da5f2b1b0a07",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_b1c323cd1ca9bd.py",
+      "sha256": "cf357519334608fb0a755f787c877e582dc45e03f715048cabf50d350939b55c",
+      "original_sha256": "cf357519334608fb0a755f787c877e582dc45e03f715048cabf50d350939b55c",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "b9b0ac4e8ac0a594fa1dfd784f9342592276a3a948191ea4dcd229a7fd30f6aa",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_deltaformer_bwd_kernel_row_sum/tests/cv_b4b4404ab9453e41-03147e4722cb"
+}

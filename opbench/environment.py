@@ -8,6 +8,7 @@ import re
 import shutil
 import site
 import sys
+import sysconfig
 
 from .catalog import ROOT
 
@@ -17,14 +18,39 @@ def digest(path):
         return hashlib.file_digest(handle, 'sha256').hexdigest()
 
 
+def audit_python_paths(prefix):
+    """Accept a normal venv's base interpreter/stdlib, but no outside packages."""
+    prefix = Path(prefix).resolve()
+    executable = Path(sys.executable)
+    if not executable.parent.resolve().is_relative_to(prefix):
+        raise RuntimeError('Python executable outside runtime prefix')
+    resolved = executable.resolve()
+    base_executable = Path(getattr(sys, '_base_executable', sys.executable)).resolve()
+    is_venv = Path(sys.base_prefix).resolve() != prefix
+    if not resolved.is_relative_to(prefix) and not (is_venv and resolved == base_executable):
+        raise RuntimeError('Python executable links outside its base interpreter')
+
+    # Standard venvs share their base Python's stdlib and extension modules.
+    # Allow only the exact interpreter-provided roots, not their site-packages.
+    stdlib = Path(sysconfig.get_path('stdlib')).resolve()
+    standard_paths = {stdlib, stdlib / 'lib-dynload',
+                      stdlib.parent / f'python{sys.version_info.major}{sys.version_info.minor}.zip'}
+    dynamic = sysconfig.get_config_var('DESTSHARED')
+    if dynamic:
+        standard_paths.add(Path(dynamic).resolve())
+    for item in sys.path:
+        path = Path(item).resolve()
+        if not (path.is_relative_to(prefix) or path == ROOT or path in standard_paths):
+            raise RuntimeError('Unexpected Python search path outside runtime: ' + str(path))
+
+
 def configure(expected, output, card):
     if sys.platform != 'linux' or not sys.flags.isolated or site.ENABLE_USER_SITE:
         raise RuntimeError('Run on Linux with the isolated runtime Python and -I')
     prefix = Path(expected['python_prefix']).resolve()
     if prefix in (Path('/usr'), Path('/usr/local'), Path('/')) or Path(sys.prefix).resolve() != prefix:
         raise RuntimeError('Runtime prefix mismatch or global Python')
-    if not Path(sys.executable).resolve().is_relative_to(prefix):
-        raise RuntimeError('Python executable outside runtime prefix')
+    audit_python_paths(prefix)
     if os.environ.get('CONDA_DEFAULT_ENV') == 'base':
         raise RuntimeError('Conda base is not a test runtime')
     for key, value in os.environ.items():
@@ -32,8 +58,6 @@ def configure(expected, output, card):
                       or key.startswith(('TRITON_', 'TORCHINDUCTOR_', 'RANK', 'WORLD_SIZE',
                                          'LOCAL_RANK', 'MASTER_', 'HCCL_'))):
             raise RuntimeError(f'Inherited runtime override must be removed: {key}')
-    if any(not (Path(p).resolve().is_relative_to(prefix) or Path(p).resolve() == ROOT) for p in sys.path):
-        raise RuntimeError('Unexpected Python search path outside runtime')
     cann = Path(expected['cann_root']).resolve()
     if not cann.is_dir() or Path(os.environ.get('ASCEND_HOME_PATH', '/missing')).resolve() != cann:
         raise RuntimeError('Explicit CANN selection missing or different')

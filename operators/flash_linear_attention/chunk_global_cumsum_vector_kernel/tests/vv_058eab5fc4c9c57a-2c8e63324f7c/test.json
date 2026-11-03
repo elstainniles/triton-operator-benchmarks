@@ -1,0 +1,95 @@
+{
+  "id": "vv_058eab5fc4c9c57a-2c8e63324f7c",
+  "case_id": "vv_058eab5fc4c9c57a",
+  "operator_id": "FLA115",
+  "kernel": "chunk_global_cumsum_vector_kernel",
+  "source_path": "fla/ops/utils/cumsum.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/chunk_global_cumsum_vector_kernel/test_chunk_global_cumsum_vector_kernel_npu.py::test_chunk_global_cumsum_vector_kernel_perftest",
+  "entrypoint": "source/baseline_vv_reference_cases/vv_058eab5fc4c9c57a.py",
+  "module": "baseline_vv_reference_cases.vv_058eab5fc4c9c57a",
+  "function": "test_reference",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_e8081bce2876777e"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/global_cumsum",
+      "reference_path": "generated-data/reference_cpu64.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "855973465f892471038ead38a5bde2743f0c640ba72b4be5b047cd8369546f50"
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "output": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BT": 128
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/baseline_reference_checks.py",
+      "sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "original_sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "role": "dependency"
+    },
+    {
+      "path": "source/baseline_vv_reference_cases/vv_058eab5fc4c9c57a.py",
+      "sha256": "766010831fe0542ddfc33365568c83d80a7107f6c921dcb3d96347a0b982f278",
+      "original_sha256": "e8754f0089f1f09f56dae718a79a5094315a4e91d032971bd53ac60cf3a39465",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_e8081bce2876777e/yb_46d16242a62a42.py",
+      "sha256": "482dbef5520dd13e25559fd61e80bdb2ae03c1f7b9b15fe94c0d134c47ffc4ff",
+      "original_sha256": "de581eadee98f2f3e2e11460f43d084f6da379aac0b05f4c1eefcd1c558d26e2",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_e8081bce2876777e/yb_712432704460d6.py",
+      "sha256": "738a6d3db778773243700bd2cb9e3c9789e1bb6ff96cc31759911ba60120ed55",
+      "original_sha256": "738a6d3db778773243700bd2cb9e3c9789e1bb6ff96cc31759911ba60120ed55",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_e8081bce2876777e/yb_74f55558e08fc1.py",
+      "sha256": "ccb225bbabf13b114bb945ee9de9c320fe76439f24c634941e11a3ae1f76ee5e",
+      "original_sha256": "ccb225bbabf13b114bb945ee9de9c320fe76439f24c634941e11a3ae1f76ee5e",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "9573c839cc2e48dc3b82620147ee61f030a5388782573015c706af59aa01259f",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_global_cumsum_vector_kernel/tests/vv_058eab5fc4c9c57a-2c8e63324f7c"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "vv_7a9be65785156e17-bf9ce49ee35d",
+  "case_id": "vv_7a9be65785156e17",
+  "operator_id": "FLA046",
+  "kernel": "gdn_gate_chunk_cumsum_scalar_kernel",
+  "source_path": "fla/ops/gated_delta_rule/gate.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_gdn_gate_chunk_cumsum_scalar_kernel/test_gdn_gate_chunk_cumsum_scalar_kernel_npu.py::test_gdn_gate_chunk_cumsum_scalar_kernel",
+  "entrypoint": "source/synthetic/standalone/yb_376b502e50f268.py",
+  "module": "yb_376b502e50f268",
+  "function": "test_gdn_gate_chunk_cumsum_scalar_kernel",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/gdn_gate_chunk_cumsum"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "gdn_gate_chunk_cumsum"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 1,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_22cded5b91bba3.py",
+      "sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "original_sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_376b502e50f268.py",
+      "sha256": "0bf262321e0431c0cc503f4ea584900f3bd094bf7cc35e586f6b58d50d80a994",
+      "original_sha256": "ac933297febdb9e11b5610a98eb6566ceac71fd65086f1ca7a2d37003480c3bc",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_4f3456615af619.py",
+      "sha256": "0babd8cca48a5dacfb6803b8ce84d59f40edb0a49169b9e589e92ef9f8b4de0d",
+      "original_sha256": "0babd8cca48a5dacfb6803b8ce84d59f40edb0a49169b9e589e92ef9f8b4de0d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_8459c530c3d6be.py",
+      "sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "original_sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_90891058742c80.py",
+      "sha256": "d97c1564f6f502118721c94b4d624037445f3f572875d1c5a97be7a3566db4d0",
+      "original_sha256": "d97c1564f6f502118721c94b4d624037445f3f572875d1c5a97be7a3566db4d0",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_aa8d11f8979997.py",
+      "sha256": "2187ebc3aeae0502507e050ab9b9ef935071dfc68a67d95c9d708e73f9170ec5",
+      "original_sha256": "2187ebc3aeae0502507e050ab9b9ef935071dfc68a67d95c9d708e73f9170ec5",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_ab84b57b842c37.py",
+      "sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "original_sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "9d55c6358bd7de9180a17f23250a9f47eb77ed739bf9293db23a32f3bbf49a8a",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/gdn_gate_chunk_cumsum_scalar_kernel/tests/vv_7a9be65785156e17-bf9ce49ee35d"
+}

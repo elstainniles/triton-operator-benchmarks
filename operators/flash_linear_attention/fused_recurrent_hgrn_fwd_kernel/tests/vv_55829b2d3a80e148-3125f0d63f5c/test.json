@@ -1,0 +1,61 @@
+{
+  "id": "vv_55829b2d3a80e148-3125f0d63f5c",
+  "case_id": "vv_55829b2d3a80e148",
+  "operator_id": "FLA265",
+  "kernel": "fused_recurrent_hgrn_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_hgrn_fwd_kernel/test_fused_recurrent_hgrn_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_hgrn_fwd_kernel/test_fused_recurrent_hgrn_fwd_kernel_npu.py::test_fused_recurrent_hgrn_fwd_kernel",
+  "entrypoint": "source/synthetic/standalone/yb_a3776c2eaa404b.py",
+  "module": "yb_a3776c2eaa404b",
+  "function": "test_fused_recurrent_hgrn_fwd_kernel",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/fused_recurrent_hgrn_fwd_kernel/inputs.pt": "generated-data/inputs.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/fused_recurrent_hgrn_fwd_kernel/outputs.pt": "generated-data/outputs.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "fused_recurrent_hgrn_fwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BD": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_a3776c2eaa404b.py",
+      "sha256": "676ae33de1a5ddd5b9e8a39b1d4ca065a3fcc00db55ee4beda902fceb41af901",
+      "original_sha256": "d3aa28b0ca1d5f493cefb3f70bcbf79158980ca4e4852a28b0884961f22b4b5f",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "e63a3ceb7628d052093257ed4e77f29270abf24e5c89ed5b2e1dd7a246c03b00",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/fused_recurrent_hgrn_fwd_kernel/tests/vv_55829b2d3a80e148-3125f0d63f5c"
+}

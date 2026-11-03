@@ -1,0 +1,79 @@
+{
+  "id": "vv_857ba58952b97766-efb0fc3e2554",
+  "case_id": "vv_857ba58952b97766",
+  "operator_id": "FLA245",
+  "kernel": "chunk_gla_fwd_A_kernel_intra_sub_intra",
+  "source_path": "tests/ops/ascend_ops/vv_operator/chunk_gla_fwd_A_kernel_intra_sub_intra/test_chunk_gla_fwd_A_kernel_intra_sub_intra_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/chunk_gla_fwd_A_kernel_intra_sub_intra/test_chunk_gla_fwd_A_kernel_intra_sub_intra_npu.py::test_chunk_gla_fwd_A_kernel_intra_sub_intra",
+  "entrypoint": "source/defined_vv_outputs/vv_857ba58952b97766.py",
+  "module": "defined_vv_outputs.vv_857ba58952b97766",
+  "function": "test_defined_outputs",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_857ba58952b97766"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/gla_intra",
+      "reference_path": "generated-data/gla-reference-defined.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "476250335a742a0abac565923562ac5af11096395ba70b5be1ff53eb10ce133b"
+    }
+  ],
+  "validation_standard": "original_dtype_absolute",
+  "validation_tolerances": {
+    "A_written": {
+      "dtype": "float32",
+      "rtol": 0.001,
+      "atol": 0.001
+    },
+    "A_unwritten": {
+      "comparison": "exact pre-state equality"
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/defined_vv_outputs/vv_857ba58952b97766.py",
+      "sha256": "5dd5a39b3bbbaa6e0d70e69ba0a27c367a1dec91ae719244c69ec1255ac70e52",
+      "original_sha256": "413ceb5b050051806a13c679db8059aba893a9792f1d8f1759bd9a34ea6e0087",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_857ba58952b97766/yb_e5e4bcc8ac44fb.py",
+      "sha256": "3ac80077d4da0aaa37b4cfd230be4ace2cc8c2aca93322b0ab60c5e330c89584",
+      "original_sha256": "d9c83c8ecbaef4d86d62db893a66f096854b3c53b929f762fae1ab9ae4ef5182",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6c46c4c68a0820f00dc3845a637e3d15438dd19db6f2a4950e9b29a756394a01",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_gla_fwd_A_kernel_intra_sub_intra/tests/vv_857ba58952b97766-efb0fc3e2554"
+}

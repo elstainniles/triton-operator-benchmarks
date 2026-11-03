@@ -1,0 +1,83 @@
+{
+  "id": "vv_2ff7e15daa59a49e-b2ea18a48f7a",
+  "case_id": "vv_2ff7e15daa59a49e",
+  "operator_id": "FLA059",
+  "kernel": "chunk_dplr_bwd_dgk_kernel",
+  "source_path": "fla/ops/generalized_delta_rule/dplr/chunk_A_bwd.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_chunk_dplr_bwd_dgk_kernel/test_chunk_dplr_bwd_dgk_kernel_npu.py::test_chunk_dplr_bwd_dgk_kernel",
+  "entrypoint": "source/extracted/cases/vv_2ff7e15daa59a49e/yb_9c359519973b79.py",
+  "module": "yb_9c359519973b79",
+  "function": "test_chunk_dplr_bwd_dgk_kernel",
+  "pythonpath": [
+    "source/extracted/cases/vv_2ff7e15daa59a49e",
+    "source/."
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/dplr_dgk"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "67f3d1a0a12925b78d9b82e56d8d5b3048cb178c6137d6d5c4d5c4cc9a3a7f28"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 16,
+    "num_stages": 2,
+    "num_ctas": 1,
+    "BK": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_2ff7e15daa59a49e/yb_22cded5b91bba3.py",
+      "sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "original_sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_2ff7e15daa59a49e/yb_74f55558e08fc1.py",
+      "sha256": "b6a193f8b4128b6b224e2a45b83fcb7d395144076c00343ba95b0074e81997b5",
+      "original_sha256": "b6a193f8b4128b6b224e2a45b83fcb7d395144076c00343ba95b0074e81997b5",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_2ff7e15daa59a49e/yb_93f71b12d34293.py",
+      "sha256": "7107da94732822277c928fd0bd4780be73c4822a9b3bca809b1a190667a331ac",
+      "original_sha256": "7107da94732822277c928fd0bd4780be73c4822a9b3bca809b1a190667a331ac",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_2ff7e15daa59a49e/yb_9c359519973b79.py",
+      "sha256": "803fc6a21001d84b34f59a4e124b4f512a7e3b34c308a6b0f364519635afd80d",
+      "original_sha256": "fb7fa20da0f20cec7c9d9c8a88821d8c4c711e276f2ca6229992279fcee381c4",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "443d5dc3afbe07a4a8d62250e002be3117d2a2874a7778e0dee8dce593dfb6ec",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_dplr_bwd_dgk_kernel/tests/vv_2ff7e15daa59a49e-b2ea18a48f7a"
+}

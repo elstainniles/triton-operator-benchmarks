@@ -1,0 +1,72 @@
+{
+  "id": "vv_7c35de7b088a5a38-51f29a6d0b79",
+  "case_id": "vv_7c35de7b088a5a38",
+  "operator_id": "FLA262",
+  "kernel": "fused_recurrent_delta_rule_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_fwd_kernel/test_fused_recurrent_delta_rule_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_fwd_kernel/test_fused_recurrent_delta_rule_fwd_kernel_npu.py::test_fused_recurrent_delta_rule_fwd_kernel",
+  "entrypoint": "source/resume_more/cases/vv_7c35de7b088a5a38.py",
+  "module": "resume_more.cases.vv_7c35de7b088a5a38",
+  "function": "test_diagnostic",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_7c35de7b088a5a38"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/delta_fwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "diagnostic_only",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "476250335a742a0abac565923562ac5af11096395ba70b5be1ff53eb10ce133b"
+    }
+  ],
+  "validation_standard": "diagnostic_only",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 1,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_7c35de7b088a5a38/yb_1edbd95d8265b0.py",
+      "sha256": "dde0c0fcc116a13ec281d7ae1892f8d0416bd889ce9abe54cc05db059f7de7a2",
+      "original_sha256": "b236445a0f41fa8c16fdada9be3db5aaadaa8c431d40699deb6918273969a266",
+      "role": "dependency"
+    },
+    {
+      "path": "source/resume_more/cases/vv_7c35de7b088a5a38.py",
+      "sha256": "47584548502e5b652e0542c13e0b996d792e5ed55e967edd7276200598a6b9f1",
+      "original_sha256": "9f4ff1e4924b7014ef027515492f73b5b00386216cc25e431c4b5ea4da3c77ce",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "a3c4129e3dd88ce0ae6f5528b4a858d855167242e69a54ba020e8a3fcc70a291",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/fused_recurrent_delta_rule_fwd_kernel/tests/vv_7c35de7b088a5a38-51f29a6d0b79"
+}

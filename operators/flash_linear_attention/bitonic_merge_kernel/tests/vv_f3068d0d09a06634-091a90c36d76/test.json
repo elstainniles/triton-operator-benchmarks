@@ -1,0 +1,63 @@
+{
+  "id": "vv_f3068d0d09a06634-091a90c36d76",
+  "case_id": "vv_f3068d0d09a06634",
+  "operator_id": "FLA239",
+  "kernel": "bitonic_merge_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/_bitonic_merge/test_bitonic_merge_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/_bitonic_merge/test_bitonic_merge_npu.py::test_bitonic_merge",
+  "entrypoint": "source/synthetic/standalone/yb_35f77e82469140.py",
+  "module": "yb_35f77e82469140",
+  "function": "test_bitonic_merge",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/_bitonic_merge/input_x.pt": "generated-data/input_x.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/_bitonic_merge/input_ids.pt": "generated-data/input_ids.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/_bitonic_merge/output_x.pt": "generated-data/output_x.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/_bitonic_merge/output_ids.pt": "generated-data/output_ids.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "bitonic_merge"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_35f77e82469140.py",
+      "sha256": "2e67658a3fb8d603560ef50a576ed85c7b44304d1073ec58e3de2b00961311fe",
+      "original_sha256": "655c8886f66952db3adf7c7b465baa13b6fce10a1f56003d46f7aece584628da",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "b7bfdef071bfccb0d9e2402d4b52a524a7e6f99af8fc3abda40ab47e576f7f16",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/bitonic_merge_kernel/tests/vv_f3068d0d09a06634-091a90c36d76"
+}

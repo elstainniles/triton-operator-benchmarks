@@ -17,6 +17,14 @@ Families connect related forward/backward implementations.
 
 ## Execution status
 
+Original tests and retained adaptations are now available under each kernel's
+`tests/` directory. They generate inputs and independent CPU references in memory;
+no external `.pt` files are required. Use `tools/run_fla_test.py` with an exact ID
+from [test-sources.json](test-sources.json). See the
+[retest instructions](../../docs/FLA_IMPORTED_TESTS.md) for CPU checks, device
+timing, and optional block batching. The statuses below describe the original
+`tools/run.py` interface; they do not describe the new per-configuration tests.
+
 - `source_archive`: extraction is available, but no independently checked input,
   reference and launch adapter is registered. Running it writes `not_executable`
   with a reason and null timing; it does not import Torch or access a device.

@@ -1,0 +1,112 @@
+{
+  "id": "cv_5894861799ba8f24-02417f89b73d",
+  "case_id": "cv_5894861799ba8f24",
+  "operator_id": "FLA222",
+  "kernel": "parallel_path_bwd_dq_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/parallel_path_bwd_dq_kernel/test_parallel_path_bwd_dq_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_path_bwd_dq_kernel/test_parallel_path_bwd_dq_kernel_npu.py::test_parallel_path_bwd_dq_kernel",
+  "entrypoint": "source/parallel_remaining_cpu64/cv_5894861799ba8f24.py",
+  "module": "parallel_remaining_cpu64.cv_5894861799ba8f24",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_5894861799ba8f24"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_path_bwd_dq_kernel/inputs.pt": "generated-data/inputs_synthetic.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_path_bwd_dq_kernel/outputs.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_parallel_path_bwd_dq_kernel_gpu.py",
+      "sha256": "e5e6dbcf8167d1a30a57f7b6ed4117f2152b50af25a9c83f749c0fac8ee2618c",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "df160d944dc9919214a377fae0168e808721c24f8b49b0a2da4a960d4ed5cb33",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "dq": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dhc_whole": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dg_cumsum": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": null,
+    "num_stages": null,
+    "num_ctas": null
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_5894861799ba8f24/yb_e67d7ab0fe4b5e.py",
+      "sha256": "f4106d708e8ce2349a876ae5b9996c71c76e5fb1c1a681b3ace568f044e18a00",
+      "original_sha256": "7d0f5f59cb68e70728767a42a6a3f38f80bcc7742850caf284894f1e00c5fd2c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/parallel_remaining_cpu64/cv_5894861799ba8f24.py",
+      "sha256": "4902c2ea5d6ec9d295ea1e47468084f3d36c1f487dcc1aba0af194c0ec7ce782",
+      "original_sha256": "dd3478a0f49e4ac9f895de0482fc27a6f9f1ba9a35aeabc8557448e982c49002",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "64d641c17b19872130c5f764402e75fb62964601c5d9908e69e7393245e8b333",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "a519cbe9c4cd6facd6507f2e682eed046730e217e0f5b41016716defbc85bcbe",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "b058e2f796f2480c450c72a405da25f84c47428c9ffacc4439afa723e3b23e59",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_path_bwd_dq_kernel/tests/cv_5894861799ba8f24-02417f89b73d"
+}

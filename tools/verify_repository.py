@@ -16,11 +16,13 @@ from opbench.graph_tests import verify_graph_suite
 from opbench.liger import verify_suite as verify_liger_suite
 from opbench.liger_cv_small import verify_all as verify_liger_cv_small
 from opbench.fla import verify_suite as verify_fla_suite
+from opbench.fla_test_sources import verify_suite as verify_fla_test_sources
 
 
 # These files changed since the Liger measurements were collected. Historical evidence
 # continues to bind their exact original bytes, never the newly modified code.
 HISTORICAL_HARNESS = {
+    'environment.py': 'd6c8981024bd1faba5d5e374186a88491832ff07164b7e79241189713a32c32e',
     'catalog.py': 'f6f72b8071a91acda3e7d24d4457b817383edf1f911dde211c02167da9fe268e',
     'graph_runner.py': 'e6625eafb80229057b9e93b206cb7962bba4a3bb466403d992fa7242acb7e206',
     'runner.py': 'a71e1bdab749604c8cd6d1aa9b82ecc6f73260c2093cbef8ad1638610e339d33',
@@ -55,6 +57,7 @@ def verify():
     liger = verify_liger_suite()
     liger_cv_small = verify_liger_cv_small()
     fla = verify_fla_suite()
+    fla_tests = verify_fla_test_sources()
     validation = read_json(ROOT/'docs/liger-validation-20261028.json')
     assert validation['total'] == len(validation['evidence']) == 25
     assert validation['counts'] == {'measured':25}
@@ -235,7 +238,7 @@ def verify():
     return dict(status='PASS', entries=len(all_entries), flaggems_entries=len(entries),
                 imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
                 graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), liger=liger,
-                verified_liger_entry_cases=validation['total'], fla=fla, liger_cv_small=liger_cv_small,
+                verified_liger_entry_cases=validation['total'], fla=fla, fla_tests=fla_tests, liger_cv_small=liger_cv_small,
                 historical_liger_harness_changed=sorted(changed_harness), **counters)
 
 

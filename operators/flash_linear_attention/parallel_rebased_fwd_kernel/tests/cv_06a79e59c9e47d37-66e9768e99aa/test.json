@@ -1,0 +1,119 @@
+{
+  "id": "cv_06a79e59c9e47d37-66e9768e99aa",
+  "case_id": "cv_06a79e59c9e47d37",
+  "operator_id": "FLA225",
+  "kernel": "parallel_rebased_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/parallel_rebased_fwd_kernel/test_parallel_rebased_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_rebased_fwd_kernel/test_parallel_rebased_fwd_kernel_npu.py::test_parallel_rebased_fwd_kernel",
+  "entrypoint": "source/new_matrix_approved_cpu64/cv_06a79e59c9e47d37.py",
+  "module": "new_matrix_approved_cpu64.cv_06a79e59c9e47d37",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_06a79e59c9e47d37"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_rebased_fwd_kernel/test_parallel_rebased_fwd_kernel_cuda.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_parallel_rebased_fwd_kernel_cuda.py",
+      "sha256": "0f30e92840156302632d27b524d5f0d9cf453c49ffb465149addf96e2b3ec6ab",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "ec81c058eeb4744d97020ffc46b8eff1c9a41b23ea6461706fd88678d870f70e",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "o": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "z": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_06a79e59c9e47d37/yb_73a32647d1f8f5.py",
+      "sha256": "8063d3a2a925ed70a50aa5fbb1ea80446a66596b75438cd3e017fa336455f4e4",
+      "original_sha256": "d2cda81f75287c522d88c2a8b1ef83cb571e88c083e87cf1caca15c6773f17dc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/new_matrix_approved_cpu64/cv_06a79e59c9e47d37.py",
+      "sha256": "76d0b76023fb8d6e94079ae5bdf48882d5068d628e09806690d3d1e33723b5c5",
+      "original_sha256": "c25900ad7eb3e8840f58be642cbbbe9b5ef05f343bbbb4f30d18e47247a9e55b",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "bcafd05c677019945ac60bc5b48b113874f6ad670759d00602f87f11d123cf33",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "ac22fb05ce8aa4b3bb5e3c7b29bb15ac916e95fb57a3b8bf3aca57e0c4239a23",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "2e0ac07f78be8356c79ba559e902a9b2137ead5dbfb73a3b091cfb9267428dd1",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl_scalar_tile.py",
+      "sha256": "e9c8ffa4f1f1fc7da77e8988f4c25471f456b8a24a5c9c3277ebd957662e805c",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl_tile.py",
+      "sha256": "509db9aacefdb523b85dcd35b003db724426e43108eed20873d919612fc0f9c1",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl_untile.py",
+      "sha256": "c1ac8c60684a44400d16063773dce9d8a67258b79ca13b0428d560b51bb5a417",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_rebased_fwd_kernel/tests/cv_06a79e59c9e47d37-66e9768e99aa"
+}

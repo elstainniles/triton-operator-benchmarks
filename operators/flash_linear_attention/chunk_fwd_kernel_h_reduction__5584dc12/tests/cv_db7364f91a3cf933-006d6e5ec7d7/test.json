@@ -1,0 +1,91 @@
+{
+  "id": "cv_db7364f91a3cf933-006d6e5ec7d7",
+  "case_id": "cv_db7364f91a3cf933",
+  "operator_id": "FLA182",
+  "kernel": "chunk_fwd_kernel_h_reduction",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_h_parallel_chunk_fwd_kernel_h_reduction/test_chunk_h_parallel_chunk_fwd_kernel_h_reduction_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_h_parallel_chunk_fwd_kernel_h_reduction/test_chunk_h_parallel_chunk_fwd_kernel_h_reduction_npu.py::test_chunk_fwd_kernel_h_reduction",
+  "entrypoint": "source/resume_chunk_reduction_absolute/wrapper.py",
+  "module": "resume_chunk_reduction_absolute.wrapper",
+  "function": "test_reference",
+  "pythonpath": [
+    "source/extracted/cases/cv_db7364f91a3cf933",
+    "source/."
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_h_parallel_chunk_fwd_kernel_h_reduction/test_chunk_fwd_kernel_h_reduction_cuda.pt": "generated-data/input_and_cpu_reference.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_chunk_h_parallel_chunk_fwd_kernel_h_reduction_cuda.py",
+      "sha256": "228b9585388902a9dd0bfc2a515adaf2c210108df4487f975aa1787ab849c4ab",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "generate.py",
+      "sha256": "7e13f1bb53b28762c4115916d396481aeb3946d8c0dd1198acfe493ca488a41a",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 16,
+    "num_stages": 2,
+    "num_ctas": 1,
+    "BK": 128,
+    "BV": 128
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_db7364f91a3cf933/yb_5584dc12a89f56.py",
+      "sha256": "57f8a86ba807c88ecd67906f3abfa50d307268334a5f68918dba97de7c7d5653",
+      "original_sha256": "703ce68a6cf1a549ffa2a6cc04a9febaa77e4699d5f64ee6612848155f5d707d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/resume_chunk_reduction_absolute/wrapper.py",
+      "sha256": "51a25cdd52b32d7edc71d2b251d517b7026c5b161d3b4ecb8a10d7fba59aaf14",
+      "original_sha256": "51a25cdd52b32d7edc71d2b251d517b7026c5b161d3b4ecb8a10d7fba59aaf14",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "3ddd27f471d3084cae88b1ce072012b95f16aa8de379f2ba73b253a4d1687f69",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "4287b0eeb4578cddf6ae1c622dd4a37c33203dca61d982808185c681f238ca58",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "d4cb692ba5201640e6fa3f6f0bcb9799eb51703774bc57c7f785cc3e46e89eab",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_fwd_kernel_h_reduction__5584dc12/tests/cv_db7364f91a3cf933-006d6e5ec7d7"
+}

@@ -1,0 +1,141 @@
+{
+  "id": "vv_c9a74877fb24f321-29bbdb27018e",
+  "case_id": "vv_c9a74877fb24f321",
+  "operator_id": "FLA081",
+  "kernel": "copy_last_chunk_kernel",
+  "source_path": "fla/ops/log_linear_attn/chunk.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_copy_last_chunk_kernel/test_copy_last_chunk_kernel_npu.py::test_copy_last_chunk_kernel",
+  "entrypoint": "source/defined_vv_outputs/vv_c9a74877fb24f321.py",
+  "module": "defined_vv_outputs.vv_c9a74877fb24f321",
+  "function": "test_defined_outputs",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_c9a74877fb24f321"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/copy-last-T1055"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "476250335a742a0abac565923562ac5af11096395ba70b5be1ff53eb10ce133b"
+    }
+  ],
+  "validation_standard": "original_dtype_absolute",
+  "validation_tolerances": {
+    "q_prev": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "additional_check": "exact equality",
+      "defined_shape": [
+        2,
+        31,
+        1,
+        128
+      ]
+    },
+    "k_prev": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "additional_check": "exact equality",
+      "defined_shape": [
+        2,
+        31,
+        1,
+        128
+      ]
+    },
+    "v_prev": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "additional_check": "exact equality",
+      "defined_shape": [
+        2,
+        31,
+        8,
+        64
+      ]
+    },
+    "g_prev": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "additional_check": "exact equality",
+      "defined_shape": [
+        2,
+        31,
+        8
+      ]
+    },
+    "level_scales_prev": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "additional_check": "exact equality",
+      "defined_shape": [
+        2,
+        31,
+        8,
+        7
+      ]
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/defined_vv_outputs/vv_c9a74877fb24f321.py",
+      "sha256": "f63ec780fb77e963daae64a57435c4743c839167146cd2eed5b3a0c57a39c4e3",
+      "original_sha256": "640af4959c2ad92fe5df583d148f9ff59a631043e70b1e73efc31f562f6a6fee",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_c9a74877fb24f321/yb_0e5e2cf2748400.py",
+      "sha256": "4cf8f524fa896f1b54bf881320a619e188db203bd9bf7ef55e777fc36fa38279",
+      "original_sha256": "9572a8cb1a44342957d4469e4836f6904173f8b5ceb61e9245a12d66c4d30c46",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_c9a74877fb24f321/yb_22cded5b91bba3.py",
+      "sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "original_sha256": "88292ad52861c2cac931b44a13e2f261937c58397c57e989f98b0a1ba77b1312",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_c9a74877fb24f321/yb_5797d3e04fb6ed.py",
+      "sha256": "d7d2a2429046cd4e7f8703284baec8b076b16cdb619b1fbf759d4b3641067ad7",
+      "original_sha256": "d7d2a2429046cd4e7f8703284baec8b076b16cdb619b1fbf759d4b3641067ad7",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "0c679753fea8f9602983710d8fb0c69aa9f7f844b3a900329c059885920b848f",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/copy_last_chunk_kernel/tests/vv_c9a74877fb24f321-29bbdb27018e"
+}

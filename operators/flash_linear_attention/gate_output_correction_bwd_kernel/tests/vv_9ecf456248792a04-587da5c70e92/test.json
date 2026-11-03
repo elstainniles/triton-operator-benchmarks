@@ -1,0 +1,126 @@
+{
+  "id": "vv_9ecf456248792a04-587da5c70e92",
+  "case_id": "vv_9ecf456248792a04",
+  "operator_id": "FLA102",
+  "kernel": "gate_output_correction_bwd_kernel",
+  "source_path": "fla/ops/rwkv7/gate_output_correction.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_gate_output_correction_bwd_kernel/test_gate_output_correction_bwd_kernel_npu.py::test_gate_output_correction_bwd_kernel",
+  "entrypoint": "source/cpu64_case_vv_9ecf456248792a04.py",
+  "module": "cpu64_case_vv_9ecf456248792a04",
+  "function": "test_cpu64",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_9ecf456248792a04"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/gate_bwd",
+      "reference_path": "generated-data/reference_cpu64.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "855973465f892471038ead38a5bde2743f0c640ba72b4be5b047cd8369546f50"
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "7": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    },
+    "8": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    },
+    "9": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    },
+    "10": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    },
+    "11": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    },
+    "12": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 2,
+    "num_ctas": 1,
+    "BT": 4
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/cpu64_absolute.py",
+      "sha256": "33eab3016c5aaaae14e5e6d5304a36c5a253b683f3a275093ab38f448f3ef09d",
+      "original_sha256": "33eab3016c5aaaae14e5e6d5304a36c5a253b683f3a275093ab38f448f3ef09d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/cpu64_case_vv_9ecf456248792a04.py",
+      "sha256": "a1fd59df2a354dd473d16705497dc9b0ae01c29ed877f2768349ca1be2c4a260",
+      "original_sha256": "f4cf39bbb782b8942450ae6f03d5e1307bb479e46f1c82956e413830e003376f",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_9ecf456248792a04/yb_22cded5b91bba3.py",
+      "sha256": "182e06c2d7afda75b595bee12d2d7a20c894dff8bac8e390eabb38c765bfc4b1",
+      "original_sha256": "182e06c2d7afda75b595bee12d2d7a20c894dff8bac8e390eabb38c765bfc4b1",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_9ecf456248792a04/yb_62f460003bf370.py",
+      "sha256": "209a62b853dfc8c645435f5a27949d3a4ad2ba659ae1736be85542594f9a7b1a",
+      "original_sha256": "610c4c55d36a16064c8872abe6d3893491703fe9411f057f4a13b14212050afc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_9ecf456248792a04/yb_74f55558e08fc1.py",
+      "sha256": "8d72b09db1d9f2e7445b762e835eab6b18953c3339225d0c45acf5457b67d26f",
+      "original_sha256": "8d72b09db1d9f2e7445b762e835eab6b18953c3339225d0c45acf5457b67d26f",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_9ecf456248792a04/yb_7f11d67c9b6fb9.py",
+      "sha256": "3b24fa82b2f7c1034f2b11c1233d7cf44721ac8bf9b7ca6bf1dd6b85dc97a55e",
+      "original_sha256": "3b24fa82b2f7c1034f2b11c1233d7cf44721ac8bf9b7ca6bf1dd6b85dc97a55e",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "ceaefd2ba0d5b55322412bbb7b639f5e5a5b8c37ab444bb815671fd8fca4f8b7",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/gate_output_correction_bwd_kernel/tests/vv_9ecf456248792a04-587da5c70e92"
+}

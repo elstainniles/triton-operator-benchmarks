@@ -1,0 +1,77 @@
+{
+  "id": "vv_3a129996a55dc23f-0d8a5ece93e6",
+  "case_id": "vv_3a129996a55dc23f",
+  "operator_id": "FLA290",
+  "kernel": "softplus2_triton_wrapper_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/softplus2_triton/test_softplus2_triton_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/softplus2_triton/test_softplus2_triton_npu.py::test_softplus2_triton_perftest",
+  "entrypoint": "source/synthetic/standalone/yb_20fc458d976e7e.py",
+  "module": "yb_20fc458d976e7e",
+  "function": "test_softplus2_triton_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/softplus2_triton"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "softplus2_triton"
+  },
+  "validation_standard": "original_functional_assertions",
+  "validation_tolerances": {
+    "output": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    }
+  },
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_20fc458d976e7e.py",
+      "sha256": "9caa11b10cd8e76a8aed40a33d0623bffb9ad2741cf7baa2e2cf12b7709d709c",
+      "original_sha256": "b8fda7da383cec19cfd59762cc7f93ce599b83d42c4e47265232161223fb3544",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_90891058742c80.py",
+      "sha256": "d97c1564f6f502118721c94b4d624037445f3f572875d1c5a97be7a3566db4d0",
+      "original_sha256": "d97c1564f6f502118721c94b4d624037445f3f572875d1c5a97be7a3566db4d0",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6cf940d4ee73a71630eaba45b6ca911a5d88a3e91f98d56a82894f45b4a0027f",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/softplus2_triton_wrapper_kernel/tests/vv_3a129996a55dc23f-0d8a5ece93e6"
+}

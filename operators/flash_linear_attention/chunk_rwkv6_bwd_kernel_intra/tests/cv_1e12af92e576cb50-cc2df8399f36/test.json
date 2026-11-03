@@ -1,0 +1,118 @@
+{
+  "id": "cv_1e12af92e576cb50-cc2df8399f36",
+  "case_id": "cv_1e12af92e576cb50",
+  "operator_id": "FLA231",
+  "kernel": "chunk_rwkv6_bwd_kernel_intra",
+  "source_path": "tests/ops/ascend_ops/cv_operator/test_chunk_rwkv6_bwd_kernel_intra/test_chunk_rwkv6_bwd_kernel_intra_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/test_chunk_rwkv6_bwd_kernel_intra/test_chunk_rwkv6_bwd_kernel_intra_npu.py::test_chunk_rwkv6_bwd_kernel_intra",
+  "entrypoint": "source/rwkv6_remaining_reference/cv_1e12af92e576cb50.py",
+  "module": "rwkv6_remaining_reference.cv_1e12af92e576cb50",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_1e12af92e576cb50"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/test_chunk_rwkv6_bwd_kernel_intra/test_chunk_rwkv6_bwd_kernel_intra_cuda.pt": "generated-data/inputs_synthetic.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/test_chunk_rwkv6_bwd_kernel_intra/outputs.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_chunk_rwkv6_bwd_kernel_intra_cuda.py",
+      "sha256": "5397497d20e8521656ccfb0b7e1378f636a9d756dd2f4cacdf73111d389a3143",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "prepare_matrix_cpu64.py",
+      "sha256": "aa56ed13752bb95e0b799402a244b6c0cfcfc68154eec4cff0244164cb61063d",
+      "functions": [
+        "tile",
+        "untile"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "e4f6a15bb4760b6d4e46d213975ecd4c9f7a5f0cbcfc96a9a75608c3651a2f60",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "dq": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dk": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_1e12af92e576cb50/yb_98f571116a587c.py",
+      "sha256": "35b02971f88e029d6f57318da10876185f620fddce868b510f35318746c59415",
+      "original_sha256": "eb43c83ac85163bfe93d9a22071c4754913aecd7b02ae9f3be7ab668cdebc764",
+      "role": "dependency"
+    },
+    {
+      "path": "source/rwkv6_remaining_reference/cv_1e12af92e576cb50.py",
+      "sha256": "46bf3129a46c2e562270218effeabec7aa0134d9bd8ff992264f4d2fc8aa1ad0",
+      "original_sha256": "48e1acd749e668ed0f6238a4d493f459fe1e48f360494891b13ceff8202d68b3",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "aa189c2bda6d4f6d07e468de1b83f0b869e7e1ec1aba924152c1ef951e86bea7",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "d5bf62c39c66c3e31ed7647499d5e4bb64ff3d765e6b49fa4b4da6ff761ee989",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "7d3d4c80feb8b6f8e0b550698f0b4f51bf86451c39e06ddb1805426fed922df7",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl_builder.py",
+      "sha256": "51acf930b5eae989e75720e8ff59f04b570b0e7855de6afaaa4b7d4ed29caf0b",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_rwkv6_bwd_kernel_intra/tests/cv_1e12af92e576cb50-cc2df8399f36"
+}

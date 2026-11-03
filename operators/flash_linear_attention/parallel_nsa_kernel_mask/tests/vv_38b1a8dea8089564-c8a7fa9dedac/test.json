@@ -1,0 +1,61 @@
+{
+  "id": "vv_38b1a8dea8089564-c8a7fa9dedac",
+  "case_id": "vv_38b1a8dea8089564",
+  "operator_id": "FLA284",
+  "kernel": "parallel_nsa_kernel_mask",
+  "source_path": "tests/ops/ascend_ops/vv_operator/parallel_nsa_kernel_mask/test_parallel_nsa_kernel_mask_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/parallel_nsa_kernel_mask/test_parallel_nsa_kernel_mask_npu.py::test_parallel_nsa_kernel_mask",
+  "entrypoint": "source/synthetic/standalone/yb_9020d6e5d9e788.py",
+  "module": "yb_9020d6e5d9e788",
+  "function": "test_parallel_nsa_kernel_mask",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/parallel_nsa_kernel_mask/block_indices.pt": "generated-data/block_indices.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/parallel_nsa_kernel_mask/block_mask.pt": "generated-data/block_mask.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "parallel_nsa_mask"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_9020d6e5d9e788.py",
+      "sha256": "b6985246760eb136dc21ee2086554768b6d09407829d7f231ec68a6dcb8a23d5",
+      "original_sha256": "3d05b921a0430ec941aee231060caa3822c6935ca7eb0ba017f115e9645f622b",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "f8d1b19c0d841d9be91b9350b710df92508d1ab84e65a487c686f82b18b5d38b",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_nsa_kernel_mask/tests/vv_38b1a8dea8089564-c8a7fa9dedac"
+}

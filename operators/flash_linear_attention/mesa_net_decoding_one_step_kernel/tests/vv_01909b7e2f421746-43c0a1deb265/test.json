@@ -1,0 +1,74 @@
+{
+  "id": "vv_01909b7e2f421746-43c0a1deb265",
+  "case_id": "vv_01909b7e2f421746",
+  "operator_id": "FLA282",
+  "kernel": "mesa_net_decoding_one_step_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/mesa_net_decoding_one_step_kernel/test_mesa_net_decoding_one_step_kernel.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/mesa_net_decoding_one_step_kernel/test_mesa_net_decoding_one_step_kernel.py::test_kernel",
+  "entrypoint": "source/resume_more/cases/vv_01909b7e2f421746.py",
+  "module": "resume_more.cases.vv_01909b7e2f421746",
+  "function": "test_diagnostic",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_01909b7e2f421746"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/mesa"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "diagnostic_only",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/test_mesa_net_decoding_one_step_kernel/test_mesa_net_decoding_one_step_kernel.pt": "generated-data/test_mesa_net_decoding_one_step_kernel.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "476250335a742a0abac565923562ac5af11096395ba70b5be1ff53eb10ce133b"
+    }
+  ],
+  "validation_standard": "diagnostic_only",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_01909b7e2f421746/yb_175c0a23d94883.py",
+      "sha256": "c25dffca1e7c4d798f45447de1d4715e3068a9e60b4c1793e9080dc2e9dcc48b",
+      "original_sha256": "e7a8de3f8f7937fcae9e9ef3d66e213fe69b857a726ac11044950d7dc2110259",
+      "role": "dependency"
+    },
+    {
+      "path": "source/resume_more/cases/vv_01909b7e2f421746.py",
+      "sha256": "7d9b8cabd641e2d2bb6d4c594b1387beac40e2d0f3e54108c712ab525ee51a3e",
+      "original_sha256": "d43b7dda14c4caceb91509ac98231bcba9a1b3e50127060a223b4ed831402fac",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "3ae45bf5f75b7898154ef1000633992bd48606e304617c8bd6028dcad007a900",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/mesa_net_decoding_one_step_kernel/tests/vv_01909b7e2f421746-43c0a1deb265"
+}

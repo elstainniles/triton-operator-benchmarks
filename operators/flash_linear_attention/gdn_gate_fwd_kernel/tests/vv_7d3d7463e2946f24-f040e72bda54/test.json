@@ -1,0 +1,92 @@
+{
+  "id": "vv_7d3d7463e2946f24-f040e72bda54",
+  "case_id": "vv_7d3d7463e2946f24",
+  "operator_id": "FLA269",
+  "kernel": "gdn_gate_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/gdn_gate_fwd_kernel/test_gdn_gate_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/gdn_gate_fwd_kernel/test_gdn_gate_fwd_kernel_npu.py::test_gdn_gate_fwd_kernel",
+  "entrypoint": "source/source_repair/cases/vv_7d3d7463e2946f24/yb_60d5fa260dcd25.py",
+  "module": "yb_60d5fa260dcd25",
+  "function": "test_gdn_gate_fwd_kernel",
+  "pythonpath": [
+    "source/source_repair/cases/vv_7d3d7463e2946f24",
+    "source/source_repair/original"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/gdn_gate_fwd_kernel/test_gdn_gate_fwd_kernel_cuda.pt": "generated-data/test_gdn_gate_fwd_kernel_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "gdn_gate_fwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BT": 128
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/source_repair/cases/vv_7d3d7463e2946f24/yb_60d5fa260dcd25.py",
+      "sha256": "04929d1367327671d9f6eff8815ea603e4b4d28c658fbe1237409dcd62769c96",
+      "original_sha256": "cc63b3f5323ae328d4878aa469be5926c17575f458f50972a5b645d697ba81da",
+      "role": "test"
+    },
+    {
+      "path": "source/source_repair/original/ofla_74f55558e08fc1.py",
+      "sha256": "6510ac9be94e473e0242db73a3f2c1be907fd13fab69f56db48c61a65a67203e",
+      "original_sha256": "6510ac9be94e473e0242db73a3f2c1be907fd13fab69f56db48c61a65a67203e",
+      "role": "dependency"
+    },
+    {
+      "path": "source/source_repair/original/ofla_8459c530c3d6be.py",
+      "sha256": "b4e8128dc45210a717d3dc79fee4dfd06c245c6106bfad57574b624a87636bfc",
+      "original_sha256": "b4e8128dc45210a717d3dc79fee4dfd06c245c6106bfad57574b624a87636bfc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/source_repair/original/ofla_90891058742c80.py",
+      "sha256": "36825cd2152f26d7556ba381d215ae71343a92180b5459800b6fd0748cf3d9da",
+      "original_sha256": "36825cd2152f26d7556ba381d215ae71343a92180b5459800b6fd0748cf3d9da",
+      "role": "dependency"
+    },
+    {
+      "path": "source/source_repair/original/ofla_aa8d11f8979997.py",
+      "sha256": "c8f1d74dd66093e842103a917e540878285c0ad2583be1271b6943972f505e08",
+      "original_sha256": "c8f1d74dd66093e842103a917e540878285c0ad2583be1271b6943972f505e08",
+      "role": "dependency"
+    },
+    {
+      "path": "source/source_repair/original/ofla_ab84b57b842c37.py",
+      "sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "original_sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "3be3cf78591c3cd60156b22f680f8b4daa2e48b043e8e4643bfd1e6b1995e599",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/gdn_gate_fwd_kernel/tests/vv_7d3d7463e2946f24-f040e72bda54"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "vv_bbb761829a323b97-61f6dda00db3",
+  "case_id": "vv_bbb761829a323b97",
+  "operator_id": "FLA077",
+  "kernel": "kda_gate_bwd_kernel",
+  "source_path": "fla/ops/kda/gate.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/kda_gate_bwd_kernel/test_kda_gate_bwd_kernel_npu.py::test_kda_gate_bwd_kernel",
+  "entrypoint": "source/extra_adapters/kda_backward/standalone/kda_reference_bridge.py",
+  "module": "kda_reference_bridge",
+  "function": "run_test",
+  "pythonpath": [
+    "source/extra_adapters/kda_backward/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [
+      "generated-data/data"
+    ],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/kda_gate_bwd_kernel/g.pt": "generated-data/g.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/kda_gate_bwd_kernel/A_log.pt": "generated-data/A_log.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/kda_gate_bwd_kernel/dt_bias.pt": "generated-data/dt_bias.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/kda_gate_bwd_kernel/dyg.pt": "generated-data/dyg.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/kda_gate_bwd_kernel/dg.pt": "generated-data/dg.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/kda_gate_bwd_kernel/dA.pt": "generated-data/dA.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/kda_gate_bwd_kernel/dbias.pt": "generated-data/dbias.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "6ce27fa4e7b2690292923fb6464bd6e4b20a3b7b52957b0389c7549388740215"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extra_adapters/kda_backward/standalone/kda_reference_bridge.py",
+      "sha256": "cd712b3d370403cf88f1e4e3a81039daa319da58d38741b5854fb1d00c8cfaad",
+      "original_sha256": "cd712b3d370403cf88f1e4e3a81039daa319da58d38741b5854fb1d00c8cfaad",
+      "role": "test"
+    },
+    {
+      "path": "source/extra_adapters/kda_backward/standalone/yb_18dc009e5fff3c.py",
+      "sha256": "4e4b4d84d33c7808c77abbefdee773f3d81db0171dadb7ba48eba0e6f8ad96d0",
+      "original_sha256": "4e4b4d84d33c7808c77abbefdee773f3d81db0171dadb7ba48eba0e6f8ad96d0",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extra_adapters/kda_backward/standalone/yb_74f55558e08fc1.py",
+      "sha256": "033e869769c47a39b4f292d6d9dbd5f77941e01eaad5858e80043f190c35e26a",
+      "original_sha256": "033e869769c47a39b4f292d6d9dbd5f77941e01eaad5858e80043f190c35e26a",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extra_adapters/kda_backward/standalone/yb_75a9ad0bf765c5.py",
+      "sha256": "65d2d4b1317b2ffeff60931155010a82f08515b17b31c975b4c080b80190a550",
+      "original_sha256": "548ee110388e75964606a83adb62345bcc633c5c47fc4cd3399c3e21dcbf48ad",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extra_adapters/kda_backward/standalone/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extra_adapters/kda_backward/standalone/yb_90891058742c80.py",
+      "sha256": "d97c1564f6f502118721c94b4d624037445f3f572875d1c5a97be7a3566db4d0",
+      "original_sha256": "d97c1564f6f502118721c94b4d624037445f3f572875d1c5a97be7a3566db4d0",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extra_adapters/kda_backward/standalone/yb_ab84b57b842c37.py",
+      "sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "original_sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "7ea60f3b638f031d7c54f0bfd83d0a742e284ced0d9338daa485aea752fdebc7",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/kda_gate_bwd_kernel/tests/vv_bbb761829a323b97-61f6dda00db3"
+}

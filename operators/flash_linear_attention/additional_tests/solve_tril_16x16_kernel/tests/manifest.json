@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_solve_tril_16x16_kernel",
+  "tests": [
+    {
+      "id": "vv_2c791eb1ddd455e5-9008089b2e0a",
+      "case_id": "vv_2c791eb1ddd455e5",
+      "path": "vv_2c791eb1ddd455e5-9008089b2e0a/test.json"
+    },
+    {
+      "id": "vv_2c791eb1ddd455e5-1968e8b0997a",
+      "case_id": "vv_2c791eb1ddd455e5",
+      "path": "vv_2c791eb1ddd455e5-1968e8b0997a/test.json"
+    },
+    {
+      "id": "vv_2c791eb1ddd455e5-32e481aec826",
+      "case_id": "vv_2c791eb1ddd455e5",
+      "path": "vv_2c791eb1ddd455e5-32e481aec826/test.json"
+    },
+    {
+      "id": "vv_6ac1ab6635b17bea-9ed31af31a46",
+      "case_id": "vv_6ac1ab6635b17bea",
+      "path": "vv_6ac1ab6635b17bea-9ed31af31a46/test.json"
+    },
+    {
+      "id": "vv_6ac1ab6635b17bea-c62f407fcb42",
+      "case_id": "vv_6ac1ab6635b17bea",
+      "path": "vv_6ac1ab6635b17bea-c62f407fcb42/test.json"
+    },
+    {
+      "id": "vv_6ac1ab6635b17bea-e52243c979d6",
+      "case_id": "vv_6ac1ab6635b17bea",
+      "path": "vv_6ac1ab6635b17bea-e52243c979d6/test.json"
+    }
+  ]
+}

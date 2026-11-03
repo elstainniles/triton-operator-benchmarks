@@ -1,0 +1,110 @@
+{
+  "id": "cv_10fd9527837e7bda-390ee494c02a",
+  "case_id": "cv_10fd9527837e7bda",
+  "operator_id": "FLA051",
+  "kernel": "chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter",
+  "source_path": "fla/ops/gated_oja_rule/chunk_kkt.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_npu.py::test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_performance",
+  "entrypoint": "source/matrix_approved_cpu64/cv_10fd9527837e7bda.py",
+  "module": "matrix_approved_cpu64.cv_10fd9527837e7bda",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_10fd9527837e7bda"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_v2.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 0,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter_pt.py",
+      "sha256": "5309f523b8f6626d741279f08feb94db35543a28e821f788193b7db6a712d3e7",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "b10c44c71a9701858eb71214ffff37509da0b84230516198bf69a250d5642fd4",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "A": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 4,
+    "num_ctas": 1,
+    "BK": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_10fd9527837e7bda/yb_3a11c7d24ffaf7.py",
+      "sha256": "80a4f466e48e0cce997070f3cae7c6ab7a1a7f7768e7b63db5877baeb5d41e31",
+      "original_sha256": "80a4f466e48e0cce997070f3cae7c6ab7a1a7f7768e7b63db5877baeb5d41e31",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_10fd9527837e7bda/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_10fd9527837e7bda/yb_98a9b62c99de71.py",
+      "sha256": "58403b85772216337368a6073f7b3ff6e3eb85a1e10189fb95117da557a1d0d8",
+      "original_sha256": "f550855a1225961fecff8ae85c1c28b9d2159b0e479fd73cb5dfc7ecc94297ed",
+      "role": "dependency"
+    },
+    {
+      "path": "source/matrix_approved_cpu64/cv_10fd9527837e7bda.py",
+      "sha256": "b399f926116d40e7b2339cee6f0d2805d576a294cbdf26e4c11070a5d56b2f2e",
+      "original_sha256": "9ecb33ae62f869da7259d7ed60502b3305f1c7cee939df9ba3583f5b0a6b6169",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "9dcc525ff5e68101601ef4b29c213b1ac11462aa16bc10fb3353e277423f707d",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "98ebbf80050f77fe3140e9a6aec4066b7e26d8274c7ecf56fb15965200a28462",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "9af897d659d5fff8080a3551c405dd54483d7d22960d415e9b78dff1b55d2fdd",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_scaled_dot_kkt_fwd_kernel_intra_sub_inter/tests/cv_10fd9527837e7bda-390ee494c02a"
+}

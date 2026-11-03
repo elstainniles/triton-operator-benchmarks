@@ -1,0 +1,10 @@
+{
+  "id": "FLA_EXTRA_fused_recurrent_rwkv4_backward_kernel",
+  "kernel_symbol": "fused_recurrent_rwkv4_backward_kernel",
+  "source": {
+    "path": "fla/ops/rwkv4/fused_recurrent.py",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "sha256": "273e858b39607d92e8e2d6a3fe92839918e373ad433b3e9b51a0b68468e471bd",
+    "snapshot": "upstream/fused_recurrent.py"
+  }
+}

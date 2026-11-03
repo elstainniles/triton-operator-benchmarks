@@ -1,0 +1,84 @@
+{
+  "id": "vv_5840019a6ff414d6-8961ecb01950",
+  "case_id": "vv_5840019a6ff414d6",
+  "operator_id": "FLA117",
+  "kernel": "logsumexp_fwd_kernel",
+  "source_path": "fla/ops/utils/logsumexp.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_logsumexp_fwd_kernel/test_logsumexp_fwd_kernel_npu.py::test_logsumexp_fwd_kernel",
+  "entrypoint": "source/synthetic/standalone/yb_8e0fef48433f8d.py",
+  "module": "yb_8e0fef48433f8d",
+  "function": "test_logsumexp_fwd_kernel",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_path": "generated-data/logsumexp_fwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "logsumexp_fwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_22cded5b91bba3.py",
+      "sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "original_sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_8459c530c3d6be.py",
+      "sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "original_sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_8e0fef48433f8d.py",
+      "sha256": "6d1b3d3083a8361b842d70662e1d7bf7b9b01586437973f38394282c10950da0",
+      "original_sha256": "20beafc3e010e5578f69db46251a1c14da81b1cab6c63d0d9cae8b161eb1bd9d",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_de4b66b89bc795.py",
+      "sha256": "18edbd1bc906b614fa385e9ce36f537e5c0e8186088bcaf1bdc3ac6cd5bfd4e7",
+      "original_sha256": "18edbd1bc906b614fa385e9ce36f537e5c0e8186088bcaf1bdc3ac6cd5bfd4e7",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "8302693e65511080b0c790f7b2a3af5f8a70ac38fbb789220e773183cf390baa",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/logsumexp_fwd_kernel__de4b66b8/tests/vv_5840019a6ff414d6-8961ecb01950"
+}

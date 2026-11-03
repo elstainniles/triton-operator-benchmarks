@@ -1,0 +1,65 @@
+{
+  "id": "vv_70348d4afa6723b8-fb262e65d871",
+  "case_id": "vv_70348d4afa6723b8",
+  "operator_id": "FLA294",
+  "kernel": "tanh_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/tanh/test_tanh_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/tanh/test_tanh_npu.py::test_tanh_kernel_perftest",
+  "entrypoint": "source/synthetic/standalone/yb_461e985988adfa.py",
+  "module": "yb_461e985988adfa",
+  "function": "test_tanh_kernel_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/tanh"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "tanh"
+  },
+  "validation_standard": "original_functional_assertions",
+  "validation_tolerances": {
+    "output": {
+      "dtype": "torch.float32",
+      "rtol": 1e-05,
+      "atol": 1e-05
+    }
+  },
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_461e985988adfa.py",
+      "sha256": "07e83beb466d35996177044d49c55d73d35350d635b5b253ef573d2c3fd754bf",
+      "original_sha256": "cdd047dfd8baa9951747b85fc03340b633f60d4df59a7b61ff1a7d94f80cfbde",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "e9579dd6ecb51851c6f504b3c63389d69578943a3a3c754a5482b3784fa8b5cd",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/tanh_kernel/tests/vv_70348d4afa6723b8-fb262e65d871"
+}

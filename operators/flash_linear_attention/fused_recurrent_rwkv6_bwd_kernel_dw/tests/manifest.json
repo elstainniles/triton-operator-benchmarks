@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA233",
+  "tests": [
+    {
+      "id": "cv_a43772ee606c111b-35bb5ab8cc97",
+      "case_id": "cv_a43772ee606c111b",
+      "path": "cv_a43772ee606c111b-35bb5ab8cc97/test.json"
+    }
+  ]
+}

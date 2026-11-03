@@ -1,0 +1,68 @@
+{
+  "id": "vv_cbae6e4ca53716bb-3d4a4c89f8d1",
+  "case_id": "vv_cbae6e4ca53716bb",
+  "operator_id": "FLA_EXTRA_cross_entropy_bwd_kernel",
+  "kernel": "cross_entropy_bwd_kernel",
+  "source_path": "fla/modules/fused_cross_entropy.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/cross_entropy_bwd_kernel/test_cross_entropy_bwd_kernel.py::test_perf",
+  "entrypoint": "source/synthetic/standalone/yb_fa036e80cd7b60.py",
+  "module": "yb_fa036e80cd7b60",
+  "function": "test_kernel",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/test_cross_entropy_bwd_kernel/test_cross_entropy_bwd_kernel.pt": "generated-data/test_cross_entropy_bwd_kernel.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "cross_entropy_bwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_22cded5b91bba3.py",
+      "sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "original_sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_fa036e80cd7b60.py",
+      "sha256": "3b9b381ceca6561a0819295f318c6973b4af4066490d1ed975debe90126ce4f3",
+      "original_sha256": "e4ea1d8bfba41f9a2346601c81a4ee214cdaf24f4eb9c9bb96f7f0ece09c6aae",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "ce44c0193265e2efeef404ff0dbb91ae5f4375b6b02b1892f7aec2c4cdd0ff96",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/additional_tests/cross_entropy_bwd_kernel/tests/vv_cbae6e4ca53716bb-3d4a4c89f8d1"
+}

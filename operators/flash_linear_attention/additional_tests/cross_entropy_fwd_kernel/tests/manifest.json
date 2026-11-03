@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_cross_entropy_fwd_kernel",
+  "tests": [
+    {
+      "id": "vv_caf215f07abb51dc-536bcb93adc2",
+      "case_id": "vv_caf215f07abb51dc",
+      "path": "vv_caf215f07abb51dc-536bcb93adc2/test.json"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "cv_fce8ce9300d4fcc2-85b0e4f25625",
+  "case_id": "cv_fce8ce9300d4fcc2",
+  "operator_id": "FLA164",
+  "kernel": "chunk_gated_delta_rule_fwd_kkt_solve_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_gated_delta_rule_fwd_kkt_solve_kernel/test_chunk_gated_delta_rule_fwd_kkt_solve_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_gated_delta_rule_fwd_kkt_solve_kernel/test_chunk_gated_delta_rule_fwd_kkt_solve_kernel_npu.py::test_chunk_gated_delta_rule_fwd_kkt_solve_kernel",
+  "entrypoint": "source/extracted/cases/cv_fce8ce9300d4fcc2/yb_b3c7a080406109.py",
+  "module": "yb_b3c7a080406109",
+  "function": "test_chunk_gated_delta_rule_fwd_kkt_solve_kernel",
+  "pythonpath": [
+    "source/extracted/cases/cv_fce8ce9300d4fcc2",
+    "source/."
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_gated_delta_rule_fwd_kkt_solve_kernel/test_chunk_gated_delta_rule_fwd_kkt_solve_kernel_cuda.pt": "generated-data/input_and_cpu_reference.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_chunk_gated_delta_rule_fwd_kkt_solve_kernel_cuda.py",
+      "sha256": "9c15d614dee1d62cfe1c5d1dffa76587ece146aa5a8fcf2166f365e5b1427936",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "generate.py",
+      "sha256": "5ddd17857baf4e4a1450a6219f75a5e389d62dd232f01d2b2fd6505fe744fb20",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BK": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_fce8ce9300d4fcc2/yb_b3c7a080406109.py",
+      "sha256": "7d4148ea300ec190a352caebb16b06abb51ad9e274905f405d7836ba404e4816",
+      "original_sha256": "2c3f8b3caeecc5f78ee53aabd2e8fa5b4ba497ba323396de6ef2067d26d05b59",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "35cbc6317bee8c90756a81faf9eec6c57ba1793aa8dd5e0b247ff3079d9fdd51",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "54b2dd96d22420dc62750a722acf49af5141b4e0cf149d676e5ae32ad036e3dc",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "fec883967cf3c21d4255848bcb5c9f812d1620f3d01dd44c2dc6110cf60dd132",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_gated_delta_rule_fwd_kkt_solve_kernel/tests/cv_fce8ce9300d4fcc2-85b0e4f25625"
+}

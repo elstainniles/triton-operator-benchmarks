@@ -23,6 +23,8 @@ ID 或目录名都可选择算子，也支持 `all`、`flaggems`、`graph` 或�
 
 使用已有且已审计的独立 runtime。不同编译器版本分别建环境；build/runtime 分开。runtime 仅安装从外部 build 环境得到的固定 wheel 和依赖，不进行 TA/TD 源码构建、editable install、`pip --user` 或源码 PYTHONPATH 覆盖。不要用 Conda base、全局 Python 或 `venv --system-site-packages`。这里不提供自动安装脚本，避免覆盖共享 Triton namespace。
 
+支持标准 `python -m venv`：venv 的 Python 可以符号链接到创建它的基础解释器，并共用该解释器的标准库。外部 `site-packages`、`dist-packages` 和额外源码搜索目录仍会被拒绝；Torch、Torch-NPU、Triton 的实际模块路径必须位于所选 runtime，包版本及编译器二进制哈希照常核对。
+
 历史环境指纹见 [historical-environment.json](historical-environment.json)；它是结果身份，不是自动创建环境的锁文件。硬件和驱动/CANN 不会因 Python 环境独立而自动隔离。
 
 可以复制 [environment.example.json](environment.example.json) 并手动填写，或在已选择 CANN 的干净 shell 中自动采集当前隔离 runtime：

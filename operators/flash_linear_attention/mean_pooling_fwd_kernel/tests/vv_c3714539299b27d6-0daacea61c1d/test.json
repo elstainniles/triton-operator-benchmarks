@@ -1,0 +1,78 @@
+{
+  "id": "vv_c3714539299b27d6-0daacea61c1d",
+  "case_id": "vv_c3714539299b27d6",
+  "operator_id": "FLA119",
+  "kernel": "mean_pooling_fwd_kernel",
+  "source_path": "fla/ops/utils/pooling.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/mean_pooling_fwd_kernel/test_mean_pooling_fwd_kernel_npu.py::test_mean_pooling_fwd_kernel_perftest",
+  "entrypoint": "source/synthetic/standalone/yb_040e56e813876d.py",
+  "module": "yb_040e56e813876d",
+  "function": "test_mean_pooling_fwd_kernel_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/mean_pooling_fwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "mean_pooling_fwd"
+  },
+  "validation_standard": "original_functional_assertions_unchanged",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BD": 128
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_040e56e813876d.py",
+      "sha256": "a504c8cf1b6730f1e7f36913b584cef556a6348201d9a4813aad64fb113730ad",
+      "original_sha256": "69bf3046834cd249c7a36169433821b64426db237f1613105bc323fbe7f9d5d5",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_176304286c7418.py",
+      "sha256": "5884e26eef4a04331d4ebb1db40d8013f1b1214826457b61e32d2a658469b03a",
+      "original_sha256": "5884e26eef4a04331d4ebb1db40d8013f1b1214826457b61e32d2a658469b03a",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_4f3456615af619.py",
+      "sha256": "749665bee749c2ff981fac0ed93bc38f228a99ac024bc63486eec0b091f9d1af",
+      "original_sha256": "749665bee749c2ff981fac0ed93bc38f228a99ac024bc63486eec0b091f9d1af",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "13cbd403b51621ed12c8cfc40060b6d2eee69233bf81a40bf2b1a8b3a5d77847",
+      "original_sha256": "13cbd403b51621ed12c8cfc40060b6d2eee69233bf81a40bf2b1a8b3a5d77847",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6ee173f94ccd13a0ab86cb791dd88d69e82ad40f43b06904adf62668b5c25e54",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/mean_pooling_fwd_kernel/tests/vv_c3714539299b27d6-0daacea61c1d"
+}

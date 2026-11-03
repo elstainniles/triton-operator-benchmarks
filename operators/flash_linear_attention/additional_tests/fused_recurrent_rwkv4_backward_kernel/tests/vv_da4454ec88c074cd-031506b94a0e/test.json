@@ -1,0 +1,94 @@
+{
+  "id": "vv_da4454ec88c074cd-031506b94a0e",
+  "case_id": "vv_da4454ec88c074cd",
+  "operator_id": "FLA_EXTRA_fused_recurrent_rwkv4_backward_kernel",
+  "kernel": "fused_recurrent_rwkv4_backward_kernel",
+  "source_path": "fla/ops/rwkv4/fused_recurrent.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_rwkv4_backward/test_fused_recurrent_rwkv4_backward_npu.py::test_fused_recurrent_rwkv4_backward",
+  "entrypoint": "source/resume_scope_data/cases/vv_da4454ec88c074cd.py",
+  "module": "resume_scope_data.cases.vv_da4454ec88c074cd",
+  "function": "test_diagnostic",
+  "pythonpath": [
+    "source/.",
+    "source/rwkv4_source_repair/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/rwkv4_bwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "diagnostic_only",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "08efb85c51072b0209099f7eb4554fc6c224f679039c63e6a7a04f8674cb1c7b"
+    },
+    {
+      "path": "generated-data/cpu_refs.py",
+      "sha256": "29938e3659a7e1efcd69dae4701c5f828439e3dff55636236528d0abcc6771a8"
+    }
+  ],
+  "validation_standard": "diagnostic_only",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/resume_scope_data/cases/vv_da4454ec88c074cd.py",
+      "sha256": "ffef45b152d6e66c33567b315acb5b12f5c7164ef2c3bd3ab35deed51c6705e7",
+      "original_sha256": "875352b335b8787b4417ff9c7ad6d53e11286dff7c7e488f3e8bd885a106de55",
+      "role": "test"
+    },
+    {
+      "path": "source/rwkv4_source_repair/standalone/yb_22cded5b91bba3.py",
+      "sha256": "3a427332d8e5a4373fd5c14ee5b556d136bd95f5d4ef0dd9499d6327e496058d",
+      "original_sha256": "3a427332d8e5a4373fd5c14ee5b556d136bd95f5d4ef0dd9499d6327e496058d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/rwkv4_source_repair/standalone/yb_421a9babfbf0e3.py",
+      "sha256": "bd77e4bccfe263234f3e8019ad0733d1f88a5535b5e2d00855743d61716a7bb5",
+      "original_sha256": "895fc7122e8d78e256e16be5e3ef7967009c0b8eb7b7e784c8bcc22513fd2713",
+      "role": "dependency"
+    },
+    {
+      "path": "source/rwkv4_source_repair/standalone/yb_83cc11308a4a36.py",
+      "sha256": "276a079071d8f6cd8c675d7dfe0614c9c69d38bdfed8ea567f1182b281aae9b1",
+      "original_sha256": "276a079071d8f6cd8c675d7dfe0614c9c69d38bdfed8ea567f1182b281aae9b1",
+      "role": "dependency"
+    },
+    {
+      "path": "source/rwkv4_source_repair/standalone/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "0414b81e0e3ba1558d46c92ecaaa1e0fb51b64b16c8dde170a270c55be5142a1",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/additional_tests/fused_recurrent_rwkv4_backward_kernel/tests/vv_da4454ec88c074cd-031506b94a0e"
+}

@@ -1,0 +1,139 @@
+{
+  "id": "cv_d86382c5b368f3a3-c0338d1172a1",
+  "case_id": "cv_d86382c5b368f3a3",
+  "operator_id": "FLA_EXTRA_chunk_dplr_fwd_A_kernel_intra_tensorcore",
+  "kernel": "chunk_dplr_fwd_A_kernel_intra_tensorcore",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_dplr_fwd_A_kernel_intra_tensorcore/test_chunk_dplr_fwd_A_kernel_intra_tensorcore_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_dplr_fwd_A_kernel_intra_tensorcore/test_chunk_dplr_fwd_A_kernel_intra_tensorcore_npu.py::test_chunk_dplr_fwd_A_kernel_intra_tensorcore",
+  "entrypoint": "source/dplr_based_original_absolute/cv_d86382c5b368f3a3.py",
+  "module": "dplr_based_original_absolute.cv_d86382c5b368f3a3",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_d86382c5b368f3a3"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_dplr_fwd_A_kernel_intra_tensorcore/test_chunk_dplr_fwd_A_kernel_intra_tensorcore_cuda.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "dplr_based_cpu64_math.py",
+      "sha256": "dcc78974e57bffa4eaa016b5cac936821a7da8b6da46619d7e07a1d10c1781c2",
+      "functions": [
+        "dplr"
+      ]
+    }
+  ],
+  "validation_standard": "original_absolute_cpu_reference_v1",
+  "validation_tolerances": {
+    "Aab": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": true
+    },
+    "Aqk": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": true
+    },
+    "Aak": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": true
+    },
+    "Aqb": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": true
+    },
+    "qg": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": true
+    },
+    "kg": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": true
+    },
+    "ag": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": true
+    },
+    "bg": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": true
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/dplr_based_original_absolute/cv_d86382c5b368f3a3.py",
+      "sha256": "bd76ef13f1af319eece5cf493a2f18fea3d1d34a221a5d971f520e5ea41c8da1",
+      "original_sha256": "32ff55f3a570eb7d105be1425afcb3839d9ae9676cdf250ce355f536d7a4b7b7",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/cv_d86382c5b368f3a3/yb_c2e550c04501c8.py",
+      "sha256": "916210166ac18519fab6ebfe2d410725538cf3dc51a3bda5fc66a6ba3cd6a05e",
+      "original_sha256": "42d0a0b7292e7cc0e3bb57917808324ce3e148f0f6065ce769427ba3d695f6e7",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "4faf86e738ab565a2377f424d5b1a378076e17a6fc1831614287f58de3026290",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "e5c308bb9ebe7470b4da74416e36a79cc31f648359d248d2951e54791b15f98e",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "8a76efc09c6cc0876c1c6b8b1f7a7033825bff02c92257bb0acdb39cdb68dcaa",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/additional_tests/chunk_dplr_fwd_A_kernel_intra_tensorcore/tests/cv_d86382c5b368f3a3-c0338d1172a1"
+}

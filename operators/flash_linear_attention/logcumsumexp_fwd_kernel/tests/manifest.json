@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA125",
+  "tests": [
+    {
+      "id": "cv_060e75cff3cfaaaa-aceed8f0e3ee",
+      "case_id": "cv_060e75cff3cfaaaa",
+      "path": "cv_060e75cff3cfaaaa-aceed8f0e3ee/test.json"
+    }
+  ]
+}

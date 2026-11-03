@@ -1,0 +1,61 @@
+{
+  "id": "vv_4aeab0ff686343bf-7e3a94bbc6b7",
+  "case_id": "vv_4aeab0ff686343bf",
+  "operator_id": "FLA273",
+  "kernel": "k_update_fwd_kernel_short",
+  "source_path": "tests/ops/ascend_ops/vv_operator/k_update_fwd_kernel_short/test_k_update_fwd_kernel_short_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/k_update_fwd_kernel_short/test_k_update_fwd_kernel_short_npu.py::test_k_update_fwd_kernel_short",
+  "entrypoint": "source/blue_adapters/k_update/k_update_fwd_kernel_short.py",
+  "module": "k_update_fwd_kernel_short",
+  "function": "test_k_update_fwd_kernel_short",
+  "pythonpath": [
+    "source/blue_adapters/k_update"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/k_update_fwd_kernel_short/test_k_update_fwd_kernel_short_cuda.pt": "generated-data/test_k_update_fwd_kernel_short_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "f5c5cf1fc9e2f86cb63293b44eef145ccc97ec8d0de968f7c275b3ccbd832de6"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/blue_adapters/k_update/k_update_fwd_kernel_short.py",
+      "sha256": "0d52a51f6ddde4aa8ce0a7251f15df99cbca6aaa781b831fdcce88e5365d81df",
+      "original_sha256": "f598ab85737da11828ddce220780ef1fb2c50d8116cd4307734974aefb6055e4",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "e414cc12dc712b4a9b60f1e647a532a7dd4469f26c32a24bbbeee8fdf56dbc40",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/k_update_fwd_kernel_short/tests/vv_4aeab0ff686343bf-7e3a94bbc6b7"
+}

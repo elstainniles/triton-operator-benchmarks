@@ -1,0 +1,65 @@
+{
+  "id": "cv_9cd08a37540cf672-45855b131feb",
+  "case_id": "cv_9cd08a37540cf672",
+  "operator_id": "FLA135",
+  "kernel": "chunk_abc_bwd_kernel_intra_V",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_abc/chunk_abc.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_abc/test_chunk_abc_acc.py::test_chunk_abc_bwd_kernel_intra_V",
+  "entrypoint": "source/abc_original_tests/test_chunk_abc_acc.py",
+  "module": "test_chunk_abc_acc",
+  "function": "test_chunk_abc_bwd_kernel_intra_V",
+  "pythonpath": [
+    "source/abc_original_tests"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": null,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 1,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/abc_original_tests/chunk_abc.py",
+      "sha256": "41193c51aa6b53fcfee1386680dabe573a846e573c21a75dd806cf1f8b0d2bdd",
+      "original_sha256": "41193c51aa6b53fcfee1386680dabe573a846e573c21a75dd806cf1f8b0d2bdd",
+      "role": "dependency"
+    },
+    {
+      "path": "source/abc_original_tests/chunk_abc_torch_impl.py",
+      "sha256": "603094d1067c09e3c8956b83f625e527e3a5932a284b0af2a72d9cd4551eb2f2",
+      "original_sha256": "603094d1067c09e3c8956b83f625e527e3a5932a284b0af2a72d9cd4551eb2f2",
+      "role": "dependency"
+    },
+    {
+      "path": "source/abc_original_tests/test_chunk_abc_acc.py",
+      "sha256": "8755c498b1a3e17595c19a55af9303d5e5a0bb727ca897bf5e4a823d1ba3cf89",
+      "original_sha256": "8755c498b1a3e17595c19a55af9303d5e5a0bb727ca897bf5e4a823d1ba3cf89",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "b9b0ac4e8ac0a594fa1dfd784f9342592276a3a948191ea4dcd229a7fd30f6aa",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_abc_bwd_kernel_intra_V/tests/cv_9cd08a37540cf672-45855b131feb"
+}

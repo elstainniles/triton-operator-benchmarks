@@ -1,0 +1,76 @@
+{
+  "id": "vv_7c35de7b088a5a38-08b2f52c7139",
+  "case_id": "vv_7c35de7b088a5a38",
+  "operator_id": "FLA262",
+  "kernel": "fused_recurrent_delta_rule_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_fwd_kernel/test_fused_recurrent_delta_rule_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_delta_rule_fwd_kernel/test_fused_recurrent_delta_rule_fwd_kernel_npu.py::test_fused_recurrent_delta_rule_fwd_kernel",
+  "entrypoint": "source/baseline_vv_reference_cases/vv_7c35de7b088a5a38.py",
+  "module": "baseline_vv_reference_cases.vv_7c35de7b088a5a38",
+  "function": "test_reference",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_7c35de7b088a5a38"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/delta_fwd",
+      "reference_path": "generated-data/reference_cpu64.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "476250335a742a0abac565923562ac5af11096395ba70b5be1ff53eb10ce133b"
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {},
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 1,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/baseline_reference_checks.py",
+      "sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "original_sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "role": "dependency"
+    },
+    {
+      "path": "source/baseline_vv_reference_cases/vv_7c35de7b088a5a38.py",
+      "sha256": "a6665026918a4c914c506149f8defeb02d105c0717e14a8161ecd37eff77c063",
+      "original_sha256": "0f97a90cd620cc8cb5b533a78824fdae2df6a3f0a1f9d34e84324767e782ed16",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_7c35de7b088a5a38/yb_1edbd95d8265b0.py",
+      "sha256": "dde0c0fcc116a13ec281d7ae1892f8d0416bd889ce9abe54cc05db059f7de7a2",
+      "original_sha256": "b236445a0f41fa8c16fdada9be3db5aaadaa8c431d40699deb6918273969a266",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "a3c4129e3dd88ce0ae6f5528b4a858d855167242e69a54ba020e8a3fcc70a291",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/fused_recurrent_delta_rule_fwd_kernel/tests/vv_7c35de7b088a5a38-08b2f52c7139"
+}

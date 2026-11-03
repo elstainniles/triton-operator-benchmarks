@@ -1,0 +1,69 @@
+{
+  "id": "vv_36103cdc2fc2ab3d-27b9dd906bbf",
+  "case_id": "vv_36103cdc2fc2ab3d",
+  "operator_id": "FLA276",
+  "kernel": "leaky_relu_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/leaky_relu/test_leaky_relu_npu.py::test_leaky_relu_perftest",
+  "entrypoint": "source/extracted/cases/vv_36103cdc2fc2ab3d/yb_82ce437607daa6.py",
+  "module": "yb_82ce437607daa6",
+  "function": "test_leaky_relu_perftest",
+  "pythonpath": [
+    "source/extracted/cases/vv_36103cdc2fc2ab3d"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/leaky_relu"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "requires_acceptance_review",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "leaky_relu"
+  },
+  "validation_standard": "requires_acceptance_review",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BLOCK_SIZE": 1024
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_36103cdc2fc2ab3d/yb_74f55558e08fc1.py",
+      "sha256": "b1c57085f15dd1fd06189370b088d68f39c23d11a3ba24b3ca59f5ce41656d92",
+      "original_sha256": "b1c57085f15dd1fd06189370b088d68f39c23d11a3ba24b3ca59f5ce41656d92",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_36103cdc2fc2ab3d/yb_82ce437607daa6.py",
+      "sha256": "1ab172e4eb22f3ec013b927a285dc45daf93e8a0871b486f5ef5c768c72718b5",
+      "original_sha256": "974ff73ecb6e7dcc66119f89c70616ccb06eaa33e81f3741a1406a2f19714610",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "a7bbd5dd47265452d8f3e6a1e14764f388e321e1bc7eabdf4210d9ad0f5a6b87",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/leaky_relu_kernel/tests/vv_36103cdc2fc2ab3d-27b9dd906bbf"
+}

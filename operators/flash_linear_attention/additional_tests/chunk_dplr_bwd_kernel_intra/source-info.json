@@ -1,0 +1,10 @@
+{
+  "id": "FLA_EXTRA_chunk_dplr_bwd_kernel_intra",
+  "kernel_symbol": "chunk_dplr_bwd_kernel_intra",
+  "source": {
+    "path": "fla/ops/generalized_delta_rule/dplr/chunk_A_bwd.py",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "sha256": "a717b6cab6b6d65507baff61a5ba895e97dd6f69aa6c93b3ad16599a08798abf",
+    "snapshot": "upstream/chunk_A_bwd.py"
+  }
+}

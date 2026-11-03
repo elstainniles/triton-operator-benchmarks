@@ -1,0 +1,10 @@
+{
+  "id": "FLA_EXTRA_chunk_dplr_fwd_A_kernel_intra_tensorcore",
+  "kernel_symbol": "chunk_dplr_fwd_A_kernel_intra_tensorcore",
+  "source": {
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_dplr_fwd_A_kernel_intra_tensorcore/test_chunk_dplr_fwd_A_kernel_intra_tensorcore_npu.py",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "sha256": "f84d4e86e0a5bcf03fab4596d7e957871fe982b3f30181a723206e3b4667114f",
+    "snapshot": "upstream/test_chunk_dplr_fwd_A_kernel_intra_tensorcore_npu.py"
+  }
+}

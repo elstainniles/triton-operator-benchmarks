@@ -1,0 +1,68 @@
+{
+  "id": "vv_2bd9ca46d0a9f996-d907dde9809d",
+  "case_id": "vv_2bd9ca46d0a9f996",
+  "operator_id": "FLA258",
+  "kernel": "exp2_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/exp2/test_exp2_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/exp2/test_exp2_npu.py::test_exp2_perftest",
+  "entrypoint": "source/extracted/cases/vv_2bd9ca46d0a9f996/yb_92a203e92f8ff9.py",
+  "module": "yb_92a203e92f8ff9",
+  "function": "test_exp2_perftest",
+  "pythonpath": [
+    "source/extracted/cases/vv_2bd9ca46d0a9f996"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/exp2"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "requires_acceptance_review",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "exp2"
+  },
+  "validation_standard": "requires_acceptance_review",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_2bd9ca46d0a9f996/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_2bd9ca46d0a9f996/yb_92a203e92f8ff9.py",
+      "sha256": "27151fca5e236d9090064c115c0874290b66f8a86eb476e794151955dc8e0de6",
+      "original_sha256": "8a4d2bdebf51634f973ef782d8d966414204f766df67080bdbc41f4091712157",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "89c9e629c6ff67f9defe856a83834e0f996d9ce847f5f7a6435e3f6797a8bb4f",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/exp2_kernel/tests/vv_2bd9ca46d0a9f996-d907dde9809d"
+}

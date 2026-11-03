@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_chunk_abc_bwd_kernel_rcum_intra",
+  "tests": [
+    {
+      "id": "vv_7823a7319b4d72b7-bd8070b73b60",
+      "case_id": "vv_7823a7319b4d72b7",
+      "path": "vv_7823a7319b4d72b7-bd8070b73b60/test.json"
+    },
+    {
+      "id": "vv_7823a7319b4d72b7-2b8dfc60f460",
+      "case_id": "vv_7823a7319b4d72b7",
+      "path": "vv_7823a7319b4d72b7-2b8dfc60f460/test.json"
+    }
+  ]
+}

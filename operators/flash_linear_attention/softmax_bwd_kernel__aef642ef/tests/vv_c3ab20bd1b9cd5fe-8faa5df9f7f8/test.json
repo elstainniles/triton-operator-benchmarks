@@ -1,0 +1,77 @@
+{
+  "id": "vv_c3ab20bd1b9cd5fe-8faa5df9f7f8",
+  "case_id": "vv_c3ab20bd1b9cd5fe",
+  "operator_id": "FLA122",
+  "kernel": "softmax_bwd_kernel",
+  "source_path": "fla/ops/utils/softmax.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/softmax_bwd_kernel/test_softmax_bwd_kernel_npu.py::test_softmax_bwd_kernel_functiontest",
+  "entrypoint": "source/synthetic/standalone/yb_27b23026040806.py",
+  "module": "yb_27b23026040806",
+  "function": "test_softmax_bwd_kernel_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/softmax_bwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "softmax_bwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_27b23026040806.py",
+      "sha256": "683c3e2329284c654d42defcf91ac50d6c7a340119240b3a4b1152ffd3e2b32f",
+      "original_sha256": "59a043c85bc15a060333705deb38acf113d6dbee503a6e2eb1f8718ed044c42b",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_8459c530c3d6be.py",
+      "sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "original_sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_aef642efa9b1c6.py",
+      "sha256": "6c2c319ccfcf019ad94342209cc9c657640b524c8adbba702c2b7ac546c75394",
+      "original_sha256": "6c2c319ccfcf019ad94342209cc9c657640b524c8adbba702c2b7ac546c75394",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "336f6c453f84aec90b93bffe8245e10ab9104cda285f3a1ac76669f5e1705ec6",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/softmax_bwd_kernel__aef642ef/tests/vv_c3ab20bd1b9cd5fe-8faa5df9f7f8"
+}

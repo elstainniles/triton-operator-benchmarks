@@ -1,0 +1,82 @@
+{
+  "id": "cv_bb52bc5ec4f30103-7f69cbc783b4",
+  "case_id": "cv_bb52bc5ec4f30103",
+  "operator_id": "FLA221",
+  "kernel": "parallel_nsa_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/parallel_nsa_fwd_kernel/test_parallel_nsa_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_nsa_fwd_kernel/test_parallel_nsa_fwd_kernel_npu.py::test_parallel_nsa_fwd_kernel",
+  "entrypoint": "source/blue_adapters/nsa_original_test.py",
+  "module": "blue_adapters.nsa_original_test",
+  "function": "test_parallel_nsa_fwd_kernel",
+  "pythonpath": [
+    "source/.",
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_fwd_kernel/q.pt": "generated-data/q.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_fwd_kernel/k.pt": "generated-data/k.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_fwd_kernel/v.pt": "generated-data/v.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_fwd_kernel/block_indices.pt": "generated-data/block_indices.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_fwd_kernel/o.pt": "generated-data/o.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_nsa_fwd_kernel/lse.pt": "generated-data/lse.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "nsa_generate.py",
+      "sha256": "530d8e1efc84b72a75e2a67fc4b463064ab4034af9061a30918d9a18c057bc66",
+      "functions": [
+        "make_fixtures"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/blue_adapters/nsa_original_test.py",
+      "sha256": "433907eac48826de7cbd342e004c098af7ebdadf0ba5a42ea6b8fe8f227f6b6a",
+      "original_sha256": "4e27462cd352d80f2e20faba944754e3b3a7f7c9a584a31c7e5ec08a5108a861",
+      "role": "test"
+    },
+    {
+      "path": "source/standalone/yb_74f55558e08fc1.py",
+      "sha256": "9be3a91404cf790c05c8c927d3ce6ce65c922a44d95952486d142ba65fd7439d",
+      "original_sha256": "9be3a91404cf790c05c8c927d3ce6ce65c922a44d95952486d142ba65fd7439d",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6454e3e1056e22a416e4dc22b4444bafb1c4cdc07189a02b85e131db478ea5d2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe.py",
+      "sha256": "5366bd27821945442c9c0e7cc3a85b04161ba2939419834b63589270dc258496",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_nsa_fwd_kernel/tests/cv_bb52bc5ec4f30103-7f69cbc783b4"
+}

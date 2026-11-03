@@ -1,0 +1,74 @@
+{
+  "id": "vv_527d5af7786b1beb-c69a1f69e487",
+  "case_id": "vv_527d5af7786b1beb",
+  "operator_id": "FLA114",
+  "kernel": "chunk_global_cumsum_scalar_kernel",
+  "source_path": "fla/ops/utils/cumsum.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/chunk_global_cumsum_scalar_kernel/test_chunk_global_cumsum_scalar_kernel_torch_npu.py::test_chunk_global_cumsum_scalar_kernel_function",
+  "entrypoint": "source/blue_adapters/cumsum_global/adapted_test.py",
+  "module": "adapted_test",
+  "function": "test_chunk_global_cumsum_scalar_kernel_function",
+  "pythonpath": [
+    "source/blue_adapters/cumsum_global",
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/data"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 42,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "0952fd94573a4e12c1b96f21f53c2d5691c99183c6a0dfb682ea990b45976c02"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BT": 256
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/blue_adapters/cumsum_global/adapted_test.py",
+      "sha256": "9a13c0dd48814c62854b32d833c0c5e280863a4a2ec3ac78203eb7b8d84a04cd",
+      "original_sha256": "4e40fc5a18e2fd206ed74692a7c4b02d4fb25256607c2e8ef171f2add972442b",
+      "role": "test"
+    },
+    {
+      "path": "source/standalone/yb_712432704460d6.py",
+      "sha256": "bbb69852286c2fbe902a5b4fba00a5a46656db6d1c2f18c74d7b79e107832d41",
+      "original_sha256": "bbb69852286c2fbe902a5b4fba00a5a46656db6d1c2f18c74d7b79e107832d41",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_74f55558e08fc1.py",
+      "sha256": "9be3a91404cf790c05c8c927d3ce6ce65c922a44d95952486d142ba65fd7439d",
+      "original_sha256": "9be3a91404cf790c05c8c927d3ce6ce65c922a44d95952486d142ba65fd7439d",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "7d3afca323bc29f4077954dba7d269cce1ff4e4a9131b79bb2dde81ef3898711",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_global_cumsum_scalar_kernel/tests/vv_527d5af7786b1beb-c69a1f69e487"
+}

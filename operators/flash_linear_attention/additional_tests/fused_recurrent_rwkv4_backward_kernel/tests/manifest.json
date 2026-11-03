@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_fused_recurrent_rwkv4_backward_kernel",
+  "tests": [
+    {
+      "id": "vv_da4454ec88c074cd-0d9b671a175b",
+      "case_id": "vv_da4454ec88c074cd",
+      "path": "vv_da4454ec88c074cd-0d9b671a175b/test.json"
+    },
+    {
+      "id": "vv_da4454ec88c074cd-031506b94a0e",
+      "case_id": "vv_da4454ec88c074cd",
+      "path": "vv_da4454ec88c074cd-031506b94a0e/test.json"
+    }
+  ]
+}

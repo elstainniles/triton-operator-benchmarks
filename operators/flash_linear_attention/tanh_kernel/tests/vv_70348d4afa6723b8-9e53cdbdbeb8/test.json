@@ -1,0 +1,62 @@
+{
+  "id": "vv_70348d4afa6723b8-9e53cdbdbeb8",
+  "case_id": "vv_70348d4afa6723b8",
+  "operator_id": "FLA294",
+  "kernel": "tanh_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/tanh/test_tanh_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/tanh/test_tanh_npu.py::test_tanh_kernel_perftest",
+  "entrypoint": "source/extracted/cases/vv_70348d4afa6723b8/yb_461e985988adfa.py",
+  "module": "yb_461e985988adfa",
+  "function": "test_tanh_kernel_perftest",
+  "pythonpath": [
+    "source/extracted/cases/vv_70348d4afa6723b8"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/tanh"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "requires_acceptance_review",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "tanh"
+  },
+  "validation_standard": "requires_acceptance_review",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_70348d4afa6723b8/yb_461e985988adfa.py",
+      "sha256": "85587b8426312e40d805969d2f2239c8fa9c458e6a7945da6c6f4f606cee4ba0",
+      "original_sha256": "bfda09c8a0403bb62d1518dc44b0d27ff763043ae8a413ee1bbd2cc3f6d60feb",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "e9579dd6ecb51851c6f504b3c63389d69578943a3a3c754a5482b3784fa8b5cd",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/tanh_kernel/tests/vv_70348d4afa6723b8-9e53cdbdbeb8"
+}

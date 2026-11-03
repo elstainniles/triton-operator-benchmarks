@@ -1,0 +1,65 @@
+{
+  "id": "vv_224ba42dda9e9c03-49cfd6975565",
+  "case_id": "vv_224ba42dda9e9c03",
+  "operator_id": "FLA251",
+  "kernel": "chunk_hgrn_fwd_kernel_h",
+  "source_path": "tests/ops/ascend_ops/vv_operator/chunk_hgrn_fwd_kernel_h/test_chunk_hgrn_fwd_kernel_h_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/chunk_hgrn_fwd_kernel_h/test_chunk_hgrn_fwd_kernel_h_npu.py::test_chunk_hgrn_fwd_h",
+  "entrypoint": "source/extra_adapters/hgrn/standalone/yb_ffa5a407b2f384.py",
+  "module": "yb_ffa5a407b2f384",
+  "function": "test_chunk_hgrn_fwd_h",
+  "pythonpath": [
+    "source/extra_adapters/hgrn/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_fwd_kernel_h/x.pt": "generated-data/x.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_fwd_kernel_h/g.pt": "generated-data/g.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_fwd_kernel_h/h0.pt": "generated-data/h0.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_fwd_kernel_h/o.pt": "generated-data/o.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_fwd_kernel_h/gc.pt": "generated-data/gc.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "40cda9456810c5b12707eb06d2f26761ba926c8bd9e559c44d7555559df4cb9c"
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BD": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extra_adapters/hgrn/standalone/yb_ffa5a407b2f384.py",
+      "sha256": "70dbc738d497d5422138c68997f78ef05e7cd996612ce05103ccfd91ca85cc0b",
+      "original_sha256": "de9b5d57208d5d4456df0479ea3d16aaf379899066d25e17ff97cd9778f53c5c",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "08514bb015d4e27759613f0d5d2b1473170524269c36c9226ed102723bb31b83",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_hgrn_fwd_kernel_h/tests/vv_224ba42dda9e9c03-49cfd6975565"
+}

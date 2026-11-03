@@ -1,0 +1,66 @@
+{
+  "id": "vv_a17eaafac1c93aab-1281d114b695",
+  "case_id": "vv_a17eaafac1c93aab",
+  "operator_id": "FLA249",
+  "kernel": "chunk_hgrn_bwd_kernel_h",
+  "source_path": "tests/ops/ascend_ops/vv_operator/chunk_hgrn_bwd_kernel_h/test_chunk_hgrn_bwd_kernel_h_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/chunk_hgrn_bwd_kernel_h/test_chunk_hgrn_bwd_kernel_h_npu.py::test_chunk_hgrn_bwd_h",
+  "entrypoint": "source/synthetic/standalone/yb_fb5389780dcd88.py",
+  "module": "yb_fb5389780dcd88",
+  "function": "test_chunk_hgrn_bwd_h",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_h/x.pt": "generated-data/x.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_h/g.pt": "generated-data/g.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_h/h0.pt": "generated-data/h0.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_h/do.pt": "generated-data/do.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_h/gc.pt": "generated-data/gc.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/chunk_hgrn_bwd_kernel_h/dx.pt": "generated-data/dx.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "chunk_hgrn_bwd_h"
+  },
+  "validation_standard": "original_functional_assertions_unchanged",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BD": 128
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_fb5389780dcd88.py",
+      "sha256": "27ed7849adf7f32529253196013fece4c6cef21fa169195ad1296b6d59d9f4d1",
+      "original_sha256": "e30c9139075f966c074b88d52be0192e8a185707177607e23a7836a98102830c",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "7a6c2218c5cb2261c53d9d0e92d4e526384db93dd845920a4c2f9173e76d3521",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_hgrn_bwd_kernel_h/tests/vv_a17eaafac1c93aab-1281d114b695"
+}

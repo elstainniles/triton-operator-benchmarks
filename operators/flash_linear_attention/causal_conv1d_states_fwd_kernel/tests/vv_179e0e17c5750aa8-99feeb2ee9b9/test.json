@@ -1,0 +1,95 @@
+{
+  "id": "vv_179e0e17c5750aa8-99feeb2ee9b9",
+  "case_id": "vv_179e0e17c5750aa8",
+  "operator_id": "FLA013",
+  "kernel": "causal_conv1d_states_fwd_kernel",
+  "source_path": "fla/modules/conv/triton/kernels.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/causal_conv1d_states_fwd_kernel/test_causal_conv1d_states_fwd_npu.py::test_causal_conv1d_states_fwd_kernel_functiontest",
+  "entrypoint": "source/synthetic/standalone/yb_149dc223e004f2.py",
+  "module": "yb_149dc223e004f2",
+  "function": "test_causal_conv1d_states_fwd_kernel_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/causal_conv1d_states_fwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "causal_conv1d_states_fwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_149dc223e004f2.py",
+      "sha256": "a392adcfe34e0d36758a9491c54cbe3878cdd88168149f8314a1086c7f3962d7",
+      "original_sha256": "38ededc573fa3ca9dd864611c97769ff6dfb77ce4dff1bdfcb6e30827776ce33",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_1858bf26d5878c.py",
+      "sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "original_sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_4f3456615af619.py",
+      "sha256": "0babd8cca48a5dacfb6803b8ce84d59f40edb0a49169b9e589e92ef9f8b4de0d",
+      "original_sha256": "0babd8cca48a5dacfb6803b8ce84d59f40edb0a49169b9e589e92ef9f8b4de0d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_717c6a81dac3a7.py",
+      "sha256": "b8557cb93ba2a6d074d6ae482613ef6dff885b300c453ec159e9f414ec53b44a",
+      "original_sha256": "b8557cb93ba2a6d074d6ae482613ef6dff885b300c453ec159e9f414ec53b44a",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_ab84b57b842c37.py",
+      "sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "original_sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_b8b54c33391267.py",
+      "sha256": "09bd99a710d5dd83be01b5ff19bbd945edbde3ffcc929d15b16d864b5af85e6a",
+      "original_sha256": "09bd99a710d5dd83be01b5ff19bbd945edbde3ffcc929d15b16d864b5af85e6a",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "a01c0e5059d69d46c158e6eff77d5d13a27722f0fdb1b499041c7893dcb409b4",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/causal_conv1d_states_fwd_kernel/tests/vv_179e0e17c5750aa8-99feeb2ee9b9"
+}

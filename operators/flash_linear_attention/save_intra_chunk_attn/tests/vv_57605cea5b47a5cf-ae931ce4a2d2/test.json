@@ -1,0 +1,73 @@
+{
+  "id": "vv_57605cea5b47a5cf-ae931ce4a2d2",
+  "case_id": "vv_57605cea5b47a5cf",
+  "operator_id": "FLA287",
+  "kernel": "save_intra_chunk_attn",
+  "source_path": "tests/ops/ascend_ops/vv_operator/save_intra_chunk_attn/test_save_intra_chunk_attn_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/save_intra_chunk_attn/test_save_intra_chunk_attn_npu.py::test_save_intra_chunk_attn",
+  "entrypoint": "source/source_repair/cases/vv_57605cea5b47a5cf/yb_420791af951ad9.py",
+  "module": "yb_420791af951ad9",
+  "function": "test_save_intra_chunk_attn",
+  "pythonpath": [
+    "source/source_repair/cases/vv_57605cea5b47a5cf",
+    "source/source_repair/original"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/save_intra_chunk_attn/inputs.pt": "generated-data/inputs.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/save_intra_chunk_attn/outputs.pt": "generated-data/outputs.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "save_intra_chunk_attn"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/source_repair/cases/vv_57605cea5b47a5cf/yb_420791af951ad9.py",
+      "sha256": "b2adf3cf0d65934355f15a262e31a6fb12ffd1da8d18cf913c3cc2a52e46151b",
+      "original_sha256": "dde65a0671f7ec0ff084a91ca03266f2777fd9e452ff060d0b7db9b04fb6c81e",
+      "role": "test"
+    },
+    {
+      "path": "source/source_repair/original/ofla_02e627d798be91.py",
+      "sha256": "aa345f246cd9b7340cf251012850a68b0fe962b43853c1894221cb2540f8b63c",
+      "original_sha256": "aa345f246cd9b7340cf251012850a68b0fe962b43853c1894221cb2540f8b63c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/source_repair/original/ofla_74f55558e08fc1.py",
+      "sha256": "6510ac9be94e473e0242db73a3f2c1be907fd13fab69f56db48c61a65a67203e",
+      "original_sha256": "6510ac9be94e473e0242db73a3f2c1be907fd13fab69f56db48c61a65a67203e",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "cbb846b9079ed0bcbc3b443c2344083f9c193de7c5e53747456d8d2c859d4863",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/save_intra_chunk_attn/tests/vv_57605cea5b47a5cf-ae931ce4a2d2"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "vv_445e566413cef3fd-d2a0d392fcbf",
+  "case_id": "vv_445e566413cef3fd",
+  "operator_id": "FLA091",
+  "kernel": "fused_recurrent_rwkv6_fwd_kernel",
+  "source_path": "fla/ops/rwkv6/fused_recurrent.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_fused_recurrent_rwkv6_fwd_kernel/test_fused_recurrent_rwkv6_fwd_kernel_npu.py::test_fused_recurrent_rwkv6_fwd_kernel",
+  "entrypoint": "source/synthetic/standalone/yb_0f7d951372fdde.py",
+  "module": "yb_0f7d951372fdde",
+  "function": "test_fused_recurrent_rwkv6_fwd_kernel",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/test_fuesd_recurrent_rwkv6_fwd_kernel/test_fused_recurrent_rwkv6_fwd_kernel_cuda.pt": "generated-data/test_fused_recurrent_rwkv6_fwd_kernel_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "fused_recurrent_rwkv6_fwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 16,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_0f7d951372fdde.py",
+      "sha256": "eb76999f2461903d5b1a468f5f8c49305c215793c5c684bcece4a62deac00be1",
+      "original_sha256": "035a981c1eeecc6266d7994ddeef1eee6b5db7396e3a625ad6712e80f0a53461",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_22cded5b91bba3.py",
+      "sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "original_sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_5e473bf2574430.py",
+      "sha256": "b37944bbda313fac892edd2b4296b793d5c2eb4528b3835cc0c0c85b6ee499d4",
+      "original_sha256": "b37944bbda313fac892edd2b4296b793d5c2eb4528b3835cc0c0c85b6ee499d4",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_8459c530c3d6be.py",
+      "sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "original_sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_ec8ad59510d3ad.py",
+      "sha256": "b9d9c5a0ac02716059f10541d752f4464c5873796b09e0350d4a2cfef161f400",
+      "original_sha256": "b9d9c5a0ac02716059f10541d752f4464c5873796b09e0350d4a2cfef161f400",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "41a82107e6c91e3b12c0d7a8b94565eabd0e9e09203c712b7159ed54f1de5b6d",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/fused_recurrent_rwkv6_fwd_kernel/tests/vv_445e566413cef3fd-d2a0d392fcbf"
+}

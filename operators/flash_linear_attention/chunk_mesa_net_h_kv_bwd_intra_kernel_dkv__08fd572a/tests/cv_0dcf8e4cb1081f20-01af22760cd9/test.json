@@ -1,0 +1,167 @@
+{
+  "id": "cv_0dcf8e4cb1081f20-01af22760cd9",
+  "case_id": "cv_0dcf8e4cb1081f20",
+  "operator_id": "FLA188",
+  "kernel": "chunk_mesa_net_h_kv_bwd_intra_kernel_dkv",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_h_kv_bwd_intra_kernel_dkv/test_chunk_mesa_net_h_kv_bwd_intra_separate_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_mesa_net_h_kv_bwd_intra_kernel_dkv/test_chunk_mesa_net_h_kv_bwd_intra_separate_kernel_npu.py::test_3way_precision",
+  "entrypoint": "source/old_five_approved_cpu64/cv_0dcf8e4cb1081f20.py",
+  "module": "old_five_approved_cpu64.cv_0dcf8e4cb1081f20",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_0dcf8e4cb1081f20"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_mesa_net_h_kv_bwd_intra_kernel_dkv/test_chunk_mesa_net_h_kv_bwd_intra_separate_kernel_fp16_v2.pt": "generated-data/test_chunk_mesa_net_h_kv_bwd_intra_separate_kernel_fp16_v2.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 42,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_chunk_mesa_net_h_kv_bwd_intra_kernel_gpu.py",
+      "sha256": "1520c41b7707c0658bd0c42cc536a2ea2d211f94dc7ff7cd51b285b543dcb393",
+      "functions": [
+        "generate_test_data"
+      ]
+    },
+    {
+      "name": "test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py",
+      "sha256": "e4494343b63cfe3f2a6418272bce08639e3a894eb3b828b0b05a4ab9b4d0ff85",
+      "functions": [
+        "naive_chunk_mesa_net_h_kv_bwd_intra_dkv",
+        "naive_chunk_mesa_net_h_kv_bwd_intra_dq"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "4d962dcab2a20a9b5fae7b8b4423fde335a43a2362fc24bfc0eb2d3a73aef0d0",
+      "functions": [
+        "reference"
+      ]
+    },
+    {
+      "name": "test_chunk_mesa_net_h_kv_bwd_intra_kernel_dq_npu.py",
+      "sha256": "e4494343b63cfe3f2a6418272bce08639e3a894eb3b828b0b05a4ab9b4d0ff85",
+      "functions": [
+        "naive_chunk_mesa_net_h_kv_bwd_intra_dkv",
+        "naive_chunk_mesa_net_h_kv_bwd_intra_dq"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "dk": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dv": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dg": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dq": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dg_final": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_0dcf8e4cb1081f20/yb_08fd572af195a8.py",
+      "sha256": "6575dec9255526e8d8a349662d7f64894904a0250b4d9b5d640075b4d28437e9",
+      "original_sha256": "4c9530b9f9a14b089c983a21f3ab5bea9fc55bc25414cc1a825ba7182c0e06c8",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_0dcf8e4cb1081f20/yb_f95f816dd5c2a2.py",
+      "sha256": "821056528c22cb9a32cd5fc84193f3d212c28ce6c0760bc5ed5de37fcd327c42",
+      "original_sha256": "ac2e0ae618fc1a8e0bd1a93bb5f535717487ead7a85f1b690a81ceb77b7e933c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/old_five_approved_cpu64/cv_0dcf8e4cb1081f20.py",
+      "sha256": "81d52144182bc15d06db0a1f1dbb8bf7ee5f3dde469736eb814f5c199d76af95",
+      "original_sha256": "d53ae3220cf532974194636b8bd6f3e004cec68ddb5236a9be12007dd1dc9a11",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "7b3be65f8834f65f25990c5ec4b28338974e1938a84071bf5a4c40e76ca2e653",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "fea331b906fcac4fd0575e130b9ea59dc849133928e007a81b54fb6b253967f8",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_original.py",
+      "sha256": "6b94023e6eabb14f695198b9fa77c9dd533d8c40cae72e44fc2e86f209ff0635",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/legacy_reference.py",
+      "sha256": "6f4c294c6e81dee5260c40d1eeb1c60af49800644faf5d103a629d13ca422d19",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/original_cpu.py",
+      "sha256": "11381db0fcc1765f0e2adf939663dc4820079ec87c1f8b9fc951472df80ebc00",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/original_fp32.py",
+      "sha256": "758dc55b27c31dc3ab5b64c724ef7fdcc1a978bbdf81dfab0c41c4d6aef221bb",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "f3c1d7a84c2c8a5210d9122a23e6fe9fb271006f9141356395b934a08de3f193",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_mesa_net_h_kv_bwd_intra_kernel_dkv__08fd572a/tests/cv_0dcf8e4cb1081f20-01af22760cd9"
+}

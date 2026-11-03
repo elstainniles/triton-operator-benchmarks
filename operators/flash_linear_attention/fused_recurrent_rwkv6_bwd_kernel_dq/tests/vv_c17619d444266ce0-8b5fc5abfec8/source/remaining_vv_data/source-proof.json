@@ -1,0 +1,8 @@
+{
+  "definitions": {
+    "rwkv6": {
+      "module": "yb_398e9f57955960",
+      "wrapper": "fused_recurrent_rwkv6_bwd_dq"
+    }
+  }
+}

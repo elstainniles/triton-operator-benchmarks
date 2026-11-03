@@ -1,0 +1,10 @@
+{
+  "id": "FLA_EXTRA_chunk_abc_bwd_kernel_rcum_intra",
+  "kernel_symbol": "chunk_abc_bwd_kernel_rcum_intra",
+  "source": {
+    "path": "fla/ops/abc/chunk.py",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "sha256": "3758b79f44c82c3cfd6b2475255cf026a578d37c88c06cfdff94a64c98145ca0",
+    "snapshot": "upstream/chunk.py"
+  }
+}

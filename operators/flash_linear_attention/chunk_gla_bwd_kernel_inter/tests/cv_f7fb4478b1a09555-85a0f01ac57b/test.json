@@ -1,0 +1,99 @@
+{
+  "id": "cv_f7fb4478b1a09555-85a0f01ac57b",
+  "case_id": "cv_f7fb4478b1a09555",
+  "operator_id": "FLA168",
+  "kernel": "chunk_gla_bwd_kernel_inter",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_gla_bwd_kernel_inter/test_chunk_gla_bwd_kernel_inter_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_gla_bwd_kernel_inter/test_chunk_gla_bwd_kernel_inter_npu.py::test_chunk_gla_bwd_kernel_inter",
+  "entrypoint": "source/baseline_inline_gla/case.py",
+  "module": "case",
+  "function": "test_original_gla_inter_reference",
+  "pythonpath": [
+    "source/baseline_inline_gla",
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/reference-inline-data"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "cpu_reference.py",
+      "sha256": "732d02b4f75baf4eb314629e1814c428b5961cd5678e4f286f41b2fda2e83c52",
+      "functions": [
+        "algebraic_control"
+      ]
+    },
+    {
+      "name": "cpu_reference.py",
+      "sha256": "732d02b4f75baf4eb314629e1814c428b5961cd5678e4f286f41b2fda2e83c52",
+      "functions": [
+        "reference"
+      ]
+    },
+    {
+      "name": "generate.py",
+      "sha256": "1ac656842bcb273f6172a0494e57244911457308f33bb1d3cbb842fd56410012",
+      "functions": [
+        "make_fixtures"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/baseline_inline_gla/case.py",
+      "sha256": "6d09c1d6ac2fbcb646dc93c552964c4263a807dc211d3882053cac5f7b83978f",
+      "original_sha256": "5e346d22ec4fd0e06b20265d43871c6d5428e672b7e66ca3854ec7204c74e6cc",
+      "role": "test"
+    },
+    {
+      "path": "source/standalone/yb_62b4975145faac.py",
+      "sha256": "e4065de19fe6b91a5bf07af791ec26adbfa8c834d65170c06f7294d75463d60c",
+      "original_sha256": "e4065de19fe6b91a5bf07af791ec26adbfa8c834d65170c06f7294d75463d60c",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6454e3e1056e22a416e4dc22b4444bafb1c4cdc07189a02b85e131db478ea5d2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe.py",
+      "sha256": "d63d9b55b44aafb6572a5320eff1a97ee047369fd143a5c17332f11b31204640",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe_algebraic_control.py",
+      "sha256": "4ce360484cfe2f6b15ae136462ff6790b38d810ed455ede43767e930ad4a0c86",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe_reference.py",
+      "sha256": "6a1b03cf255709ea35f278af9eff69dad10154620f5fe75cc6bda93973f21918",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_gla_bwd_kernel_inter/tests/cv_f7fb4478b1a09555-85a0f01ac57b"
+}

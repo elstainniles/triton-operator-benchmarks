@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_merge_16x16_to_32x32_inverse_kernel",
+  "tests": [
+    {
+      "id": "cv_27eb4c65ae93688c-f8af5962c28f",
+      "case_id": "cv_27eb4c65ae93688c",
+      "path": "cv_27eb4c65ae93688c-f8af5962c28f/test.json"
+    },
+    {
+      "id": "cv_88daffca67fc9afd-d134719d9a6c",
+      "case_id": "cv_88daffca67fc9afd",
+      "path": "cv_88daffca67fc9afd-d134719d9a6c/test.json"
+    }
+  ]
+}

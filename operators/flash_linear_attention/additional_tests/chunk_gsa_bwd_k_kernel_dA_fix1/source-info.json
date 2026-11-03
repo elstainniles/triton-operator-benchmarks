@@ -1,0 +1,10 @@
+{
+  "id": "FLA_EXTRA_chunk_gsa_bwd_k_kernel_dA_fix1",
+  "kernel_symbol": "chunk_gsa_bwd_k_kernel_dA_fix1",
+  "source": {
+    "path": "tests/ops/ascend_ops/cv_operator/chunk_gsa_bwd_k/test_chunk_gsa_bwd_k_kernel_dA.py",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "sha256": "afbcccc3aa462004eb68a82596c910f30850da60237f3e58d87548e9a7473f46",
+    "snapshot": "upstream/test_chunk_gsa_bwd_k_kernel_dA.py"
+  }
+}

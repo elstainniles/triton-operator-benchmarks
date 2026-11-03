@@ -1,0 +1,72 @@
+{
+  "id": "vv_6ff72367ccea9db5-618a40618d6f",
+  "case_id": "vv_6ff72367ccea9db5",
+  "operator_id": "FLA122",
+  "kernel": "softmax_bwd_kernel",
+  "source_path": "fla/ops/utils/softmax.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/softmax_bwd_kernel/test_softmax_bwd_kernel_npu.py::test_softmax_bwd_kernel_perftest",
+  "entrypoint": "source/extracted/cases/vv_6ff72367ccea9db5/yb_27b23026040806.py",
+  "module": "yb_27b23026040806",
+  "function": "test_softmax_bwd_kernel_perftest",
+  "pythonpath": [
+    "source/extracted/cases/vv_6ff72367ccea9db5"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/softmax_bwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "requires_acceptance_review",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "softmax_bwd"
+  },
+  "validation_standard": "requires_acceptance_review",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_6ff72367ccea9db5/yb_27b23026040806.py",
+      "sha256": "1baed9369e1f2b808898752f57c8cd210edecad11228fe3619d668f5b810c05f",
+      "original_sha256": "79e5fc812e2ef325d4ba540f397172af0036075c39c8c18cf4fb7fa28d7ea930",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_6ff72367ccea9db5/yb_74f55558e08fc1.py",
+      "sha256": "6453a7627fd7a8ba8c7eb196c785cfe69e5f782efb1f58fd927bd4dd5abae3a5",
+      "original_sha256": "6453a7627fd7a8ba8c7eb196c785cfe69e5f782efb1f58fd927bd4dd5abae3a5",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_6ff72367ccea9db5/yb_aef642efa9b1c6.py",
+      "sha256": "ecf4d7babda509670eb512f686fe9e2c301b572e5f6501437dd8d10859d40e9a",
+      "original_sha256": "ecf4d7babda509670eb512f686fe9e2c301b572e5f6501437dd8d10859d40e9a",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "336f6c453f84aec90b93bffe8245e10ab9104cda285f3a1ac76669f5e1705ec6",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/softmax_bwd_kernel__aef642ef/tests/vv_6ff72367ccea9db5-618a40618d6f"
+}

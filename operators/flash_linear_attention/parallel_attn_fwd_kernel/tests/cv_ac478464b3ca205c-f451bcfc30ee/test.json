@@ -1,0 +1,70 @@
+{
+  "id": "cv_ac478464b3ca205c-f451bcfc30ee",
+  "case_id": "cv_ac478464b3ca205c",
+  "operator_id": "FLA213",
+  "kernel": "parallel_attn_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/cv_operator/parallel_attn_fwd_kernel/test_parallel_attn_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_attn_fwd_kernel/test_parallel_attn_fwd_kernel_npu.py::test_parallel_attn_fwd_kernel",
+  "entrypoint": "source/standalone/yb_28c7984970e8b0.py",
+  "module": "yb_28c7984970e8b0",
+  "function": "test_parallel_attn_fwd_kernel",
+  "pythonpath": [
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_attn_fwd_kernel/test_parallel_attn_fwd_kernel_cuda.pt": "generated-data/test_parallel_attn_fwd_kernel_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "attention_generate.py",
+      "sha256": "75bd5594b2e3a91ae1e335d3f4bd87f5798bda41780dd92067c87d5448a93123",
+      "functions": [
+        "make_fixtures"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 2,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/standalone/yb_28c7984970e8b0.py",
+      "sha256": "d8c6abb0cf0b2f658cb2b2bd9b57fe160fb694bab56e3be41c34df30d20b1e83",
+      "original_sha256": "37e8d0cf93ef5963c1d341e72a332dc30649d1fd6726a0ff97856073148dd11a",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6454e3e1056e22a416e4dc22b4444bafb1c4cdc07189a02b85e131db478ea5d2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe.py",
+      "sha256": "eb8a0c916424a300f55793f5bc0f996f60c710254e0ab93531da1df354591831",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_attn_fwd_kernel/tests/cv_ac478464b3ca205c-f451bcfc30ee"
+}

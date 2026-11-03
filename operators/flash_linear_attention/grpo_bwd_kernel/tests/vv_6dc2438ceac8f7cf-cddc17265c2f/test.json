@@ -1,0 +1,94 @@
+{
+  "id": "vv_6dc2438ceac8f7cf-cddc17265c2f",
+  "case_id": "vv_6dc2438ceac8f7cf",
+  "operator_id": "FLA022",
+  "kernel": "grpo_bwd_kernel",
+  "source_path": "fla/modules/grpo.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/grpo_bwd_kernel/test_grpo_bwd_kernel_npu.py::test_grpo_bwd_kernel_perftest",
+  "entrypoint": "source/baseline_vv_reference_cases/vv_6dc2438ceac8f7cf.py",
+  "module": "baseline_vv_reference_cases.vv_6dc2438ceac8f7cf",
+  "function": "test_reference",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/vv_17dbc5afb69917f6"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/grpo",
+      "reference_path": "generated-data/reference_cpu64.pt"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "path": "generated-data/generate.py",
+      "sha256": "855973465f892471038ead38a5bde2743f0c640ba72b4be5b047cd8369546f50"
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {},
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 4,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/baseline_reference_checks.py",
+      "sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "original_sha256": "289d6f55982ae196972be557de9cd76097de98440f37987592435f60e3c36610",
+      "role": "dependency"
+    },
+    {
+      "path": "source/baseline_vv_reference_cases/vv_6dc2438ceac8f7cf.py",
+      "sha256": "8257d65eb99acf0ce7b39d00ff4f40c0ab74fd6d5b2e05a9b4524211b1734522",
+      "original_sha256": "9aaae325b3e2dbd1eec2e903231a8c28bce4b2c993dbe02414687c1b9337cc68",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_17dbc5afb69917f6/yb_3e77d2739161a0.py",
+      "sha256": "93f55d8f3a9bd6aa6a0d254a4637677b0a67abf8d26a1a8cac5f98624c212b64",
+      "original_sha256": "93f55d8f3a9bd6aa6a0d254a4637677b0a67abf8d26a1a8cac5f98624c212b64",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_17dbc5afb69917f6/yb_5e1590de33c45a.py",
+      "sha256": "05135e76c3080138362729b91a02b3e99ea00be824b80591910d43a558537bb3",
+      "original_sha256": "54cc3bc22488de7565c4ea18b214d9df0623c5419e352a4cb523aaea01f4648e",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_17dbc5afb69917f6/yb_74f55558e08fc1.py",
+      "sha256": "9702dde17e22c6bcd89fa1a066a2f24630c88c9f1c50d85b0d1a908c76b05c25",
+      "original_sha256": "9702dde17e22c6bcd89fa1a066a2f24630c88c9f1c50d85b0d1a908c76b05c25",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_17dbc5afb69917f6/yb_8459c530c3d6be.py",
+      "sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "original_sha256": "e30819c7c68cee18389eed5a3ef9d67d69752efb0967fb21116138c4483ada00",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "048c406d6b731e73c5f4a0e5ec8ff881c5a88cf22d900b278cd1732972db7be7",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/grpo_bwd_kernel/tests/vv_6dc2438ceac8f7cf-cddc17265c2f"
+}

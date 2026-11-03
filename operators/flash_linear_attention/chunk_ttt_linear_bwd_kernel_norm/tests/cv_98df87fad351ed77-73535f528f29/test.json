@@ -1,0 +1,204 @@
+{
+  "id": "cv_98df87fad351ed77-73535f528f29",
+  "case_id": "cv_98df87fad351ed77",
+  "operator_id": "FLA107",
+  "kernel": "chunk_ttt_linear_bwd_kernel_norm",
+  "source_path": "fla/ops/ttt/chunk.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_ttt_linear_bwd_kernel_norm/test_chunk_ttt_linear_bwd_norm_npu.py::test_chunk_ttt_linear_bwd_kernel_norm",
+  "entrypoint": "source/mesa_ttt_approved_cpu64/cv_98df87fad351ed77.py",
+  "module": "mesa_ttt_approved_cpu64.cv_98df87fad351ed77",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_98df87fad351ed77"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/q.pt": "generated-data/q.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/k.pt": "generated-data/k.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/v.pt": "generated-data/v.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/v_new.pt": "generated-data/v_new.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/x.pt": "generated-data/x.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/y.pt": "generated-data/y.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/rstd.pt": "generated-data/rstd.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/w.pt": "generated-data/w.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/b.pt": "generated-data/b.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/eta.pt": "generated-data/eta.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/h0.pt": "generated-data/h0.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/hb0.pt": "generated-data/hb0.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/h.pt": "generated-data/h.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/dht.pt": "generated-data/dht.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/dhbt.pt": "generated-data/dhbt.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/dv_new.pt": "generated-data/dv_new.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/do_tensor.pt": "generated-data/do_tensor.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_0.pt": "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_0.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_1.pt": "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_1.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_2.pt": "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_2.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_3.pt": "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_3.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_4.pt": "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_4.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_5.pt": "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_5.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_6.pt": "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_6.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_7.pt": "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_norm/output_7.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_chunk_ttt_linear_bwd_norm_npu.py",
+      "sha256": "650733f9f885e59ef727d395b229449ff48ada3f2083507bebae8f4e496e25ef",
+      "functions": [
+        "naive_chunk_ttt_linear_bwd_norm"
+      ]
+    },
+    {
+      "name": "mesa_ttt_cpu64_math.py",
+      "sha256": "7c55dde23f148cdd423be557c52398279abe11faceee5a09013468cd645c0193",
+      "functions": [
+        "ttt"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "dh": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dhb": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dh0": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dhb0": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dv": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dk": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "dw": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "db": {
+      "dtype": "float16",
+      "rtol": 0.001,
+      "atol": 0.001,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 16,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_98df87fad351ed77/yb_1858bf26d5878c.py",
+      "sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "original_sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_98df87fad351ed77/yb_4f3456615af619.py",
+      "sha256": "188ca9fbb8fbaa3a5d2f137cdcbfe4d13b0b6f08da4f6793d5d0c222102de1b1",
+      "original_sha256": "188ca9fbb8fbaa3a5d2f137cdcbfe4d13b0b6f08da4f6793d5d0c222102de1b1",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_98df87fad351ed77/yb_68a6d0a73ba5cb.py",
+      "sha256": "65aff64e9c765b412bfa75b71f2a47fa59dff020efb9da50e4744b2247ebbd3a",
+      "original_sha256": "2ad068b799d68688b94bf96c97e36fb9a7662bc1329475c99bdfc7e4c3dc44e7",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_98df87fad351ed77/yb_74f55558e08fc1.py",
+      "sha256": "13cbd403b51621ed12c8cfc40060b6d2eee69233bf81a40bf2b1a8b3a5d77847",
+      "original_sha256": "13cbd403b51621ed12c8cfc40060b6d2eee69233bf81a40bf2b1a8b3a5d77847",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_98df87fad351ed77/yb_7bff0dd87eff27.py",
+      "sha256": "fb558d73a2ab95889639b30c91434b08441ce43401e5942592c097afb8d4a1c9",
+      "original_sha256": "fb558d73a2ab95889639b30c91434b08441ce43401e5942592c097afb8d4a1c9",
+      "role": "dependency"
+    },
+    {
+      "path": "source/mesa_ttt_approved_cpu64/cv_98df87fad351ed77.py",
+      "sha256": "bd18efecb18699f444a6afbd5fbd1ab0512af417ff03078ac5b7ae381820783a",
+      "original_sha256": "6ba94ab1ee3a22ce2482eddde1aaac0740473f7e4f3b7e98aaa19a0521350693",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "671eaa67ef38db8486f9acdc9742e1bc6926efd7148ffb16cc42ebffef167d19",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "39919196fdece22cf38f8d6a74f54d1775403b13d5d5ac2b59a7714442dc1aee",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_manual.py",
+      "sha256": "bd15463786d024379cd6d1fd9ae53a17e40928a49dcf9d2d2a76ce349d41a050",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/original_cpu.py",
+      "sha256": "ad9852b77d7aad10a3242052ce3e4aab49088c1c3ef0b9318f299cc67c673476",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "19cc8ef9d90085e80bb91c8352f872877a530b90d86e1270e23f95de913610a1",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_ttt_linear_bwd_kernel_norm/tests/cv_98df87fad351ed77-73535f528f29"
+}

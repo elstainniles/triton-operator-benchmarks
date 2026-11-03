@@ -1,0 +1,71 @@
+{
+  "id": "cv_e77711f4b89aefdc-e2217a360362",
+  "case_id": "cv_e77711f4b89aefdc",
+  "operator_id": "FLA150",
+  "kernel": "chunk_dplr_bwd_kernel_dAu",
+  "source_path": "tests/ops/ascend_ops/cv_operator/chunk_dplr_bwd_kernel_dAu/test_chunk_dplr_bwd_kernel_dAu_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_dplr_bwd_kernel_dAu/test_chunk_dplr_bwd_kernel_dAu_npu.py::test_chunk_dplr_bwd_dAu",
+  "entrypoint": "source/extracted/cases/cv_e77711f4b89aefdc/yb_4088539b87623c.py",
+  "module": "yb_4088539b87623c",
+  "function": "test_chunk_dplr_bwd_dAu",
+  "pythonpath": [
+    "source/extracted/cases/cv_e77711f4b89aefdc",
+    "source/."
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_dplr_bwd_kernel_dAu/test_chunk_dplr_bwd_kernel_dAu_cuda.pt": "generated-data/test_chunk_dplr_bwd_kernel_dAu_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261031,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "generate.py",
+      "sha256": "16e97f4e3ae5675c28334f08790721f9cfba590efd0d68bc6de493ad32466abc",
+      "functions": [
+        "make_fixtures"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_e77711f4b89aefdc/yb_4088539b87623c.py",
+      "sha256": "3e05b9f924bfc4c4694a43efb0776a4480f5f9b3297b3c0d43e2282c598d6238",
+      "original_sha256": "8d53950e9515cfe4ebde8f8763ca37ea71e3a9c86793ce8d1be64fe250f948fc",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6454e3e1056e22a416e4dc22b4444bafb1c4cdc07189a02b85e131db478ea5d2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe.py",
+      "sha256": "34f259c8b85406157e820fde96b99c36b722e2f7bbf76054621eb669324565b3",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_dplr_bwd_kernel_dAu/tests/cv_e77711f4b89aefdc-e2217a360362"
+}

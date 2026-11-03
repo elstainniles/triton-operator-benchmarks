@@ -1,0 +1,10 @@
+{
+  "id": "FLA_EXTRA_cross_entropy_bwd_kernel",
+  "kernel_symbol": "cross_entropy_bwd_kernel",
+  "source": {
+    "path": "fla/modules/fused_cross_entropy.py",
+    "revision": "5752e83ce7e469cfc0a3145bf20d3c902b716d48",
+    "sha256": "c4d7b0183818a7a1506aa0b4ccb681906dbb293b0832e4788d148b3fbabf63a1",
+    "snapshot": "upstream/fused_cross_entropy.py"
+  }
+}

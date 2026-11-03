@@ -1,0 +1,83 @@
+{
+  "id": "vv_dcd88af2000a0efb-4c17e2a409fd",
+  "case_id": "vv_dcd88af2000a0efb",
+  "operator_id": "FLA031",
+  "kernel": "rotary_embedding_kernel",
+  "source_path": "fla/modules/rotary.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/rotary_embedding_kernel/test_rotary_embedding_kernel_npu.py::test_rotary_embedding_kernel_functiontest",
+  "entrypoint": "source/synthetic/standalone/yb_2262d9147e7610.py",
+  "module": "yb_2262d9147e7610",
+  "function": "test_rotary_embedding_kernel_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/rotary_embedding"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "rotary_embedding"
+  },
+  "validation_standard": "original_functional_assertions_unchanged",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_1858bf26d5878c.py",
+      "sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "original_sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_2262d9147e7610.py",
+      "sha256": "aace190d2d4be2f624c979e4bf53279c85aba5639be546666f418095e9684bce",
+      "original_sha256": "e4cff56f7b72d5dd80bb423cab8e2f35ff3b86568ca53e5fb3e0bd0a44ba376d",
+      "role": "test"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_4f3456615af619.py",
+      "sha256": "0babd8cca48a5dacfb6803b8ce84d59f40edb0a49169b9e589e92ef9f8b4de0d",
+      "original_sha256": "0babd8cca48a5dacfb6803b8ce84d59f40edb0a49169b9e589e92ef9f8b4de0d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_df4e244f2240a0.py",
+      "sha256": "e865dacc90ed4a33d15f316b12a3a1249e170a17324ac4b1f91b0a0352d567f9",
+      "original_sha256": "e865dacc90ed4a33d15f316b12a3a1249e170a17324ac4b1f91b0a0352d567f9",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "8fa954f0713f36a1b6924e435039d38d88adcf5ec23c8701fa7aae9a9837b5a0",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/rotary_embedding_kernel/tests/vv_dcd88af2000a0efb-4c17e2a409fd"
+}

@@ -1,0 +1,98 @@
+{
+  "id": "vv_ecb7231c8ea30e6e-5bb47da40c78",
+  "case_id": "vv_ecb7231c8ea30e6e",
+  "operator_id": "FLA013",
+  "kernel": "causal_conv1d_states_fwd_kernel",
+  "source_path": "fla/modules/conv/triton/kernels.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/causal_conv1d_states_fwd_kernel/test_causal_conv1d_states_fwd_npu.py::test_causal_conv1d_states_fwd_kernel_perftest",
+  "entrypoint": "source/extracted/cases/vv_ecb7231c8ea30e6e/yb_149dc223e004f2.py",
+  "module": "yb_149dc223e004f2",
+  "function": "test_causal_conv1d_states_fwd_kernel_perftest",
+  "pythonpath": [
+    "source/extracted/cases/vv_ecb7231c8ea30e6e"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/causal_conv1d_states_fwd"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "requires_acceptance_review",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "causal_conv1d_states_fwd"
+  },
+  "validation_standard": "requires_acceptance_review",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 1,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/extracted/cases/vv_ecb7231c8ea30e6e/yb_149dc223e004f2.py",
+      "sha256": "6d96c96be25adc9dc07aee58cf2f6563684616b1e7dd96c12872917520f3b5fb",
+      "original_sha256": "a58eacb7d74adb4313083d98b6ceaef84ced755345ab967e06a69adeee3849ce",
+      "role": "test"
+    },
+    {
+      "path": "source/extracted/cases/vv_ecb7231c8ea30e6e/yb_1858bf26d5878c.py",
+      "sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "original_sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_ecb7231c8ea30e6e/yb_4f3456615af619.py",
+      "sha256": "188ca9fbb8fbaa3a5d2f137cdcbfe4d13b0b6f08da4f6793d5d0c222102de1b1",
+      "original_sha256": "188ca9fbb8fbaa3a5d2f137cdcbfe4d13b0b6f08da4f6793d5d0c222102de1b1",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_ecb7231c8ea30e6e/yb_717c6a81dac3a7.py",
+      "sha256": "b8557cb93ba2a6d074d6ae482613ef6dff885b300c453ec159e9f414ec53b44a",
+      "original_sha256": "b8557cb93ba2a6d074d6ae482613ef6dff885b300c453ec159e9f414ec53b44a",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_ecb7231c8ea30e6e/yb_74f55558e08fc1.py",
+      "sha256": "bc9d9bf49ef6d7ed1b78caeb8d841faafdccbd026c9f4f53f65fbf6361b260f4",
+      "original_sha256": "bc9d9bf49ef6d7ed1b78caeb8d841faafdccbd026c9f4f53f65fbf6361b260f4",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_ecb7231c8ea30e6e/yb_ab84b57b842c37.py",
+      "sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "original_sha256": "985d4199b4928dc1f69291fb529bad8322525430eb40b0bbd208a2ead01407bf",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/vv_ecb7231c8ea30e6e/yb_b8b54c33391267.py",
+      "sha256": "09bd99a710d5dd83be01b5ff19bbd945edbde3ffcc929d15b16d864b5af85e6a",
+      "original_sha256": "09bd99a710d5dd83be01b5ff19bbd945edbde3ffcc929d15b16d864b5af85e6a",
+      "role": "dependency"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "a01c0e5059d69d46c158e6eff77d5d13a27722f0fdb1b499041c7893dcb409b4",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/causal_conv1d_states_fwd_kernel/tests/vv_ecb7231c8ea30e6e-5bb47da40c78"
+}

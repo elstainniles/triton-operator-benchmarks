@@ -1,0 +1,83 @@
+{
+  "id": "vv_26508aa3960b6209-91b23f044a8c",
+  "case_id": "vv_26508aa3960b6209",
+  "operator_id": "FLA296",
+  "kernel": "chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split",
+  "source_path": "tests/ops/ascend_ops/vv_operator/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split_cuda.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split_npu.py::test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split",
+  "entrypoint": "source/synthetic/standalone/yb_f81b1f1bb3bfcb.py",
+  "module": "yb_f81b1f1bb3bfcb",
+  "function": "test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split_cuda.pt": "generated-data/test_chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "chunk_rwkv6_intra_split"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 1,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_22cded5b91bba3.py",
+      "sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "original_sha256": "5b68b431984e147453d99686df0339a505aa1356a4512c2fc7f76d14b06be3bc",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_55d32324cd9df0.py",
+      "sha256": "d58707e50f1557feb7ff3e6742c3300d79fc2eba71f25c445601f4cec853a09a",
+      "original_sha256": "d58707e50f1557feb7ff3e6742c3300d79fc2eba71f25c445601f4cec853a09a",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_74f55558e08fc1.py",
+      "sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "original_sha256": "43c8708502fd5ef8e931dd24ed25992ded5e0d5c15885d4167f3be4bbefbd401",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_8459c530c3d6be.py",
+      "sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "original_sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_f81b1f1bb3bfcb.py",
+      "sha256": "ba8d883cf6cda3d3a162489e0f64ebcd1430d892406cccde4c1a55fdbddba8a5",
+      "original_sha256": "074dadb36cc0fc90c69abe4df6fcd1b502c2ca67bf5b708f8fc615e804e6a556",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "895e251003f1256936856d53c148bee238400d593d35b2d82007020d38b4f6d0",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_rwkv6_fwd_A_kernel_intra_sub_intra_split/tests/vv_26508aa3960b6209-91b23f044a8c"
+}

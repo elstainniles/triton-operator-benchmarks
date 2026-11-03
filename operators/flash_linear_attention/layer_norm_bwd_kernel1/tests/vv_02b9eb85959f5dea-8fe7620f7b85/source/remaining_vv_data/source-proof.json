@@ -1,0 +1,8 @@
+{
+  "definitions": {
+    "layernorm": {
+      "module": "yb_db5199ffda6f6e",
+      "wrapper": "layer_norm_bwd"
+    }
+  }
+}

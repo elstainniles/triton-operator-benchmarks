@@ -1,0 +1,60 @@
+{
+  "id": "vv_f80c22227a9560b3-f606fbb8bab2",
+  "case_id": "vv_f80c22227a9560b3",
+  "operator_id": "FLA266",
+  "kernel": "fused_recurrent_kda_fwd_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/fused_recurrent_kda_fwd_kernel/test_fused_recurrent_kda_fwd_kernel_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/fused_recurrent_kda_fwd_kernel/test_fused_recurrent_kda_fwd_kernel_npu.py::test_fused_recurrent_kda_fwd_kernel",
+  "entrypoint": "source/synthetic/standalone/yb_b2153a9ac339a9.py",
+  "module": "yb_b2153a9ac339a9",
+  "function": "test_fused_recurrent_kda_fwd_kernel",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_vv_ops_2/fused_recurrent_kda_fwd_kernel/test_fused_recurrent_kda_fwd_kernel_cuda.pt": "generated-data/test_fused_recurrent_kda_fwd_kernel_cuda.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline",
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "fused_recurrent_kda_fwd"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_b2153a9ac339a9.py",
+      "sha256": "bc10885891ddf504c3d29f3e3d728341bbec1ff7f02d054c6423e19ffe687042",
+      "original_sha256": "6ece5596797190b2465a1678904ed393a8bd99c1a1db42bf890a6182b9af8394",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "3e156918a44b6ba9ef0d4bc2f34433491a54daade22f039f68312ff849766103",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/fused_recurrent_kda_fwd_kernel/tests/vv_f80c22227a9560b3-f606fbb8bab2"
+}

@@ -10,6 +10,8 @@
 
 ## 可执行范围
 
+原测试及后续适配现另有自生成数据入口，位于对应 kernel 的 `tests/` 目录，使用 `tools/run_fla_test.py` 运行。输入与独立 CPU 参考均在内存生成，无外部 `.pt` 依赖。配置列表和命令见 [原用例复测](FLA_IMPORTED_TESTS.md)。下述 `source_archive` / `generated_benchmark` 是原 `tools/run.py` 接口的登记状态，不代表新增 `tests/` 入口是否存在。
+
 `source_archive` 表示源码已归档，但输入、参考结果、launcher 或依赖仍待适配。它不是可执行成功，也不是编译器拒绝。`plan` 显示原因；`run` 保存 `not_executable`，不调用 Torch 或设备，也不提供耗时。
 
 `generated_benchmark` 提供独立入口：固定种子生成输入、CPU 数学参考、完整输出及边界检查，然后仅计时目标 Triton kernel。当前生成式入口覆盖 sigmoid、logsigmoid、softmax 的前向与反向。采用原 autotune 候选中的固定配置；移除 autotune 装饰器的范围单独记录，函数签名、函数体和 JIT 装饰器保持不变。新增形状用于可复现基线验证，不冒充历史缺失 `.pt` 的同一份数据。

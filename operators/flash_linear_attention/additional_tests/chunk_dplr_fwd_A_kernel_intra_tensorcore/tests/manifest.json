@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "operator_id": "FLA_EXTRA_chunk_dplr_fwd_A_kernel_intra_tensorcore",
+  "tests": [
+    {
+      "id": "cv_d86382c5b368f3a3-c0338d1172a1",
+      "case_id": "cv_d86382c5b368f3a3",
+      "path": "cv_d86382c5b368f3a3-c0338d1172a1/test.json"
+    }
+  ]
+}

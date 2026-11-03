@@ -1,0 +1,68 @@
+{
+  "id": "vv_f3175236bb4c6114-a63708dc9e73",
+  "case_id": "vv_f3175236bb4c6114",
+  "operator_id": "FLA258",
+  "kernel": "exp2_kernel",
+  "source_path": "tests/ops/ascend_ops/vv_operator/exp2/test_exp2_npu.py",
+  "original_nodeid": "tests/ops/ascend_ops/vv_operator/exp2/test_exp2_npu.py::test_exp2_functiontest",
+  "entrypoint": "source/synthetic/standalone/yb_92a203e92f8ff9.py",
+  "module": "yb_92a203e92f8ff9",
+  "function": "test_exp2_functiontest",
+  "pythonpath": [
+    "source/synthetic/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {
+      "load_dir": "generated-data/exp2"
+    }
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {},
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "block"
+  ],
+  "generator_provenance": {
+    "source": "generated-data/generate_data.py",
+    "sha256": "146be15ebf8d7327e6769d15f01af2353d6d4b9978737cf529d245c31bed6336",
+    "operation": "exp2"
+  },
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 32,
+    "num_stages": 2,
+    "num_ctas": 1
+  },
+  "block_config": {
+    "axis": 0,
+    "factor": 2
+  },
+  "files": [
+    {
+      "path": "source/synthetic/standalone/yb_8459c530c3d6be.py",
+      "sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "original_sha256": "fadddc02a6691ba4b4c655cb3d62dd6e0f146a9ef328b446c5e89e5f1dc092f7",
+      "role": "dependency"
+    },
+    {
+      "path": "source/synthetic/standalone/yb_92a203e92f8ff9.py",
+      "sha256": "50990f79391e7e3a5a8eaebb20c0a1872b81042e91a893d9a0dcb4d9cd4dfe7f",
+      "original_sha256": "079107abe25359b3c7becb9d79f658652811b719c2a2bc919576f53fea9bd94c",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "89c9e629c6ff67f9defe856a83834e0f996d9ce847f5f7a6435e3f6797a8bb4f",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/exp2_kernel/tests/vv_f3175236bb4c6114-a63708dc9e73"
+}

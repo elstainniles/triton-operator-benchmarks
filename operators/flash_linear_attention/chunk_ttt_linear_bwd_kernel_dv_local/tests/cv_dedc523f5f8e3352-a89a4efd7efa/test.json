@@ -1,0 +1,96 @@
+{
+  "id": "cv_dedc523f5f8e3352-a89a4efd7efa",
+  "case_id": "cv_dedc523f5f8e3352",
+  "operator_id": "FLA106",
+  "kernel": "chunk_ttt_linear_bwd_kernel_dv_local",
+  "source_path": "fla/ops/ttt/chunk.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/chunk_ttt_linear_bwd_kernel_dv_local/test_chunk_ttt_linear_bwd_kernel_dv_local_npu.py::test_chunk_ttt_linear_bwd_kernel_dv_local_performance",
+  "entrypoint": "source/standalone/yb_84143877bc3c69.py",
+  "module": "yb_84143877bc3c69",
+  "function": "test_chunk_ttt_linear_bwd_kernel_dv_local_function",
+  "pythonpath": [
+    "source/standalone"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_dv_local/q.pt": "generated-data/q.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_dv_local/k.pt": "generated-data/k.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_dv_local/eta.pt": "generated-data/eta.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_dv_local/do_tensor.pt": "generated-data/do_tensor.pt",
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/chunk_ttt_linear_bwd_kernel_dv_local/output.pt": "generated-data/output.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 20261030,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "generate_ttt_dv.py",
+      "sha256": "b74ac91c53d229a2c02cb91295d6ae6c8c0ff9d6d13b6fa2c45c9900f9e94f99",
+      "functions": [
+        "make_fixtures"
+      ]
+    }
+  ],
+  "validation_standard": "assertions",
+  "validation_tolerances": null,
+  "required_environment": {},
+  "autotune_config": {
+    "num_warps": 4,
+    "num_stages": 3,
+    "num_ctas": 1
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/standalone/yb_1858bf26d5878c.py",
+      "sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "original_sha256": "8a311d30d1a942679c1f2c2ac6c22a76e15360bc4dc2edc869ecb157e77a382c",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_4f3456615af619.py",
+      "sha256": "188ca9fbb8fbaa3a5d2f137cdcbfe4d13b0b6f08da4f6793d5d0c222102de1b1",
+      "original_sha256": "188ca9fbb8fbaa3a5d2f137cdcbfe4d13b0b6f08da4f6793d5d0c222102de1b1",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_74f55558e08fc1.py",
+      "sha256": "9be3a91404cf790c05c8c927d3ce6ce65c922a44d95952486d142ba65fd7439d",
+      "original_sha256": "9be3a91404cf790c05c8c927d3ce6ce65c922a44d95952486d142ba65fd7439d",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_7bff0dd87eff27.py",
+      "sha256": "13dd41304d2405e1d464fe4ae21e40db1fef49a31d14db5fdb4939f50ce43de9",
+      "original_sha256": "13dd41304d2405e1d464fe4ae21e40db1fef49a31d14db5fdb4939f50ce43de9",
+      "role": "dependency"
+    },
+    {
+      "path": "source/standalone/yb_84143877bc3c69.py",
+      "sha256": "7ef960c0f5ea98b690e169a5c97cd9961ec9c4c7c0353e2fbdaa9839ebe05bb8",
+      "original_sha256": "c4a9b18067163784d985fbe667e3f207ee3d3deeb6cc33747bee2c73255bb1ff",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "6454e3e1056e22a416e4dc22b4444bafb1c4cdc07189a02b85e131db478ea5d2",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/recipe.py",
+      "sha256": "3a06662c723c070b882badf9ea5762783eb506318ccbdbe5ac9460ae500edcf9",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/chunk_ttt_linear_bwd_kernel_dv_local/tests/cv_dedc523f5f8e3352-a89a4efd7efa"
+}

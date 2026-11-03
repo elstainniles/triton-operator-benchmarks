@@ -1,0 +1,134 @@
+{
+  "id": "cv_d4854386213d4bae-3f90926e5ce1",
+  "case_id": "cv_d4854386213d4bae",
+  "operator_id": "FLA042",
+  "kernel": "parallel_deltaformer_fwd_kernel",
+  "source_path": "fla/ops/deltaformer/parallel.py",
+  "original_nodeid": "tests/ops/ascend_ops/cv_operator/parallel_deltaformer_fwd_kernel/test_parallel_deltaformer_fwd_kernel_npu.py::test_parallel_deltaformer_fwd_kernel_performance",
+  "entrypoint": "source/state_delta_cpu64/cv_d4854386213d4bae.py",
+  "module": "state_delta_cpu64.cv_d4854386213d4bae",
+  "function": "test_cpu_fp64_absolute",
+  "pythonpath": [
+    "source/.",
+    "source/extracted/cases/cv_d4854386213d4bae"
+  ],
+  "invocation": {
+    "kind": "function",
+    "args": [],
+    "kwargs": {}
+  },
+  "provider": "generated/fixture.py",
+  "correctness_kind": "assertions",
+  "data_path_map": {
+    "/data/PytorchFile/Inference_or_Training_solution/fla_cv_ops/parallel_deltaformer_fwd_kernel/test_parallel_deltaformer_fwd_kernel_v2.pt": "generated-data/inputs_synthetic.pt"
+  },
+  "input_origin": "seeded_cpu_generation",
+  "external_input_required": false,
+  "seed": 42,
+  "sides": [
+    "baseline"
+  ],
+  "generator_provenance": [
+    {
+      "name": "test_parallel_deltaformer_fwd_kernel_pt.py",
+      "sha256": "0eb5c610ed87b4c0028e39fbec3894f09e3e242731c96687a374ba61146c464c",
+      "functions": [
+        "make_inputs"
+      ]
+    },
+    {
+      "name": "generate_reference.py",
+      "sha256": "f50d5f157c4627b2d5edeb0031a2f8fc149eebe556cbdb8145e739c7e169b6ca",
+      "functions": [
+        "reference"
+      ]
+    }
+  ],
+  "validation_standard": "cpu_fp64_absolute_v1",
+  "validation_tolerances": {
+    "u": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "w": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    },
+    "lse": {
+      "dtype": "float32",
+      "rtol": 1e-05,
+      "atol": 1e-05,
+      "reference_dtype": "float64",
+      "reference_rounded": false
+    }
+  },
+  "required_environment": {
+    "FLA_USE_FAST_OPS": "0"
+  },
+  "autotune_config": {
+    "num_warps": 8,
+    "num_stages": 3,
+    "num_ctas": 1,
+    "BLOCK_C": 64,
+    "BLOCK_T": 64
+  },
+  "block_config": null,
+  "files": [
+    {
+      "path": "source/extracted/cases/cv_d4854386213d4bae/yb_a87c34e2ef2580.py",
+      "sha256": "ef87b4f75277fe1f5e733856064b38c0204d8c5146b9ac682f5e86fff5e917e1",
+      "original_sha256": "ef87b4f75277fe1f5e733856064b38c0204d8c5146b9ac682f5e86fff5e917e1",
+      "role": "dependency"
+    },
+    {
+      "path": "source/extracted/cases/cv_d4854386213d4bae/yb_dad74f3bf2dd83.py",
+      "sha256": "9f18a33ab420331125c4247f894a421c2538166cf6c5270de38397a360d3a3fa",
+      "original_sha256": "01c89e0dee66a4cca838be33f12e45c5ae6d30ef1d1b8eae3e2b838d5753d253",
+      "role": "dependency"
+    },
+    {
+      "path": "source/state_delta_cpu64/cv_d4854386213d4bae.py",
+      "sha256": "5f0c8f267ac6213652ad0519dd4c5847bd2dea0e924006147b70ee9b7809f30b",
+      "original_sha256": "5704a9bc70a9b2c24ca79c0bdf11407e719858aa0c93e22027c8f83f628899fa",
+      "role": "test"
+    },
+    {
+      "path": "generated/fixture.py",
+      "sha256": "ee2567361bbd1a49d36eb9760d25fcf341bb18e1e3c76ff26f4d5acf6aa9a376",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/input_impl.py",
+      "sha256": "abe9fa23989c268b74ad92f308772c4410d541dda0c6dc4d4b17178472eb137e",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl.py",
+      "sha256": "3df743e748528a7e22e96cf6d5bfc27a31779f4e23e147126709dcf18d1e7396",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl_scalar_tile.py",
+      "sha256": "e9c8ffa4f1f1fc7da77e8988f4c25471f456b8a24a5c9c3277ebd957662e805c",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl_tile.py",
+      "sha256": "509db9aacefdb523b85dcd35b003db724426e43108eed20873d919612fc0f9c1",
+      "role": "fixture_provider"
+    },
+    {
+      "path": "generated/reference_impl_untile.py",
+      "sha256": "c1ac8c60684a44400d16063773dce9d8a67258b79ca13b0428d560b51bb5a417",
+      "role": "fixture_provider"
+    }
+  ],
+  "port_validation": "HOST_ONLY_NPU_UNEXECUTED",
+  "path": "operators/flash_linear_attention/parallel_deltaformer_fwd_kernel/tests/cv_d4854386213d4bae-3f90926e5ce1"
+}
