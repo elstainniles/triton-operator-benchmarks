@@ -20,7 +20,7 @@ class LigerTests(unittest.TestCase):
 
     def test_batch_selectors_do_not_mix_families(self):
         self.assertEqual([len(select(s)) for s in ('flaggems','graph','liger')],[8,7,46])
-        batches = [select(s) for s in ('flaggems','graph','liger','fla')]
+        batches = [select(s) for s in ('flaggems','graph','liger','fla','Tencent')]
         self.assertEqual(len(select('all')), sum(len(batch) for batch in batches))
         self.assertEqual({e['id'] for e in select('all')},
                          {e['id'] for batch in batches for e in batch})

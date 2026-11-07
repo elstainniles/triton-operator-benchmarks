@@ -47,3 +47,10 @@ not represented as identical to the library implementation when they differ.
 The source inventory includes all statically launched extracted definitions;
 helper functions are dependencies, not additional benchmark operators. Generated
 benchmark entry points document their own adaptation and validation scope.
+
+The Tencent collection contains original CE, RMSNorm and SiTU-GLU v2 kernels
+provided by the repository maintainer for publication as six benchmark entries.
+Tencent is the maintainer-requested collection name, not a verified upstream
+repository or endorsement. No source URL, revision or source license was supplied.
+These external kernels are not automatically relicensed under the root license.
+See operators/Tencent/SOURCE_NOTICE.md for provenance and extraction details.

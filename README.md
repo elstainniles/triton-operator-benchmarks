@@ -47,6 +47,7 @@ Where/GELU 没有接入 FlagGems 的 `pointwise_dynamic` 生成器，不能用�
 - [FLA 抽取与生成式用例](docs/FLA_KERNELS.md)：完整静态清单、来源区别和当前可执行范围。
 - [FLA CV 表单批跑](docs/FLA_CV.md)：201 条冻结规格，按原目录直接选择、正确性校验、factor=2 合并与断点续跑。
 - [FLA VV 按表格顺序批跑](docs/FLA_VV.md)：317 条规格，支持 `--cases 1-20` 或 `--rows 203-222`，基线/Block 对照与续跑。
+- [Tencent 六个独立 kernel](operators/Tencent/README.md)：CE、RMSNorm、SiTU 的 fwd/bwd；RMSNorm 固定 `[2048,512]`，输入自生成，支持一键批跑。
 - [来源及许可](NOTICE)：FlagGems Apache-2.0 归属与改动范围。
 
 FlagGems 各目录都有 `kernels.py`、`baseline.py`、`manual_tile.py`、`case.py`、`cases.json`、`operator.json` 和 `results/20261026/`。图优化测试批次通过各自 `benchmark.py` 和 `cases.json` 提供固定基线、自生成输入和 CPU 参考，原 JIT 函数保持不变；旧脚本另作来源归档。Liger 使用 `kernels.py`、`test_case.py` 与 `cases.json`。各批共用 `tools/run.py` 入口，各算子独立目录。
@@ -69,7 +70,7 @@ python -I tools/run.py run --operator liger --variants baseline \
   --physical-card 6 --environment environment.local.json --output runs/liger-second-001
 ```
 
-`--operator graph` 选图优化批次 7 组，`flaggems` 选 8 个，`liger` 选 46 个，`fla` 选 FLA 抽取批次，`all` 选全部登记条目，也支持单个 ID 或逗号分隔列表。FLA 源码归档项会明确报告未适配，不计入成功执行或性能统计。`--suite all` 测所选算子的全部登记配置。Liger 的 `smoke` 仍是第二批原尺寸，可能占较多显存。整批输出 `performance.csv` 和逐算子证据；统计只包含数值通过、设备占用检查通过的 Triton kernel 设备耗时。
+`--operator graph` 选图优化批次 7 组，`flaggems` 选 8 个，`liger` 选 46 个，`fla` 选 FLA 抽取批次，`Tencent`（或 `tencent`）选新增 6 个原始 kernel，`all` 选全部登记条目，也支持单个 ID 或逗号分隔列表。FLA 源码归档项会明确报告未适配，不计入成功执行或性能统计。`--suite all` 测所选算子的全部登记配置。Liger 和 Tencent 的 `smoke` 仍是登记的原尺寸，可能占较多显存。Tencent 支持默认 profiler 计时，暂不支持 MSPTI。整批输出 `performance.csv` 和逐算子证据；统计只包含数值通过、设备占用检查通过的 Triton kernel 设备耗时。
 
 NPU 运行方式见 [TESTING.md](docs/TESTING.md)。不要把上游源码直接安装进测试 runtime，也不要覆盖已有环境或已有测量结果。
 

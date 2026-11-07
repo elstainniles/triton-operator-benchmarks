@@ -18,6 +18,7 @@ from opbench.liger_cv_small import verify_all as verify_liger_cv_small
 from opbench.fla import verify_suite as verify_fla_suite
 from opbench.fla_test_sources import verify_suite as verify_fla_test_sources
 from opbench.fla_vv import verify_all as verify_fla_vv
+from opbench.tencent import verify_suite as verify_tencent_suite
 
 
 # These files changed since the Liger measurements were collected. Historical evidence
@@ -59,6 +60,7 @@ def verify():
     liger_cv_small = verify_liger_cv_small()
     fla = verify_fla_suite()
     fla_tests = verify_fla_test_sources()
+    tencent = verify_tencent_suite()
     validation = read_json(ROOT/'docs/liger-validation-20261028.json')
     assert validation['total'] == len(validation['evidence']) == 25
     assert validation['counts'] == {'measured':25}
@@ -240,7 +242,8 @@ def verify():
                 imported_graph_suites=len(graph_entries), imported_graph_files=graph_files,
                 graph_disabled_launches=graph_launches, verified_baseline_smoke=len(measured), liger=liger,
                 verified_liger_entry_cases=validation['total'], fla=fla, fla_tests=fla_tests, liger_cv_small=liger_cv_small,
-                fla_vv=verify_fla_vv(), historical_liger_harness_changed=sorted(changed_harness), **counters)
+                fla_vv=verify_fla_vv(), tencent=tencent,
+                historical_liger_harness_changed=sorted(changed_harness), **counters)
 
 
 if __name__ == '__main__':

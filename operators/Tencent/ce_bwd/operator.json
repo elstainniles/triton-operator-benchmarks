@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "TX02",
+  "name": "tencent_ce_bwd",
+  "family": "tencent_ce",
+  "direction": "bwd",
+  "type": "vv",
+  "path": "operators/Tencent/ce_bwd",
+  "implementation": "user_provided_original_kernel",
+  "runner": "tencent",
+  "validation": "HOST_CHECKED_NOT_NPU_REVALIDATED",
+  "kernel_symbol": "_cross_entropy_bwd_kernel",
+  "helpers": [],
+  "required_input_file": null,
+  "input_mode": "generated_benchmark",
+  "baseline_id": "baseline",
+  "source": {
+    "kind": "user_provided_attachment",
+    "repository": null,
+    "revision": null,
+    "license": "not_supplied",
+    "attachment_sha256": "d66420c5fa06dd226a4f9b3bcdd1e688fd644bdf3d5a500f6d0bf66e939d4e21",
+    "snapshot": "upstream/original_ce.py",
+    "sha256": "56c3a28ae36e06f68660f37933419a72c5cf9e8bc99efca9cb0ff8a4d1404ea9",
+    "symbol": "_cross_entropy_bwd_kernel",
+    "extraction": "Unchanged selected JIT functions; no top-level tests or wrappers",
+    "original_extracted_sha256": "9990da49f71ac98b12e8eeba0a1088dfce42e3b3239d753943039d4183efc613",
+    "normalization": "LF text snapshot; original extracted byte hash retained separately"
+  },
+  "configurations": {
+    "baseline": {
+      "BLOCK_SIZE": 2048,
+      "STORE_BF16": false
+    }
+  },
+  "launch_options": {},
+  "inputs": "logits/dlogits[4096,163840] FP32（目标缓冲区原地改写），labels[4096] INT64；row_max/sum_exp/dloss[4096] FP32。grid=(4096,80)，BLOCK_SIZE=2048，STORE_BF16=False。",
+  "timing_scope": "One direct target Triton kernel; preparation and output reductions excluded",
+  "execution_validation": "host_only_not_npu_revalidated"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "shape_semantics": "logits/dlogits[4096,163840] FP32（目标缓冲区原地改写），labels[4096] INT64；row_max/sum_exp/dloss[4096] FP32。grid=(4096,80)，BLOCK_SIZE=2048，STORE_BF16=False。",
+  "cases": [
+    {
+      "id": "TX02-4096x163840-float32",
+      "suite": "fp32",
+      "shape": [
+        4096,
+        163840
+      ],
+      "dtype": "float32",
+      "seed": 42,
+      "tag": "requested_fixed_shape"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "shape_semantics": "x/dy/dx[2048,512] BF16；weight[512]、rrms[2048]、partial_dw[64,512] FP32；eps=10。grid=(64,)，BLOCK_S=32，D_ROUNDED=512。",
+  "cases": [
+    {
+      "id": "TX04-2048x512-bfloat16",
+      "suite": "bf16",
+      "shape": [
+        2048,
+        512
+      ],
+      "dtype": "bfloat16",
+      "seed": 42,
+      "tag": "requested_fixed_shape"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "shape_semantics": "x/y[2048,512] BF16；weight[512]、rrms[2048] FP32；eps=10（保留附件 16-6 的实际值）。grid=(2048,)，D_ROUNDED=512。",
+  "cases": [
+    {
+      "id": "TX03-2048x512-bfloat16",
+      "suite": "bf16",
+      "shape": [
+        2048,
+        512
+      ],
+      "dtype": "bfloat16",
+      "seed": 42,
+      "tag": "requested_fixed_shape"
+    }
+  ]
+}

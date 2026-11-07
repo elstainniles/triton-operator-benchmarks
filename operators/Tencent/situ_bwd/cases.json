@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "external_input_required": false,
+  "shape_semantics": "a/b/dout/da/db[128,1024] BF16；beta=linear_beta=0.5，inv_beta=inv_linear_beta=2。grid=(128,8)，BLOCK=128。",
+  "cases": [
+    {
+      "id": "TX06-128x1024-bfloat16",
+      "suite": "bf16",
+      "shape": [
+        128,
+        1024
+      ],
+      "dtype": "bfloat16",
+      "seed": 42,
+      "tag": "requested_fixed_shape"
+    }
+  ]
+}

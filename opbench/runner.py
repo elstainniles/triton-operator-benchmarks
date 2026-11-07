@@ -26,11 +26,44 @@ def compile_error(exc):
                                  'CompileTimeAssertionFailure', 'PTXASError'}
 
 
+def prepare_case(case, initial=False):
+    """Keep resets outside a timed launch; old immutable fixtures need no reset."""
+    prepare = getattr(case, 'prepare', None)
+    if callable(prepare):
+        prepare()
+    elif initial:
+        for actual in case.actual:
+            actual.fill_(float('nan'))
+
+
+def profile_call(torch, case, fn, label):
+    prepared = callable(getattr(case, 'prepare', None))
+    prepare_case(case)
+    torch.npu.synchronize()
+    with torch.profiler.record_function(label):
+        fn()
+        if prepared:
+            # Drain the launch queue before closing the label for prepared fixtures.
+            torch.npu.synchronize()
+    if not prepared:
+        # Preserve the existing profiler boundary for legacy immutable fixtures.
+        torch.npu.synchronize()
+
+
 def run(args):
     import fcntl
     entry, op_path = resolve(args.operator)
     metadata = read_json(op_path / 'operator.json')
     schedule = plans(args.operator, args.suite, args.variants)
+    case_ids = set(getattr(args, 'case_id', []))
+    if case_ids:
+        if not case_ids <= {p['case']['id'] for p in schedule}:
+            raise ValueError('Unknown case ID or case excluded by suite')
+        schedule = [p for p in schedule if p['case']['id'] in case_ids]
+    if not schedule:
+        raise ValueError('No cases selected')
+    if entry.get('runner') == 'tencent' and getattr(args, 'timing', 'profiler') != 'profiler':
+        raise ValueError('Tencent fixtures require --timing profiler for out-of-label preparation')
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     result = dict(schema_version=1, origin='new_runner', operator=entry, completed=False, all_passed=False,
@@ -82,11 +115,12 @@ def run(args):
                         before = time.perf_counter()
                         try:
                             # A previous candidate's values must not hide missing stores.
-                            for actual in case.actual:
-                                actual.fill_(float('nan'))
+                            prepare_case(case, initial=True)
                             torch.npu.synchronize()
                             compiled = fn()
                             torch.npu.synchronize()
+                            item['compiled_kernel'] = dict(name=getattr(compiled, 'name', None),
+                                                           hash=getattr(compiled, 'hash', None))
                             if getattr(args, 'timing', 'profiler') == 'mspti':
                                 import triton
                                 from triton.backends.ascend.compiler import AscendBackend
@@ -98,6 +132,7 @@ def run(args):
                                 raise RuntimeError('Output guard corruption; aborting device run')
                             if item['status'] == 'correct':
                                 for _ in range(3):
+                                    prepare_case(case)
                                     fn()
                                 torch.npu.synchronize()
                                 accepted.append((item, fn))
@@ -133,14 +168,13 @@ def run(args):
                                     for item, fn in order:
                                         for repeat in range(5):
                                             label = f'opbench::{item["variant_id"]}::{round_id}::{repeat}'
-                                            torch.npu.synchronize()
-                                            with torch.profiler.record_function(label):
-                                                fn()
-                                            torch.npu.synchronize()
+                                            profile_call(torch, case, fn, label)
+                                            last_timed_item = item
                                             labels.append(label)
                                         prof.step()
                             record['profile_sequence'] = labels
-                            profile = analyze(profile_dir, labels, metadata['kernel_symbol'])
+                            profile = analyze(profile_dir, labels, metadata['kernel_symbol'],
+                                              allow_unlabelled_kernels=callable(getattr(case, 'prepare', None)))
                         monitor.sample()
                         record['profile'] = profile
                         record['timing_eligible'] = monitor.eligible_since(sample_index)
@@ -154,6 +188,14 @@ def run(args):
                         save(result_path, result)
                         if not record['timing_eligible']:
                             raise RuntimeError('Device monitoring rejected timing; raw evidence retained')
+                        if callable(getattr(case, 'prepare', None)):
+                            # Also validate the last timed output, before restoring an in-place input.
+                            item = last_timed_item
+                            item['after_timing_correctness'] = case.validate()
+                            if not item['after_timing_correctness']['passed']:
+                                item.update(status='accuracy_failed', median_us=None)
+                            if not item['after_timing_correctness']['guards']:
+                                raise RuntimeError('Output guard corruption after timing')
                     elif not monitor.eligible_since(sample_index):
                         raise RuntimeError('Device conflict during correctness checks')
                     save(result_path, result)

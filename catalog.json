@@ -4815,6 +4815,72 @@
       "runner": "fla",
       "entry_mode": "source_archive",
       "validation": "SOURCE_AST_VERIFIED"
+    },
+    {
+      "id": "TX01",
+      "name": "tencent_ce_fwd",
+      "family": "tencent_ce",
+      "direction": "fwd",
+      "type": "vv",
+      "path": "operators/Tencent/ce_fwd",
+      "implementation": "user_provided_original_kernel",
+      "runner": "tencent",
+      "validation": "HOST_CHECKED_NOT_NPU_REVALIDATED"
+    },
+    {
+      "id": "TX02",
+      "name": "tencent_ce_bwd",
+      "family": "tencent_ce",
+      "direction": "bwd",
+      "type": "vv",
+      "path": "operators/Tencent/ce_bwd",
+      "implementation": "user_provided_original_kernel",
+      "runner": "tencent",
+      "validation": "HOST_CHECKED_NOT_NPU_REVALIDATED"
+    },
+    {
+      "id": "TX03",
+      "name": "tencent_rmsnorm_fwd",
+      "family": "tencent_rmsnorm",
+      "direction": "fwd",
+      "type": "vv",
+      "path": "operators/Tencent/rmsnorm_fwd",
+      "implementation": "user_provided_original_kernel",
+      "runner": "tencent",
+      "validation": "HOST_CHECKED_NOT_NPU_REVALIDATED"
+    },
+    {
+      "id": "TX04",
+      "name": "tencent_rmsnorm_bwd",
+      "family": "tencent_rmsnorm",
+      "direction": "bwd",
+      "type": "vv",
+      "path": "operators/Tencent/rmsnorm_bwd",
+      "implementation": "user_provided_original_kernel",
+      "runner": "tencent",
+      "validation": "HOST_CHECKED_NOT_NPU_REVALIDATED"
+    },
+    {
+      "id": "TX05",
+      "name": "tencent_situ_fwd",
+      "family": "tencent_situ",
+      "direction": "fwd",
+      "type": "vv",
+      "path": "operators/Tencent/situ_fwd",
+      "implementation": "user_provided_original_kernel",
+      "runner": "tencent",
+      "validation": "HOST_CHECKED_NOT_NPU_REVALIDATED"
+    },
+    {
+      "id": "TX06",
+      "name": "tencent_situ_bwd",
+      "family": "tencent_situ",
+      "direction": "bwd",
+      "type": "vv",
+      "path": "operators/Tencent/situ_bwd",
+      "implementation": "user_provided_original_kernel",
+      "runner": "tencent",
+      "validation": "HOST_CHECKED_NOT_NPU_REVALIDATED"
     }
   ]
 }

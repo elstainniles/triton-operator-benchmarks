@@ -2,7 +2,7 @@ import argparse
 import json
 from pathlib import Path
 
-from .catalog import plans, resolve, select
+from .catalog import GROUPS, plans, resolve, select
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
             command.add_argument('--environment', type=Path)
             command.add_argument('--correctness-only', action='store_true')
             command.add_argument('--timing', choices=['profiler', 'mspti'], default='profiler')
-            command.add_argument('--case-id', action='append', default=[], help='Generated graph or FLA case ID; repeatable')
+            command.add_argument('--case-id', action='append', default=[], help='Generated graph, FLA or Tencent case ID; repeatable')
     args = parser.parse_args()
     if args.command == 'list':
         print(json.dumps(select(args.operator), ensure_ascii=False, indent=2))
@@ -28,10 +28,12 @@ def main():
         print(json.dumps(plans(args.operator, args.suite, args.variants), ensure_ascii=False, indent=2))
     else:
         selected = select(args.operator)
+        if args.timing == 'mspti' and any(e.get('runner') == 'tencent' for e in selected):
+            parser.error('Tencent fixtures require --timing profiler for out-of-label preparation')
         executable = any(e.get('runner') != 'fla' or e.get('entry_mode') != 'source_archive' for e in selected)
         if executable and (args.physical_card is None or args.environment is None):
             parser.error('Executable entries require --physical-card and --environment')
-        if args.operator in ('all', 'graph', 'flaggems', 'liger', 'fla') or ',' in args.operator:
+        if args.operator == 'all' or args.operator in GROUPS or ',' in args.operator:
             from .batch import run
             return run(args)
         entry, _ = resolve(args.operator)
@@ -41,6 +43,8 @@ def main():
             from .liger_runner import run
         elif entry.get('runner') == 'graph_tests':
             from .graph_runner import run
+        elif entry.get('runner') == 'tencent':
+            from .runner import run
         else:
             if args.case_id:
                 parser.error('--case-id is available for generated graph cases only')

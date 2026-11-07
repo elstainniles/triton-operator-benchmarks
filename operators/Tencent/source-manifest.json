@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "collection": "Tencent",
+  "source_kind": "user_provided",
+  "operators": [
+    {
+      "id": "TX01",
+      "path": "operators/Tencent/ce_fwd"
+    },
+    {
+      "id": "TX02",
+      "path": "operators/Tencent/ce_bwd"
+    },
+    {
+      "id": "TX03",
+      "path": "operators/Tencent/rmsnorm_fwd"
+    },
+    {
+      "id": "TX04",
+      "path": "operators/Tencent/rmsnorm_bwd"
+    },
+    {
+      "id": "TX05",
+      "path": "operators/Tencent/situ_fwd"
+    },
+    {
+      "id": "TX06",
+      "path": "operators/Tencent/situ_bwd"
+    }
+  ],
+  "original_attachments": {
+    "ce": {
+      "sha256": "d66420c5fa06dd226a4f9b3bcdd1e688fd644bdf3d5a500f6d0bf66e939d4e21",
+      "extracted_sha256": "9990da49f71ac98b12e8eeba0a1088dfce42e3b3239d753943039d4183efc613"
+    },
+    "rms_situ": {
+      "sha256": "a19434dbfaad9eea644c7b8df37c88642c8ad4b8f602f456b50362e78e8bd0d4",
+      "extracted_sha256": "ecaed741ff69a7abd06813ad3ff2d33cdd1c7c7109d8f5dba542576fff3cbdbb"
+    }
+  },
+  "normalization": "LF source snapshots; original_attachments retains attachment and pre-normalization extracted hashes",
+  "source_notice": "SOURCE_NOTICE.md"
+}

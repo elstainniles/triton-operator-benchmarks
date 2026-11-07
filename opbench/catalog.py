@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+GROUPS = {'graph': 'graph_tests', 'liger': 'liger', 'flaggems': None,
+          'fla': 'fla', 'tencent': 'tencent', 'Tencent': 'tencent'}
 
 
 def read_json(path):
@@ -30,10 +32,13 @@ def module(entry, suffix):
 
 
 def plans(name, suite='all', variants='all'):
-    if name in ('all', 'graph', 'flaggems', 'liger', 'fla') or ',' in name:
+    if name == 'all' or name in GROUPS or ',' in name:
         return [plan for entry in select(name)
                 for plan in plans(entry['id'], suite, variants)]
     entry, path = resolve(name)
+    if entry.get('runner') == 'tencent':
+        from .tencent import plans as tencent_plans
+        return tencent_plans(entry, path, suite, variants)
     if entry.get('runner') == 'fla':
         from .fla import plans as fla_plans
         return fla_plans(entry, path, suite, variants)
@@ -76,10 +81,9 @@ def plans(name, suite='all', variants='all'):
 
 
 def select(name):
-    if name in ('all', 'graph', 'flaggems', 'liger', 'fla'):
-        runners = {'graph':'graph_tests', 'liger':'liger', 'flaggems':None, 'fla':'fla'}
+    if name == 'all' or name in GROUPS:
         return [entry for entry in operators() if name == 'all' or
-                entry.get('runner') == runners[name]]
+                entry.get('runner') == GROUPS[name]]
     result = [resolve(part.strip())[0] for part in name.split(',')]
     if len({entry['id'] for entry in result}) != len(result):
         raise ValueError('Duplicate operator in selection')
